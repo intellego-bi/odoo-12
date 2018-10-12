@@ -14,6 +14,7 @@
     ],
     "data": [
         "data/cron.xml",
+        "data/res_currency.xml",
         "views/currency_rate_update.xml",
         "views/res_config_settings.xml",
         "security/rule.xml",
