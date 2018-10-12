@@ -3,7 +3,7 @@
   <data noupdate="0">
     <record id="base.CLP" model="res.currency">
         <field name="name">CLP</field>
-        <field name="symbol">$</field>
+        <field name="symbol">CLP</field>
         <field name="rounding">1.00</field>
         <field name="active" eval="True"/>
         <field name="position">before</field>
