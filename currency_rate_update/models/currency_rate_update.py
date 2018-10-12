@@ -38,21 +38,21 @@ class CurrencyRateUpdateService(models.Model):
         for srv in self:
             if srv.max_delta_days < 0:
                 raise ValidationError(_(
-                    'Max delta days must be >= 0'))
+                    'Max delta days debe ser >= 0'))
 
     @api.multi
     @api.constrains('interval_number')
     def _check_interval_number(self):
         for srv in self:
             if srv.interval_number < 0:
-                raise ValidationError(_('Interval number must be >= 0'))
+                raise ValidationError(_('Intervalo debe ser >= 0'))
 
     @api.multi
     def write(self, vals):
         if 'interval_number' in vals and vals['interval_number'] == 0:
             for service in self:
-                msg = '%s Service deactivated. Currencies will no longer ' \
-                    'be updated.' % (fields.Datetime.now())
+                msg = '%s Servicio SBIF desactivado. Valor T/C ya no ' \
+                    'se actualizará.' % (fields.Datetime.now())
                 service.message_post(body=msg,
                                      message_type='comment',
                                      subtype='mt_comment')
@@ -82,14 +82,14 @@ class CurrencyRateUpdateService(models.Model):
     # List of webservicies the value sould be a class name
     service = fields.Selection(
         _selection_service,
-        string="Webservice to use",
+        string="Webservice a usar",
         required=True)
     # List of currencies available on webservice
     currency_list = fields.Many2many('res.currency',
                                      'res_currency_update_avail_rel',
                                      'service_id',
                                      'currency_id',
-                                     string='Currencies available')
+                                     string='Monedas disponibles')
     # I can't just put readonly=True in the field above because I need
     # it as r+w for the on_change to work
     currency_list_readonly = fields.Many2many(
@@ -99,8 +99,8 @@ class CurrencyRateUpdateService(models.Model):
                                           'res_currency_auto_update_rel',
                                           'service_id',
                                           'currency_id',
-                                          string='Currencies to update with '
-                                          'this service')
+                                          string='Monedas a actualizar con '
+                                          'este servicio')
     # Link with company
     company_id = fields.Many2one(
         'res.company', 'Company', required=True,
@@ -115,10 +115,10 @@ class CurrencyRateUpdateService(models.Model):
         ('days', 'Day(s)'),
         ('weeks', 'Week(s)'),
         ('months', 'Month(s)')],
-        string='Currency update frequency',
+        string='Frecuencua de actualización',
         default='days')
-    interval_number = fields.Integer(string='Frequency', default=1)
-    next_run = fields.Date(string='Next run on', default=fields.Date.today())
+    interval_number = fields.Integer(string='Frequencia', default=1)
+    next_run = fields.Date(string='Próxima ejecución', default=fields.Date.today())
 
     _sql_constraints = [('curr_service_unique',
                          'unique (service, company_id)',
