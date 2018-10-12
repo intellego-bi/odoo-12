@@ -23,7 +23,7 @@
             <form string="Currency update services">
                 <header>
                     <button name="refresh_currency" type="object"
-                            string="Update now"/>
+                            string="Actualizar T/C ahora"/>
                 </header>
                 <sheet>
                     <group name="main">
@@ -40,7 +40,7 @@
                             <field name="max_delta_days"/>
                         </group>
                     </group>
-                    <group string="Currencies to update with this service" name="currencies">
+                    <group string="Monedas a actualizar con este servicio" name="currencies">
                         <!-- I need to have currency_list as r+w for the on_change -->
                         <field name="currency_to_update" nolabel="1"/>
                     </group>
@@ -54,7 +54,7 @@
     </record>
 
     <record id="currency_rate_update_action" model="ir.actions.act_window">
-        <field name="name">Rate Auto-download</field>
+        <field name="name">Actualiza T/C desde SBIF</field>
         <field name="res_model">currency.rate.update.service</field>
         <field name="view_mode">tree,form</field>
     </record>
