@@ -2,9 +2,9 @@
    :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
    :alt: License: AGPL-3
 
-=================================
+====================
 Currency Rate Update (SBIF Chile)
-==================================
+====================
 
 Base module to download exchange rates automatically from the SBIF API for Chilean currencies (UF, UTM, USD and EUR).
 
