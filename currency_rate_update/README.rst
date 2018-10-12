@@ -2,23 +2,26 @@
    :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
    :alt: License: AGPL-3
 
-====================
-Currency Rate Update
-====================
+=================================
+Currency Rate Update (SBIF Chile)
+==================================
 
-Base module to download exchange rates automatically from the Internet.
+Base module to download exchange rates automatically from the SBIF API for Chilean currencies (UF, UTM, USD and EUR).
 
-This module download exchange rates automatically from European central bank service (ported by Grzegorz Grzelak - OpenGLOBE.pl)
-The reference rates are based on the regular daily query procedure between central banks within and outside the European System of Central Banks, which normally takes place at 2.15 p.m. (14:15) ECB time. Source in EUR. http://www.ecb.europa.eu/stats/exchange/eurofxref/html/index.en.html
+This modules is a fork from the original module that downloads exchange rates automatically from European central bank service (ported by Grzegorz Grzelak - OpenGLOBE.pl)
+
+The reference rates are taken from the API provided by SBIF Chile (https://api.sbif.cl) 
 
 Configuration
 =============
 
-To configure the module, go to *Accounting > Configuration > Multi-currencies > Rate Auto-download* and create one or several services to download rates from the Internet.
+Installing this module will create two additional currencies for Chile: UF (Unidad de Fomento) and UTM (Unidad Tributaria Mensual).
 
-Then, go to the page *Accounting > Configuration > Settings* and, in the section *Multi Currencies*, make sure that the option *Automatic Currency Rates Download* is enabled.
+This module must be used jointly with the OCA module "Currency Rate Inverted" which is used in order to set CLP as an "Inverted Rate Currency". 
 
-In developper mode, in the menu *Settings > Technical > Scheduled Actions*, make sure that the action *Currency Rate Update* is active. If you want to run it immediately, use the button *Run Manually*.
+To configure the module, follow the configuration instructions for "Currency Rate Update". 
+
+to configure periodic update, activate Developer Mode in Odoo and then, in the menu *Settings > Technical > Scheduled Actions*, make sure that the action *Currency Rate Update* is active. If you want to run it immediately, use the button *Run Manually*.
 
 This module is compatible with OCA module 'currency_rate_inverted' also found in OCA/currency repository, that allows to maintain exchange rates in inverted format, helping to resolve rounding issues.
 
@@ -40,22 +43,10 @@ currency found in database.
 Know issues / Roadmap
 =====================
 
-To fix:
-
-* Bank of Canada
-
 Roadmap:
 
-* Google Finance.
-* Updated daily from Citibank N.A., source in EUR. Information may be delayed.
-  This is parsed from an HTML page, so it may be broken at anytime.
-
-Bug Tracker
-===========
-
-Bugs are tracked on `GitHub Issues <https://github.com/OCA/account-financial-tools/issues>`_.
-In case of trouble, please check there if your issue has already been reported.
-If you spotted it first, help us smashing it by providing a detailed and welcomed feedback.
+* API Key as a COnfig Parameter
+* Correct update from previous day
 
 Credits
 =======
@@ -84,6 +75,7 @@ Contributors
 * Daniel Dico <ddico@oerp.ca> (BOC)
 * Dmytro Katyukha <firemage.dima@gmail.com>
 * Jesús Ventosinos Mayor <jesus@comunitea.com>
+* Rodolfo Bermúdez Neubauer (rbermudez@intellego-bi.com)
 
 Maintainer
 ----------
@@ -92,7 +84,7 @@ Maintainer
    :alt: Odoo Community Association
    :target: https://odoo-community.org
 
-This module is maintained by the OCA.
+The original "Currency Rate Update" module is maintained by the OCA. This is a fork of that model for Chilean currencies using the SBIF API.
 
 OCA, or the Odoo Community Association, is a nonprofit organization whose
 mission is to support the collaborative development of Odoo features and
