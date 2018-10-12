@@ -117,7 +117,7 @@ class CurrencyRateUpdateService(models.Model):
         ('months', 'Month(s)')],
         string='Frecuencua de actualización',
         default='days')
-    interval_number = fields.Integer(string='Frequencia', default=1)
+    interval_number = fields.Integer(string='Frecuencia', default=1)
     next_run = fields.Date(string='Próxima ejecución', default=fields.Date.today())
 
     _sql_constraints = [('curr_service_unique',
