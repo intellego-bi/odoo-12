@@ -8,7 +8,7 @@ Currency Rate Update (SBIF Chile)
 
 Base module to download exchange rates automatically from the SBIF API for Chilean currencies (UF, UTM, USD and EUR).
 
-This modules is a fork from the original module that downloads exchange rates automatically from European central bank service (ported by Grzegorz Grzelak - OpenGLOBE.pl)
+This module is a fork from the original OCA module that downloads exchange rates automatically from European central bank service (ported by Grzegorz Grzelak - OpenGLOBE.pl)
 
 The reference rates are taken from the API provided by SBIF Chile (https://api.sbif.cl) 
 
