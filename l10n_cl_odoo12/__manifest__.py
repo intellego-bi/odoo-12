@@ -4,12 +4,12 @@
 # Copyright (c) 2018 Intellego-BI.com (https://intellego-bi.com).
 
 {
-    'name': 'Chile - Accounting Odoo 12',
+    'name': 'Chile :: Chart of Accounts & Taxes - Odoo 12',
     'version': '12.0',
     'description': """
-Chilean accounting chart and tax localization - Odoo 12
-=======================================================
-Plan contable chileno para Odoo 12 
+Chilean Chart of Accounts and Tax Localization - Odoo 12
+=========================================================
+Plan de Cuentas e Impuestos para Chile - Odoo 12 
 
     """,
     'author': 'Intellego-BI.com',
@@ -20,5 +20,6 @@ Plan contable chileno para Odoo 12
         'data/l10n_cl_chart_data.xml',
         'data/account_data.xml',
         'data/account_tax_data.xml',
+        'data/account_chart_template_data.yml',
     ],
 }
