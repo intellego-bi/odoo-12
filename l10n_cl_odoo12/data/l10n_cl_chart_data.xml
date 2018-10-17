@@ -904,7 +904,7 @@
     </record>
 	
     <record id="41010100" model="account.account.template">
-        <field name="name">Ventas Bolsa Comercio</field>
+        <field name="name">Ventas de Productos</field>
         <field name="code">41010100</field>
         <field name="reconcile" eval="False"/>
         <field ref="account.data_account_type_revenue" name="user_type_id"/>
@@ -912,7 +912,7 @@
     </record>
 
     <record id="41010200" model="account.account.template">
-        <field name="name">Ventas Bolsa Industrial</field>
+        <field name="name">Ventas de Servicios</field>
         <field name="code">41010200</field>
         <field name="reconcile" eval="False"/>
         <field ref="account.data_account_type_revenue" name="user_type_id"/>
@@ -920,32 +920,8 @@
     </record>
 	
     <record id="41010300" model="account.account.template">
-        <field name="name">Ventas Otras Bolsas</field>
+        <field name="name">Ventas de Residuos Industriales</field>
         <field name="code">41010300</field>
-        <field name="reconcile" eval="False"/>
-        <field ref="account.data_account_type_revenue" name="user_type_id"/>
-        <field name="chart_template_id" ref="cl_chart_template_v12"/>
-    </record>
-	
-    <record id="41010400" model="account.account.template">
-        <field name="name">Ventas Otros Productos</field>
-        <field name="code">41010400</field>
-        <field name="reconcile" eval="False"/>
-        <field ref="account.data_account_type_revenue" name="user_type_id"/>
-        <field name="chart_template_id" ref="cl_chart_template_v12"/>
-    </record>
-	
-    <record id="41010500" model="account.account.template">
-        <field name="name">Ventas por Totales</field>
-        <field name="code">41010500</field>
-        <field name="reconcile" eval="False"/>
-        <field ref="account.data_account_type_revenue" name="user_type_id"/>
-        <field name="chart_template_id" ref="cl_chart_template_v12"/>
-    </record>
-
-    <record id="41010600" model="account.account.template">
-        <field name="name">Ventas Residuos</field>
-        <field name="code">41010600</field>
         <field name="reconcile" eval="False"/>
         <field ref="account.data_account_type_revenue" name="user_type_id"/>
         <field name="chart_template_id" ref="cl_chart_template_v12"/>
@@ -1040,7 +1016,7 @@
     </record>
 	
     <record id="51010100" model="account.account.template">
-        <field name="name">Costo de Ventas Bolsa Comercio</field>
+        <field name="name">Costo de Venta Productos</field>
         <field name="code">51010100</field>
         <field name="reconcile" eval="False"/>
         <field ref="account.data_account_type_direct_costs" name="user_type_id"/>
@@ -1048,7 +1024,7 @@
     </record>
 
     <record id="51010200" model="account.account.template">
-        <field name="name">Costo de Ventas Bolsa Industrial</field>
+        <field name="name">Costo de Ventas Servicios</field>
         <field name="code">51010200</field>
         <field name="reconcile" eval="False"/>
         <field ref="account.data_account_type_direct_costs" name="user_type_id"/>
@@ -1056,32 +1032,8 @@
     </record>
 	
     <record id="51010300" model="account.account.template">
-        <field name="name">Costo de Ventas Otras Bolsas</field>
-        <field name="code">51010300</field>
-        <field name="reconcile" eval="False"/>
-        <field ref="account.data_account_type_direct_costs" name="user_type_id"/>
-        <field name="chart_template_id" ref="cl_chart_template_v12"/>
-    </record>
-	
-    <record id="51010400" model="account.account.template">
-        <field name="name">Costo de Ventas Otros Productos</field>
-        <field name="code">51010400</field>
-        <field name="reconcile" eval="False"/>
-        <field ref="account.data_account_type_direct_costs" name="user_type_id"/>
-        <field name="chart_template_id" ref="cl_chart_template_v12"/>
-    </record>
-	
-    <record id="51010500" model="account.account.template">
-        <field name="name">Costo de Ventas por Totales</field>
-        <field name="code">51010500</field>
-        <field name="reconcile" eval="False"/>
-        <field ref="account.data_account_type_direct_costs" name="user_type_id"/>
-        <field name="chart_template_id" ref="cl_chart_template_v12"/>
-    </record>
-
-    <record id="51010600" model="account.account.template">
         <field name="name">Costo de Ventas Residuos</field>
-        <field name="code">51010600</field>
+        <field name="code">51010300</field>
         <field name="reconcile" eval="False"/>
         <field ref="account.data_account_type_direct_costs" name="user_type_id"/>
         <field name="chart_template_id" ref="cl_chart_template_v12"/>
