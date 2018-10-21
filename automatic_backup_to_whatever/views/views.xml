@@ -1,0 +1,193 @@
+<odoo>
+  <data>
+      <record id="backup_configuration_view_tree" model="ir.ui.view">
+        <field name="name">automatic.backup.configuration.view.tree</field>
+        <field name="model">automatic_backup_to_whatever.configuration</field>
+        <field name="arch" type="xml">
+            <tree string="Backup Configuration">
+                <field name="name"/>
+                <field name="backup_type"/>
+                <field name="active"/>
+            </tree>
+        </field>
+      </record>
+
+      <record id="backup_configuration_view_form" model="ir.ui.view">
+        <field name="name">automatic.backup.configuration.view.form</field>
+        <field name="model">automatic_backup_to_whatever.configuration</field>
+        <field name="arch" type="xml">
+            <form string="Backup Configuration">
+                <header>
+                    <button type="object" string="Backup" name="btn_action_backup" class="btn btn-primary" attrs="{'invisible': [('state','=','disabled')]}"/>
+                    <button string="deactivate" type="object" name="deactivate_progressbar" attrs="{'invisible': [('state','=','disabled')]}"/>
+                    <button string="activate" type="object" name="activate_progressbar" attrs="{'invisible': [('state','=','active')]}"/>
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name" class="oe_edit_only"/>
+                        <h1><field name="name"/></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="cron_id" readonly="1"/>
+                        </group>
+                        <group>
+                            <field name="success_mail"/>
+                            <field name="error_mail"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group>
+                            <field name="backup_type"/>
+                            <field name="upload_path"/>
+                            <field name="show_s3" invisible="1"/>
+                            <field name="show_dropbox" invisible="1"/>
+                            <field name="show_owncloud" invisible="1"/>
+                            <field name="show_access_key" invisible="1"/>
+                            <field name="show_secret_key" invisible="1"/>
+                            <field name="show_login_cred" invisible="1"/>
+                            <field name="show_sftp" invisible="1"/>
+                            <field name="show_url" invisible="1"/>
+                            <field name="show_backblaze" invisible="1"/>
+                        </group>
+                        <group>
+                            <field name="schedule_number"/>
+                            <field name="schedule_frequently"/>
+                            <field name="next_backup_time"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Config">
+                            <group>
+                                <group>
+                                    <field name="access_key_id" attrs="{'invisible': [('show_access_key','=',False)]}"/>
+                                    <field name="secret_access_key" attrs="{'invisible': [('show_secret_key','=',False)]}" password="1"/>
+                                    <field name="s3_bucket_name" attrs="{'invisible': [('show_s3','=',False)]}"/>
+                                    <field name="cloud_url" attrs="{'invisible': [('show_url','=',False)]}"/>
+                                    <field name="cloud_port" attrs="{'invisible': [('show_sftp','=',False)]}"/>
+                                    <field name="cloud_username" attrs="{'invisible': [('show_login_cred','=',False)]}"/>
+                                    <field name="cloud_password" attrs="{'invisible': [('show_login_cred','=',False)]}" password="1"/>
+                                    <field name="account_id" attrs="{'invisible': [('show_backblaze','=',False)]}"/>
+                                    <field name="app_key" attrs="{'invisible': [('show_backblaze','=',False)]}" password="1"/>
+                                    <field name="bucket_id" attrs="{'invisible': [('show_backblaze','=',False)]}" />
+
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Information">
+                            <group attrs="{'invisible': [('show_s3','=',False)]}">
+                                <h2 colspan="2">IAM Policy</h2>
+<textarea height="170">{<br/>
+    "Version": "2012-10-17",<br/>
+    "Statement": [{<br/>
+            "Sid": "WhatEverUWant",<br/>
+            "Effect": "Allow",<br/>
+            "Action": "s3:PutObject",<br/>
+            "Resource": "arn:aws:s3:::bucketname/*"<br/>
+    }]<br/>
+}</textarea>
+                            </group>
+                            <group attrs="{'invisible': [('show_dropbox','=',False)]}">
+                                <p>Create an app under your own dropbox account in the "App Console". (https://www.dropbox.com/developers/apps)</p><br/>
+                                <p>Use only the option to access "App folder". Then click the "generate access token" button.</p><br/>
+                                <p>Paste the Access Key into odoo.</p><br/>
+                                <p><i>Info: All uploads are seperated into a folder called "Apps/app_name/"</i></p>
+                            </group>
+                            <group attrs="{'invisible': [('show_owncloud','=',False)]}">
+                                <p>If using go to your Account->Personal->Security and add a new app. Generate the password and insert it into the form</p><br/>
+                            </group>
+                            <group attrs="{'invisible': [('show_backblaze','=',False)]}">
+                                <p>Go to your Account --> Buckests. Click on "Show Account ID and Application Key and generate a new Application Key. Paste the information into odoo.
+                                <br/>Under Account --> Buckets you also can find the bucket-ID!</p><br/>
+                            </group>
+                        </page>
+                        <page string="Latest">
+                            <group>
+                                <field name="last_backup"/>
+                                <field name="last_path"/>
+                                <field name="last_message"/>
+                            </group>
+                        </page>
+                    </notebook>
+
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+      </record>
+
+    <record id="backup_configuration_view_search" model="ir.ui.view">
+        <field name="name">automatic.backup.configuration.search</field>
+        <field name="model">automatic_backup_to_whatever.configuration</field>
+        <field name="arch" type="xml">
+            <search string="Backup Configuration">
+                <field name="active"/>
+                <separator/>
+                <filter string="All" name="all" domain="['|', ('active', '=', False), ('active', '=', True)]"/>
+                <filter name="active" string="Active" domain="[('active', '=', True)]"/>
+                <filter name="unactive" string="Inactive" domain="[('active', '=', False)]"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="backup_configuration_action" model="ir.actions.act_window">
+        <field name="name">Backup Configuration</field>
+        <field name="res_model">automatic_backup_to_whatever.configuration</field>
+        <field name="view_type">form</field>
+        <field name='view_mode'>tree,form</field>
+        <field name="view_id" ref="backup_configuration_view_tree"/>
+        <field name="context">{"search_default_all":1}</field>
+        <field name="search_view_id" ref="backup_configuration_view_search"/>
+    </record>
+
+    <menuitem id="main_menu_backup" name="Backup" parent="base.menu_custom"/>
+    <menuitem id="backup_configuration" name="Backup Configuration"
+              action="backup_configuration_action"
+              parent="main_menu_backup" sequence="1"/>
+
+      <record id="backup_configuration_success_mail" model="mail.template">
+          <field name="name">Backup Success Email-Template</field>
+          <field name="email_from">${object.company_id and object.company_id.email or ''}</field>
+          <field name="subject">Succesful Backup: ${object.name}</field>
+          <field name="email_to">${object.success_mail.login}</field>
+          <field name="lang">${object.success_mail.lang}</field>
+          <field name="model_id" ref="automatic_backup_to_whatever.model_automatic_backup_to_whatever_configuration"/>
+          <field name="auto_delete" eval="True"/>
+          <field name="body_html">
+                <![CDATA[
+              <p>Dear ${object.success_mail.name},<br/><br/>
+              the "${object.name}" Backup was successful.<br/>
+              You can find the file under ${object.last_path}.<br/><br/><br/>
+
+              This is a automatic message. Don´t replying.
+              </p>
+            ]]>
+          </field>
+       </record>
+
+       <record id="backup_configuration_error_mail" model="mail.template">
+          <field name="name">Backup Error Email-Template</field>
+          <field name="email_from">${object.company_id and object.company_id.email or ''}</field>
+          <field name="subject">Backup failed: ${object.name}</field>
+          <field name="email_to">${object.error_mail.login}</field>
+          <field name="lang">${object.error_mail.lang}</field>
+          <field name="model_id" ref="automatic_backup_to_whatever.model_automatic_backup_to_whatever_configuration"/>
+          <field name="auto_delete" eval="True"/>
+          <field name="body_html">
+                <![CDATA[
+              <p>Dear ${object.error_mail.name},<br/><br/>
+              the "${object.name}" Backup failed.<br/>
+              Please check whats wrong manually. You can find the error-message under settings-technical-backup configuration-your backup-field "Last message"<br/><br/><br/>
+
+              This is a automatic message. Don´t replying.
+              </p>
+            ]]>
+          </field>
+       </record>
+
+  </data>
+</odoo>

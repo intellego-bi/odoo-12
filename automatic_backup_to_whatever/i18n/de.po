@@ -1,0 +1,397 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* automatic_backup_to_whatever
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-03-06 15:23+0000\n"
+"PO-Revision-Date: 2018-03-06 16:38+0100\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.0.6\n"
+"Last-Translator: \n"
+"Language: de\n"
+
+#. module: automatic_backup_to_whatever
+#: model:mail.template,body_html:automatic_backup_to_whatever.backup_configuration_error_mail
+msgid ""
+"\n"
+"                \n"
+"              <p>Dear ${object.error_mail.name},<br/><br/>\n"
+"              the \"${object.name}\" Backup failed.<br/>\n"
+"              Please check whats wrong manually. You can find the error-"
+"message under settings-technical-backup configuration-your backup-field "
+"\"Last message\"<br/><br/><br/>\n"
+"\n"
+"              This is a automatic message. Don´t replying.\n"
+"              </p>\n"
+"            \n"
+"          "
+msgstr ""
+"\n"
+"                \n"
+"              <p>Hallo ${object.error_mail.name},<br/><br/>\n"
+"              das \"${object.name}\" Backup ist fehlgeschlagen.<br/>\n"
+"              Bitte überprüfen Sie diese Aktion manuell. Sie können die "
+"Fehlermeldung unter Einstellung-Technisch-Backup Konfiguration-dein  Backup-"
+"Feld \"Letzte Nachtricht\" sehen.<br/><br/><br/>\n"
+"\n"
+"              Dies ist eine automatische Nachricht. Bitte schreiben Sie "
+"hier nicht zurück.\n"
+"              </p>\n"
+"            \n"
+"          "
+
+#. module: automatic_backup_to_whatever
+#: model:mail.template,body_html:automatic_backup_to_whatever.backup_configuration_success_mail
+msgid ""
+"\n"
+"                \n"
+"              <p>Dear ${object.success_mail.name},<br/><br/>\n"
+"              the \"${object.name}\" Backup was successful.<br/>\n"
+"              You can find the file under ${object.last_path}.<br/><br/><br/"
+">\n"
+"\n"
+"              This is a automatic message. Don´t replying.\n"
+"              </p>\n"
+"            \n"
+"          "
+msgstr ""
+"\n"
+"                \n"
+"              <p>Hallo  ${object.success_mail.name},<br/><br/>\n"
+"              das \"${object.name}\" Backup war erfolgreich.<br/>\n"
+"              Sie können die Datei unter dem Pfad ${object.last_path} "
+"finden.<br/><br/><br/>\n"
+"\n"
+"              Dies ist eine automatische Nachricht. Bitte schreiben Sie "
+"hier nicht zurück.\n"
+"              </p>\n"
+"            \n"
+"          "
+
+#. module: automatic_backup_to_whatever
+#: model:ir.ui.view,arch_db:automatic_backup_to_whatever.backup_configuration_view_form
+msgid ""
+"<i>Info: All uploads are seperated into a folder called \"Apps/app_name/\"</"
+"i>"
+msgstr ""
+"<i>Info: Alle Uploads werden in einen seperaten Ordner hochgeladen. Unter "
+"\"Apps/app_name/\"</i>"
+
+#. module: automatic_backup_to_whatever
+#: model:ir.model.fields,field_description:automatic_backup_to_whatever.field_automatic_backup_to_whatever_configuration_access_key_id
+msgid "Access Key"
+msgstr "Access Key"
+
+#. module: automatic_backup_to_whatever
+#: selection:automatic_backup_to_whatever.configuration,state:0
+#: model:ir.ui.view,arch_db:automatic_backup_to_whatever.backup_configuration_view_search
+msgid "Active"
+msgstr "Aktiv"
+
+#. module: automatic_backup_to_whatever
+#: model:ir.ui.view,arch_db:automatic_backup_to_whatever.backup_configuration_view_search
+msgid "All"
+msgstr "Alle"
+
+#. module: automatic_backup_to_whatever
+#: selection:automatic_backup_to_whatever.configuration,backup_type:0
+msgid "Amazon Web-Service S3"
+msgstr "Amazon Web-Service S3"
+
+#. module: automatic_backup_to_whatever
+#: model:ir.ui.menu,name:automatic_backup_to_whatever.main_menu_backup
+#: model:ir.ui.view,arch_db:automatic_backup_to_whatever.backup_configuration_view_form
+msgid "Backup"
+msgstr "Backup"
+
+#. module: automatic_backup_to_whatever
+#: model:ir.actions.act_window,name:automatic_backup_to_whatever.backup_configuration_action
+#: model:ir.model,name:automatic_backup_to_whatever.model_automatic_backup_to_whatever_configuration
+#: model:ir.ui.menu,name:automatic_backup_to_whatever.backup_configuration
+#: model:ir.ui.view,arch_db:automatic_backup_to_whatever.backup_configuration_view_form
+#: model:ir.ui.view,arch_db:automatic_backup_to_whatever.backup_configuration_view_search
+#: model:ir.ui.view,arch_db:automatic_backup_to_whatever.backup_configuration_view_tree
+msgid "Backup Configuration"
+msgstr "Backup Konfiguration"
+
+#. module: automatic_backup_to_whatever
+#: model:ir.model.fields,field_description:automatic_backup_to_whatever.field_automatic_backup_to_whatever_configuration_backup_type
+msgid "Backup Type"
+msgstr "Backup Typ"
+
+#. module: automatic_backup_to_whatever
+#: model:mail.template,subject:automatic_backup_to_whatever.backup_configuration_error_mail
+msgid "Backup failed: ${object.name}"
+msgstr "Backup fehlgeschlagen: ${object.name}"
+
+#. module: automatic_backup_to_whatever
+#: model:ir.model.fields,field_description:automatic_backup_to_whatever.field_automatic_backup_to_whatever_configuration_s3_bucket_name
+msgid "BucketName"
+msgstr "Bucket-Name"
+
+#. module: automatic_backup_to_whatever
+#: model:ir.ui.view,arch_db:automatic_backup_to_whatever.backup_configuration_view_form
+msgid "Config"
+msgstr "Konfiguration"
+
+#. module: automatic_backup_to_whatever
+#: model:ir.ui.view,arch_db:automatic_backup_to_whatever.backup_configuration_view_form
+msgid ""
+"Create an app under your own dropbox account in the \"App Console\". "
+"(https://www.dropbox.com/developers/apps)"
+msgstr ""
+"Erstellen Sie eine App unter Ihrem Dropbox Account. Zu finden in der \"App "
+"Console\". (https://www.dropbox.com/developers/apps)"
+
+#. module: automatic_backup_to_whatever
+#: model:ir.model.fields,field_description:automatic_backup_to_whatever.field_automatic_backup_to_whatever_configuration_cron_id
+msgid "Cron"
+msgstr "Cron"
+
+#. module: automatic_backup_to_whatever
+#: selection:automatic_backup_to_whatever.configuration,schedule_frequently:0
+msgid "Days"
+msgstr "Tage"
+
+#. module: automatic_backup_to_whatever
+#: selection:automatic_backup_to_whatever.configuration,state:0
+msgid "Disabled"
+msgstr "Deaktiviert"
+
+#. module: automatic_backup_to_whatever
+#: model:ir.model.fields,field_description:automatic_backup_to_whatever.field_automatic_backup_to_whatever_configuration_display_name
+msgid "Display Name"
+msgstr "Anzeigename"
+
+#. module: automatic_backup_to_whatever
+#: selection:automatic_backup_to_whatever.configuration,backup_type:0
+msgid "Dropbox"
+msgstr "Dropbox"
+
+#. module: automatic_backup_to_whatever
+#: model:ir.model.fields,field_description:automatic_backup_to_whatever.field_automatic_backup_to_whatever_configuration_error_mail
+msgid "Error Mail"
+msgstr "Fehler EMail"
+
+#. module: automatic_backup_to_whatever
+#: model:ir.model.fields,field_description:automatic_backup_to_whatever.field_automatic_backup_to_whatever_configuration_schedule_frequently
+msgid "Every"
+msgstr "Jede(n)"
+
+#. module: automatic_backup_to_whatever
+#: model:ir.ui.view,arch_db:automatic_backup_to_whatever.backup_configuration_view_form
+msgid "IAM Policy"
+msgstr "IAM Policy"
+
+#. module: automatic_backup_to_whatever
+#: model:ir.ui.view,arch_db:automatic_backup_to_whatever.backup_configuration_view_form
+msgid ""
+"If using go to your Account-&gt;Personal-&gt;Security and add a new app. "
+"Generate the password and insert it into the form"
+msgstr ""
+"Gehen Sie unter Account-&gt;Personal-&gt;Security und fügen Sie eine neue "
+"App hinzu. Generieren Sie ein Password und fügen Sie dieses hier hinzu."
+
+#. module: automatic_backup_to_whatever
+#: model:ir.ui.view,arch_db:automatic_backup_to_whatever.backup_configuration_view_search
+msgid "Inactive"
+msgstr "Inaktiv"
+
+#. module: automatic_backup_to_whatever
+#: model:ir.ui.view,arch_db:automatic_backup_to_whatever.backup_configuration_view_form
+msgid "Information"
+msgstr "Informationen"
+
+#. module: automatic_backup_to_whatever
+#: model:ir.model.fields,field_description:automatic_backup_to_whatever.field_automatic_backup_to_whatever_configuration_last_backup
+msgid "Last Backup"
+msgstr "letztes Backup"
+
+#. module: automatic_backup_to_whatever
+#: model:ir.model.fields,field_description:automatic_backup_to_whatever.field_automatic_backup_to_whatever_configuration_last_message
+msgid "Last Message"
+msgstr "letzte Nachricht"
+
+#. module: automatic_backup_to_whatever
+#: model:ir.model.fields,field_description:automatic_backup_to_whatever.field_automatic_backup_to_whatever_configuration___last_update
+msgid "Last Modified on"
+msgstr "zuletzt verändert"
+
+#. module: automatic_backup_to_whatever
+#: model:ir.model.fields,field_description:automatic_backup_to_whatever.field_automatic_backup_to_whatever_configuration_last_path
+msgid "Last Path"
+msgstr "letzter Pfad"
+
+#. module: automatic_backup_to_whatever
+#: model:ir.ui.view,arch_db:automatic_backup_to_whatever.backup_configuration_view_form
+msgid "Latest"
+msgstr "Letzte Aktiondaten"
+
+#. module: automatic_backup_to_whatever
+#: model:ir.model.fields,field_description:automatic_backup_to_whatever.field_automatic_backup_to_whatever_configuration_name
+msgid "Name"
+msgstr "Name"
+
+#. module: automatic_backup_to_whatever
+#: model:ir.model.fields,field_description:automatic_backup_to_whatever.field_automatic_backup_to_whatever_configuration_next_backup_time
+msgid "Next Backup Time"
+msgstr "nächste  Backup Zeit"
+
+#. module: automatic_backup_to_whatever
+#: model:ir.model.fields,field_description:automatic_backup_to_whatever.field_automatic_backup_to_whatever_configuration_cloud_password
+msgid "Password"
+msgstr "Passwort"
+
+#. module: automatic_backup_to_whatever
+#: model:ir.ui.view,arch_db:automatic_backup_to_whatever.backup_configuration_view_form
+msgid "Paste the Access Key into odoo."
+msgstr "Füge den Access Key in odoo hinein."
+
+#. module: automatic_backup_to_whatever
+#: model:ir.model.fields,field_description:automatic_backup_to_whatever.field_automatic_backup_to_whatever_configuration_upload_path
+msgid "Path to upload"
+msgstr "Uploadpfad"
+
+#. module: automatic_backup_to_whatever
+#: model:ir.model.fields,field_description:automatic_backup_to_whatever.field_automatic_backup_to_whatever_configuration_cloud_port
+msgid "Port"
+msgstr "Port"
+
+#. module: automatic_backup_to_whatever
+#: selection:automatic_backup_to_whatever.configuration,backup_type:0
+msgid "SFTP"
+msgstr "SFTP"
+
+#. module: automatic_backup_to_whatever
+#: model:ir.model.fields,field_description:automatic_backup_to_whatever.field_automatic_backup_to_whatever_configuration_schedule_number
+msgid "Schedule Number"
+msgstr "Wiederholungsnummer"
+
+#. module: automatic_backup_to_whatever
+#: model:ir.model.fields,field_description:automatic_backup_to_whatever.field_automatic_backup_to_whatever_configuration_secret_access_key
+msgid "Secret Key"
+msgstr "Secret Key"
+
+#. module: automatic_backup_to_whatever
+#: model:ir.model.fields,field_description:automatic_backup_to_whatever.field_automatic_backup_to_whatever_configuration_show_access_key
+msgid "Show Access Key"
+msgstr "Show Access Key"
+
+#. module: automatic_backup_to_whatever
+#: model:ir.model.fields,field_description:automatic_backup_to_whatever.field_automatic_backup_to_whatever_configuration_show_dropbox
+msgid "Show Dropbox"
+msgstr "Show Dropbox"
+
+#. module: automatic_backup_to_whatever
+#: model:ir.model.fields,field_description:automatic_backup_to_whatever.field_automatic_backup_to_whatever_configuration_show_login_cred
+msgid "Show Login Cred"
+msgstr "Show Login Cred"
+
+#. module: automatic_backup_to_whatever
+#: model:ir.model.fields,field_description:automatic_backup_to_whatever.field_automatic_backup_to_whatever_configuration_show_owncloud
+msgid "Show Owncloud"
+msgstr "Show Owncloud"
+
+#. module: automatic_backup_to_whatever
+#: model:ir.model.fields,field_description:automatic_backup_to_whatever.field_automatic_backup_to_whatever_configuration_show_s3
+msgid "Show S3"
+msgstr "Show S3"
+
+#. module: automatic_backup_to_whatever
+#: model:ir.model.fields,field_description:automatic_backup_to_whatever.field_automatic_backup_to_whatever_configuration_show_secret_key
+msgid "Show Secret Key"
+msgstr "Show Secret Key"
+
+#. module: automatic_backup_to_whatever
+#: model:ir.model.fields,field_description:automatic_backup_to_whatever.field_automatic_backup_to_whatever_configuration_show_sftp
+msgid "Show Sftp"
+msgstr "Show Sftp"
+
+#. module: automatic_backup_to_whatever
+#: model:ir.model.fields,field_description:automatic_backup_to_whatever.field_automatic_backup_to_whatever_configuration_state
+msgid "State"
+msgstr "Status"
+
+#. module: automatic_backup_to_whatever
+#: model:mail.template,subject:automatic_backup_to_whatever.backup_configuration_success_mail
+msgid "Succesful Backup: ${object.name}"
+msgstr "Erfolgreicher Backup: ${object.name}"
+
+#. module: automatic_backup_to_whatever
+#: model:ir.model.fields,field_description:automatic_backup_to_whatever.field_automatic_backup_to_whatever_configuration_success_mail
+msgid "Success Mail"
+msgstr "Erfolgreich EMail"
+
+#. module: automatic_backup_to_whatever
+#: model:ir.model.fields,field_description:automatic_backup_to_whatever.field_automatic_backup_to_whatever_configuration_cloud_url
+msgid "URL"
+msgstr "URL"
+
+#. module: automatic_backup_to_whatever
+#: model:ir.ui.view,arch_db:automatic_backup_to_whatever.backup_configuration_view_form
+msgid ""
+"Use only the option to access \"App folder\". Then click the \"generate "
+"access token\" button."
+msgstr ""
+"Nutze nur die Option \"App folder\". Danach klicke auf \"generate access "
+"token\"."
+
+#. module: automatic_backup_to_whatever
+#: model:ir.model.fields,field_description:automatic_backup_to_whatever.field_automatic_backup_to_whatever_configuration_cloud_username
+msgid "Username"
+msgstr "Benutzername"
+
+#. module: automatic_backup_to_whatever
+#: selection:automatic_backup_to_whatever.configuration,schedule_frequently:0
+msgid "Weeks"
+msgstr "Wochen"
+
+#. module: automatic_backup_to_whatever
+#: model:ir.ui.view,arch_db:automatic_backup_to_whatever.backup_configuration_view_form
+msgid "activate"
+msgstr "aktivieren"
+
+#. module: automatic_backup_to_whatever
+#: model:ir.ui.view,arch_db:automatic_backup_to_whatever.backup_configuration_view_form
+msgid "deactivate"
+msgstr "deaktivieren"
+
+#. module: automatic_backup_to_whatever
+#: model:ir.model.fields,field_description:automatic_backup_to_whatever.field_automatic_backup_to_whatever_configuration_active
+msgid "is Active"
+msgstr "ist aktiv"
+
+#. module: automatic_backup_to_whatever
+#: selection:automatic_backup_to_whatever.configuration,backup_type:0
+msgid "ownCloud/nextCloud"
+msgstr "ownCloud/nextCloud"
+
+#. module: automatic_backup_to_whatever
+#: model:ir.ui.view,arch_db:automatic_backup_to_whatever.backup_configuration_view_form
+msgid ""
+"{<br/>\n"
+"    \"Version\": \"2012-10-17\",<br/>\n"
+"    \"Statement\": [{<br/>\n"
+"            \"Sid\": \"WhatEverUWant\",<br/>\n"
+"            \"Effect\": \"Allow\",<br/>\n"
+"            \"Action\": \"s3:PutObject\",<br/>\n"
+"            \"Resource\": \"arn:aws:s3:::bucketname/*\"<br/>\n"
+"    }]<br/>\n"
+"}"
+msgstr ""
+"{<br/>\n"
+"    \"Version\": \"2012-10-17\",<br/>\n"
+"    \"Statement\": [{<br/>\n"
+"            \"Sid\": \"WhatEverUWant\",<br/>\n"
+"            \"Effect\": \"Allow\",<br/>\n"
+"            \"Action\": \"s3:PutObject\",<br/>\n"
+"            \"Resource\": \"arn:aws:s3:::bucketname/*\"<br/>\n"
+"    }]<br/>\n"
+"}"
