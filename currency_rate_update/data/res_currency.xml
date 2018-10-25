@@ -10,6 +10,8 @@
         <field name="currency_unit_label">Peso</field>
         <field name="currency_subunit_label">Centavos</field>
     </record>
+  </data>
+  <data>
     <record id="base.UF" model="res.currency">
         <field name="name">UF</field>
         <field name="symbol">UF</field>
