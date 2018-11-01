@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>						
+<odoo>						
+    <data>						
+
+     <!-- Tipos de Faltas -->
+     <!-- Caso is continued cuenta los fines de semana -->
+<!--        <record id="hr_holidays_status_licencia" model="hr.holidays.status">
+            <field name="name">LICENCIA</field>
+            <field name="limit">True</field>
+            <field name="is_continued">True</field>
+        </record>
+
+        <record id="hr_holidays_sin_pago" model="hr.holidays.status">
+            <field name="name">FALTA</field>
+            <field name="limit">True</field>
+        </record> -->
+        <record id="hr_leave_licencia" model="hr.leave.type">
+		    <field name="name">Licencia Médica</field>
+			<field name="request_unit">hour</field>
+			<field name="time_type">leave</field>
+			<field name="validation_type">hr</field>
+			<field name="color_name">violet</field>
+			<field name="allocation_type">fixed_allocation</field>
+			<field name="unpaid">False</field>
+			<field name="is_continued">True</field>
+    	</record>
+
+        <record id="hr_leave_sin_pago" model="hr.leave.type">
+		    <field name="name">Falta No-Remunerada</field>
+			<field name="request_unit">hour</field>
+			<field name="time_type">leave</field>
+			<field name="validation_type">hr</field>
+			<field name="color_name">red</field>
+			<field name="allocation_type">no</field>
+			<field name="unpaid">True</field>
+			<field name="is_continued">False</field>
+    	</record>
+	</data> 
+</odoo>                     

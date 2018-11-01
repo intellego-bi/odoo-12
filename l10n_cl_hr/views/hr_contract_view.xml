@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="hr_contract_chile_view" model="ir.ui.view">
+        <field name="name">hr.contract.chile.view</field>
+        <field name="model">hr.contract</field>
+        <field name="inherit_id" ref="hr_contract.hr_contract_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='wage']" position="after">
+                <field name="otros_imp" string="Otros Imponible" invisible="1"/>
+                <field name="otro_no_imp" string="Otros No Imponible" invisible="1"/>
+                <div name="colacion">
+                    <field name="colacion"/>
+                    <!-- <label string="Asig. de Colación" for="colacion"/> -->
+                </div>
+                <div name="movilizacion">
+                    <field name="movilizacion"/>
+                    <!-- <label string="Asig. de Movilización" for="movilizacion"/> -->
+                </div>
+                <div name="viatico_santiago">
+                    <field name="viatico_santiago"/>
+                    <!--<label for="viatico_santiago" string="Asig. de Viático"/> -->
+			    </div>
+                <div name="anticipo_sueldo">
+                    <field name="anticipo_sueldo"/>
+                    <!-- <label string="Anticipo de Sueldo" for="anticipo_sueldo"/> -->
+				</div>
+            </xpath>
+
+            <xpath expr="//field[@name='type_id']" posi0tion="replace">
+                <field name="type_id" select="3"/>
+            </xpath>
+            <xpath expr="//field[@name='journal_id']" position="replace">
+                <field name="journal_id" select="payroll_journal"/>
+            </xpath>
+            <xpath expr="//field[@name='resource_calendar_id']" position="replace">
+                <field name="resource_calendar_id" select="hr_resource_monthly_cl"/>
+            </xpath>
+            <xpath expr="//page[@name='information']" position="after">
+                <page string="Carga Familiar" name="information">
+                    <group name="health1" string="Carga Familiar">
+                        <field name="carga_familiar" string="Carga Simple"/>
+                        <field name="carga_familiar_maternal"  string="Carga Maternal"/>
+                        <field name="carga_familiar_invalida"  string="Carga Inválida"/>
+                    </group>
+                </page>
+                <page string="Salud" name="health">
+                    <group name="health2">
+                        <group name="health3" string="Institución de Salud">
+                            <div name="isapre_id">
+                                <field name="isapre_id" required="1"/>
+                                <!-- <label for="isapre_id" string="Nombre ISAPRE"/> -->
+							</div>
+                            <div name="isapre_moneda">
+                                <field name="isapre_moneda" attrs="{'invisible': [('isapre_id', '=', 1)]}"/>
+                            <!--    <label for="isapre_moneda" attrs="{'invisible': [('isapre_id', '=', 1)]}"/> -->
+    						</div>
+                            <div name="isapre_cotizacion_uf">
+                                <field name="isapre_cotizacion_uf"  attrs="{'invisible': [('isapre_id', '=', 1)]}" string="Cotización"/>
+                                <!-- <label for="isapre_cotizacion_uf" attrs="{'invisible': [('isapre_id', '=', 1)]}" string="Cotización Pactada"/> -->
+							</div>
+                            <div name="isapre_fun">
+                                <field name="isapre_fun" attrs="{'invisible': [('isapre_id', '=', 1)]}"/>
+                                <!-- <label for="isapre_fun" attrs="{'invisible': [('isapre_id', '=', 1)]}"/> -->
+							</div>
+                        </group>
+
+                        <group name="health8" string="Seguro Complementario">
+                            <div name="seguro_complementario_id">
+                                <field name="seguro_complementario_id"/>
+                                <!--<label string="Seguro Complementario" for="seguro_complementario_id"/> -->
+							</div>
+                            <div name="seguro_complementario_moneda">
+                                <field name="seguro_complementario_moneda"/>
+                                <!--<label string="Seguro Complementario Moneda" for="seguro_complementario_moneda"/> -->
+							</div>
+                            <div name="seguro_complementario">
+                                <field name="seguro_complementario"/>
+                                <!-- <label for="seguro_complementario" string="Cotización Pactada"/> -->
+							</div>
+                        </group>
+                    </group>
+                </page>
+                <page string="Fondos de Pensión" name="afp">
+                    <group name="fondos">
+                        <group name="pens" string="AFP">
+                            <div name="pension">
+                                <field name="pension"/>
+								<!-- <label string="" nolabel="1" for="pension"/> -->
+							</div>
+                            <div name="sin_afp">
+                                <field name="sin_afp"/>
+								<!-- <label string="" nolabel="1" for="sin_afp"/> -->
+							</div>
+                            <div name="afp_id">
+                                <field name="afp_id" attrs="{'invisible': [('pension', '!=', False)],'required': [('pension', '==', False)]}"/>
+								<!--<label string="" nolabel="1"  /> -->
+                                <!-- <label string="AFP" for="afp_id"/> -->
+							</div>
+                        </group>
+                        <group name="APV" string="Aporte Previsional Voluntario">
+                            <div name="apv_id">
+                                <field name="apv_id"/>
+                                <!-- <label for="apv_id" string="Institución Autorizada APV - APVC : Cias Seguros de Vida"/> -->
+							</div>
+                            <div name="aporte_voluntario">
+                                <field name="aporte_voluntario_moneda"/>
+                                <!-- <label for="aporte_voluntario_moneda" string="Tipo Moneda"/> -->
+							</div>
+                            <div name="aporte_voluntario">
+                                <field name="aporte_voluntario"/>
+                                <!-- <label for="aporte_voluntario" string="Aporte Voluntario"/> -->
+							</div>
+                            <div name="forma_pago_apv">
+                                <field name="forma_pago_apv"/>
+                                <!-- <label for="forma_pago_apv" string="Forma de Pago"/> -->
+							</div>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>
