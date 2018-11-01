@@ -3,7 +3,7 @@
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 {
-    'name': 'Chilean Payroll & Human Resources (Odoo 12)',
+    'name': 'Chilean Payroll & Human Resources',
     'category': 'Localization',
     'author': 'Konos',
     'website': 'http://konos.cl',
