@@ -48,7 +48,7 @@ class hr_contract(models.Model):
     carga_familiar_maternal = fields.Integer('Carga Maternal',help="Carga familiar para el cálculo de asignación familiar maternal")
     carga_familiar_invalida = fields.Integer('Carga Inválida',help="Carga familiar para el cálculo de asignación familiar inválida")            
     #colacion = fields.Float('Asig. Colación', help="Colación")
-	colacion = fields.Monetary('Asig. Colación', digits=(16, 2), required=True, help="Asignación de Colación Mensual")
+    colacion = fields.Monetary('Asig. Colación', digits=(16, 2), help="Asignación de Colación Mensual")
     isapre_id = fields.Many2one('hr.isapre', 'Nombre ISAPRE')
     isapre_cotizacion_uf = fields.Float('Cotización ISAPRE',  help="Cotización Pactada")
     isapre_fun = fields.Char('Número de FUN',  help="Indicar N° Contrato de Salud a Isapre")    
