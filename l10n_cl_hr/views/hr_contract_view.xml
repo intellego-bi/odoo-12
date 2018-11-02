@@ -113,10 +113,10 @@
    							    ¿Cotiza AFP?
    							</div>
                             <div name="pension">
-                                <field name="pension"/>
+                                <field name="pension" attrs="{'invisible': [('sin_afp', '==', True)]}"/>
 								<label string="Pensionado (sin AFP)" for="pension"/>
-							<!--</div>
-                            <div name="sin_afp">-->
+							</div>
+                            <div name="sin_afp">
                                 <field name="sin_afp"/>
 								<label string="No Cotiza AFP" for="sin_afp"/>
 							</div>
