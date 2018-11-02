@@ -6,10 +6,10 @@
         <field name="inherit_id" ref="hr_contract.hr_contract_view_form"/>
         <field name="arch" type="xml">
             <xpath expr="//div[@name='wage']" position="after">
+
+                <group name="wageother" string="Otras Prestaciones">
                 <field name="otros_imp" string="Otros Imponible" invisible="1"/>
                 <field name="otro_no_imp" string="Otros No Imponible" invisible="1"/>
-
-                <!--<group name="wageother" string="Otras Prestaciones">-->
 				
                 <div name="colacion">
                     <div class="text-muted">
@@ -35,7 +35,7 @@
                     </div>
                     <field name="anticipo_sueldo"/>
 				</div>
-                <!--</group>-->
+                </group>
 			</xpath>
 
             <xpath expr="//field[@name='type_id']" posi0tion="replace">
@@ -109,6 +109,9 @@
                 <page string="Fondos de Pensión" name="afp">
                     <group name="fondos">
                         <group name="pens" string="AFP">
+   							<div class="text-muted">
+   							    ¿Cotiza AFP?
+   							</div>
                             <div name="pension">
                                 <field name="pension"/>
 								<label string="Pensionado (sin AFP)" for="pension"/>
