@@ -24,9 +24,10 @@
                     </div>
                 </div>
                 <div name="viatico_santiago">
-                    <field name="viatico_santiago"/>
+                <label for="viatico_santiago" string="Asig. de Viático "/>
+				<field name="viatico_santiago"/>
                     <!--<div class="text-muted">-->
-                        <label for="viatico_santiago" string="Asig. de Viático"/>
+
                     <!--</div>-->
 			    </div>
                 <div name="anticipo_sueldo">
