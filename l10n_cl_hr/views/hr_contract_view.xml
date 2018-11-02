@@ -24,8 +24,10 @@
     				<field name="movilizacion"/>
                 </div>
                 <div name="viatico_santiago">
-                    <label for="viatico_santiago" string="Asig. de Viático "/>
-   				    <field name="viatico_santiago"/>
+				    <div class="text-muted">
+                        <label for="viatico_santiago" string="Asig. de Viático "/>
+   				    </div>
+					<field name="viatico_santiago"/>
 			    </div>
                 <div name="anticipo_sueldo">
                     <div class="text-muted">
@@ -57,12 +59,16 @@
                     <group name="health2">
                         <group name="health3" string="Institución de Salud">
                             <div name="isapre_id">
-                                <field name="isapre_id" required="1"/>
-                                <!-- <label for="isapre_id" string="Nombre ISAPRE"/> -->
+     							<div class="text-muted">
+     							    <label for="isapre_id" string="ISAPRE "/>
+     							</div>
+     							<field name="isapre_id" required="1"/>
 							</div>
                             <div name="isapre_moneda">
-                                <field name="isapre_moneda" attrs="{'invisible': [('isapre_id', '=', 1)]}"/>
-                            <!--    <label for="isapre_moneda" attrs="{'invisible': [('isapre_id', '=', 1)]}"/> -->
+     							<div class="text-muted">
+     							    <label for="isapre_moneda" string="Moneda ISAPRE "/>
+     							</div>
+    							<field name="isapre_moneda" attrs="{'invisible': [('isapre_id', '=', 1)]}"/>
     						</div>
                             <div name="isapre_cotizacion_uf">
                                 <field name="isapre_cotizacion_uf"  attrs="{'invisible': [('isapre_id', '=', 1)]}" string="Cotización"/>
@@ -80,12 +86,16 @@
 
                         <group name="health8" string="Seguro Complementario">
                             <div name="seguro_complementario_id">
-                                <field name="seguro_complementario_id"/>
-                                <!--<label string="Seguro Complementario" for="seguro_complementario_id"/> -->
+     							<div class="text-muted">
+     							    <label for="seguro_complementario_id" string="Prestador Seguro"/>
+     							</div>
+    							<field name="seguro_complementario_id"/>
 							</div>
                             <div name="seguro_complementario_moneda">
-                                <field name="seguro_complementario_moneda"/>
-                                <!--<label string="Seguro Complementario Moneda" for="seguro_complementario_moneda"/> -->
+     							<div class="text-muted">
+     							    <label for="seguro_complementario_moneda" string="Moneda Seguro "/>
+     							</div>
+    							<field name="seguro_complementario_moneda"/>
 							</div>
                             <div name="seguro_complementario">
                                 <field name="seguro_complementario"/>
