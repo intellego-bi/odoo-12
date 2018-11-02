@@ -36,6 +36,6 @@ class hr_isapre(models.Model):
     _name = 'hr.isapre'
     _description = 'Isapres'
     name = fields.Char('Nombre ISAPRE', required=True)
-    rut = fields.Char('RUT', required=True)
     codigo = fields.Char('Codigo', required=True)
+    rut = fields.Char('RUT', required=True)
     activa = fields.Boolean('Activa')
