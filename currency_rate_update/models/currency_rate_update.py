@@ -93,7 +93,7 @@ class CurrencyRateUpdateService(models.Model):
     # I can't just put readonly=True in the field above because I need
     # it as r+w for the on_change to work
     currency_list_readonly = fields.Many2many(
-        related='currency_list', readonly=True)
+        related='currency_list', string="Monedas API-SBIF", readonly=True)
     # List of currency to update
     currency_to_update = fields.Many2many('res.currency',
                                           'res_currency_auto_update_rel',
