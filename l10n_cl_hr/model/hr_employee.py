@@ -10,10 +10,10 @@ UPDATE_PARTNER_FIELDS = ['name', 'user_id', 'address_home_id']
 
 class HrEmployee(models.Model):
     _inherit = 'hr.employee'
-    firstname = fields.Char(translate=True, string="Firstname")
-    last_name = fields.Char(translate=True, string="Last Name")
-    middle_name = fields.Char(translate=True, string="Middle Name", help='Employees middle name')
-    mothers_name = fields.Char(translate=True, string="Mothers Name", help='Employees mothers name')
+    firstname = fields.Char("Firstname")
+    last_name = fields.Char("Last Name")
+    middle_name = fields.Char("Middle Name", help='Employees middle name')
+    mothers_name = fields.Char("Mothers Name", help='Employees mothers name')
     type_id = fields.Many2one('hr.type.employee', 'Tipo de Empleado')
     formated_vat = fields.Char(translate=True, string='Printable VAT', store=True, help='Show formatted vat')
 
