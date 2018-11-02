@@ -5,38 +5,26 @@
         <field name="model">hr.contract</field>
         <field name="inherit_id" ref="hr_contract.hr_contract_view_form"/>
         <field name="arch" type="xml">
-            <xpath expr="//group[@name='salary_and_advantages']" position="after">
-
-                <group name="wageother" string="Otras Prestaciones">
+            <xpath expr="//div[@name='wage']" position="after">
                 <field name="otros_imp" string="Otros Imponible" invisible="1"/>
                 <field name="otro_no_imp" string="Otros No Imponible" invisible="1"/>
-				
                 <div name="colacion">
-                    <div class="text-muted">
-                        <label string="Asig. de Colación" for="colacion"/>
-                    </div>
                     <field name="colacion"/>
-				</div>
+                    <!-- <label string="Asig. de Colación" for="colacion"/> -->
+                </div>
                 <div name="movilizacion">
-                    <div class="text-muted">
-                        <label string="Asig. de Movilización" for="movilizacion"/>
-                    </div>
-    				<field name="movilizacion"/>
+                    <field name="movilizacion"/>
+                    <!-- <label string="Asig. de Movilización" for="movilizacion"/> -->
                 </div>
                 <div name="viatico_santiago">
-				    <div class="text-muted">
-                        <label for="viatico_santiago" string="Asig. de Viático "/>
-   				    </div>
-					<field name="viatico_santiago"/>
+                    <field name="viatico_santiago"/>
+                    <!--<label for="viatico_santiago" string="Asig. de Viático"/> -->
 			    </div>
                 <div name="anticipo_sueldo">
-                    <div class="text-muted">
-                        <label string="Anticipo de Sueldo" for="anticipo_sueldo"/>
-                    </div>
                     <field name="anticipo_sueldo"/>
+                    <!-- <label string="Anticipo de Sueldo" for="anticipo_sueldo"/> -->
 				</div>
-                </group>
-			</xpath>
+            </xpath>
 
             <xpath expr="//field[@name='type_id']" posi0tion="replace">
                 <field name="type_id" select="3"/>
@@ -58,102 +46,73 @@
                 <page string="Salud" name="health">
                     <group name="health2">
                         <group name="health3" string="Institución de Salud">
-                            <div name="isapre_cotizacion_uf">
-                                <div class="text-muted">
-                                    <label string="Monto Pactado ISAPRE" for="isapre_cotizacion_uf"/>
-                                </div>
-                                <field name="isapre_cotizacion_uf"  attrs="{'invisible': [('isapre_id', '=', 1)]}" string="Cotización"/>
+                            <div name="isapre_id">
+                                <field name="isapre_id" required="1"/>
+                                <!-- <label for="isapre_id" string="Nombre ISAPRE"/> -->
 							</div>
                             <div name="isapre_moneda">
-     							<div class="text-muted">
-     							    <label for="isapre_moneda" string="Moneda ISAPRE "/>
-     							</div>
-    							<field name="isapre_moneda" attrs="{'invisible': [('isapre_id', '=', 1)]}"/>
+                                <field name="isapre_moneda" attrs="{'invisible': [('isapre_id', '=', 1)]}"/>
+                            <!--    <label for="isapre_moneda" attrs="{'invisible': [('isapre_id', '=', 1)]}"/> -->
     						</div>
-                            <div name="isapre_id">
-     							<div class="text-muted">
-     							    <label for="isapre_id" string="ISAPRE "/>
-     							</div>
-     							<field name="isapre_id" required="1"/>
+                            <div name="isapre_cotizacion_uf">
+                                <field name="isapre_cotizacion_uf"  attrs="{'invisible': [('isapre_id', '=', 1)]}" string="Cotización"/>
+                                <!-- <label for="isapre_cotizacion_uf" attrs="{'invisible': [('isapre_id', '=', 1)]}" string="Cotización Pactada"/> -->
 							</div>
                             <div name="isapre_fun">
-                                <div class="text-muted">
-                                    <label string="FUN Isapre" for="isapre_fun"/>
-                                </div>
                                 <field name="isapre_fun" attrs="{'invisible': [('isapre_id', '=', 1)]}"/>
+                                <!-- <label for="isapre_fun" attrs="{'invisible': [('isapre_id', '=', 1)]}"/> -->
 							</div>
-						</group>
+                        </group>
 
                         <group name="health8" string="Seguro Complementario">
-                            <div name="seguro_complementario">
-                                <div class="text-muted">
-                                    <label string="Monto Pactado Seguro" for="seguro_complementario"/>
-                                </div>
-                                <field name="seguro_complementario"/>
+                            <div name="seguro_complementario_id">
+                                <field name="seguro_complementario_id"/>
+                                <!--<label string="Seguro Complementario" for="seguro_complementario_id"/> -->
 							</div>
                             <div name="seguro_complementario_moneda">
-     							<div class="text-muted">
-     							    <label for="seguro_complementario_moneda" string="Moneda Seguro "/>
-     							</div>
-    							<field name="seguro_complementario_moneda"/>
+                                <field name="seguro_complementario_moneda"/>
+                                <!--<label string="Seguro Complementario Moneda" for="seguro_complementario_moneda"/> -->
 							</div>
-                            <div name="seguro_complementario_id">
-     							<div class="text-muted">
-     							    <label for="seguro_complementario_id" string="Prestador Seguro"/>
-     							</div>
-    							<field name="seguro_complementario_id"/>
-							</div>		
+                            <div name="seguro_complementario">
+                                <field name="seguro_complementario"/>
+                                <!-- <label for="seguro_complementario" string="Cotización Pactada"/> -->
+							</div>
                         </group>
                     </group>
                 </page>
                 <page string="Fondos de Pensión" name="afp">
                     <group name="fondos">
                         <group name="pens" string="AFP">
-   							<div class="text-muted">
-   							    ¿Cotiza AFP?
-   							</div>
-   							<div class="text-muted" attrs="{'invisible': [('sin_afp', '==', True)]}">
-   							    ¿Pensionado?
-   							</div>
+                            <div name="pension">
+                                <field name="pension"/>
+								<!-- <label string="" nolabel="1" for="pension"/> -->
+							</div>
                             <div name="sin_afp">
                                 <field name="sin_afp"/>
-								<label string="No Cotiza AFP" for="sin_afp"/>
+								<!-- <label string="" nolabel="1" for="sin_afp"/> -->
 							</div>
-                            <div name="pension" attrs="{'invisible': [('sin_afp', '==', True)]}">
-                                <field name="pension"/>
-								<label string="Pensionado (sin AFP)" for="pension"/>
-							</div>
-                            <div name="afp_id" attrs="{'invisible': [('sin_afp', '==', True)]}">
-     							<div class="text-muted">
-     							    <label for="afp_id" string="AFP" attrs="{'invisible': [('pension', '!=', False)],'required': [('pension', '==', False)]}"/>
-     							</div>
-    							<field name="afp_id" attrs="{'invisible': [('pension', '!=', False)],'required': [('pension', '==', False)]}"/>
+                            <div name="afp_id">
+                                <field name="afp_id" attrs="{'invisible': [('pension', '!=', False)],'required': [('pension', '==', False)]}"/>
+								<!--<label string="" nolabel="1"  /> -->
+                                <!-- <label string="AFP" for="afp_id"/> -->
 							</div>
                         </group>
                         <group name="APV" string="Aporte Previsional Voluntario">
+                            <div name="apv_id">
+                                <field name="apv_id"/>
+                                <!-- <label for="apv_id" string="Institución Autorizada APV - APVC : Cias Seguros de Vida"/> -->
+							</div>
                             <div name="aporte_voluntario">
-     							<div class="text-muted">
-     							    <label for="aporte_voluntario" string="Aporte Voluntario "/>
-     							</div>
-    							<field name="aporte_voluntario"/>
+                                <field name="aporte_voluntario_moneda"/>
+                                <!-- <label for="aporte_voluntario_moneda" string="Tipo Moneda"/> -->
 							</div>
-    						<div name="aporte_voluntario">
-     							<div class="text-muted">
-     							    <label for="aporte_voluntario_moneda" string="Tipo Moneda APV "/>
-     							</div>
-    							<field name="aporte_voluntario_moneda"/>
-							</div>
-    						<div name="apv_id">
-     							<div class="text-muted">
-     							    <label for="apv_id" string="Prestador APV - APVC"/>
-     							</div>
-    							<field name="apv_id"/>
+                            <div name="aporte_voluntario">
+                                <field name="aporte_voluntario"/>
+                                <!-- <label for="aporte_voluntario" string="Aporte Voluntario"/> -->
 							</div>
                             <div name="forma_pago_apv">
-     							<div class="text-muted">
-     							    <label for="forma_pago_apv" string="Forma de Pago"/>
-     							</div>
-    							<field name="forma_pago_apv"/>
+                                <field name="forma_pago_apv"/>
+                                <!-- <label for="forma_pago_apv" string="Forma de Pago"/> -->
 							</div>
                         </group>
                     </group>

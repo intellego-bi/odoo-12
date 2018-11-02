@@ -38,3 +38,4 @@ class hr_isapre(models.Model):
     codigo = fields.Char('Codigo', required=True)
     name = fields.Char('Nombre ISAPRE', required=True)
     rut = fields.Char('RUT', required=True)
+	activa = fields.Boolean('Activa')
