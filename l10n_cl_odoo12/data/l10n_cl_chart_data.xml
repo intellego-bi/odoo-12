@@ -223,8 +223,16 @@
     </record>
 	
     <record id="11060400" model="account.account.template">
-        <field name="name">Repuestos e Insumos Varios</field>
+        <field name="name">Productos en Proceso</field>
         <field name="code">11060400</field>
+        <field name="reconcile" eval="True"/>
+        <field ref="account.data_account_type_current_assets" name="user_type_id"/>
+        <field name="chart_template_id" ref="cl_chart_template_v12"/>
+    </record>
+
+    <record id="11060500" model="account.account.template">
+        <field name="name">Repuestos e Insumos Varios</field>
+        <field name="code">11060500</field>
         <field name="reconcile" eval="False"/>
         <field ref="account.data_account_type_current_assets" name="user_type_id"/>
         <field name="chart_template_id" ref="cl_chart_template_v12"/>
@@ -232,16 +240,25 @@
 
     <record id="11060500" model="account.account.template">
         <field name="name">Existencias en Tránsito</field>
-        <field name="code">11060500</field>
-        <field name="reconcile" eval="False"/>
+        <field name="code">11060600</field>
+        <field name="reconcile" eval="True"/>
         <field ref="account.data_account_type_current_assets" name="user_type_id"/>
         <field name="chart_template_id" ref="cl_chart_template_v12"/>
     </record>
 
+    <record id="11060500" model="account.account.template">
+        <field name="name">Importaciones en Tránsito</field>
+        <field name="code">11060700</field>
+        <field name="reconcile" eval="True"/>
+        <field ref="account.data_account_type_current_assets" name="user_type_id"/>
+        <field name="chart_template_id" ref="cl_chart_template_v12"/>
+    </record>
+	
+	
     <record id="11070100" model="account.account.template">
         <field name="name">IVA Crédito Fiscal</field>
         <field name="code">11070100</field>
-        <field name="reconcile" eval="False"/>
+        <field name="reconcile" eval="True"/>
         <field ref="account.data_account_type_current_assets" name="user_type_id"/>
         <field name="chart_template_id" ref="cl_chart_template_v12"/>
     </record>
@@ -249,7 +266,7 @@
     <record id="11070200" model="account.account.template">
         <field name="name">IVA Crédito Fiscal (DIN)</field>
         <field name="code">11070200</field>
-        <field name="reconcile" eval="False"/>
+        <field name="reconcile" eval="True"/>
         <field ref="account.data_account_type_current_assets" name="user_type_id"/>
         <field name="chart_template_id" ref="cl_chart_template_v12"/>
     </record>
@@ -257,7 +274,7 @@
     <record id="11070300" model="account.account.template">
         <field name="name">Remanente Crédito Fiscal</field>
         <field name="code">11070300</field>
-        <field name="reconcile" eval="False"/>
+        <field name="reconcile" eval="True"/>
         <field ref="account.data_account_type_current_assets" name="user_type_id"/>
         <field name="chart_template_id" ref="cl_chart_template_v12"/>
     </record>
@@ -265,7 +282,7 @@
     <record id="11070400" model="account.account.template">
         <field name="name">Crédito Fiscal x Activo Fijo</field>
         <field name="code">11070400</field>
-        <field name="reconcile" eval="False"/>
+        <field name="reconcile" eval="True"/>
         <field ref="account.data_account_type_current_assets" name="user_type_id"/>
         <field name="chart_template_id" ref="cl_chart_template_v12"/>
     </record>
@@ -273,7 +290,7 @@
     <record id="11070500" model="account.account.template">
         <field name="name">Pago Provisional Mensual (PPM)</field>
         <field name="code">11070500</field>
-        <field name="reconcile" eval="False"/>
+        <field name="reconcile" eval="True"/>
         <field ref="account.data_account_type_current_assets" name="user_type_id"/>
         <field name="chart_template_id" ref="cl_chart_template_v12"/>
     </record>
@@ -281,7 +298,7 @@
     <record id="11070600" model="account.account.template">
         <field name="name">Crédito Fiscal Sence</field>
         <field name="code">11070600</field>
-        <field name="reconcile" eval="False"/>
+        <field name="reconcile" eval="True"/>
         <field ref="account.data_account_type_current_assets" name="user_type_id"/>
         <field name="chart_template_id" ref="cl_chart_template_v12"/>
     </record>
@@ -325,7 +342,6 @@
         <field ref="account.data_account_type_payable" name="user_type_id"/>
         <field name="chart_template_id" ref="cl_chart_template_v12"/>
     </record>
-	
 	
     <record id="12010100" model="account.account.template">
         <field name="name">Terrenos</field>
