@@ -62,7 +62,7 @@
         <record id="hr_afp_no" model="hr.afp">
             <field name="codigo">00</field>
             <field name="rut"> </field>
-            <field name="name">NO ESTA</field>
+            <field name="name">Sin AFP</field>
             <field name="rate">0.0</field>
             <field name="sis">0.0</field>
             <field name="independiente">0.0</field>
