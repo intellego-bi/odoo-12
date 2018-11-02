@@ -71,16 +71,16 @@
     							<field name="isapre_moneda" attrs="{'invisible': [('isapre_id', '=', 1)]}"/>
     						</div>
                             <div name="isapre_cotizacion_uf">
-                                <field name="isapre_cotizacion_uf"  attrs="{'invisible': [('isapre_id', '=', 1)]}" string="Cotización"/>
                                 <div class="text-muted">
                                     <label string="Monto Pactado ISAPRE" for="isapre_cotizacion_uf"/>
                                 </div>
+                                <field name="isapre_cotizacion_uf"  attrs="{'invisible': [('isapre_id', '=', 1)]}" string="Cotización"/>
 							</div>
                             <div name="isapre_fun">
-                                <field name="isapre_fun" attrs="{'invisible': [('isapre_id', '=', 1)]}"/>
                                 <div class="text-muted">
                                     <label string="FUN Isapre" for="isapre_fun"/>
                                 </div>
+                                <field name="isapre_fun" attrs="{'invisible': [('isapre_id', '=', 1)]}"/>
 							</div>
                         </group>
 
@@ -98,11 +98,10 @@
     							<field name="seguro_complementario_moneda"/>
 							</div>
                             <div name="seguro_complementario">
-                                <field name="seguro_complementario"/>
                                 <div class="text-muted">
                                     <label string="Monto Pactado Seguro Complementario" for="seguro_complementario"/>
                                 </div>
-
+                                <field name="seguro_complementario"/>
 							</div>
                         </group>
                     </group>
