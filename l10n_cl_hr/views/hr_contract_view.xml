@@ -8,6 +8,9 @@
             <xpath expr="//div[@name='wage']" position="after">
                 <field name="otros_imp" string="Otros Imponible" invisible="1"/>
                 <field name="otro_no_imp" string="Otros No Imponible" invisible="1"/>
+
+                <group name="wageother" string="Otras Prestaciones Líquidas">
+				
                 <div name="colacion">
                     <field name="colacion"/>
                     <div class="text-muted">
@@ -32,7 +35,8 @@
                         <label string="Anticipo de Sueldo" for="anticipo_sueldo"/>
                     </div>
 				</div>
-            </xpath>
+                </group>
+			</xpath>
 
             <xpath expr="//field[@name='type_id']" posi0tion="replace">
                 <field name="type_id" select="3"/>
