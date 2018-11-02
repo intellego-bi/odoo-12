@@ -144,7 +144,6 @@
       <field name="name">IVA Exento Compra</field>
       <field name="description">IVA Exento Compra</field>
       <field name="amount">0</field>
-      <field name="sii_code">0</field>
        <field name="sequence" eval="3"/>
       <field name="amount_type">percent</field>
       <field name="type_tax_use">purchase</field>
@@ -156,7 +155,6 @@
       <field name="name">IVA Exento Venta</field>
       <field name="description">IVA Exento Venta</field>
       <field name="amount">0</field>
-      <field name="sii_code">0</field>
       <field name="amount_type">percent</field>
       <field name="type_tax_use">sale</field>
       <field name="sequence" eval="2"/>
