@@ -9,8 +9,8 @@
                 <field name="otros_imp" string="Otros Imponible" invisible="1"/>
                 <field name="otro_no_imp" string="Otros No Imponible" invisible="1"/>
                 <div name="colacion">
-                    <field name="colacion" string="Asig. de Colación"/>
-                    <!-- <label string="Asig. de Colación" for="colacion"/> -->
+                    <field name="colacion"/>
+                    <label string="Asig. de Colación" for="colacion"/>
                 </div>
                 <div name="movilizacion">
                     <field name="movilizacion"/>
