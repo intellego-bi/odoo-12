@@ -145,7 +145,7 @@
 							</div>
                             <div name="forma_pago_apv">
      							<div class="text-muted">
-     							    <label for="forma_pago_apv" string="PForma de Pago"/>
+     							    <label for="forma_pago_apv" string="Forma de Pago"/>
      							</div>
     							<field name="forma_pago_apv"/>
 							</div>
