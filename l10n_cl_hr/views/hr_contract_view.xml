@@ -64,32 +64,32 @@
      							</div>
      							<field name="isapre_id" required="1"/>
 							</div>
-                            <div name="isapre_moneda">
-     							<div class="text-muted">
-     							    <label for="isapre_moneda" string="Moneda ISAPRE "/>
-     							</div>
-    							<field name="isapre_moneda" attrs="{'invisible': [('isapre_id', '=', 1)]}"/>
-    						</div>
-                            <div name="isapre_cotizacion_uf">
-                                <div class="text-muted">
-                                    <label string="Monto Pactado ISAPRE" for="isapre_cotizacion_uf"/>
-                                </div>
-                                <field name="isapre_cotizacion_uf"  attrs="{'invisible': [('isapre_id', '=', 1)]}" string="Cotización"/>
-							</div>
                             <div name="isapre_fun">
                                 <div class="text-muted">
                                     <label string="FUN Isapre" for="isapre_fun"/>
                                 </div>
                                 <field name="isapre_fun" attrs="{'invisible': [('isapre_id', '=', 1)]}"/>
 							</div>
-                        </group>
+                            <div name="isapre_cotizacion_uf">
+                                <div class="text-muted">
+                                    <label string="Monto Pactado ISAPRE" for="isapre_cotizacion_uf"/>
+                                </div>
+                                <field name="isapre_cotizacion_uf"  attrs="{'invisible': [('isapre_id', '=', 1)]}" string="Cotización"/>
+							</div>
+                            <div name="isapre_moneda">
+     							<div class="text-muted">
+     							    <label for="isapre_moneda" string="Moneda ISAPRE "/>
+     							</div>
+    							<field name="isapre_moneda" attrs="{'invisible': [('isapre_id', '=', 1)]}"/>
+    						</div>
+						</group>
 
                         <group name="health8" string="Seguro Complementario">
-                            <div name="seguro_complementario_id">
-     							<div class="text-muted">
-     							    <label for="seguro_complementario_id" string="Prestador Seguro"/>
-     							</div>
-    							<field name="seguro_complementario_id"/>
+                            <div name="seguro_complementario">
+                                <div class="text-muted">
+                                    <label string="Monto Pactado Seguro Complementario" for="seguro_complementario"/>
+                                </div>
+                                <field name="seguro_complementario"/>
 							</div>
                             <div name="seguro_complementario_moneda">
      							<div class="text-muted">
@@ -97,12 +97,12 @@
      							</div>
     							<field name="seguro_complementario_moneda"/>
 							</div>
-                            <div name="seguro_complementario">
-                                <div class="text-muted">
-                                    <label string="Monto Pactado Seguro Complementario" for="seguro_complementario"/>
-                                </div>
-                                <field name="seguro_complementario"/>
-							</div>
+                            <div name="seguro_complementario_id">
+     							<div class="text-muted">
+     							    <label for="seguro_complementario_id" string="Prestador Seguro"/>
+     							</div>
+    							<field name="seguro_complementario_id"/>
+							</div>		
                         </group>
                     </group>
                 </page>
