@@ -73,11 +73,11 @@ class hr_indicadores_previsionales(models.Model):
         'Contrato Plazo Indefinido Empleador', 
         help="Contrato Plazo Fijo")
     contrato_plazo_indefinido_empleador_otro = fields.Float(
-        'Contrato Plazo Indefinido 11 anos o mas', 
-        help="Contrato Plazo Indefinido 11 anos Empleador")
+        'Contrato Plazo Indefinido 11+ años (antigüedad)', 
+        help="Contrato Plazo Indefinido 11 años con Empleador")
     contrato_plazo_indefinido_trabajador_otro = fields.Float(
-        'Contrato Plazo Indefinido 11 anos o mas', 
-        help="Contrato Plazo Indefinido 11 anos Trabajador")
+        'Contrato Plazo Indefinido 11+ (otro empleador)', 
+        help="Contrato Plazo Indefinido 11 años como Trabajador")
     contrato_plazo_indefinido_trabajador = fields.Float(
         'Contrato Plazo Indefinido Trabajador', 
         help="Contrato Plazo Indefinido Trabajador")
@@ -109,35 +109,35 @@ class hr_indicadores_previsionales(models.Model):
     tasa_afp_habitat = fields.Float(
         'Habitat',  help="Tasa AFP Habitat")
     tasa_sis_cuprum = fields.Float(
-        'SIS', help="Tasa SIS Cuprum")
+        'SIS Cuprum', help="Tasa SIS Cuprum")
     tasa_sis_capital = fields.Float(
-        'SIS', help="Tasa SIS Capital")
+        'SIS Capital', help="Tasa SIS Capital")
     tasa_sis_provida = fields.Float(
-        'SIS',  help="Tasa SIS Provida")
+        'SIS Provida',  help="Tasa SIS Provida")
     tasa_sis_planvital = fields.Float(
-        'SIS',  help="Tasa SIS PlanVital")
+        'SIS PlanVital',  help="Tasa SIS PlanVital")
     tasa_sis_habitat = fields.Float(
-        'SIS',  help="Tasa SIS Habitat")
+        'SIS Habitat',  help="Tasa SIS Habitat")
     tasa_sis_modelo = fields.Float(
-        'SIS',  help="Tasa SIS Modelo")
+        'SIS Modelo',  help="Tasa SIS Modelo")
     tasa_independiente_cuprum = fields.Float(
-        'SIS',  help="Tasa Independientes Cuprum")
+        'SIS Independiente Cuprum',  help="Tasa Independientes Cuprum")
     tasa_independiente_capital = fields.Float(
-        'SIS',  help="Tasa Independientes Capital")
+        'SIS Independiente Capital',  help="Tasa Independientes Capital")
     tasa_independiente_provida = fields.Float(
-        'SIS',  help="Tasa Independientes Provida")
+        'SIS Independiente Provida',  help="Tasa Independientes Provida")
     tasa_independiente_planvital = fields.Float(
-        'SIS',  help="Tasa Independientes PlanVital")
+        'SIS Independiente PlanVital',  help="Tasa Independientes PlanVital")
     tasa_independiente_habitat = fields.Float(
-        'SIS',  help="Tasa Independientes Habitat")
+        'SIS Independiente Habitat',  help="Tasa Independientes Habitat")
     tasa_independiente_modelo = fields.Float(
-        'SIS',  help="Tasa Independientes Modelo")
+        'SIS Independiente Modelo',  help="Tasa Independientes Modelo")
     tope_anual_apv = fields.Float(
         'Tope Anual APV',  help="Tope Anual APV")
     tope_mensual_apv = fields.Float(
         'Tope Mensual APV',  help="Tope Mensual APV")
     tope_imponible_afp = fields.Float(
-        'Tope imponible AFP',  help="Tope Imponible AFP")
+        'Tope Imponible AFP',  help="Tope Imponible AFP")
     tope_imponible_ips = fields.Float(
         'Tope Imponible IPS',  help="Tope Imponible IPS")
     tope_imponible_salud = fields.Float(
@@ -156,7 +156,7 @@ class hr_indicadores_previsionales(models.Model):
     ccaf_id = fields.Many2one('hr.ccaf', 'CCAF')
     month = fields.Selection(MONTH_LIST, string='Mes', required=True)
     year = fields.Integer('Año', required=True, default=datetime.now().strftime('%Y'))
-    gratificacion_legal = fields.Boolean('Gratificación L. Manual')
+    gratificacion_legal = fields.Boolean('Gratificación Legal Manual')
     mutual_seguridad_bool = fields.Boolean('Mutual Seguridad', default=True)
     ipc = fields.Float(
         'IPC',  required=True, help="Indice de Precios al Consumidor (IPC)")
