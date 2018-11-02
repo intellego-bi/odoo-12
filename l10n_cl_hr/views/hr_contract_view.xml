@@ -118,9 +118,10 @@
 								<label string="No Cotiza AFP" for="sin_afp"/>
 							</div>
                             <div name="afp_id">
-                                <field name="afp_id" attrs="{'invisible': [('pension', '!=', False)],'required': [('pension', '==', False)]}"/>
-								<!--<label string="" nolabel="1"  /> -->
-                                <!-- <label string="AFP" for="afp_id"/> -->
+     							<div class="text-muted">
+     							    <label for="afp_id" string="AFP "/>
+     							</div>
+    							<field name="afp_id" attrs="{'invisible': [('pension', '!=', False)],'required': [('pension', '==', False)]}"/>
 							</div>
                         </group>
                         <group name="APV" string="Aporte Previsional Voluntario">
