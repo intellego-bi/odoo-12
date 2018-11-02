@@ -12,29 +12,26 @@
                 <!--<group name="wageother" string="Otras Prestaciones">-->
 				
                 <div name="colacion">
-                    <field name="colacion"/>
                     <div class="text-muted">
                         <label string="Asig. de Colación" for="colacion"/>
                     </div>
+                    <field name="colacion"/>
 				</div>
                 <div name="movilizacion">
-                    <field name="movilizacion"/>
                     <div class="text-muted">
                         <label string="Asig. de Movilización" for="movilizacion"/>
                     </div>
+    				<field name="movilizacion"/>
                 </div>
                 <div name="viatico_santiago">
-                <label for="viatico_santiago" string="Asig. de Viático "/>
-				<field name="viatico_santiago"/>
-                    <!--<div class="text-muted">-->
-
-                    <!--</div>-->
+                    <label for="viatico_santiago" string="Asig. de Viático "/>
+   				    <field name="viatico_santiago"/>
 			    </div>
                 <div name="anticipo_sueldo">
-                    <field name="anticipo_sueldo"/>
                     <div class="text-muted">
                         <label string="Anticipo de Sueldo" for="anticipo_sueldo"/>
                     </div>
+                    <field name="anticipo_sueldo"/>
 				</div>
                 <!--</group>-->
 			</xpath>
