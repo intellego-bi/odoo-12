@@ -87,7 +87,7 @@
                         <group name="health8" string="Seguro Complementario">
                             <div name="seguro_complementario">
                                 <div class="text-muted">
-                                    <label string="Monto Pactado Seguro Complementario" for="seguro_complementario"/>
+                                    <label string="Monto Pactado Seguro" for="seguro_complementario"/>
                                 </div>
                                 <field name="seguro_complementario"/>
 							</div>
