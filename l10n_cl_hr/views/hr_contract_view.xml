@@ -116,8 +116,8 @@
    							    ¿Pensionado?
    							</div>
                             <div name="sin_afp">
-                                <field name="sin_afp"/>
-								<label string="No Cotiza AFP" for="sin_afp" class="text-muted"/>
+                                <field name="sin_afp" widget="toggle_button"/>
+								<label string="No Cotiza AFP" for="sin_afp"/>
 							</div>
                             <div name="pension" attrs="{'invisible': [('sin_afp', '==', True)]}">
                                 <field name="pension"/>
