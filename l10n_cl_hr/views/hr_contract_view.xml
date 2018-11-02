@@ -124,21 +124,29 @@
 							</div>
                         </group>
                         <group name="APV" string="Aporte Previsional Voluntario">
-                            <div name="apv_id">
-                                <field name="apv_id"/>
-                                <!-- <label for="apv_id" string="Institución Autorizada APV - APVC : Cias Seguros de Vida"/> -->
-							</div>
                             <div name="aporte_voluntario">
-                                <field name="aporte_voluntario_moneda"/>
-                                <!-- <label for="aporte_voluntario_moneda" string="Tipo Moneda"/> -->
+     							<div class="text-muted">
+     							    <label for="aporte_voluntario" string="Aporte Voluntario "/>
+     							</div>
+    							<field name="aporte_voluntario"/>
 							</div>
-                            <div name="aporte_voluntario">
-                                <field name="aporte_voluntario"/>
-                                <!-- <label for="aporte_voluntario" string="Aporte Voluntario"/> -->
+    						<div name="aporte_voluntario">
+     							<div class="text-muted">
+     							    <label for="aporte_voluntario_moneda" string="Tipo Moneda APV "/>
+     							</div>
+    							<field name="aporte_voluntario_moneda"/>
+							</div>
+    						<div name="apv_id">
+     							<div class="text-muted">
+     							    <label for="apv_id" string="Prestador APV - APVC"/>
+     							</div>
+    							<field name="apv_id"/>
 							</div>
                             <div name="forma_pago_apv">
-                                <field name="forma_pago_apv"/>
-                                <!-- <label for="forma_pago_apv" string="Forma de Pago"/> -->
+     							<div class="text-muted">
+     							    <label for="forma_pago_apv" string="PForma de Pago"/>
+     							</div>
+    							<field name="forma_pago_apv"/>
 							</div>
                         </group>
                     </group>
