@@ -112,16 +112,16 @@
    							<div class="text-muted">
    							    ¿Cotiza AFP?
    							</div>
-   							<div class="text-muted">
+   							<div class="text-muted" attrs="{'invisible': [('sin_afp', '==', True)]}">
    							    ¿Pensionado?
    							</div>
                             <div name="sin_afp">
                                 <field name="sin_afp"/>
 								<label string="No Cotiza AFP" for="sin_afp" class="text-muted"/>
 							</div>
-                            <div name="pension">
-                                <field name="pension" attrs="{'invisible': [('sin_afp', '==', True)]}"/>
-								<label string="Pensionado (sin AFP)" for="pension" attrs="{'invisible': [('sin_afp', '==', True)]}"/>
+                            <div name="pension" attrs="{'invisible': [('sin_afp', '==', True)]}">
+                                <field name="pension"/>
+								<label string="Pensionado (sin AFP)" for="pension"/>
 							</div>
                             <div name="afp_id" attrs="{'invisible': [('sin_afp', '==', True)]}">
      							<div class="text-muted">
