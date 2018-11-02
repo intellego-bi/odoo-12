@@ -115,8 +115,8 @@
                             <div name="pension">
                                 <field name="pension"/>
 								<label string="Pensionado (sin AFP)" for="pension"/>
-							</div>
-                            <div name="sin_afp">
+							<!--</div>
+                            <div name="sin_afp">-->
                                 <field name="sin_afp"/>
 								<label string="No Cotiza AFP" for="sin_afp"/>
 							</div>
