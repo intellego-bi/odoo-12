@@ -25,9 +25,9 @@
                 </div>
                 <div name="viatico_santiago">
                     <field name="viatico_santiago"/>
-                    <div class="text-muted">
+                    <!--<div class="text-muted">-->
                         <label for="viatico_santiago" string="Asig. de Viático"/>
-                    </div>
+                    <!--</div>-->
 			    </div>
                 <div name="anticipo_sueldo">
                     <field name="anticipo_sueldo"/>
@@ -104,11 +104,11 @@
                         <group name="pens" string="AFP">
                             <div name="pension">
                                 <field name="pension"/>
-								<label string="Pensionado (sin AFP)" for="pension"/> -->
+								<label string="Pensionado (sin AFP)" for="pension"/>
 							</div>
                             <div name="sin_afp">
                                 <field name="sin_afp"/>
-								<!-- <label string="" nolabel="1" for="sin_afp"/> -->
+								<label string="No Cotiza AFP" for="sin_afp"/>
 							</div>
                             <div name="afp_id">
                                 <field name="afp_id" attrs="{'invisible': [('pension', '!=', False)],'required': [('pension', '==', False)]}"/>
