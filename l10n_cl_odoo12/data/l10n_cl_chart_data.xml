@@ -8,13 +8,18 @@
         <field name="name">Cuentas de Orden</field>
     </record>
 
+    <record id="account_account_type_STOCK" model="account.account.type">
+        <field name="name">Inventarios</field>
+    </record>
+	
+	<!--
     <record id="transfer_account_id" model="account.account.template">
         <field name="name">Cuenta de Transferencia</field>
         <field name="code">11013000</field>
         <field name="reconcile" eval="True"/>
         <field ref="account.data_account_type_current_assets" name="user_type_id"/>
     </record>
-
+    -->
     <record id="cl_chart_template_v12" model="account.chart.template">
       <field name="name">Chile - Plan de Cuentas 2018</field>
       <field name="cash_account_code_prefix">11011</field>
@@ -22,7 +27,7 @@
       <field name="transfer_account_code_prefix">11013</field>
       <field name="code_digits">8</field>
       <field name="currency_id" ref="base.CLP"/>
-      <field name="transfer_account_id" ref="transfer_account_id"/>
+      <!--<field name="transfer_account_id" ref="transfer_account_id"/>-->
     </record>
 
     <!--<record id="117" model="account.account.template">
