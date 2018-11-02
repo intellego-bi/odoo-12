@@ -16,15 +16,21 @@
 				</div>
                 <div name="movilizacion">
                     <field name="movilizacion"/>
-                    <!-- <label string="Asig. de Movilización" for="movilizacion"/> -->
+                    <div class="text-muted">
+                        <label string="Asig. de Movilización" for="movilizacion"/>
+                    </div>
                 </div>
                 <div name="viatico_santiago">
                     <field name="viatico_santiago"/>
-                    <!--<label for="viatico_santiago" string="Asig. de Viático"/> -->
+                    <div class="text-muted">
+                        <label for="viatico_santiago" string="Asig. de Viático"/>
+                    </div>
 			    </div>
                 <div name="anticipo_sueldo">
                     <field name="anticipo_sueldo"/>
-                    <!-- <label string="Anticipo de Sueldo" for="anticipo_sueldo"/> -->
+                    <div class="text-muted">
+                        <label string="Anticipo de Sueldo" for="anticipo_sueldo"/>
+                    </div>
 				</div>
             </xpath>
 
@@ -58,11 +64,15 @@
     						</div>
                             <div name="isapre_cotizacion_uf">
                                 <field name="isapre_cotizacion_uf"  attrs="{'invisible': [('isapre_id', '=', 1)]}" string="Cotización"/>
-                                <!-- <label for="isapre_cotizacion_uf" attrs="{'invisible': [('isapre_id', '=', 1)]}" string="Cotización Pactada"/> -->
+                                <div class="text-muted">
+                                    <label string="Monto Pactado ISAPRE" for="isapre_cotizacion_uf"/>
+                                </div>
 							</div>
                             <div name="isapre_fun">
                                 <field name="isapre_fun" attrs="{'invisible': [('isapre_id', '=', 1)]}"/>
-                                <!-- <label for="isapre_fun" attrs="{'invisible': [('isapre_id', '=', 1)]}"/> -->
+                                <div class="text-muted">
+                                    <label string="FUN Isapre" for="isapre_fun"/>
+                                </div>
 							</div>
                         </group>
 
@@ -77,7 +87,10 @@
 							</div>
                             <div name="seguro_complementario">
                                 <field name="seguro_complementario"/>
-                                <!-- <label for="seguro_complementario" string="Cotización Pactada"/> -->
+                                <div class="text-muted">
+                                    <label string="Monto Pactado Seguro Complementario" for="seguro_complementario"/>
+                                </div>
+
 							</div>
                         </group>
                     </group>
