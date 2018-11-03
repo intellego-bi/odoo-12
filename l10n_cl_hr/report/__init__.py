@@ -24,4 +24,4 @@
 from . import report_payslip
 from . import amount_to_text_es
 from . import report_hr_salary_book
-from . import report_payslip_details.py
+#from . import report_payslip_details.py
