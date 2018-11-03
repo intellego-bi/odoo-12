@@ -46,10 +46,16 @@ class HRHolidays(models.Model):
         time_delta = to_dt - from_dt
         return math.ceil(time_delta.days + float(time_delta.seconds) / 86400)
 		
-		
+
     @api.onchange('holiday_status_id')
     def _onchange_holiday_status_id(self):
-        self._check_and_recompute_days()
+        self._check_holidays()
+        self._compute_number_of_days()
+
+		
+#    @api.onchange('holiday_status_id')
+#    def _onchange_holiday_status_id(self):
+#        self._check_and_recompute_days()
 
 #    @api.onchange('leave_type_id')
 #    def _onchange_leave_type_id(self):
