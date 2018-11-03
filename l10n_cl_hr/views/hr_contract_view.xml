@@ -9,7 +9,7 @@
                 <group name="wage_other" string="Otras Prestaciones">
                     <div name="colacion">
                         <label string="Asig. de Colación" for="colacion" class="text-muted"/>
-    					<field name="colacion"/>
+    					<field name="colacion" widget="monetary"/>
                     </div>
                     <div name="movilizacion">
                         <field name="movilizacion"/>
