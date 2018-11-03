@@ -57,12 +57,12 @@
                                 <field name="isapre_moneda" attrs="{'invisible': [('isapre_id', '=', 1)]}"/>
     						</div>
                             <div name="isapre_id">
+                                <label string="ISAPRE" for="isapre_id" class="text-muted"/>
                                 <field name="isapre_id" required="1"/>
-                                <!-- <label for="isapre_id" string="Nombre ISAPRE"/> -->
 							</div>
                             <div name="isapre_fun">
+                                <label string="FUN" for="isapre_fun" class="text-muted"/>
                                 <field name="isapre_fun" attrs="{'invisible': [('isapre_id', '=', 1)]}"/>
-                                <!-- <label for="isapre_fun" attrs="{'invisible': [('isapre_id', '=', 1)]}"/> -->
 							</div>
                         </group>
 
