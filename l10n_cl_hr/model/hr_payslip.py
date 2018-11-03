@@ -86,10 +86,10 @@ class HrPayslip(models.Model):
             day_to = datetime.combine(fields.Date.from_string(date_to), datetime_time.max)
 
         #    # compute leave days
-        #    leaves = {}
+            leaves = {}
         #    day_leave_intervals = contract.employee_id.iter_leaves(day_from, day_to, calendar=contract.resource_calendar_id)
-        #    temp = 0 
-        #    dias = 0
+            temp = 0 
+            dias = 0
         #    for day_intervals in day_leave_intervals:
         #        for interval in day_intervals:
         #            holiday = interval[2]['leaves'].holiday_id
