@@ -20,7 +20,6 @@ class HRHolidaysStatus(models.Model):
 class HRHolidays(models.Model):
     _inherit = 'hr.leave'
 
-
 #    def _get_number_of_days(self, date_from, date_to, employee_id):
 #        from_dt = fields.Datetime.from_string(date_from)
 #        to_dt = fields.Datetime.from_string(date_to)
@@ -40,7 +39,7 @@ class HRHolidays(models.Model):
         from_dt = fields.Datetime.from_string(date_from)
         to_dt = fields.Datetime.from_string(date_to)
 	
-        elif employee_id:
+        if employee_id:
             employee = self.env['hr.employee'].browse(employee_id)
             return employee.get_work_days_count(from_dt, to_dt)
 
@@ -55,8 +54,7 @@ class HRHolidays(models.Model):
 #    @api.onchange('leave_type_id')
 #    def _onchange_leave_type_id(self):
 #        self._check_and_recompute_days()
-
-
+	
 
     @api.onchange('date_from','holiday_status_id','employee_id')
 #    @api.onchange('date_from','leave_type_id','employee_id')
