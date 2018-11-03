@@ -21,21 +21,33 @@ class HRHolidays(models.Model):
     _inherit = 'hr.leave'
 
 
-    def _get_number_of_days(self, date_from, date_to, employee_id):
-        from_dt = fields.Datetime.from_string(date_from)
-        to_dt = fields.Datetime.from_string(date_to)
-
+#    def _get_number_of_days(self, date_from, date_to, employee_id):
+#        from_dt = fields.Datetime.from_string(date_from)
+#        to_dt = fields.Datetime.from_string(date_to)
 
 #        #En el caso de las licencias descontamos dias corridos
-        if employee_id and self.holiday_status_id.is_continued:
-            time_delta = to_dt - from_dt
-            return math.ceil(time_delta.days + float(time_delta.seconds) / 86400)
+#        if employee_id and self.holiday_status_id.is_continued:
+#            time_delta = to_dt - from_dt
+#            return math.ceil(time_delta.days + float(time_delta.seconds) / 86400)
+#        elif employee_id:
+#            employee = self.env['hr.employee'].browse(employee_id)
+#            return employee.get_work_days_count(from_dt, to_dt)
+#        time_delta = to_dt - from_dt
+#        return math.ceil(time_delta.days + float(time_delta.seconds) / 86400)
+
+    def _get_number_of_days(self, date_from, date_to, employee_id):
+        """ Returns a float equals to the timedelta between two dates given as string."""
+        from_dt = fields.Datetime.from_string(date_from)
+        to_dt = fields.Datetime.from_string(date_to)
+	
         elif employee_id:
             employee = self.env['hr.employee'].browse(employee_id)
             return employee.get_work_days_count(from_dt, to_dt)
+
         time_delta = to_dt - from_dt
         return math.ceil(time_delta.days + float(time_delta.seconds) / 86400)
-
+		
+		
     @api.onchange('holiday_status_id')
     def _onchange_holiday_status_id(self):
         self._check_and_recompute_days()
