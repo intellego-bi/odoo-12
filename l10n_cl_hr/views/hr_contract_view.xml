@@ -5,25 +5,27 @@
         <field name="model">hr.contract</field>
         <field name="inherit_id" ref="hr_contract.hr_contract_view_form"/>
         <field name="arch" type="xml">
-            <xpath expr="//div[@name='wage']" position="after">
-                <field name="otros_imp" string="Otros Imponible" invisible="1"/>
-                <field name="otro_no_imp" string="Otros No Imponible" invisible="1"/>
-                <div name="colacion">
-                    <field name="colacion"/>
-                    <!-- <label string="Asig. de Colación" for="colacion"/> -->
-                </div>
-                <div name="movilizacion">
-                    <field name="movilizacion"/>
-                    <!-- <label string="Asig. de Movilización" for="movilizacion"/> -->
-                </div>
-                <div name="viatico_santiago">
-                    <field name="viatico_santiago"/>
-                    <!--<label for="viatico_santiago" string="Asig. de Viático"/> -->
-			    </div>
-                <div name="anticipo_sueldo">
-                    <field name="anticipo_sueldo"/>
-                    <!-- <label string="Anticipo de Sueldo" for="anticipo_sueldo"/> -->
-				</div>
+            <xpath expr="//group[@name='advantages']" position="after">
+                <group name="wage_other" string="Otras Prestaciones">
+                    <div name="colacion">
+                        <field name="colacion"/>
+                         <label string="Asig. de Colación" for="colacion"/> -->
+                    </div>
+                    <div name="movilizacion">
+                        <field name="movilizacion"/>
+                        <!-- <label string="Asig. de Movilización" for="movilizacion"/> -->
+                    </div>
+                    <div name="viatico_santiago">
+                        <field name="viatico_santiago"/>
+                        <!--<label for="viatico_santiago" string="Asig. de Viático"/> -->
+    			    </div>
+                    <div name="anticipo_sueldo">
+                        <field name="anticipo_sueldo"/>
+                        <!-- <label string="Anticipo de Sueldo" for="anticipo_sueldo"/> -->
+                    </div>
+                    <field name="otros_imp" string="Otros Imponible" invisible="1"/>
+                    <field name="otro_no_imp" string="Otros No Imponible" invisible="1"/>
+                </group>				
             </xpath>
 
             <xpath expr="//field[@name='type_id']" posi0tion="replace">
