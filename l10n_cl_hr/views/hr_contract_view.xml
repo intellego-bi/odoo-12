@@ -82,13 +82,13 @@
                                 <field name="pension"/>
 								<label string="Pensionado (sin AFP)" for="pension" class="text-muted"/>
 							</div>
-                            <div name="sin_afp" attrs="{'invisible': [('pension', '!=', False)],'required': [('pension', '==', False)]}">
+                            <div name="sin_afp" attrs="{'invisible': [('pension', '==', True)],'required': [('pension', '==', False)]}">
                                 <field name="sin_afp"/>
 								<label string="Activo (sin AFP)" for="sin_afp" class="text-muted"/>
 							</div>
-                            <div name="afp_id" attrs="{'invisible': [('pension', '!=', False)],'required': [('pension', '==', False)]}">
-								<label string="AFP" for="afp_id" class="text-muted"/>
-                                <field name="afp_id"/>
+                            <div name="afp_id" attrs="{'invisible': [('pension', '==', True)],'required': [('pension', '==', False)]}">
+								<label string="AFP" for="afp_id" class="text-muted" attrs="{'invisible': [('sin_afp', '==', True)]}"/>
+                                <field name="afp_id" attrs="{'invisible': [('sin_afp', '==', True)]}"/>
 							</div>
                         </group>
                         <group name="APV" string="Aporte Previsional Voluntario">
