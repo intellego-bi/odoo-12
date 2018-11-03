@@ -12,16 +12,16 @@
     					<field name="colacion" widget="monetary"/>
                     </div>
                     <div name="movilizacion">
-                        <field name="movilizacion"/>
-                        <!-- <label string="Asig. de Movilización" for="movilizacion"/> -->
+                        <label string="Asig. de Movilización" for="movilizacion" class="text-muted"/>
+    					<field name="movilizacion" widget="monetary"/>
                     </div>
                     <div name="viatico_santiago">
-                        <field name="viatico_santiago"/>
-                        <!--<label for="viatico_santiago" string="Asig. de Viático"/> -->
+                        <label string="Viático Mov. Santiago" for="viatico_santiago" class="text-muted"/>
+    					<field name="viatico_santiago" widget="monetary"/>
     			    </div>
                     <div name="anticipo_sueldo">
-                        <field name="anticipo_sueldo"/>
-                        <!-- <label string="Anticipo de Sueldo" for="anticipo_sueldo"/> -->
+                        <label string="Anticipo de Sueldo" for="anticipo_sueldo" class="text-muted"/>
+    					<field name="anticipo_sueldo" widget="monetary"/>
                     </div>
                     <field name="otros_imp" string="Otros Imponible" invisible="1"/>
                     <field name="otro_no_imp" string="Otros No Imponible" invisible="1"/>
@@ -48,17 +48,17 @@
                 <page string="Salud" name="health">
                     <group name="health2">
                         <group name="health3" string="Institución de Salud">
+                            <div name="isapre_cotizacion_uf">
+                                <label string="Cotización Pactada ISAPRE" for="isapre_cotizacion_uf" class="text-muted"/>
+                                <field name="isapre_cotizacion_uf"  attrs="{'invisible': [('isapre_id', '=', 1)]}" string="Cotización"/>
+							</div>
+                            <div name="isapre_moneda">
+                                <label string="Moneda Cotización ISAPRE" for="isapre_moneda" class="text-muted"/>
+                                <field name="isapre_moneda" attrs="{'invisible': [('isapre_id', '=', 1)]}"/>
+    						</div>
                             <div name="isapre_id">
                                 <field name="isapre_id" required="1"/>
                                 <!-- <label for="isapre_id" string="Nombre ISAPRE"/> -->
-							</div>
-                            <div name="isapre_moneda">
-                                <field name="isapre_moneda" attrs="{'invisible': [('isapre_id', '=', 1)]}"/>
-                            <!--    <label for="isapre_moneda" attrs="{'invisible': [('isapre_id', '=', 1)]}"/> -->
-    						</div>
-                            <div name="isapre_cotizacion_uf">
-                                <field name="isapre_cotizacion_uf"  attrs="{'invisible': [('isapre_id', '=', 1)]}" string="Cotización"/>
-                                <!-- <label for="isapre_cotizacion_uf" attrs="{'invisible': [('isapre_id', '=', 1)]}" string="Cotización Pactada"/> -->
 							</div>
                             <div name="isapre_fun">
                                 <field name="isapre_fun" attrs="{'invisible': [('isapre_id', '=', 1)]}"/>
