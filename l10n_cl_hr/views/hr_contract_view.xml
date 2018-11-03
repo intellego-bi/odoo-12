@@ -60,13 +60,13 @@
                         </group>
 
                         <group name="health8" string="Seguro Complementario">
-                            <div name="seguro_complementario_moneda">
-                                <label string="Moneda Seguro Comp." for="seguro_complementario_moneda" class="text-muted"/>
-                                <field name="seguro_complementario_moneda"/>
-							</div>
                             <div name="seguro_complementario">
                                 <label string="Cotización Pactada Seg." for="seguro_complementario" class="text-muted"/>							
                                 <field name="seguro_complementario"/>
+							</div>
+                            <div name="seguro_complementario_moneda">
+                                <label string="Moneda Seguro Comp." for="seguro_complementario_moneda" class="text-muted"/>
+                                <field name="seguro_complementario_moneda"/>
 							</div>
                             <div name="seguro_complementario_id">
                                 <label string="Seguro Complementario" for="seguro_complementario_id" class="text-muted"/>		
