@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>						
 <odoo>						
     <data>      
-
-               <!--
+        <!--
         Account Journal
         -->
         <record id="payroll_journal" model="account.journal">
@@ -11,7 +10,5 @@
             <field name="type">general</field>
             <field name="show_on_dashboard" eval="True"/>
         </record>
-
-
     </data>						
 </odoo>						
