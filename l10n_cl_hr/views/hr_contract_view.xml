@@ -60,17 +60,17 @@
                         </group>
 
                         <group name="health8" string="Seguro Complementario">
-                            <div name="seguro_complementario_id">
-                                <field name="seguro_complementario_id"/>
-                                <!--<label string="Seguro Complementario" for="seguro_complementario_id"/> -->
-							</div>
                             <div name="seguro_complementario_moneda">
+                                <label string="Moneda Seguro Comp." for="seguro_complementario_moneda" class="text-muted"/>
                                 <field name="seguro_complementario_moneda"/>
-                                <!--<label string="Seguro Complementario Moneda" for="seguro_complementario_moneda"/> -->
 							</div>
                             <div name="seguro_complementario">
+                                <label string="Cotización Pactada Seg." for="seguro_complementario" class="text-muted"/>							
                                 <field name="seguro_complementario"/>
-                                <!-- <label for="seguro_complementario" string="Cotización Pactada"/> -->
+							</div>
+                            <div name="seguro_complementario_id">
+                                <label string="Seguro Complementario" for="seguro_complementario_id" class="text-muted"/>		
+                                <field name="seguro_complementario_id"/>
 							</div>
                         </group>
                     </group>
@@ -105,8 +105,8 @@
                                 <field name="apv_id"/>
 							</div>
                             <div name="forma_pago_apv">
+                                <label string="Forma Pago APV" for="forma_pago_apv" class="text-muted"/>	
                                 <field name="forma_pago_apv"/>
-                                <!-- <label for="forma_pago_apv" string="Forma de Pago"/> -->
 							</div>
                         </group>
                     </group>
