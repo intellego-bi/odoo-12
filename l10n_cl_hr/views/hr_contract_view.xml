@@ -6,7 +6,7 @@
         <field name="inherit_id" ref="hr_contract.hr_contract_view_form"/>
         <field name="arch" type="xml">
             <xpath expr="//group[@name='salary_and_advantages']" position="after">
-                <group name="wage_other" string="Otras Prestaciones">
+                <group name="wage_other" string="Beneficio Salarial (mensual)">
                     <div name="colacion">
                         <label string="Asig. de Colación" for="colacion" class="text-muted"/>
     					<field name="colacion" widget="monetary"/>
@@ -48,21 +48,21 @@
                 <page string="Salud" name="health">
                     <group name="health2">
                         <group name="health3" string="Institución de Salud">
-                            <div name="isapre_cotizacion_uf">
+                            <div name="isapre_cotizacion_uf" attrs="{'invisible': [('isapre_id', '=', 1)]}">
                                 <label string="Cotización Pactada ISAPRE" for="isapre_cotizacion_uf" class="text-muted"/>
-                                <field name="isapre_cotizacion_uf"  attrs="{'invisible': [('isapre_id', '=', 1)]}" string="Cotización"/>
+                                <field name="isapre_cotizacion_uf" string="Cotización"/>
 							</div>
-                            <div name="isapre_moneda">
+                            <div name="isapre_moneda" attrs="{'invisible': [('isapre_id', '=', 1)]}">
                                 <label string="Moneda Cotización ISAPRE" for="isapre_moneda" class="text-muted"/>
-                                <field name="isapre_moneda" attrs="{'invisible': [('isapre_id', '=', 1)]}"/>
+                                <field name="isapre_moneda"/>
     						</div>
                             <div name="isapre_id">
                                 <label string="ISAPRE" for="isapre_id" class="text-muted"/>
                                 <field name="isapre_id" required="1"/>
 							</div>
-                            <div name="isapre_fun">
+                            <div name="isapre_fun" attrs="{'invisible': [('isapre_id', '=', 1)]}">
                                 <label string="FUN" for="isapre_fun" class="text-muted"/>
-                                <field name="isapre_fun" attrs="{'invisible': [('isapre_id', '=', 1)]}"/>
+                                <field name="isapre_fun"/>
 							</div>
                         </group>
 
@@ -87,7 +87,7 @@
                         <group name="pens" string="AFP">
                             <div name="pension">
                                 <field name="pension"/>
-								<!-- <label string="" nolabel="1" for="pension"/> -->
+								<label string="Pensionado (sin APV)" for="pension" class="text-muted"/>
 							</div>
                             <div name="sin_afp">
                                 <field name="sin_afp"/>
@@ -101,16 +101,16 @@
                         </group>
                         <group name="APV" string="Aporte Previsional Voluntario">
                             <div name="apv_id">
+                                <label string="Institución Autorizada APV - APVC" for="apv_id" class="text-muted"/>	
                                 <field name="apv_id"/>
-                                <!-- <label for="apv_id" string="Institución Autorizada APV - APVC : Cias Seguros de Vida"/> -->
 							</div>
                             <div name="aporte_voluntario">
+                                <label string="Moneda APV" for="aporte_voluntario_moneda" class="text-muted"/>								
                                 <field name="aporte_voluntario_moneda"/>
-                                <!-- <label for="aporte_voluntario_moneda" string="Tipo Moneda"/> -->
 							</div>
                             <div name="aporte_voluntario">
+                                <label string="Aporte Voluntario (APV)" for="aporte_voluntario" class="text-muted"/>								
                                 <field name="aporte_voluntario"/>
-                                <!-- <label for="aporte_voluntario" string="Aporte Voluntario"/> -->
 							</div>
                             <div name="forma_pago_apv">
                                 <field name="forma_pago_apv"/>
