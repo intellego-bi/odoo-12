@@ -56,8 +56,8 @@ class HRHolidays(models.Model):
 #        self._check_and_recompute_days()
 	
 
-    @api.onchange('date_from','holiday_status_id','employee_id')
-#    @api.onchange('date_from','leave_type_id','employee_id')
+    @api.onchange('date_from')
+#    @api.onchange('date_from','holiday_status_id','employee_id')
     def _onchange_date_from(self):
         """ If there are no date set for date_to, automatically set one 8 hours later than
             the date_from. Also update the number_of_days.
@@ -76,8 +76,8 @@ class HRHolidays(models.Model):
         else:
             self.number_of_days_temp = 0
 
-    @api.onchange('date_to','holiday_status_id','employee_id')
-#    @api.onchange('date_to','leave_type_id','employee_id')
+    @api.onchange('date_to')
+#    @api.onchange('date_to','holiday_status_id','employee_id')
     def _onchange_date_to(self):
         """ Update the number_of_days. """
         date_from = self.date_from
