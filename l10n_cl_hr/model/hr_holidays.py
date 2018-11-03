@@ -50,7 +50,7 @@ class HRHolidays(models.Model):
     @api.onchange('holiday_status_id')
     def _onchange_holiday_status_id(self):
         self._check_holidays()
-        self._compute_number_of_days()
+#        self._compute_number_of_days()
 
 		
 #    @api.onchange('holiday_status_id')
