@@ -35,7 +35,7 @@ from odoo import api, fields, models, tools, _
 class hr_isapre(models.Model):
     _name = 'hr.isapre'
     _description = 'Isapres'
-    name = fields.Char('Nombre ISAPRE', required=True)
     codigo = fields.Char('Codigo', required=True)
+    name = fields.Char('Nombre ISAPRE', required=True)
     rut = fields.Char('RUT', required=True)
     activa = fields.Boolean('Activa')
