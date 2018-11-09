@@ -117,7 +117,8 @@ class HrPayslip(models.Model):
                 'code': 'EFF101',
                 'number_of_days': 3.0,
                 'number_of_hours': 24.0,
-                'contract_id': contract.id,}
+                'contract_id': contract.id,
+                }
 				
             res.append(effective)
 			
