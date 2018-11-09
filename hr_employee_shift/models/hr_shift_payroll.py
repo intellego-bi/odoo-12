@@ -30,9 +30,10 @@ class HrPayslip(models.Model):
     _inherit = 'hr.payslip'
     _description = 'Pay Slip'
 
-
     @api.model
-    def get_worked_day_lines(self, contract_ids, date_from, date_to):
+#    def get_worked_day_lines(self, contract_ids, date_from, date_to):
+    def get_worked_day_lines(self, contracts, date_from, date_to):
+
         """
         @param contract_ids: list of contract id
         @return: returns a list of dict containing the input that should be applied for the given contract between date_from and date_to
@@ -52,7 +53,8 @@ class HrPayslip(models.Model):
         res = []
         # fill only if the contract as a working schedule linked
         uom_day = self.env.ref('product.product_uom_day', raise_if_not_found=False)
-        for contract in self.env['hr.contract'].browse(contract_ids).filtered(lambda contract: contract):
+        #for contract in self.env['hr.contract'].browse(contract_ids).filtered(lambda contract: contract):
+        for contract in self.env['hr.contract'].browse(contracts).filtered(lambda contract: contract):
             uom_hour = contract.employee_id.resource_id.calendar_id.uom_id or self.env.ref('product.product_uom_hour',
                                                                                            raise_if_not_found=False)
             interval_data = []
@@ -111,16 +113,16 @@ class HrPayslip(models.Model):
                     else data['number_of_hours'] / 8.0
                 res.append(data)
 			
-            effective = {
+            effectives = {
                 'name': _("Effective Working Days"),
-                'sequence': 2,
+                'sequence': 3,
                 'code': 'EFF101',
                 'number_of_days': 3.0,
                 'number_of_hours': 24.0,
                 'contract_id': contract.id,
                 }
 				
-            res.append(effective)
+            res.append(effectives)
 			
 			
 			
