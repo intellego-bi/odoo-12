@@ -27,7 +27,7 @@ from odoo import models, fields, api, _
 class HrEmployeeInherited(models.Model):
     _inherit = 'hr.employee'
 
-    resource_calendar_ids = fields.Many2one('resource.calendar', 'Working Hours')
+    resource_calendar_ids = fields.Many2one('resource.calendar', 'Working Shift')
 
 
 class HrEmployeeShift(models.Model):
