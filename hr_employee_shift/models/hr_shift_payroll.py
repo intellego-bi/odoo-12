@@ -30,11 +30,10 @@ class HrPayslip(models.Model):
     _description = 'Shift Pay Slip'
 
     @api.model
-#    def get_worked_day_lines(self, contract_ids, date_from, date_to):
     def get_worked_day_lines(self, contracts, date_from, date_to):
-
+#    def get_worked_day_lines(self, contract_ids, date_from, date_to):
         """
-        @param contract_ids: list of contract id
+        @param contracts: list of contracts 
         @return: returns a list of dict containing the input that should be applied for the given contract between date_from and date_to
         """
 
@@ -69,6 +68,7 @@ class HrPayslip(models.Model):
             leaves = {}
             temp_days = 0
             temp_hours = 0
+            shift_data = []
 
             # Gather all intervals and holidays
             for days in contract.shift_schedule:
