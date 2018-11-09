@@ -24,8 +24,12 @@ from datetime import datetime, timedelta
 from odoo import models, fields, api, _, tools
 
 
-class HrPayroll(models.Model):
+#class HrPayroll(models.Model):
+#    _inherit = 'hr.payslip'
+class HrPayslip(models.Model):
     _inherit = 'hr.payslip'
+    _description = 'Pay Slip'
+
 
     @api.model
     def get_worked_day_lines(self, contract_ids, date_from, date_to):
@@ -56,7 +60,7 @@ class HrPayroll(models.Model):
             attendances = {
                 'name': _("Normal Working Days paid at 100%"),
                 'sequence': 1,
-                'code': 'WORK101',
+                'code': 'WORK100',
                 'number_of_days': 0.0,
                 'number_of_hours': 0.0,
                 'contract_id': contract.id,
