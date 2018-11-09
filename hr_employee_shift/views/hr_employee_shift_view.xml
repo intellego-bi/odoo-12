@@ -69,12 +69,26 @@
                                     </div>
                                 </div>
                                 <div class="oe_kanban_details">
+                                    <div class="o_kanban_record_top">
+                                        <div class="o_kanban_record_headings">
+                                            <strong class="o_kanban_record_title">
+                                                <field name="name"/>
+                                            </strong>
+                                            <span t-if="record.hr_department.value" class="o_kanban_record_subtitle">
+                                                <span class="text-muted"><field name="hr_department"/></span>
+                                            </span>
+                                            <span t-if="record.sequence.value" class="o_kanban_record_subtitle">
+                                                <span class="text-muted"><field name="sequence"/></span>
+                                            </span>
+                                        </div>
+                                    </div>                                    
+                                </div>
+                                <!--<div class="oe_kanban_details">
                                     
                                         <div class="text-muted">
                                             <span t-if="record.hr_department.value">[<field name="hr_department"/>]</span>
-                                        </div>
-                                    
-                                </div>
+                                        </div>                                    
+                                </div>-->
                             </div>
                             </t>
                     </templates>
