@@ -111,16 +111,15 @@ class HrPayslip(models.Model):
                     else data['number_of_hours'] / 8.0
                 res.append(data)
 			
-			effective = {
+            effective = {
                 'name': _("Effective Working Days"),
                 'sequence': 2,
                 'code': 'EFF101',
                 'number_of_days': 3.0,
                 'number_of_hours': 24.0,
-                'contract_id': contract.id,
-            }
-			
-			res.append(effective)
+                'contract_id': contract.id,}
+				
+            res.append(effective)
 			
 			
 			
