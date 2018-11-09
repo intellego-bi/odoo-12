@@ -24,11 +24,10 @@ from datetime import datetime, timedelta
 from odoo import models, fields, api, _, tools
 
 
-#class HrPayroll(models.Model):
-#    _inherit = 'hr.payslip'
-class HrPayslip(models.Model):
+class HrPayroll(models.Model):
+#class HrPayslip(models.Model):
     _inherit = 'hr.payslip'
-    _description = 'Pay Slip'
+    _description = 'Shift Pay Slip'
 
     @api.model
 #    def get_worked_day_lines(self, contract_ids, date_from, date_to):
