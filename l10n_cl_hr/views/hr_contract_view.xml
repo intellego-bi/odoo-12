@@ -23,6 +23,22 @@
                         <label string="Anticipo de Sueldo" for="anticipo_sueldo" class="text-muted"/>
     					<field name="anticipo_sueldo" widget="monetary"/>
                     </div>
+                </group>				
+            </xpath>
+            <xpath expr="//group[@name='wage_other']" position="after">
+                <group name="wage_bonus" string="Bonificaciones Únicas">
+                    <div name="bono_vaca">
+                        <label string="Bono Vacaciones" for="bono_vaca" class="text-muted"/>
+    					<field name="bono_vaca" widget="monetary"/>
+                    </div>
+                    <div name="bono_navidad">
+                        <label string="Bono Navidad" for="bono_navidad" class="text-muted"/>
+    					<field name="bono_navidad" widget="monetary"/>
+                    </div>
+                    <div name="aguinaldo_fp">
+                        <label string="Aguinaldo Fiestas Patrias" for="aguinaldo_fp" class="text-muted"/>
+    					<field name="aguinaldo_fp" widget="monetary"/>
+    			    </div>
                     <field name="otros_imp" string="Otros Imponible" invisible="1"/>
                     <field name="otro_no_imp" string="Otros No Imponible" invisible="1"/>
                 </group>				
