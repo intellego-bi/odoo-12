@@ -56,7 +56,7 @@ class HrPayroll(models.Model):
             attendances = {
                 'name': _("Normal Working Days paid at 100%"),
                 'sequence': 1,
-                'code': 'WORK100',
+                'code': 'WORK101',
                 'number_of_days': 0.0,
                 'number_of_hours': 0.0,
                 'contract_id': contract.id,
