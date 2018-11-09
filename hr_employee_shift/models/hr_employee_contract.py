@@ -28,7 +28,7 @@ class HrEmployeeContract(models.Model):
     _inherit = 'hr.contract'
 
     shift_schedule = fields.One2many('hr.shift.schedule', 'rel_hr_schedule', string="Shift Schedule")
-    working_hours = fields.Many2one('resource.calendar', string='Working Schedule')
+    working_hours = fields.Many2one('resource.calendar', string='Working Contract Schedule')
     department_id = fields.Many2one('hr.department', string="Department",
                                     required=False)
 
