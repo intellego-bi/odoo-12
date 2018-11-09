@@ -82,6 +82,20 @@ class HrPayroll(models.Model):
                         interval_data.append(
                             (interval, was_on_leave_interval(contract.employee_id.id, interval[0], interval[1])))
 
+                work_data = contract.employee_id.get_work_days_data(start_date, end_date, calendar=days.hr_shift)
+                #Dias laborados reales para calcular la semana corrida
+                effective_days = {
+                    'name': _("Effective Working Days"),
+                    'sequence': 2,
+                    'code': 'EFF101',
+                    'number_of_days': work_data['days'],
+                    'number_of_hours': work_data['hours'],
+                    'contract_id': contract.id,
+                    }
+                res.append(effective_days)
+
+				
+				
             # Extract information from previous data. A working interval is considered:
             # - as a leave if a hr.holiday completely covers the period
             # - as a working period instead
@@ -111,18 +125,7 @@ class HrPayroll(models.Model):
                     if uom_day and uom_hour \
                     else data['number_of_hours'] / 8.0
                 res.append(data)
-			
-            effectives = {
-                'name': _("Effective Working Days"),
-                'sequence': 3,
-                'code': 'EFF101',
-                'number_of_days': 3.0,
-                'number_of_hours': 24.0,
-                'contract_id': contract.id,
-                }
-				
-            res.append(effectives)
-			
+		
 			
 			
         return res
