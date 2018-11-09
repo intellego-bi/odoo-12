@@ -19,9 +19,21 @@
             <field name="inherit_id" ref="resource.resource_calendar_form"/>
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='name']" position="after">
-                    <h2><div><field name="hr_department"/></div>
-                    <div><field name="sequence"/></div>
-                    <field name="color" invisible="1"/></h2>
+                    <h2>
+                        <div>
+                            <label string="Departamento" for="hr_department" class="text-muted"/>
+                        </div>
+                        <div>
+						    <field name="hr_department"/>
+						</div>
+                        <div>
+                            <label string="Secuencia" for="sequence" class="text-muted"/>
+                        </div>
+						<div>
+						    <field name="sequence"/>
+						</div>
+                        <field name="color" invisible="1"/>
+					</h2>
                 </xpath>
                 <xpath expr="//field[@name='attendance_ids']" position="replace">
                     <field name="attendance_ids"/>
@@ -57,11 +69,11 @@
                                     </div>
                                 </div>
                                 <div class="oe_kanban_details">
-                                    <strong>
-                                        <div class="text-center">
+                                    
+                                        <div class="text-muted">
                                             <span t-if="record.hr_department.value">[<field name="hr_department"/>]</span>
                                         </div>
-                                    </strong>
+                                    
                                 </div>
                             </div>
                             </t>
