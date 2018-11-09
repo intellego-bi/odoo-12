@@ -24,8 +24,8 @@ from datetime import datetime, timedelta
 from odoo import models, fields, api, _, tools
 
 
-class HrPayroll(models.Model):
-#class HrPayslip(models.Model):
+#class HrPayroll(models.Model):
+class HrPayslip(models.Model):
     _inherit = 'hr.payslip'
     _description = 'Shift Pay Slip'
 
@@ -67,6 +67,8 @@ class HrPayroll(models.Model):
                 'contract_id': contract.id,
             }
             leaves = {}
+			temp_days = 0
+			temp_hours = 0
 
             # Gather all intervals and holidays
             for days in contract.shift_schedule:
@@ -82,17 +84,23 @@ class HrPayroll(models.Model):
                         interval_data.append(
                             (interval, was_on_leave_interval(contract.employee_id.id, interval[0], interval[1])))
 
-                work_data = contract.employee_id.get_work_days_data(start_date, end_date, calendar=days.hr_shift)
-                #Dias laborados reales para calcular la semana corrida
-                effective_days = {
-                    'name': _("Effective Working Days"),
-                    'sequence': 2,
-                    'code': 'EFF101',
-                    'number_of_days': work_data['days'],
-                    'number_of_hours': work_data['hours'],
-                    'contract_id': contract.id,
-                    }
-                res.append(effective_days)
+                days_date_from = fields.Datetime.to_string(start_date)
+                days_date_to = fields.Datetime.to_string(end_date)
+			
+                shift_data = contract.employee_id.get_work_days_data(days_date_from, days_date_to, calendar=days.hr_shift)
+                temp_days += shift_data['days']
+                temp_hours += shift_data['hours']
+				
+            #Dias laborados reales para calcular la semana corrida
+            effective_days = {
+                'name': _("Effective Working Days"),
+                'sequence': 2,
+                'code': 'EFF100',
+                'number_of_days': temp_days,
+                'number_of_hours': temp_hours,
+                'contract_id': contract.id,
+                }
+            res.append(effective_days)
 
 				
 				
@@ -124,7 +132,7 @@ class HrPayroll(models.Model):
                 data['number_of_days'] = uom_hour._compute_quantity(data['number_of_hours'], uom_day) \
                     if uom_day and uom_hour \
                     else data['number_of_hours'] / 8.0
-                res.append(data)
+                #res.append(data)
 		
 			
 			
