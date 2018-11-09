@@ -67,8 +67,8 @@ class HrPayslip(models.Model):
                 'contract_id': contract.id,
             }
             leaves = {}
-			temp_days = 0
-			temp_hours = 0
+            temp_days = 0
+            temp_hours = 0
 
             # Gather all intervals and holidays
             for days in contract.shift_schedule:
