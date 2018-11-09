@@ -120,6 +120,7 @@ class HrPayslip(models.Model):
                 'contract_id': contract.id,
             }
 			
+			res.append(effective)
 			
 			
 			
