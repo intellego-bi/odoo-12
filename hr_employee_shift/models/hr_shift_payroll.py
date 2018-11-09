@@ -96,13 +96,14 @@ class HrPayslip(models.Model):
                 'name': _("Effective Working Days"),
                 'sequence': 3,
                 'code': 'EFF100',
-                'number_of_days': temp_days,
-                'number_of_hours': temp_hours,
+                'number_of_days': 0.0,
+                'number_of_hours': 0.0,
                 'contract_id': contract.id,
                 }
-            res.append(effective_days)
-
-				
+            
+            effective_days['number_of_days'] = temp_days
+            effective_days['number_of_hours'] = temp_hours
+            res.append(effective_days)			
 				
             # Extract information from previous data. A working interval is considered:
             # - as a leave if a hr.holiday completely covers the period
