@@ -37,9 +37,9 @@
                  	</h1>
             </xpath>
 
-            <xpath expr="//field[@name='resource_calendar_id']" position="replace">
+            <!--<xpath expr="//field[@name='resource_calendar_id']" position="replace">
                 <field name="resource_calendar_id" select="hr_resource_monthly_cl"/>
-            </xpath>
+            </xpath>-->
 
             <xpath expr="//field[@name='identification_id']" position="attributes">
                 <attribute name="required">1</attribute>
