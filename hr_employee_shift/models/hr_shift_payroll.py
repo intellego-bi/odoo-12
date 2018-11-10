@@ -94,7 +94,7 @@ class HrPayslip(models.Model):
             #Dias laborados reales para calcular la semana corrida
             effective_days = {
                 'name': _("Effective Working Days"),
-                'sequence': 3,
+                'sequence': 2,
                 'code': 'EFF100',
                 'number_of_days': 0.0,
                 'number_of_hours': 0.0,
