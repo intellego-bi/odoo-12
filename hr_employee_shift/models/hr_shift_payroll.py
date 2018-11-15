@@ -133,7 +133,7 @@ class HrPayslip(models.Model):
                 data['number_of_days'] = uom_hour._compute_quantity(data['number_of_hours'], uom_day) \
                     if uom_day and uom_hour \
                     else data['number_of_hours'] / 8.0
-                #res.append(data)
+                res.append(data)
 		
 			
 			
