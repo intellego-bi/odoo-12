@@ -139,7 +139,7 @@
 
 
         <act_window id="hr_indicadores_previsionales_action"
-                    name="Indicadores"
+                    name="Indicadores Previsionales"
                     res_model="hr.indicadores"
                     view_type="form"
                     view_mode="tree,form"
