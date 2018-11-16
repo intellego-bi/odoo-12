@@ -422,7 +422,7 @@ msgstr "Nombre mostrado"
 #: code:addons/l10n_cl_hr/model/hr_employee.py:81
 #, python-format
 msgid "El Rut debe ser único"
-msgstr "El Rut debe ser único"
+msgstr "El RUT debe ser único"
 
 #. module: l10n_cl_hr
 #: model:ir.model,name:l10n_cl_hr.model_hr_employee
@@ -432,7 +432,7 @@ msgstr "Empleado"
 #. module: l10n_cl_hr
 #: model:ir.model,name:l10n_cl_hr.model_hr_contract
 msgid "Employee Contract"
-msgstr "Employee Contract"
+msgstr "Contrato Empleado"
 
 #. module: l10n_cl_hr
 #: model:ir.model.fields,help:l10n_cl_hr.field_hr_employee_middle_name
@@ -442,7 +442,7 @@ msgstr "Segundo Nombre"
 #. module: l10n_cl_hr
 #: model:ir.model.fields,help:l10n_cl_hr.field_hr_employee_mothers_name
 msgid "Employees mothers name"
-msgstr "Employees mothers name"
+msgstr "Segundo Apellido"
 
 #. module: l10n_cl_hr
 #: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_salary_employee_month_end_date
@@ -462,7 +462,7 @@ msgstr "Este wizard permite imprimir el total haberes."
 #. module: l10n_cl_hr
 #: model:ir.ui.view,arch_db:l10n_cl_hr.hr_afp_form
 msgid "FONDOS DE PENSION"
-msgstr "FONDOS DE PENSION"
+msgstr "Fondos de Pensión"
 
 #. module: l10n_cl_hr
 #: selection:hr.indicadores,month:0
@@ -533,7 +533,7 @@ msgstr "Fondo de Pensiones"
 #. module: l10n_cl_hr
 #: model:ir.model,name:l10n_cl_hr.model_hr_afp
 msgid "Fondos de Pension"
-msgstr "Fondos de Pension"
+msgstr "Fondos de Pensión"
 
 #. module: l10n_cl_hr
 #: model:ir.actions.act_window,name:l10n_cl_hr.hr_afp_action
@@ -691,7 +691,7 @@ msgstr "Junio"
 #: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_type_employee___last_update
 #: model:ir.model.fields,field_description:l10n_cl_hr.field_wizard_export_csv_previred___last_update
 msgid "Last Modified on"
-msgstr "Última modificación en"
+msgstr "Modificado el"
 
 #. module: l10n_cl_hr
 #: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_contract_last_name
@@ -709,7 +709,7 @@ msgstr "Apellido"
 #: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_type_employee_write_uid
 #: model:ir.model.fields,field_description:l10n_cl_hr.field_wizard_export_csv_previred_write_uid
 msgid "Last Updated by"
-msgstr "Última actualización de"
+msgstr "Actualizado por"
 
 #. module: l10n_cl_hr
 #: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_afp_write_date
@@ -721,7 +721,7 @@ msgstr "Última actualización de"
 #: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_type_employee_write_date
 #: model:ir.model.fields,field_description:l10n_cl_hr.field_wizard_export_csv_previred_write_date
 msgid "Last Updated on"
-msgstr "Última actualización en"
+msgstr "Actualizado el"
 
 #. module: l10n_cl_hr
 #: model:ir.actions.report,name:l10n_cl_hr.hr_salary_books
@@ -745,7 +745,7 @@ msgstr "Líquido"
 #. module: l10n_cl_hr
 #: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_indicadores_mutualidad_id
 msgid "MUTUAL"
-msgstr "MUTUAL"
+msgstr "Mutual"
 
 #. module: l10n_cl_hr
 #: selection:hr.indicadores,month:0
@@ -810,7 +810,7 @@ msgstr "Monto Tramo Uno"
 #. module: l10n_cl_hr
 #: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_employee_mothers_name
 msgid "Mothers Name"
-msgstr "Mothers Name"
+msgstr "Segundo Apellido"
 
 #. module: l10n_cl_hr
 #: model:ir.model.fields,help:l10n_cl_hr.field_hr_contract_movilizacion
@@ -991,7 +991,7 @@ msgstr "Imprimir"
 #. module: l10n_cl_hr
 #: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_employee_formated_vat
 msgid "Printable VAT"
-msgstr "Printable VAT"
+msgstr "IVA Imprimir"
 
 #. module: l10n_cl_hr
 #: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_indicadores_tasa_afp_provida
@@ -1001,14 +1001,14 @@ msgstr "ProVida"
 #. module: l10n_cl_hr
 #: model:ir.ui.view,arch_db:l10n_cl_hr.report_hrsalarybymonth
 msgid "R.U.T"
-msgstr "R.U.T"
+msgstr "RUT"
 
 #. module: l10n_cl_hr
 #: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_afp_rut
 #: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_isapre_rut
 #: model:ir.ui.view,arch_db:l10n_cl_hr.hr_afp_form
 msgid "RUT"
-msgstr "R.U.T"
+msgstr "RUT"
 
 #. module: l10n_cl_hr
 #: model:ir.ui.view,arch_db:l10n_cl_hr.hr_indicadores_previsionales_view
@@ -1098,7 +1098,7 @@ msgstr "Septiembre"
 #. module: l10n_cl_hr
 #: model:ir.model.fields,help:l10n_cl_hr.field_hr_employee_formated_vat
 msgid "Show formatted vat"
-msgstr "Show formatted vat"
+msgstr "Mostrar RUT Formateado"
 
 #. module: l10n_cl_hr
 #: selection:hr.payslip,movimientos_personal:0
