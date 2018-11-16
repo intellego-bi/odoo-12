@@ -122,11 +122,12 @@
 
 
     <!-- Menu View -->
-    <menuitem id="menu_cl_hr_payroll_indicators" name="Payroll Indicators" parent="hr_payroll.menu_hr_payroll_root" sequence="10"/>
+	<menuitem id="menu_cl_hr_payroll_chile" name="Payroll" parent="hr_payroll.menu_hr_payroll_root" sequence="9"/>
+    <menuitem id="menu_cl_hr_payroll_indicators" name="Payroll Indicators" parent="hr_payroll.menu_cl_hr_payroll_chile" sequence="10"/>
 
-    <menuitem id="menu_cl_hr_payroll_reports" name="Reports" parent="hr_payroll.menu_hr_payroll_root" sequence="11"/>
+    <menuitem id="menu_cl_hr_payroll_reports" name="Reports" parent="hr_payroll.menu_cl_hr_payroll_chile" sequence="11"/>
 
-    <menuitem id="menu_cl_hr_payroll_configuration" name="Chilean Configuration" parent="hr_payroll.menu_hr_payroll_root" sequence="12"/>
+    <menuitem id="menu_cl_hr_payroll_configuration" name="Chilean Configuration" parent="hr_payroll.menu_hr_payroll_configuration" sequence="101"/>
 
 
 
