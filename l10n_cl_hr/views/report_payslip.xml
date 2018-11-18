@@ -276,32 +276,32 @@
               <table class="table-condensed" width="100%" style="margin-top: 50px; border-top: 3px solid black; border-bottom: 1px solid black;">
                 <thead>
                   <tr>
-                    <td colspan="5" width="25%" style="text-align:left"><strong>Fecha</strong></td>
+                    <td colspan="5" width="25%" style="text-align:left"><strong>Alcance Líquido</strong></td>
                     <td colspan="5" width="20%" style="text-align:right">
-					   <span t-field="o.date_to"/>
-					</td>
-					<td colspan="5" width="5%" style="text-align:right"> </td>
-					<td colspan="5" width="25%" style="text-align:left"><strong>Alcance Líquido</strong></td>
-                    <td colspan="5" width="25%" style="text-align:right">
 					  <t t-foreach="o.line_ids.filtered(lambda line: line.appears_on_payslip)" t-as="p">
 					    <t t-if="('LIQ' == p.code)"> 
 						  CLP <span t-esc="round(p.amount)" t-esc-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/>
 						</t>
 				      </t>
 					</td>
+					<td colspan="5" width="5%" style="text-align:right"> </td>
+					<td colspan="5" width="25%" style="text-align:left"><strong>Fecha</strong></td>
+                    <td colspan="5" width="25%" style="text-align:right">
+					  <span t-field="o.date_to"/>
+					</td>
                   </tr>
                   <tr>
-                    <td colspan="5" width="27%" style="text-align:left"><strong>Monto Alcance Líquido (en palabras):</strong></td>
-					<td colspan="5" width="1%" style="text-align:right"> </td>
-					<td colspan="5" width="1%" style="text-align:right"> </td>
-					<td colspan="5" width="1%" style="text-align:right"> </td>
-					<td colspan="5" width="70%" style="text-align:left">
+                    <td colspan="5" width="25%" style="text-align:left"><strong>Monto Alcance Líquido (en palabras):</strong></td>
+					<td colspan="5" width="72	%" style="text-align:right">
 					  <t t-foreach="o.line_ids.filtered(lambda line: line.appears_on_payslip)" t-as="p">
 					    <t t-if="('LIQ' == p.code) and (p.amount>0)"> 
 						  <span t-esc="o.company_id.currency_id.amount_to_text(p.amount)" />
 						</t>
 				      </t>
 					</td>
+					<td colspan="5" width="1%" style="text-align:right"> </td>
+					<td colspan="5" width="1%" style="text-align:right"> </td>
+					<td colspan="5" width="1%" style="text-align:right"> </td>
                   </tr>
 				</thead>
 			  </table>
