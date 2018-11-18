@@ -6,17 +6,20 @@ import math
 from datetime import datetime, timedelta
 from odoo import api, fields, models, tools
 from odoo.tools import DEFAULT_SERVER_DATETIME_FORMAT as DTF
+from odoo.tools import float_compare
+from odoo.tools.translate import _
 
 
 class HRHolidaysStatus(models.Model):
     _inherit = 'hr.holidays.status'
+    #_inherit = 'hr.leave.type'
     is_continued = fields.Boolean('Disccount Weekends')
 
 
 
 class HRHolidays(models.Model):
     _inherit = 'hr.holidays'
-
+    #_inherit = 'hr.leave'
 
     def _get_number_of_days(self, date_from, date_to, employee_id):
         from_dt = fields.Datetime.from_string(date_from)
@@ -24,6 +27,7 @@ class HRHolidays(models.Model):
 
         #En el caso de las licencias descontamos dias corridos
         if employee_id and self.holiday_status_id.is_continued:
+        #if employee_id and self.leave_type_id.is_continued:
             time_delta = to_dt - from_dt
             return math.ceil(time_delta.days + float(time_delta.seconds) / 86400)
         elif employee_id:
@@ -33,14 +37,20 @@ class HRHolidays(models.Model):
         return math.ceil(time_delta.days + float(time_delta.seconds) / 86400)
 
 
-    @api.onchange('holiday_status_id')
-    def _onchange_holiday_status_id(self):
-        self._check_and_recompute_days()
+#    @api.onchange('holiday_status_id')
+#    def _onchange_holiday_status_id(self):
+#        self._check_and_recompute_days()
 
-
+    @api.onchange('holiday_type')
+    def _onchange_type(self):
+        if self.holiday_type == 'employee' and not self.employee_id:
+            self.employee_id = self.env['hr.employee'].search([('user_id', '=', self.env.uid)], limit=1)
+        elif self.holiday_type != 'employee':
+            self.employee_id = None
 
 
     @api.onchange('date_from','holiday_status_id','employee_id')
+    #@api.onchange('date_from','holiday_type','employee_id')
     def _onchange_date_from(self):
         """ If there are no date set for date_to, automatically set one 8 hours later than
             the date_from. Also update the number_of_days.
@@ -60,6 +70,7 @@ class HRHolidays(models.Model):
             self.number_of_days_temp = 0
 
     @api.onchange('date_to','holiday_status_id','employee_id')
+    #@api.onchange('date_to','holiday_type','employee_id')
     def _onchange_date_to(self):
         """ Update the number_of_days. """
         date_from = self.date_from
@@ -70,7 +81,8 @@ class HRHolidays(models.Model):
             self.number_of_days_temp = self._get_number_of_days(date_from, date_to, self.employee_id.id)
         else:
             self.number_of_days_temp = 0
-
+		
+			
     ####################################################
     # ORM Overrides methods
     ####################################################
