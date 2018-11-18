@@ -95,7 +95,7 @@ class WizardExportCsvPrevired(models.TransientModel):
     
     @api.model
     def get_nacionalidad(self, country):
-        if country == 47: #Chile
+        if country == 46: #Chile
             return 0
         else:
             return 1
