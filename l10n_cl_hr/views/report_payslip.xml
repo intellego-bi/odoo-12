@@ -160,11 +160,9 @@
                           </t>
 						</th>
                         <th colspan="6" width="15%">
-                          <td colspan="3">
                             <span t-field="o.contract_id.carga_familiar"/>
                             <span t-field="o.contract_id.carga_familiar_maternal"/>
                             <span t-field="o.contract_id.carga_familiar_invalida"/>
-                          </td>
 						</th>
                         <th colspan="6" width="20%">
                           <t t-foreach="o.line_ids.filtered(lambda line: line.appears_on_payslip)" t-as="p">
