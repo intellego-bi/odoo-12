@@ -6,7 +6,7 @@
 
 
         <record id="hr_resource_monthly_cl" model="resource.calendar">
-            <field name="name">Mensual Chile</field>
+            <field name="name">Mensual</field>
         </record>
 
  <!-- Horarios Inputs -->

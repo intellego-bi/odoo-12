@@ -10,28 +10,27 @@
             <field name="target">new</field>
         </record>
 
-        <menuitem
+        <menuitem id="menu_salary_books"
             name="Libro de Remuneraciones"
             parent="menu_cl_hr_payroll_reports"
-            sequence="10" icon="STOCK_PRINT"
-            action="action_salary_books"
-            id="menu_salary_books"
-           />
-
+            sequence="10" 
+			action="action_salary_books"
+		/>
+		   
         <record id="view_salary_employee_month" model="ir.ui.view">
             <field name="name">Libro de Remuneraciones</field>
             <field name="model">hr.salary.employee.month</field>
             <field name="arch" type="xml">
-            <form string="Libro de Remuneraciones">
-                <label string="Este wizard permite imprimir el total haberes."/>
+                <form string="Libro de Remuneraciones">
+                    <!--<label string="Este wizard permite imprimir el total haberes."/>-->
                     <footer>
-                        <button name="print_report" string="Print" type="object" class="oe_highlight"/>or
+                        <button name="print_report" string="Print" type="object" class="oe_highlight"/>
                         <button string="Cancel" class="oe_link" special="cancel" />
                     </footer>
                     <group>
                         <field name="end_date"/>
                     </group>               
-            </form>
+                </form>
             </field>
         </record>
         <report 

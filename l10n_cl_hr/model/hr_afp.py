@@ -37,7 +37,7 @@ class hr_afp(models.Model):
     _description = 'Fondos de Pension'
 
     codigo = fields.Char('Codigo', required=True)
-    name = fields.Char('Nombre', required=True)
+    name = fields.Char('Nombre AFP', required=True)
     rut = fields.Char('RUT', required=True)
     rate = fields.Float('Tasa', required=True)
     sis = fields.Float('Aporte Empresa', required=True)

@@ -2,49 +2,70 @@
 <odoo>						
     <data>						
 
-
         <!-- ISAPRES     -->
 
         <record id="hr_isapre_fonasa" model="hr.isapre">
             <field name="codigo">07</field>            
-            <field name="rut">61603000-0</field>
+            <field name="rut">61.603.000-0</field>
             <field name="name">FONASA</field>
+			<field name="activa">True</field>
         </record>
 
         <record id="hr_isapre_colmena" model="hr.isapre">
-            <field name="codigo">04</field>
-            <field name="rut">94954000-6</field>
-            <field name="name">COLMENA GOLDEN CROSS</field>
+            <field name="codigo">67</field>
+            <field name="rut">94.954.000-6</field>
+            <field name="name">Colmena Golden Cross S.A.</field>
+			<field name="activa">True</field>
         </record>
 
         <record id="hr_isapre_banmedica" model="hr.isapre">
-            <field name="codigo">01</field>
-            <field name="rut">96572800-7</field>
-            <field name="name">BANMEDICA</field>
+            <field name="codigo">99</field>
+            <field name="rut">96.572.800-7</field>
+            <field name="name">Isapre Banmédica S.A.</field>
+			<field name="activa">True</field>
         </record>
 
         <record id="hr_isapre_consalud" model="hr.isapre">
-            <field name="codigo">02</field>
-            <field name="rut">96856780-2</field>
-            <field name="name">CONSALUD</field>
+            <field name="codigo">107</field>
+            <field name="rut">96.856.780-2</field>
+            <field name="name">Consalud S.A.</field>
+			<field name="activa">True</field>
         </record>
 
         <record id="hr_isapre_masvida" model="hr.isapre">
-            <field name="codigo">17</field>
-            <field name="rut"> </field>
-            <field name="name">MAS VIDA</field>
+            <field name="codigo">88</field>
+            <field name="rut">96.522.500-5</field>
+            <field name="name">Masvida S.A.</field>
+			<field name="activa">True</field>
         </record>
 
         <record id="hr_isapre_vidatres" model="hr.isapre">
-            <field name="codigo">03</field>
-            <field name="rut"> </field>
-            <field name="name">VIDA TRES</field>
+            <field name="codigo">80</field>
+            <field name="rut">96.502.530-8</field>
+            <field name="name">Vida Tres S.A.</field>
+			<field name="activa">True</field>
         </record>
 
         <record id="hr_isapre_cruzblanca" model="hr.isapre">
-            <field name="codigo">05</field>
-            <field name="rut"> </field>
-            <field name="name">CRUZ BLANCA</field>
+            <field name="codigo">78</field>
+            <field name="rut">96.501.450-0</field>
+            <field name="name">Cruz Blanca S.A.</field>
+			<field name="activa">True</field>
         </record>
+		
+        <record id="hr_isapre_ferrosalud" model="hr.isapre">
+            <field name="codigo">81</field>
+            <field name="rut">96.504.160-5</field>
+            <field name="name">Ferrosalud S.A.</field>
+			<field name="activa">False</field>
+        </record>
+		
+        <record id="hr_isapre_ferrosalud" model="hr.isapre">
+            <field name="codigo">81</field>
+            <field name="rut">96.936.100-0</field>
+            <field name="name">Alemana Salud S.A.</field>
+			<field name="activa">False</field>
+        </record>
+
     </data>
 </odoo>                     
