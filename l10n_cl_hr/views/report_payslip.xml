@@ -318,7 +318,7 @@
                   <thead>
 				    <tr>
 					  <th>
-					    <span t-field="o.note"/>
+					    <span t-field="o.x_studio_nota_interna"/>
 					  </th>
 					</tr>				
                   </thead>
