@@ -58,7 +58,7 @@ class HrPayslip(models.Model):
      ('8', 'Cambio Contrato plazo fijo a plazo indefinido'),
      ('11', 'Otros Movimientos (Ausentismos)'),
      ('12', 'Reliquidación, Premio, Bono')     
-     ), 'Movimientos Perosnal', default="0")
+     ), 'Movimientos Personal', default="0")
 
 
 
