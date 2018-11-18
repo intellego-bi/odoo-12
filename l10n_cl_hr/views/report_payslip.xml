@@ -257,7 +257,7 @@
               </table>
 
 		  
-              <table class="table-condensed" width="100%" style="margin-top: 50px; border-top: 0px solid white; border-bottom: 0px solid white; background:Blue;">
+              <table class="table-condensed" width="100%" style="margin-top: 50px; border-top: 0px solid white; border-bottom: 0px solid white;">
                 <thead>
                   <tr>
                     <td colspan="5" width="25%" style="text-align:left"><strong><h4>TOTAL HABERES</h4></strong></td>
@@ -273,7 +273,7 @@
 				</thead>
 			  </table>
 
-              <table class="table-condensed" width="100%" style="margin-top: 50px; border-top: 3px solid white; border-bottom: 0px solid white;">
+              <table class="table-condensed" width="100%" style="margin-top: 50px; border-top: 3px solid white; border-bottom: 0px solid white; background:#efefef;">
                 <thead>
 				  <tr>
 					<td colspan="1" width="50%" style="text-align:left"><strong>Fecha</strong></td>
