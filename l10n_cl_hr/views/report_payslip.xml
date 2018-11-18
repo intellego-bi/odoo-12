@@ -49,15 +49,15 @@
                   <thead>
                     <tr>
                         <th colspan="4" width="31%"><strong>Departamento</strong></th>
-                        <th colspan="4" width="36%"><strong>Cargo</strong></th>
-						<th colspan="4" width="20%"><strong>Contrato</strong></th>
+                        <th colspan="4" width="28%"><strong>Cargo</strong></th>
+						<th colspan="4" width="28%"><strong>Tipo Contrato</strong></th>
                         <th colspan="4" width="13%" style="text-align:right"><strong>Centro Costo</strong></th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
                         <th colspan="4" width="31%"><span t-field="o.contract_id.department_id"/></th>
-                        <th colspan="4" width="36%">
+                        <th colspan="4" width="28%">
     						<t t-if="not o.contract_id.job_id">
      						    <span>--</span>
 							</t>
@@ -65,7 +65,7 @@
      						    <span t-field="o.contract_id.job_id"/>
 							</t>
 						</th>
-						<th colspan="4" width="20%" style="text-align:right"><span t-field="o.contract_id.name"/></th>
+						<th colspan="4" width="28%" style="text-align:right"><span t-field="o.contract_id.type_id"/></th>
 						<th colspan="4" width="13%" style="text-align:right">0001</th>
                     </tr>
                   </tbody>
@@ -75,8 +75,8 @@
                     <thead>
                       <tr>
 						  <th colspan="5" width="18%"><strong>Nombre AFP</strong></th>
-						  <th colspan="5" width="13%"><strong>Tasa AFP</strong></th>
-                          <th colspan="5" width="20%"><strong>Nombre ISAPRE</strong></th>
+						  <th colspan="5" width="15%"><strong>Tasa AFP</strong></th>
+                          <th colspan="5" width="26%"><strong>Nombre ISAPRE</strong></th>
 						  <th colspan="5" width="20%"><strong>FUN ISAPRE</strong></th>
                           <th colspan="5" width="14%" style="text-align:right"><strong>Cotiz. UF</strong></th>
 						  <th colspan="5" width="15%" style="text-align:right"><strong>Cotiz. CLP</strong></th>
@@ -86,7 +86,7 @@
                     <tbody>
                       <tr>
 						  <th colspan="5" width="18%"><span t-field="o.contract_id.afp_id"/></th>
-                          <th colspan="5" width="13%">
+                          <th colspan="5" width="15%">
                             <t t-if="('MODELO' == o.contract_id.afp_id.name)">
                                 <span t-raw="o.indicadores_id.tasa_afp_modelo"/>
                             </t>
@@ -106,7 +106,7 @@
                               <span t-raw="o.indicadores_id.tasa_afp_capital"/>
                             </t> %
                           </th>
-                          <th colspan="5" width="20%"><span t-field="o.contract_id.isapre_id"/></th>
+                          <th colspan="5" width="26%"><span t-field="o.contract_id.isapre_id"/></th>
                           <th colspan="5" width="20%"><span t-field="o.contract_id.isapre_fun"/></th>
   					      <th colspan="5" width="14%" style="text-align:right"><span t-field="o.contract_id.isapre_cotizacion_uf"/> UF</th>
   					      <th colspan="5" width="15%" style="text-align:right">CLP 
