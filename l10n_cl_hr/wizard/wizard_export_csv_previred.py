@@ -605,7 +605,7 @@ class WizardExportCsvPrevired(models.TransientModel):
                     })
         
         file_lines = sum(1 for _ in content)
-        if file_lines = 0:        
+        if file_lines = '0':        
             return self.show_view(u'Error al generar archivo')
 			
         #else:
