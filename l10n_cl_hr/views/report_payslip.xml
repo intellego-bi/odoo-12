@@ -73,16 +73,18 @@
                     <thead>
                       <tr>
 						  <th colspan="5" width="20%"><strong>Nombre AFP</strong></th>
-						  <th colspan="5" width="20%"><strong>Tasa AFP</strong></th>
-                          <th colspan="5" width="20%"><strong>Nombre ISAPRE</strong></th>
-                          <th colspan="5" width="20%"><strong>Valor ISAPRE</strong></th>
+						  <th colspan="5" width="13%"><strong>Tasa AFP</strong></th>
 						  <th colspan="5" width="20%"><strong>FUN ISAPRE</strong></th>
+                          <th colspan="5" width="20%"><strong>Nombre ISAPRE</strong></th>
+                          <th colspan="5" width="13%"><strong>Valor ISAPRE</strong></th>
+						  <th colspan="5" width="14%"><strong>Valor SALUD</strong></th>
+
                       </tr>
                     </thead>	
                     <tbody>
                       <tr>
 						  <th colspan="5" width="20%"><span t-field="o.contract_id.afp_id"/></th>
-                          <th colspan="5" width="20%">
+                          <th colspan="5" width="13%">
                             <t t-if="('MODELO' == o.contract_id.afp_id.name)">
                                 <span t-raw="o.indicadores_id.tasa_afp_modelo"/>
                             </t>
@@ -102,18 +104,21 @@
                               <span t-raw="o.indicadores_id.tasa_afp_capital"/>
                             </t> %
                           </th>
-                          <th colspan="5" width="20%"><span t-field="o.contract_id.isapre_id"/></th>
-  					      <th colspan="5" width="20%"><span t-field="o.contract_id.isapre_cotizacion_uf"/> UF</th>
                           <th colspan="5" width="20%"><span t-field="o.contract_id.isapre_fun"/></th>
-
-                        <!--<td>
-                          <t t-if="('FONASA' == o.contract_id.isapre_id.name)">
-                              <t t-foreach="o.line_ids.filtered(lambda line: line.appears_on_payslip)" t-as="p"><t t-if="('SALUD' == p.code)"><span t-esc="round(p.amount)" t-esc-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/></t></t>
-                          </t>
-                          <t t-if="('FONASA' != o.contract_id.isapre_id.name)">
-                              <span t-esc="round(o.indicadores_id.uf*o.contract_id.isapre_cotizacion_uf)" t-esc-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/>
-                          </t>
-                        </td>-->
+                          <th colspan="5" width="20%"><span t-field="o.contract_id.isapre_id"/></th>
+  					      <th colspan="5" width="13%"><span t-field="o.contract_id.isapre_cotizacion_uf"/> UF</th>
+  					      <th colspan="5" width="14%">
+                            <t t-if="('FONASA' == o.contract_id.isapre_id.name)">
+                                <t t-foreach="o.line_ids.filtered(lambda line: line.appears_on_payslip)" t-as="p">
+								  <t t-if="('SALUD' == p.code)">
+								    <span t-esc="round(p.amount)" t-esc-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/>
+								  </t>
+								</t>
+                            </t>
+                            <t t-if="('FONASA' != o.contract_id.isapre_id.name)">
+                                <span t-esc="round(o.indicadores_id.uf*o.contract_id.isapre_cotizacion_uf)" t-esc-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/>
+                            </t>
+                          </th>
                       </tr>
                   </tbody>
                 </table>
