@@ -602,5 +602,6 @@ class WizardExportCsvPrevired(models.TransientModel):
         self.write({'file_data': base64.b64encode(content.encode('utf-8')),
                     'file_name': "NominaPrevired_%s_%s_(%s).csv" % (file_year, file_month, self.indicadores_id.name),
                     })
-                
-        return self.show_view(u'Archivo Previred Generado')
+        
+		file_lines = sum(1 for line in file_data)        
+        return self.show_view(u'Archivo Previred Generado %s' % (files_lines))
