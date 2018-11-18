@@ -11,14 +11,14 @@
                   <thead>
                      <tr>
                         <th colspan="2" width="50%"><strong>Razón Social:</strong></th>
-                        <th colspan="2"><strong>RUT Empresa:</strong></th>
+                        <th colspan="2" width="50%"><strong>RUT Empresa:</strong></th>
                      </tr>
                   </thead>
                   <tbody>
                       <tr>
-                          <th colspan="2"><span t-field="res_company.name"/></th>
+                          <th colspan="2" width="50%"><span t-field="res_company.name"/></th>
                           <t t-if="res_company.vat">
-                            <th colspan="2"><span  t-raw="res_company.vat.replace('CL', ' ')"/></th>
+                            <th colspan="2" width="50%"><span  t-raw="res_company.vat.replace('CL', ' ')"/></th>
                           </t>
                           <t t-if="not res_company.vat">
                             <th colspan="2">55.555.555-5</th>
@@ -30,16 +30,16 @@
                 <table class="table-condensed" width="100%" style="border-top: 1px solid black;" name="datos_trabajador">
                   <thead>
                     <tr>
-                        <th><strong>RUT Trabajador</strong></th>
-                        <th><strong>Nombre Trabajador</strong></th>
-                        <th><strong>C.Costo</strong></th>
+                        <th colspan="3" width="33%"><strong>RUT Trabajador:</strong></th>
+                        <th colspan="3" width="34%"><strong>Nombre Trabajador:</strong></th>
+                        <th colspan="3" width="33%"><strong>Centro Costo:</strong></th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                        <td><span t-field="o.employee_id.identification_id"/></td>
-                        <td><span t-field="o.employee_id.name"/></td>
-                        <td>0001</td>
+                        <th colspan="3" width="33%"><span t-field="o.employee_id.identification_id"/></td>
+                        <th colspan="3" width="34%"><span t-field="o.employee_id.name"/></td>
+                        <th colspan="3" width="33%">0001</td>
                     </tr>
                   </tbody>
                 </table>
