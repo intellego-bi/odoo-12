@@ -380,12 +380,16 @@
                   <td colspan="3">Certifico que recibí de <span t-field="res_company.name"/> a mi entera satisifación el saldo líquido de la presente liquidación, no teniendo cobro alguno que hacer o reclamar por los conceptos correspondientes a ella.</td>
 				  <td/>
                 </tr>
-                <tr>
-                  <td colspan="3"></td><td/>
-				  <td colspan="3"></td><td/>
-                </tr>
               </table>
 
+              <table class="table-condensed" width="100%" style="margin-top:20px; border-top: 0px solid white;">
+                  <thead><tr><br></br></tr>				
+                  </thead>
+                  <tbody>     
+				  </tbody>
+			  </table>
+
+			  
               <table class="table-condensed" width="100%" style="margin-top: 10px; border-bottom:3px 1px solid black;">
                 <tr>
                   <th colspan="4"><strong>FIRMA DEL EMPLEADOR</strong></th>
