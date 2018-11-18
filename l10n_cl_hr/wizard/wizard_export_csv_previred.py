@@ -42,8 +42,8 @@ class WizardExportCsvPrevired(models.TransientModel):
     quotechar = '"'
     date_from = fields.Date('Fecha Inicial', required=True)
     date_to = fields.Date('Fecha Final', required=True)
-    file_data = fields.Binary('Archivo CSV', filters=None, help="", default="Previred.csv")
-    file_name = fields.Char('Nombre de archivo', size=256, required=False, help="",)
+    file_data = fields.Binary('Archivo CSV', filters=None, help="")
+    file_name = fields.Char('Nombre de archivo', size=256, required=False, help="", default="Previred.csv")
 
     #_defaults = {
     #    'date_from': lambda *a: time.strftime('%Y-%m-01'),
