@@ -385,7 +385,7 @@
                 </tr>
               </table>
 
-              <table class="table-condensed" width="100%" style="margin-top: 10px; border-bottom:3px 1px solid black;"">
+              <table class="table-condensed" width="100%" style="margin-top: 10px; border-bottom:3px 1px solid black;">
                 <tr>
                   <th colspan="4"><strong>FIRMA DEL EMPLEADOR</strong></th>
                   <th style="text-align:right"><strong>FIRMA DEL TRABAJADOR</strong></th>
