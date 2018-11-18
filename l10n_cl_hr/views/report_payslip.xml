@@ -87,22 +87,22 @@
 						  <th colspan="5" width="20%"><span t-field="o.contract_id.afp_id"/></th>
                           <th colspan="5" width="20%">
                           <t t-if="('MODELO' == o.contract_id.afp_id.name)">
-                              <strong t-raw="o.indicadores_id.tasa_afp_modelo"/>
+                              <span t-raw="o.indicadores_id.tasa_afp_modelo"/>
                           </t>
                           <t t-if="('CUPRUM' == o.contract_id.afp_id.name)">
-                              <strong t-raw="o.indicadores_id.tasa_afp_cuprum"/>
+                              <span t-raw="o.indicadores_id.tasa_afp_cuprum"/>
                           </t>
                           <t t-if="('HABITAT' == o.contract_id.afp_id.name)">
-                              <strong t-raw="o.indicadores_id.tasa_afp_habitat"/>
+                              <span t-raw="o.indicadores_id.tasa_afp_habitat"/>
                           </t>
                           <t t-if="('PLANVITAL' == o.contract_id.afp_id.name)">
-                              <strong t-raw="o.indicadores_id.tasa_afp_planvital"/>
+                              <span t-raw="o.indicadores_id.tasa_afp_planvital"/>
                           </t>
                           <t t-if="('PROVIDA' == o.contract_id.afp_id.name)">
-                              <strong t-raw="o.indicadores_id.tasa_afp_provida"/>
+                              <span t-raw="o.indicadores_id.tasa_afp_provida"/>
                           </t>
                           <t t-if="('CAPITAL' == o.contract_id.afp_id.name)">
-                            <strong t-raw="o.indicadores_id.tasa_afp_capital"/>
+                            <span t-raw="o.indicadores_id.tasa_afp_capital"/>
                           </t>
                         </th>
                         <td>
