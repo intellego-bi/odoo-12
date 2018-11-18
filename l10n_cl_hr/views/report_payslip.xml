@@ -258,7 +258,7 @@
 
 
               <table class="table-condensed " width="100%" style="margin-top: 20px; border-top: 3px solid black;">
-                  <thead>
+					<thead>
                      <tr>
                         <th colspan="2" width="50%"><strong>TOTAL HABERES</strong></th>
                         <th colspan="2" width="50%"><strong>TOTAL DESCUENTOS</strong></th>
@@ -274,7 +274,7 @@
 
 			  
 			  
-              <table class="table-condensed" width="100%" style="margin-top: 20px; border-top: 1px solid black;">
+              <table class="table-condensed" width="100%" style="margin-top: 20px; border-top: 3px solid black;">
                 <thead>
                   <tr>
                     <td colspan="4" width="25%" style="text-align:left"><strong>TOTAL HABERES</strong></td>
