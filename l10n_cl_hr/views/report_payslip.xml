@@ -260,12 +260,12 @@
               <table class="table-condensed" width="100%" style="margin-top: 50px; border-top: 3px solid black; border-bottom: 3px solid black;">
                 <thead>
                   <tr>
-                    <td colspan="5" width="25%" style="text-align:left"><strong><h3>   TOTAL HABERES</h3></strong></td>
+                    <td colspan="5" width="25%" style="text-align:left"><strong><h4>   TOTAL HABERES</h4></strong></td>
                     <td colspan="5" width="20%" style="text-align:right">
 					  <t t-foreach="o.line_ids.filtered(lambda line: line.appears_on_payslip)" t-as="p"><t t-if="('HAB' == p.code)">CLP <span t-esc="round(p.amount)" t-esc-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/></t></t>
 					</td>
 					<td colspan="5" width="5%" style="text-align:right"> </td>
-					<td colspan="5" width="25%" style="text-align:left"><strong><h3>   TOTAL DESCUENTOS</h3></strong></td>
+					<td colspan="5" width="25%" style="text-align:left"><strong><h4>   TOTAL DESCUENTOS</h4></strong></td>
                     <td colspan="5" width="25%" style="text-align:right">
 					  <t t-foreach="o.line_ids.filtered(lambda line: line.appears_on_payslip)" t-as="p"><t t-if="('TDE' == p.code)">CLP <span t-esc="round(p.amount)" t-esc-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/></t></t>
 					</td>
@@ -286,6 +286,16 @@
 					  <t t-foreach="o.line_ids.filtered(lambda line: line.appears_on_payslip)" t-as="p">
 					    <t t-if="('LIQ' == p.code)"> 
 						  CLP <span t-esc="round(p.amount)" t-esc-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/>
+						</t>
+				      </t>
+					</td>
+                  </tr>
+                  <tr>
+                    <td colspan="2" width="25%" style="text-align:left"><strong>Monto Alcance Líquido (en palabras):</strong></td>
+					<td colspan="2" width="25%" style="text-align:left">
+					  <t t-foreach="o.line_ids.filtered(lambda line: line.appears_on_payslip)" t-as="p">
+					    <t t-if="('LIQ' == p.code) and (p.amount>0)"> 
+						  <span t-esc="o.company_id.currency_id.amount_to_text(p.amount)" />
 						</t>
 				      </t>
 					</td>
