@@ -7,10 +7,11 @@
 			<field name="arch" type="xml">
 				<form string="Previred">
 					<group colspan="2">
-						<field name="date_from"/>
+                        <field name="indicadores_id"/>
+    					<field name="date_from"/>
 						<field name="date_to"/>
 						<field name="file_data" filename="file_name" readonly="1" />
-						<field name="file_name" invisible="0" />
+						<field name="file_name" invisible="1" />
 					</group>
 					<footer>
 						<div class="oe_left">

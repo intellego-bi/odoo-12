@@ -41,6 +41,8 @@ class WizardExportCsvPrevired(models.TransientModel):
     
     delimiter = ";"
     quotechar = '"'
+    indicadores_id = fields.Many2one('hr.indicadores', string='Indicadores',
+        help='Defines Previred Forecast Indicators')
     date_from = fields.Date('Fecha Inicial', required=True)
     date_to = fields.Date('Fecha Final', required=True)
     file_data = fields.Binary('Archivo CSV', filters=None, help="")
