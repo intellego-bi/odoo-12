@@ -183,6 +183,14 @@
                </table>
 
               <table class="table-condensed" width="100%" style="border-top: 1px solid black;">
+                  <thead>				
+                  </thead>
+                  <tbody>     <tr><br></br></tr>
+				  </tbody>
+			  </table>
+ 
+			   
+              <table class="table-condensed" width="100%" style="border-top: 1px solid black;">
                   <thead>
 				     <tr><br></br></tr>
                      <tr>
