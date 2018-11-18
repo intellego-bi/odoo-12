@@ -257,13 +257,30 @@
               </table>
 
 
+              <table class="table-condensed " width="100%" style="margin-top: 20px; border-top: 3px solid black;">
+                  <thead>
+                     <tr>
+                        <th colspan="2" width="50%"><strong>TOTAL HABERES</strong></th>
+                        <th colspan="2" width="50%"><strong>TOTAL DESCUENTOS</strong></th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                      <tr>
+                         <th colspan="2" width="50%"><span t-field="res_company.name"/></th>
+                         <th colspan="2" width="50%"><span  t-raw="res_company.vat.replace('CL', ' ')"/></th>
+                      </tr>
+                  </tbody>
+                </table>
+
+			  
+			  
               <table class="table-condensed" width="100%" style="margin-top: 20px; border-top: 1px solid black;">
                 <thead>
                   <tr>
-                    <th colspan="4" width="25%" style="text-align:left"><strong>TOTAL HABERES</strong></th>
-                    <th colspan="4" width="25%" style="text-align:right">CLP xxx</th>
-					<th colspan="4" width="25%" style="text-align:left"><strong>TOTAL HABERES</strong></th>
-                    <th colspan="4" width="25%" style="text-align:right">CLP xxx</th>
+                    <td colspan="4" width="25%" style="text-align:left"><strong>TOTAL HABERES</strong></td>
+                    <td colspan="4" width="25%" style="text-align:right">CLP xxx</td>
+					<td colspan="4" width="25%" style="text-align:left"><strong>TOTAL HABERES</strong></td>
+                    <td colspan="4" width="25%" style="text-align:right">CLP xxx</td>
                   </tr>
 				</thead>
 			  </table>
