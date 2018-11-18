@@ -289,8 +289,8 @@ class WizardExportCsvPrevired(models.TransientModel):
 
         #date_start_format = datetime.strptime(date_start, DF).strftime("%m%Y")
         #date_stop_format = datetime.strptime(date_stop, DF).strftime("%m%Y")
-        date_start_format = datetime.strptime(date_start[:10], "%Y/%m/%d").strftime("%m%Y")
-        date_stop_format = datetime.strptime(date_stop[:10], "%Y/%m/%d").strftime("%m%Y")
+        date_start_format = datetime.strptime(date_start[:10], "%Y-%m-%d").strftime("%m%Y")
+        date_stop_format = datetime.strptime(date_stop[:10], "%Y-%m-%d").strftime("%m%Y")
 
         line_employee = []
         rut = ""
