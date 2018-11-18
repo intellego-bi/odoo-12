@@ -257,7 +257,7 @@
               </table>
 
 		  
-              <table class="table-condensed" width="100%" style="margin-top: 50px; border-top: 3px solid black; border-bottom: 3px solid black;">
+              <table class="table-condensed" width="100%" style="margin-top: 50px; border-top: 0px solid black; border-bottom: 0px solid black;">
                 <thead>
                   <tr>
                     <td colspan="5" width="25%" style="text-align:left"><strong><h4>TOTAL HABERES</h4></strong></td>
@@ -273,7 +273,7 @@
 				</thead>
 			  </table>
 
-              <table class="table-condensed" width="100%" style="margin-top: 50px; border-top: 3px solid black; border-bottom: 1px solid black;">
+              <table class="table-condensed" width="100%" style="margin-top: 50px; border-top: 3px solid black; border-bottom: 0px solid black;">
                 <thead>
                   <tr>
                     <td colspan="5" width="25%" style="text-align:left"><strong>Alcance Líquido</strong></td>
@@ -391,6 +391,11 @@
                   <td colspan="4"><strong>FIRMA DEL EMPLEADOR</strong></td>
                   <td align="right"><strong>FIRMA DEL TRABAJADOR</strong></td>
                 </tr>
+                <tr>
+                  <td colspan="4"><span t-field="res_company.name"/></td>
+                  <td align="right"><span t-field="o.employee_id.name"/></td>
+                </tr>
+
               </table>
             </div>
 					</t>
