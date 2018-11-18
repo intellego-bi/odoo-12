@@ -314,7 +314,7 @@
                 </tr>
               </table>
 
-              <table class="table-condensed" width="100%" style="margin-top:20px; border-top: 0px solid white;">
+              <!--<table class="table-condensed" width="100%" style="margin-top:20px; border-top: 0px solid white;">
                   <thead>
 				    <tr>
 					  <th>
@@ -324,7 +324,7 @@
                   </thead>
                   <tbody>     
 				  </tbody>
-			  </table>
+			  </table>-->
 
 			  
               <table class="table-condensed" width="100%" style="margin-top: 1px; border-bottom:3px 1px solid black;">
