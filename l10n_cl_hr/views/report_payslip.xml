@@ -130,8 +130,8 @@
 						<th colspan="6" width="13%"><strong>H.EXTRA</strong></th>
 						<th colspan="6" width="20%"><strong>DESCUENTOS</strong></th>
                         <th colspan="6" width="20%"><strong>CARGAS</strong></th>
-                        <th colspan="6" width="13%" align="right"><strong>Imponible</strong></th>
-						<th colspan="6" width="14%" align="right"><strong>Tributable</strong></th>
+                        <th colspan="6" width="13%" style="text-align:right"><strong>Imponible</strong></th>
+						<th colspan="6" width="14%" style="text-align:right"><strong>Tributable</strong></th>
                     </tr>
                   </thead>
                   <tbody>
@@ -164,14 +164,14 @@
                             <span t-field="o.contract_id.carga_familiar_maternal"/> / 
                             <span t-field="o.contract_id.carga_familiar_invalida"/>
 						</th>
-                        <th colspan="6" width="13%" align="right">
+                        <th colspan="6" width="13%" style="text-align:right">
                           <t t-foreach="o.line_ids.filtered(lambda line: line.appears_on_payslip)" t-as="p">
                             <t t-if="('TOTIM' == p.code)">
                               CLP <span t-esc="round(p.amount)" t-esc-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/>
                             </t>
                           </t>
 						</th>
-						<th colspan="6" width="14%" align="right">
+						<th colspan="6" width="14%" style="text-align:right">
                           <t t-foreach="o.line_ids.filtered(lambda line: line.appears_on_payslip)" t-as="p">
                             <t t-if="'TRIBU' == p.code">
                               CLP <span t-esc="round(p.amount)" t-esc-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/>
@@ -260,7 +260,7 @@
                 <thead>
                   <tr>
                     <th colspan="4" width="25%"><strong>TOTAL HABERES</strong></th>
-                    <th colspan="4" width="25%"> 
+                    <th colspan="4" width="25%" style="text-align:right"> 
 					  <t t-foreach="o.line_ids.filtered(lambda line: line.appears_on_payslip)" t-as="p">
 					    <t t-if="('HAB' == p.code)"> 
 						  CLP <span t-esc="round(p.amount)" t-esc-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/>
@@ -268,23 +268,39 @@
 				      </t>
 					</th>
                     <th colspan="4" width="25%"><strong>TOTAL DESCUENTOS</strong></th>
-                    <th colspan="4" width="25%"> 
+                    <th colspan="4" width="25%" style="text-align:right"> 
 					  <t t-foreach="o.line_ids.filtered(lambda line: line.appears_on_payslip)" t-as="p">
 					    <t t-if="('TDE' == p.code)"> 
-						  <span t-esc="round(p.amount)" t-esc-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/>
+						  CLP <span t-esc="round(p.amount)" t-esc-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/>
 					    </t>
 					  </t>
 					</th>
                   </tr>
                   <tr>
-                    <td><strong>FECHA</strong></td>
-                    <td><span t-field="o.date_to"/></td>
-                    <td><strong>ALCANCE LIQUIDO</strong></td>
-                    <td> <t t-foreach="o.line_ids.filtered(lambda line: line.appears_on_payslip)" t-as="p"><t t-if="('LIQ' == p.code)"> <span t-esc="p.amount" t-esc-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/></t></t></td>
+                    <th colspan="3" width="50%">.</th>
+                    <th colspan="3" width="25%"><strong>ALCANCE LIQUIDO</strong></th>
+                    <th colspan="3" width="25%" style="text-align:right"> 
+					  <t t-foreach="o.line_ids.filtered(lambda line: line.appears_on_payslip)" t-as="p">
+					    <t t-if="('LIQ' == p.code)"> 
+						  CLP <span t-esc="round(p.amount)" t-esc-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/>
+						</t>
+				      </t>
+					</th>
                   </tr>
+				  
                   <tr>
-                    <th>SON</th>
-                    <th colspan="3"><t t-foreach="o.line_ids.filtered(lambda line: line.appears_on_payslip)" t-as="p"><t t-if="('LIQ' == p.code) and (p.amount>0)"> <span t-esc="o.company_id.currency_id.amount_to_text(p.amount)" /></t></t></th>
+				    <th colspan="2" width="50%"><strong>FECHA</strong></th>
+                    <th colspan="2" width="50%">SON</th>
+				  </tr>
+				  <tr>
+				    <th colspan="2" width="50%"><span t-field="o.date_to"/></th>
+                    <th colspan="2" width="50%">
+					  <t t-foreach="o.line_ids.filtered(lambda line: line.appears_on_payslip)" t-as="p">
+					    <t t-if="('LIQ' == p.code) and (p.amount>0)"> 
+						  <span t-esc="o.company_id.currency_id.amount_to_text(p.amount)" />
+						</t>
+				      </t>
+					</th>
                   </tr>
                 </thead>
               </table>
