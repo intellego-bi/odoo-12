@@ -11,15 +11,15 @@ from odoo.tools.translate import _
 
 
 class HRHolidaysStatus(models.Model):
-    _inherit = 'hr.holidays.status'
-    #_inherit = 'hr.leave.type'
+    #_inherit = 'hr.holidays.status'
+    _inherit = 'hr.leave.type'
     is_continued = fields.Boolean('Disccount Weekends')
 
 
 
 class HRHolidays(models.Model):
-    _inherit = 'hr.holidays'
-    #_inherit = 'hr.leave'
+    #_inherit = 'hr.holidays'
+    _inherit = 'hr.leave'
 
     def _get_number_of_days(self, date_from, date_to, employee_id):
         from_dt = fields.Datetime.from_string(date_from)
