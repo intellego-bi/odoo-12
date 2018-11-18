@@ -56,7 +56,7 @@
                     <tr>
                         <td><span t-field="o.contract_id.department_id"/></td>
                         <td><span t-field="o.contract_id.job_id"/></td>
-                        <td><span t-field="o.contract_id.date_start"/></
+                        <td><span t-field="o.contract_id.date_start"/></td>
                     </tr>
                   </tbody>
                 </table>
