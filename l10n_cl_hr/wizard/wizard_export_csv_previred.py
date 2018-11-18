@@ -49,10 +49,10 @@ class WizardExportCsvPrevired(models.TransientModel):
     file_data = fields.Binary('Archivo CSV', filters=None, help="")
     file_name = fields.Char('Nombre de archivo', size=256, required=False, help="Archivo plano generado")
 
-    _defaults = {
-        'date_from': time.strftime('%Y-%m-01'),
-        'date_to': str(datetime.now() + relativedelta.relativedelta(months=+1, day=1, days=-1))[:10]
-        }
+    #_defaults = {
+    #    'date_from': time.strftime('%Y-%m-01'),
+    #    'date_to': str(datetime.now() + relativedelta.relativedelta(months=+1, day=1, days=-1))[:10]
+    #    }
 
 	
     #_defaults = {
