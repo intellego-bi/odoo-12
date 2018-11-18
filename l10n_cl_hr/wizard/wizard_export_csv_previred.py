@@ -96,7 +96,7 @@ class WizardExportCsvPrevired(models.TransientModel):
         #02 Gratificaciones
         #03 Bono Ley de Modernizacion Empresas Publicas
         #TODO: en base a que se elije el tipo de pago???
-        return 1
+        return '01'
     
     @api.model
     def get_regimen_provisional(self, contract):
@@ -277,11 +277,12 @@ class WizardExportCsvPrevired(models.TransientModel):
         country_company = self.env.user.company_id.country_id
         output = io.StringIO()
         writer = csv.writer(output, delimiter=self.delimiter, quotechar=self.quotechar, quoting=csv.QUOTE_NONE)
-        csvdata = [1,2,'a','He said "what do you mean?"',"Whoa!\nNewlines!"]        
+        #csvdata = [1,2,'a','He said "what do you mean?"',"Whoa!\nNewlines!"]
+        csvdata = []        
         payslip_recs = []
 		#Debemos colocar que tome todo el mes y no solo el día exacto TODO
         payslip_recs = payslip_model.search([('date_from','=',self.date_from), 
-                                             ('state','=',"done"),
+                                             ('state','=',"done")
                                              ])
         #payslip_recs = payslip_model.browse([('date_from','=',self.date_from), 
         #                                     ('state','=','done'),
@@ -592,7 +593,7 @@ class WizardExportCsvPrevired(models.TransientModel):
                              # yo pensaba rut_emp_dv,
                              " ",
                              #105 Centro de Costos, Sucursal, Agencia 
-                             "1000"
+                             " "
                              ]
             writer.writerow(line_employee)
       
