@@ -609,4 +609,4 @@ class WizardExportCsvPrevired(models.TransientModel):
         #    return self.show_view(u'Error al generar archivo')
 			
         #else:
-        return self.show_view(u'Archivo Previred Generado para %s (%s bytes)' % (self.indicadores_id.name, file_lines))
+        return self.show_view(u'Archivo Previred para %s (%s bytes)' % (self.indicadores_id.name, file_lines))
