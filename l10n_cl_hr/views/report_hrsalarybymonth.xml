@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <template id="report_hrsalarybymonth">
+<data>
+    <template id="l10n_cl_hr.report_hrsalarybymonth">
+	<!--<template id="report_hrsalarybymonth">-->
         <t t-call="web.html_container">
         <t t-call="web.internal_layout">
           <t t-foreach="docs" t-as="o">
@@ -187,4 +189,5 @@
         </t>
       </t>
     </template>
+</data>
 </odoo>
