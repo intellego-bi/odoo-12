@@ -278,12 +278,12 @@ class WizardExportCsvPrevired(models.TransientModel):
         csvdata = [1,2,'a','He said "what do you mean?"',"Whoa!\nNewlines!"]        
         payslip_recs = []
 		#Debemos colocar que tome todo el mes y no solo el día exacto TODO
-        #payslip_recs = payslip_model.search([('date_from','=',self.date_from), 
+        payslip_recs = payslip_model.search([('date_from','=',self.date_from), 
+                                             ('state','=',"done"),
+                                             ])
+        #payslip_recs = payslip_model.browse([('date_from','=',self.date_from), 
         #                                     ('state','=','done'),
         #                                     ])
-        payslip_recs = payslip_model.browse([('date_from','=',self.date_from), 
-                                             ('state','=','done'),
-                                             ])
 
         #date_start = self.date_from
         #date_stop = self.date_to
