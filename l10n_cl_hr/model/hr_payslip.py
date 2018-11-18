@@ -50,7 +50,7 @@ class HrPayslip(models.Model):
     movimientos_personal = fields.Selection((('0', 'Sin Movimiento en el Mes'),
      ('1', 'Contratación a plazo indefinido'),
      ('2', 'Retiro'),
-     ('3', 'Subsidios'),
+     ('3', 'Subsidios (L Médicas)'),
      ('4', 'Permiso Sin Goce de Sueldos'),
      ('5', 'Incorporación en el Lugar de Trabajo'),
      ('6', 'Accidentes del Trabajo'),
@@ -58,7 +58,10 @@ class HrPayslip(models.Model):
      ('8', 'Cambio Contrato plazo fijo a plazo indefinido'),
      ('11', 'Otros Movimientos (Ausentismos)'),
      ('12', 'Reliquidación, Premio, Bono')     
-     ), 'Movimientos Perosnal', default="0")
+     ), 'Código Movimiento', default="0")
+
+    date_start_mp = fields.Date('Fecha Inicio MP',  help="Fecha de inicio del movimiento de personal")
+    date_end_mp = fields.Date('Fecha Fin MP',  help="Fecha del fin del movimiento de personal")
 
 
 
@@ -85,35 +88,35 @@ class HrPayslip(models.Model):
             day_from = datetime.combine(fields.Date.from_string(date_from), datetime_time.min)
             day_to = datetime.combine(fields.Date.from_string(date_to), datetime_time.max)
 
-        #    # compute leave days
+            # compute leave days
             leaves = {}
-        #    day_leave_intervals = contract.employee_id.iter_leaves(day_from, day_to, calendar=contract.resource_calendar_id)
+            day_leave_intervals = contract.employee_id.iter_leaves(day_from, day_to, calendar=contract.resource_calendar_id)
             temp = 0 
             dias = 0
-        #    for day_intervals in day_leave_intervals:
-        #        for interval in day_intervals:
-        #            holiday = interval[2]['leaves'].holiday_id
+            for day_intervals in day_leave_intervals:
+                for interval in day_intervals:
+                    holiday = interval[2]['leaves'].holiday_id
 
-        #            current_leave_struct = leaves.setdefault(holiday.holiday_status_id, {
-        #                'name': holiday.holiday_status_id.name,
-        #                'sequence': 5,
-        #                'code': holiday.holiday_status_id.name,
-        #                'number_of_days': 0.0,
-        #                'number_of_hours': 0.0,
-        #                'contract_id': contract.id,
-        #            })
-        #            leave_time = (interval[1] - interval[0]).seconds / 3600
-        #            current_leave_struct['number_of_hours'] += leave_time
-        #            work_hours = contract.employee_id.get_day_work_hours_count(interval[0].date(), calendar=contract.resource_calendar_id)
-        #            if work_hours:
-        #                current_leave_struct['number_of_days'] += leave_time / work_hours
-        #                temp += leave_time / work_hours
+                    current_leave_struct = leaves.setdefault(holiday.holiday_status_id, {
+                        'name': holiday.holiday_status_id.name,
+                        'sequence': 5,
+                        'code': holiday.holiday_status_id.name,
+                        'number_of_days': 0.0,
+                        'number_of_hours': 0.0,
+                        'contract_id': contract.id,
+                    })
+                    leave_time = (interval[1] - interval[0]).seconds / 3600
+                    current_leave_struct['number_of_hours'] += leave_time
+                    work_hours = contract.employee_id.get_day_work_hours_count(interval[0].date(), calendar=contract.resource_calendar_id)
+                    if work_hours:
+                        current_leave_struct['number_of_days'] += leave_time / work_hours
+                        temp += leave_time / work_hours
 
             # compute worked days
             work_data = contract.employee_id.get_work_days_data(day_from, day_to, calendar=contract.resource_calendar_id)
             #Dias laborados reales para calcular la semana corrida
             effective = {
-                'name': _("Effective Working Days"),
+                'name': _("Dias de trabajo efectivos"),
                 'sequence': 2,
                 'code': 'EFF100',
                 'number_of_days': work_data['days'],
