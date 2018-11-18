@@ -277,7 +277,7 @@ class WizardExportCsvPrevired(models.TransientModel):
         writer = csv.writer(output, delimiter=self.delimiter, quotechar=self.quotechar, quoting=csv.QUOTE_NONE)
         csvdata = [1,2,'a','He said "what do you mean?"',"Whoa!\nNewlines!"]        
         #Debemos colocar que tome todo el mes y no solo el día exacto TODO
-        payslip_recs = payslip_model.search([('date_from','=',self.date_from),('state','=','done'),
+        payslip_recs = payslip_model.search([('date_from','=',self.date_from),
                                              ])
 
         #date_start = self.date_from
@@ -302,7 +302,7 @@ class WizardExportCsvPrevired(models.TransientModel):
             rut_emp = rut_emp.replace('.','')
         except:
             pass  
-        for payslip in payslip_recs:
+        for payslip in payslip_recs.filtered(lambda state: payslip.state not in ['draft', 'cancel', 'confirm']):
             payslip_line_recs = payslip_line_model.search([('slip_id','=',payslip.id)])
             rut = ""
             rut_dv = ""
