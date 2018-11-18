@@ -84,8 +84,8 @@ class WizardExportCsvPrevired(models.TransientModel):
 
     
     @api.model
-    def get_nacionalidad(self, employee):
-        if employee == 47:
+    def get_nacionalidad(self, country):
+        if country == 47: #Chile
             return 0
         else:
             return 1
@@ -129,8 +129,6 @@ class WizardExportCsvPrevired(models.TransientModel):
                     if line.code == 'WORK100':
                         worked_days = line.number_of_days
         return worked_days
-
-
 
 
     @api.model
@@ -243,14 +241,18 @@ class WizardExportCsvPrevired(models.TransientModel):
          [u'á', 'a'],
          [u'é', 'e'],
          [u'í', 'i'],
+         [u'ï', 'i'],
          [u'ó', 'o'],
          [u'ú', 'u'],
+         [u'ü', 'u'],
          [u'ñ', 'n'],
          [u'Á', 'A'],
          [u'É', 'E'],
          [u'Í', 'I'],
+         [u'Ï', 'I'],
          [u'Ó', 'O'],
          [u'Ú', 'U'],
+         [u'Ü', 'u'],
          [u'Ñ', 'N']]
 
         while c < size and c < len(texto):
@@ -314,46 +316,68 @@ class WizardExportCsvPrevired(models.TransientModel):
             rut, rut_dv = payslip.employee_id.identification_id.split("-")
             rut = rut.replace('.','')
             line_employee = [
-                             #1
+                             #1 RUT Trabajador
                              self._acortar_str(rut, 11),
-                             #2							 
+                             #2	Dígito Verificador RUT Trabajador		 
                              self._acortar_str(rut_dv, 1),
-                             #3
+                             #3 Apellido Paterno
                              self._arregla_str(payslip.employee_id.last_name.upper(), 30)  if payslip.employee_id.last_name else "",
-                             #4 
+                             #4 Apellido Materno
                              self._arregla_str(payslip.employee_id.mothers_name.upper(), 30)  if payslip.employee_id.mothers_name else "",
-                             #5
+                             #5 Nombres
                              "%s %s" % (self._arregla_str(payslip.employee_id.firstname.upper(), 15), self._arregla_str(payslip.employee_id.middle_name.upper(), 15) if payslip.employee_id.middle_name else ''),
-                             #6
+                             #6 Sexo
                              sexo_data.get(payslip.employee_id.gender, "") if payslip.employee_id.gender else "",
-                             #7
+                             #7 Nacionalidad (0=Chileno, 1=Extranjero)
                              self.get_nacionalidad(payslip.employee_id.country_id.id),
-                             #8
+                             #8 Tipo de Pago (01=Remuneraciones Mes, 02=Gratifiaciones) 	
                              self.get_tipo_pago(payslip.employee_id),
-                             #9
+                             #9 Periodo Desde (MMAAAA)
                              date_start_format,
-                             #10
+                             #10 Periodo Hasta (MMAAAA)
                              date_stop_format,
-                             #11
+                             #11 Regimen Previsional (AFP, INP o SIP)
                              self.get_regimen_provisional(payslip.contract_id),
-                             #12
+                             #12 Tipo Trabajador
+							 # TABLA No 5
+							 # 0 Activo (No Pensionado)
+							 # 1 Pensionado y cotiza
+							 # 2 Pensionado y no cotiza
+							 # 3 Activo > 65 años (nunca pensionado)
                              "0", #payslip.employee_id.type_id.id_type,
-                             #13
+                             #13 Días Trabajados (0 <= días <= 30)
                              int(self.get_dias_trabajados(payslip and payslip[0] or False)),
-                             #14
+                             #14 Tipo de Línea
+							 # TABLA No 6
+							 # 00 Línea Principal o Base
+							 # 01 Línea Adicional
+							 # 02 Segundo Contrato
+							 # 03 Movimiento de Personal Afiliado Voluntario
                              self.get_tipo_linea(payslip and payslip[0] or False),
-                             #15
+                             #15 Código Movimiento de Personal
+							 # TABLA No 7
+							 # 0 Sin Movimiento en el Mes
+							 # 1 Contratación a plazo indefinido
+							 # 2 Retiro
+							 # 3 Subsidios
+							 # 4 Permiso Sin Goce de Sueldos
+							 # 5 Incorporación en el Lugar de Trabajo
+							 # 6 Accidentes del Trabajo
+							 # 7 Contratación a plazo fijo
+							 # 8 Cambio Contrato plazo fijo a plazo indefinido
+							 # 11 Otros Movimientos (Ausentismos)
+							 # 12 Reliquidación, Premio, Bono
                              payslip.movimientos_personal,
                              #16 Fecha inicio movimiento personal (dia-mes-año)
-                             #Si declara mov. personal 1, 3, 4, 5, 6, 7, 8 y 11 Fecha Desde
-                             #es obligatoria y debe estar dentro del periodo de remun
+                             # Si declara mov. personal 1, 3, 4, 5, 6, 7, 8 y 11 Fecha Desde
+                             # es obligatoria y debe estar dentro del periodo de remun
                              datetime.strptime(payslip.date_start_mp, DF).strftime("%d/%m/%Y") if payslip.movimientos_personal != '0' else '00/00/0000', 
-                             #payslip.date_from if payslip.date_from else '00/00/0000', 
+                             # payslip.date_from if payslip.date_from else '00/00/0000', 
                              #17 Fecha fin movimiento personal (dia-mes-año)
                              datetime.strptime(payslip.date_end_mp, DF).strftime("%d/%m/%Y") if payslip.movimientos_personal != '0' else '00/00/0000', 
-                             #Si declara mov. personal 1, 3, 4, 5, 6, 7, 8 y 11 Fecha Desde
-                             #es obligatoria y debe estar dentro del periodo de remun
-                             #payslip.date_to if payslip.date_to else '00-00-0000', 
+                             # Si declara mov. personal 1, 3, 4, 5, 6, 7, 8 y 11 Fecha Desde
+                             # es obligatoria y debe estar dentro del periodo de remun
+                             # payslip.date_to if payslip.date_to else '00-00-0000', 
                              self.get_tramo_asignacion_familiar(payslip, self.get_payslip_lines_value_2(payslip,'TOTIM')),
                              #19 Numero Cargas Simples
                              payslip.contract_id.carga_familiar,
@@ -370,13 +394,21 @@ class WizardExportCsvPrevired(models.TransientModel):
                              #25 Solicitud Trabajador Joven TODO SUBSIDIO JOVEN
                              "N",
                              #26 Código AFP
+							 # TABLA No 10
+							 # 00 no está en AFP
+							 # 03 Cuprum
+							 # 05 Habitat
+							 # 08 Provida
+							 # 29 PlanVital
+							 # 33 Capital
+							 # 34 Modelo
                              payslip.contract_id.afp_id.codigo,
-                             #27 Base Imponible AFP
+                             #27 Renta Imponible AFP en CLP
                              int(self.get_imponible_afp_2(payslip and payslip[0] or False, self.get_payslip_lines_value_2(payslip,'TOTIM'), self.get_payslip_lines_value_2(payslip,'IMPLIC'))),
                              #AFP SIS APV 0 0 0 0 0 0
-                             #28 AFP
+                             #28 Cotización Obligatoria AFP en CLP
                              int(self.get_payslip_lines_value_2(payslip,'PREV')),
-                             #29 SIS
+                             #29 Cotización Seguro Invalidez y Supervivencia - SIS
                              int(self.get_payslip_lines_value_2(payslip,'SIS')),
                              #30 Cuenta de Ahorro Voluntario AFP
                              "0",
@@ -408,7 +440,7 @@ class WizardExportCsvPrevired(models.TransientModel):
                              #43 Cotización APVI 9(8) Monto en $ de la Cotización APVI
                              int(self.get_payslip_lines_value_2(payslip,'APV')) if self.get_payslip_lines_value_2(payslip,'APV') else "0",
                              #44 Cotizacion Depositos 
-                             
+                             "0",
                              #45 Codigo Institucion Autorizada APVC
                              "0",
                              #46 Numero de Contrato APVC TODO
@@ -429,24 +461,22 @@ class WizardExportCsvPrevired(models.TransientModel):
                              " ",
                              #54 Nombres
                              " ",
-                             "0",
-                             
-                             #Tabla N°7: Movimiento de Personal
-                             #Código Glosa
-                             #0 Sin Movimiento en el Mes
-                             #1 Contratación a plazo indefinido
-                             #2 Retiro
-                             #3 Subsidios
-                             #4 Permiso Sin Goce de Sueldos
-                             #5 Incorporación en el Lugar de Trabajo
-                             #6 Accidentes del Trabajo
-                             #7 Contratación a plazo fijo
-                             #8 Cambio Contrato plazo fijo a plazo indefinido
-                             #11 Otros Movimientos (Ausentismos)
-                             #12 Reliquidación, Premio, Bono
-                             #TODO LIQUIDACION
-                             
-                             "00",            
+							 #55 Código Movimiento de Personal
+                             "0",                             
+                             # Tabla N°7: Movimiento de Personal
+                             # Código Glosa
+                             # 0 Sin Movimiento en el Mes
+                             # 1 Contratación a plazo indefinido
+                             # 2 Retiro
+                             # 3 Subsidios
+                             # 4 Permiso Sin Goce de Sueldos
+                             # 5 Incorporación en el Lugar de Trabajo
+                             # 6 Accidentes del Trabajo
+                             # 7 Contratación a plazo fijo
+                             # 8 Cambio Contrato plazo fijo a plazo indefinido
+                             # 11 Otros Movimientos (Ausentismos)
+                             # 12 Reliquidación, Premio, Bono
+                             # TODO LIQUIDACION                                        
                              #56 Fecha inicio movimiento personal (dia-mes-año)
                              "0",
                              #57 Fecha fin movimiento personal (dia-mes-año)
@@ -476,18 +506,13 @@ class WizardExportCsvPrevired(models.TransientModel):
                              #69 Cotizacion Desahucio
                              "0",
                              #70 Cotizacion Fonasa
-                             #"0",
                              self.get_payslip_lines_value_2(payslip,'FONASA') if payslip.contract_id.isapre_id.codigo=='07' else "0",
-                             
                              #71 Cotizacion Acc. Trabajo (ISL)
                              int(self.get_payslip_lines_value_2(payslip,'ISL')) if self.get_payslip_lines_value_2(payslip,'ISL') else "0",
-
-
-                             #0.93% de la Rta. Imp. (64) y es obligatorio para
-                             #el empleador. Se paga a través de ISL sólo en
-                             #casos en que no exista Mutual Asociada En otro
-                             #caso se paga en la mutual respectiva. Datos no numérico 
- 
+                             # 0.93% de la Rta. Imp. (64) y es obligatorio para
+                             # el empleador. Se paga a través de ISL sólo en
+                             # casos en que no exista Mutual Asociada En otro
+                             # caso se paga en la mutual respectiva. Datos no numérico 
                              #72 Bonificacion Ley 15.386 
                              "0",
                              #73 Descuento por cargas familiares de ISL
@@ -498,7 +523,7 @@ class WizardExportCsvPrevired(models.TransientModel):
                              #75 Codigo Institucion de Salud 
                              payslip.contract_id.isapre_id.codigo,
                              #76 Numero del FUN
-                             " " if payslip.contract_id.isapre_id.codigo=='07' else payslip.contract_id.isapre_fun if payslip.contract_id.isapre_fun else "",
+                             " " if payslip.contract_id.isapre_id.codigo=='07' else payslip.contract_id.isapre_fun if payslip.contract_id.isapre_fun else " ",
                              #77 Renta Imponible Isapre REVISAR  Tope Imponible Salud 5,201
                              #"0" if payslip.contract_id.isapre_id.codigo=='07' else self.get_payslip_lines_value_2(payslip,'TOTIM'),
                              "0" if payslip.contract_id.isapre_id.codigo=='07' else self.get_imponible_salud(payslip and payslip[0] or False, self.get_payslip_lines_value_2(payslip,'TOTIM')),
@@ -509,11 +534,11 @@ class WizardExportCsvPrevired(models.TransientModel):
                              #2 UF
                              "1" if payslip.contract_id.isapre_id.codigo=='07' else "2",
                              #79 Cotizacion Pactada
-                             # Yo Pensaba payslip.contract_id.isapre_cotizacion_uf,
+                             # TODO formatear payslip.contract_id.isapre_cotizacion_uf a 8 digitos U.F. 005,2500
                              "0" if payslip.contract_id.isapre_id.codigo=='07' else payslip.contract_id.isapre_cotizacion_uf,
-                             #80 Cotizacion Obligatoria Isapre
+                             #80 Cotizacion Obligatoria Isapre en CLP
                              "0" if payslip.contract_id.isapre_id.codigo=='07' else int(self.get_payslip_lines_value_2(payslip,'SALUD')),
-                             #81 Cotizacion Adicional Voluntaria
+                             #81 Cotizacion Adicional Voluntaria en CLP
                              "0" if payslip.contract_id.isapre_id.codigo=='07' else int(self.get_payslip_lines_value_2(payslip,'ADISA')),
                              #82 Monto Garantia Explicita de Salud
                              "0",
@@ -565,7 +590,7 @@ class WizardExportCsvPrevired(models.TransientModel):
                              "0",
                              #104 DV Pagadora Subsidio
                              # yo pensaba rut_emp_dv,
-                             "",
+                             " ",
                              #105 Centro de Costos, Sucursal, Agencia 
                              "1000"
                              ]
