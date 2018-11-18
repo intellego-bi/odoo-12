@@ -604,5 +604,8 @@ class WizardExportCsvPrevired(models.TransientModel):
                     'file_name': "NominaPrevired_%s_%s_(%s).csv" % (file_year, file_month, self.indicadores_id.name),
                     })
         
-        file_lines = sum(1 for _ in content)        
-        return self.show_view(u'Archivo Previred Generado %s' % (file_lines))
+        file_lines = sum(1 for _ in content)
+        if file_lines < 1:        
+            return self.show_view(u'Error al generar archivo: Selección sin datos válidos')
+        else:
+		    return self.show_view(u'Archivo Previred Generado para %s' % (self.indicadores_id.name))
