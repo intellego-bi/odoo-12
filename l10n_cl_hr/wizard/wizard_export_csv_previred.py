@@ -302,7 +302,7 @@ class WizardExportCsvPrevired(models.TransientModel):
             rut_emp = rut_emp.replace('.','')
         except:
             pass  
-        for payslip in payslip_recs.filtered(lambda state: 'done'):
+        for payslip in payslip_recs.filtered(lambda payslip_recs.state: 'done'):
             payslip_line_recs = payslip_line_model.search([('slip_id','=',payslip.id)])
             rut = ""
             rut_dv = ""
