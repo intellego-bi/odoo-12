@@ -307,7 +307,7 @@
 	  
 			  
 
-              <table class="table-condensed" width="100%" style="margin-top: 30px;">
+              <table class="table-condensed" width="100%" style="margin-top: 30px; margin-bottom: 30px;">
                 <tr>
                   <td colspan="3">Certifico que recibí de <span t-field="res_company.name"/> a mi entera satisifación el saldo líquido de la presente liquidación, no teniendo cobro alguno que hacer o reclamar por los conceptos correspondientes a ella.</td>
 				  <td/>
