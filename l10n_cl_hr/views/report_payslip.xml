@@ -48,15 +48,15 @@
                   <thead>
                     <tr>
                         <th colspan="4" width="31%"><strong>Departamento</strong></th>
-                        <th colspan="4" width="28%"><strong>Cargo</strong></th>
-						<th colspan="4" width="28%"><strong>Tipo Contrato</strong></th>
-                        <th colspan="4" width="13%" style="text-align:right"><strong>Centro Costo</strong></th>
+                        <th colspan="4" width="25%"><strong>Cargo</strong></th>
+						<th colspan="4" width="25%"><strong>Tipo Contrato</strong></th>
+                        <th colspan="4" width="19%" style="text-align:right"><strong>Centro Costo</strong></th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
                         <th colspan="4" width="31%"><span t-field="o.contract_id.department_id"/></th>
-                        <th colspan="4" width="28%">
+                        <th colspan="4" width="25%">
     						<t t-if="not o.contract_id.job_id">
      						    <span>--</span>
 							</t>
@@ -75,7 +75,7 @@
                       <tr>
 						  <th colspan="5" width="18%"><strong>Nombre AFP</strong></th>
 						  <th colspan="5" width="13%"><strong>Tasa AFP</strong></th>
-                          <th colspan="5" width="25%"><strong>Nombre ISAPRE</strong></th>
+                          <th colspan="5" width="22%"><strong>Nombre ISAPRE</strong></th>
 						  <th colspan="5" width="20%"><strong>FUN ISAPRE</strong></th>
                           <th colspan="5" width="14%" style="text-align:right"><strong>Cotiz. UF</strong></th>
 						  <th colspan="5" width="15%" style="text-align:right"><strong>Cotiz. CLP</strong></th>
@@ -104,7 +104,7 @@
                               <span t-raw="o.indicadores_id.tasa_afp_capital"/>
                             </t> %
                           </th>
-                          <th colspan="5" width="25%"><span t-field="o.contract_id.isapre_id"/></th>
+                          <th colspan="5" width="22%"><span t-field="o.contract_id.isapre_id"/></th>
                           <th colspan="5" width="20%"><span t-field="o.contract_id.isapre_fun"/></th>
   					      <th colspan="5" width="14%" style="text-align:right"><span t-field="o.contract_id.isapre_cotizacion_uf"/> UF</th>
   					      <th colspan="5" width="15%" style="text-align:right">CLP 
@@ -126,17 +126,17 @@
                 <table class="table-condensed" width="100%" style="border-top: 1px solid black;" name="jornada">
                   <thead>
                     <tr>
-  				        <th colspan="6" width="18%"><strong>DIAS</strong></th>
-						<th colspan="6" width="17%"><strong>H.EXTRA</strong></th>
-						<th colspan="6" width="18%"><strong>DESCUENTOS</strong></th>
-                        <th colspan="6" width="20%"><strong>CARGAS</strong></th>
-                        <th colspan="6" width="14%" style="text-align:right"><strong>Imponible</strong></th>
-						<th colspan="6" width="15%" style="text-align:right"><strong>Tributable</strong></th>
+  				        <th colspan="6" width="16%"><strong>DIAS</strong></th>
+						<th colspan="6" width="15%"><strong>H.EXTRA</strong></th>
+						<th colspan="6" width="22%"><strong>DESCUENTOS</strong></th>
+                        <th colspan="6" width="15%"><strong>CARGAS</strong></th>
+                        <th colspan="6" width="16%" style="text-align:right"><strong>Imponible</strong></th>
+						<th colspan="6" width="16%" style="text-align:right"><strong>Tributable</strong></th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-  				        <th colspan="6" width="18%">
+  				        <th colspan="6" width="16%">
                           <t t-set="f" t-value="0"/>
                           <t t-foreach="o.worked_days_line_ids" t-as="p">
                             <t t-if="('WORK100' == p.code)">
@@ -145,33 +145,33 @@
                           </t>
                           <span><t t-esc="str(int(f))"/></span>
 						</th>
-						<th colspan="6" width="17%">
+						<th colspan="6" width="15%">
                           <t t-foreach="o.input_line_ids" t-as="p">
                             <t t-if="(p.code in ['HEX50', 'HEX100'])">
                               <span t-raw="p.amount"/>
                             </t>
                           </t>
 						</th>
-						<th colspan="6" width="18%">
+						<th colspan="6" width="22%">
                           <t t-foreach="o.input_line_ids" t-as="p">
                             <t t-if="('HEXDE' == p.code)">
                               <span t-raw="p.amount"/>
                             </t>
                           </t>
 						</th>
-                        <th colspan="6" width="20%">
+                        <th colspan="6" width="15%">
                             <span t-field="o.contract_id.carga_familiar"/> / 
                             <span t-field="o.contract_id.carga_familiar_maternal"/> / 
                             <span t-field="o.contract_id.carga_familiar_invalida"/>
 						</th>
-                        <th colspan="6" width="14%" style="text-align:right">
+                        <th colspan="6" width="16%" style="text-align:right">
                           <t t-foreach="o.line_ids.filtered(lambda line: line.appears_on_payslip)" t-as="p">
                             <t t-if="('TOTIM' == p.code)">
                               CLP <span t-esc="round(p.amount)" t-esc-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/>
                             </t>
                           </t>
 						</th>
-						<th colspan="6" width="15%" style="text-align:right">
+						<th colspan="6" width="16%" style="text-align:right">
                           <t t-foreach="o.line_ids.filtered(lambda line: line.appears_on_payslip)" t-as="p">
                             <t t-if="'TRIBU' == p.code">
                               CLP <span t-esc="round(p.amount)" t-esc-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/>
