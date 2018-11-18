@@ -44,11 +44,17 @@ class WizardExportCsvPrevired(models.TransientModel):
     quotechar = '"'
     indicadores_id = fields.Many2one('hr.indicadores', string='Indicadores',
         help='Defines Previred Forecast Indicators')
-    date_from = fields.Date('Fecha Inicial', required=False, default=time.strftime('%Y-%m-01'))
-    date_to = fields.Date('Fecha Final', required=False, default=str(datetime.now() + relativedelta.relativedelta(months=+1, day=1, days=-1))[:10])
+    date_from = fields.Date('Fecha Inicial', required=False)
+    date_to = fields.Date('Fecha Final', required=False)
     file_data = fields.Binary('Archivo CSV', filters=None, help="")
     file_name = fields.Char('Nombre de archivo', size=256, required=False, help="Archivo plano generado")
 
+    _defaults = {
+        'date_from': time.strftime('%Y-%m-01'),
+        'date_to': str(datetime.now() + relativedelta.relativedelta(months=+1, day=1, days=-1))[:10]
+        }
+
+	
     #_defaults = {
     #    'date_from': lambda *a: time.strftime('%Y-%m-01'),
     #    'date_to': lambda *a: str(datetime.now() + relativedelta.relativedelta(months=+1, day=1, days=-1))[:10],
