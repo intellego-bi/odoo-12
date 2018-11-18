@@ -10,8 +10,8 @@
                 <table class="table-condensed " width="100%">
                   <thead>
                      <tr>
-                        <th colspan="2" width="67%"><strong>Razón Social:</strong></th>
-                        <th colspan="2" width="33%"><strong>RUT Empresa:</strong></th>
+                        <th colspan="2" width="67%"><strong>Razón Social</strong></th>
+                        <th colspan="2" width="33%"><strong>RUT Empresa</strong></th>
                      </tr>
                   </thead>
                   <tbody>
@@ -76,8 +76,8 @@
 						  <th colspan="5" width="13%"><strong>Tasa AFP</strong></th>
 						  <th colspan="5" width="20%"><strong>FUN ISAPRE</strong></th>
                           <th colspan="5" width="20%"><strong>Nombre ISAPRE</strong></th>
-                          <th colspan="5" width="13%"><strong>Valor ISAPRE</strong></th>
-						  <th colspan="5" width="14%"><strong>Valor SALUD</strong></th>
+                          <th colspan="5" width="13%"><strong>Cotiz. UF</strong></th>
+						  <th colspan="5" width="14%"><strong>Cotiz. CLP</strong></th>
 
                       </tr>
                     </thead>	
@@ -126,58 +126,60 @@
                 <table class="table-condensed" width="100%" style="border-top: 1px solid black;" name="jornada">
                   <thead>
                     <tr>
-                      <th><strong>DIAS</strong></th>
-                      <th><strong>HORAS EXTRA</strong></th>
-                      <th><strong>DESCUENTO</strong></th>
-                      <th colspan="3"><strong>CARGAS</strong></th>
-                      <th><strong>IMPONIBLE</strong></th>
-                      <th><strong>TRIBUTABLE</strong></th>
+  				        <th colspan="6" width="15%"><strong>DIAS</strong></th>
+						<th colspan="6" width="15%"><strong>H.EXTRA</strong></th>
+						<th colspan="6" width="15%"><strong>DESCUENTOS</strong></th>
+                        <th colspan="6" width="15%"><strong>CARGAS</strong></th>
+                        <th colspan="6" width="20%"><strong>Imponible</strong></th>
+						<th colspan="6" width="20%"><strong>Tributable</strong></th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <td>
-                        <t t-set="f" t-value="0"/>
-                        <t t-foreach="o.worked_days_line_ids" t-as="p">
-                          <t t-if="('WORK100' == p.code)">
-                            <t t-set= "f" t-value="f+p.number_of_days"/>
+  				        <th colspan="6" width="15%">
+                          <t t-set="f" t-value="0"/>
+                          <t t-foreach="o.worked_days_line_ids" t-as="p">
+                            <t t-if="('WORK100' == p.code)">
+                              <t t-set= "f" t-value="f+p.number_of_days"/>
+                            </t>
                           </t>
-                        </t>
-                        <span><t t-esc="str(int(f))"/></span>
-                      </td>
-                      <td align="center">
-                        <t t-foreach="o.input_line_ids" t-as="p">
-                          <t t-if="(p.code in ['HEX50', 'HEX100'])">
-                            <span t-raw="p.amount"/>
+                          <span><t t-esc="str(int(f))"/></span>
+						</th>
+						<th colspan="6" width="15%">
+                          <t t-foreach="o.input_line_ids" t-as="p">
+                            <t t-if="(p.code in ['HEX50', 'HEX100'])">
+                              <span t-raw="p.amount"/>
+                            </t>
                           </t>
-                        </t>
-                      </td>
-                      <td>
-                        <t t-foreach="o.input_line_ids" t-as="p">
-                          <t t-if="('HEXDE' == p.code)">
-                            <span t-raw="p.amount"/>
+						</th>
+						<th colspan="6" width="15%">
+                          <t t-foreach="o.input_line_ids" t-as="p">
+                            <t t-if="('HEXDE' == p.code)">
+                              <span t-raw="p.amount"/>
+                            </t>
                           </t>
-                        </t>
-                      </td>
-                      <td colspan="3">
-                        <span t-field="o.contract_id.carga_familiar"/>
-                        <span t-field="o.contract_id.carga_familiar_maternal"/>
-                        <span t-field="o.contract_id.carga_familiar_invalida"/>
-                      </td>
-                      <td>
-                        <t t-foreach="o.line_ids.filtered(lambda line: line.appears_on_payslip)" t-as="p">
-                          <t t-if="('TOTIM' == p.code)">
-                            <span t-esc="p.amount" t-esc-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/>
+						</th>
+                        <th colspan="6" width="15%">
+                          <td colspan="3">
+                            <span t-field="o.contract_id.carga_familiar"/>
+                            <span t-field="o.contract_id.carga_familiar_maternal"/>
+                            <span t-field="o.contract_id.carga_familiar_invalida"/>
+                          </td>
+						</th>
+                        <th colspan="6" width="20%">
+                          <t t-foreach="o.line_ids.filtered(lambda line: line.appears_on_payslip)" t-as="p">
+                            <t t-if="('TOTIM' == p.code)">
+                              <span t-esc="p.amount" t-esc-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/>
+                            </t>
                           </t>
-                        </t>
-                      </td>
-                      <td>
-                        <t t-foreach="o.line_ids.filtered(lambda line: line.appears_on_payslip)" t-as="p">
-                          <t t-if="'TRIBU' == p.code">
-                            <span t-esc="p.amount" t-esc-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/>
+						</th>
+						<th colspan="6" width="20%">
+                          <t t-foreach="o.line_ids.filtered(lambda line: line.appears_on_payslip)" t-as="p">
+                            <t t-if="'TRIBU' == p.code">
+                              <span t-esc="p.amount" t-esc-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/>
+                            </t>
                           </t>
-                        </t>
-                      </td>
+						</th>
                     </tr>
                   </tbody>
                </table>
