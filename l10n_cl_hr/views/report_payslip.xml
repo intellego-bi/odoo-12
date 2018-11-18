@@ -6,14 +6,12 @@
         <t t-foreach="docs" t-as="o">
 					<t t-call="web.external_layout">
             <div class="page">
-                <h3 align="center">LIQUIDACION DE SUELDO
-                <span  t-raw="o.name"/></h3>
-
+                <h3 align="center"><span t-raw="o.name"/></h3>
                 <table class="table-condensed " width="100%">
                   <thead>
                      <tr>
-                        <th colspan="2" width="50%"><strong>RAZON SOCIAL:</strong></th>
-                        <th colspan="2"><strong>RUT EMPRESA:</strong></th>
+                        <th colspan="2" width="50%"><strong>Razón Social:</strong></th>
+                        <th colspan="2"><strong>RUT Empresa:</strong></th>
                      </tr>
                   </thead>
                   <tbody>
@@ -32,34 +30,37 @@
                 <table class="table-condensed" width="100%" style="border-top: 1px solid black;" name="datos_trabajador">
                   <thead>
                     <tr>
-                        <th><strong>R.U.T</strong></th>
-                        <th><strong>TRABAJADOR</strong></th>
-                        <th><strong>C.C.</strong></th>
+                        <th><strong>RUT Trabajador</strong></th>
+                        <th><strong>Nombre Trabajador</strong></th>
+                        <th><strong>C.Costo</strong></th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
                         <td><span t-field="o.employee_id.identification_id"/></td>
                         <td><span t-field="o.employee_id.name"/></td>
-                        <td>001</td>
+                        <td>0001</td>
                     </tr>
                   </tbody>
                 </table>
 
-                <table class="table-condensed" width="100%" name="puesto_trabajador">
-                   <thead>
-                      <tr>
-                          <th colspan="3"><strong>CARGO</strong></th>
-                          <th colspan="2"><strong>FECHA INGRESO</strong></th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                          <td colspan="3"><span t-field="o.contract_id.job_id"/></td>
-                          <td colspan="2"><span t-field="o.contract_id.date_start"/></td>
-                      </tr>
-                    </tbody>
+                <table class="table-condensed" width="100%" style="border-top: 1px solid black;" name="datos_org">
+                  <thead>
+                    <tr>
+                        <th><strong>Departamento</strong></th>
+                        <th><strong>Cargo</strong></th>
+                        <th><strong>Fecha Ingreso</strong></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                        <td><span t-field="o.contract_id.department_id"/></td>
+                        <td><span t-field="o.contract_id.job_id"/></td>
+                        <td><span t-field="o.contract_id.date_start"/></
+                    </tr>
+                  </tbody>
                 </table>
+			
 
                 <table class="table-condensed" width="100%" style="border-top: 1px solid black;" name="prevision">
                     <thead>
