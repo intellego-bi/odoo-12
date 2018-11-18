@@ -593,7 +593,7 @@ class WizardExportCsvPrevired(models.TransientModel):
                              # yo pensaba rut_emp_dv,
                              " ",
                              #105 Centro de Costos, Sucursal, Agencia 
-                             " "
+                             "1"
                              ]
             writer.writerow(line_employee)
       
