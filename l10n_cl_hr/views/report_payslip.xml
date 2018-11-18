@@ -76,8 +76,8 @@
 						  <th colspan="5" width="18%"><strong>Nombre AFP</strong></th>
 						  <th colspan="5" width="13%"><strong>Tasa AFP</strong></th>
                           <th colspan="5" width="22%"><strong>Nombre ISAPRE</strong></th>
-						  <th colspan="5" width="20%"><strong>FUN ISAPRE</strong></th>
-                          <th colspan="5" width="14%" style="text-align:right"><strong>Cotiz. UF</strong></th>
+						  <th colspan="5" width="18%"><strong>FUN ISAPRE</strong></th>
+                          <th colspan="5" width="14%" style="text-align:left"><strong>Cotiz. UF</strong></th>
 						  <th colspan="5" width="15%" style="text-align:right"><strong>Cotiz. CLP</strong></th>
                       </tr>
                     </thead>	
@@ -105,8 +105,8 @@
                             </t> %
                           </th>
                           <th colspan="5" width="22%"><span t-field="o.contract_id.isapre_id"/></th>
-                          <th colspan="5" width="20%"><span t-field="o.contract_id.isapre_fun"/></th>
-  					      <th colspan="5" width="14%" style="text-align:right"><span t-field="o.contract_id.isapre_cotizacion_uf"/> UF</th>
+                          <th colspan="5" width="18%"><span t-field="o.contract_id.isapre_fun"/></th>
+  					      <th colspan="5" width="14%" style="text-align:left"><span t-field="o.contract_id.isapre_cotizacion_uf"/> UF</th>
   					      <th colspan="5" width="15%" style="text-align:right">CLP 
                             <t t-if="('FONASA' == o.contract_id.isapre_id.name)">
                                 <t t-foreach="o.line_ids.filtered(lambda line: line.appears_on_payslip)" t-as="p">
@@ -129,9 +129,9 @@
   				        <th colspan="6" width="16%"><strong>DIAS</strong></th>
 						<th colspan="6" width="15%"><strong>H.EXTRA</strong></th>
 						<th colspan="6" width="22%"><strong>DESCUENTOS</strong></th>
-                        <th colspan="6" width="15%"><strong>CARGAS</strong></th>
-                        <th colspan="6" width="16%" style="text-align:right"><strong>Imponible</strong></th>
-						<th colspan="6" width="16%" style="text-align:right"><strong>Tributable</strong></th>
+                        <th colspan="6" width="18%"><strong>CARGAS</strong></th>
+                        <th colspan="6" width="14%" style="text-align:right"><strong>Imponible</strong></th>
+						<th colspan="6" width="15%" style="text-align:right"><strong>Tributable</strong></th>
                     </tr>
                   </thead>
                   <tbody>
@@ -159,19 +159,19 @@
                             </t>
                           </t>
 						</th>
-                        <th colspan="6" width="15%">
+                        <th colspan="6" width="18%">
                             <span t-field="o.contract_id.carga_familiar"/> / 
                             <span t-field="o.contract_id.carga_familiar_maternal"/> / 
                             <span t-field="o.contract_id.carga_familiar_invalida"/>
 						</th>
-                        <th colspan="6" width="16%" style="text-align:right">
+                        <th colspan="6" width="14%" style="text-align:right">
                           <t t-foreach="o.line_ids.filtered(lambda line: line.appears_on_payslip)" t-as="p">
                             <t t-if="('TOTIM' == p.code)">
                               CLP <span t-esc="round(p.amount)" t-esc-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/>
                             </t>
                           </t>
 						</th>
-						<th colspan="6" width="16%" style="text-align:right">
+						<th colspan="6" width="15%" style="text-align:right">
                           <t t-foreach="o.line_ids.filtered(lambda line: line.appears_on_payslip)" t-as="p">
                             <t t-if="'TRIBU' == p.code">
                               CLP <span t-esc="round(p.amount)" t-esc-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/>
