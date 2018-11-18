@@ -256,24 +256,7 @@
                  </tbody>
               </table>
 
-
-              <table class="table-condensed " width="100%" style="margin-top: 80px; border-top: 3px solid black;">
-					<thead>
-                     <tr>
-                        <th colspan="2" width="50%" style="text-align:right"><strong>TOTAL HABERES</strong></th>
-                        <th colspan="2" width="50%" style="text-align:right"><strong>TOTAL DESCUENTOS</strong></th>
-                     </tr>
-                  </thead>
-                  <tbody>
-                      <tr>
-                         <t t-foreach="o.line_ids.filtered(lambda line: line.appears_on_payslip)" t-as="p"><t t-if="('HAB' == p.code)"> <span t-esc="round(p.amount)" t-esc-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/></t></t>
-                         <t t-foreach="o.line_ids.filtered(lambda line: line.appears_on_payslip)" t-as="p"><t t-if="('TDE' == p.code)"> <span t-esc="round(p.amount)" t-esc-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/></t></t>
-                      </tr>
-                  </tbody>
-                </table>
-
-			  
-			  
+		  
               <table class="table-condensed" width="100%" style="margin-top: 20px; border-top: 3px solid black;">
                 <thead>
                   <tr>
