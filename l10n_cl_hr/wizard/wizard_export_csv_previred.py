@@ -42,14 +42,14 @@ class WizardExportCsvPrevired(models.TransientModel):
     quotechar = '"'
     date_from = fields.Date('Fecha Inicial', required=True)
     date_to = fields.Date('Fecha Final', required=True)
-    file_data = fields.Binary('Archivo csv', filters=None, help="",)
+    file_data = fields.Binary('Archivo CSV', filters=None, help="", default="Previred.csv")
     file_name = fields.Char('Nombre de archivo', size=256, required=False, help="",)
 
-    _defaults = {
-        'date_from': lambda *a: time.strftime('%Y-%m-01'),
-        'date_to': lambda *a: str(datetime.now() + relativedelta.relativedelta(months=+1, day=1, days=-1))[:10],
+    #_defaults = {
+    #    'date_from': lambda *a: time.strftime('%Y-%m-01'),
+    #    'date_to': lambda *a: str(datetime.now() + relativedelta.relativedelta(months=+1, day=1, days=-1))[:10],
 
-    }
+    #}
 
 
     def getrecord_treeview(self, name):  
