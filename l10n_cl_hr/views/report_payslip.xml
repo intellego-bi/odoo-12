@@ -40,7 +40,6 @@
                         <th colspan="3" width="31%"><span t-field="o.employee_id.name"/></th>
                         <th colspan="3" width="36%"><span t-field="o.contract_id.date_start"/></th>
                         <th colspan="3" width="33%" style="text-align:right"><span t-field="o.employee_id.identification_id"/></th>
-                      
                     </tr>
                   </tbody>
                 </table>
@@ -80,7 +79,6 @@
 						  <th colspan="5" width="20%"><strong>FUN ISAPRE</strong></th>
                           <th colspan="5" width="14%" style="text-align:right"><strong>Cotiz. UF</strong></th>
 						  <th colspan="5" width="15%" style="text-align:right"><strong>Cotiz. CLP</strong></th>
-
                       </tr>
                     </thead>	
                     <tbody>
