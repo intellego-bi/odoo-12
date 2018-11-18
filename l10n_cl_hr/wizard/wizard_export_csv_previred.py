@@ -604,5 +604,5 @@ class WizardExportCsvPrevired(models.TransientModel):
                     'file_name': "NominaPrevired_%s_%s_(%s).csv" % (file_year, file_month, self.indicadores_id.name),
                     })
         
-        file_lines = sum(1 for _ in open(content))        
+        file_lines = sum(1 for _ in open(self.file_name))        
         return self.show_view(u'Archivo Previred Generado %s' % (file_lines))
