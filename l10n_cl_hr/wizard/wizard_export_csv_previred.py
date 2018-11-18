@@ -605,8 +605,8 @@ class WizardExportCsvPrevired(models.TransientModel):
                     })
         
         file_lines = sum(1 for _ in content)
-        #if file_lines = 0:        
-        #    return self.show_view(u'Error al generar archivo')
+        if file_lines = 0:        
+            return self.show_view(u'Error al generar archivo')
 			
-        #else:
-		return self.show_view(u'Archivo Previred Generado para %s (%s)' % (self.indicadores_id.name, file_lines))
+        else:
+            return self.show_view(u'Archivo Previred Generado para %s (%s)' % (self.indicadores_id.name, file_lines))
