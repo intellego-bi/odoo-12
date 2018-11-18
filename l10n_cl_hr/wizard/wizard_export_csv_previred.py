@@ -296,6 +296,8 @@ class WizardExportCsvPrevired(models.TransientModel):
 
         date_start_format = datetime.strptime(date_start[:10], "%Y-%m-%d").strftime("%m%Y")
         date_stop_format = datetime.strptime(date_stop[:10], "%Y-%m-%d").strftime("%m%Y")
+        file_month = datetime.strptime(date_stop[:10], "%Y-%m-%d").strftime("%m")
+        file_year = datetime.strptime(date_stop[:10], "%Y-%m-%d").strftime("%Y")
 
         line_employee = []
         rut = ""
@@ -598,7 +600,7 @@ class WizardExportCsvPrevired(models.TransientModel):
 
         content = output.getvalue()
         self.write({'file_data': base64.b64encode(content.encode('utf-8')),
-                    'file_name': "Nomina_Previred_%s_%s.csv" % (date_stop_format, self.indicadores_id.name),
+                    'file_name': "NominaPrevired_%s_%s_(%s).csv" % (file_year, file_month, self.indicadores_id.name),
                     })
                 
         return self.show_view(u'Archivo Previred Generado')
