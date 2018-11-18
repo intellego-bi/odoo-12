@@ -284,8 +284,8 @@ class WizardExportCsvPrevired(models.TransientModel):
         csvdata = []        
         payslip_recs = []
 		
-		if self.date_from is null:
-		   self.date_from = '2018-01-01'
+		#if self.date_from is null:
+		#   self.date_from = '2018-01-01'
 		#Debemos colocar que tome todo el mes y no solo el día exacto TODO
         payslip_recs = payslip_model.search([('date_from','=',self.date_from), 
                                              ('state','=',"done")
