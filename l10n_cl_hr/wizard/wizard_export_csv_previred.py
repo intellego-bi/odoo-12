@@ -283,8 +283,8 @@ class WizardExportCsvPrevired(models.TransientModel):
 
         #date_start = self.date_from
         #date_stop = self.date_to
-        date_start = datetime.from_string(self.date_from)
-        date_stop = datetime.from_string(self.date_to)
+        date_start = from_string(self.date_from)
+        date_stop = from_string(self.date_to)
 
         date_start_format = datetime.strptime(date_start, DF).strftime("%m%Y")
         date_stop_format = datetime.strptime(date_stop, DF).strftime("%m%Y")
