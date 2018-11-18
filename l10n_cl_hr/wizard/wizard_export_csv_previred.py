@@ -282,14 +282,15 @@ class WizardExportCsvPrevired(models.TransientModel):
                                              ])
 
         #date_start = self.date_from
-        date_stop = self.date_to
+        #date_stop = self.date_to
+        
         date_start = fields.Datetime.to_string(self.date_from)
         date_stop = fields.Datetime.to_string(self.date_to)
 
         #date_start_format = datetime.strptime(date_start, DF).strftime("%m%Y")
         #date_stop_format = datetime.strptime(date_stop, DF).strftime("%m%Y")
-        date_start_format = datetime.strptime(date_start, "%YYYY/%MM/%DD %H:%M:%S").strftime("%m%Y")
-        date_stop_format = datetime.strptime(date_stop, "%y/%m/%d %H:%M:%S").strftime("%m%Y")
+        date_start_format = datetime.strptime(date_start[:10], "%Y/%m/%d").strftime("%m%Y")
+        date_stop_format = datetime.strptime(date_stop[:10], "%Y/%m/%d").strftime("%m%Y")
 
         line_employee = []
         rut = ""
