@@ -281,8 +281,11 @@ class WizardExportCsvPrevired(models.TransientModel):
         payslip_recs = payslip_model.search([('date_from','=',self.date_from),
                                              ])
 
-        date_start = self.date_from
-        date_stop = self.date_to
+        #date_start = self.date_from
+        #date_stop = self.date_to
+        date_start = datetime.from_string(self.date_from)
+        date_stop = datetime.from_string(self.date_to)
+
         date_start_format = datetime.strptime(date_start, DF).strftime("%m%Y")
         date_stop_format = datetime.strptime(date_stop, DF).strftime("%m%Y")
         line_employee = []
