@@ -48,15 +48,15 @@
                   <thead>
                     <tr>
                         <th colspan="4" width="31%"><strong>Departamento</strong></th>
-                        <th colspan="4" width="25%"><strong>Cargo</strong></th>
-						<th colspan="4" width="25%"><strong>Tipo Contrato</strong></th>
-                        <th colspan="4" width="19%" style="text-align:right"><strong>Centro Costo</strong></th>
+                        <th colspan="4" width="22%"><strong>Cargo</strong></th>
+						<th colspan="4" width="22%"><strong>Tipo Contrato</strong></th>
+                        <th colspan="4" width="25%" style="text-align:right"><strong>Centro Costo</strong></th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
                         <th colspan="4" width="31%"><span t-field="o.contract_id.department_id"/></th>
-                        <th colspan="4" width="25%">
+                        <th colspan="4" width="22%">
     						<t t-if="not o.contract_id.job_id">
      						    <span>--</span>
 							</t>
@@ -64,8 +64,8 @@
      						    <span t-field="o.contract_id.job_id"/>
 							</t>
 						</th>
-						<th colspan="4" width="28%" style="text-align:left"><span t-field="o.contract_id.type_id"/></th>
-						<th colspan="4" width="13%" style="text-align:right">0001</th>
+						<th colspan="4" width="22%" style="text-align:left"><span t-field="o.contract_id.type_id"/></th>
+						<th colspan="4" width="25%" style="text-align:right">0001</th>
                     </tr>
                   </tbody>
                 </table>
