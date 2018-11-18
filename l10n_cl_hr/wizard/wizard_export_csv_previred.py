@@ -598,7 +598,7 @@ class WizardExportCsvPrevired(models.TransientModel):
 
         content = output.getvalue()
         self.write({'file_data': base64.b64encode(content.encode('utf-8')),
-                    'file_name': "Nomina_Previred_%s_%s.csv" % (date_stop_format, indicadores_id.name),
+                    'file_name': "Nomina_Previred_%s_%s.csv" % (date_stop_format, self.indicadores_id.name),
                     })
                 
         return self.show_view(u'Archivo Previred Generado')
