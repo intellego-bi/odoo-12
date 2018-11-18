@@ -45,11 +45,10 @@ class WizardExportCsvPrevired(models.TransientModel):
     file_data = fields.Binary('Archivo CSV', filters=None, help="")
     file_name = fields.Char('Nombre de archivo', size=256, required=False, help="", default="Previred.csv")
 
-    #_defaults = {
-    #    'date_from': lambda *a: time.strftime('%Y-%m-01'),
-    #    'date_to': lambda *a: str(datetime.now() + relativedelta.relativedelta(months=+1, day=1, days=-1))[:10],
-
-    #}
+    _defaults = {
+        'date_from': lambda *a: time.strftime('%Y-%m-01'),
+        'date_to': lambda *a: str(datetime.now() + relativedelta.relativedelta(months=+1, day=1, days=-1))[:10],
+        }
 
 
     def getrecord_treeview(self, name):  
@@ -466,10 +465,10 @@ class WizardExportCsvPrevired(models.TransientModel):
                              int(self.get_payslip_lines_value_2(payslip,'ISL')) if self.get_payslip_lines_value_2(payslip,'ISL') else "0",
 
 
-                           #0.93% de la Rta. Imp. (64) y es obligatorio para
-#el empleador. Se paga a través de ISL sólo en
-#casos en que no exista Mutual Asociada En otro
-#caso se paga en la mutual respectiva. Datos no numérico 
+                             #0.93% de la Rta. Imp. (64) y es obligatorio para
+                             #el empleador. Se paga a través de ISL sólo en
+                             #casos en que no exista Mutual Asociada En otro
+                             #caso se paga en la mutual respectiva. Datos no numérico 
  
                              #72 Bonificacion Ley 15.386 
                              "0",
@@ -560,4 +559,4 @@ class WizardExportCsvPrevired(models.TransientModel):
                     'file_name': "Nomina_Previred_%s.csv" % (date_stop_format),
                     })
                 
-        return self.show_view(u'Previred Generado')
+        return self.show_view(u'Archivo Previred Generado')
