@@ -43,8 +43,8 @@ class WizardExportCsvPrevired(models.TransientModel):
     quotechar = '"'
     indicadores_id = fields.Many2one('hr.indicadores', string='Indicadores',
         help='Defines Previred Forecast Indicators')
-    date_from = fields.Date('Fecha Inicial', required=True)
-    date_to = fields.Date('Fecha Final', required=True)
+    date_from = fields.Date('Fecha Inicial', required=False)
+    date_to = fields.Date('Fecha Final', required=False)
     file_data = fields.Binary('Archivo CSV', filters=None, help="")
     file_name = fields.Char('Nombre de archivo', size=256, required=False, help="Archivo plano generado")
 
@@ -283,6 +283,9 @@ class WizardExportCsvPrevired(models.TransientModel):
         #csvdata = [1,2,'a','He said "what do you mean?"',"Whoa!\nNewlines!"]
         csvdata = []        
         payslip_recs = []
+		
+		if self.date_from is null:
+		   self.date_from = '2018-01-01'
 		#Debemos colocar que tome todo el mes y no solo el día exacto TODO
         payslip_recs = payslip_model.search([('date_from','=',self.date_from), 
                                              ('state','=',"done")
@@ -595,7 +598,7 @@ class WizardExportCsvPrevired(models.TransientModel):
 
         content = output.getvalue()
         self.write({'file_data': base64.b64encode(content.encode('utf-8')),
-                    'file_name': "Nomina_Previred_%s.csv" % (date_stop_format),
+                    'file_name': "Nomina_Previred_%s_%s.csv" % (date_stop_format, indicadores_id.name),
                     })
                 
         return self.show_view(u'Archivo Previred Generado')
