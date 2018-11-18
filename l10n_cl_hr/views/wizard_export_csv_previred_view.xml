@@ -10,11 +10,11 @@
 						<field name="date_from"/>
 						<field name="date_to"/>
 						<field name="file_data" filename="file_name" readonly="1" />
-						<field name="file_name" invisible="1" />
+						<field name="file_name" invisible="0" />
 					</group>
 					<footer>
 						<div class="oe_left">
-							<button string="Generar reporte" name="action_generate_csv"
+							<button string="Generar Archivo CSV" name="action_generate_csv"
 								type="object"  class="oe_highlight" />
 							<button string="Cerrar" special="cancel" type="object"
 								 class="oe_link" />

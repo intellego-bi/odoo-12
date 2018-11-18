@@ -36,7 +36,8 @@ from dateutil import relativedelta
 class WizardExportCsvPrevired(models.TransientModel):
 
     _name = 'wizard.export.csv.previred'
-    _description = 'wizard.export.csv.previred'
+    _description = 'Genera Archivo CSV PreviRed'
+    #_description = 'wizard.export.csv.previred'
     
     delimiter = ";"
     quotechar = '"'
@@ -284,18 +285,10 @@ class WizardExportCsvPrevired(models.TransientModel):
         payslip_recs = payslip_model.search([('date_from','=',self.date_from), 
                                              ('state','=',"done")
                                              ])
-        #payslip_recs = payslip_model.browse([('date_from','=',self.date_from), 
-        #                                     ('state','=','done'),
-        #                                     ])
-
-        #date_start = self.date_from
-        #date_stop = self.date_to
         
         date_start = fields.Datetime.to_string(self.date_from)
         date_stop = fields.Datetime.to_string(self.date_to)
 
-        #date_start_format = datetime.strptime(date_start, DF).strftime("%m%Y")
-        #date_stop_format = datetime.strptime(date_stop, DF).strftime("%m%Y")
         date_start_format = datetime.strptime(date_start[:10], "%Y-%m-%d").strftime("%m%Y")
         date_stop_format = datetime.strptime(date_stop[:10], "%Y-%m-%d").strftime("%m%Y")
 
