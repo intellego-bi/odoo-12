@@ -307,27 +307,37 @@ class WizardExportCsvPrevired(models.TransientModel):
             rut_emp = rut_emp.replace('.','')
         except:
             pass  
-        for payslip in payslip_recs:
+        for payslip in payslip_recs.filtered(lambda payslip: payslip.state == 'done'):
             payslip_line_recs = payslip_line_model.search([('slip_id','=',payslip.id)])
             rut = ""
             rut_dv = ""
             rut, rut_dv = payslip.employee_id.identification_id.split("-")
             rut = rut.replace('.','')
-            line_employee = [self._acortar_str(rut, 11), 
+            line_employee = [
+                             #1
+                             self._acortar_str(rut, 11),
+                             #2							 
                              self._acortar_str(rut_dv, 1),
-                             self._arregla_str(payslip.employee_id.last_name.upper(), 30)  if payslip.employee_id.last_name else "", 
+                             #3
+                             self._arregla_str(payslip.employee_id.last_name.upper(), 30)  if payslip.employee_id.last_name else "",
+                             #4 
                              self._arregla_str(payslip.employee_id.mothers_name.upper(), 30)  if payslip.employee_id.mothers_name else "",
+                             #5
                              "%s %s" % (self._arregla_str(payslip.employee_id.firstname.upper(), 15), self._arregla_str(payslip.employee_id.middle_name.upper(), 15) if payslip.employee_id.middle_name else ''),
+                             #6
                              sexo_data.get(payslip.employee_id.gender, "") if payslip.employee_id.gender else "",
+                             #7
                              self.get_nacionalidad(payslip.employee_id.country_id.id),
+                             #8
                              self.get_tipo_pago(payslip.employee_id),
+                             #9
                              date_start_format,
+                             #10
                              date_stop_format,
                              #11
                              self.get_regimen_provisional(payslip.contract_id),
                              #12
-                             "0",
-                             #payslip.employee_id.type_id.id_type,
+                             "0", #payslip.employee_id.type_id.id_type,
                              #13
                              int(self.get_dias_trabajados(payslip and payslip[0] or False)),
                              #14
@@ -345,25 +355,28 @@ class WizardExportCsvPrevired(models.TransientModel):
                              #es obligatoria y debe estar dentro del periodo de remun
                              #payslip.date_to if payslip.date_to else '00-00-0000', 
                              self.get_tramo_asignacion_familiar(payslip, self.get_payslip_lines_value_2(payslip,'TOTIM')),
-                             #19 NCargas Simples
+                             #19 Numero Cargas Simples
                              payslip.contract_id.carga_familiar,
+                             #20 Carga Maternal
                              payslip.contract_id.carga_familiar_maternal,
+                             #21 Carga Familiar con Invalidez
                              payslip.contract_id.carga_familiar_invalida,
                              #22 Asignacion Familiar
                              self.get_payslip_lines_value_2(payslip,'ASIGFAM') if self.get_payslip_lines_value_2(payslip,'ASIGFAM') else "00",
-                             #ASIGNACION FAMILIAR RETROACTIVA
+                             #23 Asignación Familiar Retroactiva
                              "0",
-                             #Reintegro Cargas Familiares
+                             #24 Reintegro Cargas Familiares
                              "0",
                              #25 Solicitud Trabajador Joven TODO SUBSIDIO JOVEN
                              "N",
-                             #26
+                             #26 Código AFP
                              payslip.contract_id.afp_id.codigo,
-                             #27
+                             #27 Base Imponible AFP
                              int(self.get_imponible_afp_2(payslip and payslip[0] or False, self.get_payslip_lines_value_2(payslip,'TOTIM'), self.get_payslip_lines_value_2(payslip,'IMPLIC'))),
                              #AFP SIS APV 0 0 0 0 0 0
-                             #28 
+                             #28 AFP
                              int(self.get_payslip_lines_value_2(payslip,'PREV')),
+                             #29 SIS
                              int(self.get_payslip_lines_value_2(payslip,'SIS')),
                              #30 Cuenta de Ahorro Voluntario AFP
                              "0",
@@ -385,7 +398,7 @@ class WizardExportCsvPrevired(models.TransientModel):
                              "0",
                              #39 Cotizacion Trabajo Pesado
                              "0",
-                             #3- Datos Ahorro Previsional Voluntario Individual
+                             #- Datos Ahorro Previsional Voluntario Individual
                              #40 Código de la Institución APVI
                              payslip.contract_id.apv_id.codigo if self.get_payslip_lines_value_2(payslip,'APV') else "0",
                              #41 Numero de Contrato APVI Strinng
