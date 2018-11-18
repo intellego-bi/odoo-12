@@ -315,7 +315,12 @@
               </table>
 
               <table class="table-condensed" width="100%" style="margin-top:20px; border-top: 0px solid white;">
-                  <thead><tr><br></br></tr>				
+                  <thead>
+				    <tr>
+					  <th>
+					    <span t-field="o.note"/>
+					  </th>
+					</tr>				
                   </thead>
                   <tbody>     
 				  </tbody>
