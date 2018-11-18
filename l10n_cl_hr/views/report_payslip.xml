@@ -54,9 +54,9 @@
                   </thead>
                   <tbody>
                     <tr>
-                        <td><span t-field="o.contract_id.department_id"/></th>
-                        <td><span t-field="o.contract_id.job_id"/></th>
-                        <td><span t-field="o.contract_id.date_start"/></th>
+                        <th><span t-field="o.contract_id.department_id"/></th>
+                        <th><span t-field="o.contract_id.job_id"/></th>
+                        <th><span t-field="o.contract_id.date_start"/></th>
                     </tr>
                   </tbody>
                 </table>
