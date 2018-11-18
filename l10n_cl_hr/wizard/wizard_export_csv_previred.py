@@ -604,4 +604,4 @@ class WizardExportCsvPrevired(models.TransientModel):
                     })
         
         file_lines = sum(1 for line in csvdata)        
-        return self.show_view(u'Archivo Previred Generado')
+        return self.show_view(u'Archivo Previred Generado %s' % (file_lines))
