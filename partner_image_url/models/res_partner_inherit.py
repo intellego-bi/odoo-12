@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 ###################################################################################
 #
-#    Cybrosys Technologies Pvt. Ltd.
-#    Copyright (C) 2017-TODAY Cybrosys Technologies(<http://www.cybrosys.com>).
-#    Author: Nilmar Shereef(<https://www.cybrosys.com>)
+#    Intellego-BI.com
+#    Copyright (C) 2017-TODAY Intellego Business Intelligence S.A.(<http://www.intellego-bi.com>).
+#    Author: Rodolfo Bermúdez Neubauer(<https://www.intellego-bi.com>)
 #
 #    This program is free software: you can modify
 #    it under the terms of the GNU Affero General Public License (AGPL) as
@@ -20,47 +20,22 @@
 #
 ###################################################################################
 import base64
-import urllib3
 import requests
 from PIL import Image
-#from StringIO import StringIO
-import io
 from odoo import models, fields, api, _
 from odoo.exceptions import Warning
 
 
-#class HrEmployeeDocument(models.Model):
-#    _inherit = 'res.partner'
-
-#    web_url = fields.Char(string='Image URL', help='Automatically sanitized HTML contents', copy=False)
-
-#    @api.onchange('web_url')
-#    def onchange_image(self):
-#        link = self.web_url
-#        try:
-#            if link:
-#                r = requests.get(link)
-#                Image.open(StringIO(r.content))
-#                profile_image = base64.encodestring(urllib2.urlopen(link).read())
-#                val = {
-#                    'image': profile_image,
-#                }
-#                return {'value': val}
-#        except:
-#            raise Warning("Please provide correct URL or check your image size.!")
-
-
 class Partner(models.Model):
     _inherit = ['res.partner']
-    web_url = fields.Char(string='Image URL', help='Automatically sanitized HTML contents', copy=False)
+    web_url = fields.Char(string='Image URL', help='Provide URL for HTML-based image', copy=False)
 
     @api.onchange('web_url')
     def onchange_image(self):
         link = self.web_url
         try:
             if link:
-                #r = requests.get(link)
-
+                
                 img_data = requests.get(link).content
                 with open('image_name.jpg', 'wb') as handler:
                     handler.write(img_data)
@@ -75,5 +50,4 @@ class Partner(models.Model):
                 }
                 return {'value': val}
         except:
-            raise Warning("Please provide correct URL or check your image size.!")
-
+            raise Warning("Please provide a valid URL and/or verifiy image size!")
