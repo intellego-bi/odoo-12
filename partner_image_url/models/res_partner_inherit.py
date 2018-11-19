@@ -32,9 +32,8 @@ from odoo.exceptions import Warning
 #	def get_as_base64(url):
 #        return base64.b64encode(requests.get(url).content)
 
-class ImagePartner(models.Model):
+class Partner(models.Model):
     _inherit = ['res.partner']
-    
     web_url = fields.Char(string='Image URL', help='Provide URL for HTML-based image', copy=False)
 	
     @api.onchange('web_url')
