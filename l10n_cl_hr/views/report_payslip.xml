@@ -107,16 +107,18 @@
                           <th colspan="5" width="22%"><span t-field="o.contract_id.isapre_id"/></th>
                           <th colspan="5" width="18%"><span t-field="o.contract_id.isapre_fun"/></th>
   					      <th colspan="5" width="14%" style="text-align:left"><span t-field="o.contract_id.isapre_cotizacion_uf"/> UF</th>
-  					      <th colspan="5" width="15%" style="text-align:right">CLP 
+  					      <th colspan="5" width="15%" style="text-align:right"> 
                             <t t-if="('FONASA' == o.contract_id.isapre_id.name)">
                                 <t t-foreach="o.line_ids.filtered(lambda line: line.appears_on_payslip)" t-as="p">
 								  <t t-if="('SALUD' == p.code)">
-								    <span t-esc="round(p.amount)" t-esc-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/>
+								    <!--<span t-esc="round(p.amount)" t-esc-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/>-->
+									<span>CLP <t t-esc="'{0:,.0f}'.format(p.amount)"/></span>
 								  </t>
 								</t>
                             </t>
                             <t t-if="('FONASA' != o.contract_id.isapre_id.name)">
-                                <span t-esc="round(o.indicadores_id.uf*o.contract_id.isapre_cotizacion_uf)" t-esc-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/>
+                                <!--<span t-esc="round(o.indicadores_id.uf*o.contract_id.isapre_cotizacion_uf)" t-esc-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/>-->
+								<span>CLP <t t-esc="'{0:,.0f}'.format(o.indicadores_id.uf*o.contract_id.isapre_cotizacion_uf)"/></span>
                             </t>
                           </th>
                       </tr>
@@ -168,7 +170,7 @@
                           <t t-foreach="o.line_ids.filtered(lambda line: line.appears_on_payslip)" t-as="p">
                             <t t-if="('TOTIM' == p.code)">
                               <!--CLP <span t-esc="round(p.amount)" t-esc-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/>-->
-							  <span>CLP <t t-esc="'{0:..0f}'.format(p.amount)"/></span>
+							  <span>CLP <t t-esc="'{0:,.0f}'.format(p.amount)"/></span>
                             </t>
                           </t>
 						</th>
@@ -176,7 +178,7 @@
                           <t t-foreach="o.line_ids.filtered(lambda line: line.appears_on_payslip)" t-as="p">
                             <t t-if="'TRIBU' == p.code">
                               <!--CLP <span t-esc="round(p.amount)" t-esc-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/>-->
-							  <span>CLP <t t-esc="'{0:..0f}'.format(p.amount)"/></span>
+							  <span>CLP <t t-esc="'{0:,.0f}'.format(p.amount)"/></span>
                             </t>
                           </t>
 						</th>
