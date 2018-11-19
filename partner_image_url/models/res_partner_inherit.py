@@ -26,8 +26,12 @@ import io
 from odoo import models, fields, api, _
 from odoo.exceptions import Warning
 
-
 class Partner(models.Model):
+    _inherit = ['res.partner']
+    web_url = fields.Char(string='Image URL', help='Provide URL for HTML-based image', copy=False)
+
+
+class HRPartner(models.Model):
     _inherit = ['res.partner']
     web_url = fields.Char(string='Image URL', help='Provide URL for HTML-based image', copy=False)
 
