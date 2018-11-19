@@ -10,7 +10,8 @@
     'license': 'AGPL-3',
     'depends': [
             'hr_holidays',
-			'hr_payroll',
+            'hr_payroll',
+            'partner_image_url',
             'hr_payroll_account',
         ],
     'external_dependencies': {
