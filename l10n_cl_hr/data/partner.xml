@@ -8,7 +8,7 @@
 				<field name='website'>www.sii.cl</field>
 				<field name='customer'>False</field>
 				<field name='is_company'>True</field>
-				<field name='web_url'>http://www.sii.cl/sobre_el_sii/logoSII250x108.jpg</field>
+				<!--<field name='web_url'>http://www.sii.cl/sobre_el_sii/logoSII250x108.jpg</field>-->
 				<field name='commercial_company_name'>Sistema de Impuestos Internos (SII)</field>
         </record> 
     
@@ -20,7 +20,7 @@
 				<field name='website'>www.previred.com</field>
 				<field name='customer'>False</field>
 				<field name='is_company'>True</field>
-				<field name='web_url'>http://www.gochpa.cl/imagebrowser/p005_0_6.png</field>
+				<!--<field name='web_url'>http://www.gochpa.cl/imagebrowser/p005_0_6.png</field>-->
 				<field name='commercial_company_name'>Previred.com</field>
         </record> 
 
