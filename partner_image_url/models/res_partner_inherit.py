@@ -21,6 +21,7 @@
 ###################################################################################
 import requests
 import base64
+import io
 #from PIL import Image
 from odoo import models, fields, api, _
 from odoo.exceptions import Warning
