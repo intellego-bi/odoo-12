@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    <data noupdate="True">
+    <data noupdate="False">
         <record model='res.partner' id='sii'>
                 <field name='name'>SII.cl</field>
                 <field name='document_number'>60.803.000-K</field>
