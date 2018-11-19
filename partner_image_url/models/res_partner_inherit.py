@@ -59,9 +59,12 @@ class Partner(models.Model):
         link = self.web_url
         try:
             if link:
-                r = requests.get(link)
-                Image.open(io.StringIO(r.content))
-                profile_image = base64.encodestring(urllib3.urlopen(link).read())
+                #r = requests.get(link)
+                img_data = requests.get(link).content
+                with open('image_name.jpg', 'wb') as handler:
+                    handler.write(img_data)
+                #Image.open(io.StringIO(r.content))
+                profile_image = base64.encodestring('image_name.jpg')
                 val = {
                     'image': profile_image,
                 }
