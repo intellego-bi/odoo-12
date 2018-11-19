@@ -2,9 +2,11 @@
 <odoo>
     <data noupdate="True">
         <record model='res.partner' id='sii'>
-                <field name='name'>SII</field>
+                <field name='name'>SII.cl</field>
                 <field name='document_number'>60.803.000-K</field>
+				<field name='vat'>60.803.000-K</field>
 				<field name='website'>www.sii.cl</field>
+				<field name='customer'>False</field>
         </record> 
     
         <record model='res.partner' id='previred'>
