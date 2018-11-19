@@ -73,8 +73,8 @@
                 <table class="table-condensed" width="100%" style="border-top: 1px solid black;" name="prevision">
                     <thead>
                       <tr>
-						  <th colspan="5" width="18%"><strong>Nombre AFP</strong></th>
-						  <th colspan="5" width="13%"><strong>Tasa AFP</strong></th>
+						  <th colspan="5" width="17%"><strong>Nombre AFP</strong></th>
+						  <th colspan="5" width="14%"><strong>Tasa AFP</strong></th>
                           <th colspan="5" width="22%"><strong>Nombre ISAPRE</strong></th>
 						  <th colspan="5" width="18%"><strong>FUN ISAPRE</strong></th>
                           <th colspan="5" width="14%" style="text-align:left"><strong>Cotiz. UF</strong></th>
@@ -83,8 +83,8 @@
                     </thead>	
                     <tbody>
                       <tr>
-						  <th colspan="5" width="18%"><span t-field="o.contract_id.afp_id"/></th>
-                          <th colspan="5" width="13%">
+						  <th colspan="5" width="17%"><span t-field="o.contract_id.afp_id"/></th>
+                          <th colspan="5" width="14%">
                             <t t-if="('MODELO' == o.contract_id.afp_id.name)">
                                 <span t-raw="o.indicadores_id.tasa_afp_modelo"/>
                             </t>
@@ -128,8 +128,8 @@
                 <table class="table-condensed" width="100%" style="border-top: 1px solid black;" name="jornada">
                   <thead>
                     <tr>
-  				        <th colspan="6" width="16%"><strong>DIAS</strong></th>
-						<th colspan="6" width="15%"><strong>H.EXTRA</strong></th>
+  				        <th colspan="6" width="17%"><strong>DIAS</strong></th>
+						<th colspan="6" width="14%"><strong>H.EXTRA</strong></th>
 						<th colspan="6" width="22%"><strong>DESCUENTOS</strong></th>
                         <th colspan="6" width="18%"><strong>CARGAS</strong></th>
                         <th colspan="6" width="14%" style="text-align:left"><strong>Imponible</strong></th>
@@ -138,7 +138,7 @@
                   </thead>
                   <tbody>
                     <tr>
-  				        <th colspan="6" width="16%">
+  				        <th colspan="6" width="17%">
                           <t t-set="f" t-value="0"/>
                           <t t-foreach="o.worked_days_line_ids" t-as="p">
                             <t t-if="('WORK100' == p.code)">
@@ -147,7 +147,7 @@
                           </t>
                           <span><t t-esc="str(int(f))"/></span>
 						</th>
-						<th colspan="6" width="15%">
+						<th colspan="6" width="14%">
                           <t t-foreach="o.input_line_ids" t-as="p">
                             <t t-if="(p.code in ['HEX50', 'HEX100'])">
                               <span t-raw="p.amount"/>
@@ -219,10 +219,12 @@
                                    </td>
                                     <td style="text-align:right">
                                      <t t-if=" ('Subtotal' ==p.category_id.name)">
-                                       <strong>CLP <span t-esc="round(p.total)" t-esc-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/></strong>
+                                       <!--<strong>CLP <span t-esc="round(p.total)" t-esc-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/></strong>-->
+									   <strong><span>CLP <t t-esc="'{0:,.0f}'.format(p.total)"/></span></strong>
                                      </t>
                                      <t t-if=" ('Subtotal' !=p.category_id.name)">
-                                       CLP <span t-esc="round(p.total)" t-esc-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/>
+                                       <!--CLP <span t-esc="round(p.total)" t-esc-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/>-->
+									   <span>CLP <t t-esc="'{0:,.0f}'.format(p.total)"/></span>
                                      </t>
                                    </td>
                                </t>
@@ -245,10 +247,12 @@
 
                                     <td style="text-align:right">
                                      <t t-if=" ('Subtotal' ==p.category_id.name)">
-                                       <strong>CLP <span t-esc="round(p.total)" t-esc-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/></strong>
+                                       <!--<strong>CLP <span t-esc="round(p.total)" t-esc-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/></strong>-->
+									   <strong><span>CLP <t t-esc="'{0:,.0f}'.format(p.total)"/></span></strong>
                                      </t>
                                      <t t-if=" ('Subtotal' !=p.category_id.name)">
-                                       CLP <span t-esc="round(p.total)" t-esc-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/>
+                                       <!--CLP <span t-esc="round(p.total)" t-esc-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/>-->
+									   <span>CLP <t t-esc="'{0:,.0f}'.format(p.total)"/></span>
                                      </t>
 
                                    </td>
@@ -266,12 +270,26 @@
                   <tr>
                     <td colspan="5" width="25%" style="text-align:left"><strong><h4>TOTAL HABERES</h4></strong></td>
                     <td colspan="5" width="20%" style="text-align:right">
-					  <t t-foreach="o.line_ids.filtered(lambda line: line.appears_on_payslip)" t-as="p"><t t-if="('HAB' == p.code)"><h4>CLP <span t-esc="round(p.amount)" t-esc-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/></h4></t></t>
+					  <t t-foreach="o.line_ids.filtered(lambda line: line.appears_on_payslip)" t-as="p">
+					  <t t-if="('HAB' == p.code)">
+					  <h4>
+					  <!--CLP <span t-esc="round(p.amount)" t-esc-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/>-->
+					  <strong><span>CLP <t t-esc="'{0:,.0f}'.format(p.amount)"/></span></strong>
+					  </h4>
+					  </t>
+					  </t>
 					</td>
 					<td colspan="5" width="5%" style="text-align:right"> </td>
 					<td colspan="5" width="25%" style="text-align:left"><strong><h4>TOTAL DESCUENTOS</h4></strong></td>
                     <td colspan="5" width="25%" style="text-align:right">
-					  <t t-foreach="o.line_ids.filtered(lambda line: line.appears_on_payslip)" t-as="p"><t t-if="('TDE' == p.code)"><h4>CLP <span t-esc="round(p.amount)" t-esc-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/></h4></t></t>
+					  <t t-foreach="o.line_ids.filtered(lambda line: line.appears_on_payslip)" t-as="p">
+					  <t t-if="('TDE' == p.code)">
+					  <h4>
+					  <!--CLP <span t-esc="round(p.amount)" t-esc-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/>-->
+					  <span>CLP <t t-esc="'{0:,.0f}'.format(p.amount)"/></span>
+					  </h4>
+					  </t>
+					  </t>
 					</td>
                   </tr>
 				</thead>
@@ -290,7 +308,8 @@
                     <td colspan="1" width="50%" style="text-align:right">
 					  <t t-foreach="o.line_ids.filtered(lambda line: line.appears_on_payslip)" t-as="p">
 					    <t t-if="('LIQ' == p.code)"> 
-						  <strong>CLP <span t-esc="round(p.amount)" t-esc-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/></strong>
+						  <!--<strong>CLP <span t-esc="round(p.amount)" t-esc-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/></strong>-->
+						  <strong><span>CLP <t t-esc="'{0:,.0f}'.format(p.amount)"/></span></strong>
 						</t>
 				      </t>
 					</td>
