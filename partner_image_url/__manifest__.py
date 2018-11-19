@@ -30,6 +30,11 @@
     'maintainer': 'Cybrosys Techno Solutions',
     'website': "https://www.cybrosys.com",
     'depends': ['base'],
+    'external_dependencies': {
+        'python': [
+                'urllib',
+                ]
+        },
     'data': [
         'views/partner_inherit_view.xml',
     ],

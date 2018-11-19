@@ -20,7 +20,7 @@
 #
 ###################################################################################
 import base64
-import urllib2
+import urllib
 import requests
 from PIL import Image
 from StringIO import StringIO
@@ -60,7 +60,7 @@ class Partner(models.Model):
             if link:
                 r = requests.get(link)
                 Image.open(StringIO(r.content))
-                profile_image = base64.encodestring(urllib2.urlopen(link).read())
+                profile_image = base64.encodestring(urllib.urlopen(link).read())
                 val = {
                     'image': profile_image,
                 }
