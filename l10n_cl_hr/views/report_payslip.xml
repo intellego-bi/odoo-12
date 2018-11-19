@@ -268,26 +268,26 @@
               <table class="table-condensed" width="100%" style="margin-top: 50px; border-top: 0px solid white; border-bottom: 0px solid white;">
                 <thead>
                   <tr>
-                    <td colspan="5" width="25%" style="text-align:left"><strong><h4>TOTAL HABERES</h4></strong></td>
+                    <td colspan="5" width="25%" style="text-align:left"><h5><strong>TOTAL HABERES</strong></h5></td>
                     <td colspan="5" width="20%" style="text-align:right">
 					  <t t-foreach="o.line_ids.filtered(lambda line: line.appears_on_payslip)" t-as="p">
 					  <t t-if="('HAB' == p.code)">
-					  <h4>
+					  <h5>
 					  <!--CLP <span t-esc="round(p.amount)" t-esc-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/>-->
 					  <strong><span>CLP <t t-esc="'{0:,.0f}'.format(p.amount)"/></span></strong>
-					  </h4>
+					  </h5>
 					  </t>
 					  </t>
 					</td>
 					<td colspan="5" width="5%" style="text-align:right"> </td>
-					<td colspan="5" width="25%" style="text-align:left"><strong><h4>TOTAL DESCUENTOS</h4></strong></td>
+					<td colspan="5" width="25%" style="text-align:left"><h5><strong>TOTAL DESCUENTOS</strong></h5></td>
                     <td colspan="5" width="25%" style="text-align:right">
 					  <t t-foreach="o.line_ids.filtered(lambda line: line.appears_on_payslip)" t-as="p">
 					  <t t-if="('TDE' == p.code)">
-					  <h4>
+					  <h5>
 					  <!--CLP <span t-esc="round(p.amount)" t-esc-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/>-->
-					  <span>CLP <t t-esc="'{0:,.0f}'.format(p.amount)"/></span>
-					  </h4>
+					  <strong><span>CLP <t t-esc="'{0:,.0f}'.format(p.amount)"/></span></strong>
+					  </h5>
 					  </t>
 					  </t>
 					</td>
