@@ -60,11 +60,16 @@ class Partner(models.Model):
         try:
             if link:
                 #r = requests.get(link)
-                img_data = requests.get(link).content
+
+				img_data = requests.get(link).content
                 with open('image_name.jpg', 'wb') as handler:
                     handler.write(img_data)
-                #Image.open(io.StringIO(r.content))
-                profile_image = base64.encodestring('image_name.jpg')
+				
+                image = open('image_name.jpg', 'rb')
+				#open binary file in read mode 
+                image_read = image.read()
+                profile_image = base64.encodestring(image_read)
+				
                 val = {
                     'image': profile_image,
                 }
