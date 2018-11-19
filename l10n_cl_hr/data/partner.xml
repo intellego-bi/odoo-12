@@ -4,6 +4,7 @@
         <record model='res.partner' id='sii'>
                 <field name='name'>SII</field>
                 <field name='document_number'>60.803.000-K</field>
+				<field name='website'>www.sii.cl</field>
         </record> 
     
         <record model='res.partner' id='previred'>
@@ -11,6 +12,8 @@
                 <field name='document_number'>96.929.390-0</field>
 				<field name='vat'>96.929.390-0</field>
 				<field name='phone'>+562 2654 4000</field>
+				<field name='website'>www.previred.com</field>
+				<field name='customer'>False</field>
         </record> 
 
 
