@@ -29,33 +29,21 @@ from odoo.exceptions import Warning
 #class Partner(models.Model):
 #    _inherit = ['res.partner']
 #    web_url = fields.Char(string='Image URL', help='Provide URL for HTML-based image', copy=False)
-
-
-class HRPartner(models.Model):
-    _inherit = ['res.partner']
-    web_url = fields.Char(string='Image URL', help='Provide URL for HTML-based image', copy=False)
-
 #	def get_as_base64(url):
 #        return base64.b64encode(requests.get(url).content)
+
+class Partner(models.Model):
+    _inherit = ['res.partner']
+    
+    web_url = fields.Char(string='Image URL', help='Provide URL for HTML-based image', copy=False)
 	
     @api.onchange('web_url')
     def onchange_image(self):
         link = self.web_url
         try:
             if link:
-       
-                #img_data = requests.get(link).content
-                #with open('image_name.jpg', 'wb') as handler:
-                #    handler.write(img_data)
-				
-                #image = open('image_name.jpg', 'rb')
-				#open binary file in read mode 
-                #image_read = image.read()
-                #profile_image = base64.encodestring(image_read)
-				profile_image = self.base64.b64encode(requests.get(link).content)
-                val = {
-                    'image': profile_image,
-                }
+                profile_image = self.base64.b64encode(requests.get(link).content)
+                val = {'image': profile_image,}
                 return {'value': val}
         except:
             raise Warning("Please provide a valid URL and/or verifiy image size.!")
