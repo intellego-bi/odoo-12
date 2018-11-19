@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 ###################################################################################
 #
-#    Cybrosys Technologies Pvt. Ltd.
-#    Copyright (C) 2017-TODAY Cybrosys Technologies(<http://www.cybrosys.com>).
-#    Author: Nilmar Shereef(<https://www.cybrosys.com>)
+#    Intellego-BI.com
+#    Copyright (C) 2017-TODAY Intellego Business Intelligence S.A.(<http://www.intellego-bi.com>).
+#    Author: Rodolfo Bermúdez Neubauer(<https://www.intellego-bi.com>)
 #
 #    This program is free software: you can modify
 #    it under the terms of the GNU Affero General Public License (AGPL) as
@@ -25,14 +25,14 @@
     'summary': """Customer/Vendor Images from Internet""",
     'description': """Customer/Vendor Images from Web URL""",
     'category': 'Sales',
-    'author': 'Cybrosys Techno Solutions',
-    'company': 'Cybrosys Techno Solutions',
+    'author': 'Rodolfo Bermúdez Neubauer',
+    'company': 'Intellego-BI.com',
     'maintainer': 'Intellego-BI.com',
-    'website': "https://www.cybrosys.com",
+    'website': "https://www.intellego-bi.com",
     'depends': ['base'],
     'external_dependencies': {
         'python': [
-                'urllib3',
+                'requests',
                 ]
         },
     'data': [
@@ -45,5 +45,3 @@
     'auto_install': False,
     'application': False,
 }
-
-
