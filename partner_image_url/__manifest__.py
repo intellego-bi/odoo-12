@@ -38,7 +38,7 @@
                 ]
         },
     'data': [
-        'views/partner_imageurl_view.xml',
+        'views/partner_inherit_view.xml',
     ],
     'demo': [],
     'images': ['static/description/banner.jpg'],

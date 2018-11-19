@@ -19,14 +19,14 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ###################################################################################
-import base64
 import requests
+import base64
 from PIL import Image
 from odoo import models, fields, api, _
 from odoo.exceptions import Warning
 
 
-class ImagePartner(models.Model):
+class Partner(models.Model):
     _inherit = ['res.partner']
     web_url = fields.Char(string='Image URL', help='Provide URL for HTML-based image', copy=False)
 
@@ -35,7 +35,7 @@ class ImagePartner(models.Model):
         link = self.web_url
         try:
             if link:
-                
+       
                 img_data = requests.get(link).content
                 with open('image_name.jpg', 'wb') as handler:
                     handler.write(img_data)
@@ -50,4 +50,6 @@ class ImagePartner(models.Model):
                 }
                 return {'value': val}
         except:
-            raise Warning("Please provide a valid URL and/or verifiy image size!")
+            raise Warning("Please provide a valid URL and/or verifiy image size.!")
+
+			
