@@ -220,11 +220,11 @@
                                     <td style="text-align:right">
                                      <t t-if=" ('Subtotal' ==p.category_id.name)">
                                        <!--<strong>CLP <span t-esc="round(p.total)" t-esc-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/></strong>-->
-									   <strong><span>CLP <t t-esc="'{0:,.0f}'.format(p.total)"/></span></strong>
+									   <strong><span>CLP <t t-esc="'{0:,.0f}'.format(round(p.total))"/></span></strong>
                                      </t>
                                      <t t-if=" ('Subtotal' !=p.category_id.name)">
                                        <!--CLP <span t-esc="round(p.total)" t-esc-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/>-->
-									   <span>CLP <t t-esc="'{0:,.0f}'.format(p.total)"/></span>
+									   <span>CLP <t t-esc="'{0:,.0f}'.format(round(p.total))"/></span>
                                      </t>
                                    </td>
                                </t>
