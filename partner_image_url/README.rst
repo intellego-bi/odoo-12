@@ -31,5 +31,5 @@ Credits
 =======
 
 Developer: Nilmar Shereef @ cybrosys, shereef@cybrosys.in
-Developer: Rodolfo Bermúdez @ Intellego-BI.com, rbermudez@intellego-bi.com
+Developer: Rodolfo BermÃºdez @ Intellego-BI.com, rbermudez@intellego-bi.com
 
