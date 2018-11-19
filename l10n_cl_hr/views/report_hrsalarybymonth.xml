@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 <data>
-    <template id="report_hr_salary_employee_bymonth">
-	<!--<template id="report_hrsalarybymonth">-->
+    <!--<template id="report_hr_salary_employee_bymonth">-->
+	<template id="report_hrsalarybymonth">
         <t t-call="web.html_container">
         <t t-call="web.internal_layout">
           <t t-foreach="docs" t-as="o">
