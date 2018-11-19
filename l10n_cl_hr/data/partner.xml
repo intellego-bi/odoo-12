@@ -7,8 +7,10 @@
         </record> 
     
         <record model='res.partner' id='previred'>
-                <field name='name'>PREVIRED</field>
+                <field name='name'>PREVIRED.com</field>
                 <field name='document_number'>96.929.390-0</field>
+				<field name='vat'>96.929.390-0</field>
+				<field name='phone'>+562 2654 4000</field>
         </record> 
 
 
