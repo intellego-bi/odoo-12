@@ -42,10 +42,11 @@ class Partner(models.Model):
         link = self.web_url
         try:
             if link:
-                profile_image = self.base64.b64encode(requests.get(link).content)
+			    imageurl = requests.get(link, stream=True).content
+                profile_image = base64.b64encode(imageurl)
                 val = {'image': profile_image,}
                 return {'value': val}
         except:
-            raise Warning("Please provide a valid URL and/or verifiy image size.!")
+            raise Warning("Please provide a valid URL or verifiy image size.!")
 
 			
