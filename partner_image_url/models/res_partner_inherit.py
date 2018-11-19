@@ -23,7 +23,8 @@ import base64
 import urllib3
 import requests
 from PIL import Image
-from StringIO import StringIO
+#from StringIO import StringIO
+import io
 from odoo import models, fields, api, _
 from odoo.exceptions import Warning
 
@@ -59,7 +60,7 @@ class Partner(models.Model):
         try:
             if link:
                 r = requests.get(link)
-                Image.open(StringIO(r.content))
+                Image.open(io.StringIO(r.content))
                 profile_image = base64.encodestring(urllib3.urlopen(link).read())
                 val = {
                     'image': profile_image,
