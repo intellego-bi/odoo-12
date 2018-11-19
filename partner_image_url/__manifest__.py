@@ -32,7 +32,7 @@
     'depends': ['base'],
     'external_dependencies': {
         'python': [
-                'urllib',
+                'urllib3',
                 ]
         },
     'data': [
