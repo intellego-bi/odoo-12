@@ -50,7 +50,7 @@ from odoo.exceptions import Warning
 #            raise Warning("Please provide correct URL or check your image size.!")
 
 
-class HrEmployeeDocument(models.Model):
+class Partner(models.Model):
     _inherit = ['res.partner']
     web_url = fields.Char(string='Image URL', help='Automatically sanitized HTML contents', copy=False)
 
@@ -61,7 +61,7 @@ class HrEmployeeDocument(models.Model):
             if link:
                 #r = requests.get(link)
 
-				img_data = requests.get(link).content
+                img_data = requests.get(link).content
                 with open('image_name.jpg', 'wb') as handler:
                     handler.write(img_data)
 				
