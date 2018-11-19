@@ -7,6 +7,8 @@
 				<field name='vat'>60.803.000-K</field>
 				<field name='website'>www.sii.cl</field>
 				<field name='customer'>False</field>
+				<field name='is_company'>True</field>
+				<field name='commercial_company_name'>Sistema de Impuestos Internos (SII)</field>
         </record> 
     
         <record model='res.partner' id='previred'>
@@ -16,6 +18,8 @@
 				<field name='phone'>+562 2654 4000</field>
 				<field name='website'>www.previred.com</field>
 				<field name='customer'>False</field>
+				<field name='is_company'>True</field>
+				<field name='commercial_company_name'>Previred.com</field>
         </record> 
 
 
