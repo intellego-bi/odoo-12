@@ -32,7 +32,7 @@ from odoo.exceptions import Warning
 #	def get_as_base64(url):
 #        return base64.b64encode(requests.get(url).content)
 
-class Partner(models.Model):
+class ImagePartner(models.Model):
     _inherit = ['res.partner']
     
     web_url = fields.Char(string='Image URL', help='Provide URL for HTML-based image', copy=False)
@@ -42,11 +42,12 @@ class Partner(models.Model):
         link = self.web_url
         try:
             if link:
-			    imageurl = requests.get(link, stream=True).content
-                profile_image = base64.b64encode(imageurl)
-                val = {'image': profile_image,}
+				profile_image = self.base64.b64encode(requests.get(link).content)
+                val = {
+                    'image': profile_image,
+                }
                 return {'value': val}
         except:
-            raise Warning("Please provide a valid URL or verifiy image size.!")
+            raise Warning("Please provide a valid URL and/or verifiy image size.!")
 
 			
