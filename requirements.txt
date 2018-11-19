@@ -1,7 +1,8 @@
 lxml
 requests
 xmltodict
-urllib3
+base64
+PIL
 asn1crypto==0.22.0
 bcrypt==3.1.4
 boto3==1.5.22

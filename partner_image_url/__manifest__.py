@@ -33,10 +33,12 @@
     'external_dependencies': {
         'python': [
                 'requests',
+				'base64',
+				'PIL',
                 ]
         },
     'data': [
-        'views/partner_inherit_view.xml',
+        'views/partner_imageurl_view.xml',
     ],
     'demo': [],
     'images': ['static/description/banner.jpg'],
