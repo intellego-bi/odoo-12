@@ -27,7 +27,7 @@
     'category': 'Sales',
     'author': 'Cybrosys Techno Solutions',
     'company': 'Cybrosys Techno Solutions',
-    'maintainer': 'Cybrosys Techno Solutions',
+    'maintainer': 'Intellego-BI.com',
     'website': "https://www.cybrosys.com",
     'depends': ['base'],
     'external_dependencies': {
