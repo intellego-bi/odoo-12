@@ -1,11 +1,12 @@
 # -*- encoding: utf-8 -*-
 ##############################################################################
 #
-#    OpenERP, Open Source Management Solution
-#    Copyright (C) 2004-2010 Tiny SPRL (<http://tiny.be>).
+#    Intellego-BI.com
+#    Copyright (C) 2017-TODAY Intellego Business Intelligence S.A.(<http://www.intellego-bi.com>).
+#    Author: Rodolfo Bermúdez Neubauer(<https://www.intellego-bi.com>)
 #
-#    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU Affero General Public License as
+#    This program is free software: you can modify
+#    it under the terms of the GNU Affero General Public License (AGPL) as
 #    published by the Free Software Foundation, either version 3 of the
 #    License, or (at your option) any later version.
 #
@@ -17,22 +18,22 @@
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
-##############################################################################
+###################################################################################
 {
     'name': 'Payroll Analytic Account',
-    'version': '1.0',
+    'version': '12.0',
     'description': """
 Payroll Analytic Account.
 ============================
 
 
-    -When enable in an specific Salary Rule it uses the Analytic Account selected in the Employees Contract
+    - Salary Rules can be configured to post using Analytic Account set in Employee Contract
     
     """,
     'license': 'AGPL-3',
     'category': 'Accounting',
-    'author': 'Konos',
-    'website': 'http://konos.cl',
+    'author': 'Rodolfo BermÃºdez Neubauer',
+    'website': 'https://www.intellego-BI.com',
     'depends': [
         'hr_payroll_account'
     ],
@@ -43,4 +44,3 @@ Payroll Analytic Account.
     'installable': True,
     'auto_install': False,
 }
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
