@@ -36,13 +36,15 @@ class HrEmployeeDocument(models.Model):
         link = self.web_url
         try:
             if link:
-                r = requests.get(link, stream=True)
-                #Image.open(StringIO(r.content))
-                profile_image = self.base64.b64encode(r.content)
-                val = {
-                    'image': profile_image,
-                }
-                return {'value': val}
+                r = requests.get(link, , allow_redirects=True, stream=True)
+				if req.status_code == 200: 
+				    profile_image = base64.b64encode(r.content)
+                    val = {
+                          'image': profile_image,
+                    }
+                    return {'value': val}
+				else:
+				    raise Warning("No response from URL!")
         except:
             raise Warning("Please provide correct URL or check your image size.!")
 
