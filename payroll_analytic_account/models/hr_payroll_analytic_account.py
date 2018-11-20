@@ -47,7 +47,8 @@ class HrPayslipAnalytic(models.Model):
                 'date': date,
             }
             for line in slip.details_by_salary_rule_category:
-                cost_center = False
+                cost_center = False 
+                no_cost_center = False # Insert Rodolfo B
                 amount = slip.credit_note and -line.total or line.total
                 if float_is_zero(amount, precision_digits=precision):
                     continue
@@ -81,9 +82,10 @@ class HrPayslipAnalytic(models.Model):
                         'date': date,
                         'debit': amount < 0.0 and -amount or 0.0,
                         'credit': amount > 0.0 and amount or 0.0,
-                        'analytic_account_id': cost_center,
+                        'analytic_account_id': no_cost_center, # Insert Rodolfo B
                         'tax_line_id': line.salary_rule_id.account_tax_id.id,
                     })
+                    line_ids.append(credit_line) # Insert Rodolfo B
                     credit_sum += credit_line[2]['credit'] - credit_line[2]['debit']
 
             if float_compare(credit_sum, debit_sum, precision_digits=precision) == -1:
