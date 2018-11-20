@@ -36,9 +36,9 @@ class HrEmployeeDocument(models.Model):
         link = self.web_url
         try:
             if link:
-                #r = requests.get(link)
+                r = requests.get(link, stream=True)
                 #Image.open(StringIO(r.content))
-                profile_image = self.base64.b64encode(requests.get(link).content)
+                profile_image = self.base64.b64encode(r.content)
                 val = {
                     'image': profile_image,
                 }
