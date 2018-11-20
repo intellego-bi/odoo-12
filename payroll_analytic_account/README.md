@@ -8,7 +8,10 @@ Setting to allow Payroll Analytic Account from Contract or Salary Rule.
 <img width="200" alt="Logo Intellego-BI" src="https://i2.wp.com/intellego-bi.com/ws/wp-content/uploads/2016/05/Intellego-BI-112x35.jpg" />
 </p>
 <p>
- - Intellego Business Intelligence <https://www.intellego-bi.com>
+Intellego Business Intelligence <https://www.intellego-bi.com>
+
+
+ 
 </p>
 
 ## Credits
@@ -20,3 +23,12 @@ Setting to allow Payroll Analytic Account from Contract or Salary Rule.
  - Nelson Ramírez <info@konos.cl>
  - Daniel Blanco Martín <daniel@blancomartin.com>
  - Rodolfo Bermúdez Neubauer <odoo@intellego-bi.com>
+ 
+
+Odoo Dependencies
+-----------------
+
+- hr_payroll_account
+- analytic
+
+* Only tested on Odoo Enterprise (v12.0) due to dependency on Payroll Accounting which by now has sadly been deprecated from Community.
