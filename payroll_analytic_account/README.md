@@ -1,19 +1,16 @@
-Odoo - Payroll Anaylitic Account
-========================================
+Odoo - Payroll Anaylitic Account from Contract
+==============================================
 
-When enable in an specific Salary Rule it uses the Analytic Account selected in the Employees Contract
-You can check functionality in the following video:
-
-https://www.youtube.com/watch?v=raLA72Sfcds
+Setting to allow Payroll Analytic Account from Contract or Salary Rule. 
 
 ## Credits
 <p>
-<img width="200" alt="Logo Konos" src="http://www.konos.cl/web/image/666" />
+<img width="200" alt="Logo Intellego-BI" src="https://i2.wp.com/intellego-bi.com/ws/wp-content/uploads/2016/05/Intellego-BI-112x35.jpg" />
 </p>
-**Konos** - http://konos.cl
- - Nelson Ramírez <info@konos.cl>
-
-
+ **Author** 
+ - https://www.intellego-bi.com
+ - Rodolfo Bermúdez Neubauer <odoo@intellego-bi.com>
  
  **Contributors**
+ - Nelson Ramírez <info@konos.cl>
  - Daniel Blanco Martín <daniel@blancomartin.com>
