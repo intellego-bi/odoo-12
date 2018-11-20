@@ -29,7 +29,31 @@ from odoo.tools.translate import _
 
 class HrPayslipAnalytic(models.Model):
     _inherit = 'hr.payslip'
+	
+    date = fields.Date('Date Account', states={'draft': [('readonly', False)]}, readonly=True,
+        help="Keep empty to use the period of the validation(Payslip) date.")
+    journal_id = fields.Many2one('account.journal', 'Salary Journal', readonly=True, required=True,
+        states={'draft': [('readonly', False)]}, default=lambda self: self.env['account.journal'].search([('type', '=', 'general')], limit=1))
+    move_id = fields.Many2one('account.move', 'Accounting Entry', readonly=True, copy=False)
 
+    @api.model
+    def create(self, vals):
+        if 'journal_id' in self.env.context:
+            vals['journal_id'] = self.env.context.get('journal_id')
+        return super(HrPayslip, self).create(vals)
+
+    @api.onchange('contract_id')
+    def onchange_contract(self):
+        super(HrPayslip, self).onchange_contract()
+        self.journal_id = self.contract_id.journal_id.id or (not self.contract_id and self.default_get(['journal_id'])['journal_id'])
+
+    @api.multi
+    def action_payslip_cancel(self):
+        moves = self.mapped('move_id')
+        moves.filtered(lambda x: x.state == 'posted').button_cancel()
+        moves.unlink()
+        return super(HrPayslip, self).action_payslip_cancel()
+	
     @api.multi
     def action_payslip_done(self):
         precision = self.env['decimal.precision'].precision_get('Payroll')
