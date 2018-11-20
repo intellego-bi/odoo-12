@@ -1,23 +1,59 @@
-<section class="oe_container">
+﻿<section class="oe_container">
     <div class="oe_span12">
-        <h2 class="oe_slogan">Payroll Analytic Account</h2>
-        <h3 class="oe_slogan">Payroll Analytic Account.<br />by Konos</h3>
+        <h2 class="oe_slogan">Payroll Analytic Account from Contract</h2>
+        <h3 class="oe_slogan">Setting to allow Payroll Analytic Account from Contract or Salary Rule.<br />by Intellego-BI.com</h3>
     </div>
     <div class="oe_span12">
         <p class="oe_mt32">
-            When enable in an specific Salary Rule it uses the Analytic Account selected in the Employees Contract.<br />
-            <a target="_blank" href="https://www.youtube.com/watch?v=raLA72Sfcds">https://www.youtube.com/watch?v=raLA72Sfcds</a> <br />            
+            This addon will enable Payslip <strong>debit</strong> postings to inherit the <strong>Analytic Account</strong> set on the <strong>Employee Contract</strong>, 
+			according to the configuration of each Salary Rule. <br /><br /><br />
+                        
         </p>
-        <div class="oe_demo oe_picture oe_screenshot">
-           <img src="foto1.png"/>
-        </div>
     </div>
     <div class="oe_span12">
         <p class="oe_mt32">
-           Select Analytic Account on Contract.          
+           Setting for Analytic Account for each Salary Rule:          
         </p>
         <div class="oe_demo oe_picture oe_screenshot">
-           <img src="foto2.png"/>
+           <img src="hr_salary_rule.png"/>
+        </div>
+        <p class="oe_mt32"><br /><br /><br />
+           When field* is not set, Analytic Account may be set directly on Salary Rule and will ignore the setting on Employee Contract.<br /><br />
+           field* = "Cuenta Analítica por Contrato"		   
+        </p>
+
+    </div>
+
+    <div class="oe_span12">
+        <p class="oe_mt32"><br /><br /><br />
+           When set, Analytic Account is not visible on Salary Rule and <strong>debit</strong> postings will take Analytic Account from Employee Contract.          
+        </p>
+        <div class="oe_demo oe_picture oe_screenshot">
+           <img src="hr_salary_rule_on.png"/>
         </div>
     </div>
+
+    <div class="oe_span12">
+        <p class="oe_mt32"><br /><br /><br />
+           Analytic Account set on <strong>Employee Contract</strong>.          
+        </p>
+        <div class="oe_demo oe_picture oe_screenshot">
+           <img src="hr_contract_analytic.png"/>
+        </div>
+    </div>
+
+    <div class="oe_span12">
+        <p class="oe_mt32"><br /><br /><br />
+           Example of <strong>Accounting Journal</strong> for payroll posting. Note that the Analytic Account is only transfered to <strong>debit postings</strong> which represent the payroll expenses that are now sliced by Analytic Account.            
+        </p><br /><br /><br />
+        <div class="oe_demo oe_picture oe_screenshot">
+           <img src="hr_payslip_analytic.png"/>
+        </div>
+        <p class="oe_mt32"><br /><br />
+           Note that the Analytic Account is only transfered to <strong>debit postings</strong> which represent the payroll expenses that are now sliced by Analytic Account.            
+        </p><br /><br />
+
+    </div>
+
+	
 </section>
