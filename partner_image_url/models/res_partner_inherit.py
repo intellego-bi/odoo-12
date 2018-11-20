@@ -37,7 +37,7 @@ class HrEmployeeDocument(models.Model):
         try:
             if link:
                 r = requests.get(link, , allow_redirects=True, stream=True)
-				if req.status_code == 200: 
+				if r.status_code == 200: 
 				    profile_image = base64.b64encode(r.content)
                     val = {
                           'image': profile_image,
