@@ -19,34 +19,49 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ###################################################################################
-import requests
 import base64
+import requests
 import io
-#from PIL import Image
+from PIL import Image
 from odoo import models, fields, api, _
 from odoo.exceptions import Warning
 
-#class Partner(models.Model):
-#    _inherit = ['res.partner']
-#    web_url = fields.Char(string='Image URL', help='Provide URL for HTML-based image', copy=False)
-#	def get_as_base64(url):
-#        return base64.b64encode(requests.get(url).content)
-
-class Partner(models.Model):
+class HrEmployeeDocument(models.Model):
     _inherit = ['res.partner']
-    web_url = fields.Char(string='Image URL', help='Provide URL for HTML-based image', copy=False)
-	
+
+    web_url = fields.Char(string='Image URL', help='Automatically sanitized HTML contents', copy=False)
+
     @api.onchange('web_url')
     def onchange_image(self):
         link = self.web_url
         try:
             if link:
-				profile_image = self.base64.b64encode(requests.get(link).content)
+                #r = requests.get(link)
+                #Image.open(StringIO(r.content))
+                profile_image = self.base64.b64encode(requests.get(link).content)
                 val = {
                     'image': profile_image,
                 }
                 return {'value': val}
         except:
-            raise Warning("Please provide a valid URL and/or verifiy image size.!")
+            raise Warning("Please provide correct URL or check your image size.!")
+
+
+#class HrEmployeeDocument(models.Model):
+#    _inherit = ['res.partner']
+#    web_url = fields.Char(string='Image URL', help='Provide URL for HTML-based image', copy=False)
+	
+#    @api.onchange('web_url')
+#    def onchange_image(self):
+#        link = self.web_url
+#        try:
+#            if link:
+#				profile_image = self.base64.b64encode(requests.get(link).content)
+#                val = {
+#                    'image': profile_image,
+#                }
+#                return {'value': val}
+#        except:
+#            raise Warning("Please provide a valid URL and/or verifiy image size.!")
 
 			
