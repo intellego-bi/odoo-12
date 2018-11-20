@@ -37,6 +37,24 @@
                  	</h1>
             </xpath>
 
+            <xpath expr="//label[@for='firstname']" position="attributes">
+                <attribute name="string">Nombre</attribute>
+            </xpath>
+
+            <xpath expr="//label[@for='middle_name']" position="attributes">
+                <attribute name="string">Segundo Nombre</attribute>
+            </xpath>
+
+            <xpath expr="//label[@for='last_name']" position="attributes">
+                <attribute name="string">Apellido</attribute>
+            </xpath>
+			
+            <xpath expr="//label[@for='mothers_name']" position="attributes">
+                <attribute name="string">Segundo Apellido</attribute>
+            </xpath>
+
+			
+			
             <!--<xpath expr="//field[@name='resource_calendar_id']" position="replace">
                 <field name="resource_calendar_id" select="hr_resource_monthly_cl"/>
             </xpath>-->
