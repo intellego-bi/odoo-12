@@ -36,7 +36,7 @@ class HrEmployeeDocument(models.Model):
         link = self.web_url
         try:
             if link:
-                r = requests.get(link, , allow_redirects=True, stream=True)
+                r = requests.get(link, allow_redirects=True, stream=True)
 				if r.status_code == 200: 
 				    profile_image = base64.b64encode(r.content)
                     val = {
