@@ -43,7 +43,8 @@ class HrEmployeeDocument(models.Model):
                     return {'value': val}
 
                 if req.status_code != 200:
-				    raise Warning("No response from URL!")
+				    raise Warning("No response from URL")
+					
         except:
             raise Warning("Please provide correct URL or check your image size.!")
 
