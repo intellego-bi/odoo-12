@@ -37,17 +37,20 @@ class HrEmployeeDocument(models.Model):
         try:
             if link:
                 r = requests.get(link, allow_redirects=True, stream=True)
-				if r.status_code == 200: 
+                if r.status_code == 200: 
                     profile_image = base64.b64encode(r.content)
                     val = {'image': profile_image,}
                     return {'value': val}
 
                 if r.status_code != 200:
 				    raise Warning("No response from URL!")
-
         except:
             raise Warning("Please provide correct URL or check your image size.!")
 
+
+			
+			
+			
 
 #class HrEmployeeDocument(models.Model):
 #    _inherit = ['res.partner']
@@ -65,5 +68,3 @@ class HrEmployeeDocument(models.Model):
 #                return {'value': val}
 #        except:
 #            raise Warning("Please provide a valid URL and/or verifiy image size.!")
-
-			
