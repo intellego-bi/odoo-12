@@ -41,10 +41,8 @@ class HrEmployeeDocument(models.Model):
                     profile_image = base64.b64encode(req)
                     val = {'image': profile_image,}
                     return {'value': val}
-
-                if req.status_code != 200:
-				    raise Warning("No response from URL")
-					
+#                if req.status_code != 200:
+#				    raise Warning("No response from URL")
         except:
             raise Warning("Please provide correct URL or check your image size.!")
 
