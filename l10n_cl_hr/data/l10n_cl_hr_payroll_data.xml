@@ -7,10 +7,12 @@
 
         <record id="contrib_register_previred" model="hr.contribution.register">
             <field name="name">Previred</field>
+			<field name="partner_id">previred</field>
         </record>
 
         <record id="contrib_register_sii" model="hr.contribution.register">
             <field name="name">SII</field>
+			<field name="partner_id">sii</field>
         </record>
 
 
