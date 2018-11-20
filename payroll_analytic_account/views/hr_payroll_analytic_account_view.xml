@@ -26,13 +26,12 @@
             <field name="model">hr.contract</field>
             <field name="inherit_id" ref="hr_payroll_account.hr_contract_form_inherit"/>
             <field name="arch" type="xml">
-                <xpath expr="//field[@name='analytic_account_id']" position="attributes">
+                <!--<xpath expr="//field[@name='analytic_account_id']" position="attributes">
                     <attribute name="required">1</attribute>
-                </xpath>
+                </xpath>-->
                 <xpath expr="//field[@name='analytic_account_id']" position="attributes">
                     <attribute name="string">Analytic Cost Center</attribute>
                 </xpath>
-
             </field>
         </record>
 
