@@ -8,7 +8,7 @@ Setting to allow Payroll Analytic Account from Contract or Salary Rule.
 <img width="200" alt="Logo Intellego-BI" src="https://i2.wp.com/intellego-bi.com/ws/wp-content/uploads/2016/05/Intellego-BI-112x35.jpg" />
 </p>
  
- **Author** 
+## Authors 
  - https://www.intellego-bi.com
  - Rodolfo Bermúdez Neubauer <odoo@intellego-bi.com>
  
