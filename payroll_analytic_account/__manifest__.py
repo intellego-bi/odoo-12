@@ -20,12 +20,11 @@
 #
 ###################################################################################
 {
-    'name': 'Payroll Analytic Account',
+    'name': 'Payroll Analytic Account from Contract',
     'version': '12.0',
     'description': """
-Payroll Analytic Account.
-============================
-
+Payroll Analytic Account from Contract.
+========================================
 
     - Salary Rules can be configured to post using Analytic Account set in Employee Contract
     
@@ -35,7 +34,8 @@ Payroll Analytic Account.
     'author': 'Rodolfo Bermúdez Neubauer',
     'website': 'https://www.intellego-BI.com',
     'depends': [
-        'hr_payroll_account'
+        'hr_payroll_account',
+        'analytic'
     ],
     'data': [
         'views/hr_payroll_analytic_account_view.xml',
