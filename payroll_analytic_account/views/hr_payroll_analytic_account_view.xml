@@ -29,6 +29,10 @@
                 <xpath expr="//field[@name='analytic_account_id']" position="attributes">
                     <attribute name="required">1</attribute>
                 </xpath>
+                <xpath expr="//field[@name='analytic_account_id']" position="attributes">
+                    <attribute name="string">Analytic Cost Center</attribute>
+                </xpath>
+
             </field>
         </record>
 
