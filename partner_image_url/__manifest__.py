@@ -24,7 +24,7 @@
     'version': '12.0.1.0',
     'summary': """Customer/Vendor Images from Internet""",
     'description': """Customer/Vendor Images from Web URL""",
-    'category': 'Sales',
+    'category': 'Web',
     'author': 'Rodolfo Bermúdez Neubauer',
     'company': 'Intellego-BI.com',
     'maintainer': 'Intellego-BI.com',
