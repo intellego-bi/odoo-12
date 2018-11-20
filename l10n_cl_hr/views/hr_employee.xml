@@ -48,6 +48,9 @@
             <xpath expr="//label[@for='mothers_name']" position="attributes">
                 <attribute name="string">Segundo Apellido</attribute>
             </xpath>
+			<xpath expr="//field[@name='job_title']" position="after">
+                <field name="address_home_id" string="Contacto para Contabilizar" context="{                                                 'show_address': 1,                                                 'default_type': 'private',                                                 'form_view_ref': 'base.res_partner_view_form_private'}" options="{&quot;always_reload&quot;: True, &quot;highlight_first_line&quot;: True}"/>
+            </xpath>
 		
             <!--<xpath expr="//field[@name='resource_calendar_id']" position="replace">
                 <field name="resource_calendar_id" select="hr_resource_monthly_cl"/>
