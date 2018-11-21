@@ -13,10 +13,16 @@
                 <page name="helios" string="Info Helios">
                     <group name="helios_prod_class">
                         <group name="helios_prod_class_dim" string="Unidades y Dimensiones">
-                            <field name="largo" class="oe_inline"/>
+                            <field name="unidades" class="oe_inline"/>
+                            <div><field name="largo" class="oe_inline"/></div>
+                            <div><field name="ancho" class="oe_inline"/></div>
+                            <div><field name="gramaje"/></div>
                         </group>
                         <group name="helios_prod_class_res" string="Recursos Producción"/>
                             <field name="lista"/>
+                            <div><field name="ns" class="oe_inline"/></div>
+                            <div><field name="ecobond" class="oe_inline"/></div>
+                            <div><field name="mx"/></div>
                         </group>
                 </page>
             </xpath>			
