@@ -13,16 +13,40 @@
                 <page name="helios" string="Info Helios">
                     <group name="helios_prod_class">
                         <group name="helios_prod_class_dim" string="Unidades y Dimensiones">
-                            <field name="unidades" class="oe_inline"/>
-                            <div><field name="largo" class="oe_inline"/></div>
-                            <div><field name="ancho" class="oe_inline"/></div>
-                            <div><field name="gramaje"/></div>
+                            <label for="unidades"/>
+                            <div name="unidades">
+                                <field name="unidades"/>
+                            </div>
+                            <label for="largo"/>
+                            <div name="largo">
+                                <field name="largo"/>
+                            </div>
+                            <label for="ancho"/>
+                            <div name="ancho">
+                                <field name="ancho"/>
+                            </div>
+                            <label for="gramaje"/>
+                            <div name="gramaje">
+                                <field name="gramaje"/>
+                            </div>
                         </group>
                         <group name="helios_prod_class_res" string="Recursos Producción"/>
-                            <field name="lista"/>
-                            <div><field name="ns" class="oe_inline"/></div>
-                            <div><field name="ecobond" class="oe_inline"/></div>
-                            <div><field name="mx"/></div>
+                            <label for="lista"/>
+                            <div name="lista">
+                                <field name="lista"/>
+                            </div>
+                            <label for="ns"/>
+                            <div name="ns">
+                                <field name="ns"/>
+                            </div>
+                            <label for="ecobond"/>
+                            <div name="ecobond">
+                                <field name="ecobond"/>
+                            </div>
+                            <label for="mx"/>
+                            <div name="mx">
+                                <field name="mx"/>
+                            </div>
                         </group>
                 </page>
             </xpath>			
