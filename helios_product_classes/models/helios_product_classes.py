@@ -25,7 +25,7 @@ from odoo.tools import float_compare, float_is_zero
 from odoo.tools.translate import _
 
 
-class ProductHelios(models.Model):
+class Product(models.Model):
     _inherit = 'product.template'
 
 	unidades = fields.Float('N° Unidades', digits=dp.get_precision('Product Unit of Measure'), help="N° Unidades por Paquete de producto", copy=True)
