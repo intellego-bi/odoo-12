@@ -30,7 +30,7 @@
                                 <field name="gramaje"/>
                             </div>
                         </group>
-                        <group name="helios_prod_class_res" string="Recursos Producción"/>
+                        <group name="helios_prod_class_res" string="Recursos Producción">
                             <label for="lista"/>
                             <div name="lista">
                                 <field name="lista"/>
@@ -48,6 +48,7 @@
                                 <field name="mx"/>
                             </div>
                         </group>
+                    </group>
                 </page>
             </xpath>			
             	<!--<field name ="analytic_account_id" position="replace">
