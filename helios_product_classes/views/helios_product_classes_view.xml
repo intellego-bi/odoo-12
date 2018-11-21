@@ -29,6 +29,10 @@
                             <div name="h_gramaje">
                                 <field name="h_gramaje"/>
                             </div>
+                            <strong><label for="h_kgunidad"/></strong>
+                            <div name="h_kgunidad">
+                                <field name="h_kgunidad"/>
+                            </div>							
                         </group>
                         <group name="helios_prod_class_res" string="Recursos Producción">
                             <label for="h_lista"/>
