@@ -1,5 +1,5 @@
-# -*- coding: utf-8 -*-
-###################################################################################
+# -*- encoding: utf-8 -*-
+##############################################################################
 #
 #    Intellego-BI.com
 #    Copyright (C) 2017-TODAY Intellego Business Intelligence S.A.(<http://www.intellego-bi.com>).
@@ -19,5 +19,6 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ###################################################################################
-from . import res_partner_inherit
+from . import models
+ 
 

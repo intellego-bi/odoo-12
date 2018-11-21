@@ -1,5 +1,5 @@
-# -*- coding: utf-8 -*-
-###################################################################################
+﻿# -*- encoding: utf-8 -*-
+##############################################################################
 #
 #    Intellego-BI.com
 #    Copyright (C) 2017-TODAY Intellego Business Intelligence S.A.(<http://www.intellego-bi.com>).
@@ -20,30 +20,27 @@
 #
 ###################################################################################
 {
-    'name': 'Partner Image from URL',
-    'version': '12.0.1.0',
-    'summary': """Customer/Vendor Images from Internet""",
-    'description': """Customer/Vendor Images from Web URL""",
-    'category': 'Web',
-    'author': 'Rodolfo Bermúdez Neubauer',
-    'company': 'Intellego-BI.com',
-    'maintainer': 'Intellego-BI.com',
-    'website': "https://www.intellego-bi.com",
-    'depends': ['base'],
-    'external_dependencies': {
-        'python': [
-                'requests',
-				'base64',
-				'PIL',
-                ]
-        },
-    'data': [
-        'views/partner_inherit_view.xml',
-    ],
-    'demo': [],
-    'images': ['static/description/banner.jpg'],
+    'name': 'Helios Product Attributes',
+    'version': '12.0',
+    'description': """
+Atributos de Productos para Helios.
+====================================
+
+    - Agrega atributos a vista de productos
+    
+    """,
     'license': 'AGPL-3',
+    'category': 'Warehouse',
+    'author': 'Rodolfo Bermúdez Neubauer',
+    'website': 'https://www.intellego-BI.com',
+    'depends': [
+        'stock'
+    ],
+    'data': [
+        'data/helios_product_classes_decimal_precision.xml',
+        'views/helios_product_classes_view.xml'		
+    ],
+   
     'installable': True,
     'auto_install': False,
-    'application': False,
 }

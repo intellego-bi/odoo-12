@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+﻿# -*- coding: utf-8 -*-
 ###################################################################################
 #
 #    Intellego-BI.com
@@ -19,5 +19,7 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ###################################################################################
-from . import models
+from . import helios_product_classes
+
+ 
 

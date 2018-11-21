@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Decimal Precision -->
+        <record forcecreate="True" id="helios_product_classes_decimals" model="decimal.precision">
+            <field name="name">Helios Product Class</field>
+            <field name="digits">4</field>
+        </record>
+    </data>
+</odoo>

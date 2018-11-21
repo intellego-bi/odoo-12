@@ -1,0 +1,22 @@
+﻿<?xml version="1.0"?>
+<odoo>
+    <data>
+      
+    <!-- Adding Helios Page and fields to the Product Form View -->
+
+        <record id="helios_product_template_form_view_inherit" model="ir.ui.view">
+            <field name="name">product.template.inherit.form</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_form_view"/>
+            <field name="arch" type="xml">	
+            	<field name="volume" position="after">
+                            <field name="largo" class="oe_inline"/>
+                </field>
+            	<!--<field name ="analytic_account_id" position="replace">
+                            <field name="analytic_account_id" attrs="{'invisible': [('account_analytic_true', '==', True)]}"/>
+            	</field>-->
+            </field>
+        </record>
+
+    </data>
+</odoo>
