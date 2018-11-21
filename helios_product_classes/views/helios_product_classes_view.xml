@@ -29,7 +29,7 @@
                             <div name="h_gramaje">
                                 <field name="h_gramaje"/>
                             </div>
-                            <strong><label for="h_kgunidad"/></strong>
+                            <label for="h_kgunidad"/>
                             <div name="h_kgunidad">
                                 <field name="h_kgunidad"/>
                             </div>							
