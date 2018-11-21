@@ -13,39 +13,39 @@
                 <page name="helios" string="Info Helios">
                     <group name="helios_prod_class">
                         <group name="helios_prod_class_dim" string="Unidades y Dimensiones">
-                            <label for="unidades"/>
-                            <div name="unidades">
-                                <field name="unidades"/>
+                            <label for="h_unidades"/>
+                            <div name="h_unidades">
+                                <field name="h_unidades"/>
                             </div>
-                            <label for="largo"/>
-                            <div name="largo">
-                                <field name="largo"/>
+                            <label for="h_largo"/>
+                            <div name="h_largo">
+                                <field name="h_largo"/>
                             </div>
-                            <label for="ancho"/>
-                            <div name="ancho">
-                                <field name="ancho"/>
+                            <label for="h_ancho"/>
+                            <div name="h_ancho">
+                                <field name="h_ancho"/>
                             </div>
-                            <label for="gramaje"/>
-                            <div name="gramaje">
-                                <field name="gramaje"/>
+                            <label for="h_gramaje"/>
+                            <div name="h_gramaje">
+                                <field name="h_gramaje"/>
                             </div>
                         </group>
                         <group name="helios_prod_class_res" string="Recursos Producción">
-                            <label for="lista"/>
-                            <div name="lista">
-                                <field name="lista"/>
+                            <label for="h_lista"/>
+                            <div name="h_lista">
+                                <field name="h_lista"/>
                             </div>
-                            <label for="ns"/>
-                            <div name="ns">
-                                <field name="ns"/>
+                            <label for="h_ns"/>
+                            <div name="h_ns">
+                                <field name="h_ns"/>
                             </div>
-                            <label for="ecobond"/>
-                            <div name="ecobond">
-                                <field name="ecobond"/>
+                            <label for="h_ecobond"/>
+                            <div name="h_ecobond">
+                                <field name="h_ecobond"/>
                             </div>
-                            <label for="mx"/>
-                            <div name="mx">
-                                <field name="mx"/>
+                            <label for="h_mx"/>
+                            <div name="h_mx">
+                                <field name="h_mx"/>
                             </div>
                         </group>
                     </group>
