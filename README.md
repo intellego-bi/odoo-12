@@ -11,12 +11,14 @@ Odoo 12 Localización chilena
 
 **Features list**
 
-    * Payroll for Chilean localization.
-    * Analytic Account from Employee Contract
     * Chart of Accounts
     * Currency Rate Inverted (for CLP)
     * Currency Rate update from SBIF (UF, UTM, USD and EUR for CLP)
     * Partner required per account group setting (customer and vendor type accounts)
+    * Payroll for Chilean localization.
+    * Analytic Account from Employee Contract
+    * Working (shift) Schedule on Employee Contract (Work in progress)
+
 
 ## Thanks to
  **Colaboradores**
