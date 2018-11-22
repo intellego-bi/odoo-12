@@ -28,6 +28,12 @@ Odoo 12 Localización chilena
 
 
 ## Thanks to
+ 
+ **konos.cl** - http://konos.cl
+ **globalresponse.cl** http://globalresponse.cl
+ **blancomartin.cl** http://blancomartin.com
+
+
  **Colaboradores**
  - Daniel Blanco Martín <daniel@blancomartin.com>
  - Carlos Lopez Mite <celm1990@hotmail.com>
