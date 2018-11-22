@@ -37,6 +37,7 @@ Odoo 12 Localización chilena
 
 ## Thanks to
  
+ **Odoo Community Association (OCA)** https://odoo-community.org <br>
  **konos.cl** - http://konos.cl <br>
  **globalresponse.cl** http://globalresponse.cl <br>
  **blancomartin.com** http://blancomartin.com
