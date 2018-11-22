@@ -10,10 +10,11 @@ https://youtu.be/6m9fuuCny7g
 <p>
 <img width="200" alt="Logo Konos" src="http://www.konos.cl/web/image/1149" />
 </p>
+
 **Konos** - http://konos.cl
  - Nelson Ramírez <info@konos.cl>
 
-** Features list :**
+**Features list**
 
     * Payroll configuration for Chile localization.
     * All contributions rules for Chile payslip.
