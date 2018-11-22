@@ -45,6 +45,7 @@ Odoo 12 Localización chilena
 
  **Superestrellas Localización Chilena**
  - Daniel Blanco Martín <daniel@blancomartin.com>
+ - Nelson Ramírez <info@konos.cl>
  - Carlos Lopez Mite <celm1990@hotmail.com>
  - Daniel Santibáñez Polanco <dsantibanez@globalresponse.cl>
  - Francisco Lorca <fcolorca1979@gmail.com>
