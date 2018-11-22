@@ -17,6 +17,13 @@ Odoo 12 Localización chilena
     * Currency Rate update from SBIF (UF, UTM, USD and EUR for CLP)
     * Payroll for Chilean localization.
 
+**To-Do Features list: Chilean Localization**
+
+    * Electronic Bank Statements for chilean banks
+    * Generate Bulk Outgoing payment flat files for chilean banks
+    * Electronic Invoice en EDI with SII (Factura Electrónica)
+    * Fixed Assets accounting
+
 
 **Features list: Generic for Odoo 12**
 
