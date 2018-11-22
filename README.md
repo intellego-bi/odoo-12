@@ -21,8 +21,9 @@ Odoo 12 Localización chilena
 
     * Electronic Bank Statements for chilean banks
     * Generate Bulk Outgoing payment flat files for chilean banks
-    * Electronic Invoice en EDI with SII (Factura Electrónica)
+    * Electronic Invoicing and EDI with SII (Factura Electrónica)
     * Fixed Assets accounting
+    * Automate monthly Previred indicators update 
 
 
 **Features list: Generic for Odoo 12**
