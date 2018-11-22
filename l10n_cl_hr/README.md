@@ -10,10 +10,11 @@ https://youtu.be/6m9fuuCny7g
 <p>
 <img width="200" alt="Logo Konos" src="http://www.konos.cl/web/image/1149" />
 </p>
+
 **Konos** - http://konos.cl
  - Nelson Ramírez <info@konos.cl>
 
-** Features list :**
+**Features list**
 
     * Payroll configuration for Chile localization.
     * All contributions rules for Chile payslip.
@@ -23,12 +24,9 @@ https://youtu.be/6m9fuuCny7g
     * Employee PaySlip 
     * Allowances / Deductions / Company Inputs 
     * Extra Time 
-    * Pention Chilean Indicators 
-    * Payroll Books 
-    * Previred Plain Text
-
-
-
+    * Manual update of Monthly Payroll Parameters from Previred 
+    * Payroll Ledger (Libro de Remuneraciones) 
+    * Generates Previred Flat File
 
  
  **Colaboradores**
@@ -37,49 +35,7 @@ https://youtu.be/6m9fuuCny7g
  - Daniel Santibáñez Polanco <dsantibanez@globalresponse.cl>
  - Francisco Lorca <fcolorca1979@gmail.com>
  - Marcel Rodriguez <jmrv1981@hotmail.com>
-
- 
-
+ - Rodolfo Bermúdez Neubauer <odoo@intellego-bi.com>
 
 
 
-
-Odoo - Chilean Payroll & Human Resources
-========================================
-
-Personalización para manejo de Recursos Humanos y Remuneraciones en Chile
-Puede chequear la funcionalidad del este módulo en el siguiente video:
-https://youtu.be/6m9fuuCny7g
- 
-## Créditos
-<p>
-<img width="200" alt="Logo Konos" src="http://www.konos.cl/web/image/1149" />
-</p>
-**Konos** - http://konos.cl
- - Nelson Ramírez <info@konos.cl>
-
-
-** Características :**
-
-    * Configuración de remuneraciones localización chilena.
-    * Reglas de aportes de empresa.
-    * Información básica de empleados
-    * Contratos de empleados
-    * Vacaciones, faltas y licencias
-    * Liquidaciones mensuales
-    * Beneficios, descuentos y otros inputs
-    * Horas Extra, aginaldos, bonos 
-    * Indicadores previsionales
-    * Libros de Honorarios
-    * Archivo plano previred
-
-
-
-
- 
- **Colaboradores**
- - Daniel Blanco Martín <daniel@blancomartin.com>
- - Carlos Lopez Mite <celm1990@hotmail.com>
- - Daniel Santibáñez Polanco <dsantibanez@globalresponse.cl>
- - Francisco Lorca <fcolorca1979@gmail.com>
- - Marcel Rodriguez <jmrv1981@hotmail.com>
