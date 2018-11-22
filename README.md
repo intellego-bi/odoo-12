@@ -50,4 +50,4 @@ Odoo 12 Localización chilena
  - Daniel Santibáñez Polanco <dsantibanez@globalresponse.cl>
  - Francisco Lorca <fcolorca1979@gmail.com>
  - Marcel Rodriguez <jmrv1981@hotmail.com>
- - Rodolfo Bermúdez Neubauer <odoo@intellego-bi.com>
+ - ¿Quién dijo "yo"?
