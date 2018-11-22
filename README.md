@@ -31,7 +31,7 @@ Odoo 12 Localización chilena
  
  **konos.cl** - http://konos.cl <br>
  **globalresponse.cl** http://globalresponse.cl <br>
- **blancomartin.cl** http://blancomartin.com
+ **blancomartin.com** http://blancomartin.com
 
 
  **Colaboradores**
