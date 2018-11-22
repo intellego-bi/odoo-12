@@ -24,8 +24,8 @@ https://youtu.be/6m9fuuCny7g
     * Allowances / Deductions / Company Inputs 
     * Extra Time 
     * Manual update of Monthly Payroll Parameters from Previred 
-    * Payroll Books 
-    * Previred Falt File
+    * Payroll Ledger (Libro de Remuneraciones) 
+    * Generates Previred Flat File
 
  
  **Colaboradores**
