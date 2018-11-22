@@ -9,17 +9,22 @@ Odoo 12 Localización chilena
 **Intellego-BI.com** - https://intellego-bi.com
  - Rodolfo Bermúdez Neubauer <odoo@intellego-bi.com>
 
-**Features list**
+
+**Features list: Chilean Localization**
 
     * Chart of Accounts
     * Currency Rate Inverted (for CLP)
     * Currency Rate update from SBIF (UF, UTM, USD and EUR for CLP)
-    * Partner required per account group setting (customer and vendor type accounts)
     * Payroll for Chilean localization.
+
+
+**Features list: Generic for Odoo 12**
+
+    * Partner required per account group setting (customer and vendor type accounts)
     * Analytic Account from Employee Contract
     * Working (shift) Schedule on Employee Contract (Work in progress)
     * Icon to easily export any Odoo list to MS Excel 
-    
+
 
 
 ## Thanks to
