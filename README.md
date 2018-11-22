@@ -18,6 +18,8 @@ Odoo 12 Localización chilena
     * Payroll for Chilean localization.
     * Analytic Account from Employee Contract
     * Working (shift) Schedule on Employee Contract (Work in progress)
+    * Icon to easily export any Odoo list to MS Excel 
+    
 
 
 ## Thanks to
