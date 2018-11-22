@@ -43,7 +43,7 @@ Odoo 12 Localización chilena
  **blancomartin.com** http://blancomartin.com
 
 
- **Colaboradores**
+ **Superestrellas Localización Chilena**
  - Daniel Blanco Martín <daniel@blancomartin.com>
  - Carlos Lopez Mite <celm1990@hotmail.com>
  - Daniel Santibáñez Polanco <dsantibanez@globalresponse.cl>
