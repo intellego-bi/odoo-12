@@ -16,6 +16,7 @@ Odoo 12 Localización chilena
     * Chart of Accounts
     * Currency Rate Inverted (for CLP)
     * Currency Rate update from SBIF (UF, UTM, USD and EUR for CLP)
+    * Partner required per account group setting (customer and vendor type accounts)
 
 ## Thanks to
  **Colaboradores**
