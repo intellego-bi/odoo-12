@@ -77,7 +77,7 @@
         </record>
 
 
-        <menuitem id="employee_gratuity" name="Employee Settlement" parent="hr.menu_hr_root"
+        <menuitem id="employee_gratuity" name="Finiquitos" parent="hr.menu_hr_root"
                    sequence="21" groups="hr.group_hr_manager"/>
         <menuitem id="gratuity_creation" name="Gratuity" parent="employee_gratuity"
                   action="action_employee_gratuity"  sequence="1"/>
