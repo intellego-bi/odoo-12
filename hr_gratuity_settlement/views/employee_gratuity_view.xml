@@ -70,7 +70,7 @@
 
 
         <record id="action_employee_gratuity" model="ir.actions.act_window">
-           <field name="name">Gratuity Settlement</field>
+           <field name="name">Liquidación Finiquito (IAS)</field>
            <field name="res_model">hr.gratuity</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
