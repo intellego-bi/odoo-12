@@ -44,7 +44,7 @@
                         <field name="date"/>
                         <field name="department_id"/>
                         <field name="job_position"/>
-                        <field name="loan_amount" attrs="{'readonly':[('state','=','approve')]}"/>
+                        <field name="loan_amount" attrs="{'readonly':[('state','=','approve')]}" widget="monetary"/>
                         <field name="installment" attrs="{'readonly':[('state','=','approve')]}"/>
                         <field name="payment_date" attrs="{'readonly':[('state','=','approve')]}"/>
                         <field name="emp_account_id"  attrs="{'invisible':[('state', '=','draft')]}"/>
@@ -58,7 +58,7 @@
                             <field name="loan_lines">
                                 <tree string="Installments" editable="bottom">
                                     <field name="date"/>
-                                    <field name="amount"/>
+                                    <field name="amount" widget="monetary"/>
                                     <field name="paid" readonly="1" invisible="1"/>
                                 </tree>
                             </field>
