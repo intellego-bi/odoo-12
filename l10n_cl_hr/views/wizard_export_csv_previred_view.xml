@@ -35,7 +35,7 @@
 			<field name="target">new</field>
 		</record>
 
-		<menuitem id="wizard_export_csv_menu" name="Previred"
+		<menuitem id="wizard_export_csv_menu" name="Archivo Previred"
 			sequence="1" parent="menu_cl_hr_payroll_reports"
 			action="action_wizard_export_csv_previred_tree_view" />
 	</data>
