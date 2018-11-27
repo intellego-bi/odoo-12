@@ -122,7 +122,7 @@ class InstallmentLine(models.Model):
     paid = fields.Boolean(string="Paid")
     loan_id = fields.Many2one('hr.loan', string="Loan Ref.")
     payslip_id = fields.Many2one('hr.payslip', string="Payslip Ref.")
-    move_id = fields.Many2one('account.move', 'Accounting Entry', readonly=True, copy=False)
+    move_id = fields.Many2one('account.move', string="Accounting Entry")
 
 
 class HrEmployee(models.Model):
