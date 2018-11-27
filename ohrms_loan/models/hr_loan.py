@@ -12,7 +12,8 @@ class HrLoan(models.Model):
     _description = "Loan Request"
 
     #@api.one
-    @api.onchange('loan_lines')
+    #@api.onchange('loan_lines')
+    @api.multi
     def _compute_loan_amount(self):
         total_paid = 0.0
         for loan in self:
@@ -107,7 +108,7 @@ class HrLoan(models.Model):
             for line in loan.loan_lines:
                 if line.paid:
                     total_paid += line.amount
-            balance_amount = loan.loan_amount - total_paid
+            self.balance_amount = loan.loan_amount - total_paid
         return True
 
 
