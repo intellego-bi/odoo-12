@@ -107,9 +107,6 @@ class HrLoan(models.Model):
                 if line.paid:
                     total_paid += line.amount
             balance_amount = loan.loan_amount - total_paid
-            self.total_amount = loan.loan_amount
-            self.balance_amount = balance_amount
-            self.total_paid_amount = total_paid
         return True
 
 
