@@ -25,7 +25,7 @@ class HrLoan(models.Model):
             self.balance_amount = balance_amount
             self.total_paid_amount = total_paid
 
-    @api.onchange('total_paid_amount')
+    @api.onchange('loan_lines')
     def recompute_loan_amount(self):
         total_paid = 0.0
         for loan in self:
@@ -124,15 +124,15 @@ class HrLoan(models.Model):
 
 
     #@api.onchange('paid')
-    @api.multi
-    def recompute_loan_balance(self):
-        total_paid = 0.0
-        loan_amount = 0.0
-        for loan in self:
-            for line in loan.loan_lines:
-                if line.paid:
-                    total_paid += line.amount
-            self.balance_amount = loan.loan_amount - total_paid
+    #@api.multi
+    #def recompute_loan_balance(self):
+    #    total_paid = 0.0
+    #    loan_amount = 0.0
+    #    for loan in self:
+    #        for line in loan.loan_lines:
+    #            if line.paid:
+    #                total_paid += line.amount
+    #        self.balance_amount = loan.loan_amount - total_paid
 
 
 
