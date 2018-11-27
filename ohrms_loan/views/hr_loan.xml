@@ -106,7 +106,7 @@
         sequence="20"/>-->
 
     <menuitem name="Complementos"
-        id="menu_hr_loans_and_advances" parent="hr_payroll.menu_hr_payslip_run"
+        id="menu_hr_loans_and_advances" parent="studio_customization.payroll_nomina_rrhh_8f40e3ac-9778-4b06-8fd8-981ad276aa12"
         sequence="2"/>
 
     <record id="action_hr_loan_request" model="ir.actions.act_window">
