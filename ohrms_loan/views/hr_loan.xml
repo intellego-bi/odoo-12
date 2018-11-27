@@ -107,7 +107,7 @@
 
     <menuitem name="Complementos"
         id="menu_hr_loans_and_advances" parent="hr_payroll.menu_hr_payroll_root"
-        sequence="20"/>
+        sequence="2"/>
 
     <record id="action_hr_loan_request" model="ir.actions.act_window">
         <field name="name">Loan Requests</field>
