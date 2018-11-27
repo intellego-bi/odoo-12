@@ -56,7 +56,7 @@ class OtherSettlements(models.Model):
         # calculating the years of work by the employee
         worked_years = int(datetime.datetime.now().year) - int(str(self.joined_date).split('-')[0])
 
-        if worked_years >= 1:
+        if worked_years >= 0:
 
             self.worked_years = worked_years
 
