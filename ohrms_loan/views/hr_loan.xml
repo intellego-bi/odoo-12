@@ -47,9 +47,9 @@
                         <field name="loan_amount" attrs="{'readonly':[('state','=','approve')]}" widget="monetary"/>
                         <field name="installment" attrs="{'readonly':[('state','=','approve')]}"/>
                         <field name="payment_date" attrs="{'readonly':[('state','=','approve')]}"/>
+                        <field name="journal_id"  attrs="{'invisible':[('state', '=','draft')]}"/>
                         <field name="emp_account_id"  attrs="{'invisible':[('state', '=','draft')]}"/>
                         <field name="treasury_account_id"  attrs="{'invisible':[('state', '=','draft')]}"/>
-                        <field name="journal_id"  attrs="{'invisible':[('state', '=','draft')]}"/>
                         <field name="company_id" options="{'no_create': True}" groups="base.group_multi_company"/>
                         <field name="currency_id" options="{'no_create': True}" groups="base.group_multi_company"/>
                     </group>
@@ -61,8 +61,8 @@
                                     <field name="amount" widget="monetary"/>
                                     <!--<field name="paid" readonly="1" invisible="1"/>-->
                                     <field name="paid" readonly="1" widget="toggle_button"/>
-                                    <field name="payslip_id" readonly="1"/>
-                                    <field name="move_id" readonly="1"/>
+                                    <field name="payslip_id" readonly="1" attrs="{'invisible':[('state', '=','draft')]}"/>
+                                    <field name="move_id" readonly="1" attrs="{'invisible':[('state', '=','draft')]}"/>
                                 </tree>
                             </field>
                             <group class="oe_subtotal_footer oe_right" colspan="2" >
