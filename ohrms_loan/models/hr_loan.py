@@ -32,7 +32,7 @@ class HrLoan(models.Model):
     payment_date = fields.Date(string="Payment Start Date", required=True, default=fields.Date.today())
     loan_lines = fields.One2many('hr.loan.line', 'loan_id', string="Loan Line", index=True)
     emp_account_id = fields.Many2one('account.account', string="Loan Account")
-    treasury_account_id = fields.Many2one('account.account', string="Treasury Account", default="21050100 Remuneraciones por Pagar")
+    treasury_account_id = fields.Many2one('account.account', string="Treasury Account", default="596")
     journal_id = fields.Many2one('account.journal', string="Journal")
     company_id = fields.Many2one('res.company', 'Company', readonly=True,
                                  default=lambda self: self.env.user.company_id,
@@ -42,7 +42,8 @@ class HrLoan(models.Model):
     job_position = fields.Many2one('hr.job', related="employee_id.job_id", readonly=True, string="Job Position")
     loan_amount = fields.Float(string="Loan Amount", required=True)
     total_amount = fields.Float(string="Total Amount", readonly=True, compute='_compute_loan_amount')
-    balance_amount = fields.Float(string="Balance Amount", compute='_compute_loan_amount')
+    #balance_amount = fields.Float(string="Balance Amount", compute='_compute_loan_amount')
+    balance_amount = fields.Float(string="Balance Amount", readonly=True)
     total_paid_amount = fields.Float(string="Total Paid Amount", compute='_compute_loan_amount')
 
     state = fields.Selection([
