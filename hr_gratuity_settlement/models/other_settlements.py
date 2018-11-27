@@ -76,7 +76,7 @@ class OtherSettlements(models.Model):
 
             self.last_month_salary = last_salary
 
-            amount = ((self.last_month_salary + int(self.allowance)) * int(worked_years) * 15) / 26
+            amount = ((self.last_month_salary + int(self.allowance)) * int(worked_years) * 1) / 1
             self.gratuity_amount = round(amount) if self.state == 'approve' else 0
 
             self.write({
