@@ -70,7 +70,7 @@
         </record>
         <!--<menuitem id="employee_resignation" parent="hr.menu_hr_root" name="Resignation"
                   groups="base.group_user" sequence="21"/>-->
-        <menuitem name="Renuncias" id="menu_hr_loans_and_advances" parent="hr_payroll.menu_hr_payslip_run" sequence="2"/>
+        <menuitem name="Renuncias" id="menu_hr_loans_and_advances" parent="l10n_cl_hr.menu_cl_hr_payroll" sequence="2"/>
 
         <menuitem id="employee_resignation" parent="menu_hr_loans_and_advances" name="Resignation"
                   groups="base.group_user" sequence="3"/>
