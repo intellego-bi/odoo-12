@@ -32,8 +32,8 @@ class HrLoan(models.Model):
     payment_date = fields.Date(string="Payment Start Date", required=True, default=fields.Date.today())
     loan_lines = fields.One2many('hr.loan.line', 'loan_id', string="Loan Line", index=True)
     emp_account_id = fields.Many2one('account.account', string="Loan Account")
-    treasury_account_id = fields.Many2one('account.account', string="Treasury Account") #, default="21050100")
-    journal_id = fields.Many2one('account.journal', string="Journal")
+    treasury_account_id = fields.Many2one('account.account', string="Treasury Account")
+    journal_id = fields.Many2one('account.journal', string="Journal", default=lambda self: self.env['account.journal'].search([('code', '=', 'REMU')], limit=1)))
     company_id = fields.Many2one('res.company', 'Company', readonly=True,
                                  default=lambda self: self.env.user.company_id,
                                  states={'draft': [('readonly', False)]})
@@ -120,6 +120,7 @@ class InstallmentLine(models.Model):
     paid = fields.Boolean(string="Paid")
     loan_id = fields.Many2one('hr.loan', string="Loan Ref.")
     payslip_id = fields.Many2one('hr.payslip', string="Payslip Ref.")
+    move_id = fields.Many2one('account.move', 'Accounting Entry', readonly=True, copy=False)
 
 
 class HrEmployee(models.Model):
