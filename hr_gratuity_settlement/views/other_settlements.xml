@@ -77,7 +77,7 @@
             <field name="view_mode">tree,form</field>
         </record>
 
-        <menuitem id="other_settlements" name="Other Settlements" parent="employee_gratuity"
+        <menuitem id="other_settlements" name="Otros Pagos Finiquito" parent="employee_gratuity"
                   action="action_other_settlements" sequence="2" />
 
     </data>
