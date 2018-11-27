@@ -101,6 +101,15 @@ class HrLoan(models.Model):
                     'employee_id': loan.employee_id.id,
                     'loan_id': loan.id})
                 date_start = date_start + relativedelta(months=1)
+        total_paid = 0.0
+        for loan in self:
+            for line in loan.loan_lines:
+                if line.paid:
+                    total_paid += line.amount
+            balance_amount = loan.loan_amount - total_paid
+            self.total_amount = loan.loan_amount
+            self.balance_amount = balance_amount
+            self.total_paid_amount = total_paid
         return True
 
 
