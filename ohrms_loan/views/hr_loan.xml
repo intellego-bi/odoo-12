@@ -58,7 +58,7 @@
                             <field name="loan_lines">
                                 <tree string="Installments" editable="bottom">
                                     <field name="date"/>
-                                    <field name="amount" widget="monetary" attrs="{'readonly':[('paid', '=','True')]}"/>
+                                    <field name="amount" widget="monetary" attrs="{'readonly':[('paid', '=','TRUE')]}"/>
                                     <!--<field name="paid" readonly="1" invisible="1"/>-->
                                     <field name="paid" readonly="1" widget="toggle_button"/>
                                     <field name="payslip_id" readonly="1"/>
