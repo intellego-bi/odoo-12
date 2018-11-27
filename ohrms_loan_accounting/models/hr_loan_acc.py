@@ -35,6 +35,8 @@ class HrLoanAcc(models.Model):
                 credit_account_id = loan.emp_account_id.id
                 debit_vals = {
                     'name': loan_name,
+                    # Insert Intellego-BI: Empleado como Partner en contabilizaciones
+                    'partner_id' = loan.employee_id.address_home_id.id
                     'account_id': debit_account_id,
                     'journal_id': journal_id,
                     'date': timenow,
@@ -44,6 +46,8 @@ class HrLoanAcc(models.Model):
                 }
                 credit_vals = {
                     'name': loan_name,
+                    # Insert Intellego-BI: Empleado como Partner en contabilizaciones
+                    'partner_id' = loan.employee_id.address_home_id.id
                     'account_id': credit_account_id,
                     'journal_id': journal_id,
                     'date': timenow,
