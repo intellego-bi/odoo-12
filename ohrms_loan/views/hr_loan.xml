@@ -61,8 +61,8 @@
                                     <field name="amount" widget="monetary"/>
                                     <!--<field name="paid" readonly="1" invisible="1"/>-->
                                     <field name="paid" readonly="1" widget="toggle_button"/>
-                                    <field name="payslip_id" readonly="1" attrs="{'invisible':[('state', '=','draft')]}"/>
-                                    <field name="move_id" readonly="1" attrs="{'invisible':[('state', '=','draft')]}"/>
+                                    <field name="payslip_id" readonly="1"/>
+                                    <field name="move_id" readonly="1"/>
                                 </tree>
                             </field>
                             <group class="oe_subtotal_footer oe_right" colspan="2" >
