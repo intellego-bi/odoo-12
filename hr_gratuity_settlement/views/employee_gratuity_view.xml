@@ -79,7 +79,7 @@
 
         <!--<menuitem id="employee_gratuity" name="Finiquitos" parent="hr.menu_hr_root"
                    sequence="21" groups="hr.group_hr_manager"/>-->
-        <menuitem name="Complementos" id="menu_hr_loans_and_advances" parent="hr_payroll.menu_hr_payroll_root" sequence="2"/>
+        <menuitem name="Liquida Finiquito" id="menu_hr_loans_and_advances" parent="hr_payroll.menu_hr_payslip_run" sequence="2"/>
         <menuitem id="employee_gratuity" name="Finiquitos" parent="menu_hr_loans_and_advances"
                    sequence="2" groups="hr.group_hr_manager"/>
 
