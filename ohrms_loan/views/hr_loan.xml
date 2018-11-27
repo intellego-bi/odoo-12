@@ -59,7 +59,8 @@
                                 <tree string="Installments" editable="bottom">
                                     <field name="date"/>
                                     <field name="amount" widget="monetary"/>
-                                    <field name="paid" readonly="1" invisible="1"/>
+                                    <!--<field name="paid" readonly="1" invisible="1"/>-->
+                                    <field name="paid" readonly="1" widget="toggle_button"/>
                                 </tree>
                             </field>
                             <group class="oe_subtotal_footer oe_right" colspan="2" >

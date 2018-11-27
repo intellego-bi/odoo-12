@@ -87,6 +87,8 @@ class HrLoanAcc(models.Model):
             debit_vals = {
                 'name': loan_name,
                 'account_id': debit_account_id,
+                # Insert Intellego-BI: Empleado como Partner en contabilizaciones
+                'partner_id' = loan.employee_id.address_home_id.id
                 'journal_id': journal_id,
                 'date': timenow,
                 'debit': amount > 0.0 and amount or 0.0,
@@ -96,6 +98,8 @@ class HrLoanAcc(models.Model):
             credit_vals = {
                 'name': loan_name,
                 'account_id': credit_account_id,
+                # Insert Intellego-BI: Empleado como Partner en contabilizaciones
+                'partner_id' = loan.employee_id.address_home_id.id
                 'journal_id': journal_id,
                 'date': timenow,
                 'debit': amount < 0.0 and -amount or 0.0,
