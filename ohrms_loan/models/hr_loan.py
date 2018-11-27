@@ -130,8 +130,8 @@ class InstallmentLine(models.Model):
         for line in self:
             if line.paid:
                 total_paid += line.amount
-        balance_amount = loan_amount - total_paid
-        self.total_amount = loan_amount
+        balance_amount = self.loan_amount - total_paid
+        self.total_amount = self.loan_amount
         self.balance_amount = balance_amount
         self.total_paid_amount = total_paid
 
