@@ -70,9 +70,10 @@
         </record>
         <!--<menuitem id="employee_resignation" parent="hr.menu_hr_root" name="Resignation"
                   groups="base.group_user" sequence="21"/>-->
-        <menuitem name="Renuncias" id="menu_hr_loans_and_advances" parent="l10n_cl_hr.menu_cl_hr_payroll" sequence="2"/>
-
-        <menuitem id="employee_resignation" parent="menu_hr_loans_and_advances" name="Resignation"
+        <!--<menuitem name="Renuncias" id="menu_hr_loans_and_advances" parent="l10n_cl_hr.menu_cl_hr_payroll" sequence="2"/>-->
+        <!--<menuitem id="employee_resignation" parent="menu_hr_loans_and_advances" name="Resignation"
+                  groups="base.group_user" sequence="3"/>-->
+        <menuitem id="employee_resignation" parent="l10n_cl_hr.menu_cl_hr_payroll" name="Resignation"
                   groups="base.group_user" sequence="3"/>
         <menuitem id="employee_resignation_request" parent="employee_resignation" name="Resignation Request"
                   action="view_employee_resignation" groups="base.group_user" sequence="4"/>
