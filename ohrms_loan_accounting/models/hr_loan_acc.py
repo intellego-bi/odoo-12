@@ -31,8 +31,10 @@ class HrLoanAcc(models.Model):
                 loan_name = loan.employee_id.name
                 reference = loan.name
                 journal_id = loan.journal_id.id
-                debit_account_id = loan.treasury_account_id.id
-                credit_account_id = loan.emp_account_id.id
+                # debit_account_id = loan.treasury_account_id.id
+                # credit_account_id = loan.emp_account_id.id
+                credit_account_id = loan.treasury_account_id.id
+                debit_account_id = loan.emp_account_id.id
                 debit_vals = {
                     'name': loan_name,
                     # Insert Intellego-BI: Empleado como Partner en contabilizaciones
@@ -82,8 +84,10 @@ class HrLoanAcc(models.Model):
             loan_name = loan.employee_id.name
             reference = loan.name
             journal_id = loan.journal_id.id
-            debit_account_id = loan.treasury_account_id.id
-            credit_account_id = loan.emp_account_id.id
+            # debit_account_id = loan.treasury_account_id.id
+            # credit_account_id = loan.emp_account_id.id
+            credit_account_id = loan.treasury_account_id.id
+            debit_account_id = loan.emp_account_id.id
             debit_vals = {
                 'name': loan_name,
                 'account_id': debit_account_id,
@@ -135,8 +139,10 @@ class HrLoanLineAcc(models.Model):
             loan_name = line.employee_id.name
             reference = line.loan_id.name
             journal_id = line.loan_id.journal_id.id
-            debit_account_id = line.loan_id.emp_account_id.id
-            credit_account_id = line.loan_id.treasury_account_id.id
+            # debit_account_id = line.loan_id.emp_account_id.id
+            # credit_account_id = line.loan_id.treasury_account_id.id
+            credit_account_id = line.loan_id.emp_account_id.id
+            debit_account_id = line.loan_id.treasury_account_id.id
             debit_vals = {
                 'name': loan_name,
                 'account_id': debit_account_id,
