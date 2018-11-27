@@ -33,7 +33,7 @@ class HrLoan(models.Model):
     loan_lines = fields.One2many('hr.loan.line', 'loan_id', string="Loan Line", index=True)
     emp_account_id = fields.Many2one('account.account', string="Loan Account")
     treasury_account_id = fields.Many2one('account.account', string="Treasury Account")
-    journal_id = fields.Many2one('account.journal', string="Journal", default=lambda self: self.env['account.journal'].search([('code', '=', 'REMU')], limit=1)))
+    journal_id = fields.Many2one('account.journal', string="Journal", default=lambda self: self.env['account.journal'].search([('code', '=', 'REMU')], limit=1))
     company_id = fields.Many2one('res.company', 'Company', readonly=True,
                                  default=lambda self: self.env.user.company_id,
                                  states={'draft': [('readonly', False)]})
