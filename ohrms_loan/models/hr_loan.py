@@ -127,11 +127,11 @@ class InstallmentLine(models.Model):
     @api.onchange('paid')
     def recompute_loan_balance(self):
         total_paid = 0.0
-        for line in loan.loan_lines:
+        for line in loan_lines:
             if line.paid:
                 total_paid += line.amount
-        balance_amount = loan.loan_amount - total_paid
-        self.total_amount = loan.loan_amount
+        balance_amount = loan_amount - total_paid
+        self.total_amount = loan_amount
         self.balance_amount = balance_amount
         self.total_paid_amount = total_paid
 
