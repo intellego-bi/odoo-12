@@ -105,8 +105,8 @@
         id="menu_hr_loans_and_advances" parent="hr.menu_hr_root"
         sequence="20"/>-->
 
-    <menuitem name="Préstamos"
-        id="menu_hr_loans_and_advances" parent="hr_payroll.menu_hr_root"
+    <menuitem name="Prestamos"
+        id="menu_hr_loans_and_advances" parent="hr_payroll.menu_hr_payroll_root"
         sequence="20"/>
 
     <record id="action_hr_loan_request" model="ir.actions.act_window">
