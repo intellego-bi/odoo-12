@@ -11,7 +11,8 @@ class HrLoan(models.Model):
     _inherit = ['mail.thread', 'mail.activity.mixin']
     _description = "Loan Request"
 
-    @api.one
+    #@api.one
+    @api.onchange('loan_lines')
     def _compute_loan_amount(self):
         total_paid = 0.0
         for loan in self:
