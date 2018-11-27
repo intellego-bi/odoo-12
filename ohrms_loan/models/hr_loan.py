@@ -124,6 +124,18 @@ class InstallmentLine(models.Model):
     payslip_id = fields.Many2one('hr.payslip', string="Payslip Ref.")
     move_id = fields.Many2one('account.move', string="Accounting Entry")
 
+    @api.onchange('paid')
+    def recompute_loan_balance(self):
+        total_paid = 0.0
+        for line in loan.loan_lines:
+            if line.paid:
+                total_paid += line.amount
+        balance_amount = loan.loan_amount - total_paid
+        self.total_amount = loan.loan_amount
+        self.balance_amount = balance_amount
+        self.total_paid_amount = total_paid
+
+
 
 class HrEmployee(models.Model):
     _inherit = "hr.employee"
