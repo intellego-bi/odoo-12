@@ -25,6 +25,17 @@ class HrLoan(models.Model):
             self.balance_amount = balance_amount
             self.total_paid_amount = total_paid
 
+    @api.onchange('total_paid_amount')
+    def recompute_loan_amount(self):
+        total_paid = 0.0
+        for loan in self:
+            for line in loan.loan_lines:
+                if line.paid:
+                    total_paid += line.amount
+            calc_balance_amount = loan.loan_amount - total_paid
+            self.write({'balance_amount': calc_balance_amount})
+
+
     name = fields.Char(string="Loan Name", default="/", readonly=True)
     date = fields.Date(string="Date", default=fields.Date.today(), readonly=True)
     employee_id = fields.Many2one('hr.employee', string="Employee", required=True)
@@ -45,7 +56,7 @@ class HrLoan(models.Model):
     loan_amount = fields.Float(string="Loan Amount", required=True)
     total_amount = fields.Float(string="Total Amount", readonly=True, compute='_compute_loan_amount')
     #balance_amount = fields.Float(string="Balance Amount", compute='_compute_loan_amount')
-    balance_amount = fields.Float(string="Balance Amount", compute='_compute_loan_amount', store=True) #, readonly=True)
+    balance_amount = fields.Float(string="Balance Amount", compute='recompute_loan_amount', store=True) #, readonly=True)
     total_paid_amount = fields.Float(string="Total Paid Amount", compute='_compute_loan_amount')
 
     state = fields.Selection([
@@ -110,6 +121,7 @@ class HrLoan(models.Model):
                     total_paid += line.amount
             self.balance_amount = loan.loan_amount - total_paid
         return True
+
 
     #@api.onchange('paid')
     @api.multi
