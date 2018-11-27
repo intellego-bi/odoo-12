@@ -150,21 +150,6 @@ class InstallmentLine(models.Model):
     payslip_id = fields.Many2one('hr.payslip', string="Payslip Ref.")
     move_id = fields.Many2one('account.move', string="Accounting Entry")
 
-#    @api.onchange('paid')
-#    def recompute_loan_balance(self):
-#        total_paid = 0.0
-#        loan_amount = 0.0
-#        for line in self:
-#            loan_obj = self.env['hr.loan'].search([('id', '=', line.loan_id)])
-#            for loan in loan_obj:
-#                loan_amount = loan.loan_amount
-#        for line in self:
-#            if line.paid:
-#                total_paid += line.amount
-#        balance_amount = loan_amount - total_paid
-#        for loan in loan_obj:
-#            loan.loan_amount = balance_amount
-
 
 
 class HrEmployee(models.Model):
