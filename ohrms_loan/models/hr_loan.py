@@ -25,7 +25,8 @@ class HrLoan(models.Model):
             self.balance_amount = balance_amount
             self.total_paid_amount = total_paid
 
-    @api.onchange('loan_lines')
+    #@api.onchange('loan_lines')
+    @api.multi
     def recompute_loan_amount(self):
         total_paid = 0.0
         for loan in self:
