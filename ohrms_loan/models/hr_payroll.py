@@ -77,5 +77,5 @@ class HrPayslip(models.Model):
             if line.loan_line_id:
                 line.loan_line_id.paid = True
                 line.loan_line_id.payslip_id = self.id
-                line.loan_line_id.move_id = self.move_id
+                line.loan_line_id.move_id = self.move_id.id
         return super(HrPayslip, self).action_payslip_done()
