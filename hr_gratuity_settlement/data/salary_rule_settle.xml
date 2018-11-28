@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-	<!--Adding a salary rule for Settlements-->
-	<data noupdate="0">
+    <!--Adding a salary rule for Settlements-->
+    <data noupdate="0">
 
         <record id="hr_rule_fin" model="hr.salary.rule">
             <field name="code">FIN</field>
@@ -35,5 +35,21 @@
             <field name="input_id" ref="hr_rule_fin_ias"/>
         </record>
 
-	</data>
+        <record id="hr_rule_fin_iap" model="hr.salary.rule">
+            <field name="code">IAP</field>
+            <field name="name">IAP Finiquito</field>
+            <field name="category_id" ref="l10n_cl_hr.NOIMPO"/>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = inputs.IAP and + (inputs.IAP.amount)</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name="sequence" eval="38"/>
+        </record>
+
+        <record id="hr_rule_input_fin_iap" model="hr.rule.input">
+            <field name="code">IAP</field>
+            <field name="name">IAP Finiquito</field>
+            <field name="input_id" ref="hr_rule_fin_iap"/>
+        </record>
+
+    </data>
 </odoo>
