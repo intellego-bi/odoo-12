@@ -70,6 +70,11 @@
                                         <field name="notice_fact" readonly="True"/>
                                         <field name="iap_amount" widget="monetary" options="{'currency_field': 'currency_id'}" states="validate,approve" readonly="True"/>
                                     </group>
+                                    <group string="Indemnización Feriado Proporcional (IFP)">
+                                        <field name="dias_vaca_pend" attrs="{'readonly': [('state','=','approve')]}"/>
+                                        <field name="dias_vaca_prop" attrs="{'readonly': [('state','=','approve')]}"/>
+                                        <field name="ifp_amount" widget="monetary" options="{'currency_field': 'currency_id'}" states="validate,approve" readonly="True"/>
+                                    </group>
                                     <group string="Otras Indemnizaciones Finiquito (FIN)">
                                         <field name="allowance" widget="monetary" options="{'currency_field': 'currency_id'}"  attrs="{'readonly': [('state','=','approve')]}"/>
                                     </group>
