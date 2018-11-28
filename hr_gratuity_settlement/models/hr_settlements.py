@@ -31,7 +31,7 @@ class FinalSettlements(models.Model):
     last_month_salary = fields.Integer(string="Last Salary", required=True, default=0)
     last_2_month_salary = fields.Integer(string="2nd Last Salary ", required=False, default=0)
     last_3_month_salary = fields.Integer(string="3rd Last Salary ", required=False, default=0)
-    average_salary = fields.Integer(string="Average Salary (past 3 months)", required=True, default=0)
+    average_salary = fields.Float(string="Average Salary (past 3 months)", required=True, default=0)
     valor_uf = fields.Float(string="Valor UF", required="True")
     allowance = fields.Char(string="Dearness Allowance", default=0)
     gratuity_amount = fields.Integer(string="Gratuity Payable", required=True, default=0, readony=True, help=("Gratuity is calculated based on 							the equation Last salary * Number of years of service"))
