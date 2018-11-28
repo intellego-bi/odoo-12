@@ -96,11 +96,11 @@ class EmployeeGratuity(models.Model):
 
             cr = self._cr  # find out the correct  date of last salary of  employee
 
-            # TODO Incluir todos los conceptos de Nómina relevatenes para la IAS
+            # TODO Incluir todos los conceptos de NÃ³mina relevantes para la IAS
             query = """select amount from hr_payslip_line psl 
                        inner join hr_payslip ps on ps.id=psl.slip_id
                        where ps.employee_id="""+str(self.employee_name.employee_id.id)+\
-                       """and ps.state='done' and psl.code='NET'
+                       """and ps.state='done' and psl.code='HAB'
                        order by ps.date_from desc limit 1"""
 
             cr.execute(query)
@@ -127,7 +127,7 @@ class EmployeeGratuity(models.Model):
             'state': 'approve'
         })
 
-        amount = ((self.last_month_salary + int(self.allowance)) * int(self.worked_years) * 15) / 26
+        amount = ((self.last_month_salary + int(self.allowance)) * int(self.worked_years) * 1) / 1
         self.gratuity_amount = round(amount) if self.state == 'approve' else 0
 
     def cancel_function(self):
