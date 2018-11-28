@@ -48,8 +48,8 @@
                                     <group string="Datos Generales">
                                         <field name="company_id" options="{'no_create': True}" groups="base.group_multi_company"/>
                                         <field name="currency_id" options="{'no_create': True}" groups="base.group_multi_company"/>
-                                        <field name="reason" required="True" attrs="{'readonly': [('state','=','approve')]}"/>
-                                        <field name="valor_uf"  states="validate,approve" attrs="{'readonly': [('state','=','approve')]}"/>
+                                        <field name="reason" required="True" readonly="True"/>
+                                        <field name="valor_uf" readonly="True"/>
                                     </group>
                                     <group string="Historia">
                                         <field name="joined_date" required="True" readonly="True"/>
