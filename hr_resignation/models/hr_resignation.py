@@ -28,7 +28,8 @@ class HrResignation(models.Model):
                                           help='Date on which he is revealing from the company')
     resign_confirm_date = fields.Date(string="Resign confirm date", help='Date on which the request is confirmed')
     approved_revealing_date = fields.Date(string="Approved Date", help='The date approved for the revealing')
-    reason = fields.Text(string="Reason", help='Specify reason for leaving the company')
+    term_reason = fields.Text(string="Reason", help='Specify reason for leaving the company')
+    reason = fields.Selection([('art159', 'Renuncia Trabajador (Art. 159)'), ('art160', 'Despido Justificado (Art. 160)'), ('art161', 'Despido Injustificado (Art. 161)')], string="Settlement Reason", required="True")
     notice_period = fields.Char(string="Notice Period", compute='_notice_period')
     state = fields.Selection([('draft', 'Draft'), ('confirm', 'Confirm'), ('approved', 'Approved'), ('cancel', 'Cancel')],
                              string='Status', default='draft')
