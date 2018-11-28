@@ -136,9 +136,9 @@ class FinalSettlements(models.Model):
 
             tope = self.valor_uf * 90
             if self.average_salary > tope:
-                amount = ((tope + int(self.allowance)) * int(self.worked_years))
+                amount = ((tope + self.allowance) * self.worked_years)
             else:
-                amount = ((self.average_salary + int(self.allowance)) * int(self.worked_years) * 1) / 1
+                amount = ((self.average_salary + self.allowance) * self.worked_years)
             self.gratuity_amount = round(amount) 
 
             self.write({
@@ -167,7 +167,7 @@ class FinalSettlements(models.Model):
         if self.average_salary > tope:
             amount = ((tope + int(self.allowance)) * int(self.worked_years))
         else:
-            amount = ((self.average_salary + int(self.allowance)) * int(self.worked_years) * 1) / 1
+            amount = ((self.average_salary + self.allowance) * self.worked_years)
         self.gratuity_amount = round(amount) if self.state == 'approve' else 0
 
     def cancel_function(self):
