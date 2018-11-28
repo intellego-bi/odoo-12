@@ -86,7 +86,7 @@ class HrResignation(models.Model):
         # validating the entered dates
         for rec in self:
             resignation_request = self.env['hr.resignation'].search([('employee_id', '=', rec.employee_id.id),
-                                                                     ('state', 'in', ['confirm', 'approved'])])
+                                                                     ('state', 'in', ['payslip', 'approved'])])
             if resignation_request:
                 raise ValidationError(_('There is a resignation request in confirmed or'
                                         ' approved state for this employee'))
