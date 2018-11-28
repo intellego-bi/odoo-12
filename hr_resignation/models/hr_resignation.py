@@ -38,7 +38,7 @@ class HrResignation(models.Model):
     def set_join_date(self):
         self.joined_date = self.employee_id.joining_date if self.employee_id.joining_date else ''
         if self.joined_date == '':
-            raise ValidationError(_('Actualice la Fehca de Vinculación en el'
+            raise ValidationError(_('Actualice la Fehca de VinculaciÃ³n en el'
                           ' maestro de Empleados y vuelva a generar la solicitud'))
 
     @api.model
