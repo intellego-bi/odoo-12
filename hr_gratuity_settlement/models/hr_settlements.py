@@ -86,7 +86,7 @@ class FinalSettlements(models.Model):
                        inner join hr_payslip ps on ps.id=psl.slip_id
                        where ps.employee_id="""+str(self.employee_id.id)+\
                        """and ps.state='done' and psl.code='HAB' 
-                       order by ps.date_from desc limit 1"""
+                       order by ps.date_from desc limit 3"""
 
             cr.execute(query)
             data = cr.fetchall()
