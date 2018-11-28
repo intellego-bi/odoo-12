@@ -27,7 +27,7 @@ from odoo.tools.translate import _
 
 
 
-class HrPayslipAnalytic(models.Model):
+class HrPayslip(models.Model):
     _inherit = 'hr.payslip'
 
     date = fields.Date('Date Account', states={'draft': [('readonly', False)]}, readonly=True,
