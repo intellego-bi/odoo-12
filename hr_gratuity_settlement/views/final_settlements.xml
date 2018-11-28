@@ -54,15 +54,15 @@
                                         <field name="worked_years"  required="True" readonly="True"/>
                                         <field name="worked_months"  required="True" readonly="True"/>
                                         <field name="worked_days"  required="True" readonly="True"/>
-                                        <field name="allowance" widget="monetary" states="validate,approve" attrs="{'readonly': [('state','=','approve')]}"/>
+                                        <field name="allowance" states="validate,approve" attrs="{'readonly': [('state','=','approve')]}"/>
                                     </group>
                                     <group>
-                                        <field name="last_month_salary" widget="monetary" states="validate,approve" readonly="True"/>
-                                        <field name="last_2_month_salary" widget="monetary" states="validate,approve" readonly="True"/>
-                                        <field name="last_3_month_salary" widget="monetary" states="validate,approve" readonly="True"/>
-                                        <field name="average_salary" widget="monetary" states="validate,approve" readonly="True"/>
+                                        <field name="last_month_salary" states="validate,approve" readonly="True"/>
+                                        <field name="last_2_month_salary" states="validate,approve" readonly="True"/>
+                                        <field name="last_3_month_salary" states="validate,approve" readonly="True"/>
+                                        <field name="average_salary" states="validate,approve" readonly="True"/>
                                         <field name="valor_uf"  states="validate,approve" attrs="{'readonly': [('state','=','approve')]}"/>
-                                        <field name="gratuity_amount" widget="monetary" states="approve" readonly="True"/>
+                                        <field name="gratuity_amount" states="approve" readonly="True"/>
                                     </group>
 
                                 </group>
