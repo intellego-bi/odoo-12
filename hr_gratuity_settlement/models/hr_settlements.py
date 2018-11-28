@@ -78,6 +78,12 @@ class FinalSettlements(models.Model):
                         self.joined_date = resignation.joined_date
                         self.settle_date = resignation.approved_revealing_date
 
+                    self.notice_fact = 0
+
+                    # Aviso de Despido tiene menos de 30 días se paga fracción de IAP
+                    if self.notice_days <= 30 and self.notice_days >= 0:
+                        self.notice_fact = 1 - ( self.notice_days / 30 )
+
                     # calculating the years of work by the employee
                     end_date = datetime.strptime(str(self.settle_date.year) + "-" + str(self.settle_date.month) + "-" +str(self.settle_date.day), date_format)
                     start_date = datetime.strptime(str(self.joined_date.year) + "-" + str(self.joined_date.month) + "-" +str(self.joined_date.day), date_format)
@@ -136,7 +142,7 @@ class FinalSettlements(models.Model):
 
                     self.valor_uf = valor_uf
                     self.write({
-                                'average_salary': average_salary
+                                'average_salary': self.average_salary
                                 })
 
                 else:
@@ -161,11 +167,6 @@ class FinalSettlements(models.Model):
                                   _('Se debe crear y aprobar una Solcitud de Término para poder calcular Finiquito'))
 
         if self.settle_date:
-            self.notice_fact = 0
-
-            # Aviso de Despido tiene menos de 30 días se paga fracción de IAP
-            if self.notice_days <= 30 and self.notice_days >= 0:
-                self.notice_fact = 1 - ( self.notice_days / 30 )
 
             # Convertimos el tope de 90 UF a CLP 
             tope = self.valor_uf * 90
