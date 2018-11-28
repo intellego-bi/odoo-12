@@ -43,13 +43,13 @@
                             </group>
                             <group string="Fechas de Término">
                                 <group><field name="expected_revealing_date"/></group>
+                                <group><field name="resign_confirm_date" class="oe_read_only" states="confirm,approved"/></group>
                                 <group><field name="approved_revealing_date" states="confirm,approved"/></group>
                                 <group><field name="notice_period" states="confirm,approved"/></group>
-                                <group><field name="resign_confirm_date" class="oe_read_only" attrs="{'invisible':[('resign_confirm_date','=','')]}"/></group>
                             </group>
                             <group string="Motivo Término Contrato">
                                 <field name="reason" required="True"/>
-                                <field name="term_reason"/>
+                                <field name="term_reason" placeholder="Motivo del término de relación laboral"/>
                             </group>
                         </group>
                         
