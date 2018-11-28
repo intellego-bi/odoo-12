@@ -131,7 +131,7 @@ class FinalSettlements(models.Model):
                     self.last_2_month_salary = last_2_salary
                     self.last_3_month_salary = last_3_salary
 
-                    # Leemos la UF de los Indiocadores de Previred para la última Nómina
+                    # Leemos la UF de los Indicadores de Previred para la última Nómina
                     cr = self._cr
                     query = """select uf from hr_indicadores hri  
                                inner join hr_payslip ps on ps.indicadores_id=hri.id
@@ -242,6 +242,23 @@ class FinalSettlements(models.Model):
             self.last_month_salary = last_salary
             self.last_2_month_salary = last_2_salary
             self.last_3_month_salary = last_3_salary
+
+            # Leemos la UF de los Indicadores de Previred para la última Nómina
+            cr = self._cr
+            query = """select uf from hr_indicadores hri  
+                       inner join hr_payslip ps on ps.indicadores_id=hri.id
+                       where ps.employee_id="""+str(rec.employee_id.id)+\
+                       """and ps.state='done' 
+                       order by ps.date_from desc limit 1"""
+
+            cr.execute(query)
+            data = cr.fetchall()
+            if data:
+                valor_uf = data[0][0]
+            else:
+                valor_uf = 0
+
+            self.valor_uf = valor_uf
 
             # Convertimos el tope de 90 UF a CLP 
             tope = self.valor_uf * 90
