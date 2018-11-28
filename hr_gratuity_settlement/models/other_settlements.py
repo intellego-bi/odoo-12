@@ -22,12 +22,13 @@ class OtherSettlements(models.Model):
     employee_name = fields.Many2one('hr.employee', string='Employee', required=True)
     joined_date = fields.Date(string="Joined Date")
     worked_years = fields.Integer(string="Total Work Years")
+    worked_days = fields.Integer(string="Total Work Days")
     last_month_salary = fields.Integer(string="Last Salary", required=True, default=0)
     allowance = fields.Char(string="Dearness Allowance", default=0)
     gratuity_amount = fields.Integer(string="Gratuity Payable", required=True, default=0, readony=True, help=("Gratuity is calculated based on 							the equation Last salary * Number of years of service * 15 / 26 "))
 
-    reason = fields.Selection([('death', 'Case of Death'),
-                               ('disabled', 'Disabled due to Sick or Accident')], string="Settlement Reason", required="True")
+    reason = fields.Selection([('renuncia', 'Renuncia Voluntaria'),
+                               ('despido', 'Despido')], string="Settlement Reason", required="True")
     currency_id = fields.Many2one('res.currency', string='Currency', required=True,
                                   default=lambda self: self.env.user.company_id.currency_id)
     company_id = fields.Many2one('res.company', 'Company', default=lambda self: self.env.user.company_id)
@@ -55,10 +56,11 @@ class OtherSettlements(models.Model):
     def validate_function(self):
         # calculating the years of work by the employee
         worked_years = int(datetime.datetime.now().year) - int(str(self.joined_date).split('-')[0])
+        worked_days = datetime.datetime.now() - self.joined_date)
 
         if worked_years >= 0:
 
-            self.worked_years = worked_years
+            self.worked_years = worked_days
 
             cr = self._cr  # find out the correct  date of last salary of  employee
             #query = """select amount from hr_payslip_line psl 
@@ -105,7 +107,7 @@ class OtherSettlements(models.Model):
             'state': 'approve'
         })
 
-        amount = ((self.last_month_salary + int(self.allowance)) * int(self.worked_years) * 15) / 26
+        amount = ((self.last_month_salary + int(self.allowance)) * int(self.worked_years) * 1) / 1
         self.gratuity_amount = round(amount) if self.state == 'approve' else 0
 
     def cancel_function(self):
