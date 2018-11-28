@@ -3,7 +3,7 @@
 	<!--Adding a salary rule for Settlements-->
 	<data noupdate="0">
 
-		<record id="hr_rule_fin" model="hr.salary.rule">
+        <record id="hr_rule_fin" model="hr.salary.rule">
             <field name="code">FIN</field>
             <field name="name">Finiquito</field>
             <field name="category_id" ref="l10n_cl_hr.NOIMPO"/>
@@ -17,6 +17,22 @@
             <field name="code">FIN</field>
             <field name="name">Finiquito</field>
             <field name="input_id" ref="hr_rule_fin"/>
+        </record>
+
+        <record id="hr_rule_fin_ias" model="hr.salary.rule">
+            <field name="code">IAS</field>
+            <field name="name">IAS Finiquito</field>
+            <field name="category_id" ref="l10n_cl_hr.NOIMPO"/>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = inputs.IAS and + (inputs.IAS.amount)</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name="sequence" eval="38"/>
+        </record>
+
+        <record id="hr_rule_input_fin_ias" model="hr.rule.input">
+            <field name="code">IAS</field>
+            <field name="name">IAS Finiquito</field>
+            <field name="input_id" ref="hr_rule_fin_ias"/>
         </record>
 
 	</data>
