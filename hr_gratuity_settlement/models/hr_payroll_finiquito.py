@@ -61,7 +61,7 @@ class HrPayslip(models.Model):
         res = super(HrPayslip, self).get_inputs(contract_ids, date_from, date_to)
         contract_obj = self.env['hr.contract']
         emp_id = contract_obj.browse(contract_ids[0].id).employee_id
-        settle_obj = self.env['other.settlements'].search([('employee_id', '=', emp_id.id), ('state', '=', 'approve')])
+        settle_obj = self.env['other.settlements'].search([('employee_name', '=', emp_id.id), ('state', '=', 'approve')])
         for settle in settle_obj:
             for result in res:
                 if result.get('code') == 'FIN':
