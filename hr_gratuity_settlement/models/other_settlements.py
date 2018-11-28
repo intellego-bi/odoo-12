@@ -65,7 +65,9 @@ class OtherSettlements(models.Model):
         worked_months = worked_days / 365 * 12
         if worked_years >= 0.5:
 
-            self.worked_years = worked_days
+            self.worked_years = worked_years
+            self.worked_months = worked_months
+            self.worked_days = worked_days
 
             cr = self._cr  # find out the correct  date of last salary of  employee
             #query = """select amount from hr_payslip_line psl 
