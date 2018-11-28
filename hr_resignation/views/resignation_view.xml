@@ -39,6 +39,7 @@
                             <group>
                                 <field name="employee_id"/>
                                 <field name="department_id"/>
+                                <field name="reason"/>
                                 <field name="joined_date"/>
                                 <field name="resign_confirm_date" class="oe_read_only" attrs="{'invisible':[('resign_confirm_date','=','')]}"/>
                             </group>
@@ -48,7 +49,7 @@
                                 <field name="notice_period" states="confirm,approved"/>
                             </group>
                         </group>
-                        <field name="reason"/>
+                        <field name="term_reason"/>
                     </sheet>
                     <div class="oe_chatter">
                         <field name="message_follower_ids" widget="mail_followers"/>
