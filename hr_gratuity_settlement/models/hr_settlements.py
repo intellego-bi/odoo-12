@@ -31,6 +31,7 @@ class FinalSettlements(models.Model):
     last_month_salary = fields.Integer(string="Last Salary", required=True, default=0)
     last_2_month_salary = fields.Integer(string="2nd Last Salary ", required=False, default=0)
     last_3_month_salary = fields.Integer(string="3rd Last Salary ", required=False, default=0)
+    valor_uf = fields.Integer(string="Valor UF", required="True")
     allowance = fields.Char(string="Dearness Allowance", default=0)
     gratuity_amount = fields.Integer(string="Gratuity Payable", required=True, default=0, readony=True, help=("Gratuity is calculated based on 							the equation Last salary * Number of years of service"))
 
@@ -103,8 +104,22 @@ class FinalSettlements(models.Model):
             self.last_2_month_salary = last_2_salary
             self.last_3_month_salary = last_3_salary
 
-            amount = ((self.last_month_salary + int(self.allowance)) * int(worked_years) * 1) / 1
-            self.gratuity_amount = round(amount) if self.state == 'approve' else 0
+            cr = self._cr  # find out the correct  date of last salary of  employee
+
+            query = """select uf from hr_indicadores hri  
+                       inner join hr_payslip ps on ps.indicadores_id=hri.id
+                       where ps.employee_id="""+str(self.employee_id.id)+\
+                       """and ps.state='done' 
+                       order by ps.date_from desc limit 1"""
+
+            cr.execute(query)
+            data = cr.fetchall()
+            if data:
+                 valor_uf = data[0][0]
+            else:
+                valor_uf = 0
+
+            self.valor_uf = valor_uf
 
             self.write({
                 'state': 'validate'})
