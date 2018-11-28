@@ -39,7 +39,7 @@
                                             <h2>
                                                 <td>
                                                     <group>
-                                                        <field name ="employee_name"  string="Employee" required="True" attrs="{'readonly': [('state','=','approve')]}"/>
+                                                        <field name ="employee_id"  string="Employee" required="True" attrs="{'readonly': [('state','=','approve')]}"/>
                                                     </group>
                                                 </td>
                                             </h2>
