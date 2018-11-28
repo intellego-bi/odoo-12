@@ -29,6 +29,8 @@ class FinalSettlements(models.Model):
     worked_months = fields.Integer(string="Total Work Months")
     worked_days = fields.Integer(string="Total Work Days")
     last_month_salary = fields.Integer(string="Last Salary", required=True, default=0)
+    last_2_month_salary = fields.Integer(string="2nd Last Salary ", required=False, default=0)
+    last_3_month_salary = fields.Integer(string="3rd Last Salary ", required=False, default=0)
     allowance = fields.Char(string="Dearness Allowance", default=0)
     gratuity_amount = fields.Integer(string="Gratuity Payable", required=True, default=0, readony=True, help=("Gratuity is calculated based on 							the equation Last salary * Number of years of service"))
 
@@ -90,10 +92,16 @@ class FinalSettlements(models.Model):
             data = cr.fetchall()
             if data:
                  last_salary = data[0][0]
+                 last_2_salary = data[1][0]
+                 last_3_salary = data[2][0]
             else:
                 last_salary = 0
+                last_2_salary = 0
+                last_3_salary = 0
 
             self.last_month_salary = last_salary
+            self.last_2_month_salary = last_2_salary
+            self.last_3_month_salary = last_3_salary
 
             amount = ((self.last_month_salary + int(self.allowance)) * int(worked_years) * 1) / 1
             self.gratuity_amount = round(amount) if self.state == 'approve' else 0
