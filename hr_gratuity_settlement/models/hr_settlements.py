@@ -135,6 +135,10 @@ class FinalSettlements(models.Model):
                         valor_uf = 0
 
                     self.valor_uf = valor_uf
+                    self.write({
+                                'average_salary': average_salary
+                                })
+
                 else:
                     raise exceptions.except_orm(_('No existe Solicitud de Término aprobada para este Empleado'),
                                           _('Se debe crear y aprobar una Solcitud de Término para poder calcular Finiquito'))
