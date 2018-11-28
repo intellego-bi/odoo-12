@@ -56,13 +56,19 @@ class OtherSettlements(models.Model):
     @api.multi
     def validate_function(self):
         # calculating the years of work by the employee
-        date_format = "%Y/%m/%d"
+        
         #worked_years = int(datetime.datetime.now().year) - int(str(self.joined_date).split('-')[0])
         #worked_days = (datetime.datetime.now() - datetime.datetime.self.joined_date)
-        a = datetime.strptime(now(), date_format)
-        b = datetime.strptime(self.joined_date, date_format)
-        delta = a - b
-        worked_days = delta.days # that's it
+        start_date = datetime.strptime(days.start_date, tools.DEFAULT_SERVER_DATE_FORMAT)
+        end_date = datetime.strptime(days.end_date, tools.DEFAULT_SERVER_DATE_FORMAT)
+
+        #a = datetime.strptime(datetime.now(), date_format)
+        #b = datetime.strptime(self.joined_date, date_format)
+        #delta = a - b
+        #worked_days = delta.days # that's it
+        end_date = datetime.strptime(str(datetime.now().year) + "-" + str(datetime.now().month) + "-" +str(datetime.now().day), date_format)
+        start_date = datetime.strptime(str(self.joined_date.year) + "-" + str(self.joined_date.month) + "-" +str(self.joined_date.day), date_format)
+        worked_days = (end_date - start_date).days + 1    
         if worked_years >= 0:
 
             self.worked_years = worked_days
