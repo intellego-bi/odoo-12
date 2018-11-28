@@ -93,7 +93,7 @@ class FinalSettlements(models.Model):
 
                         query = """select amount from hr_payslip_line psl 
                                    inner join hr_payslip ps on ps.id=psl.slip_id
-                                   where ps.employee_id="""+str(self.employee_id.id)+\
+                                   where ps.employee_id="""+str(rec.employee_id.id)+\
                                    """and ps.state='done' and psl.code='HAB' 
                                    order by ps.date_from desc limit 3"""
 
@@ -124,7 +124,7 @@ class FinalSettlements(models.Model):
 
                         query = """select uf from hr_indicadores hri  
                                    inner join hr_payslip ps on ps.indicadores_id=hri.id
-                                   where ps.employee_id="""+str(self.employee_id.id)+\
+                                   where ps.employee_id="""+str(rec.employee_id.id)+\
                                    """and ps.state='done' 
                                    order by ps.date_from desc limit 1"""
 
