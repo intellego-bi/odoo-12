@@ -90,8 +90,8 @@ class HrResignation(models.Model):
             if resignation_request:
                 raise ValidationError(_('There is a resignation request in confirmed or'
                                         ' approved state for this employee'))
-            if rec.joined_date >= rec.expected_revealing_date:
-                raise ValidationError(_('Error: Revealing date cannot be before Joining Date'))
+            #if rec.joined_date >= rec.expected_revealing_date:
+            #    raise ValidationError(_('Error: Revealing date cannot be before Joining Date'))
 
     @api.multi
     def confirm_resignation(self):
