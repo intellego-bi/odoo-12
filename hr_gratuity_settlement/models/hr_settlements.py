@@ -134,33 +134,6 @@ class FinalSettlements(models.Model):
                         valor_uf = 0
 
                     self.valor_uf = valor_uf
-
-                    self.notice_fact = 0
-
-                    # Aviso de Despido tiene menos de 30 días se paga fracción de IAP
-                    if self.notice_days <= 30 and self.notice_days >= 0:
-                    self.notice_fact = 1 - ( self.notice_days / 30 )
-
-                    # Convertimos el tope de 90 UF a CLP 
-                    tope = self.valor_uf * 90
-
-                    # Si el salario promedio de los 3 meses pasados supera el Tope, tomamos el Tope
-                    if self.average_salary > tope:
-                        amount_base = tope
-                    else:
-                        amount_base = self.average_salary
-
-                    # Cálculo IAS = Salario Base * Años
-                    if self.worked_years >= 1.0:
-                        amount = amount_base * self.worked_years
-                        self.ias_amount = round(amount)
-                    else:
-                        self.ias_amount = 0
-
-                    # Cálculo IAP = Salario Base * Fracción Días Preaviso 
-                    amount = amount_base * self.notice_fact
-                    self.iap_amount = round(amount) 
-
                 else:
                     raise exceptions.except_orm(_('No existe Solicitud de Término aprobada para este Empleado'),
                                           _('Se debe crear y aprobar una Solcitud de Término para poder calcular Finiquito'))
@@ -168,7 +141,46 @@ class FinalSettlements(models.Model):
 
     @api.multi
     def validate_function(self):
- 
+        # Determine previous notice days (from Resignation form)
+        resignation_obj = self.env['hr.resignation'].search([('employee_id', '=', self.employee_id.id), ('state', '=', 'approved')])
+        if resignation_obj:
+            for resignation in resignation_obj:
+                self.notice_days = int(resignation.notice_period)
+                self.joined_date = resignation.joined_date
+                self.settle_date = resignation.approved_revealing_date
+        else:
+            self.write({
+                'state': 'draft'})
+
+            raise exceptions.except_orm(_('No existe Solicitud de Término aprobada para este Empleado'),
+                                  _('Se debe crear y aprobar una Solcitud de Término para poder calcular Finiquito'))
+
+        self.notice_fact = 0
+
+        # Aviso de Despido tiene menos de 30 días se paga fracción de IAP
+        if self.notice_days <= 30 and self.notice_days >= 0:
+            self.notice_fact = 1 - ( self.notice_days / 30 )
+
+        # Convertimos el tope de 90 UF a CLP 
+        tope = self.valor_uf * 90
+
+        # Si el salario promedio de los 3 meses pasados supera el Tope, tomamos el Tope
+        if self.average_salary > tope:
+            amount_base = tope
+        else:
+            amount_base = self.average_salary
+
+        # Cálculo IAS = Salario Base * Años
+        if self.worked_years >= 1.0:
+            amount = amount_base * self.worked_years
+            self.ias_amount = round(amount)
+        else:
+            self.ias_amount = 0
+
+        # Cálculo IAP = Salario Base * Fracción Días Preaviso 
+        amount = amount_base * self.notice_fact
+        self.iap_amount = round(amount) 
+
         self.write({
             'state': 'validate'})
 
