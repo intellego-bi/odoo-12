@@ -77,11 +77,12 @@ class FinalSettlements(models.Model):
                 resignation_obj = self.env['hr.resignation'].search([('employee_id', '=', rec.employee_id.id), ('state', '=', 'approved')])
                 if resignation_obj:
                     for resignation in resignation_obj:
+                        self.resignation_id = resignation.id
                         self.notice_days = int(resignation.notice_period)
                         self.joined_date = resignation.joined_date
                         self.settle_date = resignation.approved_revealing_date
                         self.reason = resignation.reason
-                        self.resignation_id = resignation.id
+
 
                     self.notice_fact = 0
 
@@ -189,12 +190,11 @@ class FinalSettlements(models.Model):
         resignation_obj = self.env['hr.resignation'].search([('employee_id', '=', self.employee_id.id), ('state', '=', 'approved')])
         if resignation_obj:
             for resignation in resignation_obj:
+                self.resignation_id = resignation.id
                 self.notice_days = int(resignation.notice_period)
                 self.joined_date = resignation.joined_date
                 self.settle_date = resignation.approved_revealing_date
                 self.reason = resignation.reason
-                self.resignation_id = resignation.name
-
 
             self.notice_fact = 0
 
