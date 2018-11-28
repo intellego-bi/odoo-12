@@ -6,10 +6,10 @@ from odoo.exceptions import ValidationError,UserError
 date_format = "%Y-%m-%d"
 
 
-class OtherSettlements(models.Model):
-    _name = 'other.settlements'
+class FinalSettlements(models.Model):
+    _name = 'hr.settlements'
     _inherit = ['mail.thread', 'mail.activity.mixin']
-    _description = "Settlement"
+    _description = "HR Settlement"
 
     state = fields.Selection([
         ('draft', 'Draft'),
@@ -20,14 +20,17 @@ class OtherSettlements(models.Model):
 
     name = fields.Char(string='Reference', required=True, copy=False, readonly=True,
                        default=lambda self: _('New'))
-    employee_name = fields.Many2one('hr.employee', string='Employee', required=True)
+    employee_id = fields.Many2one('hr.employee', string='Employee', required=True)
+    department_id = fields.Many2one('hr.department', related="employee_id.department_id", readonly=True,
+                                    string="Department")
     joined_date = fields.Date(string="Joined Date")
+    settle_date = fields.Date(string="Settlement Date")
     worked_years = fields.Integer(string="Total Work Years")
     worked_months = fields.Integer(string="Total Work Months")
     worked_days = fields.Integer(string="Total Work Days")
     last_month_salary = fields.Integer(string="Last Salary", required=True, default=0)
     allowance = fields.Char(string="Dearness Allowance", default=0)
-    gratuity_amount = fields.Integer(string="Gratuity Payable", required=True, default=0, readony=True, help=("Gratuity is calculated based on 							the equation Last salary * Number of years of service * 15 / 26 "))
+    gratuity_amount = fields.Integer(string="Gratuity Payable", required=True, default=0, readony=True, help=("Gratuity is calculated based on 							the equation Last salary * Number of years of service"))
 
     reason = fields.Selection([('renuncia', 'Renuncia Voluntaria'),
                                ('despido', 'Despido')], string="Settlement Reason", required="True")
@@ -38,16 +41,16 @@ class OtherSettlements(models.Model):
     # assigning the sequence for the record
     @api.model
     def create(self, vals):
-        vals['name'] = self.env['ir.sequence'].next_by_code('other.settlements')
-        return super(OtherSettlements, self).create(vals)
+        vals['name'] = self.env['ir.sequence'].next_by_code('hr.settlement')
+        return super(FinalSettlements, self).create(vals)
 
     # Check whether any Settlement request already exists
-    @api.onchange('employee_name')
-    @api.depends('employee_name')
+    @api.onchange('employee_id')
+    @api.depends('employee_id')
     def check_request_existence(self):
         for rec in self:
-            if rec.employee_name:
-                settlement_request = self.env['other.settlements'].search([('employee_name', '=', rec.employee_name.id),
+            if rec.employee_id:
+                settlement_request = self.env['hr.settlements'].search([('employee_id', '=', rec.employee_name.id),
                                                                            ('state', 'in', ['draft', 'validate', 'approve'])])
                 if settlement_request:
 
@@ -58,7 +61,8 @@ class OtherSettlements(models.Model):
     def validate_function(self):
         # calculating the years of work by the employee
    
-        end_date = datetime.strptime(str(datetime.now().year) + "-" + str(datetime.now().month) + "-" +str(datetime.now().day), date_format)
+        #end_date = datetime.strptime(str(datetime.now().year) + "-" + str(datetime.now().month) + "-" +str(datetime.now().day), date_format)
+        end_date = datetime.strptime(str(self.settle_date.year) + "-" + str(self.settle_date.month) + "-" +str(self.settle_date.day), date_format)
         start_date = datetime.strptime(str(self.joined_date.year) + "-" + str(self.joined_date.month) + "-" +str(self.joined_date.day), date_format)
         worked_days = (end_date - start_date).days - 1
         worked_years = worked_days / 365
