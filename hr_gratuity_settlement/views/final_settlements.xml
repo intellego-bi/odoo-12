@@ -7,7 +7,7 @@
             <field name="arch" type="xml">
                 <tree string="Employee Gratuity">
                     <field name ="name"/>
-                    <field name ="employee_name"/>
+                    <field name ="employee_id"/>
                     <field name ="gratuity_amount" sum="Total" widget="monetary" />
                     <field name="currency_id" invisible="1"/>
                     <field name="company_id" invisible="1"/>
