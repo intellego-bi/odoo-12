@@ -49,7 +49,7 @@ class FinalSettlements(models.Model):
     currency_id = fields.Many2one('res.currency', string='Currency', required=True,
                                   default=lambda self: self.env.user.company_id.currency_id)
 
-    reason = fields.Selection([('art159', 'Renuncia Trabajador (Art. 159)'), ('art160', 'Despido Justificado'), ('art161', 'Despido Injustificado')], string="Settlement Reason", required="True")
+    reason = fields.Selection([('art159', 'Renuncia Trabajador (Art. 159)'), ('art160', 'Despido Justificado (Art. 160)'), ('art161', 'Despido Injustificado (Art. 161)')], string="Settlement Reason", required="True")
     currency_id = fields.Many2one('res.currency', string='Currency', required=True,
                                   default=lambda self: self.env.user.company_id.currency_id)
     company_id = fields.Many2one('res.company', 'Company', default=lambda self: self.env.user.company_id)
@@ -61,8 +61,8 @@ class FinalSettlements(models.Model):
         return super(FinalSettlements, self).create(vals)
 
     # Check whether any Settlement request already exists
-    @api.onchange('employee_id')
-    @api.depends('employee_id')
+    @api.onchange('employee_id', 'reason')
+    @api.depends('employee_id', 'reason')
     def check_request_existence(self):
         for rec in self:
             if rec.employee_id:
@@ -154,15 +154,18 @@ class FinalSettlements(models.Model):
                         amount_base = self.average_salary
 
                     # Cálculo IAS = Salario Base * Años
-                    if self.worked_years >= 1.0:
+                    if self.worked_years >= 1.0 and  self.reason = 'art161':
                         amount = amount_base * self.worked_years
                         self.ias_amount = round(amount)
                     else:
                         self.ias_amount = 0
 
-                    # Cálculo IAP = Salario Base * Fracción Días Preaviso 
-                    amount = amount_base * self.notice_fact
-                    self.iap_amount = round(amount) 
+                    # Cálculo IAP = Salario Base * Fracción Días Preaviso
+                    if self.reason != 'art159':
+                        amount = amount_base * self.notice_fact
+                        self.iap_amount = round(amount) 
+                    else:
+                        self.iap_amount = 0
 
                     # Cálculo IFP = Salario Base / 30 * Días Feriado Proporcional
                     if self.dias_vaca_prop > 0:
