@@ -99,8 +99,8 @@ class HrEmployee(models.Model):
     personal_mobile = fields.Char(string='Mobile', related='address_home_id.mobile', store=True)
     emergency_contact = fields.One2many('hr.emergency.contact', 'employee_obj', string='Emergency Contact')
     joining_date = fields.Date(string='Joining Date')
-    id_expiry_date = fields.Date(string='Expiry Date', help='Expiry date of Identification ID')
-    passport_expiry_date = fields.Date(string='Expiry Date', help='Expiry date of Passport ID')
+    id_expiry_date = fields.Date(string='ID Expiry Date', help='Expiry date of Identification ID')
+    passport_expiry_date = fields.Date(string='Passport Expiry Date', help='Expiry date of Passport ID')
     id_attachment_id = fields.Many2many('ir.attachment', 'id_attachment_rel', 'id_ref', 'attach_ref',
                                         string="Attachment", help='You can attach the copy of your Id')
     passport_attachment_id = fields.Many2many('ir.attachment', 'passport_attachment_rel', 'passport_ref', 'attach_ref1',
