@@ -34,51 +34,45 @@
                                     <field name="name" readonly="1"/>
                                 </h1>
                             </div>
-                                <table>
-                                        <tr>
-                                            <h2>
-                                                <td>
-                                                    <group>
-                                                        <field name ="employee_id"  string="Employee" required="True" attrs="{'readonly': [('state','=','approve')]}"/>
-                                                    </group>
-                                                </td>
-                                                <td>
-                                                    <group>
-                                                        <field name ="department_id"  string="Department" readonly="True"/>
-                                                    </group>
-                                                </td>
-
-                                            </h2>
-                                        </tr>
-                                </table>
+                            <h2>
+                                <group string="Empleado">
+                                    <group>
+                                        <field name ="employee_id"  string="Employee" required="True" attrs="{'readonly': [('state','=','approve')]}"/>
+                                    </group>
+                                    <group>
+                                        <field name ="department_id"  string="Department" readonly="True"/>
+                                    </group>
+                                </group>
+                            </h2>
                                 <group>
                                     <group string="Datos Generales">
                                         <field name="company_id" options="{'no_create': True}" groups="base.group_multi_company"/>
                                         <field name="currency_id" options="{'no_create': True}" groups="base.group_multi_company"/>
                                         <field name="reason" required="True" attrs="{'readonly': [('state','=','approve')]}"/>
                                         <field name="valor_uf"  states="validate,approve" attrs="{'readonly': [('state','=','approve')]}"/>
-                                        <field name="allowance" widget="monetary" options="{'currency_field': 'currency_id'}" states="validate,approve" attrs="{'readonly': [('state','=','approve')]}"/>
                                     </group>
                                     <group string="Historia">
                                         <field name="joined_date" required="True" attrs="{'readonly': [('state','=','approve')]}"/>
                                         <field name="settle_date" required="True" attrs="{'readonly': [('state','=','approve')]}"/>
-                                        <field name="last_month_salary" widget="monetary" options="{'currency_field': 'currency_id'}" states="validate,approve" readonly="True"/>
-                                        <field name="last_2_month_salary" widget="monetary" options="{'currency_field': 'currency_id'}" states="validate,approve" readonly="True"/>
-                                        <field name="last_3_month_salary" widget="monetary" options="{'currency_field': 'currency_id'}" states="validate,approve" readonly="True"/>
+                                        <!--<field name="last_month_salary" widget="monetary" options="{'currency_field': 'currency_id'}" states="validate,approve" readonly="True"/>-->
+                                        <!--<field name="last_2_month_salary" widget="monetary" options="{'currency_field': 'currency_id'}" states="validate,approve" readonly="True"/>-->
+                                        <!--<field name="last_3_month_salary" widget="monetary" options="{'currency_field': 'currency_id'}" states="validate,approve" readonly="True"/>-->
                                         <field name="average_salary" widget="monetary" options="{'currency_field': 'currency_id'}" states="validate,approve" readonly="True"/>
                                         <field name="worked_months"  required="True" readonly="True"/>
                                         <field name="worked_days"  required="True" readonly="True"/>
                                     </group>
-                                    <group string="Indemnización Años Servicio">
+                                    <group string="Indemnización Años Servicio (IAS)">
                                         <field name="worked_years"  required="True" readonly="True"/>
                                         <field name="ias_amount" widget="monetary" options="{'currency_field': 'currency_id'}" states="validate,approve" readonly="True"/>
                                     </group>
-                                    <group string="Días de Preaviso">
+                                    <group string="Indemnización Aviso Previo (IAP)">
                                         <field name="notice_days" states="validate,approve" readonly="True"/>
                                         <field name="notice_fact" states="validate,approve" readonly="True"/>
                                         <field name="iap_amount" widget="monetary" options="{'currency_field': 'currency_id'}" states="validate,approve" readonly="True"/>
                                     </group>
-
+                                    <group string="Otras Indemnizaciones Finiquito (FIN)">
+                                        <field name="allowance" widget="monetary" options="{'currency_field': 'currency_id'}" states="validate,approve" attrs="{'readonly': [('state','=','approve')]}"/>
+                                    </group>
                                 </group>
                         </sheet>
                     <div class="oe_chatter">
