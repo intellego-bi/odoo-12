@@ -196,6 +196,57 @@ class FinalSettlements(models.Model):
             self.worked_months = worked_months
             self.worked_days = worked_days
 
+            cr = self._cr  # search last 3 salaries of employee from Payslips
+
+            query = """select amount from hr_payslip_line psl 
+                       inner join hr_payslip ps on ps.id=psl.slip_id
+                       where ps.employee_id="""+str(self.employee_id.id)+\
+                       """and ps.state='done' and psl.code='HAB' 
+                       order by ps.date_from desc limit 3"""
+
+            cr.execute(query)
+            data = cr.fetchall()
+            if data:
+                last_salary = data[0][0]
+                last_2_salary = data[1][0]
+                last_3_salary = data[2][0]
+            else:
+                last_salary = 0
+                last_2_salary = 0
+                last_3_salary = 0
+
+            ls_a = 1
+            if last_2_salary > 0:
+                ls_b = 1
+            if last_3_salary > 0:
+                ls_c = 1   
+
+            average_salary = ( last_salary + last_2_salary + last_3_salary ) / ( ls_a + ls_b + ls_c )
+            self.average_salary = average_salary
+            self.last_month_salary = last_salary
+            self.last_2_month_salary = last_2_salary
+            self.last_3_month_salary = last_3_salary
+
+            # Convertimos el tope de 90 UF a CLP 
+            tope = self.valor_uf * 90
+
+            # Si el salario promedio de los 3 meses pasados supera el Tope, tomamos el Tope
+            if self.average_salary > tope:
+                amount_base = tope
+            else:
+                amount_base = self.average_salary
+
+            # Cálculo IAS = Salario Base * Años
+            if self.worked_years >= 1.0:
+                amount = amount_base * self.worked_years
+                self.ias_amount = round(amount)
+            else:
+                self.ias_amount = 0
+
+            # Cálculo IAP = Salario Base * Fracción Días Preaviso 
+                amount = amount_base * self.notice_fact
+                self.iap_amount = round(amount) 
+
         else:
             self.write({
                 'state': 'draft'})
