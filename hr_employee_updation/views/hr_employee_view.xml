@@ -25,7 +25,7 @@
                 <xpath expr="//page[@name='hr_settings']" position="attributes">
                     <attribute name="string">Datos RRHH</attribute>
                 </xpath>
-                <xpath expr="//form[1]/sheet[1]/div[2]/div[1]/notebook[1]/page[@name='personal_information']/group[1]/group[4]/field[@name='emergency_contact']" position="attributes">
+                <xpath expr="//field[@name='emergency_contact']" position="attributes">
                     <attribute name="attrs">{}</attribute>
                     <attribute name="invisible">1</attribute>
                 </xpath>
