@@ -30,15 +30,15 @@ class FinalSettlements(models.Model):
     worked_days = fields.Integer(string="Total Work Days")
     notice_days = fields.Integer(string="Days of Notice before termination")
     notice_fact = fields.Float(string="Fracción de pago Aviso Previo")
-    last_month_salary = fields.Float(string="Last Salary", required=True, default=0)
-    last_2_month_salary = fields.Float(string="2nd Last Salary ", required=False, default=0)
-    last_3_month_salary = fields.Float(string="3rd Last Salary ", required=False, default=0)
-    average_salary = fields.Float(string="Average Salary (past 3 months)", required=True, default=0)
-    valor_uf = fields.Float(string="Valor UF", required="True")
+    last_month_salary = fields.Float(string="Last Salary", required=True)
+    last_2_month_salary = fields.Float(string="2nd Last Salary ", required=False)
+    last_3_month_salary = fields.Float(string="3rd Last Salary ", required=False)
+    average_salary = fields.Float(string="Average Salary (past 3 months)", required=True)
+    valor_uf = fields.Float(string="Valor UF", required=True)
     allowance = fields.Float(string="Dearness Allowance", default=0)
     gratuity_amount = fields.Float(string="Gratuity Payable", required=True, default=0, readony=True, help=("Gratuity is calculated based on 							the equation Last salary * Number of years of service"))
-    ias_amount = fields.Float(string="Indeminización Años Servicio (IAS)", required=False, default=0, readony=True, help=("Gratuity is calculated based on 							the equation Last salary * Number of years of service"))
-    iap_amount = fields.Float(string="Indeminización Aviso Previo (IAP)", required=False, default=0, readony=True, help=("Pago aviso previo despido 							correspondiente a 30 días"))
+    ias_amount = fields.Float(string="Indeminización Años Servicio (IAS)", required=False, readony=True, help=("Gratuity is calculated based on 							the equation Last salary * Number of years of service"))
+    iap_amount = fields.Float(string="Indeminización Aviso Previo (IAP)", required=False, readony=True, help=("Pago aviso previo despido 							correspondiente a 30 días"))
 
     company_id = fields.Many2one('res.company', 'Company', readonly=True,
                                  default=lambda self: self.env.user.company_id,
@@ -141,9 +141,9 @@ class FinalSettlements(models.Model):
                         valor_uf = 0
 
                     self.valor_uf = valor_uf
-                    self.write({
-                                'average_salary': self.average_salary
-                                })
+                    #self.write({
+                    #            'average_salary': self.average_salary
+                    #            })
 
                 else:
                     raise exceptions.except_orm(_('No existe Solicitud de Término aprobada para este Empleado'),
