@@ -23,6 +23,7 @@ class FinalSettlements(models.Model):
     employee_id = fields.Many2one('hr.employee', string='Employee', required=True)
     department_id = fields.Many2one('hr.department', related="employee_id.department_id", readonly=True,
                                     string="Department")
+    resignation_name = fields.Char(string='Solicitud de Término', required=True)
     joined_date = fields.Date(string="Joined Date")
     settle_date = fields.Date(string="Settlement Date") #, default=fields.Date.today())
     worked_years = fields.Integer(string="Total Work Years")
@@ -80,6 +81,7 @@ class FinalSettlements(models.Model):
                         self.joined_date = resignation.joined_date
                         self.settle_date = resignation.approved_revealing_date
                         self.reason = resignation.reason
+                        self.resignation_name = resignation.name
 
                     self.notice_fact = 0
 
@@ -191,6 +193,7 @@ class FinalSettlements(models.Model):
                 self.joined_date = resignation.joined_date
                 self.settle_date = resignation.approved_revealing_date
                 self.reason = resignation.reason
+                self.resignation_name = resignation.name
 
             self.notice_fact = 0
 
