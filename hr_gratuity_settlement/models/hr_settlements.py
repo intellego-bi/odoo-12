@@ -141,6 +141,27 @@ class FinalSettlements(models.Model):
                         valor_uf = 0
 
                     self.valor_uf = valor_uf
+
+                    # Convertimos el tope de 90 UF a CLP 
+                    tope = self.valor_uf * 90
+
+                    # Si el salario promedio de los 3 meses pasados supera el Tope, tomamos el Tope
+                    if self.average_salary > tope:
+                        amount_base = tope
+                    else:
+                        amount_base = self.average_salary
+
+                    # Cálculo IAS = Salario Base * Años
+                    if self.worked_years >= 1.0:
+                        amount = amount_base * self.worked_years
+                        self.ias_amount = round(amount)
+                    else:
+                        self.ias_amount = 0
+
+                    # Cálculo IAP = Salario Base * Fracción Días Preaviso 
+                    amount = amount_base * self.notice_fact
+                    self.iap_amount = round(amount) 
+
                     #self.write({
                     #            'average_salary': self.average_salary
                     #            })
@@ -159,6 +180,22 @@ class FinalSettlements(models.Model):
                 self.notice_days = int(resignation.notice_period)
                 self.joined_date = resignation.joined_date
                 self.settle_date = resignation.approved_revealing_date
+            self.notice_fact = 0
+
+            # Aviso de Despido tiene menos de 30 días se paga fracción de IAP
+            if self.notice_days <= 30 and self.notice_days >= 0:
+                self.notice_fact = 1 - ( self.notice_days / 30 )
+
+            # calculating the years of work by the employee
+            end_date = datetime.strptime(str(self.settle_date.year) + "-" + str(self.settle_date.month) + "-" +str(self.settle_date.day), date_format)
+            start_date = datetime.strptime(str(self.joined_date.year) + "-" + str(self.joined_date.month) + "-" +str(self.joined_date.day), date_format)
+            worked_days = (end_date - start_date).days - 1
+            worked_years = int(round(worked_days / 365))
+            worked_months = int(round(worked_days / 365 * 12))
+            self.worked_years = worked_years
+            self.worked_months = worked_months
+            self.worked_days = worked_days
+
         else:
             self.write({
                 'state': 'draft'})
@@ -167,15 +204,6 @@ class FinalSettlements(models.Model):
                                   _('Se debe crear y aprobar una Solcitud de Término para poder calcular Finiquito'))
 
         if self.settle_date:
-
-            # Convertimos el tope de 90 UF a CLP 
-            tope = self.valor_uf * 90
-
-            # Si el salario promedio de los 3 meses pasados supera el Tope, tomamos el Tope
-            if self.average_salary > tope:
-                amount_base = tope
-            else:
-                amount_base = self.average_salary
 
             # Cálculo IAS = Salario Base * Años
             if self.worked_years >= 1.0:
@@ -221,13 +249,13 @@ class FinalSettlements(models.Model):
         self.write({
             'state': 'draft'
         })
-        self.worked_years = 0
-        self.worked_months = 0
-        self.worked_days = 0
-        self.ias_amount = 0
-        self.iap_amount = 0
-        self.notice_days = 0
-        self.notice_fact = 0
+        #self.worked_years = 0
+        #self.worked_months = 0
+        #self.worked_days = 0
+        #self.ias_amount = 0
+        #self.iap_amount = 0
+        #self.notice_days = 0
+        #self.notice_fact = 0
 
 
     #@api.multi
