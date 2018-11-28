@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
-import datetime
+#import datetime
+from datetime import datetime
 from odoo import fields, models, api, exceptions, _
 from odoo.exceptions import ValidationError,UserError
 date_format = "%Y-%m-%d"
@@ -55,9 +56,13 @@ class OtherSettlements(models.Model):
     @api.multi
     def validate_function(self):
         # calculating the years of work by the employee
-        worked_years = int(datetime.datetime.now().year) - int(str(self.joined_date).split('-')[0])
-        worked_days = datetime.datetime.now() - self.joined_date
-
+        date_format = "%Y/%m/%d"
+        #worked_years = int(datetime.datetime.now().year) - int(str(self.joined_date).split('-')[0])
+        #worked_days = (datetime.datetime.now() - datetime.datetime.self.joined_date)
+        a = datetime.strptime(datetime.now(), date_format)
+        b = datetime.strptime(self.joined_date, date_format)
+        delta = a - b
+        worked_days = delta.days # that's it
         if worked_years >= 0:
 
             self.worked_years = worked_days
