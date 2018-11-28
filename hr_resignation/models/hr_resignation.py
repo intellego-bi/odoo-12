@@ -98,9 +98,7 @@ class HrResignation(models.Model):
         for rec in self:
             rec.state = 'confirm'
             rec.resign_confirm_date = str(datetime.now())
-            if not rec.employee_id.joining_date:
-                raise ValidationError(_('Actualice la Fehca de Vinculación en el'
-                              ' maestro de Empleados y vuelva a generar la solicitud'))
+
 
     @api.multi
     def cancel_resignation(self):
