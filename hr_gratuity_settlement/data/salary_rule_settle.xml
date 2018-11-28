@@ -53,7 +53,7 @@
 
         <record id="hr_rule_fin_ifp" model="hr.salary.rule">
             <field name="code">IFP</field>
-            <field name="name">IFP Finiquito Feriado Prorcional</field>
+            <field name="name">IFP Finiquito Feriado Proporcional</field>
             <field name="category_id" ref="l10n_cl_hr.NOIMPO"/>
             <field name="amount_select">code</field>
             <field name="amount_python_compute">result = inputs.IFP and + (inputs.IFP.amount)</field>
@@ -63,7 +63,7 @@
 
         <record id="hr_rule_input_fin_ifp" model="hr.rule.input">
             <field name="code">IFP</field>
-            <field name="name">IFP Finiquito Feriado Prorcional</field>
+            <field name="name">IFP Finiquito Feriado Proporcional</field>
             <field name="input_id" ref="hr_rule_fin_ifp"/>
         </record>
 
