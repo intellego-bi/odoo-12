@@ -36,14 +36,14 @@
                             </div>
                                 <table>
                                         <tr>
-                                            <h2>
+                                            
                                                 <td>
                                                     <group>
-                                                        <field name ="employee_id"  string="Employee" required="True" attrs="{'readonly': [('state','=','approve')]}"/>
+                                                        <h2><field name ="employee_id"  string="Employee" required="True" attrs="{'readonly': [('state','=','approve')]}"/></h2>
                                                         <field name ="department_id"  string="Department" readonly="True"/>
                                                     </group>
                                                 </td>
-                                            </h2>
+                                            
                                         </tr>
                                 </table>
                                 <group>
