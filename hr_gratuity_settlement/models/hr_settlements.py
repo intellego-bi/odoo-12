@@ -50,7 +50,7 @@ class FinalSettlements(models.Model):
     def check_request_existence(self):
         for rec in self:
             if rec.employee_id:
-                settlement_request = self.env['hr.settlements'].search([('employee_id', '=', rec.employee_name.id),
+                settlement_request = self.env['hr.settlements'].search([('employee_id', '=', rec.employee_id.id),
                                                                            ('state', 'in', ['draft', 'validate', 'approve'])])
                 if settlement_request:
 
