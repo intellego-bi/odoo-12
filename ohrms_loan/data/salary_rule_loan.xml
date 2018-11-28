@@ -6,7 +6,7 @@
 		<record id="hr_rule_loan" model="hr.salary.rule">
             <field name="code">LO</field>
             <field name="name">Cuota Préstamo</field>
-            <field name="category_id" ref="hr_payroll.DED"/>
+            <field name="category_id" ref="l10n_cl_hr.ODESC"/>
             <field name="amount_select">code</field>
             <field name="amount_python_compute">result = inputs.LO and + (inputs.LO.amount)</field>
             <field name="appears_on_payslip" eval="True"/>
