@@ -39,7 +39,7 @@
                             <group string="Empleado">
                                 <field name="employee_id"/>
                                 <field name="department_id"/>
-                                <field name="joined_date"/>
+                                <field name="joined_date" required="True" readonly="True"/>
                             </group>
                             <group string="Fechas de Término">
                                 <group><field name="expected_revealing_date"/></group>
