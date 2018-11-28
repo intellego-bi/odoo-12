@@ -35,10 +35,13 @@ class FinalSettlements(models.Model):
     last_3_month_salary = fields.Float(string="3rd Last Salary ")
     average_salary = fields.Float(string="Average Salary (past 3 months)")
     valor_uf = fields.Float(string="Valor UF", required=True)
+    dias_vaca_pend = fields.Float(string="Días de Vacaciones Pendientes")
+    dias_vaca_prop = fields.Float(string="Días Feriado Proporcional")
     allowance = fields.Float(string="Dearness Allowance", default=0)
     gratuity_amount = fields.Float(string="Gratuity Payable", required=True, default=0, readony=True, help=("Gratuity is calculated based on 							the equation Last salary * Number of years of service"))
     ias_amount = fields.Float(string="Indeminización Años Servicio (IAS)", required=False, readony=True, help=("Gratuity is calculated based on 							the equation Last salary * Number of years of service"))
     iap_amount = fields.Float(string="Indeminización Aviso Previo (IAP)", required=False, readony=True, help=("Pago aviso previo despido 							correspondiente a 30 días"))
+    ifp_amount = fields.Float(string="Indeminización Feriado Proporcional", required=False, readony=True, help=("Liquidación de Feriádo Proprcional por Vacaciones pendientes"))
 
     company_id = fields.Many2one('res.company', 'Company', readonly=True,
                                  default=lambda self: self.env.user.company_id,
@@ -162,9 +165,13 @@ class FinalSettlements(models.Model):
                     amount = amount_base * self.notice_fact
                     self.iap_amount = round(amount) 
 
-                    #self.write({
-                    #            'average_salary': self.average_salary
-                    #            })
+                    # Cálculo IFP = Salario Base / 30 * Días Feriado Proporcional
+                    if self.dias_vaca_prop > 0:
+                        amount = amount_base / 30 * self.dias_vaca_prop
+                        self.ifp_amount = round(amount)
+                    else:
+                        self.ifp_amount = 0
+
 
                 else:
                     raise exceptions.except_orm(_('No existe Solicitud de Término aprobada para este Empleado'),
@@ -247,6 +254,13 @@ class FinalSettlements(models.Model):
             # Cálculo IAP = Salario Base * Fracción Días Preaviso 
                 amount = amount_base * self.notice_fact
                 self.iap_amount = round(amount) 
+
+            # Cálculo IFP = Salario Base / 30 * Días Feriado Proporcional
+            if self.dias_vaca_prop > 0:
+                amount = amount_base / 30 * self.dias_vaca_prop
+                self.ifp_amount = round(amount)
+            else:
+                self.ifp_amount = 0
 
             self.write({
                 'state': 'validate'})
