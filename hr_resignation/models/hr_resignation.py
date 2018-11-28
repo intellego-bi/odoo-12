@@ -116,8 +116,8 @@ class HrResignation(models.Model):
             if not rec.approved_revealing_date:
                 raise ValidationError(_('Enter Approved Revealing Date'))
             if rec.approved_revealing_date and rec.resign_confirm_date:
-                if rec.approved_revealing_date <= rec.resign_confirm_date:
-                    raise ValidationError(_('Approved Revealing Date must be before Confirmed Date'))
+                #if rec.approved_revealing_date <= rec.resign_confirm_date:
+                #    raise ValidationError(_('Approved Revealing Date must be before Confirmed Date'))
                 rec.state = 'approved'
 
 
