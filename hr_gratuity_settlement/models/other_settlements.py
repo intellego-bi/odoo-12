@@ -60,7 +60,7 @@ class OtherSettlements(models.Model):
    
         end_date = datetime.strptime(str(datetime.now().year) + "-" + str(datetime.now().month) + "-" +str(datetime.now().day), date_format)
         start_date = datetime.strptime(str(self.joined_date.year) + "-" + str(self.joined_date.month) + "-" +str(self.joined_date.day), date_format)
-        worked_days = (end_date - start_date).days + 1
+        worked_days = (end_date - start_date).days - 1
         worked_years = worked_days / 365
         worked_months = worked_days / 365 * 12
         if worked_years >= 0.5:
@@ -126,3 +126,7 @@ class OtherSettlements(models.Model):
         self.write({
             'state': 'draft'
         })
+        self.worked_years = 0
+        self.worked_months = 0
+        self.worked_days = 0
+
