@@ -29,7 +29,7 @@ from odoo.tools.translate import _
 
 class HrPayslipAnalytic(models.Model):
     _inherit = 'hr.payslip'
-	
+
     date = fields.Date('Date Account', states={'draft': [('readonly', False)]}, readonly=True,
         help="Keep empty to use the period of the validation(Payslip) date.")
     journal_id = fields.Many2one('account.journal', 'Salary Journal', readonly=True, required=True,
@@ -40,11 +40,11 @@ class HrPayslipAnalytic(models.Model):
     def create(self, vals):
         if 'journal_id' in self.env.context:
             vals['journal_id'] = self.env.context.get('journal_id')
-        return super(HrPayslipAnalytic, self).create(vals)
+        return super(HrPayslip, self).create(vals)
 
     @api.onchange('contract_id')
     def onchange_contract(self):
-        super(HrPayslipAnalytic, self).onchange_contract()
+        super(HrPayslip, self).onchange_contract()
         self.journal_id = self.contract_id.journal_id.id or (not self.contract_id and self.default_get(['journal_id'])['journal_id'])
 
     @api.multi
@@ -52,10 +52,11 @@ class HrPayslipAnalytic(models.Model):
         moves = self.mapped('move_id')
         moves.filtered(lambda x: x.state == 'posted').button_cancel()
         moves.unlink()
-        return super(HrPayslipAnalytic, self).action_payslip_cancel()
-	
+        return super(HrPayslip, self).action_payslip_cancel()
+
     @api.multi
     def action_payslip_done(self):
+        res = super(HrPayslip, self).action_payslip_done()
         precision = self.env['decimal.precision'].precision_get('Payroll')
 
         for slip in self:
@@ -63,6 +64,7 @@ class HrPayslipAnalytic(models.Model):
             debit_sum = 0.0
             credit_sum = 0.0
             date = slip.date or slip.date_to
+
             name = _('Payslip of %s') % (slip.employee_id.name)
             move_dict = {
                 'narration': name,
@@ -72,7 +74,7 @@ class HrPayslipAnalytic(models.Model):
             }
             for line in slip.details_by_salary_rule_category:
                 cost_center = False 
-                no_cost_center = False # Insert Rodolfo B
+                no_cost_center = False # Insert Rodolfo Bermudez
                 amount = slip.credit_note and -line.total or line.total
                 if float_is_zero(amount, precision_digits=precision):
                     continue
@@ -106,10 +108,10 @@ class HrPayslipAnalytic(models.Model):
                         'date': date,
                         'debit': amount < 0.0 and -amount or 0.0,
                         'credit': amount > 0.0 and amount or 0.0,
-                        'analytic_account_id': no_cost_center, # Insert Rodolfo B
+                        'analytic_account_id': no_cost_center, # Insert Rodolfo Bermúdez 
                         'tax_line_id': line.salary_rule_id.account_tax_id.id,
                     })
-                    line_ids.append(credit_line) # Insert Rodolfo B
+                    line_ids.append(credit_line) # Insert Rodolfo Bermudez
                     credit_sum += credit_line[2]['credit'] - credit_line[2]['debit']
 
             if float_compare(credit_sum, debit_sum, precision_digits=precision) == -1:
@@ -156,4 +158,3 @@ class HrSalaryRule(models.Model):
     account_analytic_true = fields.Boolean('Analytic Account in Contract')
 
 
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
