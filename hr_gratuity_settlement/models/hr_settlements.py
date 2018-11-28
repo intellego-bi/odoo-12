@@ -193,3 +193,4 @@ class FinalSettlements(models.Model):
         if any(self.filtered(lambda hr.settlements: hr.settlements.state not in ('draft', 'cancel'))):
             raise UserError(_('You cannot delete a Settlement which is not draft or cancelled!'))
         return super(FinalSettlements, self).unlink()
+
