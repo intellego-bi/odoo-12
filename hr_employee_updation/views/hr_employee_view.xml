@@ -41,7 +41,7 @@
                     </group>
                 </xpath>
 
-                <page name="hr_settings" position="after">
+                <!--<page name="hr_settings" position="after">
                     <page name="family_info" string="Family Information" groups="hr.group_hr_user">
                         <group string="Family">
                             <field name="fam_ids" nolabel="1">
@@ -53,7 +53,7 @@
                             </field>
                         </group>
                     </page>
-                </page>
+                </page>-->
             </field>
         </record>
 
