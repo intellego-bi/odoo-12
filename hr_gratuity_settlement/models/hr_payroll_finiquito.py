@@ -8,7 +8,7 @@ from datetime import datetime
 class HrPayslipInput(models.Model):
     _inherit = 'hr.payslip.input'
 
-    other_settlements_id = fields.Many2one('other.settlements', string="Final Settlements")
+    hr_settlements_id = fields.Many2one('hr.settlements', string="Final Settlements")
 
 
 class HrPayslip(models.Model):
@@ -61,12 +61,12 @@ class HrPayslip(models.Model):
         res = super(HrPayslip, self).get_inputs(contract_ids, date_from, date_to)
         contract_obj = self.env['hr.contract']
         emp_id = contract_obj.browse(contract_ids[0].id).employee_id
-        settle_obj = self.env['other.settlements'].search([('employee_name', '=', emp_id.id), ('state', '=', 'approve')])
+        settle_obj = self.env['hr.settlements'].search([('employee_id', '=', emp_id.id), ('state', '=', 'approve')])
         for settle in settle_obj:
             for result in res:
                 if result.get('code') == 'FIN':
                     result['amount'] = settle.gratuity_amount
-                    result['other_settlements_id'] = settle.id
+                    result['hr_settlements_id'] = settle.id
         return res
 
     @api.multi
