@@ -57,8 +57,8 @@ class HrLoan(models.Model):
     job_position = fields.Many2one('hr.job', related="employee_id.job_id", readonly=True, string="Job Position")
     loan_amount = fields.Float(string="Loan Amount", required=True)
     total_amount = fields.Float(string="Total Amount", readonly=True, compute='_compute_loan_amount')
-    #balance_amount = fields.Float(string="Balance Amount", compute='_compute_loan_amount')
-    balance_amount = fields.Float(string="Balance Amount", compute='recompute_loan_amount', store=True) #, readonly=True)
+    balance_amount = fields.Float(string="Balance Amount", compute='_compute_loan_amount')
+    #balance_amount = fields.Float(string="Balance Amount", compute='recompute_loan_amount', store=True) #, readonly=True)
     total_paid_amount = fields.Float(string="Total Paid Amount", compute='_compute_loan_amount')
 
     state = fields.Selection([
