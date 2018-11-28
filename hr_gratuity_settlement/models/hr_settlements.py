@@ -49,7 +49,7 @@ class FinalSettlements(models.Model):
     currency_id = fields.Many2one('res.currency', string='Currency', required=True,
                                   default=lambda self: self.env.user.company_id.currency_id)
 
-    reason = fields.Selection([('art159', 'Renuncia Trabajador (Art. 159)'), ('art160', 'Despido Justificado (Art. 160)'), ('art161', 'Despido Injustificado (Art. 161)')], string="Settlement Reason", required="True")
+    reason = fields.Selection([('art159', 'Renuncia Trabajador (Art. 159)'), ('art160', 'Despido Justificado (Art. 160)'), ('art161', 'Despido Injustificado (Art. 161)')], string="Settlement Reason", required=True, readony=True)
     currency_id = fields.Many2one('res.currency', string='Currency', required=True,
                                   default=lambda self: self.env.user.company_id.currency_id)
     company_id = fields.Many2one('res.company', 'Company', default=lambda self: self.env.user.company_id)
@@ -79,6 +79,7 @@ class FinalSettlements(models.Model):
                         self.notice_days = int(resignation.notice_period)
                         self.joined_date = resignation.joined_date
                         self.settle_date = resignation.approved_revealing_date
+                        self.reason = resignation.reason
 
                     self.notice_fact = 0
 
@@ -189,6 +190,8 @@ class FinalSettlements(models.Model):
                 self.notice_days = int(resignation.notice_period)
                 self.joined_date = resignation.joined_date
                 self.settle_date = resignation.approved_revealing_date
+                self.reason = resignation.reason
+
             self.notice_fact = 0
 
             # Aviso de Despido tiene menos de 30 días se paga fracción de IAP
@@ -247,15 +250,18 @@ class FinalSettlements(models.Model):
                 amount_base = self.average_salary
 
             # Cálculo IAS = Salario Base * Años
-            if self.worked_years >= 1.0:
+            if self.worked_years >= 1.0 and  self.reason == 'art161':
                 amount = amount_base * self.worked_years
                 self.ias_amount = round(amount)
             else:
                 self.ias_amount = 0
 
-            # Cálculo IAP = Salario Base * Fracción Días Preaviso 
+            # Cálculo IAP = Salario Base * Fracción Días Preaviso
+            if self.reason != 'art159':
                 amount = amount_base * self.notice_fact
                 self.iap_amount = round(amount) 
+            else:
+                self.iap_amount = 0
 
             # Cálculo IFP = Salario Base / 30 * Días Feriado Proporcional
             if self.dias_vaca_prop > 0:
@@ -274,41 +280,13 @@ class FinalSettlements(models.Model):
             raise exceptions.except_orm(_('No existe Solicitud de Término aprobada para este Empleado'),
                                   _('Se debe crear y aprobar una Solcitud de Término para poder calcular Finiquito'))
 
-        #if self.settle_date:
-
-            # Cálculo IAS = Salario Base * Años
-        #    if self.worked_years >= 1.0:
-        #        amount = amount_base * self.worked_years
-        #        self.ias_amount = round(amount)
-        #    else:
-        #        self.ias_amount = 0
-
-        #    # Cálculo IAP = Salario Base * Fracción Días Preaviso 
-        #    amount = amount_base * self.notice_fact
-        #    self.iap_amount = round(amount) 
-
 
 
     def approve_function(self):
         self.write({
             'state': 'approve'
         })
-        # Convertimos el tope de 90 UF a CLP
-        #tope = self.valor_uf * 90
 
-        # Si el salario promedio de los 3 meses pasados supera el Tope, tomamos el Tope
-        #if self.average_salary > tope:
-        #    amount_base = tope
-        #else:
-        #    amount_base = self.average_salary
-
-        # Cálculo IAS = Salario Base * Años 
-        #amount = amount_base * self.worked_years
-        #self.ias_amount = round(amount) if self.state == 'approve' else 0
-
-        # Cálculo IAP = Salario Base * Fracción Días Preaviso 
-        #amount = amount_base * self.notice_fact
-        #self.iap_amount = round(amount) if self.state == 'approve' else 0
 
     def cancel_function(self):
         self.write({
@@ -319,13 +297,7 @@ class FinalSettlements(models.Model):
         self.write({
             'state': 'draft'
         })
-        #self.worked_years = 0
-        #self.worked_months = 0
-        #self.worked_days = 0
-        #self.ias_amount = 0
-        #self.iap_amount = 0
-        #self.notice_days = 0
-        #self.notice_fact = 0
+
 
 
     #@api.multi
