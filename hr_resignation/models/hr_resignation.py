@@ -34,7 +34,8 @@ class HrResignation(models.Model):
     state = fields.Selection([('draft', 'Draft'), ('confirm', 'Confirm'), ('approved', 'Approved'), ('cancel', 'Cancel')],
                              string='Status', default='draft')
 
-    @api.onchange('employee_id')
+    @api.onchange('employee_id', 'state')
+    @api.depends('employee_id', 'state')
     def set_join_date(self):
         self.joined_date = self.employee_id.joining_date if self.employee_id.joining_date else ''
         if not self.employee_id.joining_date:
