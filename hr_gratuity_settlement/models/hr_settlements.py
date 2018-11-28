@@ -230,6 +230,7 @@ class FinalSettlements(models.Model):
             # Convertimos el tope de 90 UF a CLP 
             tope = self.valor_uf * 90
 
+            amount_base = 0
             # Si el salario promedio de los 3 meses pasados supera el Tope, tomamos el Tope
             if self.average_salary > tope:
                 amount_base = tope
@@ -246,6 +247,9 @@ class FinalSettlements(models.Model):
             # Cálculo IAP = Salario Base * Fracción Días Preaviso 
                 amount = amount_base * self.notice_fact
                 self.iap_amount = round(amount) 
+
+            self.write({
+                'state': 'validate'})
 
         else:
             self.write({
@@ -267,8 +271,7 @@ class FinalSettlements(models.Model):
         #    amount = amount_base * self.notice_fact
         #    self.iap_amount = round(amount) 
 
-            self.write({
-                'state': 'validate'})
+
 
     def approve_function(self):
         self.write({
