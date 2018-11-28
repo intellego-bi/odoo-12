@@ -117,7 +117,8 @@ class FinalSettlements(models.Model):
             self.last_2_month_salary = last_2_salary
             self.last_3_month_salary = last_3_salary
 
-            cr = self._cr  # find out the correct  date of last salary of  employee
+            # Leemos la UF de los Indiocadores d ePRevired para la última Nómina
+            cr = self._cr
 
             query = """select uf from hr_indicadores hri  
                        inner join hr_payslip ps on ps.indicadores_id=hri.id
@@ -134,11 +135,14 @@ class FinalSettlements(models.Model):
 
             self.valor_uf = valor_uf
 
+            # Convertimos el tope de 90 UF a CLP 
             tope = self.valor_uf * 90
+
+            # Si el salario promedio de los 3 meses pasados supera el Tope, tomamos el Tope
             if self.average_salary > tope:
-                amount = ((tope + self.allowance) * self.worked_years)
+                amount = (tope * self.worked_years)
             else:
-                amount = ((self.average_salary + self.allowance) * self.worked_years)
+                amount = ((self.average_salary) * self.worked_years)
             self.gratuity_amount = round(amount) 
 
             self.write({
@@ -160,11 +164,15 @@ class FinalSettlements(models.Model):
             'state': 'approve'
         })
 
+        # Convertimos el tope de 90 UF a CLP
         tope = self.valor_uf * 90
+
+
+        # Si el salario promedio de los 3 meses pasados supera el Tope, tomamos el Tope
         if self.average_salary > tope:
-            amount = ((tope + int(self.allowance)) * int(self.worked_years))
+            amount = tope * self.worked_years
         else:
-            amount = ((self.average_salary + self.allowance) * self.worked_years)
+            amount = (self.average_salary * self.worked_years)
         self.gratuity_amount = round(amount) if self.state == 'approve' else 0
 
     def cancel_function(self):
