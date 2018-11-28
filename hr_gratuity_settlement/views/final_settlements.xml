@@ -80,7 +80,7 @@
             <field name="view_mode">tree,form</field>
         </record>
 
-        <menuitem id="hr_settlements" name="Liquida Finiquito" parent="employee_gratuity"
+        <menuitem id="hr_settlements_create" name="Liquida Finiquito" parent="employee_gratuity"
                   action="action_hr_settlements" sequence="2" />
 
     </data>
