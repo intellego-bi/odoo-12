@@ -72,8 +72,8 @@
                                         <field name="iap_amount" widget="monetary" options="{'currency_field': 'currency_id'}" states="validate,approve" readonly="True"/>
                                     </group>
                                     <group string="Indemnización Feriado Proporcional (IFP)">
-                                        <field name="dias_vaca_pend" attrs="{'readonly': [('state','=','approve')]}"/>
-                                        <field name="dias_vaca_prop" attrs="{'readonly': [('state','=','approve')]}"/>
+                                        <field name="dias_vaca_pend" attrs="{'readonly': [('state','in',('validate','approve'))]}"/>
+                                        <field name="dias_vaca_prop" attrs="{'readonly': [('state','in',('validate','approve'))]}"/>
                                         <field name="ifp_amount" widget="monetary" options="{'currency_field': 'currency_id'}" states="validate,approve" readonly="True"/>
                                     </group>
                                     <group string="Otras Indemnizaciones Finiquito (FIN)">
