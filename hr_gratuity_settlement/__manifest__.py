@@ -32,6 +32,7 @@
     'data': ['views/employee_gratuity_view.xml',
              'views/gratuity_sequence.xml',
              'views/other_settlements.xml',
+             'data/salary_rule_settle.xml',
              'security/ir.model.access.csv'],
     'demo': [],
     'images': ['static/description/banner.jpg'],
