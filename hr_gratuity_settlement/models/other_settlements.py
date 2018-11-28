@@ -68,7 +68,8 @@ class OtherSettlements(models.Model):
         #worked_days = delta.days # that's it
         end_date = datetime.strptime(str(datetime.now().year) + "-" + str(datetime.now().month) + "-" +str(datetime.now().day), date_format)
         start_date = datetime.strptime(str(self.joined_date.year) + "-" + str(self.joined_date.month) + "-" +str(self.joined_date.day), date_format)
-        worked_days = (end_date - start_date).days + 1    
+        worked_days = (end_date - start_date).days + 1
+        worked_years = worked_days / 365
         if worked_years >= 0:
 
             self.worked_years = worked_days
