@@ -203,18 +203,18 @@ class FinalSettlements(models.Model):
             raise exceptions.except_orm(_('No existe Solicitud de Término aprobada para este Empleado'),
                                   _('Se debe crear y aprobar una Solcitud de Término para poder calcular Finiquito'))
 
-        if self.settle_date:
+        #if self.settle_date:
 
             # Cálculo IAS = Salario Base * Años
-            if self.worked_years >= 1.0:
-                amount = amount_base * self.worked_years
-                self.ias_amount = round(amount)
-            else:
-                self.ias_amount = 0
+        #    if self.worked_years >= 1.0:
+        #        amount = amount_base * self.worked_years
+        #        self.ias_amount = round(amount)
+        #    else:
+        #        self.ias_amount = 0
 
-            # Cálculo IAP = Salario Base * Fracción Días Preaviso 
-            amount = amount_base * self.notice_fact
-            self.iap_amount = round(amount) 
+        #    # Cálculo IAP = Salario Base * Fracción Días Preaviso 
+        #    amount = amount_base * self.notice_fact
+        #    self.iap_amount = round(amount) 
 
             self.write({
                 'state': 'validate'})
