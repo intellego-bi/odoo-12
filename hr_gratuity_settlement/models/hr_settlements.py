@@ -24,7 +24,7 @@ class FinalSettlements(models.Model):
     department_id = fields.Many2one('hr.department', related="employee_id.department_id", readonly=True,
                                     string="Department")
     joined_date = fields.Date(string="Joined Date")
-    settle_date = fields.Date(string="Settlement Date", default=fields.Date.today())
+    settle_date = fields.Date(string="Settlement Date") #, default=fields.Date.today())
     worked_years = fields.Integer(string="Total Work Years")
     worked_months = fields.Integer(string="Total Work Months")
     worked_days = fields.Integer(string="Total Work Days")
@@ -70,6 +70,17 @@ class FinalSettlements(models.Model):
 
                     raise ValidationError(_('A Settlement request is already processed'
                                                 ' for this employee'))
+
+                resignation_obj = self.env['hr.resignation'].search([('employee_id', '=', rec.employee_id.id), ('state', '=', 'approved')])
+                if resignation_obj:
+                    for resignation in resignation_obj:
+                        self.notice_days = int(resignation.notice_period)
+                        self.joined_date = resignation.joined_date
+                        self.settle_date = resignation.approved_revealing_date
+                else:
+                    raise exceptions.except_orm(_('No existe Solicitud de Término aprobada para este Empleado'),
+                                          _('Se debe crear y aprobar una Solcitud de Término para poder calcular Finiquito'))
+
 
     @api.multi
     def validate_function(self):
