@@ -156,9 +156,6 @@ class FinalSettlements(models.Model):
 
     def approve_function(self):
 
-        if not self.allowance.isdigit() :
-            raise ValidationError(_('Allowance value should be numeric !!'))
-
         self.write({
             'state': 'approve'
         })
