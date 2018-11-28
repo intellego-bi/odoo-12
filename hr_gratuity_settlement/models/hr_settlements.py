@@ -155,41 +155,39 @@ class FinalSettlements(models.Model):
         #    raise exceptions.except_orm(_('No existe Solicitud de Término aprobada para este Empleado'),
         #                          _('Se debe crear y aprobar una Solcitud de Término para poder calcular Finiquito'))
 
-        self.notice_fact = 0
+        #self.notice_fact = 0
 
         # Aviso de Despido tiene menos de 30 días se paga fracción de IAP
-        if self.notice_days <= 30 and self.notice_days >= 0:
-            self.notice_fact = 1 - ( self.notice_days / 30 )
+        #if self.notice_days <= 30 and self.notice_days >= 0:
+        #    self.notice_fact = 1 - ( self.notice_days / 30 )
 
         # Convertimos el tope de 90 UF a CLP 
-        tope = self.valor_uf * 90
+        #tope = self.valor_uf * 90
 
         # Si el salario promedio de los 3 meses pasados supera el Tope, tomamos el Tope
-        if self.average_salary > tope:
-            amount_base = tope
-        else:
-            amount_base = self.average_salary
+        #if self.average_salary > tope:
+        #    amount_base = tope
+        #else:
+        #    amount_base = self.average_salary
 
         # Cálculo IAS = Salario Base * Años
-        if self.worked_years >= 1.0:
-            amount = amount_base * self.worked_years
-            self.ias_amount = round(amount)
-        else:
-            self.ias_amount = 0
+        #if self.worked_years >= 1.0:
+        #    amount = amount_base * self.worked_years
+        #    self.ias_amount = round(amount)
+        #else:
+        #    self.ias_amount = 0
 
         # Cálculo IAP = Salario Base * Fracción Días Preaviso 
-        amount = amount_base * self.notice_fact
-        self.iap_amount = round(amount) 
+        #amount = amount_base * self.notice_fact
+        #self.iap_amount = round(amount) 
 
         self.write({
             'state': 'validate'})
 
     def approve_function(self):
-
         self.write({
             'state': 'approve'
         })
-
         # Convertimos el tope de 90 UF a CLP
         #tope = self.valor_uf * 90
 
@@ -216,73 +214,6 @@ class FinalSettlements(models.Model):
         self.write({
             'state': 'draft'
         })
-                resignation_obj = self.env['hr.resignation'].search([('employee_id', '=', rec.employee_id.id), ('state', '=', 'approved')])
-                if resignation_obj:
-                    for resignation in resignation_obj:
-                        self.notice_days = int(resignation.notice_period)
-                        self.joined_date = resignation.joined_date
-                        self.settle_date = resignation.approved_revealing_date
-
-                    # calculating the years of work by the employee
-                    end_date = datetime.strptime(str(self.settle_date.year) + "-" + str(self.settle_date.month) + "-" +str(self.settle_date.day), date_format)
-                    start_date = datetime.strptime(str(self.joined_date.year) + "-" + str(self.joined_date.month) + "-" +str(self.joined_date.day), date_format)
-                    worked_days = (end_date - start_date).days - 1
-                    worked_years = int(round(worked_days / 365))
-                    worked_months = int(round(worked_days / 365 * 12))
-                    self.worked_years = worked_years
-                    self.worked_months = worked_months
-                    self.worked_days = worked_days
-
-                    cr = self._cr  # search last 3 salaries of employee from Payslips
-
-                    query = """select amount from hr_payslip_line psl 
-                               inner join hr_payslip ps on ps.id=psl.slip_id
-                               where ps.employee_id="""+str(rec.employee_id.id)+\
-                               """and ps.state='done' and psl.code='HAB' 
-                               order by ps.date_from desc limit 3"""
-
-                    cr.execute(query)
-                    data = cr.fetchall()
-                    if data:
-                        last_salary = data[0][0]
-                        last_2_salary = data[1][0]
-                        last_3_salary = data[2][0]
-                    else:
-                        last_salary = 0
-                        last_2_salary = 0
-                        last_3_salary = 0
-
-                    ls_a = 1
-                    if last_2_salary > 0:
-                        ls_b = 1
-                    if last_3_salary > 0:
-                        ls_c = 1   
-
-                    self.average_salary = ( last_salary + last_2_salary + last_3_salary ) / ( ls_a + ls_b + ls_c )
-                    self.last_month_salary = last_salary
-                    self.last_2_month_salary = last_2_salary
-                    self.last_3_month_salary = last_3_salary
-
-                    # Leemos la UF de los Indiocadores de Previred para la última Nómina
-                    cr = self._cr
-                    query = """select uf from hr_indicadores hri  
-                               inner join hr_payslip ps on ps.indicadores_id=hri.id
-                               where ps.employee_id="""+str(rec.employee_id.id)+\
-                               """and ps.state='done' 
-                               order by ps.date_from desc limit 1"""
-
-                    cr.execute(query)
-                    data = cr.fetchall()
-                    if data:
-                        valor_uf = data[0][0]
-                    else:
-                        valor_uf = 0
-
-                    self.valor_uf = valor_uf
-                else:
-                    raise exceptions.except_orm(_('No existe Solicitud de Término aprobada para este Empleado'),
-                                          _('Se debe crear y aprobar una Solcitud de Término para poder calcular Finiquito'))
-
         self.worked_years = 0
         self.worked_months = 0
         self.worked_days = 0
@@ -290,6 +221,7 @@ class FinalSettlements(models.Model):
         self.iap_amount = 0
         self.notice_days = 0
         self.notice_fact = 0
+
 
     #@api.multi
     #def unlink(self):
