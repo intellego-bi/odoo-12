@@ -25,8 +25,8 @@ class FinalSettlements(models.Model):
                                     string="Department")
     joined_date = fields.Date(string="Joined Date")
     settle_date = fields.Date(string="Settlement Date")
-    worked_years = fields.Float(string="Total Work Years")
-    worked_months = fields.Float(string="Total Work Months")
+    worked_years = fields.Integer(string="Total Work Years")
+    worked_months = fields.Integer(string="Total Work Months")
     worked_days = fields.Integer(string="Total Work Days")
     last_month_salary = fields.Integer(string="Last Salary", required=True, default=0)
     allowance = fields.Char(string="Dearness Allowance", default=0)
@@ -65,8 +65,8 @@ class FinalSettlements(models.Model):
         end_date = datetime.strptime(str(self.settle_date.year) + "-" + str(self.settle_date.month) + "-" +str(self.settle_date.day), date_format)
         start_date = datetime.strptime(str(self.joined_date.year) + "-" + str(self.joined_date.month) + "-" +str(self.joined_date.day), date_format)
         worked_days = (end_date - start_date).days - 1
-        worked_years = worked_days / 365
-        worked_months = worked_days / 365 * 12
+        worked_years = int(round(worked_days / 365))
+        worked_months = int(round(worked_days / 365 * 12))
         if worked_years >= 0.5:
 
             self.worked_years = worked_years
