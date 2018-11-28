@@ -6,7 +6,7 @@
 		<record id="hr_rule_fin" model="hr.salary.rule">
             <field name="code">FIN</field>
             <field name="name">Finiquito</field>
-            <field name="category_id" ref="NOIMPO"/>
+            <field name="category_id" ref="l10n_cl_hr.NOIMPO"/>
             <field name="amount_select">code</field>
             <field name="amount_python_compute">result = inputs.FIN and + (inputs.FIN.amount)</field>
             <field name="appears_on_payslip" eval="True"/>
