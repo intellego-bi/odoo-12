@@ -50,6 +50,8 @@
                                         <field name="reason" required="True" attrs="{'readonly': [('state','=','approve')]}"/>
                                         <field name="joined_date" required="True" attrs="{'readonly': [('state','=','approve')]}"/>
                                         <field name="worked_years"  required="True" readonly="True"/>
+                                        <field name="worked_months"  required="True" readonly="True"/>
+                                        <field name="worked_days"  required="True" readonly="True"/>
                                         <field name="allowance" states="validate,approve" attrs="{'readonly': [('state','=','approve')]}"/>
                                     </group>
                                     <group>
