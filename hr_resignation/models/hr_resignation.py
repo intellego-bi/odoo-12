@@ -39,6 +39,7 @@ class HrResignation(models.Model):
         if self.employee_id.joining_date:
              self.joined_date = self.employee_id.joining_date
         else:
+            self.joined_date = datetime.now()
             raise ValidationError(_('Actualice la Fehca de Vinculación en el'
                           ' maestro de Empleados y vuelva a generar la solicitud'))
 
