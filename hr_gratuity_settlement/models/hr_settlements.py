@@ -31,7 +31,8 @@ class FinalSettlements(models.Model):
     last_month_salary = fields.Integer(string="Last Salary", required=True, default=0)
     last_2_month_salary = fields.Integer(string="2nd Last Salary ", required=False, default=0)
     last_3_month_salary = fields.Integer(string="3rd Last Salary ", required=False, default=0)
-    valor_uf = fields.Integer(string="Valor UF", required="True")
+    average_salary = fields.Integer(string="Average Salary (past 3 months)", required=True, default=0)
+    valor_uf = fields.Float(string="Valor UF", required="True")
     allowance = fields.Char(string="Dearness Allowance", default=0)
     gratuity_amount = fields.Integer(string="Gratuity Payable", required=True, default=0, readony=True, help=("Gratuity is calculated based on 							the equation Last salary * Number of years of service"))
 
@@ -100,6 +101,13 @@ class FinalSettlements(models.Model):
                 last_2_salary = 0
                 last_3_salary = 0
 
+            ls_a = 1
+            if last_2_salary > 0:
+               ls_b = 1
+            if last_3_salary > 0:
+               ls_c = 1   
+
+            self.average_salary = ( last_salary + last_2_salary + last_3_salary ) / ( ls_a + ls_b + ls_c )
             self.last_month_salary = last_salary
             self.last_2_month_salary = last_2_salary
             self.last_3_month_salary = last_3_salary
@@ -141,7 +149,11 @@ class FinalSettlements(models.Model):
             'state': 'approve'
         })
 
-        amount = ((self.last_month_salary + int(self.allowance)) * int(self.worked_years) * 1) / 1
+        tope = self.valor_uf * 90
+        if self.average_salary > tope:
+            amount = ((tope + int(self.allowance)) * int(self.worked_years))
+        else:
+            amount = ((self.average_salary + int(self.allowance)) * int(self.worked_years) * 1) / 1
         self.gratuity_amount = round(amount) if self.state == 'approve' else 0
 
     def cancel_function(self):
