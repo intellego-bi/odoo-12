@@ -35,6 +35,11 @@ class FinalSettlements(models.Model):
     valor_uf = fields.Float(string="Valor UF", required="True")
     allowance = fields.Char(string="Dearness Allowance", default=0)
     gratuity_amount = fields.Integer(string="Gratuity Payable", required=True, default=0, readony=True, help=("Gratuity is calculated based on 							the equation Last salary * Number of years of service"))
+    company_id = fields.Many2one('res.company', 'Company', readonly=True,
+                                 default=lambda self: self.env.user.company_id,
+                                 states={'draft': [('readonly', False)]})
+    currency_id = fields.Many2one('res.currency', string='Currency', required=True,
+                                  default=lambda self: self.env.user.company_id.currency_id)
 
     reason = fields.Selection([('renuncia', 'Renuncia Voluntaria'),
                                ('despido', 'Despido')], string="Settlement Reason", required="True")
@@ -136,6 +141,8 @@ class FinalSettlements(models.Model):
             self.write({
                 'state': 'draft'})
             self.worked_years = worked_years
+            self.worked_months = worked_months
+            self.worked_days = worked_days
 
             raise exceptions.except_orm(_('Employee Working Period is less than 1 Year'),
                                   _('Only an Employee with minimum 1 years of working, will get the Settlement advantage'))
