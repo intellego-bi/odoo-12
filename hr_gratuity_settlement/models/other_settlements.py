@@ -59,7 +59,7 @@ class OtherSettlements(models.Model):
         date_format = "%Y/%m/%d"
         #worked_years = int(datetime.datetime.now().year) - int(str(self.joined_date).split('-')[0])
         #worked_days = (datetime.datetime.now() - datetime.datetime.self.joined_date)
-        a = datetime.strptime(datetime.now(), date_format)
+        a = datetime.strptime(now(), date_format)
         b = datetime.strptime(self.joined_date, date_format)
         delta = a - b
         worked_days = delta.days # that's it
