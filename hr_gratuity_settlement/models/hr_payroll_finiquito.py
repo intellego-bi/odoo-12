@@ -65,7 +65,7 @@ class HrPayslip(models.Model):
         for settle in settle_obj:
             for result in res:
                 if result.get('code') == 'FIN':
-                    result['amount'] = settle.amount
+                    result['amount'] = settle.gratuity_amount
                     result['other_settlements_id'] = settle.id
         return res
 
