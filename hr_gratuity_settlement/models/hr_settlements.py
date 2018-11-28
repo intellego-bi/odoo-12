@@ -134,6 +134,13 @@ class FinalSettlements(models.Model):
 
             self.valor_uf = valor_uf
 
+            tope = self.valor_uf * 90
+            if self.average_salary > tope:
+                amount = ((tope + int(self.allowance)) * int(self.worked_years))
+            else:
+                amount = ((self.average_salary + int(self.allowance)) * int(self.worked_years) * 1) / 1
+            self.gratuity_amount = round(amount) 
+
             self.write({
                 'state': 'validate'})
         else:
