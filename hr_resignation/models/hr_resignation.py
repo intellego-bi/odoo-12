@@ -95,6 +95,7 @@ class HrResignation(models.Model):
 
     @api.multi
     def confirm_resignation(self):
+        self.joined_date = self.employee_id.joining_date if self.employee_id.joining_date else ''
         for rec in self:
             rec.state = 'confirm'
             rec.resign_confirm_date = str(datetime.now())
@@ -112,6 +113,7 @@ class HrResignation(models.Model):
 
     @api.multi
     def approve_resignation(self):
+        self.joined_date = self.employee_id.joining_date if self.employee_id.joining_date else ''
         for rec in self:
             if not rec.approved_revealing_date:
                 raise ValidationError(_('Enter Approved Revealing Date'))
