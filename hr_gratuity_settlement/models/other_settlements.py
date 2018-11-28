@@ -61,10 +61,16 @@ class OtherSettlements(models.Model):
             self.worked_years = worked_years
 
             cr = self._cr  # find out the correct  date of last salary of  employee
+            #query = """select amount from hr_payslip_line psl 
+            #           inner join hr_payslip ps on ps.id=psl.slip_id
+            #           where ps.employee_id="""+str(self.employee_name.id)+\
+            #           """and ps.state='done' and psl.code='NET' 
+            #           order by ps.date_from desc limit 1"""
+
             query = """select amount from hr_payslip_line psl 
                        inner join hr_payslip ps on ps.id=psl.slip_id
                        where ps.employee_id="""+str(self.employee_name.id)+\
-                       """and ps.state='done' and psl.code='NET' 
+                       """and ps.state='done' and psl.code='HAB' 
                        order by ps.date_from desc limit 1"""
 
             cr.execute(query)
