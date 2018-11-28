@@ -23,7 +23,7 @@ class FinalSettlements(models.Model):
     employee_id = fields.Many2one('hr.employee', string='Employee', required=True)
     department_id = fields.Many2one('hr.department', related="employee_id.department_id", readonly=True,
                                     string="Department")
-    resignation_id = fields.Many2one('hr.resignation', string='Solicitud de Término', required=True)
+    resignation_id = fields.Many2one('hr.resignation', string='Solicitud de Término')
     joined_date = fields.Date(string="Joined Date")
     settle_date = fields.Date(string="Settlement Date") #, default=fields.Date.today())
     worked_years = fields.Integer(string="Total Work Years")
@@ -35,7 +35,7 @@ class FinalSettlements(models.Model):
     last_2_month_salary = fields.Float(string="2nd Last Salary ")
     last_3_month_salary = fields.Float(string="3rd Last Salary ")
     average_salary = fields.Float(string="Average Salary (past 3 months)")
-    valor_uf = fields.Float(string="Valor UF", required=True)
+    valor_uf = fields.Float(string="Valor UF")
     dias_vaca_pend = fields.Float(string="Días de Vacaciones Pendientes")
     dias_vaca_prop = fields.Float(string="Días Feriado Proporcional")
     allowance = fields.Float(string="Dearness Allowance", default=0)
