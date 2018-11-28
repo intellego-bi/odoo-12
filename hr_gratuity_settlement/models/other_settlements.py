@@ -59,8 +59,8 @@ class OtherSettlements(models.Model):
         
         #worked_years = int(datetime.datetime.now().year) - int(str(self.joined_date).split('-')[0])
         #worked_days = (datetime.datetime.now() - datetime.datetime.self.joined_date)
-        start_date = datetime.strptime(days.start_date, tools.DEFAULT_SERVER_DATE_FORMAT)
-        end_date = datetime.strptime(days.end_date, tools.DEFAULT_SERVER_DATE_FORMAT)
+        #start_date = datetime.strptime(days.start_date, tools.DEFAULT_SERVER_DATE_FORMAT)
+        #end_date = datetime.strptime(days.end_date, tools.DEFAULT_SERVER_DATE_FORMAT)
 
         #a = datetime.strptime(datetime.now(), date_format)
         #b = datetime.strptime(self.joined_date, date_format)
