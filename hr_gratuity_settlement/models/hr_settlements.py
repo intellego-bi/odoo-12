@@ -77,6 +77,65 @@ class FinalSettlements(models.Model):
                         self.notice_days = int(resignation.notice_period)
                         self.joined_date = resignation.joined_date
                         self.settle_date = resignation.approved_revealing_date
+
+                    # calculating the years of work by the employee
+                    end_date = datetime.strptime(str(self.settle_date.year) + "-" + str(self.settle_date.month) + "-" +str(self.settle_date.day), date_format)
+                    start_date = datetime.strptime(str(self.joined_date.year) + "-" + str(self.joined_date.month) + "-" +str(self.joined_date.day), date_format)
+                    worked_days = (end_date - start_date).days - 1
+                    worked_years = int(round(worked_days / 365))
+                    worked_months = int(round(worked_days / 365 * 12))
+                    if worked_years >= 1.0:
+                        self.worked_years = worked_years
+                        self.worked_months = worked_months
+                        self.worked_days = worked_days
+
+                        cr = self._cr  # search last 3 salaries of employee from Payslips
+
+                        query = """select amount from hr_payslip_line psl 
+                                   inner join hr_payslip ps on ps.id=psl.slip_id
+                                   where ps.employee_id="""+str(self.employee_id.id)+\
+                                   """and ps.state='done' and psl.code='HAB' 
+                                   order by ps.date_from desc limit 3"""
+
+                        cr.execute(query)
+                        data = cr.fetchall()
+                        if data:
+                             last_salary = data[0][0]
+                             last_2_salary = data[1][0]
+                             last_3_salary = data[2][0]
+                        else:
+                            last_salary = 0
+                            last_2_salary = 0
+                            last_3_salary = 0
+
+                        ls_a = 1
+                        if last_2_salary > 0:
+                           ls_b = 1
+                        if last_3_salary > 0:
+                           ls_c = 1   
+
+                        self.average_salary = ( last_salary + last_2_salary + last_3_salary ) / ( ls_a + ls_b + ls_c )
+                        self.last_month_salary = last_salary
+                        self.last_2_month_salary = last_2_salary
+                        self.last_3_month_salary = last_3_salary
+
+                        # Leemos la UF de los Indiocadores de Previred para la última Nómina
+                        cr = self._cr
+
+                        query = """select uf from hr_indicadores hri  
+                                   inner join hr_payslip ps on ps.indicadores_id=hri.id
+                                   where ps.employee_id="""+str(self.employee_id.id)+\
+                                   """and ps.state='done' 
+                                   order by ps.date_from desc limit 1"""
+
+                        cr.execute(query)
+                        data = cr.fetchall()
+                        if data:
+                             valor_uf = data[0][0]
+                        else:
+                            valor_uf = 0
+
+                        self.valor_uf = valor_uf
                 else:
                     raise exceptions.except_orm(_('No existe Solicitud de Término aprobada para este Empleado'),
                                           _('Se debe crear y aprobar una Solcitud de Término para poder calcular Finiquito'))
@@ -101,71 +160,6 @@ class FinalSettlements(models.Model):
         if self.notice_days <= 30 and self.notice_days >= 0:
             self.notice_fact = 1 - ( self.notice_days / 30 )
 
-        # calculating the years of work by the employee
-        #end_date = datetime.strptime(str(datetime.now().year) + "-" + str(datetime.now().month) + "-" +str(datetime.now().day), date_format)
-        end_date = datetime.strptime(str(self.settle_date.year) + "-" + str(self.settle_date.month) + "-" +str(self.settle_date.day), date_format)
-        start_date = datetime.strptime(str(self.joined_date.year) + "-" + str(self.joined_date.month) + "-" +str(self.joined_date.day), date_format)
-        worked_days = (end_date - start_date).days - 1
-        worked_years = int(round(worked_days / 365))
-        worked_months = int(round(worked_days / 365 * 12))
-        if worked_years >= 1.0:
-
-            self.worked_years = worked_years
-            self.worked_months = worked_months
-            self.worked_days = worked_days
-
-            cr = self._cr  # find out the correct  date of last salary of  employee
-            #query = """select amount from hr_payslip_line psl 
-            #           inner join hr_payslip ps on ps.id=psl.slip_id
-            #           where ps.employee_id="""+str(self.employee_name.id)+\
-            #           """and ps.state='done' and psl.code='NET' 
-            #           order by ps.date_from desc limit 1"""
-
-            query = """select amount from hr_payslip_line psl 
-                       inner join hr_payslip ps on ps.id=psl.slip_id
-                       where ps.employee_id="""+str(self.employee_id.id)+\
-                       """and ps.state='done' and psl.code='HAB' 
-                       order by ps.date_from desc limit 3"""
-
-            cr.execute(query)
-            data = cr.fetchall()
-            if data:
-                 last_salary = data[0][0]
-                 last_2_salary = data[1][0]
-                 last_3_salary = data[2][0]
-            else:
-                last_salary = 0
-                last_2_salary = 0
-                last_3_salary = 0
-
-            ls_a = 1
-            if last_2_salary > 0:
-               ls_b = 1
-            if last_3_salary > 0:
-               ls_c = 1   
-
-            self.average_salary = ( last_salary + last_2_salary + last_3_salary ) / ( ls_a + ls_b + ls_c )
-            self.last_month_salary = last_salary
-            self.last_2_month_salary = last_2_salary
-            self.last_3_month_salary = last_3_salary
-
-            # Leemos la UF de los Indiocadores d ePRevired para la última Nómina
-            cr = self._cr
-
-            query = """select uf from hr_indicadores hri  
-                       inner join hr_payslip ps on ps.indicadores_id=hri.id
-                       where ps.employee_id="""+str(self.employee_id.id)+\
-                       """and ps.state='done' 
-                       order by ps.date_from desc limit 1"""
-
-            cr.execute(query)
-            data = cr.fetchall()
-            if data:
-                 valor_uf = data[0][0]
-            else:
-                valor_uf = 0
-
-            self.valor_uf = valor_uf
 
             # Convertimos el tope de 90 UF a CLP 
             tope = self.valor_uf * 90
