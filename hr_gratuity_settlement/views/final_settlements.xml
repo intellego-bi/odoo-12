@@ -67,8 +67,8 @@
                                         <field name="ias_amount" widget="monetary" options="{'currency_field': 'currency_id'}" states="validate,approve" readonly="True"/>
                                     </group>
                                     <group string="Indemnización Aviso Previo (IAP)">
-                                        <field name="notice_days" readonly="True"/>
-                                        <field name="notice_fact" readonly="True"/>
+                                        <field name="notice_days" readonly="True" />
+                                        <field name="notice_fact" attrs="{'readonly': [('state','in',('validate','approve'))]}"/>
                                         <field name="iap_amount" widget="monetary" options="{'currency_field': 'currency_id'}" states="validate,approve" readonly="True"/>
                                     </group>
                                     <group string="Indemnización Feriado Proporcional (IFP)">
