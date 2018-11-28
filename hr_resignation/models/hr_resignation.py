@@ -22,8 +22,7 @@ class HrResignation(models.Model):
                                   help='Name of the employee for whom the request is creating')
     department_id = fields.Many2one('hr.department', string="Department", related='employee_id.department_id',
                                     help='Department of the employee')
-    joined_date = fields.Date(string="Join Date", required=True,
-                              help='Joining date of the employee')
+    joined_date = fields.Date(string="Join Date", help='Joining date of the employee')
     expected_revealing_date = fields.Date(string="Revealing Date", required=True,
                                           help='Date on which he is revealing from the company')
     resign_confirm_date = fields.Date(string="Resign confirm date", help='Date on which the request is confirmed')
@@ -99,6 +98,9 @@ class HrResignation(models.Model):
         for rec in self:
             rec.state = 'confirm'
             rec.resign_confirm_date = str(datetime.now())
+            if not rec.employee_id.joining_date:
+                raise ValidationError(_('Actualice la Fehca de Vinculación en el'
+                              ' maestro de Empleados y vuelva a generar la solicitud'))
 
     @api.multi
     def cancel_resignation(self):
