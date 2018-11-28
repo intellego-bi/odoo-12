@@ -71,7 +71,7 @@ class FinalSettlements(models.Model):
         worked_days = (end_date - start_date).days - 1
         worked_years = int(round(worked_days / 365))
         worked_months = int(round(worked_days / 365 * 12))
-        if worked_years >= 0.5:
+        if worked_years >= 1.0:
 
             self.worked_years = worked_years
             self.worked_months = worked_months
