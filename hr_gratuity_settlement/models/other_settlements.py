@@ -23,6 +23,7 @@ class OtherSettlements(models.Model):
     employee_name = fields.Many2one('hr.employee', string='Employee', required=True)
     joined_date = fields.Date(string="Joined Date")
     worked_years = fields.Integer(string="Total Work Years")
+    worked_months = fields.Integer(string="Total Work Months")
     worked_days = fields.Integer(string="Total Work Days")
     last_month_salary = fields.Integer(string="Last Salary", required=True, default=0)
     allowance = fields.Char(string="Dearness Allowance", default=0)
@@ -56,21 +57,13 @@ class OtherSettlements(models.Model):
     @api.multi
     def validate_function(self):
         # calculating the years of work by the employee
-        
-        #worked_years = int(datetime.datetime.now().year) - int(str(self.joined_date).split('-')[0])
-        #worked_days = (datetime.datetime.now() - datetime.datetime.self.joined_date)
-        #start_date = datetime.strptime(days.start_date, tools.DEFAULT_SERVER_DATE_FORMAT)
-        #end_date = datetime.strptime(days.end_date, tools.DEFAULT_SERVER_DATE_FORMAT)
-
-        #a = datetime.strptime(datetime.now(), date_format)
-        #b = datetime.strptime(self.joined_date, date_format)
-        #delta = a - b
-        #worked_days = delta.days # that's it
+   
         end_date = datetime.strptime(str(datetime.now().year) + "-" + str(datetime.now().month) + "-" +str(datetime.now().day), date_format)
         start_date = datetime.strptime(str(self.joined_date.year) + "-" + str(self.joined_date.month) + "-" +str(self.joined_date.day), date_format)
         worked_days = (end_date - start_date).days + 1
         worked_years = worked_days / 365
-        if worked_years >= 0:
+        worked_months = worked_days / 365 * 12
+        if worked_years >= 0.5:
 
             self.worked_years = worked_days
 
