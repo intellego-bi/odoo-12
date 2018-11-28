@@ -50,7 +50,7 @@ class FinalSettlements(models.Model):
     currency_id = fields.Many2one('res.currency', string='Currency', required=True,
                                   default=lambda self: self.env.user.company_id.currency_id)
 
-    reason = fields.Selection([('art159', 'Renuncia Trabajador (Art. 159)'), ('art160', 'Despido Justificado (Art. 160)'), ('art161', 'Despido Injustificado (Art. 161)')], string="Settlement Reason", required=True, readony=True)
+    reason = fields.Selection([('art159', 'Renuncia Trabajador (Art. 159)'), ('art160', 'Despido Justificado (Art. 160)'), ('art161', 'Despido Injustificado (Art. 161)')], string="Settlement Reason", readony=True)
     currency_id = fields.Many2one('res.currency', string='Currency', required=True,
                                   default=lambda self: self.env.user.company_id.currency_id)
     company_id = fields.Many2one('res.company', 'Company', default=lambda self: self.env.user.company_id)
