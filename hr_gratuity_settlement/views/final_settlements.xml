@@ -60,6 +60,7 @@
                                         <field name="last_month_salary"  states="validate,approve" attrs="{'readonly': [('state','=','approve')]}"/>
                                         <field name="last_2_month_salary"  states="validate,approve" attrs="{'readonly': [('state','=','approve')]}"/>
                                         <field name="last_3_month_salary"  states="validate,approve" attrs="{'readonly': [('state','=','approve')]}"/>
+                                        <field name="average_salary"  states="validate,approve" attrs="{'readonly': [('state','=','approve')]}"/>
                                         <field name="valor_uf"  states="validate,approve" attrs="{'readonly': [('state','=','approve')]}"/>
                                         <field name="gratuity_amount" states="approve" readonly="True"/>
                                     </group>
