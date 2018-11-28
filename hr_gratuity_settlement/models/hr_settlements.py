@@ -75,10 +75,15 @@ class FinalSettlements(models.Model):
     def validate_function(self):
         # Determine previous notice days (from Resignation form)
         resignation_obj = self.env['hr.resignation'].search([('employee_id', '=', self.employee_id.id), ('state', '=', 'approved')])
-        for resignation in resignation_obj:
-            self.notice_days = int(resignation.notice_period)
-            self.joined_date = resignation.joined_date
-            self.settle_date = resignation.approved_revealing_date
+        if resignation_obj:
+            for resignation in resignation_obj:
+                self.notice_days = int(resignation.notice_period)
+                self.joined_date = resignation.joined_date
+                self.settle_date = resignation.approved_revealing_date
+        else:
+            raise exceptions.except_orm(_('No existe Solicitud de Término aprobada para este Empleado'),
+                                  _('Se debe crear y aprobar una Solcitud de Término para poder calcular Finiquito'))
+
         self.notice_fact = 0
 
         # Aviso de Despido tiene menos de 30 días se paga fracción de IAP
