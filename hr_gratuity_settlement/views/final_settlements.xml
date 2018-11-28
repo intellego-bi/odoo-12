@@ -66,8 +66,14 @@
                                         <field name="worked_days"  required="True" readonly="True"/>
                                     </group>
                                     <group>
-                                        <field name="gratuity_amount" widget="monetary" options="{'currency_field': 'currency_id'}" states="validate,approve" readonly="True"/>
+                                        <field name="ias_amount" widget="monetary" options="{'currency_field': 'currency_id'}" states="validate,approve" readonly="True"/>
                                     </group>
+                                    <group>
+                                        <field name="notice_days" states="validate,approve" readonly="True"/>
+                                        <field name="notice_fact" states="validate,approve" readonly="True"/>
+                                        <field name="iap_amount" widget="monetary" options="{'currency_field': 'currency_id'}" states="validate,approve" readonly="True"/>
+                                    </group>
+
                                 </group>
                         </sheet>
                     <div class="oe_chatter">

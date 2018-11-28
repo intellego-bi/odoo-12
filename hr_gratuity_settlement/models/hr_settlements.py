@@ -28,6 +28,8 @@ class FinalSettlements(models.Model):
     worked_years = fields.Integer(string="Total Work Years")
     worked_months = fields.Integer(string="Total Work Months")
     worked_days = fields.Integer(string="Total Work Days")
+    notice_days = fields.Integer(string="Days of Notice before termination")
+    notice_fact = fields.Float(string="Fracción de pago Aviso Previo")
     last_month_salary = fields.Float(string="Last Salary", required=True, default=0)
     last_2_month_salary = fields.Float(string="2nd Last Salary ", required=False, default=0)
     last_3_month_salary = fields.Float(string="3rd Last Salary ", required=False, default=0)
@@ -35,6 +37,9 @@ class FinalSettlements(models.Model):
     valor_uf = fields.Float(string="Valor UF", required="True")
     allowance = fields.Float(string="Dearness Allowance", default=0)
     gratuity_amount = fields.Float(string="Gratuity Payable", required=True, default=0, readony=True, help=("Gratuity is calculated based on 							the equation Last salary * Number of years of service"))
+    ias_amount = fields.Float(string="Indeminización Años Servicio (IAS)", required=False, default=0, readony=True, help=("Gratuity is calculated based on 							the equation Last salary * Number of years of service"))
+    iap_amount = fields.Float(string="Indeminización Aviso Previo (IAP)", required=False, default=0, readony=True, help=("Pago aviso previo despido 							correspondiente a 30 días"))
+
     company_id = fields.Many2one('res.company', 'Company', readonly=True,
                                  default=lambda self: self.env.user.company_id,
                                  states={'draft': [('readonly', False)]})
@@ -68,8 +73,17 @@ class FinalSettlements(models.Model):
 
     @api.multi
     def validate_function(self):
+        # Determine previous notice days (from Resignation form)
+        resignation_obj = self.env['hr.resignation'].search([('employee_id', '=', self.employee_id.id), ('state', '=', 'approved')])
+        for resignation in resignation_obj:
+            self.notice_days = int(resignation.notice_period)
+        self.notice_fact = 0
+
+        # Aviso de Despido tiene menos de 30 días se paga fracción de IAP
+        if self.notice_days <= 30 and self.notice_days >= 0:
+            self.notice_fact = 1 - ( self.notice_days / 30 )
+
         # calculating the years of work by the employee
-   
         #end_date = datetime.strptime(str(datetime.now().year) + "-" + str(datetime.now().month) + "-" +str(datetime.now().day), date_format)
         end_date = datetime.strptime(str(self.settle_date.year) + "-" + str(self.settle_date.month) + "-" +str(self.settle_date.day), date_format)
         start_date = datetime.strptime(str(self.joined_date.year) + "-" + str(self.joined_date.month) + "-" +str(self.joined_date.day), date_format)
@@ -117,7 +131,7 @@ class FinalSettlements(models.Model):
             self.last_2_month_salary = last_2_salary
             self.last_3_month_salary = last_3_salary
 
-            # Leemos la UF de los Indiocadores d ePRevired para la �ltima N�mina
+            # Leemos la UF de los Indiocadores d ePRevired para la última Nómina
             cr = self._cr
 
             query = """select uf from hr_indicadores hri  
@@ -140,10 +154,18 @@ class FinalSettlements(models.Model):
 
             # Si el salario promedio de los 3 meses pasados supera el Tope, tomamos el Tope
             if self.average_salary > tope:
-                amount = (tope * self.worked_years)
+                amount_base = tope
             else:
-                amount = ((self.average_salary) * self.worked_years)
-            self.gratuity_amount = round(amount) 
+                amount_base = self.average_salary
+
+            # Cálculo IAS = Salario Base * Años 
+            amount = amount_base * self.worked_years
+            self.ias_amount = round(amount) 
+
+            # Cálculo IAP = Salario Base * Fracción Días Preaviso 
+            amount = amount_base * self.notice_fact
+            self.iap_amount = round(amount) 
+
 
             self.write({
                 'state': 'validate'})
@@ -167,13 +189,19 @@ class FinalSettlements(models.Model):
         # Convertimos el tope de 90 UF a CLP
         tope = self.valor_uf * 90
 
-
         # Si el salario promedio de los 3 meses pasados supera el Tope, tomamos el Tope
         if self.average_salary > tope:
-            amount = tope * self.worked_years
+            amount_base = tope
         else:
-            amount = (self.average_salary * self.worked_years)
-        self.gratuity_amount = round(amount) if self.state == 'approve' else 0
+            amount_base = self.average_salary
+
+        # Cálculo IAS = Salario Base * Años 
+        amount = amount_base * self.worked_years
+        self.ias_amount = round(amount) if self.state == 'approve' else 0
+
+        # Cálculo IAP = Salario Base * Fracción Días Preaviso 
+        amount = amount_base * self.notice_fact
+        self.iap_amount = round(amount) if self.state == 'approve' else 0
 
     def cancel_function(self):
         self.write({
@@ -187,6 +215,10 @@ class FinalSettlements(models.Model):
         self.worked_years = 0
         self.worked_months = 0
         self.worked_days = 0
+        self.ias_amount = 0
+        self.iap_amount = 0
+        self.notice_days = 0
+        self.notice_fact = 0
 
     #@api.multi
     #def unlink(self):
