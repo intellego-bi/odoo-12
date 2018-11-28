@@ -60,8 +60,10 @@ class HrResignation(models.Model):
         # Check whether any resignation request already exists
         for rec in self:
             if rec.employee_id:
+                #resignation_request = self.env['hr.resignation'].search([('employee_id', '=', rec.employee_id.id),
+                #                                                         ('state', 'in', ['confirm', 'approved'])])
                 resignation_request = self.env['hr.resignation'].search([('employee_id', '=', rec.employee_id.id),
-                                                                         ('state', 'in', ['confirm', 'approved'])])
+                                                                         ('state', 'in', ['payslip'])])
                 if resignation_request:
                     raise ValidationError(_('There is a resignation request in confirmed or'
                                             ' approved state for this employee'))
@@ -86,7 +88,7 @@ class HrResignation(models.Model):
                 raise ValidationError(_('There is a resignation request in confirmed or'
                                         ' approved state for this employee'))
             if rec.joined_date >= rec.expected_revealing_date:
-                raise ValidationError(_('Revealing date must be anterior to joining date'))
+                raise ValidationError(_('Error: Revealing date cannot be before Joining Date'))
 
     @api.multi
     def confirm_resignation(self):
@@ -111,7 +113,7 @@ class HrResignation(models.Model):
                 raise ValidationError(_('Enter Approved Revealing Date'))
             if rec.approved_revealing_date and rec.resign_confirm_date:
                 if rec.approved_revealing_date <= rec.resign_confirm_date:
-                    raise ValidationError(_('Approved revealing date must be anterior to confirmed date'))
+                    raise ValidationError(_('Approved Revealing Date must be before Confirmed Date'))
                 rec.state = 'approved'
 
 
