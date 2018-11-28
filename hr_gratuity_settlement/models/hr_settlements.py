@@ -154,14 +154,14 @@ class FinalSettlements(models.Model):
                         amount_base = self.average_salary
 
                     # Cálculo IAS = Salario Base * Años
-                    if self.worked_years >= 1.0 and  self.reason = 'art161':
+                    if self.worked_years >= 1.0 and  rec.reason == 'art161':
                         amount = amount_base * self.worked_years
                         self.ias_amount = round(amount)
                     else:
                         self.ias_amount = 0
 
                     # Cálculo IAP = Salario Base * Fracción Días Preaviso
-                    if self.reason != 'art159':
+                    if rec.reason != 'art159':
                         amount = amount_base * self.notice_fact
                         self.iap_amount = round(amount) 
                     else:
