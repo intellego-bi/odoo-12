@@ -193,7 +193,8 @@ class FinalSettlements(models.Model):
                 self.joined_date = resignation.joined_date
                 self.settle_date = resignation.approved_revealing_date
                 self.reason = resignation.reason
-                self.resignation_id = resignation.id
+                self.resignation_id = resignation.name
+
 
             self.notice_fact = 0
 
