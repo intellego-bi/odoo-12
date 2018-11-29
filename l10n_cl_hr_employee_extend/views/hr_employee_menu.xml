@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <menuitem id="employee_report_menu" name="Reports" parent="hr.menu_hr_root" sequence="30"
+                  groups="hr.group_hr_manager,hr.group_hr_user"/>
+
+        <menuitem id="menu_hr_management" name="HR Management" parent="hr.menu_hr_root" sequence="5"
+                  groups="hr.group_hr_manager,hr.group_hr_user"/>
+    </data>
+</odoo>
