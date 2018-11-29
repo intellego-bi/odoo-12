@@ -40,17 +40,19 @@ class AccConfig(models.TransientModel):
     @api.model
     def get_values(self):
         res = super(AccConfig, self).get_values()
+        ICPSudo = self.env['ir.config_parameter'].sudo()
         res.update(
-            prestamo_approve=self.env['ir.config_parameter'].sudo().get_param('account.prestamo_approve'),
-            emp_account_id=self.env['ir.config_parameter'].sudo().value('account.emp_account_id').id
+            prestamo_approve=ICPSudo.get_param('account.prestamo_approve'),
+            emp_account_id=ICPSudo.get_param('account.emp_account_id').id,
         )
         return res
 
     @api.multi
     def set_values(self):
         super(AccConfig, self).set_values()
-        self.env['ir.config_parameter'].sudo().set_param('account.prestamo_approve', self.prestamo_approve)
-        #self.env['ir.config_parameter'].sudo().write({'account.emp_account_id': self.emp_account_id.id})
-        self.env.ref('account.emp_account_id').write({'id': self.emp_account_id.id})
+        ICPSudo = self.env['ir.config_parameter'].sudo()
+        ICPSudo.set_param('account.prestamo_approve', self.prestamo_approve)
+        ICPSudo.set_param('account.emp_account_id', self.emp_account_id.id)
+        #self.env.ref('account.emp_account_id').write({'id': self.emp_account_id.id})
 
 
