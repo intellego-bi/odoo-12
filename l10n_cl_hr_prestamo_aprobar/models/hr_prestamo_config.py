@@ -43,7 +43,7 @@ class AccConfig(models.TransientModel):
         ICPSudo = self.env['ir.config_parameter'].sudo()
         res.update(
             prestamo_approve=ICPSudo.get_param('account.prestamo_approve'),
-            emp_account_id=int(ICPSudo.get_param('account.emp_account_id')).id,
+            emp_account_id=int(ICPSudo.get_param('account.emp_account_id')),
         )
         return res
 
