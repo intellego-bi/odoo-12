@@ -18,10 +18,6 @@
                                 <div class="text-muted">
                                     Enable Approval from Accounting Department
                                 </div>
-                                <div>
-                                    <label string="Employee Loan Account" for="emp_account_id"/>
-                                    <field name="emp_account_id">
-                                </div>
                             </div>
                         </div>
                     </div>
