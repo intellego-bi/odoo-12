@@ -63,40 +63,24 @@ class AccConfig(models.TransientModel):
 class ResConfigSettings(models.TransientModel):
     _inherit = 'res.config.settings'
 
-    emp_account_id = fields.Many2one('account.account', string="Employee Loans Account", readonly=False, domain=lambda self: [('reconcile', '=', True)],
+    emp_account = fields.Many2one('account.account', string="Employee Loans Account", readonly=False, domain=lambda self: [('reconcile', '=', True)],
                                   help="Employee Loans Balance Sheet Account (Assets)")
 
-    treasury_account_id = fields.Many2one('account.account', string="Employee Payment Account", readonly=False, domain=lambda self: [('reconcile', '=', True)],
+    treasury_account = fields.Many2one('account.account', string="Employee Payment Account", readonly=False, domain=lambda self: [('reconcile', '=', True)],
                                   help="Employee Loans payment transit Balance Sheet Account (Liability)")
 
     @api.model
-    def get_accounts(self, fields):
-        conf = self.env['ir.config_parameter']
-        return {
-            'emp_account_id': int(conf.get_param('hr_prestamo.emp_account_id')),
-            'treasury_account_id': int(conf.get_param('hr_prestamo.treasury_account_id')),
-        }
+    def get_values(self):
+        res = super(ResConfigSettings, self).get_values()
+        res.update(
+            emp_account=self.env.ref('hr_prestamo.emp_account').id,
+            treasury_account=self.env.ref('hr_prestamo.treasury_account').id,
+        )
+        return res
 
-    @api.one
-    def set_accounts(self):
-        conf = self.env['ir.config_parameter']
-        conf.set_param('hr_prestamo.emp_account_id', self.emp_account_id.id)
-        conf.set_param('hr_prestamo.treasury_account_id', self.treasury_account_id.id)
-
-    #def set_account(self):
-    #    super(ResConfigSettings, self).set_values()
-
-    #def get_account(self):
-    #    super(ResConfigSettings, self).get_values()1
-
-    #emp_account_id = fields.Many2one('account.account', string="Employee Loans Account",
-    #    related='company_id.emp_account_id', readonly=False,
-    #    domain=lambda self: [('reconcile', '=', True)],
-    #    help="Employee Loans Balance Sheet Account (Assets)")
-
-    #@api.one
-    #def set_accounts(self):
-        #self.env['ir.config_parameter'].sudo().set_param('account.prestamo_approve', self.prestamo_approve)
-        #self.env['ir.config_parameter'].sudo().set_param('account.emp_account_id', self.emp_account_id.id)
-        #self.env['ir.config_parameter'].sudo().set_param('account.treasury_account_id', self.treasury_account_id.id)
+    @api.multi
+    def set_values(self):
+        super(ResConfigSettings, self).set_values()
+        self.env.ref('hr_prestamo.emp_account').write({'id': self.emp_account})
+        self.env.ref('hr_prestamo.treasury_account').write({'id': self.treasury_account})
 
