@@ -24,12 +24,12 @@ from odoo import models, fields, api, _
 class ResConfigSettings(models.TransientModel):
     _inherit = 'res.config.settings'
 
-    emp_account = fields.Many2one('account.account', string="Employee Loans Account", readonly=False,
+    emp_account_id = fields.Many2one('account.account', string="Employee Loans Account", readonly=False,
                                   #related='account.emp_account',
                                   domain=lambda self: [('reconcile', '=', True)],
                                   help="Employee Loans Balance Sheet Account (Assets)")
 
-    treasury_account = fields.Many2one('account.account', string="Employee Payment Account", readonly=False,
+    treasury_account_id = fields.Many2one('account.account', string="Employee Payment Account", readonly=False,
                                   #related='account.treasury_account',
                                   domain=lambda self: [('reconcile', '=', True)],
                                   help="Employee Loans payment transit Balance Sheet Account (Liability)")
@@ -38,7 +38,7 @@ class ResConfigSettings(models.TransientModel):
     def get_values(self):
         res = super(ResConfigSettings, self).get_values()
         res.update(
-            emp_account=self.env['ir.config_parameter'].sudo().get_param('account.emp_account')
+            emp_account_id=self.env['ir.config_parameter'].sudo().get_param('account.emp_account_id')
             #self.env.ref('l10n_cl_hr_prestamo_aprobar.emp_account').id,
             #treasury_account=self.env.ref('l10n_cl_hr_prestamo_aprobar.treasury_account').id,
         )
@@ -47,7 +47,7 @@ class ResConfigSettings(models.TransientModel):
     @api.multi
     def set_values(self):
         super(ResConfigSettings, self).set_values()
-        self.env['ir.config_parameter'].sudo().write({'id': self.emp_account})
+        self.env['ir.config_parameter'].sudo().write({'account.emp_account_id': self.emp_account_id.id})
         #self.env.ref('l10n_cl_hr_prestamo_aprobar.emp_account').write({'id': self.emp_account})
         #self.env.ref('l10n_cl_hr_prestamo_aprobar.treasury_account').write({'id': self.treasury_account})
 
