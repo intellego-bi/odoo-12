@@ -42,7 +42,7 @@ class AccConfig(models.TransientModel):
         res = super(AccConfig, self).get_values()
         res.update(
             prestamo_approve=self.env['ir.config_parameter'].sudo().get_param('account.prestamo_approve'),
-            emp_account_id=self.env['ir.config_parameter'].sudo().ref('account.emp_account_id').id
+            emp_account_id=self.env['ir.config_parameter'].sudo().value('account.emp_account_id').id
         )
         return res
 
