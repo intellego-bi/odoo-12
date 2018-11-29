@@ -63,11 +63,17 @@ class AccConfig(models.TransientModel):
 class ResConfigSettings(models.TransientModel):
     _inherit = 'res.config.settings'
 
-    emp_account_id = fields.Many2one('account.account', string="Employee Loans Account", domain=lambda self: [('reconcile', '=', True)],
+    emp_account_id = fields.Many2one('account.account', string="Employee Loans Account", readonly=False, domain=lambda self: [('reconcile', '=', True)],
                                   help="Employee Loans Balance Sheet Account (Assets)")
 
-    treasury_account_id = fields.Many2one('account.account', string="Employee Payment Account", domain=lambda self: [('reconcile', '=', True)],
+    treasury_account_id = fields.Many2one('account.account', string="Employee Payment Account", readonly=False, domain=lambda self: [('reconcile', '=', True)],
                                   help="Employee Loans payment transit Balance Sheet Account (Liability)")
+
+    def set_values(self):
+        super(ResConfigSettings, self).set_values()
+
+    def get_values(self):
+        super(ResConfigSettings, self).get_values()
 
     #emp_account_id = fields.Many2one('account.account', string="Employee Loans Account",
     #    related='company_id.emp_account_id', readonly=False,
