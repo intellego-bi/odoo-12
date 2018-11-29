@@ -19,7 +19,7 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 # 
 ###################################################################################
-from odoo import models, fields, api, _
+from odoo import models, fields #, api, _
 
 class ResConfigSettings(models.TransientModel):
     _inherit = 'res.config.settings'
@@ -34,20 +34,21 @@ class ResConfigSettings(models.TransientModel):
                                   domain=lambda self: [('reconcile', '=', True)],
                                   help="Employee Loans payment transit Balance Sheet Account (Liability)")
 
-    @api.model
-    def get_values(self):
-        res = super(ResConfigSettings, self).get_values()
-        res.update(
-            emp_account_id=self.env['ir.config_parameter'].sudo().get_param('account.emp_account_id')
-            #self.env.ref('l10n_cl_hr_prestamo_aprobar.emp_account').id,
-            #treasury_account=self.env.ref('l10n_cl_hr_prestamo_aprobar.treasury_account').id,
-        )
-        return res
 
-    @api.multi
-    def set_values(self):
-        super(ResConfigSettings, self).set_values()
-        self.env['ir.config_parameter'].sudo().write({'account.emp_account_id': self.emp_account_id.id})
-        #self.env.ref('l10n_cl_hr_prestamo_aprobar.emp_account').write({'id': self.emp_account})
-        #self.env.ref('l10n_cl_hr_prestamo_aprobar.treasury_account').write({'id': self.treasury_account})
+    #@api.model
+    #def get_values(self):
+    #    res = super(ResConfigSettings, self).get_values()
+    #    res.update(
+    #        emp_account_id=self.env['ir.config_parameter'].sudo().get_param('account.emp_account_id')
+    #        #self.env.ref('l10n_cl_hr_prestamo_aprobar.emp_account').id,
+    #        #treasury_account=self.env.ref('l10n_cl_hr_prestamo_aprobar.treasury_account').id,
+    #    )
+    #    return res
+
+    #@api.multi
+    #def set_values(self):
+    #    super(ResConfigSettings, self).set_values()
+    #    self.env['ir.config_parameter'].sudo().write({'account.emp_account_id': self.emp_account_id.id})
+    #    #self.env.ref('l10n_cl_hr_prestamo_aprobar.emp_account').write({'id': self.emp_account})
+    #    #self.env.ref('l10n_cl_hr_prestamo_aprobar.treasury_account').write({'id': self.treasury_account})
 
