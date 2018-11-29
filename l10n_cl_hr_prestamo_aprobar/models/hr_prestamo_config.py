@@ -69,11 +69,25 @@ class ResConfigSettings(models.TransientModel):
     treasury_account_id = fields.Many2one('account.account', string="Employee Payment Account", readonly=False, domain=lambda self: [('reconcile', '=', True)],
                                   help="Employee Loans payment transit Balance Sheet Account (Liability)")
 
-    def set_account(self):
-        super(ResConfigSettings, self).set_values()
+    @api.model
+    def get_default_accounts(self, fields):
+        conf = self.env['ir.config_parameter']
+        return {
+            'emp_account_id': int(conf.get_param('hr_prestamo.emp_account_id')),
+            'treasury_account_id': int(conf.get_param('hr_prestamo.treasury_account_id')),
+        }
 
-    def get_account(self):
-        super(ResConfigSettings, self).get_values()
+    @api.one
+    def set_accounts(self):
+        conf = self.env['ir.config_parameter']
+        conf.set_param('hr_prestamo.emp_account_id', self.emp_account_id.id)
+        conf.set_param('hr_prestamo.treasury_account_id', self.treasury_account_id.id)
+
+    #def set_account(self):
+    #    super(ResConfigSettings, self).set_values()
+
+    #def get_account(self):
+    #    super(ResConfigSettings, self).get_values()1
 
     #emp_account_id = fields.Many2one('account.account', string="Employee Loans Account",
     #    related='company_id.emp_account_id', readonly=False,
