@@ -25,12 +25,12 @@ class ResConfigSettings(models.TransientModel):
     _inherit = 'res.config.settings'
 
     emp_account = fields.Many2one('account.account', string="Employee Loans Account", readonly=False,
-                                  related='hr_prestamo.emp_account',
+                                  related='account.emp_account',
                                   domain=lambda self: [('reconcile', '=', True)],
                                   help="Employee Loans Balance Sheet Account (Assets)")
 
     treasury_account = fields.Many2one('account.account', string="Employee Payment Account", readonly=False,
-                                  related='hr_prestamo.treasury_account',
+                                  related='account.treasury_account',
                                   domain=lambda self: [('reconcile', '=', True)],
                                   help="Employee Loans payment transit Balance Sheet Account (Liability)")
 
@@ -38,14 +38,14 @@ class ResConfigSettings(models.TransientModel):
     def get_values(self):
         res = super(ResConfigSettings, self).get_values()
         res.update(
-            emp_account=self.env.ref('hr_prestamo.emp_account').id,
-            treasury_account=self.env.ref('hr_prestamo.treasury_account').id,
+            emp_account=self.env.ref('account.emp_account').id,
+            treasury_account=self.env.ref('account.treasury_account').id,
         )
         return res
 
     @api.multi
     def set_values(self):
         super(ResConfigSettings, self).set_values()
-        self.env.ref('hr_prestamo.emp_account').write({'id': self.emp_account})
-        self.env.ref('hr_prestamo.treasury_account').write({'id': self.treasury_account})
+        self.env.ref('account.emp_account').write({'id': self.emp_account})
+        self.env.ref('account.treasury_account').write({'id': self.treasury_account})
 
