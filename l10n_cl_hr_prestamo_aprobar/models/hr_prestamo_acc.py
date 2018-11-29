@@ -27,13 +27,6 @@ from odoo.exceptions import except_orm
 class HrPrestamoAcc(models.Model):
     _inherit = 'hr.prestamo'
 
-    emp_account = fields.Many2one('account.account', string="Employee Loans Account", readonly=False, domain=lambda self: [('reconcile', '=', True)],
-                                  help="Employee Loans Balance Sheet Account (Assets)")
-
-    treasury_account = fields.Many2one('account.account', string="Employee Payment Account", readonly=False, domain=lambda self: [('reconcile', '=', True)],
-                                  help="Employee Loans payment transit Balance Sheet Account (Liability)")
-
-
     @api.multi
     def action_approve(self):
         """This create account move for request.
