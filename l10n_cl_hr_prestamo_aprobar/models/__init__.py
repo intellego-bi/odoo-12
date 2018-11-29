@@ -21,4 +21,5 @@
 ###################################################################################
 from . import hr_prestamo_config
 from . import hr_prestamo_acc
+from . import res_config_settings
 

@@ -21,22 +21,31 @@
 ###################################################################################
 from odoo import models, fields, api, _
 
-class AccConfig(models.TransientModel):
+class ResConfigSettings(models.TransientModel):
     _inherit = 'res.config.settings'
 
-    prestamo_approve = fields.Boolean(default=False, string="Approval from Accounting Department",
-                                  help="Loan Approval from account manager")
+    emp_account = fields.Many2one('account.account', string="Employee Loans Account", readonly=False,
+                                  related='hr_prestamo.emp_account',
+                                  domain=lambda self: [('reconcile', '=', True)],
+                                  help="Employee Loans Balance Sheet Account (Assets)")
+
+    treasury_account = fields.Many2one('account.account', string="Employee Payment Account", readonly=False,
+                                  related='hr_prestamo.treasury_account',
+                                  domain=lambda self: [('reconcile', '=', True)],
+                                  help="Employee Loans payment transit Balance Sheet Account (Liability)")
 
     @api.model
     def get_values(self):
-        res = super(AccConfig, self).get_values()
+        res = super(ResConfigSettings, self).get_values()
         res.update(
-            prestamo_approve=self.env['ir.config_parameter'].sudo().get_param('account.prestamo_approve')
+            emp_account=self.env.ref('hr_prestamo.emp_account').id,
+            treasury_account=self.env.ref('hr_prestamo.treasury_account').id,
         )
         return res
 
     @api.multi
     def set_values(self):
-        super(AccConfig, self).set_values()
-        self.env['ir.config_parameter'].sudo().set_param('account.prestamo_approve', self.prestamo_approve)
+        super(ResConfigSettings, self).set_values()
+        self.env.ref('hr_prestamo.emp_account').write({'id': self.emp_account})
+        self.env.ref('hr_prestamo.treasury_account').write({'id': self.treasury_account})
 
