@@ -30,8 +30,8 @@
                                 </div>
                                 <div class="content-group">
                                     <div class="row mt16">
-                                        <label for="emp_account" class="col-lg-3 o_light_label"/>
-                                        <field name="emp_account"/>
+                                        <label for="emp_account_id" class="col-lg-3 o_light_label"/>
+                                        <field name="emp_account_id"/>
                                     </div>
                                 </div>
                                 <!--<div class="content-group">
