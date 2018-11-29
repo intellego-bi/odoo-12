@@ -38,14 +38,16 @@ class ResConfigSettings(models.TransientModel):
     def get_values(self):
         res = super(ResConfigSettings, self).get_values()
         res.update(
-            emp_account=self.env.ref('l10n_cl_hr_prestamo_aprobar.emp_account').id,
-            treasury_account=self.env.ref('l10n_cl_hr_prestamo_aprobar.treasury_account').id,
+            emp_account=self.env['ir.config_parameter'].sudo().get_param('account.emp_account')
+            #self.env.ref('l10n_cl_hr_prestamo_aprobar.emp_account').id,
+            #treasury_account=self.env.ref('l10n_cl_hr_prestamo_aprobar.treasury_account').id,
         )
         return res
 
     @api.multi
     def set_values(self):
         super(ResConfigSettings, self).set_values()
-        self.env.ref('l10n_cl_hr_prestamo_aprobar.emp_account').write({'id': self.emp_account})
-        self.env.ref('l10n_cl_hr_prestamo_aprobar.treasury_account').write({'id': self.treasury_account})
+        self.env['ir.config_parameter'].sudo().write({'id': self.emp_account})
+        #self.env.ref('l10n_cl_hr_prestamo_aprobar.emp_account').write({'id': self.emp_account})
+        #self.env.ref('l10n_cl_hr_prestamo_aprobar.treasury_account').write({'id': self.treasury_account})
 
