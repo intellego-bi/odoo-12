@@ -60,10 +60,8 @@ class AccConfig(models.TransientModel):
         #self.env['ir.config_parameter'].sudo().set_param('account.emp_account_id', self.emp_account_id.id)
         #self.env['ir.config_parameter'].sudo().set_param('account.treasury_account_id', self.treasury_account_id.id)
 
-class HRAccConfig(models.TransientModel):
+class ResConfigSettings(models.TransientModel):
     _inherit = 'res.config.settings'
-    #_name = 'hr_prestamo.config.settings'
-    #_description = 'HR Loans Config Settings'
 
     emp_account_id = fields.Many2one('account.account', string="Employee Loans Account", domain=lambda self: [('reconcile', '=', True)],
                                   help="Employee Loans Balance Sheet Account (Assets)")
