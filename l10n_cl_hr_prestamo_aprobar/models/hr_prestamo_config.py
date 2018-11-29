@@ -69,10 +69,10 @@ class ResConfigSettings(models.TransientModel):
     treasury_account_id = fields.Many2one('account.account', string="Employee Payment Account", readonly=False, domain=lambda self: [('reconcile', '=', True)],
                                   help="Employee Loans payment transit Balance Sheet Account (Liability)")
 
-    def set_values(self):
+    def set_account(self):
         super(ResConfigSettings, self).set_values()
 
-    def get_values(self):
+    def get_account(self):
         super(ResConfigSettings, self).get_values()
 
     #emp_account_id = fields.Many2one('account.account', string="Employee Loans Account",
