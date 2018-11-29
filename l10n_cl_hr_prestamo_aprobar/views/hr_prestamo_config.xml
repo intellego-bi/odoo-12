@@ -34,12 +34,12 @@
                                         <field name="emp_account"/>
                                     </div>
                                 </div>
-                                <div class="content-group">
+                                <!--<div class="content-group">
                                     <div class="row mt16">
                                         <label for="treasury_account" class="col-lg-3 o_light_label"/>
                                         <field name="treasury_account"/>
                                     </div>
-                                </div>
+                                </div>-->
                             </div>
                         </div>
                     </div>
