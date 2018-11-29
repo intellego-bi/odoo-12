@@ -27,8 +27,8 @@ class AccConfig(models.TransientModel):
     prestamo_approve = fields.Boolean(default=False, string="Approval from Accounting Department",
                                   help="Loan Approval from account manager")
 
-    emp_account_id = fields.Many2one('account.account', string="Employee Loans Account",
-                                  help="Employee Loans Balance Sheet Account (Assets)")
+    #emp_account_id = fields.Many2one('account.account', string="Employee Loans Account",
+    #                              help="Employee Loans Balance Sheet Account (Assets)")
 
     emp_account_id = fields.Many2one('account.account', string="Employee Loans Account",
         related='company_id.emp_account_id', readonly=False,
