@@ -62,8 +62,8 @@ class AccConfig(models.TransientModel):
 
 class HRAccConfig(models.TransientModel):
     _inherit = 'res.config.settings'
-    _name = 'hr_prestamo.config.settings'
-    _description = 'HR Loans Config Settings'
+    #_name = 'hr_prestamo.config.settings'
+    #_description = 'HR Loans Config Settings'
 
     emp_account_id = fields.Many2one('account.account', string="Employee Loans Account", domain=lambda self: [('reconcile', '=', True)],
                                   help="Employee Loans Balance Sheet Account (Assets)")
