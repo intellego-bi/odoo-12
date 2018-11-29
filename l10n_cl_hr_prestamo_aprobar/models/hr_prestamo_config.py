@@ -27,11 +27,11 @@ class AccConfig(models.TransientModel):
     prestamo_approve = fields.Boolean(default=False, string="Approval from Accounting Department",
                                   help="Loan Approval from account manager")
 
-    emp_account_id = fields.Many2one('account.account', string="Employee Loans Account", domain=lambda self: [('reconcile', '=', True)],
-                                  help="Employee Loans Balance Sheet Account (Assets)")
+    #emp_account_id = fields.Many2one('account.account', string="Employee Loans Account", domain=lambda self: [('reconcile', '=', True)],
+    #                              help="Employee Loans Balance Sheet Account (Assets)")
 
-    treasury_account_id = fields.Many2one('account.account', string="Employee Payment Account", domain=lambda self: [('reconcile', '=', True)],
-                                  help="Employee Loans payment transit Balance Sheet Account (Liability)")
+    #treasury_account_id = fields.Many2one('account.account', string="Employee Payment Account", domain=lambda self: [('reconcile', '=', True)],
+    #                              help="Employee Loans payment transit Balance Sheet Account (Liability)")
 
     #emp_account_id = fields.Many2one('account.account', string="Employee Loans Account",
     #    related='company_id.emp_account_id', readonly=False,
@@ -57,6 +57,28 @@ class AccConfig(models.TransientModel):
     def set_values(self):
         super(AccConfig, self).set_values()
         self.env['ir.config_parameter'].sudo().set_param('account.prestamo_approve', self.prestamo_approve)
+        #self.env['ir.config_parameter'].sudo().set_param('account.emp_account_id', self.emp_account_id.id)
+        #self.env['ir.config_parameter'].sudo().set_param('account.treasury_account_id', self.treasury_account_id.id)
+
+class HRAccConfig(models.TransientModel):
+    _inherit = 'res.config.settings'
+    _name = 'hr_prestamo.config.settings'
+    _description = 'HR Loans Config Settings'
+
+    emp_account_id = fields.Many2one('account.account', string="Employee Loans Account", domain=lambda self: [('reconcile', '=', True)],
+                                  help="Employee Loans Balance Sheet Account (Assets)")
+
+    treasury_account_id = fields.Many2one('account.account', string="Employee Payment Account", domain=lambda self: [('reconcile', '=', True)],
+                                  help="Employee Loans payment transit Balance Sheet Account (Liability)")
+
+    #emp_account_id = fields.Many2one('account.account', string="Employee Loans Account",
+    #    related='company_id.emp_account_id', readonly=False,
+    #    domain=lambda self: [('reconcile', '=', True)],
+    #    help="Employee Loans Balance Sheet Account (Assets)")
+
+    #@api.one
+    #def set_accounts(self):
+        #self.env['ir.config_parameter'].sudo().set_param('account.prestamo_approve', self.prestamo_approve)
         #self.env['ir.config_parameter'].sudo().set_param('account.emp_account_id', self.emp_account_id.id)
         #self.env['ir.config_parameter'].sudo().set_param('account.treasury_account_id', self.treasury_account_id.id)
 
