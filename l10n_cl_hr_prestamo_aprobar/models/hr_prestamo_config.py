@@ -21,27 +21,22 @@
 ###################################################################################
 from odoo import models, fields, api, _
 
-
-class ResConfigSettings(models.TransientModel):
+class AccConfig(models.TransientModel):
     _inherit = 'res.config.settings'
 
-    emp_account = fields.Many2one('account.account', string="Employee Loans Account", readonly=False, domain=lambda self: [('reconcile', '=', True)],
-                                  help="Employee Loans Balance Sheet Account (Assets)")
-
-    treasury_account = fields.Many2one('account.account', string="Employee Payment Account", readonly=False, domain=lambda self: [('reconcile', '=', True)],
-                                  help="Employee Loans payment transit Balance Sheet Account (Liability)")
+    prestamo_approve = fields.Boolean(default=False, string="Approval from Accounting Department",
+                                  help="Loan Approval from account manager")
 
     @api.model
     def get_values(self):
-        res = super(ResConfigSettings, self).get_values()
+        res = super(AccConfig, self).get_values()
         res.update(
-            emp_account=self.env.ref('account.emp_account').id,
-            treasury_account=self.env.ref('account.treasury_account').id,
+            prestamo_approve=self.env['ir.config_parameter'].sudo().get_param('account.prestamo_approve')
         )
         return res
 
     @api.multi
     def set_values(self):
-        super(ResConfigSettings, self).set_values()
-        self.env.ref('account.emp_account').write({'id': self.emp_account})
-        self.env.ref('account.treasury_account').write({'id': self.treasury_account})
+        super(AccConfig, self).set_values()
+        self.env['ir.config_parameter'].sudo().set_param('account.prestamo_approve', self.prestamo_approve)
+
