@@ -50,6 +50,7 @@ class AccConfig(models.TransientModel):
     def set_values(self):
         super(AccConfig, self).set_values()
         self.env['ir.config_parameter'].sudo().set_param('account.prestamo_approve', self.prestamo_approve)
-        self.env['ir.config_parameter'].sudo().write({'account.emp_account_id': self.emp_account_id.id})
+        #self.env['ir.config_parameter'].sudo().write({'account.emp_account_id': self.emp_account_id.id})
+        self.env.ref('account.emp_account_id').write({'id': self.emp_account_id.id})
 
 
