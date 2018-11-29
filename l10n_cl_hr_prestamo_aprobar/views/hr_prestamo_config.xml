@@ -22,6 +22,10 @@
                                     <label string="Employee Loan Account" for="emp_account_id"/>
                                     <field name="emp_account_id"/>
                                 </div>
+                                <div>
+                                    <label string="Loan Payment Transit Account" for="treasury_account_id"/>
+                                    <field name="treasury_account_id"/>
+                                </div>
                             </div>
                         </div>
                     </div>
