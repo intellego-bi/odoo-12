@@ -70,7 +70,7 @@ class ResConfigSettings(models.TransientModel):
                                   help="Employee Loans payment transit Balance Sheet Account (Liability)")
 
     @api.model
-    def get_default_accounts(self, fields):
+    def get_accounts(self, fields):
         conf = self.env['ir.config_parameter']
         return {
             'emp_account_id': int(conf.get_param('hr_prestamo.emp_account_id')),
