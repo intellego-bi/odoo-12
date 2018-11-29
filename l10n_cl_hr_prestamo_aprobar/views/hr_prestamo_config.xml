@@ -18,13 +18,21 @@
                                 <div class="text-muted">
                                     Enable Approval from Accounting Department
                                 </div>
-                                <div>
-                                    <label string="Employee Loan Account" for="emp_account_id"/>
-                                    <field name="emp_account_id"/>
+                                <span class="o_form_label">Inter-Banks Transfers</span>
+                                <div class="text-muted">
+                                    Accounts used when posting Employee Loan grant
                                 </div>
-                                <div>
-                                    <label string="Loan Payment Transit Account" for="treasury_account_id"/>
-                                    <field name="treasury_account_id"/>
+                                <div class="content-group">
+                                    <div class="row mt16">
+                                        <label for="emp_account_id" class="col-lg-3 o_light_label"/>
+                                        <field name="emp_account_id"/>
+                                    </div>
+                                </div>
+                                <div class="content-group">
+                                    <div class="row mt16">
+                                        <label for="treasury_account_id" class="col-lg-3 o_light_label"/>
+                                        <field name="treasury_account_id"/>
+                                    </div>
                                 </div>
                             </div>
                         </div>
