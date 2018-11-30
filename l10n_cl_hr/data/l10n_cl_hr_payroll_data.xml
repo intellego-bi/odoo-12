@@ -730,7 +730,7 @@ result = round(SECEEMP) + round(SIS) + round(MUT) + round(SC)</field>
             <field name="name">Cuota Préstamo</field>
             <field name="note">Regla automática que toma las cuotas desde el módulo de Préstamos a Empleados.</field>
             <field name="category_id" ref="ODESC"/>
-            <field name="account_credit" ref="11050200"/>
+            <!--<field name="account_credit" ref="11050200"/>-->
             <field name="amount_select">code</field>
             <field name="amount_python_compute">result = inputs.HRPR and + (inputs.HRPR.amount)</field>
             <field name="appears_on_payslip" eval="True"/>
