@@ -22,6 +22,38 @@
                     <xpath expr="//field[@name='paid']" position="move"/>
                     <field name="credit_note"/>
                 </xpath>
+                <xpath expr="//group[@name='parametros_contabilidad']" position="inside">
+                    <group name="parametros_contabilidad_right" string="Contabilización"/>
+                </xpath>
+                <xpath expr="//group[@name='parametros_contabilidad_right']" position="inside">
+                    <xpath expr="//field[@name='date']" position="move"/>
+                    <xpath expr="//field[@name='move_id']" position="move"/>
+                </xpath>
+                <xpath expr="//field[@name='struct_id']" position="attributes">
+                    <attribute name="context">"{'default_struct_id': 2}"</attribute>
+                    <attribute name="domain">[["id","!=",1]]</attribute>
+                </xpath>
+                <xpath expr="//field[@name='payslip_run_id']" position="after">
+                    <field name="__last_update"/>
+                </xpath>
+                <xpath expr="//field[@name='paid']" position="attributes">
+                    <attribute name="attrs">{"readonly": [["move_id","!=",False]]}</attribute>
+                    <!--<attribute name="readonly"></attribute>-->
+                </xpath>
+                <xpath expr="//form[1]/sheet[1]/notebook[1]" position="inside">
+                    <page name="info_gestion" string="Info Gestión">
+                        <group name="info_gestion_group">
+                            <group name="info_gestion_group_left">
+                                <field name="create_date"/>
+                                <field name="create_uid"/>
+                            </group>
+                            <group name="info_gestion_group_right">
+                                <field name="write_date"/>
+                                <field name="write_uid"/>
+                            </group>
+                        </group>
+                    </page>
+                </xpath>
             </field>
         </record>
 
