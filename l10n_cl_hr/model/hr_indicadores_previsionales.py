@@ -48,7 +48,7 @@ class hr_indicadores_previsionales(models.Model):
     _description = 'Indicadores Previsionales'
 
     name = fields.Char('Nombre')
-    url_previred = fields.HTML("Link Previred", default='<p><a href="https://www.previred.com/web/previred/indicadores-previsionales" class="rounded-circle btn btn-beta rounded-circle btn-sm" target="_blank">Previred</a><br></p>')
+    url_previred = fields.HTML("Link Previred")#, default='<p><a href="https://www.previred.com/web/previred/indicadores-previsionales" class="rounded-circle btn btn-beta rounded-circle btn-sm" target="_blank">Previred</a><br></p>')
     asignacion_familiar_primer = fields.Float(
         'Asignación Familiar Tramo 1', 
         help="Asig Familiar Primer Tramo")
