@@ -112,6 +112,8 @@
                                         <group col="2" name="ine" string="Instituto Nacional de Estadísticas">
                                             <group>
                                                 <field name="ipc" string="IPC"/>
+                                            </group>
+                                            <group>
                                                 <field name="uf" string="UF Previred"/>
                                             </group>
                                         </group>
