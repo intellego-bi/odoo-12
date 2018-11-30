@@ -110,10 +110,10 @@
                                 </page>
                                  <page string="Índice de Precios">
                                         <group col="2" name="ine" string="Instituto Nacional de Estadísticas">
-                                           
-                                            <field name="ipc" string="IPC"/>
-                                            <field name="uf" string="UF Previred (Fin de Mes)"/>
-                                            
+                                            <group>
+                                                <field name="ipc" string="IPC"/>
+                                                <field name="uf" string="UF Previred"/>
+                                            </group>
                                         </group>
                                 </page>
   
