@@ -30,20 +30,20 @@
                                 </div>
                                 <div class="content-group">
                                     <div class="row mt16">
-                                        <label for="journal_id" class="col-lg-3 o_light_label"/>
-                                        <field name="journal_id"/>
+                                        <label for="hr_journal_id" class="col-lg-3 o_light_label"/>
+                                        <field name="hr_journal_id"/>
                                     </div>
                                 </div>
                                 <div class="content-group">
                                     <div class="row mt16">
-                                        <label for="emp_account_id" class="col-lg-3 o_light_label"/>
-                                        <field name="emp_account_id"/>
+                                        <label for="hr_emp_account_id" class="col-lg-3 o_light_label"/>
+                                        <field name="hr_emp_account_id"/>
                                     </div>
                                 </div>
                                 <div class="content-group">
                                     <div class="row mt16">
-                                        <label for="treasury_account_id" class="col-lg-3 o_light_label"/>
-                                        <field name="treasury_account_id"/>
+                                        <label for="hr_treasury_account_id" class="col-lg-3 o_light_label"/>
+                                        <field name="hr_treasury_account_id"/>
                                     </div>
                                 </div>
                             </div>
