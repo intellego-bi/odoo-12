@@ -10,13 +10,10 @@
                         <div>
                             <field name="name" invisible="1"/>
                             <group col="4" string="Período">
-                                  <div>
-                                      <field name="month"/>
-                                      <field name="year"/>
-                                  </div>
-                            </group>
-                            <group>
-                                <field name="url_previred" string="Ir a Previred" readonly="1" widget="html"/>
+                                 <field name="month"/>
+                                 <field name="url_previred" string="Ir a Previred" readonly="1" widget="html"/>
+                                 <field name="year"/>
+                                 
                             </group>
                             <notebook>
                                 <page string="Previred" name="previred">
