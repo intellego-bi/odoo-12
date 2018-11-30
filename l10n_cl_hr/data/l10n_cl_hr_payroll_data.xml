@@ -154,9 +154,6 @@ else:
         </record>
 
 
-
-
-
         <record id="hr_rule_11" model="hr.salary.rule">
             <field name="name">TOTAL IMPONIBLE</field>
             <field name="sequence" eval="11"/>
@@ -572,9 +569,6 @@ else:
         </record>
 
 
-
-
-
         <record id="hr_rule_36" model="hr.salary.rule">
             <field name="name">IMPUESTO UNICO</field>
             <field name="sequence" eval="36"/>
@@ -729,6 +723,88 @@ result = round(SECEEMP) + round(SIS) + round(MUT) + round(SC)</field>
         </record>
 
 
+        <!-- Reglas Addons Nómina Chile -->
+
+        <record id="hr_rule_prestamo" model="hr.salary.rule">
+            <field name="code">HRPR</field>
+            <field name="name">Cuota Préstamo</field>
+            <field name="note">Regla automática que toma las cuotas desde el módulo de Préstamos a Empleados.</field>
+            <field name="category_id" ref="ODESC"/>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = inputs.HRPR and + (inputs.HRPR.amount)</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name="sequence" eval="38"/>
+        </record>
+
+        <record id="hr_rule_fin" model="hr.salary.rule">
+            <field name="code">FIN</field>
+            <field name="name">Finiquito Otros</field>
+            <field name="note">Pago adicional ingresado manualmente en la liquidación de Finiquito.</field>
+            <field name="category_id" ref="NOIMPO"/>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = inputs.FIN and + (inputs.FIN.amount)</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name="sequence" eval="38"/>
+        </record>
+
+        <record id="hr_rule_input_fin" model="hr.rule.input">
+            <field name="code">FIN</field>
+            <field name="name">Finiquito Otros</field>
+            <field name="input_id" ref="hr_rule_fin"/>
+        </record>
+
+        <record id="hr_rule_fin_ias" model="hr.salary.rule">
+            <field name="code">IAS</field>
+            <field name="name">IAS Finiquito Años Servicio</field>
+            <field name="note">Regla automática para Finiquito que calcula la Indemnización por Años de Servicio.</field>
+            <field name="category_id" ref="NOIMPO"/>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = inputs.IAS and + (inputs.IAS.amount)</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name="sequence" eval="38"/>
+        </record>
+
+        <record id="hr_rule_input_fin_ias" model="hr.rule.input">
+            <field name="code">IAS</field>
+            <field name="name">IAS Finiquito Años Servicio</field>
+            <field name="input_id" ref="hr_rule_fin_ias"/>
+        </record>
+
+        <record id="hr_rule_fin_iap" model="hr.salary.rule">
+            <field name="code">IAP</field>
+            <field name="name">IAP Finiquito Aviso Previo</field>
+            <field name="note">Regla automática para Finiquito que calcula la Indemnización por Aviso Previo (30 días).</field>
+            <field name="category_id" ref="NOIMPO"/>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = inputs.IAP and + (inputs.IAP.amount)</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name="sequence" eval="38"/>
+        </record>
+
+        <record id="hr_rule_input_fin_iap" model="hr.rule.input">
+            <field name="code">IAP</field>
+            <field name="name">IAP Finiquito Aviso Previo</field>
+            <field name="input_id" ref="hr_rule_fin_iap"/>
+        </record>
+
+        <record id="hr_rule_fin_ifp" model="hr.salary.rule">
+            <field name="code">IFP</field>
+            <field name="name">IFP Finiquito Feriado Proporcional</field>
+            <field name="note">Regla para Finiquito que calcula la Indemnización por Feriado Proporcional según los días ingresados en el Finiquito.</field>
+            <field name="category_id" ref="NOIMPO"/>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = inputs.IFP and + (inputs.IFP.amount)</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name="sequence" eval="38"/>
+        </record>
+
+        <record id="hr_rule_input_fin_ifp" model="hr.rule.input">
+            <field name="code">IFP</field>
+            <field name="name">IFP Finiquito Feriado Proporcional</field>
+            <field name="input_id" ref="hr_rule_fin_ifp"/>
+        </record>
+
+
         <!-- Reglas Helios -->
 
 
@@ -878,6 +954,11 @@ result = round(SECEEMP) + round(SIS) + round(MUT) + round(SC)</field>
                               ref('hr_rule_42'),
                               ref('hr_rule_43'),
                               ref('hr_rule_44'),
+                              ref('hr_rule_prestamo'),
+                              ref('hr_rule_fin'),
+                              ref('hr_rule_fin_ias'),
+                              ref('hr_rule_fin_iap'),
+                              ref('hr_rule_fin_ifp'),
                               ref('hr_rule_helios_navidad'),
                               ref('hr_rule_helios_aguifp'),
                               ref('hr_rule_helios_bonovac')
