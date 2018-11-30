@@ -16,12 +16,12 @@
                                  
                             </group>
                             <notebook>
-                                <page string="Previred" name="previred">
+                                <page string="Indicadores Previred" name="previred">
                                     <table > 
                                         <tr> 
                                             <td width="40%">
                                                 <group col="2" name="uf" string="Valor UF"> 
-                                                     <field name="uf" string="UF Previred"> </field>
+                                                     <field name="uf" string="UF Previred (Fin de Mes)"> </field>
                                                 </group>
                                                 <group col="2" name="utm" string="Otros Valores"> 
                                                     <field name="utm" > </field><field name="uta"  />
@@ -108,13 +108,28 @@
                                             </group>
                                         </group>
                                 </page>
-                                 <page string="Otros Indicadores">
+                                 <page string="Índice de Precios">
                                         <group col="2" name="ine" string="Instituto Nacional de Estadísticas">
                                            
-                                                            <field name="ipc" string="IPC"/>
+                                            <field name="ipc" string="IPC"/>
+                                            <field name="uf" string="UF Previred (Fin de Mes)"/>
                                             
                                         </group>
                                 </page>
+  
+                                <page name="info_gestion" string="Info Gestión">
+                                  <group name="info_gestion_group">
+                                    <group name="info_gestion_group_left">
+                                      <field name="create_uid" string="Creado por"/>
+                                      <field name="create_date" string="Creado el"/>
+                                    </group>
+                                    <group name="info_gestion_group_right">
+                                      <field name="write_uid" string="Actualizado por"/>
+                                      <field name="write_date" string="Actualizado el"/>
+                                    </group>
+                                  </group>
+                                </page>
+  
                             </notebook>
                         </div>
                     </sheet>
