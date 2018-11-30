@@ -30,6 +30,6 @@ class ResConfigSettings(models.TransientModel):
         help='Update exchange rates automatically'
              'from currency_rate_update module.')
 
-    api_key_sbif = fields.Char(string="SBIF API Key")
+    #api_key_sbif = fields.Char(string="SBIF API Key")
 
 
