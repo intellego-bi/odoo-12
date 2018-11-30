@@ -9,9 +9,11 @@
                     <sheet>
                         <div>
                             <field name="name" invisible="1"/>
-                            <group col="4" string="Período"> 
-                                  <field name="month"/>
-                                  <field name="year"/>
+                            <group col="4" string="Período">
+                                  <div>
+                                      <field name="month"/>
+                                      <field name="year"/>
+                                  </div>
                             </group>
                             <group>
                                 <field name="url_previred" string="Ir a Previred" readonly="1" widget="html"/>
