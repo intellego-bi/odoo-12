@@ -67,7 +67,7 @@ class HrPrestamoAcc(models.Model):
                     'prestamo_id': prestamo.id,
                 }
                 credit_vals = {
-                    'name': prestamon_name,
+                    'name': prestamo_name,
                     # Insert Intellego-BI: Empleado como Partner en contabilizaciones
                     'partner_id' : prestamo.employee_id.address_home_id.id,
                     'account_id': credit_account_id,
