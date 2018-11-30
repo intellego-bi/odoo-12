@@ -21,7 +21,7 @@
                                         <tr> 
                                             <td width="40%">
                                                 <group col="2" name="uf" string="Valor UF"> 
-                                                     <field name="uf" string="UF Previred (Fin de Mes)"> </field>
+                                                     <field name="uf" string="UF Previred"> </field>
                                                 </group>
                                                 <group col="2" name="utm" string="Otros Valores"> 
                                                     <field name="utm" > </field><field name="uta"  />
