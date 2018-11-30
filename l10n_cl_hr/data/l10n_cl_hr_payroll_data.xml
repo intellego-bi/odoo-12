@@ -7,11 +7,13 @@
         <record id="contrib_register_previred" model="hr.contribution.register">
             <field name="name">PREVIRED</field>
             <field name="partner_id" ref="previred"/>
+            <field name="note">Imposiciones a pagar a PREVIRED</field>
         </record>
 
         <record id="contrib_register_sii" model="hr.contribution.register">
             <field name="name">SII</field>
             <field name="partner_id" ref="sii"/>
+            <field name="note">Impuesto a pagar a Servicio de Impuestos Internos (SII)</field>
         </record>
 
 
