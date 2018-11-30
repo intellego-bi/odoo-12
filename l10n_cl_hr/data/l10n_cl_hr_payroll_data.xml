@@ -836,7 +836,7 @@ result = round(SECEEMP) + round(SIS) + round(MUT) + round(SC)</field>
             <field name="note">Se debe ingresar el valor del Aguinaldo de Fiestas Patrias en el Contrato del Empleado y se calcula y paga sólo en el mes 9 (septiembre).</field>
             <field name="category_id" ref="IMPONIBLE"/>
             <field name="condition_select">python</field>
-            <field name="condition_python">	result = (contract.aguinaldo_fp > 0 and payslip.indicadores_id.month == '9')</field>
+            <field name="condition_python">result = (contract.aguinaldo_fp > 0 and payslip.indicadores_id.month == '9')</field>
             <field name="amount_select">code</field>
             <field name="amount_python_compute">result = contract.aguinaldo_fp</field>
             <field name="appears_on_payslip" eval="True"/>
@@ -918,7 +918,7 @@ result = round(SECEEMP) + round(SIS) + round(MUT) + round(SC)</field>
 
     <record id="hr_struct_cl" model="hr.payroll.structure">
             <field name="name">Chile :: Nómina Base - Código de Trabajo</field>
-            <field name="code">CL_HR</field>
+            <field name="code">CL Nómina Base</field>
             <field name="parent_id"></field>
             <field eval="[(6, 0, [
                               ref('hr_rule_1'), 
@@ -971,7 +971,7 @@ result = round(SECEEMP) + round(SIS) + round(MUT) + round(SC)</field>
         </record>
        <record id="hr_struct_cl_fin" model="hr.payroll.structure">
             <field name="name">Chile :: Finiquito</field>
-            <field name="code">CL_HR_FIN</field>
+            <field name="code">CL Finiquito</field>
             <field name="parent_id" ref="hr_struct_cl"/>
             <field eval="[(6, 0, [
                               ref('hr_rule_fin'),
