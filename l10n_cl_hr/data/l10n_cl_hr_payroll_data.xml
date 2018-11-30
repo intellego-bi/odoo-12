@@ -2,17 +2,16 @@
 <odoo>
     <data>
 
-     <!-- Tipos de Contribuyentes -->
-
+        <!-- Tipos de Contribuyentes -->
 
         <record id="contrib_register_previred" model="hr.contribution.register">
-            <field name="name">Previred</field>
-			<field name="partner_id" ref="previred"/>
+            <field name="name">PREVIRED</field>
+            <field name="partner_id" ref="previred"/>
         </record>
 
         <record id="contrib_register_sii" model="hr.contribution.register">
             <field name="name">SII</field>
-			<field name="partner_id" ref="sii"/>
+            <field name="partner_id" ref="sii"/>
         </record>
 
 
@@ -24,10 +23,8 @@
         </record>
 
 
-
-
-
        <!-- Salary Rules -->
+
         <record id="hr_rule_1" model="hr.salary.rule">
             <field name="name">SUELDO BASE</field>
             <field name="sequence" eval="1"/>
@@ -732,7 +729,47 @@ result = round(SECEEMP) + round(SIS) + round(MUT) + round(SC)</field>
         </record>
 
 
+        <!-- Reglas Helios -->
 
+
+        <record id="hr_rule_helios_navidad" model="hr.salary.rule">
+            <field name="code">NAVIDAD</field>
+            <field name="name">BONO NAVIDAD</field>
+            <field name="note">Se debe ingresar el valor del Bono de Navidad en el Contrato del Empleado y se calcula y paga sólo en el mes 12 (diciembre).</field>
+            <field name="category_id" ref="IMPONIBLE"/>
+            <field name="condition_select">python</field>
+            <field name="condition_python">result = (contract.bono_navidad > 0 and payslip.indicadores_id.month == '12')</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = contract.bono_navidad</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name="sequence" eval="10"/>
+        </record>
+
+        <record id="hr_rule_helios_aguifp" model="hr.salary.rule">
+            <field name="code">AGUIFP</field>
+            <field name="name">AGUINALDO FISTAS PATRIAS</field>
+            <field name="note">Se debe ingresar el valor del Aguinaldo de Fiestas Patrias en el Contrato del Empleado y se calcula y paga sólo en el mes 9 (septiembre).</field>
+            <field name="category_id" ref="IMPONIBLE"/>
+            <field name="condition_select">python</field>
+            <field name="condition_python">	result = (contract.aguinaldo_fp > 0 and payslip.indicadores_id.month == '9')</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = contract.aguinaldo_fp</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name="sequence" eval="10"/>
+        </record>
+
+        <record id="hr_rule_helios_bonovac" model="hr.salary.rule">
+            <field name="code">BONOVAC</field>
+            <field name="name">BONO VACACIONES</field>
+            <field name="note">Toma el valor del Bono de Vacaciones desde el Contrato del Empleado y se calcula y paga sólo en el mes 2 (febrero).</field>
+            <field name="category_id" ref="IMPONIBLE"/>
+            <field name="condition_select">python</field>
+            <field name="condition_python">result = (contract.bono_vaca > 0 and payslip.indicadores_id.month == '2')</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = contract.bono_vaca</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name="sequence" eval="10"/>
+        </record>
 
 
 
@@ -791,21 +828,60 @@ result = round(SECEEMP) + round(SIS) + round(MUT) + round(SC)</field>
             <field name="name">ANTICIPO DE SUELDO</field>
             <field name="input_id" ref="hr_rule_38"/>
         </record>
- <!-- Estructura Inputs -->
+
+     <!-- Insertar Reglas en Estructura Salarial -->
 
     <record id="hr_struct_cl" model="hr.payroll.structure">
             <field name="name">Codigo del Trabajo</field>
             <field name="code">Codigo del Trabajo de Chile</field>
             <field name="parent_id"></field>
-            <field eval="[(6, 0, [ref('hr_rule_1'), ref('hr_rule_2'),ref('hr_rule_3'),ref('hr_rule_4'),ref('hr_rule_5'),ref('hr_rule_6'),ref('hr_rule_7'),ref('hr_rule_8'),ref('hr_rule_9'),ref('hr_rule_10'),ref('hr_rule_11'),ref('hr_rule_12'),ref('hr_rule_13'),ref('hr_rule_14'),ref('hr_rule_15'),ref('hr_rule_16'),ref('hr_rule_17'),ref('hr_rule_18'),ref('hr_rule_19'),ref('hr_rule_20'),ref('hr_rule_21'),ref('hr_rule_22'),ref('hr_rule_23'),ref('hr_rule_24'),ref('hr_rule_25'),ref('hr_rule_26'),ref('hr_rule_27'),ref('hr_rule_28'),ref('hr_rule_33'),ref('hr_rule_34'),ref('hr_rule_35'),ref('hr_rule_36'),ref('hr_rule_37'),ref('hr_rule_38'),ref('hr_rule_38_1'),ref('hr_rule_38_2'),ref('hr_rule_39'),ref('hr_rule_40'),ref('hr_rule_41'),ref('hr_rule_42'),ref('hr_rule_43'),ref('hr_rule_44')])]" name="rule_ids"/>
+            <field eval="[(6, 0, [
+                              ref('hr_rule_1'), 
+                              ref('hr_rule_2'),
+                              ref('hr_rule_3'),
+                              ref('hr_rule_4'),
+                              ref('hr_rule_5'),
+                              ref('hr_rule_6'),
+                              ref('hr_rule_7'),
+                              ref('hr_rule_8'),
+                              ref('hr_rule_9'),
+                              ref('hr_rule_10'),
+                              ref('hr_rule_11'),
+                              ref('hr_rule_12'),
+                              ref('hr_rule_13'),
+                              ref('hr_rule_14'),
+                              ref('hr_rule_15'),
+                              ref('hr_rule_16'),
+                              ref('hr_rule_17'),
+                              ref('hr_rule_18'),
+                              ref('hr_rule_19'),
+                              ref('hr_rule_20'),
+                              ref('hr_rule_21'),
+                              ref('hr_rule_22'),
+                              ref('hr_rule_23'),
+                              ref('hr_rule_24'),
+                              ref('hr_rule_25'),
+                              ref('hr_rule_26'),
+                              ref('hr_rule_27'),
+                              ref('hr_rule_28'),
+                              ref('hr_rule_33'),
+                              ref('hr_rule_34'),
+                              ref('hr_rule_35'),
+                              ref('hr_rule_36'),
+                              ref('hr_rule_37'),
+                              ref('hr_rule_38'),
+                              ref('hr_rule_38_1'),
+                              ref('hr_rule_38_2'),
+                              ref('hr_rule_39'),
+                              ref('hr_rule_40'),
+                              ref('hr_rule_41'),
+                              ref('hr_rule_42'),
+                              ref('hr_rule_43'),
+                              ref('hr_rule_44'),
+                              ref('hr_rule_helios_navidad'),
+                              ref('hr_rule_helios_aguifp'),
+                              ref('hr_rule_helios_bonovac')
+                              ])]" name="rule_ids"/>
         </record>
-
-
-
-
-
-
-
-
     </data>
 </odoo>
