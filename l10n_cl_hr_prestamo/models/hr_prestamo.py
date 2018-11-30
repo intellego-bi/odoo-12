@@ -104,16 +104,19 @@ class HrPrestamo(models.Model):
     def action_refuse(self):
         return self.write({'state': 'refuse'})
 
-    #('key', '=', 'account.hr_emp_account_id')
     @api.multi
     def action_submit(self):
+        # Read Loan Accounting Settings from res.config.settings
         ICPSudo = self.env['ir.config_parameter'].sudo()
-        #hr_emp_acct = ICPSudo.get_param('account.hr_emp_account_id')
-        self.emp_account_id = int(ICPSudo.get_param('account.hr_emp_account_id'))
-        self.treasury_account_id = int(ICPSudo.get_param('account.hr_treasury_account_id'))
-        self.journal_id = int(ICPSudo.get_param('account.hr_journal_id'))
-        #hr_emp_acct = self.env['res.config.settings'].search([], order='id desc')
-        #raise except_orm('Info:', 'Account %s' % (hr_emp_acct))
+        config_read = int(ICPSudo.get_param('account.hr_emp_account_id'))
+        if config_read:
+            self.emp_account_id = config_read
+        config_read = int(ICPSudo.get_param('account.hr_treasury_account_id'))
+        if config_read:
+            self.treasury_account_id = config_read
+        config_read = int(ICPSudo.get_param('account.hr_journal_id'))
+        if config_read:
+            self.journal_id = config_read
         self.write({'state': 'waiting_approval_1'})
 
     @api.multi
