@@ -56,7 +56,6 @@ class HrPayslip(models.Model):
 
     @api.multi
     def action_payslip_done(self):
-        #res = super(HrPayslip, self).action_payslip_done()
         precision = self.env['decimal.precision'].precision_get('Payroll')
 
         for slip in self:
