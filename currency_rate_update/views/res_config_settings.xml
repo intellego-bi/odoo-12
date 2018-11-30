@@ -5,7 +5,7 @@
 -->
 
 <odoo>
-    <data>
+    <!--<data>-->
         <record id="view_res_config_settings" model="ir.ui.view">
             <field name="name">currency_rate_update.res.config.settings.form</field>
             <field name="model">res.config.settings</field>
@@ -32,7 +32,7 @@
                             <div class="o_setting_right_pane">
                                 <span class="o_form_label">Chile Currency Rate Update</span>
                                 <div class="text-muted">
-                                    Configure your API Key for Automatica Currency Update from SBIF
+                                    Configure your API Key for Automatic Currency Update from SBIF
                                 </div>
                                 <div class="content-group">
                                     <div class="row mt16">
@@ -47,7 +47,7 @@
                 </xpath>
             </field>
         </record>
-    </data>
+    <!--</data>-->
 </odoo>
 
 <!--<odoo>
