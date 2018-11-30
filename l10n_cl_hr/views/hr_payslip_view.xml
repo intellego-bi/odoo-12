@@ -37,6 +37,18 @@
                 <xpath expr="//field[@name='payslip_run_id']" position="after">
                     <field name="__last_update"/>
                 </xpath>
+
+
+                <xpath expr="//field[@name='number']" position="attributes">
+                    <attribute name="attrs">{"invisible": [["move_id","=",False]]}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='name']" position="attributes">
+                    <attribute name="attrs">{"invisible": [["move_id","=",False]]}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='move_id']" position="attributes">
+                    <attribute name="attrs">{"invisible": [["move_id","=",False]]}</attribute>
+                </xpath>
+
                 <xpath expr="//field[@name='employee_id']" position="attributes">
                     <attribute name="attrs">{"readonly": [["move_id","!=",False]]}</attribute>
                 </xpath>
