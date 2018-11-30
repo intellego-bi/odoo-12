@@ -37,11 +37,6 @@ class AccConfig(models.TransientModel):
                                   domain=lambda self: [('reconcile', '=', True)],
                                   help="Employee Loans payment transit Balance Sheet Account (Liability)")
 
-    treasury_account_id = fields.Many2one('account.account', string="Employee Payment Account", readonly=False,
-                                  #related='account.treasury_account',
-                                  domain=lambda self: [('reconcile', '=', True)],
-                                  help="Employee Loans payment transit Balance Sheet Account (Liability)")
-
     journal_id = fields.Many2one('account.journal', string="Journal", default=lambda self: self.env['account.journal'].search([('code', '=', 'REMU')], limit=1))
 
     @api.model
