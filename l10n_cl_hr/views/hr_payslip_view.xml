@@ -12,6 +12,16 @@
                 <field name="credit_note" position="replace">
                     <field name="movimientos_personal"/>
                 </field>
+                <xpath expr="//form[1]/sheet[1]/div[2]" position="after">
+                    <group name="parametros_contabilidad">
+                        <group name="parametros_contabilidad_left" string="Parámetros para Contabilizar"/>
+                    </group>
+                </xpath>
+                <xpath expr="//group[@name='studio_group_niljf_left']" position="inside">
+                    <xpath expr="//field[@name='indicadores_id']" position="move"/>
+                    <xpath expr="//field[@name='paid']" position="move"/>
+                    <field expr="//field[@name='credit_note']" position="move"/>
+                </xpath>
             </field>
         </record>
 
