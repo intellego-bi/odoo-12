@@ -28,7 +28,7 @@ from odoo.exceptions import except_orm
 class HrPrestamo(models.Model):
     _name = 'hr.prestamo'
     _inherit = ['mail.thread', 'mail.activity.mixin']
-    _description = "Loan Request"
+    _description = "HR Loan Request"
 
     #@api.one
     #@api.onchange('prestamo_lines')
@@ -104,8 +104,11 @@ class HrPrestamo(models.Model):
     def action_refuse(self):
         return self.write({'state': 'refuse'})
 
+
     @api.multi
     def action_submit(self):
+        hr_emp_acct = model('res.config.settings').search([('key', '=', 'account.hr_emp_account_id')], limit=1, order='id desc')
+        raise except_orm('Info:', 'Account %s' % (hr_emp_acct))
         self.write({'state': 'waiting_approval_1'})
 
     @api.multi
