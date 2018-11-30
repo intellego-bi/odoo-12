@@ -27,17 +27,17 @@ class AccConfig(models.TransientModel):
     prestamo_approve = fields.Boolean(default=False, string="Approval from Accounting Department",
                                   help="Loan Approval from account manager")
 
-    emp_account_id = fields.Many2one('account.account', string="Employee Loans Account", readonly=False,
+    hr_emp_account_id = fields.Many2one('account.account', string="Employee Loans Account", readonly=False,
                                   #related='account.emp_account',
                                   domain=lambda self: [('reconcile', '=', True)],
                                   help="Employee Loans Balance Sheet Account (Assets)")
 
-    treasury_account_id = fields.Many2one('account.account', string="Employee Payment Account", readonly=False,
+    hr_treasury_account_id = fields.Many2one('account.account', string="Employee Payment Account", readonly=False,
                                   #related='account.treasury_account',
                                   domain=lambda self: [('reconcile', '=', True)],
                                   help="Employee Loans payment transit Balance Sheet Account (Liability)")
 
-    journal_id = fields.Many2one('account.journal', string="Journal", 
+    hr_journal_id = fields.Many2one('account.journal', string="Journal", 
                                   domain=lambda self: [('code', '=', 'REMU')],
                                   help="Accounting Journal used for Loan payment to Employee")
 
@@ -47,9 +47,9 @@ class AccConfig(models.TransientModel):
         ICPSudo = self.env['ir.config_parameter'].sudo()
         res.update(
             prestamo_approve=ICPSudo.get_param('account.prestamo_approve'),
-            emp_account_id=int(ICPSudo.get_param('account.emp_account_id')),
-            treasury_account_id=int(ICPSudo.get_param('account.treasury_account_id')),
-            journal_id=int(ICPSudo.get_param('account.journal_id')),
+            emp_account_id=int(ICPSudo.get_param('account.hr_emp_account_id')),
+            treasury_account_id=int(ICPSudo.get_param('account.hr_treasury_account_id')),
+            journal_id=int(ICPSudo.get_param('account.hr_journal_id')),
         )
         return res
 
@@ -58,9 +58,9 @@ class AccConfig(models.TransientModel):
         super(AccConfig, self).set_values()
         ICPSudo = self.env['ir.config_parameter'].sudo()
         ICPSudo.set_param('account.prestamo_approve', self.prestamo_approve)
-        ICPSudo.set_param('account.emp_account_id', self.emp_account_id.id)
-        ICPSudo.set_param('account.treasury_account_id', self.treasury_account_id.id)
-        ICPSudo.set_param('account.journal_id', self.journal_id.id)
+        ICPSudo.set_param('account.hr_emp_account_id', self.hr_emp_account_id.id)
+        ICPSudo.set_param('account.hr_treasury_account_id', self.hr_treasury_account_id.id)
+        ICPSudo.set_param('account.hr_journal_id', self.hr_journal_id.id)
 
 
 
