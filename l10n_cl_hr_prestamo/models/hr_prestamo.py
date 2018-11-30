@@ -107,7 +107,9 @@ class HrPrestamo(models.Model):
     #('key', '=', 'account.hr_emp_account_id')
     @api.multi
     def action_submit(self):
-        hr_emp_acct = self.env['res.config.settings'].search([], order='id desc')
+        ICPSudo = self.env['ir.config_parameter'].sudo()
+        hr_emp_acct = int(ICPSudo.get_param('account.hr_emp_account_id'))
+        #hr_emp_acct = self.env['res.config.settings'].search([], order='id desc')
         raise except_orm('Info:', 'Account %s' % (hr_emp_acct[1]))
         self.write({'state': 'waiting_approval_1'})
 
