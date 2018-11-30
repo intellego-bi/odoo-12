@@ -917,8 +917,8 @@ result = round(SECEEMP) + round(SIS) + round(MUT) + round(SC)</field>
      <!-- Insertar Reglas en Estructura Salarial -->
 
     <record id="hr_struct_cl" model="hr.payroll.structure">
-            <field name="name">Codigo del Trabajo</field>
-            <field name="code">Codigo del Trabajo de Chile</field>
+            <field name="name">Chile :: Nómina Base - Código de Trabajo</field>
+            <field name="code">CL_HR</field>
             <field name="parent_id"></field>
             <field eval="[(6, 0, [
                               ref('hr_rule_1'), 
@@ -964,13 +964,20 @@ result = round(SECEEMP) + round(SIS) + round(MUT) + round(SC)</field>
                               ref('hr_rule_43'),
                               ref('hr_rule_44'),
                               ref('hr_rule_prestamo'),
-                              ref('hr_rule_fin'),
-                              ref('hr_rule_fin_ias'),
-                              ref('hr_rule_fin_iap'),
-                              ref('hr_rule_fin_ifp'),
                               ref('hr_rule_helios_navidad'),
                               ref('hr_rule_helios_aguifp'),
                               ref('hr_rule_helios_bonovac')
+                              ])]" name="rule_ids"/>
+        </record>
+       <record id="hr_struct_cl_fin" model="hr.payroll.structure">
+            <field name="name">Chile :: Finiquito</field>
+            <field name="code">CL_HR_FIN</field>
+            <field name="parent_id" ref="hr_struct_cl"/>
+            <field eval="[(6, 0, [
+                              ref('hr_rule_fin'),
+                              ref('hr_rule_fin_ias'),
+                              ref('hr_rule_fin_iap'),
+                              ref('hr_rule_fin_ifp')
                               ])]" name="rule_ids"/>
         </record>
     </data>
