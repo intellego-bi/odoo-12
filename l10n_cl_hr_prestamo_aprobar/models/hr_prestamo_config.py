@@ -37,6 +37,13 @@ class AccConfig(models.TransientModel):
                                   domain=lambda self: [('reconcile', '=', True)],
                                   help="Employee Loans payment transit Balance Sheet Account (Liability)")
 
+    treasury_account_id = fields.Many2one('account.account', string="Employee Payment Account", readonly=False,
+                                  #related='account.treasury_account',
+                                  domain=lambda self: [('reconcile', '=', True)],
+                                  help="Employee Loans payment transit Balance Sheet Account (Liability)")
+
+    journal_id = fields.Many2one('account.journal', string="Journal", default=lambda self: self.env['account.journal'].search([('code', '=', 'REMU')], limit=1))
+
     @api.model
     def get_values(self):
         res = super(AccConfig, self).get_values()
@@ -45,6 +52,7 @@ class AccConfig(models.TransientModel):
             prestamo_approve=ICPSudo.get_param('account.prestamo_approve'),
             emp_account_id=int(ICPSudo.get_param('account.emp_account_id')),
             treasury_account_id=int(ICPSudo.get_param('account.treasury_account_id')),
+            journal_id=int(ICPSudo.get_param('account.journal_id')),
         )
         return res
 
@@ -55,6 +63,7 @@ class AccConfig(models.TransientModel):
         ICPSudo.set_param('account.prestamo_approve', self.prestamo_approve)
         ICPSudo.set_param('account.emp_account_id', self.emp_account_id.id)
         ICPSudo.set_param('account.treasury_account_id', self.treasury_account_id.id)
+        ICPSudo.set_param('account.journal_id', self.journal_id.id)
 
 
 

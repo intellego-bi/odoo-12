@@ -26,7 +26,13 @@
                             <div class="o_setting_right_pane">
                                 <span class="o_form_label">Employee Loan Accounting</span>
                                 <div class="text-muted">
-                                    Accounts used for initial posting of Employee Loans
+                                    Journal and Accounts used for initial posting of Employee Loans
+                                </div>
+                                <div class="content-group">
+                                    <div class="row mt16">
+                                        <label for="journal_id" class="col-lg-3 o_light_label"/>
+                                        <field name="journal_id"/>
+                                    </div>
                                 </div>
                                 <div class="content-group">
                                     <div class="row mt16">
