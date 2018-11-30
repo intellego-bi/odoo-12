@@ -20,7 +20,7 @@
                 <xpath expr="//group[@name='parametros_contabilidad_left']" position="inside">
                     <xpath expr="//field[@name='indicadores_id']" position="move"/>
                     <xpath expr="//field[@name='paid']" position="move"/>
-                    <field expr="//field[@name='credit_note']" position="move"/>
+                    <field name="credit_note"/>
                 </xpath>
             </field>
         </record>
