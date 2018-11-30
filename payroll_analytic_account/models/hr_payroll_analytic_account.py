@@ -56,7 +56,7 @@ class HrPayslip(models.Model):
 
     @api.multi
     def action_payslip_done(self):
-        res = super(HrPayslip, self).action_payslip_done()
+        #res = super(HrPayslip, self).action_payslip_done()
         precision = self.env['decimal.precision'].precision_get('Payroll')
 
         for slip in self:
@@ -146,7 +146,7 @@ class HrPayslip(models.Model):
             move_dict['line_ids'] = line_ids
             move = self.env['account.move'].create(move_dict)
             slip.write({'move_id': move.id, 'date': date})
-            #move.post()
+            move.post()
         
 
 
