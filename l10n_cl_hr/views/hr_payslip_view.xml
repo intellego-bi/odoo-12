@@ -38,7 +38,36 @@
                 </xpath>
                 <xpath expr="//field[@name='paid']" position="attributes">
                     <attribute name="attrs">{"readonly": [["move_id","!=",False]]}</attribute>
-                    <!--<attribute name="readonly"></attribute>-->
+                </xpath>
+                <xpath expr="//field[@name='credit_note']" position="attributes">
+                    <attribute name="attrs">{"readonly": [["move_id","!=",False]]}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='indicadores_id']" position="attributes">
+                    <attribute name="attrs">{"readonly": [["move_id","!=",False]]}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='date']" position="attributes">
+                    <attribute name="attrs">{"readonly": [["move_id","!=",False]]}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='date_from']" position="attributes">
+                    <attribute name="attrs">{"readonly": [["move_id","!=",False]]}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='date_to']" position="attributes">
+                    <attribute name="attrs">{"readonly": [["move_id","!=",False]]}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='contract_id']" position="attributes">
+                    <attribute name="attrs">{"readonly": [["move_id","!=",False]]}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='struct_id']" position="attributes">
+                    <attribute name="attrs">{"readonly": [["move_id","!=",False]]}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='number']" position="attributes">
+                    <attribute name="attrs">{"readonly": [["move_id","!=",False]]}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='movimientos_personal']" position="attributes">
+                    <attribute name="attrs">{"readonly": [["move_id","!=",False]]}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='credit_note']" position="attributes">
+                    <attribute name="attrs">{"readonly": [["move_id","!=",False]]}</attribute>
                 </xpath>
                 <xpath expr="//form[1]/sheet[1]/notebook[1]" position="inside">
                     <page name="info_gestion" string="Info Gestión">
