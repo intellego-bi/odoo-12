@@ -1,15 +1,14 @@
-<?xml version="1.0" encoding="utf-8"?>						
-<odoo>						
-    <data>						
-
-
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
 
         <!-- Indicadores Inputs -->
 
         <record id="hr_indicadores_enero_2018" model="hr.indicadores">
             <field name="month">1</field>
             <field name="year">2018</field>
-            <field name="name">Enero 2018</field>
+            <field name="name">'<p><a href="https://www.previred.com/web/previred/indicadores-previsionales" class="rounded-circle btn btn-beta rounded-circle btn-sm" target="_blank">Previred</a><br></p>'</field>
+            <field name="url_previred">Enero 2018</field>
             <field name="uf">26824.94</field>
             <field name="utm">47019</field>
             <field name="uta">564228</field>
