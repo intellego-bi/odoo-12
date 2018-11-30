@@ -14,7 +14,7 @@
                                   <field name="year"/>
                             </group>
                             <group>
-                                <field name="url_previred" string="Ir a Previred" readonly="1"/>
+                                <field name="url_previred" string="Ir a Previred" readonly="1" widget="html"/>
                             </group>
                             <notebook>
                                 <page string="Previred" name="previred">
