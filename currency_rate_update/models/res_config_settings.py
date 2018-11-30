@@ -32,3 +32,4 @@ class ResConfigSettings(models.TransientModel):
 
     api_key_sbif = fields.Char(string="SBIF API Key")
 
+
