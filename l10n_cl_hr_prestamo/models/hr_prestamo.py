@@ -107,7 +107,7 @@ class HrPrestamo(models.Model):
 
     @api.multi
     def action_submit(self):
-        hr_emp_acct = model('res.config.settings').search([('key', '=', 'account.hr_emp_account_id')], limit=1, order='id desc')
+        hr_emp_acct = self.env['res.config.settings'].search([('key', '=', 'account.hr_emp_account_id')], limit=1, order='id desc')
         raise except_orm('Info:', 'Account %s' % (hr_emp_acct))
         self.write({'state': 'waiting_approval_1'})
 
