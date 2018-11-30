@@ -38,7 +38,7 @@ class AccConfig(models.TransientModel):
                                   help="Employee Loans payment transit Balance Sheet Account (Liability)")
 
     journal_id = fields.Many2one('account.journal', string="Journal", 
-                                  domain=lambda self: self.env['account.journal'].search([('code', '=', 'REMU')], limit=1),
+                                  domain=lambda self: [('code', '=', 'REMU')],
                                   help="Accounting Journal used for Loan payment to Employee")
 
     @api.model
