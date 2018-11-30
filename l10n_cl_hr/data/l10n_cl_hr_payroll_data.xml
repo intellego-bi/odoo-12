@@ -736,6 +736,12 @@ result = round(SECEEMP) + round(SIS) + round(MUT) + round(SC)</field>
             <field name="sequence" eval="38"/>
         </record>
 
+        <record id="hr_rule_input_prestamo" model="hr.rule.input">
+            <field name="code">HRPR</field>
+            <field name="name">Cuota Préstamo</field>
+            <field name="input_id" ref="hr_rule_prestamo"/>
+        </record>
+
         <record id="hr_rule_fin" model="hr.salary.rule">
             <field name="code">FIN</field>
             <field name="name">Finiquito Otros</field>
