@@ -24,7 +24,7 @@
                         <group>
                             <group string="Empleado Solicitante">
                                 <field name="employee_id" options="{'no_create': True}" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
-                                <field name="department" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="department" readonly="True"/>
                                 <field name="employee_contract_id" options="{'no_create': True}" attrs="{'invisible': ['|', ('state', '=', 'draft'), ('state', '=', 'approve')]}" groups="hr.group_hr_manager,hr.group_hr_user"/>
                                 <field name="company_id" invisible="True" groups="base.group_multi_currency"/>                                
                             </group>
@@ -51,7 +51,7 @@
             <field name="name">anticipo.sueldo.tree</field>
             <field name="model">anticipo.sueldo</field>
             <field name="arch" type="xml">
-                <tree string="Salary Advance">
+                <tree string="Solicitude de Anticipo de Sueldo">
                     <field name="employee_id"/>
                     <field name="date"/>
                     <field name="advance"/>
@@ -65,16 +65,16 @@
             <field name="model">anticipo.sueldo</field>
             <field name="arch" type="xml">
                 <search string="Search">
-                    <field name="name" string="Salary Advance" filter_domain="['|',('name','ilike',self)]"/>
+                    <field name="name" string="Solicitude de Anticipo de Sueldo" filter_domain="['|',('name','ilike',self)]"/>
                     <field name="employee_id"/>
                     <field name="state"/>
-                    <filter string="My Requests" domain="[('employee_id.user_id.id','=',uid)]" name="my_requests_filter"/>
+                    <filter string="Mis Solicitudes" domain="[('employee_id.user_id.id','=',uid)]" name="my_requests_filter"/>
                      <filter domain="[('state', '=', 'draft')]" string="To Submit" name="to_report" help="New Requests"/>
                     <filter domain="[('state','in',('submit','waiting_approval'))]" string="To Approve" name="submitted" help="Submitted Requests"/>
                     <filter domain="[('state', '=', 'approve')]" string="Approved" name="approved" help="Approved Requests"/>
                     <separator/>
-                        <filter string="Employee" name="employee_id" domain="[]" context="{'group_by':'employee_id'}"/>
-                        <filter name="State" string="State" domain="[]" context="{'group_by':'state'}"/>
+                        <filter string="Empleado" name="employee_id" domain="[]" context="{'group_by':'employee_id'}"/>
+                        <filter name="Estado" string="State" domain="[]" context="{'group_by':'state'}"/>
                         <filter string="Date" domain="[]" name="date" context="{'group_by':'date'}"/>
                </search>
             </field>
