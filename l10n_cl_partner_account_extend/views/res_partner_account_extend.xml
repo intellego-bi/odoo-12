@@ -141,6 +141,9 @@
             <field name="mode">extension</field>
             <field name="inherit_id" ref="account.view_account_move_line_filter"/>
             <field name="arch" type="xml">
+                <xpath expr="//search[1]/field[@name='move_id']" position="before">
+                    <field name="name"/>
+                </xpath>
                 <xpath expr="//search[1]/field[@name='move_id']" position="after">
                     <field name="date_maturity"/>
                 </xpath>
