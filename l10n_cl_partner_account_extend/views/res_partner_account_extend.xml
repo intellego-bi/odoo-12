@@ -11,24 +11,24 @@
                 <attribute name="context">"{'color_field':'color'}"</attribute>
               </xpath>-->
               <xpath expr="//field[@name='property_payment_term_id']" position="attributes">
-                <attribute name="attrs">"{'invisible':[['customer','=',False]]}"</attribute>
+                <attribute name="attrs">"{'invisible':[('customer','=',False)]}"</attribute>
               </xpath>
               <xpath expr="//field[@name='property_payment_term_id']" position="after">
-                <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='sales_purchases']/group[@name='container_row_2']/group[@name='sale']/field[@name='user_id']" position="move"/>
+                <!--<xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='sales_purchases']/group[@name='container_row_2']/group[@name='sale']/field[@name='user_id']" position="move"/>-->
                 <field name="team_id" attrs="{'invisible': [['customer','=',False]]}"/>
               </xpath>
               <!--<xpath expr="//field[@name='property_product_pricelist']" position="attributes">
                 <attribute name="attrs">{'invisible': ['&',['customer','=',False],'|',['is_company','=',False],['parent_id','!=',False]]}</attribute>
               </xpath>-->
               <xpath expr="//field[@name='property_product_pricelist']" position="attributes">
-                <attribute name="attrs">"{'invisible':['customer','=',False]}"</attribute>
+                <attribute name="attrs">"{'invisible':[('customer','=',False)}"</attribute>
               </xpath>
 
               <!--<xpath expr="//field[@name='property_product_pricelist']" position="after">
                 <xpath expr="//field[@name='message_bounce']" position="move"/>
               </xpath>-->
               <xpath expr="//field[@name='property_supplier_payment_term_id']" position="attributes">
-                <attribute name="attrs">"{'invisible':[['supplier','=',False]]}"</attribute>
+                <attribute name="attrs">"{'invisible':[('supplier','=',False)]}"</attribute>
               </xpath>
               <!--<xpath expr="//field[@name='property_purchase_currency_id']" position="attributes">
                 <attribute name="attrs">{"invisible": [['supplier','=',False]]}</attribute>
@@ -37,7 +37,7 @@
                 <attribute name="string">Controles y Acciones</attribute>
               </xpath>-->
               <xpath expr="//field[@name='property_account_position_id']" position="before">
-                <field name="credit_limit" attrs="{'invisible':[['customer','=',False]]}"/>
+                <field name="credit_limit" attrs="{'invisible':[('customer','=',False)]}"/>
                 <field name="trust" attrs="{'invisible':[['customer','=',False]]}"/>
                 <field name="followup_status"/>
                 <field name="activity_summary"/>
