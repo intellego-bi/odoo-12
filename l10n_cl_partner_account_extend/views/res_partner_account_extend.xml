@@ -133,8 +133,10 @@
             </field>
         </record>
 
-        <!-- Personaliza vista de Búsqueda para Libro Diario: Fecha Vencimiento -->
+        <!-- Personaliza vista de Búsqueda para Libro Diario Fecha Vencimiento -->
         <!-- suprime campos Tax Line ID y Tax ID no relevantes para Chile -->
+        <!-- agrega Búsqueda por campos Etiqueta y Referencia -->
+        <!-- agrega Agrupar por Fecha de Vencimiento -->
         <record model="ir.ui.view" id="res_account_tree_search_cl_extend">
             <field name="name">account.move.line</field>
             <field name="model">account.move.line</field>
@@ -143,6 +145,9 @@
             <field name="arch" type="xml">
                 <xpath expr="//search[1]/field[@name='move_id']" position="before">
                     <field name="name"/>
+                </xpath>
+                <xpath expr="//search[1]/field[@name='move_id']" position="before">
+                    <field name="ref"/>
                 </xpath>
                 <xpath expr="//search[1]/field[@name='move_id']" position="after">
                     <field name="date_maturity"/>
