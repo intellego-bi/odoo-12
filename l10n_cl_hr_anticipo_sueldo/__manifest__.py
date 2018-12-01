@@ -39,6 +39,7 @@
         'security/security.xml',
         'data/hr_anticipo_reglas_salariales.xml',
         'data/hr_anticipo_sueldo_sequence.xml',
+        'views/hr_anticipo_config.xml',
         'views/hr_anticipo_sueldo.xml',
         'views/hr_salary_structure.xml',
         'views/hr_anticipo_sueldo_menu.xml',

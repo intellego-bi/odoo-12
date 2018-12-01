@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <data>
-        <menuitem id="parent_menu_anticipo_sueldo" name="Anticipos" parent="l10n_cl_hr.menu_cl_hr_payroll" sequence="7"/>
+        <menuitem id="parent_menu_anticipo_sueldo" name="Anticipos" parent="l10n_cl_hr.menu_cl_hr_payroll" sequence="1"/>
         <menuitem id="menu_my_anticipo_sueldo" action="action_my_anticipo_sueldo" parent="parent_menu_anticipo_sueldo" name="Solicitar Anticipo Sueldo" sequence="1" />
         <menuitem id="menu_anticipo_sueldo" action="action_anticipo_sueldo_to_approve" parent="parent_menu_anticipo_sueldo" name="Solicitudes de Anticipo a Aprobar" sequence="3" groups="hr.group_hr_manager,hr.group_hr_user,account.group_account_manager"/>
-        <menuitem id="menu_my_anticipo_sueldo_approved" action="action_my_anticipo_sueldo_request_approved" parent="parent_menu_anticipo_sueldo" name="My Approved Salary Advance" sequence="2" />
+        <menuitem id="menu_my_anticipo_sueldo_approved" action="action_my_anticipo_sueldo_request_approved" parent="parent_menu_anticipo_sueldo" name="Mis Solicitudes Aprobadas" sequence="2" />
     </data>
 </odoo>

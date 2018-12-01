@@ -23,23 +23,23 @@
                         </div>
                         <group>
                             <group string="Empleado Solicitante">
-                                <field name="employee_id"/>
-                                <field name="department"/>
-                                <field name="employee_contract_id"  attrs="{'invisible': ['|', ('state', '=', 'draft'), ('state', '=', 'approve')]}" groups="hr.group_hr_manager,hr.group_hr_user"/>
+                                <field name="employee_id" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="department" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="employee_contract_id" attrs="{'invisible': ['|', ('state', '=', 'draft'), ('state', '=', 'approve')]}" groups="hr.group_hr_manager,hr.group_hr_user"/>
                                 <field name="company_id" invisible="True" groups="base.group_multi_currency"/>
-                                <field name="date"/>
-                                <field name="reason"/>                                
+                                <field name="date" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="reason" attrs="{'readonly': [('state', '!=', 'draft')]}"/>                                
                             </group>
                             <group string="Anticipo">
-                                <field name="advance" widget="monetary"/>
-                                <field name="currency_id" groups="base.group_multi_currency"/>
+                                <field name="advance" widget="monetary" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="currency_id" attrs="{'readonly': [('state', '!=', 'draft')]}" groups="base.group_multi_currency"/>
                                 <!--<field name="exceed_condition" groups="hr.group_hr_manager,hr.group_hr_user"/>-->
                             </group>
-                            <group string="Contabilización" attrs="{'invisible':[('state', '=', 'draft'), ('state', '=', 'submit')]}" groups="account.group_account_manager">
-                                <field name="debit" attrs="{'invisible':[('state', '=', 'draft'), ('state', '=', 'submit')]}" groups="account.group_account_manager"/>
-                                <field name="credit"  attrs="{'invisible':[('state', '=', 'draft'), ('state', '=', 'submit')]}" groups="account.group_account_manager"/>
-                                <field name="journal" attrs="{'invisible': [('state', '=', 'draft'), ('state', '=', 'submit')]}" groups="account.group_account_manager"/>
-	                            <field name="move_id" attrs="{'invisible': [('state', '!=', 'approve')]}" groups="account.group_account_manager"/>
+                            <group string="Contabilización" attrs="{'invisible':[('state', '=', 'draft')]}" groups="account.group_account_manager">
+                                <field name="debit" attrs="{'readonly': [('state', '!=', 'draft')]}" groups="account.group_account_manager"/>
+                                <field name="credit"  attrs="{'readonly': [('state', '!=', 'draft')]}" groups="account.group_account_manager"/>
+                                <field name="journal" attrs="{'readonly': [('state', '!=', 'draft')]}" groups="account.group_account_manager"/>
+                                <field name="move_id" attrs="{'invisible': [('state', '!=', 'approve')]}" groups="account.group_account_manager"/>
                             </group>
                         </group>
                     </sheet>

@@ -29,7 +29,7 @@ class AnticipoSueldoPago(models.Model):
     _name = "anticipo.sueldo"
     _inherit = ['mail.thread', 'mail.activity.mixin']
 
-    name = fields.Char(string='Name', readonly=True, default=lambda self: 'Adv/')
+    name = fields.Char(string='Name', readonly=True, default=lambda self: 'Nueva Solicitud/')
     employee_id = fields.Many2one('hr.employee', string='Employee', required=True)
     date = fields.Date(string='Date', required=True, default=lambda self: fields.Date.today())
     reason = fields.Text(string='Reason')
@@ -57,10 +57,22 @@ class AnticipoSueldoPago(models.Model):
     #move_date = fields.Date('Date Account', states={'draft': [('readonly', False)]}, readonly=True,
     #    help="Fecha de Contabilización del Anticipo.")
     move_id = fields.Many2one('account.move', 'Accounting Entry', readonly=True, copy=False)
-    hr_anticipo_approve = self.env['ir.config_parameter'].sudo().get_param('account.hr_anticipo_approve')
+    
 
     @api.onchange('employee_id')
     def onchange_employee_id(self):
+       # Read Accounting Settings from res.config.settings
+        ICPSudo = self.env['ir.config_parameter'].sudo()
+        config_read = int(ICPSudo.get_param('account.hr_debit_account_id'))
+        if config_read:
+            self.debit = config_read
+        config_read = int(ICPSudo.get_param('account.hr_credit_account_id'))
+        if config_read:
+            self.credit = config_read
+        config_read = int(ICPSudo.get_param('account.hr_anticipo_journal_id'))
+        if config_read:
+            self.journal = config_read
+
         department_id = self.employee_id.department_id.id
         domain = [('employee_id', '=', self.employee_id.id)]
         return {'value': {'department': department_id}, 'domain': {
@@ -92,6 +104,7 @@ class AnticipoSueldoPago(models.Model):
         config_read = int(ICPSudo.get_param('account.hr_anticipo_journal_id'))
         if config_read:
             self.journal = config_read
+
         self.state = 'submit'
 
     @api.one
@@ -112,6 +125,18 @@ class AnticipoSueldoPago(models.Model):
     def approve_request(self):
         """This Approve the employee salary advance request.
                    """
+        # Read Accounting Settings from res.config.settings
+        ICPSudo = self.env['ir.config_parameter'].sudo()
+        config_read = int(ICPSudo.get_param('account.hr_debit_account_id'))
+        if config_read:
+            self.debit = config_read
+        config_read = int(ICPSudo.get_param('account.hr_credit_account_id'))
+        if config_read:
+            self.credit = config_read
+        config_read = int(ICPSudo.get_param('account.hr_anticipo_journal_id'))
+        if config_read:
+            self.journal = config_read
+
         emp_obj = self.env['hr.employee']
         address = emp_obj.browse([self.employee_id.id]).address_home_id
         if not address.id:
@@ -149,12 +174,25 @@ class AnticipoSueldoPago(models.Model):
                 if current_day - slip_day < struct_id.advance_date:
                     raise exceptions.Warning(
                         _('Request can be done after "%s" Days From prevoius month salary') % struct_id.advance_date)
+        hr_anticipo_approve = self.env['ir.config_parameter'].sudo().get_param('account.hr_anticipo_approve')
         self.state = 'waiting_approval'
 
     @api.one
     def approve_request_acc_dept(self):
         """This Approve the employee salary advance request from accounting department.
                    """
+        # Read Accounting Settings from res.config.settings
+        ICPSudo = self.env['ir.config_parameter'].sudo()
+        config_read = int(ICPSudo.get_param('account.hr_debit_account_id'))
+        if config_read:
+            self.debit = config_read
+        config_read = int(ICPSudo.get_param('account.hr_credit_account_id'))
+        if config_read:
+            self.credit = config_read
+        config_read = int(ICPSudo.get_param('account.hr_anticipo_journal_id'))
+        if config_read:
+            self.journal = config_read
+
         salary_advance_search = self.search([('employee_id', '=', self.employee_id.id), ('id', '!=', self.id),
                                              ('state', '=', 'approve')])
         

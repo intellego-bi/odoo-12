@@ -25,7 +25,7 @@ class HRAnticipoConfig(models.TransientModel):
     _inherit = 'res.config.settings'
 
     hr_anticipo_approve = fields.Boolean(default=False, string="Approval from Accounting Department",
-                                  help="SAlary Advance Approval from account manager")
+                                  help="Salary Advance Approval from account manager")
 
     hr_debit_account_id = fields.Many2one('account.account', string="Salary Advance Debit Account", readonly=False,
                                   domain=lambda self: [('reconcile', '=', True)],

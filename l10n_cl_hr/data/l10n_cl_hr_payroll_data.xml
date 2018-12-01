@@ -727,6 +727,23 @@ result = round(SECEEMP) + round(SIS) + round(MUT) + round(SC)</field>
 
         <!-- Reglas Addons Nómina Chile -->
 
+        <record id="hr_payslip_rule_sol_anticipo" model="hr.salary.rule">
+            <field name="code">SANTS</field>
+            <field name="name">Solicitud de Anticipo</field>
+            <field name="category_id" ref="l10n_cl_hr.ODESC"/>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = inputs.SANTS and - (inputs.SANTS.amount)</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name="sequence" eval="38"/>
+        </record>
+
+        <record id="hr_rule_input_sol_anticipo" model="hr.rule.input">
+            <field name="code">SANTS</field>
+            <field name="name">Solicitud de Anticipo</field>
+            <field name="input_id" ref="hr_payslip_rule_sol_anticipo"/>
+        </record>
+
+
         <record id="hr_rule_prestamo" model="hr.salary.rule">
             <field name="code">HRPR</field>
             <field name="name">Cuota Préstamo</field>
@@ -963,6 +980,7 @@ result = round(SECEEMP) + round(SIS) + round(MUT) + round(SC)</field>
                               ref('hr_rule_42'),
                               ref('hr_rule_43'),
                               ref('hr_rule_44'),
+                              ref('hr_payslip_rule_sol_anticipo'),
                               ref('hr_rule_prestamo'),
                               ref('hr_rule_helios_navidad'),
                               ref('hr_rule_helios_aguifp'),

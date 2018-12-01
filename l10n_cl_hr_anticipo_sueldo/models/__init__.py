@@ -20,6 +20,7 @@
 # 
 ###################################################################################
 from . import salary_structure
+from . import hr_anticipo_config
 from . import anticipo_sueldo
 from . import hr_advance_payslip
 
