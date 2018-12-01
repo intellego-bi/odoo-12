@@ -41,7 +41,9 @@ class AnticipoSueldoPago(models.Model):
     payment_method = fields.Many2one('account.journal', string='Payment Method')
     exceed_condition = fields.Boolean(string='Exceed Maximum %',
                                       help="The Advance is greater than the maximum percentage in salary structure")
-    department = fields.Many2one('hr.department', string='Department')
+    #department = fields.Many2one('hr.department', string='Department')
+    department = fields.Many2one('hr.department', related="employee_id.department_id", readonly=True,
+                                  string="Department")
     state = fields.Selection([('draft', 'Draft'),
                               ('submit', 'Submitted'),
                               ('waiting_approval', 'Waiting Approval'),
