@@ -40,10 +40,10 @@
                         </h1>
                     </div>
                     <group col="4">
-                        <field name="employee_id"  attrs="{'readonly':[('state','=','approve')]}"/>
+                        <field name="employee_id" options="{'no_create': True}" attrs="{'readonly':[('state','=','approve')]}"/>
                         <field name="date"/>
                         <field name="department_id"/>
-                        <field name="job_position"/>
+                        <field name="job_position" />
                         <field name="prestamo_amount" attrs="{'readonly':[('state','=','approve')]}" widget="monetary"/>
                         <field name="installment" attrs="{'readonly':[('state','=','approve')]}"/>
                         <field name="payment_date" attrs="{'readonly':[('state','=','approve')]}"/>
