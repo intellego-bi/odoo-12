@@ -7,15 +7,15 @@
             <field name="inherit_id" ref="base.view_partner_form"/>
             <field name="arch" type="xml">
               <xpath expr="//field[@name='category_id']" position="attributes">
-                <attribute name="context">{'color_field': 'color'}</attribute>
+                <attribute name="context">"{'color_field': 'color'}"</attribute>
               </xpath>
               <xpath expr="//field[@name='property_payment_term_id']" position="attributes">
-                <attribute name="attrs">{'invisible': [['customer",'=',False]]}</attribute>
+                <attribute name="attrs">"{'invisible': [['customer','=',False]]}"</attribute>
               </xpath>
-              <xpath expr="//field[@name='property_payment_term_id']" position="after">
+              <!--<xpath expr="//field[@name='property_payment_term_id']" position="after">
                 <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='sales_purchases']/group[@name='container_row_2']/group[@name='sale']/field[@name='user_id']" position="move"/>
                 <field name="team_id" attrs="{'invisible': [['customer','=',False]]}"/>
-              </xpath>
+              </xpath>-->
               <!--<xpath expr="//field[@name='property_product_pricelist']" position="attributes">
                 <attribute name="attrs">{'invisible': ['&',['customer','=',False],'|',['is_company','=',False],['parent_id','!=',False]]}</attribute>
               </xpath>-->
