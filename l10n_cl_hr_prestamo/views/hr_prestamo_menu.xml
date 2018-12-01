@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    <menuitem name="Solicitudes de Préstamo"
+    <menuitem name="Employee Loans"
         id="menu_base_hr_prestamo_request"
         parent = "l10n_cl_hr.menu_cl_hr_payroll"
         sequence="2"/>
 
-    <menuitem name="Préstamos"
+    <menuitem name="Loan Requests"
         parent="menu_base_hr_prestamo_request"
         id="menu_hr_prestamo_request"
         action="action_hr_prestamo_request"/>

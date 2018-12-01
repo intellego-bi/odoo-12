@@ -106,8 +106,8 @@
         <field name="view_mode">tree,form</field>
         <field name="search_view_id" ref="view_prestamo_request_search_form"/>
          <field name="help" type="html">
-                <p class="o_view_nocontent_smiling_face">Acá podrá crear solicitudes de préstamos</p>
-                <p>Crear Solicitud de Préstamo de RRHH</p>
+                <p class="o_view_nocontent_smiling_face">Here you can create Employee Loan Requests</p>
+                <p>Create Employee Loan Requests</p>
         </field>
     </record>
 

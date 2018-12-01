@@ -1,0 +1,107 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* l10n_cl_hr_prestamo_aprobar
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-12-01 18:34+0000\n"
+"PO-Revision-Date: 2018-12-01 18:34+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: l10n_cl_hr_prestamo_aprobar
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr_prestamo_aprobar.view_account_config_inherit
+msgid "<span class=\"o_form_label\">Employee Loan Accounting</span>"
+msgstr "<span class=\"o_form_label\">Contabilización de Préstamos a Empleados</span>"
+
+#. module: l10n_cl_hr_prestamo_aprobar
+#: model:ir.model.fields,help:l10n_cl_hr_prestamo_aprobar.field_res_config_settings__hr_journal_id
+msgid "Accounting Journal used for Loan payment to Employee"
+msgstr "Libro Diario para contabilización de Préstamos a Empleados"
+
+#. module: l10n_cl_hr_prestamo_aprobar
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr_prestamo_aprobar.view_account_config_inherit
+msgid "Accounting settings for Employee Loans."
+msgstr "Configuraciones de Contabilidad para Préstamos RRHH"
+
+#. module: l10n_cl_hr_prestamo_aprobar
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr_prestamo_aprobar.view_account_config_inherit
+msgid "Allows you to Add approval from accounting department."
+msgstr "Permite incorporar aprobación del Depto de Contabilidad."
+
+#. module: l10n_cl_hr_prestamo_aprobar
+#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo_aprobar.field_res_config_settings__prestamo_approve
+msgid "Approval from Accounting Department"
+msgstr "Aprobación del Depto. Contabilidad"
+
+#. module: l10n_cl_hr_prestamo_aprobar
+#: model:ir.model,name:l10n_cl_hr_prestamo_aprobar.model_res_config_settings
+msgid "Config Settings"
+msgstr "Opciones de Configuración"
+
+#. module: l10n_cl_hr_prestamo_aprobar
+#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo_aprobar.field_res_config_settings__hr_emp_account_id
+msgid "Employee Loans Account"
+msgstr "Cuenta de Préstamos al Personal"
+
+#. module: l10n_cl_hr_prestamo_aprobar
+#: model:ir.model.fields,help:l10n_cl_hr_prestamo_aprobar.field_res_config_settings__hr_emp_account_id
+msgid "Employee Loans Balance Sheet Account (Assets)"
+msgstr "Cuenta de Balance (Activo) para registrar Préstamos al Personal"
+
+#. module: l10n_cl_hr_prestamo_aprobar
+#: model:ir.model.fields,help:l10n_cl_hr_prestamo_aprobar.field_res_config_settings__hr_treasury_account_id
+msgid "Employee Loans payment transit Balance Sheet Account (Liability)"
+msgstr "Cuenta transitoria de Balance (Pasivo) para realizar el pago inicial al otorgar el préstamo"
+
+#. module: l10n_cl_hr_prestamo_aprobar
+#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo_aprobar.field_res_config_settings__hr_treasury_account_id
+msgid "Employee Payment Account"
+msgstr "Cuenta de Pago en Tránsito"
+
+#. module: l10n_cl_hr_prestamo_aprobar
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr_prestamo_aprobar.view_account_config_inherit
+msgid "Enable Approval from Accounting Department"
+msgstr "Habilitar Aprobación del Departamento de Contabilidad"
+
+#. module: l10n_cl_hr_prestamo_aprobar
+#: model:ir.model,name:l10n_cl_hr_prestamo_aprobar.model_hr_prestamo
+msgid "HR Loan Request"
+msgstr "Solicitud de Préstamo RRHH"
+
+#. module: l10n_cl_hr_prestamo_aprobar
+#: model:ir.model,name:l10n_cl_hr_prestamo_aprobar.model_hr_prestamo_line
+msgid "Installment Line"
+msgstr "Línea de Cuota"
+
+#. module: l10n_cl_hr_prestamo_aprobar
+#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo_aprobar.field_res_config_settings__hr_journal_id
+msgid "Journal"
+msgstr "Libro Diario"
+
+#. module: l10n_cl_hr_prestamo_aprobar
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr_prestamo_aprobar.view_account_config_inherit
+msgid "Journal and Accounts used for initial posting of Employee Loans"
+msgstr "Libro Diario y Cuentas Contables empleadas para el registro de Préstamos RRHH"
+
+#. module: l10n_cl_hr_prestamo_aprobar
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr_prestamo_aprobar.view_account_config_inherit
+msgid "Loan Approval"
+msgstr "Aprobación de Préstamo"
+
+#. module: l10n_cl_hr_prestamo_aprobar
+#: model:ir.model.fields,help:l10n_cl_hr_prestamo_aprobar.field_res_config_settings__prestamo_approve
+msgid "Loan Approval from account manager"
+msgstr "Aprobación de Préstamo de responsable Contable"
+
+#. module: l10n_cl_hr_prestamo_aprobar
+#: model:ir.model,name:l10n_cl_hr_prestamo_aprobar.model_hr_payslip
+msgid "Pay Slip"
+msgstr "Liquidación"
+

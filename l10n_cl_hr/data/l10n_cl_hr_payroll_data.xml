@@ -746,7 +746,7 @@ result = round(SECEEMP) + round(SIS) + round(MUT) + round(SC)</field>
 
         <record id="hr_rule_prestamo" model="hr.salary.rule">
             <field name="code">HRPR</field>
-            <field name="name">Cuota Préstamo</field>
+            <field name="name">HR Loan Installment</field>
             <field name="note">Regla automática que toma las cuotas desde el módulo de Préstamos a Empleados.</field>
             <field name="category_id" ref="ODESC"/>
             <!--<field name="account_credit" id="l10n_cl_odoo12.11050200"/>-->
@@ -758,7 +758,7 @@ result = round(SECEEMP) + round(SIS) + round(MUT) + round(SC)</field>
 
         <record id="hr_rule_input_prestamo" model="hr.rule.input">
             <field name="code">HRPR</field>
-            <field name="name">Cuota Préstamo</field>
+            <field name="name">HR Loan Installment</field>
             <field name="input_id" ref="hr_rule_prestamo"/>
         </record>
 

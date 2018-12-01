@@ -1,0 +1,484 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* l10n_cl_hr_prestamo
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0+e\n"
+"Report-Msgid-Bugs-To: odoo@intellego-bi.com\n"
+"POT-Creation-Date: 2018-12-01 18:12+0000\n"
+"PO-Revision-Date: 2018-12-01 18:12+0000\n"
+"Last-Translator: Rodolfo Bermúdez Neubauer<odoo@intellego-bi.com>\n"
+"Language-Team: Intellego-BI.com\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: l10n_cl_hr_prestamo
+#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__move_id
+#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo_line__move_id
+msgid "Accounting Entry"
+msgstr "Asiento Contable"
+
+#. module: l10n_cl_hr_prestamo
+#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__message_needaction
+msgid "Action Needed"
+msgstr "Acción Requerida"
+
+#. module: l10n_cl_hr_prestamo
+#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__activity_ids
+msgid "Activities"
+msgstr "Actividades"
+
+#. module: l10n_cl_hr_prestamo
+#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__activity_state
+msgid "Activity State"
+msgstr "Estado de la Actividad"
+
+#. module: l10n_cl_hr_prestamo
+#: model_terms:ir.actions.act_window,help:l10n_cl_hr_prestamo.action_hr_prestamo_request
+msgid "Here you can create Employee Loan Requests"
+msgstr "Acá podrá crear solicitudes de préstamos"
+
+#. module: l10n_cl_hr_prestamo
+#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo_line__amount
+msgid "Amount"
+msgstr "Importe"
+
+#. module: l10n_cl_hr_prestamo
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr_prestamo.hr_prestamo_form_view
+msgid "Approve"
+msgstr "Aprobar"
+
+#. module: l10n_cl_hr_prestamo
+#: selection:hr.prestamo,state:0
+msgid "Approved"
+msgstr "Aprobado"
+
+#. module: l10n_cl_hr_prestamo
+#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__message_attachment_count
+msgid "Attachment Count"
+msgstr "Conteo de archivos adjuntos"
+
+#. module: l10n_cl_hr_prestamo
+#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__balance_amount
+msgid "Balance Amount"
+msgstr "Saldo"
+
+#. module: l10n_cl_hr_prestamo
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr_prestamo.hr_prestamo_form_view
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: l10n_cl_hr_prestamo
+#: selection:hr.prestamo,state:0
+msgid "Canceled"
+msgstr "Cancelado"
+
+#. module: l10n_cl_hr_prestamo
+#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__company_id
+msgid "Company"
+msgstr "Compañía"
+
+#. module: l10n_cl_hr_prestamo
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr_prestamo.hr_prestamo_form_view
+msgid "Compute Installment"
+msgstr "Calcular Cuotas"
+
+#. module: l10n_cl_hr_prestamo
+#: model_terms:ir.actions.act_window,help:l10n_cl_hr_prestamo.action_hr_prestamo_request
+msgid "Create Employee Loan Requests"
+msgstr "Crear Solicitud de Préstamo de RRHH"
+
+#. module: l10n_cl_hr_prestamo
+#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__create_uid
+#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo_line__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: l10n_cl_hr_prestamo
+#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__create_date
+#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo_line__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: l10n_cl_hr_prestamo
+#: model:hr.salary.rule,name:l10n_cl_hr_prestamo.hr_rule_prestamo
+msgid "HR Loan Installment"
+msgstr "Cuota Préstamo RRHH"
+
+#. module: l10n_cl_hr_prestamo
+#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__currency_id
+msgid "Currency"
+msgstr "Moneda"
+
+#. module: l10n_cl_hr_prestamo
+#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__date
+msgid "Date"
+msgstr "Fecha"
+
+#. module: l10n_cl_hr_prestamo
+#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__department_id
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr_prestamo.view_prestamo_request_search_form
+msgid "Department"
+msgstr "Departamento"
+
+#. module: l10n_cl_hr_prestamo
+#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__display_name
+#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo_line__display_name
+msgid "Display Name"
+msgstr "Nombre a mostrar"
+
+#. module: l10n_cl_hr_prestamo
+#: selection:hr.prestamo,state:0
+msgid "Draft"
+msgstr "Borrador"
+
+#. module: l10n_cl_hr_prestamo
+#: model:ir.model,name:l10n_cl_hr_prestamo.model_hr_employee
+#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__employee_id
+#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo_line__employee_id
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr_prestamo.view_prestamo_request_search_form
+msgid "Employee"
+msgstr "Empleado"
+
+#. module: l10n_cl_hr_prestamo
+#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__message_follower_ids
+msgid "Followers"
+msgstr "Seguidores"
+
+#. module: l10n_cl_hr_prestamo
+#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__message_channel_ids
+msgid "Followers (Channels)"
+msgstr "Seguidores (Canales)"
+
+#. module: l10n_cl_hr_prestamo
+#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Seguidores (Empresas)"
+
+#. module: l10n_cl_hr_prestamo
+#: model:ir.model,name:l10n_cl_hr_prestamo.model_hr_prestamo
+msgid "HR Loan Request"
+msgstr "Solicitud de Préstamo RRHH"
+
+#. module: l10n_cl_hr_prestamo
+#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__id
+#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo_line__id
+msgid "ID"
+msgstr ""
+
+#. module: l10n_cl_hr_prestamo
+#: model:ir.model.fields,help:l10n_cl_hr_prestamo.field_hr_prestamo__message_unread
+msgid "If checked new messages require your attention."
+msgstr "Si está marcado, hay nuevos mensajes que requieren su atención"
+
+#. module: l10n_cl_hr_prestamo
+#: model:ir.model.fields,help:l10n_cl_hr_prestamo.field_hr_prestamo__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "Si está marcado hay nuevos mensajes que requieren su atención."
+
+#. module: l10n_cl_hr_prestamo
+#: model:ir.model.fields,help:l10n_cl_hr_prestamo.field_hr_prestamo__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Si se encuentra marcado, algunos mensajes tienen error de envío."
+
+#. module: l10n_cl_hr_prestamo
+#: model:ir.model,name:l10n_cl_hr_prestamo.model_hr_prestamo_line
+msgid "Installment Line"
+msgstr "Detalle de Cuota"
+
+#. module: l10n_cl_hr_prestamo
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr_prestamo.hr_prestamo_form_view
+msgid "Installments"
+msgstr "Cuotas"
+
+#. module: l10n_cl_hr_prestamo
+#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__message_is_follower
+msgid "Is Follower"
+msgstr "Es un seguidor"
+
+#. module: l10n_cl_hr_prestamo
+#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__job_position
+msgid "Job Position"
+msgstr "Puesto de Trabajo"
+
+#. module: l10n_cl_hr_prestamo
+#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__journal_id
+msgid "Journal"
+msgstr "Libro Diario"
+
+#. module: l10n_cl_hr_prestamo
+#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo____last_update
+#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo_line____last_update
+msgid "Last Modified on"
+msgstr "Modificado el"
+
+#. module: l10n_cl_hr_prestamo
+#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__write_uid
+#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo_line__write_uid
+msgid "Last Updated by"
+msgstr "Actualizado por"
+
+#. module: l10n_cl_hr_prestamo
+#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__write_date
+#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo_line__write_date
+msgid "Last Updated on"
+msgstr "Actualizado el"
+
+#. module: l10n_cl_hr_prestamo
+#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__emp_account_id
+msgid "Loan Account"
+msgstr "N° Préstamos"
+
+#. module: l10n_cl_hr_prestamo
+#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__prestamo_amount
+msgid "Loan Amount"
+msgstr "Valor Préstamo"
+
+#. module: l10n_cl_hr_prestamo
+#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_employee__prestamo_count
+msgid "Loan Count"
+msgstr "N° Préstamos"
+
+#. module: l10n_cl_hr_prestamo
+#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_payslip_input__prestamo_line_id
+msgid "Loan Installment"
+msgstr "Cuota Préstamo"
+
+#. module: l10n_cl_hr_prestamo
+#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__prestamo_lines
+msgid "Loan Line"
+msgstr "Línea de Préstamo"
+
+#. module: l10n_cl_hr_prestamo
+#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__name
+msgid "Loan Name"
+msgstr "Nombre Préstamo"
+
+#. module: l10n_cl_hr_prestamo
+#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo_line__prestamo_id
+msgid "Loan Ref."
+msgstr "Ref. Préstamo"
+
+#. module: l10n_cl_hr_prestamo
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr_prestamo.hr_prestamo_form_view
+msgid "Loan Request"
+msgstr "Solicitud de Préstamo"
+
+#. module: l10n_cl_hr_prestamo
+#: model:ir.actions.act_window,name:l10n_cl_hr_prestamo.action_hr_prestamo_request
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr_prestamo.hr_prestamo_tree_view
+msgid "Loan Requests"
+msgstr "Solicitudes de Préstamo"
+
+#. module: l10n_cl_hr_prestamo
+#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "Adjuntos Principales"
+
+#. module: l10n_cl_hr_prestamo
+#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__message_has_error
+msgid "Message Delivery error"
+msgstr "Error de Envío de Mensaje"
+
+#. module: l10n_cl_hr_prestamo
+#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__message_ids
+msgid "Messages"
+msgstr "Mensajes"
+
+#. module: l10n_cl_hr_prestamo
+#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "Siguiente plazo de actividad"
+
+#. module: l10n_cl_hr_prestamo
+#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__activity_summary
+msgid "Next Activity Summary"
+msgstr "Resumen de la siguiente actividad"
+
+#. module: l10n_cl_hr_prestamo
+#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__activity_type_id
+msgid "Next Activity Type"
+msgstr "Siguiente tipo de actividad"
+
+#. module: l10n_cl_hr_prestamo
+#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__installment
+msgid "No Of Installments"
+msgstr "N° de Cuotas"
+
+#. module: l10n_cl_hr_prestamo
+#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Número de acciones"
+
+#. module: l10n_cl_hr_prestamo
+#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__message_has_error_counter
+msgid "Number of error"
+msgstr "Número de error"
+
+#. module: l10n_cl_hr_prestamo
+#: model:ir.model.fields,help:l10n_cl_hr_prestamo.field_hr_prestamo__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "Número de mensajes que requieren una acción"
+
+#. module: l10n_cl_hr_prestamo
+#: model:ir.model.fields,help:l10n_cl_hr_prestamo.field_hr_prestamo__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Número de mensajes con error de envío"
+
+#. module: l10n_cl_hr_prestamo
+#: model:ir.model.fields,help:l10n_cl_hr_prestamo.field_hr_prestamo__message_unread_counter
+msgid "Number of unread messages"
+msgstr "Número de mensajes no leidos"
+
+#. module: l10n_cl_hr_prestamo
+#: selection:hr.prestamo,activity_state:0
+msgid "Overdue"
+msgstr "Vencido"
+
+#. module: l10n_cl_hr_prestamo
+#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo_line__paid
+msgid "Paid"
+msgstr "Pagado"
+
+#. module: l10n_cl_hr_prestamo
+#: model:ir.model,name:l10n_cl_hr_prestamo.model_hr_payslip
+msgid "Pay Slip"
+msgstr "Liquidación"
+
+#. module: l10n_cl_hr_prestamo
+#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo_line__date
+msgid "Payment Date"
+msgstr "Fecha de Pago"
+
+#. module: l10n_cl_hr_prestamo
+#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__payment_date
+msgid "Payment Start Date"
+msgstr "Fecha de Pago Inicial"
+
+#. module: l10n_cl_hr_prestamo
+#: model:ir.model,name:l10n_cl_hr_prestamo.model_hr_payslip_input
+msgid "Payslip Input"
+msgstr "Input para Nómina"
+
+#. module: l10n_cl_hr_prestamo
+#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo_line__payslip_id
+msgid "Payslip Ref."
+msgstr "Ref. Liquidación"
+
+#. module: l10n_cl_hr_prestamo
+#: selection:hr.prestamo,activity_state:0
+msgid "Planned"
+msgstr "Planificado"
+
+#. module: l10n_cl_hr_prestamo
+#: model:ir.actions.act_window,name:l10n_cl_hr_prestamo.act_hr_employee_prestamo_request
+#: model:ir.ui.menu,name:l10n_cl_hr_prestamo.menu_hr_prestamo_request
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr_prestamo.view_employee_form_prestamo_inherit
+msgid "Employee Loans"
+msgstr "Préstamos Empleados"
+
+#. module: l10n_cl_hr_prestamo
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr_prestamo.hr_prestamo_form_view
+msgid "Refuse"
+msgstr "Rechazar"
+
+#. module: l10n_cl_hr_prestamo
+#: selection:hr.prestamo,state:0
+msgid "Refused"
+msgstr "Rechazado"
+
+#. module: l10n_cl_hr_prestamo
+#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__activity_user_id
+msgid "Responsible User"
+msgstr "Usuario responsable"
+
+#. module: l10n_cl_hr_prestamo
+#: code:addons/l10n_cl_hr_prestamo/models/hr_prestamo_payroll.py:29
+#, python-format
+msgid "Salary Slip of %s for %s"
+msgstr "Liquidación de %s a %s"
+
+#. module: l10n_cl_hr_prestamo
+#: model:ir.ui.menu,name:l10n_cl_hr_prestamo.menu_base_hr_prestamo_request
+msgid "Loan Requests"
+msgstr "Solicitudes de Préstamo"
+
+#. module: l10n_cl_hr_prestamo
+#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__state
+msgid "State"
+msgstr "Estado"
+
+#. module: l10n_cl_hr_prestamo
+#: model:ir.model.fields,help:l10n_cl_hr_prestamo.field_hr_prestamo__activity_state
+msgid "Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr "Estado basado en actividades\n"
+"Vencida: la fecha tope ya ha pasado\n"
+"Hoy: La fecha tope es hoy\n"
+"Planificada: futuras actividades."
+
+#. module: l10n_cl_hr_prestamo
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr_prestamo.hr_prestamo_form_view
+msgid "Submit"
+msgstr "Enviar Solicitud"
+
+#. module: l10n_cl_hr_prestamo
+#: selection:hr.prestamo,state:0
+msgid "Submitted"
+msgstr "Enaviado"
+
+#. module: l10n_cl_hr_prestamo
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr_prestamo.view_prestamo_request_search_form
+msgid "Tasks"
+msgstr "Tareas"
+
+#. module: l10n_cl_hr_prestamo
+#: selection:hr.prestamo,activity_state:0
+msgid "Today"
+msgstr "Hoy"
+
+#. module: l10n_cl_hr_prestamo
+#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__total_amount
+msgid "Total Amount"
+msgstr "Importe Total"
+
+#. module: l10n_cl_hr_prestamo
+#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__total_paid_amount
+msgid "Total Paid Amount"
+msgstr "Importe Total Pagado"
+
+#. module: l10n_cl_hr_prestamo
+#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__treasury_account_id
+msgid "Treasury Account"
+msgstr "Cuenta Crédito (por Pagar)"
+
+#. module: l10n_cl_hr_prestamo
+#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__message_unread
+msgid "Unread Messages"
+msgstr "Mensajes sin leer"
+
+#. module: l10n_cl_hr_prestamo
+#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "Contador de mensajes sin leer"
+
+#. module: l10n_cl_hr_prestamo
+#: selection:hr.prestamo,state:0
+msgid "Waiting Approval"
+msgstr "Esperando Aprobación"
+
+#. module: l10n_cl_hr_prestamo
+#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__website_message_ids
+msgid "Website Messages"
+msgstr "Mensajes del sitio web"
+
+#. module: l10n_cl_hr_prestamo
+#: model:ir.model.fields,help:l10n_cl_hr_prestamo.field_hr_prestamo__website_message_ids
+msgid "Website communication history"
+msgstr "Historial de comunicaciones del sitio web"
+

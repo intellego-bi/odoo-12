@@ -4,7 +4,7 @@
     <data noupdate="0">
         <record id="hr_rule_prestamo" model="hr.salary.rule">
             <field name="code">HRPR</field>
-            <field name="name">Cuota Préstamo</field>
+            <field name="name">HR Loan Installment</field>
             <field name="category_id" ref="l10n_cl_hr.ODESC"/>
             <field name="amount_select">code</field>
             <field name="amount_python_compute">result = inputs.HRPR and + (inputs.HRPR.amount)</field>
@@ -14,7 +14,7 @@
 
         <record id="hr_rule_input_prestamo" model="hr.rule.input">
             <field name="code">HRPR</field>
-            <field name="name">Cuota Préstamo</field>
+            <field name="name">HR Loan Installment</field>
             <field name="input_id" ref="hr_rule_prestamo"/>
         </record>
     </data>
