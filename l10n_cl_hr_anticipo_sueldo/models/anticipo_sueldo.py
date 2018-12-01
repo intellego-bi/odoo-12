@@ -147,7 +147,7 @@ class AnticipoSueldoPago(models.Model):
                                              ('state', '=', 'approve')])
         current_month = datetime.strptime(str(self.date), '%Y-%m-%d').date().month
         for each_advance in salary_advance_search:
-            existing_month = datetime.strptime(each_advance.date, '%Y-%m-%d').date().month
+            existing_month = datetime.strptime(self(each_advance.date), '%Y-%m-%d').date().month
             if current_month == existing_month:
                 raise except_orm('Error!', 'Advance can be requested once in a month')
         if not self.employee_contract_id:
