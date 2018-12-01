@@ -30,9 +30,9 @@
               <xpath expr="//field[@name='property_supplier_payment_term_id']" position="attributes">
                 <attribute name="attrs">"{'invisible':[['supplier','=',False]]}"</attribute>
               </xpath>
-              <xpath expr="//field[@name='property_purchase_currency_id']" position="attributes">
+              <!--<xpath expr="//field[@name='property_purchase_currency_id']" position="attributes">
                 <attribute name="attrs">{"invisible": [['supplier','=',False]]}</attribute>
-              </xpath>
+              </xpath>-->
               <xpath expr="//group[@name='fiscal_information']" position="attributes">
                 <attribute name="string">Controles y Acciones</attribute>
               </xpath>
