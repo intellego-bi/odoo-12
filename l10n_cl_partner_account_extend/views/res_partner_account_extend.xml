@@ -109,7 +109,7 @@
                     <field name="vat"/>
                   </xpath>
                   <xpath expr="//filter[@name='type_company']" position="after">
-                    <filter domain="[[&quot;employee&quot;,&quot;=&quot;,True]]" name="studio_filter_VJHYw" string="Empleados"/>
+                    <filter domain="[['employee','=',True]]" name="cl_search_partner_extend_employee" string="Empleados"/>
                   </xpath>
                   <xpath expr="//field[@name='phone']" position="after">
                     <field name="ref"/>
@@ -119,6 +119,20 @@
                   </xpath>
             </field>
         </record>
+
+        <!-- Personaliza vista de Lista para Libro Diario -->
+        <record model="ir.ui.view" id="res_account_move_tree_cl_extend">
+            <field name="name">account.move.line</field>
+            <field name="model">account.move.line</field>
+            <field name="mode">extension</field>
+            <field name="inherit_id" ref="account.view_move_line_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='credit']" position="after">
+                    <field name="balance" sum="Total Balance" string="Saldo" widget="monetary"/>
+                </xpath>
+            </field>
+        </record>
+
 
     </data>
 </odoo>
