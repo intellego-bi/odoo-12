@@ -6,9 +6,9 @@
             <field name="model">res.partner</field>
             <field name="inherit_id" ref="base.view_partner_form"/>
             <field name="arch" type="xml">
-              <xpath expr="//field[@name='category_id']" position="attributes">
+              <!--<xpath expr="//field[@name='category_id']" position="attributes">
                 <attribute name="context">"{'color_field':'color'}"</attribute>
-              </xpath>
+              </xpath>-->
               <xpath expr="//field[@name='property_payment_term_id']" position="attributes">
                 <attribute name="attrs">"{'invisible':[['customer','=',False]]}"</attribute>
               </xpath>
@@ -22,9 +22,9 @@
               <xpath expr="//field[@name='property_product_pricelist']" position="after">
                 <xpath expr="//field[@name='message_bounce']" position="move"/>
               </xpath>
-              <xpath expr="//field[@name='property_supplier_payment_term_id']" position="attributes">
+              <!--<xpath expr="//field[@name='property_supplier_payment_term_id']" position="attributes">
                 <attribute name="attrs">"{'invisible':[['supplier','=',False]]}"</attribute>
-              </xpath>
+              </xpath>-->
               <!--<xpath expr="//field[@name='property_purchase_currency_id']" position="attributes">
                 <attribute name="attrs">{"invisible": [['supplier','=',False]]}</attribute>
               </xpath>-->
@@ -45,10 +45,10 @@
                 <attribute name="invisible">1</attribute>
               </xpath>
               <xpath expr="//field[@name='property_account_payable_id']" position="after">
-                <field name="has_unreconciled_entries"/>
+                <!--<field name="has_unreconciled_entries"/>-->
                 <field name="credit"/>
                 <field name="debit"/>
-                <field name="total_overdue"/>
+                <!--<field name="total_overdue"/>-->
               </xpath>
               <!--<xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='sales_purchases']/group[@name='container_row_2']/group[@name='sale']/field[@name='user_id']" position="attributes">
                 <attribute name="attrs">{'invisible': [['customer','=',False]]}</attribute>
