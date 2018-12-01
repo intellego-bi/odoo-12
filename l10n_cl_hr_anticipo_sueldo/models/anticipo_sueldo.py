@@ -41,7 +41,7 @@ class AnticipoSueldoPago(models.Model):
     payment_method = fields.Many2one('account.journal', string='Payment Method')
     exceed_condition = fields.Boolean(string='Exceed Maximum %',
                                       help="The Advance is greater than the maximum percentage in salary structure")
-    #department = fields.Many2one('hr.department', string='Department')
+    
     department = fields.Many2one('hr.department', related="employee_id.department_id", readonly=True,
                                   string="Department")
     state = fields.Selection([('draft', 'Draft'),
@@ -53,11 +53,7 @@ class AnticipoSueldoPago(models.Model):
     debit = fields.Many2one('account.account', string='Debit Account')
     credit = fields.Many2one('account.account', string='Credit Account')
     journal = fields.Many2one('account.journal', string='Journal', default=lambda self: self.env['account.journal'].search([('type', '=', 'general')], limit=1))
-    #journal_id = fields.Many2one('account.journal', 'Salary Journal', readonly=True, required=True,
-    #    states={'draft': [('readonly', False)]}, default=lambda self: self.env['account.journal'].search([('type', '=', 'general')], limit=1))
     employee_contract_id = fields.Many2one('hr.contract', string='Contract')
-    #move_date = fields.Date('Date Account', states={'draft': [('readonly', False)]}, readonly=True,
-    #    help="Fecha de Contabilización del Anticipo.")
     move_id = fields.Many2one('account.move', 'Accounting Entry', readonly=True, copy=False)
     
 
@@ -245,7 +241,7 @@ class AnticipoSueldoPago(models.Model):
                 #'prestamo_id': prestamo.id,
                 }
             vals = {
-                'name': 'Anticipo de Sueldo de ' + request_name,
+                'name': 'Salary Advance for ' + request_name,
                 'narration': request_name,
                 'ref': reference,
                 'journal_id': journal_id,

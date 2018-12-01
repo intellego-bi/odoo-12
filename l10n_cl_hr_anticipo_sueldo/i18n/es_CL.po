@@ -16,6 +16,60 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: l10n_cl_hr_anticipo_sueldo
+#: code:addons/l10n_cl_hr_anticipo_sueldo/models/anticipo_sueldo.py:145
+#, python-format
+msgid "Define home address for employee"
+msgstr "Defina un Dirección Privada en el contacto del Empleado para poder realizar el pago"
+
+#. module: l10n_cl_hr_anticipo_sueldo
+#: code:addons/l10n_cl_hr_anticipo_sueldo/models/anticipo_sueldo.py:152
+#, python-format
+msgid "Advance can be requested once in a month"
+msgstr "Sólo se permite un anticipo por mes. Este empleado ya registra un anticipo en el mismo período"
+
+#. module: l10n_cl_hr_anticipo_sueldo
+#: code:addons/l10n_cl_hr_anticipo_sueldo/models/anticipo_sueldo.py:154
+#, python-format
+msgid "Define a contract for the employee"
+msgstr "El Empleado debe tener un Contrato válido para poder realizar el Anticipo"
+
+#. module: l10n_cl_hr_anticipo_sueldo
+#: code:addons/l10n_cl_hr_anticipo_sueldo/models/anticipo_sueldo.py:164
+#, python-format
+msgid "You must Enter the Salary Advance amount"
+msgstr "Debe ingresar un valor de Anticipo válido"
+
+#. module: l10n_cl_hr_anticipo_sueldo
+#: code:addons/l10n_cl_hr_anticipo_sueldo/models/anticipo_sueldo.py:169
+#, python-format
+msgid "This month salary already calculated"
+msgstr "Los salarios de este mes ya fueron procesados. Imposible solicitar anticipo."
+
+#. module: l10n_cl_hr_anticipo_sueldo
+#: code:addons/l10n_cl_hr_anticipo_sueldo/models/anticipo_sueldo.py:205
+#, python-format
+msgid "Advance can be requested once in a month"
+msgstr "Sólo se permite un anticipo por mes. Este empleado ya registra un anticipo en el mismo período"
+
+#. module: l10n_cl_hr_anticipo_sueldo
+#: code:addons/l10n_cl_hr_anticipo_sueldo/models/anticipo_sueldo.py:207
+#, python-format
+msgid "You must enter Debit & Credit account and journal to approve"
+msgstr "Falta Configuración Contabilidad para Anticipos. Actualice la configuración y vuelva a generar la solicitud."
+
+#. module: l10n_cl_hr_anticipo_sueldo
+#: code:addons/l10n_cl_hr_anticipo_sueldo/models/anticipo_sueldo.py:209
+#, python-format
+msgid "You must Enter the Salary Advance amount"
+msgstr "Debe ingresar un valor de Anticipo válido"
+
+#. module: l10n_cl_hr_anticipo_sueldo
+#: code:addons/l10n_cl_hr_anticipo_sueldo/models/anticipo_sueldo.py:248
+#, python-format
+msgid "Salary Advance for "
+msgstr "Anticipo de Sueldo de "
+
+#. module: l10n_cl_hr_anticipo_sueldo
 #: model_terms:ir.ui.view,arch_db:l10n_cl_hr_anticipo_sueldo.view_account_config_inherit
 msgid "<span class=\"o_form_label\">Employee Salary Advance</span>"
 msgstr "<span class=\"o_form_label\">Anticipo de Sueldo</span>"
