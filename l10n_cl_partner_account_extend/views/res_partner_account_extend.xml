@@ -61,7 +61,7 @@
             </field>
         </record>
 
-        <!-- Agrega RUT y elimina nombre Empresa en Prefijo nombre a visualizar-->
+        <!-- Vista Kanban agrega RUT y elimina nombre Empresa en Prefijo nombre a visualizar-->
         <record model="ir.ui.view" id="res_partner_kanban_cl_extend">
             <field name="name">res.partner</field>
             <field name="model">res.partner</field>
@@ -91,6 +91,7 @@
                   </xpath>
                   <xpath expr="//field[@name='display_name']" position="after">
                     <field name="vat" attrs="{'invisible': [('is_company','=',False)]}"/>
+                    <field name="total_due" widget="monetary"/>
                   </xpath>
             </field>
         </record>
