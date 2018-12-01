@@ -430,7 +430,7 @@ msgstr "Enviar Solicitud"
 #. module: l10n_cl_hr_prestamo
 #: selection:hr.prestamo,state:0
 msgid "Submitted"
-msgstr "Enaviado"
+msgstr "Enviado"
 
 #. module: l10n_cl_hr_prestamo
 #: model_terms:ir.ui.view,arch_db:l10n_cl_hr_prestamo.view_prestamo_request_search_form
