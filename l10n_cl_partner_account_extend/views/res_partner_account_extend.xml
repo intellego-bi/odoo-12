@@ -20,7 +20,7 @@
                 <attribute name="attrs">{'invisible': ['&',['customer','=',False],'|',['is_company','=',False],['parent_id','!=',False]]}</attribute>
               </xpath>-->
               <xpath expr="//field[@name='property_product_pricelist']" position="attributes">
-                <attribute name="attrs">"{'invisible': ['customer','=',False]}"</attribute>
+                <attribute name="attrs">"{'invisible':['customer','=',False]}"</attribute>
               </xpath>
 
               <xpath expr="//field[@name='property_product_pricelist']" position="after">
