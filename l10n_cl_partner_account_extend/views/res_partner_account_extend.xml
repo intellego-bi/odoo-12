@@ -5,7 +5,7 @@
             <field name="name">res.partner</field>
             <field name="model">res.partner</field>
             <field name="inherit_id" ref="base.view_partner_form"/>
-            <field name="sequence">100</field>
+            <!--<field name="sequence">100</field>-->
             <field name="arch" type="xml">
               <!--<xpath expr="//field[@name='category_id']" position="attributes">
                 <attribute name="context">"{'color_field':'color'}"</attribute>
