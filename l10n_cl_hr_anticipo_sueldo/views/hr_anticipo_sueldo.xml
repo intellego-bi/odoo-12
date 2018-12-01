@@ -23,14 +23,14 @@
                         </div>
                         <group>
                             <group string="Empleado Solicitante">
-                                <field name="employee_id" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="employee_id" options="{'no_create': True}" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
                                 <field name="department" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
-                                <field name="employee_contract_id" attrs="{'invisible': ['|', ('state', '=', 'draft'), ('state', '=', 'approve')]}" groups="hr.group_hr_manager,hr.group_hr_user"/>
+                                <field name="employee_contract_id" options="{'no_create': True}" attrs="{'invisible': ['|', ('state', '=', 'draft'), ('state', '=', 'approve')]}" groups="hr.group_hr_manager,hr.group_hr_user"/>
                                 <field name="company_id" invisible="True" groups="base.group_multi_currency"/>                                
                             </group>
                             <group string="Anticipo">
                                 <field name="advance" widget="monetary" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
-                                <field name="currency_id" attrs="{'readonly': [('state', '!=', 'draft')]}" groups="base.group_multi_currency"/>
+                                <field name="currency_id" options="{'no_create': True}" attrs="{'readonly': [('state', '!=', 'draft')]}" groups="base.group_multi_currency"/>
                                 <field name="date" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
                                 <field name="reason" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
                                 <!--<field name="exceed_condition" groups="hr.group_hr_manager,hr.group_hr_user"/>-->
