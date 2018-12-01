@@ -4,6 +4,7 @@
         <record model="ir.ui.view" id="res_partner_account_extend">
             <field name="name">res.partner</field>
             <field name="model">res.partner</field>
+            <field name="mode">extension</field>
             <field name="inherit_id" ref="base.view_partner_form"/>
             <!--<field name="sequence">100</field>-->
             <field name="arch" type="xml">
@@ -60,6 +61,7 @@
             </field>
         </record>
 
+        <!-- Agrega RUT y elimina nombre Empresa en Prefijo nombre a visualizar-->
         <record model="ir.ui.view" id="res_partner_kanban_cl_extend">
             <field name="name">res.partner</field>
             <field name="model">res.partner</field>
@@ -76,5 +78,28 @@
                 </xpath>            
             </field>
         </record>
+
+        <!-- Agrega búsqueda por RUT y filtros para Empleados-->
+        <record model="ir.ui.view" id="res_partner_kanban_cl_extend">
+            <field name="name">res.partner.select</field>
+            <field name="model">res.partner.select</field>
+            <field name="mode">extension</field>
+            <field name="inherit_id" ref="base.view_res_partner_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//search[1]/field[@name='name']" position="after">
+                    <field name="vat"/>
+                  </xpath>
+                  <xpath expr="//filter[@name='type_company']" position="after">
+                    <filter domain="[[&quot;employee&quot;,&quot;=&quot;,True]]" name="studio_filter_VJHYw" string="Empleados"/>
+                  </xpath>
+                  <xpath expr="//field[@name='phone']" position="after">
+                    <field name="ref"/>
+                  </xpath>
+                  <xpath expr="//filter[@name='group_country']" position="after">
+                    <filter context="{'group_by': 'team_id'}" name="team_id" string="Equipo de ventas"/>
+                  </xpath>
+            </field>
+        </record>
+
     </data>
 </odoo>
