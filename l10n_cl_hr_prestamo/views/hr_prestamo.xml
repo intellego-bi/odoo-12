@@ -113,7 +113,7 @@
 
     <!-- Shortcuts -->
     <record id="act_hr_employee_prestamo_request" model="ir.actions.act_window">
-        <field name="name">Préstamos</field>
+        <field name="name">Employee Loans</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">hr.prestamo</field>
         <field name="src_model">hr.employee</field>

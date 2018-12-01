@@ -443,6 +443,11 @@ msgid "Today"
 msgstr "Hoy"
 
 #. module: l10n_cl_hr_prestamo
+#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__advance
+msgid "Advance"
+msgstr "Valor Anticipo"
+
+#. module: l10n_cl_hr_prestamo
 #: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__total_amount
 msgid "Total Amount"
 msgstr "Importe Total"
