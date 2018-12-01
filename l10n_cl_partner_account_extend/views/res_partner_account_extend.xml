@@ -50,9 +50,9 @@
                 <field name="debit"/>
                 <field name="total_overdue"/>
               </xpath>
-              <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='sales_purchases']/group[@name='container_row_2']/group[@name='sale']/field[@name='user_id']" position="attributes">
+              <!--<xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='sales_purchases']/group[@name='container_row_2']/group[@name='sale']/field[@name='user_id']" position="attributes">
                 <attribute name="attrs">{'invisible': [['customer','=',False]]}</attribute>
-              </xpath>
+              </xpath>-->
             </field>
         </record>
     </data>
