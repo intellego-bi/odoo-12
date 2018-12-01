@@ -147,11 +147,11 @@
                 <xpath expr="//filter[@name='groupby_date']" position="after">
                     <filter context="{'group_by': 'date_maturity'}" name="date_maturity" string="Fecha Vencimiento"/>
                 </xpath>
-                <xpath expr="//filter[@name='tax_line_id']" position="attributes">
+                <xpath expr="//search[1]/field[@name='tax_line_id']" position="attributes">
                     <attribute name="attrs">{}</attribute>
                     <attribute name="invisible">1</attribute>
                 </xpath>
-                <xpath expr="//filter[@name='tax_ids']" position="attributes">
+                <xpath expr="//search[1]/field[@name='tax_ids']" position="attributes">
                     <attribute name="attrs">{}</attribute>
                     <attribute name="invisible">1</attribute>
                 </xpath>
