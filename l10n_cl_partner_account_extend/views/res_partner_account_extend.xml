@@ -67,7 +67,7 @@
             <field name="inherit_id" ref="product.view_partner_property_form"/>
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='property_product_pricelist']" position="attributes">
-                    <attribute name="attrs">{'invisible': ['&',['customer','=',False],'|',['is_company','=',False],['parent_id','!=',False]]}</attribute>
+                    <attribute name="attrs">{'invisible': ['|',['customer','=',False],'|',['is_company','=',False],['parent_id','!=',False]]}</attribute>
                 </xpath>
                 <xpath expr="//field[@name='property_product_pricelist']" position="attributes">
                      <attribute name="attrs">"{'invisible':[('customer','=',False)}"</attribute>
