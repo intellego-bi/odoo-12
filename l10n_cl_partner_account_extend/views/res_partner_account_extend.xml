@@ -32,9 +32,9 @@
               <!--<xpath expr="//field[@name='property_purchase_currency_id']" position="attributes">
                 <attribute name="attrs">{"invisible": [['supplier','=',False]]}</attribute>
               </xpath>-->
-              <xpath expr="//group[@name='fiscal_information']" position="attributes">
+              <!--<xpath expr="//group[@name='fiscal_information']" position="attributes">
                 <attribute name="string">Controles y Acciones</attribute>
-              </xpath>
+              </xpath>-->
               <xpath expr="//field[@name='property_account_position_id']" position="before">
                 <field name="credit_limit" attrs="{'invisible':[['customer','=',False]]}"/>
                 <field name="trust" attrs="{'invisible':[['customer','=',False]]}"/>
