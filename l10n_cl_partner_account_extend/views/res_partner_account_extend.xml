@@ -35,7 +35,7 @@
             </field>
         </record>-->
 
-        <record model="ir.ui.view" id="res_partner_account_property_extend">
+        <!--<record model="ir.ui.view" id="res_partner_account_property_extend">
             <field name="name">res.partner</field>
             <field name="model">res.partner</field>
             <field name="mode">extension</field>
@@ -56,11 +56,11 @@
                 </xpath>
                 <!--<xpath expr="//group[@name='fiscal_information']" position="attributes">
                     <attribute name="string">Controles y Acciones</attribute>
-                </xpath>-->
+                </xpath>
             </field>
-        </record>
+        </record>-->
 
-        <record model="ir.ui.view" id="res_partner_product_property_extend">
+        <!--<record model="ir.ui.view" id="res_partner_product_property_extend">
             <field name="name">res.partner</field>
             <field name="model">res.partner</field>
             <field name="mode">extension</field>
@@ -68,7 +68,7 @@
             <field name="arch" type="xml">
                 <!--<xpath expr="//field[@name='property_product_pricelist']" position="attributes">
                     <attribute name="attrs">{'invisible': ['|',('customer','=',False),'|',('is_company','=',False),('parent_id','!=',False)]}</attribute>
-                </xpath>-->
+                </xpath>
                 <xpath expr="//field[@name='property_product_pricelist']" position="attributes">
                      <attribute name="attrs">"{'invisible': [('customer', '=', False)}"</attribute>
                 </xpath>
@@ -77,9 +77,9 @@
                 </xpath>-->
                 <!--<xpath expr="//field[@name='property_account_position_id']" position="attributes">
                     <attribute name="attrs">"{'invisible':True}"</attribute>
-                </xpath>-->
+                </xpath>
             </field>
-        </record>
+        </record>-->
 
 
         <!-- Vista Kanban agrega RUT y elimina nombre Empresa en Prefijo nombre a visualizar-->
