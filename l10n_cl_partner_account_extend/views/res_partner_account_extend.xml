@@ -79,8 +79,8 @@
             </field>
         </record>
 
-        <!-- Agrega búsqueda por RUT y filtros para Empleados-->
-        <record model="ir.ui.view" id="res_partner_kanban_cl_extend">
+        <!-- Agrega bÃºsqueda por RUT y filtros para Empleados-->
+        <record model="ir.ui.view" id="res_partner_search_cl_extend">
             <field name="name">res.partner.select</field>
             <field name="model">res.partner.select</field>
             <field name="mode">extension</field>
