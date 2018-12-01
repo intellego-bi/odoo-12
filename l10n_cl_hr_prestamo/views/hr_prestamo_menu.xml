@@ -4,7 +4,7 @@
     <menuitem name="Solicitudes de Préstamo"
         id="menu_base_hr_prestamo_request"
         parent = "l10n_cl_hr.menu_cl_hr_payroll"
-        sequence="1"/>
+        sequence="2"/>
 
     <menuitem name="Préstamos"
         parent="menu_base_hr_prestamo_request"
