@@ -90,9 +90,8 @@
             <field name="context">{'search_default_my_requests_filter':1}</field>
             <field name="domain">[('employee_id.user_id', '=', uid)]</field>
             <field name="help" type="html">
-                <p class="oe_view_nocontent_create">
-                    Crear Solicitud de Anticipo de Sueldo
-                </p>
+                <p class="o_view_nocontent_smiling_face">Acá podrá crear solicitudes para anticipo de sueldo</p>
+                <p>Crear Solicitud de Anticipo de Sueldo</p>
             </field>
         </record>
 
@@ -106,9 +105,8 @@
             <field name="context">{'search_default_approved':1}</field>
             <field name="domain">[('employee_id.user_id', '=', uid)]</field>
             <field name="help" type="html">
-                <p class="oe_view_nocontent_create">
-                    Crear Solicitud de Anticipo de Sueldo
-                </p>
+                <p class="o_view_nocontent_smiling_face">Acá podrá crear solicitudes para anticipo de sueldo</p>
+                <p>Crear Solicitud de Anticipo de Sueldo</p>
             </field>
         </record>
 
@@ -122,9 +120,8 @@
             <field name="context">{'search_default_submitted': 1}</field>
             <field name="domain"></field>
             <field name="help" type="html">
-                <p class="oe_view_nocontent_create">
-                    Crear Solicitud de Anticipo de Sueldo
-                </p>
+                <p class="o_view_nocontent_smiling_face">Acá podrá crear solicitudes para anticipo de sueldo</p>
+                <p>Crear Solicitud de Anticipo de Sueldo</p>
             </field>
         </record>
     </data>
