@@ -54,10 +54,10 @@ class AnticipoSueldoPago(models.Model):
     #journal_id = fields.Many2one('account.journal', 'Salary Journal', readonly=True, required=True,
     #    states={'draft': [('readonly', False)]}, default=lambda self: self.env['account.journal'].search([('type', '=', 'general')], limit=1))
     employee_contract_id = fields.Many2one('hr.contract', string='Contract')
-    move_date = fields.Date('Date Account', states={'draft': [('readonly', False)]}, readonly=True,
-        help="Fecha de Contabilización del Anticipo.")
+    #move_date = fields.Date('Date Account', states={'draft': [('readonly', False)]}, readonly=True,
+    #    help="Fecha de Contabilización del Anticipo.")
     move_id = fields.Many2one('account.move', 'Accounting Entry', readonly=True, copy=False)
-
+    hr_anticipo_approve = self.env['ir.config_parameter'].sudo().get_param('account.hr_anticipo_approve')
 
     @api.onchange('employee_id')
     def onchange_employee_id(self):
@@ -81,6 +81,17 @@ class AnticipoSueldoPago(models.Model):
 
     @api.one
     def submit_to_manager(self):
+        # Read Accounting Settings from res.config.settings
+        ICPSudo = self.env['ir.config_parameter'].sudo()
+        config_read = int(ICPSudo.get_param('account.hr_debit_account_id'))
+        if config_read:
+            self.debit = config_read
+        config_read = int(ICPSudo.get_param('account.hr_credit_account_id'))
+        if config_read:
+            self.credit = config_read
+        config_read = int(ICPSudo.get_param('account.hr_anticipo_journal_id'))
+        if config_read:
+            self.journal = config_read
         self.state = 'submit'
 
     @api.one

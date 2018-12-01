@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_account_config_inherit" model="ir.ui.view">
+            <field name="name">Accounting settings</field>
+            <field name="model">res.config.settings</field>
+            <field name="inherit_id" ref="account.res_config_settings_view_form"/>
+            <field name="arch" type="xml">
+                <div id="recommended_apps" position="after">
+                    <h2 groups="account.group_account_user">HR Salary Advance</h2>
+                    <div class="row mt16 o_settings_container" id="hr_anticipo_approval" groups="account.group_account_user">
+                       <div class="col-xs-12 col-md-6 o_setting_box" title="Accounting Settings for Salary Advance." groups="account.group_account_user">
+                            <div class="o_setting_left_pane">
+                                <field name="hr_anticipo_approve" class="oe_inline"/>
+                            </div>
+                            <div class="o_setting_right_pane">
+                                <label string="HR Salary Advance" for="hr_anticipo_approve"/>
+                                <div class="text-muted">
+                                    Enable Approval from Accounting Department
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt16 o_settings_container" id="hr_anticipo_accounts" groups="account.group_account_user">
+                       <div class="col-xs-12 col-md-6 o_setting_box" title="Accounting settings for Salary Advance." groups="account.group_account_user">
+                            <div class="o_setting_right_pane">
+                                <span class="o_form_label">Employee Salary Advance</span>
+                                <div class="text-muted">
+                                    Journal and Accounts used for posting of SAlary Advance payments
+                                </div>
+                                <div class="content-group">
+                                    <div class="row mt16">
+                                        <label for="hr_anticipo_journal_id" class="col-lg-3 o_light_label"/>
+                                        <field name="hr_anticipo_journal_id"/>
+                                    </div>
+                                </div>
+                                <div class="content-group">
+                                    <div class="row mt16">
+                                        <label for="hr_debit_account_id" class="col-lg-3 o_light_label"/>
+                                        <field name="hr_debit_account_id"/>
+                                    </div>
+                                </div>
+                                <div class="content-group">
+                                    <div class="row mt16">
+                                        <label for="hr_credit_account_id" class="col-lg-3 o_light_label"/>
+                                        <field name="hr_credit_account_id"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </field>
+        </record>
+    </data>
+</odoo>
