@@ -30,7 +30,7 @@
             <field name="inherit_id" ref="purchase.view_partner_property_form"/>
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='property_purchase_currency_id']" position="attributes">
-                    <attribute name="attrs">{"invisible": [('supplier','=',False)]}</attribute>
+                    <attribute name="attrs">"{'invisible':[('supplier','=',False)]}"</attribute>
                 </xpath>
             </field>
         </record>
@@ -52,7 +52,7 @@
                     <attribute name="attrs">"{'invisible':[('supplier','=',False)]}"</attribute>
                 </xpath>
                 <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='sales_purchases']/group[@name='container_row_2']/group[@name='sale']/field[@name='user_id']" position="attributes">
-                    <attribute name="attrs">{'invisible': [('customer','=',False)]}</attribute>
+                    <attribute name="attrs">"{'invisible': [('customer','=',False)]}"</attribute>
                 </xpath>
                 <!--<xpath expr="//group[@name='fiscal_information']" position="attributes">
                     <attribute name="string">Controles y Acciones</attribute>
@@ -66,9 +66,9 @@
             <field name="mode">extension</field>
             <field name="inherit_id" ref="product.view_partner_property_form"/>
             <field name="arch" type="xml">
-                <xpath expr="//field[@name='property_product_pricelist']" position="attributes">
+                <!--<xpath expr="//field[@name='property_product_pricelist']" position="attributes">
                     <attribute name="attrs">{'invisible': ['|',('customer','=',False),'|',('is_company','=',False),('parent_id','!=',False)]}</attribute>
-                </xpath>
+                </xpath>-->
                 <xpath expr="//field[@name='property_product_pricelist']" position="attributes">
                      <attribute name="attrs">"{'invisible':[('customer','=',False)}"</attribute>
                 </xpath>
