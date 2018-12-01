@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_anticipo_sueldo_user,anticipo.sueldo,model_anticipo_sueldo,base.group_user,1,1,1,0
+access_anticipo_sueldo_officer,anticipo.sueldo,model_anticipo_sueldo,hr.group_hr_user,1,1,1,1
+access_anticipo_sueldo_manager,anticipo.sueldo,model_anticipo_sueldo,hr.group_hr_manager,1,1,1,1
+access_account_manager,anticipo.sueldo,model_anticipo_sueldo,account.group_account_manager,1,1,1,1

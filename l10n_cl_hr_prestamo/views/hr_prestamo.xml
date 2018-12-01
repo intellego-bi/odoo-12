@@ -50,6 +50,7 @@
                         <field name="journal_id" readonly="1" attrs="{'invisible':[('state', '=','draft')]}"/>
                         <field name="emp_account_id" readonly="1" attrs="{'invisible':[('state', '=','draft')]}"/>
                         <field name="treasury_account_id" readonly="1" attrs="{'invisible':[('state', '=','draft')]}"/>
+                        <field name="move_id" readonly="1" attrs="{'invisible': [('state', '!=', 'approve')]}" groups="account.group_account_manager"/>
                         <field name="company_id" options="{'no_create': True}" groups="base.group_multi_company"/>
                         <field name="currency_id" options="{'no_create': True}" groups="base.group_multi_company"/>
                     </group>

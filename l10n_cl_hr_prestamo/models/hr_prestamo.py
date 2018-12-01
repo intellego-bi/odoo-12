@@ -79,6 +79,7 @@ class HrPrestamo(models.Model):
     balance_amount = fields.Float(string="Balance Amount", compute='_compute_prestamo_amount')
     #balance_amount = fields.Float(string="Balance Amount", compute='recompute_loan_amount', store=True) #, readonly=True)
     total_paid_amount = fields.Float(string="Total Paid Amount", compute='_compute_prestamo_amount')
+    move_id = fields.Many2one('account.move', 'Accounting Entry', readonly=True, copy=False)
 
     state = fields.Selection([
         ('draft', 'Draft'),
