@@ -79,6 +79,22 @@
             </field>
         </record>
 
+        <!-- Agrega RUT a vista de Lista-->
+        <record model="ir.ui.view" id="res_partner_tree_cl_extend">
+            <field name="name">res.partner</field>
+            <field name="model">res.partner</field>
+            <field name="mode">extension</field>
+            <field name="inherit_id" ref="base.view_partner_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='display_name']" position="before">
+                    <field name="name"/>
+                  </xpath>
+                  <xpath expr="//field[@name='display_name']" position="after">
+                    <field name="vat" attrs="{'invisible': [('is_company','=',False)]}"/>
+                  </xpath>
+            </field>
+        </record>
+
         <!-- Agrega búsqueda por RUT y filtros para Empleados-->
         <record model="ir.ui.view" id="res_partner_search_cl_extend">
             <field name="name">res.partner</field>
