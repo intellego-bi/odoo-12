@@ -5,6 +5,7 @@
             <field name="name">res.partner</field>
             <field name="model">res.partner</field>
             <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="sequence">100</field>
             <field name="arch" type="xml">
               <!--<xpath expr="//field[@name='category_id']" position="attributes">
                 <attribute name="context">"{'color_field':'color'}"</attribute>
@@ -19,9 +20,9 @@
               <!--<xpath expr="//field[@name='property_product_pricelist']" position="attributes">
                 <attribute name="attrs">{'invisible': ['&',['customer','=',False],'|',['is_company','=',False],['parent_id','!=',False]]}</attribute>
               </xpath>-->
-              <!--<xpath expr="//field[@name='property_product_pricelist']" position="attributes">
+              <xpath expr="//field[@name='property_product_pricelist']" position="attributes">
                 <attribute name="attrs">"{'invisible':['customer','=',False]}"</attribute>
-              </xpath>-->
+              </xpath>
 
               <!--<xpath expr="//field[@name='property_product_pricelist']" position="after">
                 <xpath expr="//field[@name='message_bounce']" position="move"/>
