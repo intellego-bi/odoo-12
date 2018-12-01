@@ -59,5 +59,22 @@
               </xpath>-->
             </field>
         </record>
-    </data>-->
+
+        <record model="ir.ui.view" id="res_partner_kanban_cl_extend">
+            <field name="name">res.partner</field>
+            <field name="model">res.partner</field>
+            <field name="mode">extension</field>
+            <field name="inherit_id" ref="base.res_partner_kanban_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//kanban[1]/templates[1]/t[1]/div[1]/div[1]/strong[1]/field[@name='display_name']" position="attributes">
+                    <attribute name="attrs">{}</attribute>
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//kanban[1]/templates[1]/t[1]/div[1]/div[1]/strong[1]/field[@name='display_name']" position="after">
+                    <field name="name"/>
+                    <div><h5><field name="vat" attrs="{'invisible': [('is_company','=',False)]}"/></h5></div>
+                </xpath>            
+            </field>
+        </record>
+    </data>
 </odoo>
