@@ -35,7 +35,7 @@
               <!--<xpath expr="//group[@name='fiscal_information']" position="attributes">
                 <attribute name="string">Controles y Acciones</attribute>
               </xpath>-->
-              <xpath expr="//field[@name='property_account_position_id']" position="before">
+              <!--<xpath expr="//field[@name='property_account_position_id']" position="before">
                 <field name="credit_limit" attrs="{'invisible':[['customer','=',False]]}"/>
                 <field name="trust" attrs="{'invisible':[['customer','=',False]]}"/>
                 <field name="followup_status"/>
@@ -47,7 +47,7 @@
               <xpath expr="//field[@name='property_account_position_id']" position="attributes">
                 <attribute name="attrs">{}</attribute>
                 <attribute name="invisible">1</attribute>
-              </xpath>
+              </xpath>-->
               <xpath expr="//field[@name='property_account_payable_id']" position="after">
                 <!--<field name="has_unreconciled_entries"/>-->
                 <field name="credit"/>
