@@ -120,7 +120,7 @@
             </field>
         </record>
 
-        <!-- Personaliza vista de Lista para Libro Diario -->
+        <!-- Personaliza vista de Lista para Libro Diario: agrega saldo -->
         <record model="ir.ui.view" id="res_account_move_tree_cl_extend">
             <field name="name">account.move.line</field>
             <field name="model">account.move.line</field>
@@ -129,6 +129,22 @@
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='credit']" position="after">
                     <field name="balance" sum="Total Balance" string="Saldo" widget="monetary"/>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- Personaliza vista de Búsqueda para Libro Diario: Fecha Vencimiento -->
+        <record model="ir.ui.view" id="res_account_tree_search_cl_extend">
+            <field name="name">account.move.line</field>
+            <field name="model">account.move.line</field>
+            <field name="mode">extension</field>
+            <field name="inherit_id" ref="account.view_account_move_line_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//search[1]/field[@name='move_id']" position="after">
+                    <field name="date_maturity"/>
+                </xpath>
+                <xpath expr="//filter[@name='groupby_date']" position="after">
+                    <filter context="{'group_by': 'date_maturity'}" name="date_maturity" string="Fecha Vencimiento"/>
                 </xpath>
             </field>
         </record>
