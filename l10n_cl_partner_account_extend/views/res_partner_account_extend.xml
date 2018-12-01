@@ -23,7 +23,7 @@
             </field>
         </record>
 
-        <record model="ir.ui.view" id="res_partner_purchase_property_extend">
+        <!--<record model="ir.ui.view" id="res_partner_purchase_property_extend">
             <field name="name">res.partner</field>
             <field name="model">res.partner</field>
             <field name="mode">extension</field>
@@ -33,7 +33,7 @@
                     <attribute name="attrs">"{'invisible': [('supplier', '=', False)]}"</attribute>
                 </xpath>
             </field>
-        </record>
+        </record>-->
 
         <record model="ir.ui.view" id="res_partner_account_property_extend">
             <field name="name">res.partner</field>
