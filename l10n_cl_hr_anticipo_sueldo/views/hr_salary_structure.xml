@@ -9,8 +9,8 @@
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='parent_id']" position="after">
                     <group name="cl_estrcutura" colspan="1">
-                        <group name="cl_estrcutura_left" string="Estructura Salarial" colspan="2"/>
-                        <group name="cl_estrcutura_right" string="Reglas para Anticipos" colspan="1">
+                        <group name="cl_estrcutura_left" string="Salary Structure" colspan="2"/>
+                        <group name="cl_estrcutura_right" string="Rules for Salary Advance Payment" colspan="1">
                             <field name="max_percent"/>
                             <field name="advance_date"/>
                         </group>

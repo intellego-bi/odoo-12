@@ -22,20 +22,20 @@
                             </strong></h1>
                         </div>
                         <group>
-                            <group string="Empleado Solicitante">
+                            <group string="Requesting Employee">
                                 <field name="employee_id" options="{'no_create': True}" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
                                 <field name="department" readonly="True"/>
                                 <field name="employee_contract_id" options="{'no_create': True}" attrs="{'invisible': ['|', ('state', '=', 'draft'), ('state', '=', 'approve')]}" groups="hr.group_hr_manager,hr.group_hr_user"/>
                                 <field name="company_id" invisible="True" groups="base.group_multi_currency"/>                                
                             </group>
-                            <group string="Anticipo">
+                            <group string="Advance">
                                 <field name="advance" widget="monetary" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
                                 <field name="currency_id" options="{'no_create': True}" attrs="{'readonly': [('state', '!=', 'draft')]}" groups="base.group_multi_currency"/>
                                 <field name="date" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
                                 <field name="reason" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
                                 <!--<field name="exceed_condition" groups="hr.group_hr_manager,hr.group_hr_user"/>-->
                             </group>
-                            <group string="Contabilización" attrs="{'invisible':[('state', '=', 'draft')]}" groups="account.group_account_manager">
+                            <group string="Accounting Entry" attrs="{'invisible':[('state', '=', 'draft')]}" groups="account.group_account_manager">
                                 <field name="debit" attrs="{'readonly': [('state', '!=', 'draft')]}" groups="account.group_account_manager"/>
                                 <field name="credit"  attrs="{'readonly': [('state', '!=', 'draft')]}" groups="account.group_account_manager"/>
                                 <field name="journal" attrs="{'readonly': [('state', '!=', 'draft')]}" groups="account.group_account_manager"/>
@@ -51,7 +51,7 @@
             <field name="name">anticipo.sueldo.tree</field>
             <field name="model">anticipo.sueldo</field>
             <field name="arch" type="xml">
-                <tree string="Solicitude de Anticipo de Sueldo">
+                <tree string="Salary Advance">
                     <field name="employee_id"/>
                     <field name="date"/>
                     <field name="advance"/>
@@ -65,15 +65,15 @@
             <field name="model">anticipo.sueldo</field>
             <field name="arch" type="xml">
                 <search string="Search">
-                    <field name="name" string="Solicitude de Anticipo de Sueldo" filter_domain="['|',('name','ilike',self)]"/>
+                    <field name="name" string="Salary Advance" filter_domain="['|',('name','ilike',self)]"/>
                     <field name="employee_id"/>
                     <field name="state"/>
-                    <filter string="Mis Solicitudes" domain="[('employee_id.user_id.id','=',uid)]" name="my_requests_filter"/>
+                    <filter string="My Requests" domain="[('employee_id.user_id.id','=',uid)]" name="my_requests_filter"/>
                      <filter domain="[('state', '=', 'draft')]" string="To Submit" name="to_report" help="New Requests"/>
                     <filter domain="[('state','in',('submit','waiting_approval'))]" string="To Approve" name="submitted" help="Submitted Requests"/>
                     <filter domain="[('state', '=', 'approve')]" string="Approved" name="approved" help="Approved Requests"/>
                     <separator/>
-                        <filter string="Empleado" name="employee_id" domain="[]" context="{'group_by':'employee_id'}"/>
+                        <filter string="Employee" name="employee_id" domain="[]" context="{'group_by':'employee_id'}"/>
                         <filter name="Estado" string="State" domain="[]" context="{'group_by':'state'}"/>
                         <filter string="Date" domain="[]" name="date" context="{'group_by':'date'}"/>
                </search>
@@ -81,7 +81,7 @@
         </record>
 
         <record id="action_my_anticipo_sueldo" model="ir.actions.act_window">
-            <field name="name">Anticipo de Sueldo</field>
+            <field name="name">Salary Advance</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">anticipo.sueldo</field>
             <field name="view_type">form</field>
@@ -90,13 +90,13 @@
             <field name="context">{'search_default_my_requests_filter':1}</field>
             <field name="domain">[('employee_id.user_id', '=', uid)]</field>
             <field name="help" type="html">
-                <p class="o_view_nocontent_smiling_face">Acá podrá crear solicitudes para anticipo de sueldo</p>
-                <p>Crear Solicitud de Anticipo de Sueldo</p>
+                <p class="o_view_nocontent_smiling_face">Here you can create Salary Advance requests</p>
+                <p>Create request for Employee Salary Advance</p>
             </field>
         </record>
 
         <record id="action_my_anticipo_sueldo_request_approved" model="ir.actions.act_window">
-            <field name="name">Anticipo de Sueldo</field>
+            <field name="name">Salary Advance</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">anticipo.sueldo</field>
             <field name="view_type">form</field>
@@ -105,13 +105,13 @@
             <field name="context">{'search_default_approved':1}</field>
             <field name="domain">[('employee_id.user_id', '=', uid)]</field>
             <field name="help" type="html">
-                <p class="o_view_nocontent_smiling_face">Acá podrá crear solicitudes para anticipo de sueldo</p>
-                <p>Crear Solicitud de Anticipo de Sueldo</p>
+                <p class="o_view_nocontent_smiling_face">Here you can create Salary Advance requests</p>
+                <p>Create request for Employee Salary Advance</p>
             </field>
         </record>
 
          <record id="action_anticipo_sueldo_to_approve" model="ir.actions.act_window">
-            <field name="name">Anticipo de Sueldo</field>
+            <field name="name">Salary Advance</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">anticipo.sueldo</field>
             <field name="view_type">form</field>
@@ -120,8 +120,8 @@
             <field name="context">{'search_default_submitted': 1}</field>
             <field name="domain"></field>
             <field name="help" type="html">
-                <p class="o_view_nocontent_smiling_face">Acá podrá crear solicitudes para anticipo de sueldo</p>
-                <p>Crear Solicitud de Anticipo de Sueldo</p>
+                <p class="o_view_nocontent_smiling_face">Here you can create Salary Advance requests</p>
+                <p>Create request for Employee Salary Advance</p>
             </field>
         </record>
     </data>
