@@ -54,9 +54,9 @@
                 <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='sales_purchases']/group[@name='container_row_2']/group[@name='sale']/field[@name='user_id']" position="attributes">
                     <attribute name="attrs">{'invisible': [['customer','=',False]]}</attribute>
                 </xpath>
-                <xpath expr="//group[@name='fiscal_information']" position="attributes">
+                <!--<xpath expr="//group[@name='fiscal_information']" position="attributes">
                     <attribute name="string">Controles y Acciones</attribute>
-                </xpath>
+                </xpath>-->
             </field>
         </record>
 
