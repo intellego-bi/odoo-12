@@ -20,9 +20,9 @@
               <!--<xpath expr="//field[@name='property_product_pricelist']" position="attributes">
                 <attribute name="attrs">{'invisible': ['&',['customer','=',False],'|',['is_company','=',False],['parent_id','!=',False]]}</attribute>
               </xpath>-->
-              <xpath expr="//field[@name='property_product_pricelist']" position="attributes">
+              <!--<xpath expr="//field[@name='property_product_pricelist']" position="attributes">
                 <attribute name="attrs">"{'invisible':['customer','=',False]}"</attribute>
-              </xpath>
+              </xpath>-->
 
               <!--<xpath expr="//field[@name='property_product_pricelist']" position="after">
                 <xpath expr="//field[@name='message_bounce']" position="move"/>
