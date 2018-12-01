@@ -155,6 +155,11 @@
                     <attribute name="attrs">{}</attribute>
                     <attribute name="invisible">1</attribute>
                 </xpath>
+                <xpath expr="//search[1]/group[1]/field[@name='account']" position="attributes">
+                    <attribute name="attrs">{}</attribute>
+                    <attribute name="is_default">1</attribute>
+                </xpath>
+
             </field>
         </record>
 
