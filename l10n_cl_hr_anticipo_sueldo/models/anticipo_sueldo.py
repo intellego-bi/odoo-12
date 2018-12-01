@@ -167,10 +167,10 @@ class AnticipoSueldoPago(models.Model):
             raise except_orm('Warning', "This month salary already calculated")
 
         for slip in self.env['hr.payslip'].search([('employee_id', '=', self.employee_id.id)]):
-            slip_moth = datetime.strptime(slip.date_from, '%Y-%m-%d').date().month
+            slip_moth = datetime.strptime(str(slip.date_from), '%Y-%m-%d').date().month
             if current_month == slip_moth + 1:
-                slip_day = datetime.strptime(slip.date_from, '%Y-%m-%d').date().day
-                current_day = datetime.strptime(self.date, '%Y-%m-%d').date().day
+                slip_day = datetime.strptime(str(slip.date_from), '%Y-%m-%d').date().day
+                current_day = datetime.strptime(str(self.date), '%Y-%m-%d').date().day
                 if current_day - slip_day < struct_id.advance_date:
                     raise exceptions.Warning(
                         _('Request can be done after "%s" Days From prevoius month salary') % struct_id.advance_date)
