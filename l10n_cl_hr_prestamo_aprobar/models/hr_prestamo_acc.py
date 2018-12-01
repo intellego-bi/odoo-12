@@ -140,6 +140,7 @@ class HrPrestamoAcc(models.Model):
                 'line_ids': [(0, 0, debit_vals), (0, 0, credit_vals)]
             }
             move = self.env['account.move'].create(vals)
+            prestamo.write({'move_id': move.id})
             move.post()
         self.write({'state': 'approve'})
         return True
@@ -193,6 +194,7 @@ class HrPrestamoLineAcc(models.Model):
                 'line_ids': [(0, 0, debit_vals), (0, 0, credit_vals)]
             }
             move = self.env['account.move'].create(vals)
+            line.write({'move_id': move.id})
             move.post()
         return True
 
