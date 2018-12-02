@@ -1256,7 +1256,7 @@
         <field ref="account.data_account_type_expenses" name="user_type_id"/>
         <field name="chart_template_id" ref="cl_chart_template_v12"/>
     </record>
-<!--
+
     <record id="l10n_cl_mfg_61050100" model="account.account.template">
         <field name="name">Viáticos Directores</field>
         <field name="code">61050100</field>
@@ -1504,7 +1504,7 @@
         <field ref="account_account_type_NCLASIFICADO" name="user_type_id"/>
         <field name="chart_template_id" ref="cl_chart_template_v12"/>
     </record>
-
+-->
     <!-- Account Defaults -->
     <!--<record id="cl_chart_template_v12" model="account.chart.template">
         <field name="property_account_receivable_id" ref="l10n_cl_mfg_11030100"/>
