@@ -38,7 +38,7 @@
         <field ref="account.data_account_type_current_assets" name="user_type_id"/>
         <field name="chart_template_id" ref="cl_chart_template_v12"/>
     </record>
-
+<!--
     <record id="l10n_cl_mfg_11020100" model="account.account.template">
         <field name="name">Inversiones Fondos Mutuos</field>
         <field name="code">11020100</field>
@@ -1335,7 +1335,7 @@
         <field name="reconcile" eval="False"/>
         <field ref="account.data_account_type_expenses" name="user_type_id"/>
         <field name="chart_template_id" ref="cl_chart_template_v12"/>
-    </record>-->
+    </record>
 
     <record id="l10n_cl_mfg_62030100" model="account.account.template">
         <field name="name">Pérdida por Diferencia de Cambio</field>
@@ -1344,7 +1344,7 @@
         <field ref="account.data_account_type_expenses" name="user_type_id"/>
         <field name="chart_template_id" ref="cl_chart_template_v12"/>
     </record>
-<!--
+
     <record id="l10n_cl_mfg_62030200" model="account.account.template">
         <field name="name">Corrección Monetaria Activos</field>
         <field name="code">62030200</field>
@@ -1384,7 +1384,7 @@
         <field ref="account.data_account_type_expenses" name="user_type_id"/>
         <field name="chart_template_id" ref="cl_chart_template_v12"/>
     </record>
--->
+
     <record id="l10n_cl_mfg_64010100" model="account.account.template">
         <field name="name">Remuneraciones Admón y Venta</field>
         <field name="code">64010100</field>
@@ -1506,7 +1506,7 @@
     </record>
 
     <!-- Account Defaults -->
-    <record id="cl_chart_template_v12" model="account.chart.template">
+    <!--<record id="cl_chart_template_v12" model="account.chart.template">
         <field name="property_account_receivable_id" ref="l10n_cl_mfg_11030100"/>
         <field name="property_account_payable_id" ref="l10n_cl_mfg_21020100"/>
         <field name="property_account_expense_categ_id" ref="l10n_cl_mfg_65010100"/>
@@ -1514,7 +1514,7 @@
         <field name="income_currency_exchange_account_id" ref="l10n_cl_mfg_42030100"/>
         <field name="expense_currency_exchange_account_id" ref="l10n_cl_mfg_62030100"/>
     </record>
-
+    -->
 
 </odoo>
 
