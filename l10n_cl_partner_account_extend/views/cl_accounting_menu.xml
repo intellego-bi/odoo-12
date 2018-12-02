@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <menuitem id="menu_cl_acc_master_data" name="Datos Maestros" parent="account.account_account_menu" sequence="2"/>
+    </data>
+</odoo>
