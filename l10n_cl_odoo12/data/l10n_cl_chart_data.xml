@@ -23,13 +23,13 @@
 
 
     <!-- Accounts -->
-    <record id="l10n_cl_mfg_11013000" model="account.account.template">
+    <!--<record id="l10n_cl_mfg_11013000" model="account.account.template">
         <field name="name">Trasferencias Bancarias</field>
         <field name="code">11013000</field>
         <field name="reconcile" eval="True"/>
         <field ref="account.data_account_type_current_assets" name="user_type_id"/>
         <field name="chart_template_id" ref="cl_chart_template_v12"/>
-    </record>
+    </record>-->
 
     <record id="l10n_cl_mfg_11014100" model="account.account.template">
         <field name="name">Fondos Fijos</field>
