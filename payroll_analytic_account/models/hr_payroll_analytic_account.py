@@ -27,7 +27,7 @@ from odoo.tools.translate import _
 
 
 
-class HrPayslip(models.Model):
+class HrPayslipAnalytic(models.Model):
     _inherit = 'hr.payslip'
 
     date = fields.Date('Date Account', states={'draft': [('readonly', False)]}, readonly=True,
@@ -40,11 +40,11 @@ class HrPayslip(models.Model):
     def create(self, vals):
         if 'journal_id' in self.env.context:
             vals['journal_id'] = self.env.context.get('journal_id')
-        return super(HrPayslip, self).create(vals)
+        return super(HrPayslipAnalytic, self).create(vals)
 
     @api.onchange('contract_id')
     def onchange_contract(self):
-        super(HrPayslip, self).onchange_contract()
+        super(HrPayslipAnalytic, self).onchange_contract()
         self.journal_id = self.contract_id.journal_id.id or (not self.contract_id and self.default_get(['journal_id'])['journal_id'])
 
     @api.multi
@@ -52,7 +52,7 @@ class HrPayslip(models.Model):
         moves = self.mapped('move_id')
         moves.filtered(lambda x: x.state == 'posted').button_cancel()
         moves.unlink()
-        return super(HrPayslip, self).action_payslip_cancel()
+        return super(HrPayslipAnalytic, self).action_payslip_cancel()
 
     @api.multi
     def action_payslip_done(self):
