@@ -120,8 +120,8 @@
       <field name="amount">19</field>
       <field name="amount_type">percent</field>
       <field name="type_tax_use">sale</field>
-      <field name="refund_account_id" ref="21070100"/>
-      <field name="account_id" ref="21070100"/>
+      <field name="refund_account_id" ref="l10n_cl_mfg_21070100"/>
+      <field name="account_id" ref="l10n_cl_mfg_21070100"/>
       <field name="tag_ids" eval="[(6,0,[ref('tag_cl_09'), ref('tag_cl_14')])]"/>
       <field name="tax_group_id" ref="tax_group_iva_19"/>
     </record>
@@ -133,8 +133,8 @@
       <field name="amount">19</field>
       <field name="amount_type">percent</field>
       <field name="type_tax_use">purchase</field>
-      <field name="refund_account_id" ref="11070100"/>
-      <field name="account_id" ref="11070100"/>
+      <field name="refund_account_id" ref="l10n_cl_mfg_11070100"/>
+      <field name="account_id" ref="l10n_cl_mfg_11070100"/>
       <field name="tag_ids" eval="[(6,0,[ref('tag_cl_05'), ref('tag_cl_18')])]"/>
       <field name="tax_group_id" ref="tax_group_iva_19"/>
     </record>
@@ -168,8 +168,8 @@
       <field name="amount">19</field>
       <field name="amount_type">percent</field>
       <field name="type_tax_use">purchase</field>
-      <field name="refund_account_id" ref="11070400"/>
-      <field name="account_id" ref="11070400"/>
+      <field name="refund_account_id" ref="l10n_cl_mfg_11070400"/>
+      <field name="account_id" ref="l10n_cl_mfg_11070400"/>
       <field name="tag_ids" eval="[(6,0,[ref('tag_cl_05'), ref('tag_cl_18')])]"/>
       <field name="tax_group_id" ref="tax_group_iva_19"/>
     </record>
@@ -183,8 +183,8 @@
       <field name="sequence" eval="2"/>
       <field name="amount_type">percent</field>
       <field name="type_tax_use">purchase</field>
-      <field name="refund_account_id" ref="21070400"/>
-      <field name="account_id" ref="21070400"/>
+      <field name="refund_account_id" ref="l10n_cl_mfg_21070400"/>
+      <field name="account_id" ref="l10n_cl_mfg_21070400"/>
       <field name="tag_ids" eval="[(6,0,[ref('tag_cl_22'), ref('tag_cl_21')])]"/>
       <!--<field name="sii_type">R</field>
       <field name="retencion">10.000</field> -->
