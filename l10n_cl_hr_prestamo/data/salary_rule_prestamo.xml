@@ -2,7 +2,7 @@
 <odoo>
     <!--Adding a salary rule for loan-->
     <data noupdate="0">
-        <record id="hr_rule_prestamo" model="hr.salary.rule">
+        <record id="l10n_cl_hr.hr_rule_prestamo" model="hr.salary.rule">
             <field name="code">HRPR</field>
             <field name="name">HR Loan Installment</field>
             <field name="category_id" ref="l10n_cl_hr.ODESC"/>
@@ -15,7 +15,7 @@
         <record id="hr_rule_input_prestamo" model="hr.rule.input">
             <field name="code">HRPR</field>
             <field name="name">HR Loan Installment</field>
-            <field name="input_id" ref="hr_rule_prestamo"/>
+            <field name="input_id" ref="l10n_cl_hr.hr_rule_prestamo"/>
         </record>
     </data>
 </odoo>

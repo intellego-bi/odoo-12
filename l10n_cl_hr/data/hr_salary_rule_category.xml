@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>						
-<odoo>						
+<odoo>
     <data>
     
        <!-- Rule Category -->
@@ -42,6 +42,10 @@
             <field name="code">SUBT</field>                     
         </record>                       
 
+        <record id="ANTICIPO" model="hr.salary.rule.category">                      
+            <field name="name">Anticipos</field>                     
+            <field name="code">ANTICIPO</field>                     
+        </record>                       
  
-    </data>						
-</odoo>						
+    </data>
+</odoo>

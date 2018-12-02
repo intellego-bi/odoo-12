@@ -2,7 +2,7 @@
 <odoo>
     <data>
         <!-- advance salary rule -->
-        <record id="hr_payslip_rule_sol_anticipo" model="hr.salary.rule">
+        <record id="l10n_cl_hr.hr_payslip_rule_sol_anticipo" model="hr.salary.rule">
             <field name="code">SANTS</field>
             <field name="name">Salary Advance</field>
             <field name="category_id" ref="l10n_cl_hr.ODESC"/>
@@ -12,10 +12,10 @@
             <field name="sequence" eval="38"/>
         </record>
 
-        <record id="hr_rule_input_sol_anticipo" model="hr.rule.input">
+        <record id="l10n_cl_hr.hr_rule_input_sol_anticipo" model="hr.rule.input">
             <field name="code">SANTS</field>
             <field name="name">Salary Advance</field>
-            <field name="input_id" ref="hr_payslip_rule_sol_anticipo"/>
+            <field name="input_id" ref="l10n_cl_hr.hr_payslip_rule_sol_anticipo"/>
         </record>
 
     </data>
