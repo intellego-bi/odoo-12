@@ -1082,7 +1082,7 @@
 
     <record id="l10n_cl_mfg_52010300" model="account.account.template">
         <field name="name">Diferencia Precio Inventarios</field>
-        <field name="code">52020300</field>
+        <field name="code">52010300</field>
         <field name="reconcile" eval="False"/>
         <field ref="account.data_account_type_direct_costs" name="user_type_id"/>
         <field name="chart_template_id" ref="cl_chart_template_v12"/>
@@ -1193,33 +1193,33 @@
         <field name="chart_template_id" ref="cl_chart_template_v12"/>
     </record>
 
-    <record id="l10n_cl_mfg_62010100" model="account.account.template">
+    <record id="l10n_cl_mfg_69010100" model="account.account.template">
         <field name="name">Energía y Electricidad</field>
-        <field name="code">62010100</field>
+        <field name="code">69010100</field>
         <field name="reconcile" eval="False"/>
         <field ref="account.data_account_type_expenses" name="user_type_id"/>
         <field name="chart_template_id" ref="cl_chart_template_v12"/>
     </record>
 
-    <record id="l10n_cl_mfg_62020200" model="account.account.template">
+    <record id="l10n_cl_mfg_69020200" model="account.account.template">
         <field name="name">Telefonía y Telecomunicaciones</field>
-        <field name="code">62020200</field>
+        <field name="code">69020200</field>
         <field name="reconcile" eval="False"/>
         <field ref="account.data_account_type_expenses" name="user_type_id"/>
         <field name="chart_template_id" ref="cl_chart_template_v12"/>
     </record>
 
-    <record id="l10n_cl_mfg_61020800" model="account.account.template">
+    <record id="l10n_cl_mfg_69020800" model="account.account.template">
         <field name="name">Telfonía Celular</field>
-        <field name="code">61020800</field>
+        <field name="code">69020800</field>
         <field name="reconcile" eval="False"/>
         <field ref="account.data_account_type_expenses" name="user_type_id"/>
         <field name="chart_template_id" ref="cl_chart_template_v12"/>
     </record>
 
-    <record id="l10n_cl_mfg_61020900" model="account.account.template">
+    <record id="l10n_cl_mfg_69020900" model="account.account.template">
         <field name="name">Gastos por Siniestros</field>
-        <field name="code">61020900</field>
+        <field name="code">69020900</field>
         <field name="reconcile" eval="False"/>
         <field ref="account.data_account_type_expenses" name="user_type_id"/>
         <field name="chart_template_id" ref="cl_chart_template_v12"/>
@@ -1489,7 +1489,7 @@
         <field name="chart_template_id" ref="cl_chart_template_v12"/>
     </record>
   
-    <record id="72010100" model="account.account.template">
+    <record id="l10n_cl_mfg_72010100" model="account.account.template">
         <field name="name">Comitente por Mercaderias Recibidas en Consignación</field>
         <field name="code">72010100</field>
         <field name="reconcile" eval="False"/>
@@ -1497,7 +1497,7 @@
         <field name="chart_template_id" ref="cl_chart_template_v12"/>
     </record>
 
-    <record id="72020100" model="account.account.template">
+    <record id="l10n_cl_mfg_72030100" model="account.account.template">
         <field name="name">Acreedor por Garantías Otorgadas</field>
         <field name="code">72030100</field>
         <field name="reconcile" eval="False"/>
