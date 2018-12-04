@@ -25,7 +25,7 @@
     'author': 'Intellego-BI.com',
     'company': 'Intellego-BI.com',
     'website': 'https://www.Intellego-BI.com',
-    'depends': ['mail', 'hr_payroll', 'l10n_cl_hr', 'l10n_cl_hr_employee_extend', 'l10n_cl_hr_termination_request'],
+    'depends': ['mail', 'hr_payroll', 'l10n_cl_hr', 'l10n_cl_hr_employee_extend'],
     'category': 'Human Resources',
     'maintainer': 'Intellego-BI.com',
     'demo': [],
