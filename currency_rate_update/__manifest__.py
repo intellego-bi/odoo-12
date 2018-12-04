@@ -10,6 +10,7 @@
     "depends": [
         "base",
         "mail",
+        "currency_rate_inverted",  # Added to ensure CLP is inverted
         "account",  # Added to ensure account security groups are present
     ],
     "data": [
