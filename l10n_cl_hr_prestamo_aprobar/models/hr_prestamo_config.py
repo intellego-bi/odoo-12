@@ -37,7 +37,7 @@ class AccConfig(models.TransientModel):
                                   domain=lambda self: [('reconcile', '=', True)],
                                   help="Employee Loans payment transit Balance Sheet Account (Liability)")
 
-    hr_journal_id = fields.Many2one('account.journal', string="Journal", 
+    hr_journal_id = fields.Many2one('account.journal', string="HR Loan Journal", 
                                   domain=lambda self: [('code', '=', 'REMU')],
                                   help="Accounting Journal used for Loan payment to Employee")
 
