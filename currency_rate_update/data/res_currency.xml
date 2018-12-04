@@ -9,6 +9,7 @@
         <field name="position">before</field>
         <field name="currency_unit_label">Peso</field>
         <field name="currency_subunit_label">Centavos</field>
+        <field name="rate_inverted" eval="True"/>
     </record>
     <record id="base.USD" model="res.currency">
         <field name="symbol">USD </field>
