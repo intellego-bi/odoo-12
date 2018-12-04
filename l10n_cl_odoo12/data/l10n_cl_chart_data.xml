@@ -11,9 +11,9 @@
         <field name="name">Inventarios</field>
     </record>
 
-    <record id="account_account_type_HR" model="account.account.type">
+    <!--<record id="account_account_type_HR" model="account.account.type">
         <field name="name">RRHH</field>
-    </record>
+    </record>-->
 
 
     <!-- Accounts -->
