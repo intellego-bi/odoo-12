@@ -12,7 +12,7 @@
     </record>
   </data>
   <data>
-    <record id="base.UF" model="res.currency">
+    <record id="l10n_cl.UF" model="res.currency">
         <field name="name">UF</field>
         <field name="symbol">UF </field>
         <field name="rounding">0.01</field>
@@ -21,7 +21,7 @@
         <field name="currency_unit_label">Unidades de Fomento</field>
         <field name="currency_subunit_label">Céntimos de UF</field>
     </record>
-    <record id="base.UTM" model="res.currency">
+    <record id="l10n_cl.UTM" model="res.currency">
         <field name="name">UTM</field>
         <field name="symbol">UTM </field>
         <field name="rounding">0.01</field>
@@ -30,7 +30,7 @@
         <field name="currency_unit_label">Unidades Tributarias Mensuales</field>
         <field name="currency_subunit_label">Céntimos de UTM</field>
     </record>
-    <record id="base.UTA" model="res.currency">
+    <record id="l10n_cl.UTA" model="res.currency">
         <field name="name">UTA</field>
         <field name="symbol">UTA </field>
         <field name="rounding">0.01</field>
