@@ -3,13 +3,13 @@
     <menuitem id="account_reports_cl_statements_menu" name="Chile" parent="account.menu_finance_reports" sequence="0" groups="account.group_account_user"/>
 
     <!-- Account Types -->
-    <!--<record id="account_account_type_NCLASIFICADO" model="account.account.type">
+    <record id="account_account_type_NCLASIFICADO" model="account.account.type">
         <field name="name">Cuentas de Orden</field>
     </record>
 
     <record id="account_account_type_STOCK" model="account.account.type">
         <field name="name">Inventarios</field>
-    </record>-->
+    </record>
 
     <!-- Accounts -->
     <record id="cl_chart_template_v12" model="account.chart.template">
@@ -23,13 +23,13 @@
 
 
     <!-- Accounts -->
-    <!--<record id="l10n_cl_mfg_11013000" model="account.account.template">
+    <record id="l10n_cl_mfg_11013000" model="account.account.template">
         <field name="name">Trasferencias Bancarias</field>
         <field name="code">11013000</field>
         <field name="reconcile" eval="True"/>
         <field ref="account.data_account_type_current_assets" name="user_type_id"/>
         <field name="chart_template_id" ref="cl_chart_template_v12"/>
-    </record>-->
+    </record>
 
     <record id="l10n_cl_mfg_11014100" model="account.account.template">
         <field name="name">Fondos Fijos</field>
@@ -38,7 +38,7 @@
         <field ref="account.data_account_type_current_assets" name="user_type_id"/>
         <field name="chart_template_id" ref="cl_chart_template_v12"/>
     </record>
-<!--
+
     <record id="l10n_cl_mfg_11020100" model="account.account.template">
         <field name="name">Inversiones Fondos Mutuos</field>
         <field name="code">11020100</field>
@@ -1504,9 +1504,9 @@
         <field ref="account_account_type_NCLASIFICADO" name="user_type_id"/>
         <field name="chart_template_id" ref="cl_chart_template_v12"/>
     </record>
--->
+
     <!-- Account Defaults -->
-    <!--<record id="cl_chart_template_v12" model="account.chart.template">
+    <record id="cl_chart_template_v12" model="account.chart.template">
         <field name="property_account_receivable_id" ref="l10n_cl_mfg_11030100"/>
         <field name="property_account_payable_id" ref="l10n_cl_mfg_21020100"/>
         <field name="property_account_expense_categ_id" ref="l10n_cl_mfg_65010100"/>
@@ -1514,7 +1514,7 @@
         <field name="income_currency_exchange_account_id" ref="l10n_cl_mfg_42030100"/>
         <field name="expense_currency_exchange_account_id" ref="l10n_cl_mfg_62030100"/>
     </record>
-    -->
+    
 
 </odoo>
 
