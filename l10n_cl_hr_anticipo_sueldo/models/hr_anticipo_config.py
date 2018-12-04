@@ -24,7 +24,7 @@ from odoo import models, fields, api, _
 class HRAnticipoConfig(models.TransientModel):
     _inherit = 'res.config.settings'
 
-    hr_anticipo_approve = fields.Boolean(default=False, string="Approval from Accounting Department",
+    hr_anticipo_approve = fields.Boolean(default=False, string="HR Salary Advance Approval from Accounting Department",
                                   help="Salary Advance Approval from account manager")
 
     hr_debit_account_id = fields.Many2one('account.account', string="HR Salary Advance Debit Account", readonly=False,
