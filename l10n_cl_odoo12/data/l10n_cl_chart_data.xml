@@ -1113,7 +1113,7 @@
         <field name="name">Remuneraciones Admón y Venta</field>
         <field name="code">54010100</field>
         <field name="reconcile" eval="False"/>
-        <field ref="account.account_account_type_HR" name="user_type_id"/>
+        <field ref="account.data_account_type_direct_costs" name="user_type_id"/>
         <field name="chart_template_id" ref="cl_chart_template_v12"/>
     </record>
 
@@ -1121,7 +1121,7 @@
         <field name="name">Horas Extra Admón y Venta</field>
         <field name="code">54010150</field>
         <field name="reconcile" eval="False"/>
-        <field ref="account.account_account_type_HR" name="user_type_id"/>
+        <field ref="account.data_account_type_direct_costs" name="user_type_id"/>
         <field name="chart_template_id" ref="cl_chart_template_v12"/>
     </record>
 
@@ -1129,7 +1129,7 @@
         <field name="name">Aporte Patronal Admón y Venta</field>
         <field name="code">54010200</field>
         <field name="reconcile" eval="False"/>
-        <field ref="account.account_account_type_HR" name="user_type_id"/>
+        <field ref="account.data_account_type_direct_costs" name="user_type_id"/>
         <field name="chart_template_id" ref="cl_chart_template_v12"/>
     </record>
 
@@ -1137,7 +1137,7 @@
         <field name="name">Movilización Admón y Venta</field>
         <field name="code">54010300</field>
         <field name="reconcile" eval="False"/>
-        <field ref="account.account_account_type_HR" name="user_type_id"/>
+        <field ref="account.data_account_type_direct_costs" name="user_type_id"/>
         <field name="chart_template_id" ref="cl_chart_template_v12"/>
     </record>
 
@@ -1145,7 +1145,7 @@
         <field name="name">Alimentación Admón y Venta</field>
         <field name="code">54010400</field>
         <field name="reconcile" eval="False"/>
-        <field ref="account.account_account_type_HR" name="user_type_id"/>
+        <field ref="account.data_account_type_direct_costs" name="user_type_id"/>
         <field name="chart_template_id" ref="cl_chart_template_v12"/>
     </record>
 
@@ -1153,7 +1153,7 @@
         <field name="name">Capacitación Admón y Venta</field>
         <field name="code">54010500</field>
         <field name="reconcile" eval="False"/>
-        <field ref="account.account_account_type_HR" name="user_type_id"/>
+        <field ref="account.data_account_type_direct_costs" name="user_type_id"/>
         <field name="chart_template_id" ref="cl_chart_template_v12"/>
     </record>
 
@@ -1161,7 +1161,7 @@
         <field name="name">Viáticos Admón y Venta</field>
         <field name="code">54010600</field>
         <field name="reconcile" eval="False"/>
-        <field ref="account.account_account_type_HR" name="user_type_id"/>
+        <field ref="account.data_account_type_direct_costs" name="user_type_id"/>
         <field name="chart_template_id" ref="cl_chart_template_v12"/>
     </record>
 
@@ -1169,7 +1169,7 @@
         <field name="name">Aguinaldos Personal Admón y Venta</field>
         <field name="code">54010700</field>
         <field name="reconcile" eval="False"/>
-        <field ref="account.account_account_type_HR" name="user_type_id"/>
+        <field ref="account.data_account_type_direct_costs" name="user_type_id"/>
         <field name="chart_template_id" ref="cl_chart_template_v12"/>
     </record>
 
@@ -1177,7 +1177,7 @@
         <field name="name">Bienestar Personal Admón y Venta</field>
         <field name="code">54010800</field>
         <field name="reconcile" eval="False"/>
-        <field ref="account.account_account_type_HR" name="user_type_id"/>
+        <field ref="account.data_account_type_direct_costs" name="user_type_id"/>
         <field name="chart_template_id" ref="cl_chart_template_v12"/>
     </record>
 
@@ -1185,7 +1185,7 @@
         <field name="name">Bonos e Indemnizaciones Admón y Venta</field>
         <field name="code">54010900</field>
         <field name="reconcile" eval="False"/>
-        <field ref="account.account_account_type_HR" name="user_type_id"/>
+        <field ref="account.data_account_type_direct_costs" name="user_type_id"/>
         <field name="chart_template_id" ref="cl_chart_template_v12"/>
     </record>
 
@@ -1441,7 +1441,7 @@
         <field name="name">Remuneraciones Admón y Venta</field>
         <field name="code">64010100</field>
         <field name="reconcile" eval="False"/>
-        <field ref="account.account_account_type_HR" name="user_type_id"/>
+        <field ref="account.data_account_type_expenses" name="user_type_id"/>
         <field name="chart_template_id" ref="cl_chart_template_v12"/>
     </record>
 
@@ -1449,7 +1449,7 @@
         <field name="name">Horas Extra Admón y Venta</field>
         <field name="code">64010150</field>
         <field name="reconcile" eval="False"/>
-        <field ref="account.account_account_type_HR" name="user_type_id"/>
+        <field ref="account.data_account_type_expenses" name="user_type_id"/>
         <field name="chart_template_id" ref="cl_chart_template_v12"/>
     </record>
 
@@ -1457,7 +1457,7 @@
         <field name="name">Aporte Patronal Admón y Venta</field>
         <field name="code">64010200</field>
         <field name="reconcile" eval="False"/>
-        <field ref="account.account_account_type_HR" name="user_type_id"/>
+        <field ref="account.data_account_type_expenses" name="user_type_id"/>
         <field name="chart_template_id" ref="cl_chart_template_v12"/>
     </record>
 
@@ -1465,7 +1465,7 @@
         <field name="name">Movilización Admón y Venta</field>
         <field name="code">64010300</field>
         <field name="reconcile" eval="False"/>
-        <field ref="account.account_account_type_HR" name="user_type_id"/>
+        <field ref="account.data_account_type_expenses" name="user_type_id"/>
         <field name="chart_template_id" ref="cl_chart_template_v12"/>
     </record>
 
@@ -1473,7 +1473,7 @@
         <field name="name">Alimentación Admón y Venta</field>
         <field name="code">64010400</field>
         <field name="reconcile" eval="False"/>
-        <field ref="account.account_account_type_HR" name="user_type_id"/>
+        <field ref="account.data_account_type_expenses" name="user_type_id"/>
         <field name="chart_template_id" ref="cl_chart_template_v12"/>
     </record>
 
@@ -1481,7 +1481,7 @@
         <field name="name">Capacitación Admón y Venta</field>
         <field name="code">64010500</field>
         <field name="reconcile" eval="False"/>
-        <field ref="account.account_account_type_HR" name="user_type_id"/>
+        <field ref="account.data_account_type_expenses" name="user_type_id"/>
         <field name="chart_template_id" ref="cl_chart_template_v12"/>
     </record>
 
@@ -1489,7 +1489,7 @@
         <field name="name">Viáticos Admón y Venta</field>
         <field name="code">64010600</field>
         <field name="reconcile" eval="False"/>
-        <field ref="account.account_account_type_HR" name="user_type_id"/>
+        <field ref="account.data_account_type_expenses" name="user_type_id"/>
         <field name="chart_template_id" ref="cl_chart_template_v12"/>
     </record>
 
@@ -1497,7 +1497,7 @@
         <field name="name">Aguinaldos Personal Admón y Venta</field>
         <field name="code">64010700</field>
         <field name="reconcile" eval="False"/>
-        <field ref="account.account_account_type_HR" name="user_type_id"/>
+        <field ref="account.data_account_type_expenses" name="user_type_id"/>
         <field name="chart_template_id" ref="cl_chart_template_v12"/>
     </record>
 
@@ -1505,7 +1505,7 @@
         <field name="name">Bienestar Personal Admón y Venta</field>
         <field name="code">64010800</field>
         <field name="reconcile" eval="False"/>
-        <field ref="account.account_account_type_HR" name="user_type_id"/>
+        <field ref="account.data_account_type_expenses" name="user_type_id"/>
         <field name="chart_template_id" ref="cl_chart_template_v12"/>
     </record>
 
@@ -1513,7 +1513,7 @@
         <field name="name">Bonos e Indemnizaciones Admón y Venta</field>
         <field name="code">64010900</field>
         <field name="reconcile" eval="False"/>
-        <field ref="account.account_account_type_HR" name="user_type_id"/>
+        <field ref="account.data_account_type_expenses" name="user_type_id"/>
         <field name="chart_template_id" ref="cl_chart_template_v12"/>
     </record>
 
