@@ -24,15 +24,15 @@ from odoo import models, fields, api, _
 class AccConfig(models.TransientModel):
     _inherit = 'res.config.settings'
 
-    prestamo_approve = fields.Boolean(default=False, string="Approval from Accounting Department",
+    prestamo_approve = fields.Boolean(default=False, string="HR Loan Approval from Accounting Department",
                                   help="Loan Approval from account manager")
 
-    hr_emp_account_id = fields.Many2one('account.account', string="Employee Loans Account", readonly=False,
+    hr_emp_account_id = fields.Many2one('account.account', string="HR Employee Loans Account", readonly=False,
                                   #related='account.emp_account',
                                   domain=lambda self: [('reconcile', '=', True)],
                                   help="Employee Loans Balance Sheet Account (Assets)")
 
-    hr_treasury_account_id = fields.Many2one('account.account', string="Employee Payment Account", readonly=False,
+    hr_treasury_account_id = fields.Many2one('account.account', string="HR Employee Payment Account", readonly=False,
                                   #related='account.treasury_account',
                                   domain=lambda self: [('reconcile', '=', True)],
                                   help="Employee Loans payment transit Balance Sheet Account (Liability)")
