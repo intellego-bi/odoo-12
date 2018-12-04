@@ -27,15 +27,15 @@ class HRAnticipoConfig(models.TransientModel):
     hr_anticipo_approve = fields.Boolean(default=False, string="Approval from Accounting Department",
                                   help="Salary Advance Approval from account manager")
 
-    hr_debit_account_id = fields.Many2one('account.account', string="Salary Advance Debit Account", readonly=False,
+    hr_debit_account_id = fields.Many2one('account.account', string="HR Salary Advance Debit Account", readonly=False,
                                   domain=lambda self: [('reconcile', '=', True)],
                                   help="Salary Advance Balance Sheet Account (Assets)")
 
-    hr_credit_account_id = fields.Many2one('account.account', string="Salary Advance Credit Account", readonly=False,
+    hr_credit_account_id = fields.Many2one('account.account', string="HR Salary Advance Credit Account", readonly=False,
                                   domain=lambda self: [('reconcile', '=', True)],
                                   help="Salary Advance payment transit Balance Sheet Account (Liability)")
 
-    hr_anticipo_journal_id = fields.Many2one('account.journal', string="Journal", 
+    hr_anticipo_journal_id = fields.Many2one('account.journal', string="HR Salary Advance Journal", 
                                   domain=lambda self: [('code', '=', 'REMU')],
                                   help="Accounting Journal used for Salary Advance to Employee")
 
