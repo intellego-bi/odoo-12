@@ -686,6 +686,7 @@ else:
             <field name="category_id" ref="ODESC"/>
             <field name="account_debit" ref="l10n_cl_coa.1_cl_coa_mfg_21050150"/>
             <field name="account_credit" ref="l10n_cl_coa.1_cl_coa_mfg_21040200"/>
+            <field name="register_id" ref="contrib_register_previred"/>
             <field name="condition_select">python</field>
             <field name="condition_python">result =  inputs.PCCAF and inputs.PCCAF.amount > 0</field>
             <field name="amount_select">code</field>
