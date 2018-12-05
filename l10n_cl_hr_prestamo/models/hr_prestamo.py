@@ -97,7 +97,7 @@ class HrPrestamo(models.Model):
         prestamo_array = self.env['hr.prestamo'].search([('employee_id', '=', values['employee_id']), ('state', '=', 'approve')])
         total_pending = 0.0
         for loan in prestamo_array:
-                for line in loan.loan_lines:
+                for line in loan.prestamo_lines:
                     if not line.paid:
                         total_pending += line.amount
             
