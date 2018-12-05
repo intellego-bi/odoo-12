@@ -153,49 +153,49 @@ class HrPrestamoLineAcc(models.Model):
     def action_paid_amount(self):
         """This create the account move line for payment of each installment.
             """
-        timenow = time.strftime('%Y-%m-%d')
-        for line in self:
-            if line.prestamo_id.state != 'approve':
-                raise except_orm('Warning', "Loan Request must be approved")
-            amount = line.amount
-            prestamo_name = line.employee_id.name
-            reference = line.prestamo_id.name
-            journal_id = line.prestamo_id.journal_id.id
+        #timenow = time.strftime('%Y-%m-%d')
+        #for line in self:
+        #    if line.prestamo_id.state != 'approve':
+        #        raise except_orm('Warning', "Loan Request must be approved")
+        #    amount = line.amount
+        #    prestamo_name = line.employee_id.name
+        #    reference = line.prestamo_id.name
+        #    journal_id = line.prestamo_id.journal_id.id
             # debit_account_id = line.loan_id.emp_account_id.id
             # credit_account_id = line.loan_id.treasury_account_id.id
-            credit_account_id = line.prestamo_id.emp_account_id.id
-            debit_account_id = line.prestamo_id.treasury_account_id.id
-            debit_vals = {
-                'name': prestamo_name,
-                'account_id': debit_account_id,
-                # Insert Intellego-BI: Empleado como Partner en contabilizaciones
-                'partner_id' : line.employee_id.address_home_id.id,
-                'journal_id': journal_id,
-                'date': timenow,
-                'debit': amount > 0.0 and amount or 0.0,
-                'credit': amount < 0.0 and -amount or 0.0,
-            }
-            credit_vals = {
-                'name': prestamo_name,
-                'account_id': credit_account_id,
-                # Insert Intellego-BI: Empleado como Partner en contabilizaciones
-                'partner_id' : line.employee_id.address_home_id.id,
-                'journal_id': journal_id,
-                'date': timenow,
-                'debit': amount < 0.0 and -amount or 0.0,
-                'credit': amount > 0.0 and amount or 0.0,
-            }
-            vals = {
-                'name': 'Préstamo a' + ' ' + prestamo_name,
-                'narration': prestamo_name,
-                'ref': reference,
-                'journal_id': journal_id,
-                'date': timenow,
-                'line_ids': [(0, 0, debit_vals), (0, 0, credit_vals)]
-            }
-            move = self.env['account.move'].create(vals)
-            line.write({'move_id': move.id})
-            move.post()
+        #    credit_account_id = line.prestamo_id.emp_account_id.id
+        #    debit_account_id = line.prestamo_id.treasury_account_id.id
+        #    debit_vals = {
+        #        'name': prestamo_name,
+        #        'account_id': debit_account_id,
+        #        # Insert Intellego-BI: Empleado como Partner en contabilizaciones
+        #        'partner_id' : line.employee_id.address_home_id.id,
+        #        'journal_id': journal_id,
+        #        'date': timenow,
+        #        'debit': amount > 0.0 and amount or 0.0,
+        #        'credit': amount < 0.0 and -amount or 0.0,
+        #    }
+        #    credit_vals = {
+        #        'name': prestamo_name,
+        #        'account_id': credit_account_id,
+        #        # Insert Intellego-BI: Empleado como Partner en contabilizaciones
+        #        'partner_id' : line.employee_id.address_home_id.id,
+        #        'journal_id': journal_id,
+        #        'date': timenow,
+        #        'debit': amount < 0.0 and -amount or 0.0,
+        #        'credit': amount > 0.0 and amount or 0.0,
+        #    }
+        #    vals = {
+        #        'name': 'Préstamo a' + ' ' + prestamo_name,
+        #        'narration': prestamo_name,
+        #        'ref': reference,
+        #        'journal_id': journal_id,
+        #        'date': timenow,
+        #        'line_ids': [(0, 0, debit_vals), (0, 0, credit_vals)]
+        #    }
+        #    move = self.env['account.move'].create(vals)
+        #    line.write({'move_id': move.id})
+        #    move.post()
         return True
 
 
