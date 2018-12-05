@@ -32,7 +32,7 @@
     'website': 'https://www.Intellego-BI.com',
     'maintainer': 'Intellego-BI.com',
     'depends': [
-        'base', 'hr_payroll', 'hr', 'account', 'l10n_cl_hr',
+        'base', 'hr_payroll', 'hr', 'account', 'l10n_cl_hr', 'l10n_cl_hr_prestamo_aprobar',
     ],
     'data': [
         'security/ir.model.access.csv',
