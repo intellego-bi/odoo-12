@@ -777,7 +777,7 @@ result = round(SECEEMP) + round(SIS) + round(MUT) + round(SC)</field>
             <field name="amount_python_compute">result = HAB - TDE</field>
         </record>
 
-       <record id="hr_rule_44" model="hr.salary.rule">
+       <record id="hr_rule_44B" model="hr.salary.rule">
             <field name="name">ALCANCE LIQUIDO A PAGAR</field>
             <field name="sequence" eval="44"/>
             <field name="code">LIQUIDO</field>
