@@ -24,7 +24,7 @@
 				<field name='customer'>False</field>
                 <field name='supplier'>True</field>				
 				<field name='country_id'>46</field>				
-				<field name='image'>http://www.gochpa.cl/imagebrowser/p005_0_6.png</field>
+				<field name='image'>"http://www.gochpa.cl/imagebrowser/p005_0_6.png"</field>
 				<field name='commercial_company_name'>Previred.com</field>
         </record> 
 
