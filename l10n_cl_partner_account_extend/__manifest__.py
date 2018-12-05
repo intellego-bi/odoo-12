@@ -33,6 +33,7 @@
     'license': 'LGPL-3',
     'data': [
         'views/res_partner_account_extend.xml',
+        'views/cl_accounting_menu.xml',
     ],
     'demo': [],
     'images': ['static/description/banner.jpg'],
