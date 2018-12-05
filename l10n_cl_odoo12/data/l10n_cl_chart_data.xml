@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<odoo "noupdate"=0>
+  <data noupdate="0">
     <menuitem id="account_reports_cl_statements_menu" name="Chile Legal Statements" 
               parent="account.menu_finance_reports" 
               sequence="3" groups="account.group_account_user"/>
@@ -71,7 +72,8 @@
         <field name="chart_template_id" ref="cl_chart_template_v12"/>
     </record>
 
-    <record id="l10n_cl_mfg_11030100" model="account.account.template">
+    <!--  Default Account Receivable  -->
+    <record id="l10n_cl_mfg_receivable" model="account.account.template">
         <field name="name">Deudores Nacionales</field>
         <field name="code">11030100</field>
         <field name="reconcile" eval="True"/>
@@ -551,7 +553,8 @@
         <field name="chart_template_id" ref="cl_chart_template_v12"/>
     </record>
 
-    <record id="l10n_cl_mfg_21010100" model="account.account.template">
+    <!--  Default Account Payable  -->
+    <record id="l10n_cl_mfg_cxp" model="account.account.template">
         <field name="name">Línea de Crédito Bancario</field>
         <field name="code">21010100</field>
         <field name="reconcile" eval="True"/>
@@ -607,7 +610,8 @@
         <field name="chart_template_id" ref="cl_chart_template_v12"/>
     </record>
 
-    <record id="l10n_cl_mfg_21020100" model="account.account.template">
+    <!-- Default Account Payable -->
+    <record id="l10n_cl_mfg_payable" model="account.account.template">
         <field name="name">Proveedores Nacionales</field>
         <field name="code">21020100</field>
         <field name="reconcile" eval="True"/>
@@ -936,7 +940,8 @@
         <field name="chart_template_id" ref="cl_chart_template_v12"/>
     </record>
 
-    <record id="l10n_cl_mfg_41010100" model="account.account.template">
+    <!--  Default Account Income Category -->
+    <record id="l10n_cl_mfg_income_categ" model="account.account.template">
         <field name="name">Ventas de Productos</field>
         <field name="code">41010100</field>
         <field name="reconcile" eval="False"/>
@@ -1024,7 +1029,8 @@
         <field name="chart_template_id" ref="cl_chart_template_v12"/>
     </record>
 
-    <record id="l10n_cl_mfg_42030100" model="account.account.template">
+    <!--  Default Account Exchange Gain  -->
+    <record id="l10n_cl_mfg_exchange_income" model="account.account.template">
         <field name="name">Utilidad por Diferencia de Cambio</field>
         <field name="code">42030100</field>
         <field name="reconcile" eval="False"/>
@@ -1392,7 +1398,9 @@
         <field name="chart_template_id" ref="cl_chart_template_v12"/>
     </record>
 
-    <record id="l10n_cl_mfg_62030100" model="account.account.template">
+
+    <!--  Default Account Exchange Loss  -->
+    <record id="l10n_cl_mfg_exchange_expense" model="account.account.template">
         <field name="name">Pérdida por Diferencia de Cambio</field>
         <field name="code">62030100</field>
         <field name="reconcile" eval="False"/>
@@ -1520,7 +1528,8 @@
         <field name="chart_template_id" ref="cl_chart_template_v12"/>
     </record>
 
-    <record id="l10n_cl_mfg_65010100" model="account.account.template">
+    <!-- Default Account Expense Categories -->
+    <record id="l10n_cl_mfg_expense_categ" model="account.account.template">
         <field name="name">Honorarios Terceros</field>
         <field name="code">65010100</field>
         <field name="reconcile" eval="False"/>
@@ -1586,19 +1595,19 @@
 
     <!-- Account Defaults -->
     <record id="cl_chart_template_v12" model="account.chart.template">
-        <field name="property_account_receivable_id" ref="l10n_cl_mfg_11030100"/>
-        <field name="property_account_payable_id" ref="l10n_cl_mfg_21020100"/>
-        <field name="property_account_expense_categ_id" ref="l10n_cl_mfg_65010100"/>
-        <field name="property_account_income_categ_id" ref="l10n_cl_mfg_42010300"/>
-        <field name="income_currency_exchange_account_id" ref="l10n_cl_mfg_42030100"/>
-        <field name="expense_currency_exchange_account_id" ref="l10n_cl_mfg_62030100"/>
+        <field name="property_account_receivable_id" ref="l10n_cl_mfg_receivable"/>
+        <field name="property_account_payable_id" ref="l10n_cl_mfg_payable"/>
+        <field name="property_account_expense_categ_id" ref="l10n_cl_mfg_expense_categ"/>
+        <field name="property_account_income_categ_id" ref="l10n_cl_mfg_income_categ"/>
+        <field name="income_currency_exchange_account_id" ref="l10n_cl_mfg_exchange_income"/>
+        <field name="expense_currency_exchange_account_id" ref="l10n_cl_mfg_exchange_expense"/>
         <field name="property_stock_account_input_categ_id" ref="l10n_cl_mfg_11060100" />
         <field name="property_stock_account_output_categ_id" ref="l10n_cl_mfg_11060100" />
         <field name="property_stock_valuation_account_id" ref="l10n_cl_mfg_11060100" />
 
     </record>
     
-
+  </data>
 </odoo>
 
 
