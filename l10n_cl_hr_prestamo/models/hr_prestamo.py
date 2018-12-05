@@ -94,8 +94,17 @@ class HrPrestamo(models.Model):
     def create(self, values):
         prestamo_count = self.env['hr.prestamo'].search_count([('employee_id', '=', values['employee_id']), ('state', '=', 'approve'),
                                                        ('balance_amount', '!=', 0)])
-        if prestamo_count:
-            raise except_orm('Error!', 'The employee has already a pending installment')
+        prestamo_array = self.env['hr.prestamo'].search([('employee_id', '=', values['employee_id']), ('state', '=', 'approve')])
+        total_pending = 0.0
+        for loan in prestamo_array:
+                for line in loan.loan_lines:
+                    if not line.paid:
+                        total_pending += line.amount
+            
+
+        #if prestamo_count:
+        if total_pending:
+            raise except_orm('Error!', 'The employee has already a pending installment %s') % str(total_pending)
         else:
             values['name'] = self.env['ir.sequence'].get('hr.prestamo.seq') or ' '
             res = super(HrPrestamo, self).create(values)
