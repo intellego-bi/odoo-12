@@ -76,8 +76,8 @@ else:
             <field name="sequence" eval="4"/>
             <field name="code">HEX50</field>
             <field name="category_id" ref="IMPONIBLE"/>
-            <field eval="63010150" name="account_debit.code"/>
-            <field eval="21050150" name="account_credit.code"/>
+            <!--<field eval="63010150" name="account_debit.code"/>
+            <field eval="21050150" name="account_credit.code"/>-->
             <field name="condition_select">python</field>
             <field name="condition_python">result = inputs.HEX50 and inputs.HEX50.amount > 0</field>
             <field name="amount_select">code</field>
@@ -89,8 +89,8 @@ else:
             <field name="sequence" eval="5"/>
             <field name="code">HEXDE</field>
             <field name="category_id" ref="IMPONIBLE"/>
-            <field eval="63010100" name="account_debit.code"/>
-            <field eval="21050150" name="account_credit.code"/>
+            <!--<field eval="63010100" name="account_debit.code"/>
+            <field eval="21050150" name="account_credit.code"/>-->
             <field name="condition_select">python</field>
             <field name="condition_python">result = inputs.HEXDE and inputs.HEXDE.amount > 0</field>
             <field name="amount_select">code</field>
@@ -119,8 +119,8 @@ else:
             <field name="sequence" eval="7"/>
             <field name="code">PROD</field>
             <field name="category_id" ref="IMPONIBLE"/>
-            <field eval="63010900" name="account_debit.code"/>
-            <field eval="21050150" name="account_credit.code"/>
+            <!--<field eval="63010900" name="account_debit.code"/>
+            <field eval="21050150" name="account_credit.code"/>-->
             <field name="condition_select">python</field>
             <field name="condition_python">result = (inputs.PROD and inputs.PROD.amount > 0)</field>
             <field name="amount_select">code</field>
@@ -132,8 +132,8 @@ else:
             <field name="sequence" eval="8"/>
             <field name="code">COMI</field>
             <field name="category_id" ref="IMPONIBLE"/>
-            <field eval="41020100" name="account_debit.code"/>
-            <field eval="21050150" name="account_credit.code"/>
+            <!--<field eval="41020100" name="account_debit.code"/>
+            <field eval="21050150" name="account_credit.code"/>-->
             <field name="condition_select">python</field>
             <field name="condition_python">result = (inputs.COMI and inputs.COMI.amount > 0)</field>
             <field name="amount_select">code</field>
@@ -156,8 +156,8 @@ else:
             <field name="name">AGUINALDO</field>
             <field name="sequence" eval="10"/>
             <field name="code">AGUI</field>
-            <field name="category_id" ref="IMPONIBLE"/>
-            <field eval="63010700" name="account_debit.code"/>
+            <!--<field name="category_id" ref="IMPONIBLE"/>
+            <field eval="63010700" name="account_debit.code"/>-->
             <field eval="21050150" name="account_credit.code"/>
             <field name="condition_select">python</field>
             <field name="condition_python">result = (inputs.AGUI and inputs.AGUI.amount > 0)</field>
@@ -171,8 +171,8 @@ else:
             <field name="sequence" eval="11"/>
             <field name="code">TOTIM</field>
             <field name="category_id" ref="SUBT"/>
-            <field eval="63010100" name="account_debit.code"/>
-            <field eval="21050150" name="account_credit.code"/>
+            <!--<field eval="63010100" name="account_debit.code"/>
+            <field eval="21050150" name="account_credit.code"/>-->
             <field name="condition_select">none</field>
             <field name="amount_select">code</field>
             <field name="amount_python_compute">result = round(categories.IMPONIBLE)</field>
@@ -209,8 +209,8 @@ elif payslip.indicadores_id.asignacion_familiar_tercer  >= categories.IMPONIBLE:
             <field name="sequence" eval="13"/>
             <field name="code">COL</field>
             <field name="category_id" ref="NOIMPO"/>
-            <field eval="63010400" name="account_debit.code"/>
-            <field eval="21050150" name="account_credit.code"/>
+            <!--<field eval="63010400" name="account_debit.code"/>
+            <field eval="21050150" name="account_credit.code"/>-->
             <field name="condition_select">python</field>
             <field name="condition_python">result = contract.colacion > 0</field>
             <field name="amount_select">code</field>
@@ -222,8 +222,8 @@ elif payslip.indicadores_id.asignacion_familiar_tercer  >= categories.IMPONIBLE:
             <field name="sequence" eval="14"/>
             <field name="code">MOV</field>
             <field name="category_id" ref="NOIMPO"/>
-            <field eval="63010300" name="account_debit.code"/>
-            <field eval="21050150" name="account_credit.code"/>
+            <!--<field eval="63010300" name="account_debit.code"/>
+            <field eval="21050150" name="account_credit.code"/>-->
             <field name="condition_select">python</field>
             <field name="condition_python">result = contract.movilizacion > 0</field>
             <field name="amount_select">code</field>
@@ -247,8 +247,8 @@ elif payslip.indicadores_id.asignacion_familiar_tercer  >= categories.IMPONIBLE:
             <field name="sequence" eval="16"/>
             <field name="code">VIASAN</field>
             <field name="category_id" ref="NOIMPO"/>
-            <field eval="63010600" name="account_debit.code"/>
-            <field eval="21050150" name="account_credit.code"/>
+            <!--<field eval="63010600" name="account_debit.code"/>
+            <field eval="21050150" name="account_credit.code"/>-->
             <field name="condition_select">python</field>
             <field name="condition_python">result = contract.viatico_santiago > 0</field>
             <field name="amount_select">code</field>
@@ -327,8 +327,8 @@ else:
             <field name="sequence" eval="20"/>
             <field name="code">APV</field>
             <field name="category_id" ref="PREV"/>
-            <field eval="21050150" name="account_debit.code"/>
-            <field eval="21040100" name="account_credit.code"/>
+            <!--<field eval="21050150" name="account_debit.code"/>
+            <field eval="21040100" name="account_credit.code"/>-->
             <field name="condition_select">python</field>
             <field name="condition_python">result = contract.aporte_voluntario > 0</field>
             <field name="amount_select">code</field>
@@ -350,8 +350,8 @@ else:
             <field name="sequence" eval="21"/>
             <field name="code">SECEEMP</field>
             <field name="category_id" ref="COMP"/>
-            <field eval="63010200" name="account_debit.code"/>
-            <field eval="21050150" name="account_credit.code"/>
+            <!--<field eval="63010200" name="account_debit.code"/>
+            <field eval="21050150" name="account_credit.code"/>-->
             <field name="appears_on_payslip" eval="False"/>
             <field name="condition_select">none</field>
             <field name="amount_select">code</field>
@@ -393,8 +393,8 @@ else:
             <field name="sequence" eval="22"/>
             <field name="code">SIS</field>
             <field name="category_id" ref="COMP"/>
-            <field eval="63010200" name="account_debit.code"/>
-            <field eval="21050150" name="account_credit.code"/>
+            <!--<field eval="63010200" name="account_debit.code"/>
+            <field eval="21050150" name="account_credit.code"/>-->
             <field name="appears_on_payslip" eval="False"/>
             <field name="condition_select">none</field>
             <field name="amount_select">code</field>
@@ -442,8 +442,8 @@ else:
             <field name="sequence" eval="23"/>
             <field name="code">MUT</field>
             <field name="category_id" ref="COMP"/>
-            <field eval="63010200" name="account_debit.code"/>
-            <field eval="21040500" name="account_credit.code"/>
+            <!--<field eval="63010200" name="account_debit.code"/>
+            <field eval="21040500" name="account_credit.code"/>-->
             <field name="register_id" ref="contrib_register_previred"/>
             <field name="appears_on_payslip" eval="False"/>
             <field name="condition_select">none</field>
@@ -488,8 +488,8 @@ else:
             <field name="sequence" eval="25"/>
             <field name="code">AFP</field>
             <field name="category_id" ref="SUBT"/>
-            <field eval="21050150" name="account_debit.code"/>
-            <field eval="21040100" name="account_credit.code"/>
+            <!--<field eval="21050150" name="account_debit.code"/>
+            <field eval="21040100" name="account_credit.code"/>-->
             <field name="register_id" ref="contrib_register_previred"/>
             <field name="condition_select">none</field>
             <field name="appears_on_payslip" eval="False"/>
@@ -536,8 +536,8 @@ else:
             <field name="sequence" eval="28"/>
             <field name="code">COLMENA</field>
             <field name="category_id" ref="SUBT"/>
-            <field eval="21050150" name="account_debit.code"/>
-            <field eval="21040400" name="account_credit.code"/>
+            <!--<field eval="21050150" name="account_debit.code"/>
+            <field eval="21040400" name="account_credit.code"/>-->
             <field name="register_id" ref="contrib_register_previred"/>
             <field name="condition_select">python</field>
             <field name="condition_python">result = contract.isapre_id.name != 'FONASA'</field>
@@ -553,8 +553,8 @@ else:
             <field name="sequence" eval="33"/>
             <field name="code">CAJACOMP</field>
             <field name="category_id" ref="SUBT"/>
-            <field eval="21050150" name="account_debit.code"/>
-            <field eval="21040200" name="account_credit.code"/>
+            <!--<field eval="21050150" name="account_debit.code"/>
+            <field eval="21040200" name="account_credit.code"/>-->
             <field name="register_id" ref="contrib_register_previred"/>
             <field name="condition_select">python</field>
             <field name="condition_python">result = contract.isapre_id.name == 'FONASA'</field>
@@ -573,8 +573,8 @@ else:
             <field name="sequence" eval="34"/>
             <field name="code">FONASA</field>
             <field name="category_id" ref="SUBT"/>
-            <field eval="21050150" name="account_debit.code"/>
-            <field eval="21040300" name="account_credit.code"/>
+            <!--<field eval="21050150" name="account_debit.code"/>
+            <field eval="21040300" name="account_credit.code"/>-->
             <field name="register_id" ref="contrib_register_previred"/>
             <field name="condition_select">python</field>
             <field name="condition_python">result = contract.isapre_id.name == 'FONASA'</field>
@@ -613,8 +613,8 @@ else:
             <field name="sequence" eval="36"/>
             <field name="code">IMPUNI</field>
             <field name="category_id" ref="DED"/>
-            <field eval="21050150" name="account_debit.code"/>
-            <field eval="21070300" name="account_credit.code"/>
+            <!--<field eval="21050150" name="account_debit.code"/>
+            <field eval="21070300" name="account_credit.code"/>-->
             <field name="register_id" ref="contrib_register_sii"/>
             <field name="condition_select">python</field>
             <field name="condition_python">result = TRIBU > payslip.indicadores_id.utm*13.5</field>
@@ -655,8 +655,8 @@ else:
             <field name="sequence" eval="38"/>
             <field name="code">ASUE</field>
             <field name="category_id" ref="ODESC"/>
-            <field eval="21050150" name="account_debit.code"/>
-            <field eval="11050100" name="account_credit.code"/>
+            <!--<field eval="21050150" name="account_debit.code"/>
+            <field eval="11050100" name="account_credit.code"/>-->
             <field name="condition_select">python</field>
             <field name="condition_python">result = (contract.anticipo_sueldo > 0) or (inputs.ASUE.amount > 0)</field>
             <field name="amount_select">code</field>
@@ -671,8 +671,8 @@ else:
             <field name="sequence" eval="38"/>
             <field name="code">PRES</field>
             <field name="category_id" ref="ODESC"/>
-            <field eval="21050150" name="account_debit.code"/>
-            <field eval="11050200" name="account_credit.code"/>
+            <!--<field eval="21050150" name="account_debit.code"/>
+            <field eval="11050200" name="account_credit.code"/>-->
             <field name="condition_select">python</field>
             <field name="condition_python">result = inputs.PREST and inputs.PREST.amount > 0</field>
             <field name="amount_select">code</field>
@@ -684,8 +684,8 @@ else:
             <field name="sequence" eval="38"/>
             <field name="code">PCCAF</field>
             <field name="category_id" ref="ODESC"/>
-            <field eval="21050150" name="account_debit.code"/>
-            <field eval="21040200" name="account_credit.code"/>
+            <!--<field eval="21050150" name="account_debit.code"/>
+            <field eval="21040200" name="account_credit.code"/>-->
             <field name="condition_select">python</field>
             <field name="condition_python">result =  inputs.PCCAF and inputs.PCCAF.amount > 0</field>
             <field name="amount_select">code</field>
@@ -768,8 +768,8 @@ result = round(SECEEMP) + round(SIS) + round(MUT) + round(SC)</field>
             <field eval="21050100" name="account_credit.code"/> 
             <field ref="l10n_cl_coa.cl_coa_mfg_21050150" name="account_debit.id"/>
             <field ref="l10n_cl_coa.cl_coa_mfg_21050100" name="account_credit.code"/> -->
-            <field name="account_debit.code">21050150</field>
-            <field name="account_credit.code">21050100</field>
+            <!--<field name="account_debit.code">21050150</field>
+            <field name="account_credit.code">21050100</field>-->
             <field name="register_id" ref="hr_payroll.contrib_register_employees"/>
             <field name="condition_select">none</field>
             <field name="amount_select">code</field>
@@ -785,9 +785,9 @@ result = round(SECEEMP) + round(SIS) + round(MUT) + round(SC)</field>
             <field eval="21050150" name="account_debit.code"/>
             <field eval="21050100" name="account_credit.code"/> 
             <field ref="l10n_cl_coa.cl_coa_mfg_21050150" name="account_debit.id"/>
-            <field ref="l10n_cl_coa.cl_coa_mfg_21050100" name="account_credit.code"/> -->
+            <field ref="l10n_cl_coa.cl_coa_mfg_21050100" name="account_credit.code"/> 
             <field name="account_debit.code">"21050150"</field>
-            <field name="account_credit.code">"21050100"</field>
+            <field name="account_credit.code">"21050100"</field>-->
             <field name="register_id" ref="hr_payroll.contrib_register_employees"/>
             <field name="condition_select">none</field>
             <field name="amount_select">code</field>
@@ -910,8 +910,8 @@ result = round(SECEEMP) + round(SIS) + round(MUT) + round(SC)</field>
             <field name="name">BONO NAVIDAD</field>
             <field name="note">Se debe ingresar el valor del Bono de Navidad en el Contrato del Empleado y se calcula y paga sólo en el mes 12 (diciembre).</field>
             <field name="category_id" ref="IMPONIBLE"/>
-            <field eval="63010700" name="account_debit.code"/>
-            <field eval="21050150" name="account_credit.code"/>
+            <!--<field eval="63010700" name="account_debit.code"/>
+            <field eval="21050150" name="account_credit.code"/>-->
             <field name="condition_select">python</field>
             <field name="condition_python">result = (contract.bono_navidad > 0 and payslip.indicadores_id.month == '12')</field>
             <field name="amount_select">code</field>
@@ -925,8 +925,8 @@ result = round(SECEEMP) + round(SIS) + round(MUT) + round(SC)</field>
             <field name="name">AGUINALDO FISTAS PATRIAS</field>
             <field name="note">Se debe ingresar el valor del Aguinaldo de Fiestas Patrias en el Contrato del Empleado y se calcula y paga sólo en el mes 9 (septiembre).</field>
             <field name="category_id" ref="IMPONIBLE"/>
-            <field eval="63010700" name="account_debit.code"/>
-            <field eval="21050150" name="account_credit.code"/>
+            <!--<field eval="63010700" name="account_debit.code"/>
+            <field eval="21050150" name="account_credit.code"/>-->
             <field name="condition_select">python</field>
             <field name="condition_python">result = (contract.aguinaldo_fp > 0 and payslip.indicadores_id.month == '9')</field>
             <field name="amount_select">code</field>
