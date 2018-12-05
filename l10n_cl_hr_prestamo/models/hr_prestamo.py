@@ -102,7 +102,7 @@ class HrPrestamo(models.Model):
                 for line in loan.prestamo_lines:
                     if not line.paid:
                         pending_total += line.amount
-                        #pending_count +=
+                        pending_count +=
         
         pend_total = str(pending_total)
         pend_count = str(pending_count)
@@ -110,7 +110,7 @@ class HrPrestamo(models.Model):
         #if prestamo_count:
         if pending_total:
             raise UserError(_(
-                              'Error! This employee has %s pending installment(s) for a total of %s') % (
+                              'Error! This employee has "%s" pending installment(s) for a total of "%s"') % (
                               pend_count, pend_total))
         else:
             values['name'] = self.env['ir.sequence'].get('hr.prestamo.seq') or ' '
