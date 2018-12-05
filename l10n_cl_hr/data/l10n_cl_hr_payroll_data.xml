@@ -764,7 +764,7 @@ result = round(SECEEMP) + round(SIS) + round(MUT) + round(SC)</field>
             <field name="sequence" eval="44"/>
             <field name="code">LIQ</field>
             <field name="category_id" ref="SUBT"/> 
-            <field eval="21050150" name="account_debit"/>
+            <field eval="21050150" name="account_debit.code"/>
             <field eval="21050100" name="account_credit.code"/> 
             <!--<field ref="l10n_cl_coa.1_cl_coa_mfg_21050150" name="account_debit"/>
             <field ref="l10n_cl_coa.1_cl_coa_mfg_21050100" name="account_credit"/>
