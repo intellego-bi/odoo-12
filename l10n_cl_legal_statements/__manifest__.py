@@ -29,7 +29,7 @@
     'website': 'https://www.Intellego-BI.com',
     'maintainer': 'Intellego-BI.com',
     'category': 'Accounting',
-    'depends': ['l10n_cl_odoo12', 'account_reports'],
+    'depends': ['l10n_cl_coa', 'account_reports'],
     'license': 'LGPL-3',
     'data': [
         'data/account_financial_html_report_data.xml',

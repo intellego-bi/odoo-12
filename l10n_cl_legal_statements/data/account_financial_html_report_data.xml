@@ -2,7 +2,7 @@
 <odoo>
     <record id="financial_report_l10n_cl_tax" model="account.financial.html.report">
         <field name="name">Chile Declaración de Impuestos</field>
-        <field name='parent_id' ref='l10n_cl_odoo12.account_reports_cl_statements_menu'/>
+        <field name='parent_id' ref='l10n_cl_coa.account_reports_cl_statements_menu'/>
         <field name="tax_report" eval="1"/>
     </record>
     <record id="financial_report_line_cl_01_renta" model="account.financial.html.report.line">
@@ -19,6 +19,7 @@
         <field name="code">CLTAX_0101</field>
         <field name="sequence" eval="1"/>
         <field name="level" eval="1"/>
+        <field name="domain" eval="[('tax_ids.tag_ids', 'in', [ref('l10n_cl_coa.tag_cl_02')])]"/>
         <field name="formulas">balance = sum.balance</field>
         <field name="parent_id" ref="financial_report_line_cl_01_renta"/>
         <field name="show_domain">never</field>
@@ -47,7 +48,7 @@
         <field name="code">CLTAX_020101</field>
         <field name="sequence" eval="1"/>
         <field name="level" eval="2"/>
-        <field name="domain" eval="[('tax_line_id.tag_ids', 'in', [ref('l10n_cl_odoo12.tag_cl_05')])]"/>
+        <field name="domain" eval="[('tax_line_id.tag_ids', 'in', [ref('l10n_cl_coa.tag_cl_05')])]"/>
         <field name="formulas">balance = sum.balance</field>
         <field name="parent_id" ref="financial_report_line_cl_02_iva_01"/>
         <field name="show_domain">never</field>
@@ -58,6 +59,7 @@
         <field name="code">CLTAX_020102</field>
         <field name="sequence" eval="2"/>
         <field name="level" eval="2"/>
+        <field name="domain" eval="[('tax_ids.tag_ids', 'in', [ref('l10n_cl_coa.tag_cl_06')])]"/>
         <field name="formulas">balance = sum.balance</field>
         <field name="parent_id" ref="financial_report_line_cl_02_iva_01"/>
         <field name="show_domain">never</field>
@@ -68,6 +70,7 @@
         <field name="code">CLTAX_020103</field>
         <field name="sequence" eval="3"/>
         <field name="level" eval="2"/>
+        <field name="domain" eval="[('tax_ids.tag_ids', 'in', [ref('l10n_cl_coa.tag_cl_07')])]"/>
         <field name="formulas">balance = sum.balance</field>
         <field name="parent_id" ref="financial_report_line_cl_02_iva_01"/>
         <field name="show_domain">never</field>
@@ -87,7 +90,7 @@
         <field name="code">CLTAX_020201</field>
         <field name="sequence" eval="1"/>
         <field name="level" eval="2"/>
-        <field name="domain" eval="[('tax_line_id.tag_ids', 'in', [ref('l10n_cl_odoo12.tag_cl_09')])]"/>
+        <field name="domain" eval="[('tax_line_id.tag_ids', 'in', [ref('l10n_cl_coa.tag_cl_09')])]"/>
         <field name="formulas">balance = - sum.balance</field>
         <field name="parent_id" ref="financial_report_line_cl_02_iva_02"/>
         <field name="show_domain">never</field>
@@ -98,7 +101,8 @@
         <field name="code">CLTAX_020202</field>
         <field name="sequence" eval="2"/>
         <field name="level" eval="2"/>
-        <field name="formulas">balance = sum.balance</field>
+        <field name="domain" eval="[('tax_ids.tag_ids', 'in', [ref('l10n_cl_coa.tag_cl_10')])]"/>
+        <field name="formulas">balance = - sum.balance</field>
         <field name="parent_id" ref="financial_report_line_cl_02_iva_02"/>
         <field name="show_domain">never</field>
         <field name="special_date_changer">strict_range</field>
@@ -108,7 +112,8 @@
         <field name="code">CLTAX_020203</field>
         <field name="sequence" eval="3"/>
         <field name="level" eval="2"/>
-        <field name="formulas">balance = sum.balance</field>
+        <field name="domain" eval="[('tax_ids.tag_ids', 'in', [ref('l10n_cl_coa.tag_cl_11')])]"/>
+        <field name="formulas">balance = - sum.balance</field>
         <field name="parent_id" ref="financial_report_line_cl_02_iva_02"/>
         <field name="show_domain">never</field>
         <field name="special_date_changer">strict_range</field>
@@ -136,17 +141,18 @@
         <field name="code">CLTAX_030101</field>
         <field name="sequence" eval="1"/>
         <field name="level" eval="2"/>
-        <field name="domain" eval="[('tax_ids.tag_ids', 'in', [ref('l10n_cl_odoo12.tag_cl_14')])]"/>
+        <field name="domain" eval="[('tax_ids.tag_ids', 'in', [ref('l10n_cl_coa.tag_cl_14')])]"/>
         <field name="formulas">balance = - sum.balance</field>
         <field name="parent_id" ref="financial_report_line_cl_03_base_01_venta"/>
         <field name="show_domain">never</field>
         <field name="special_date_changer">strict_range</field>
     </record>
     <record id="financial_report_line_cl_03_base_01_venta_02" model="account.financial.html.report.line">
-        <field name="name">Ventas NO Gravadas (Exoneradas)</field>
+        <field name="name">Ventas No-Gravadas (Exentas)</field>
         <field name="code">CLTAX_030102</field>
         <field name="sequence" eval="2"/>
         <field name="level" eval="2"/>
+        <field name="domain" eval="[('tax_ids.tag_ids', 'in', [ref('l10n_cl_coa.tag_cl_15')])]"/>
         <field name="formulas">balance = sum.balance</field>
         <field name="parent_id" ref="financial_report_line_cl_03_base_01_venta"/>
         <field name="show_domain">never</field>
@@ -157,6 +163,7 @@
         <field name="code">CLTAX_030103</field>
         <field name="sequence" eval="3"/>
         <field name="level" eval="2"/>
+        <field name="domain" eval="[('tax_ids.tag_ids', 'in', [ref('l10n_cl_coa.tag_cl_16')])]"/>
         <field name="formulas">balance = sum.balance</field>
         <field name="parent_id" ref="financial_report_line_cl_03_base_01_venta"/>
         <field name="show_domain">never</field>
@@ -176,18 +183,19 @@
         <field name="code">CLTAX_030201</field>
         <field name="sequence" eval="1"/>
         <field name="level" eval="2"/>
-        <field name="domain" eval="[('tax_ids.tag_ids', 'in', [ref('l10n_cl_odoo12.tag_cl_18')])]"/>
-        <field name="formulas">balance = sum.balance</field>
+        <field name="domain" eval="[('tax_ids.tag_ids', 'in', [ref('l10n_cl_coa.tag_cl_18')])]"/>
+        <field name="formulas">balance = - sum.balance</field>
         <field name="parent_id" ref="financial_report_line_cl_03_base_02_compra"/>
         <field name="show_domain">never</field>
         <field name="special_date_changer">strict_range</field>
     </record>
     <record id="financial_report_line_cl_03_base_02_compra_02" model="account.financial.html.report.line">
-        <field name="name">Compras NO Gravadas (Exoneradas)</field>
+        <field name="name">Compras No-Gravadas (Exentas)</field>
         <field name="code">CLTAX_030202</field>
         <field name="sequence" eval="2"/>
         <field name="level" eval="2"/>
-        <field name="formulas">balance = sum.balance</field>
+        <field name="domain" eval="[('tax_ids.tag_ids', 'in', [ref('l10n_cl_coa.tag_cl_19')])]"/>
+        <field name="formulas">balance = - sum.balance</field>
         <field name="parent_id" ref="financial_report_line_cl_03_base_02_compra"/>
         <field name="show_domain">never</field>
         <field name="special_date_changer">strict_range</field>
@@ -197,7 +205,8 @@
         <field name="code">CLTAX_030203</field>
         <field name="sequence" eval="3"/>
         <field name="level" eval="2"/>
-        <field name="formulas">balance = sum.balance</field>
+        <field name="domain" eval="[('tax_ids.tag_ids', 'in', [ref('l10n_cl_coa.tag_cl_20')])]"/>
+        <field name="formulas">balance = - sum.balance</field>
         <field name="parent_id" ref="financial_report_line_cl_03_base_02_compra"/>
         <field name="show_domain">never</field>
         <field name="special_date_changer">strict_range</field>
