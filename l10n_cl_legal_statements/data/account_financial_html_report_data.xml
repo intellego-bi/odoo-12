@@ -178,7 +178,7 @@
         <field name="level" eval="2"/>
         <field name="domain" eval="[('tax_ids.tag_ids', 'in', [ref('l10n_cl_odoo12.tag_cl_18')])]"/>
         <field name="formulas">balance = sum.balance</field>
-        <field name="parent_id" ref="financial_report_line_cl_0302"/>
+        <field name="parent_id" ref="financial_report_line_cl_03_base_02_compra"/>
         <field name="show_domain">never</field>
         <field name="special_date_changer">strict_range</field>
     </record>
