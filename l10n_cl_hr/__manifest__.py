@@ -12,6 +12,7 @@
             'hr_holidays',
             'hr_payroll',
             'hr_payroll_account',
+            'l10n_cl_coa',
         ],
     'external_dependencies': {
         'python': [
