@@ -1,4 +1,3 @@
-
 # -*- coding: utf-8 -*-
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
 
@@ -33,8 +32,8 @@
     'description': """
 Chilean Payroll & Human Resources.
 ==================================
-    -Payroll configuration for Chile localization.
-    -All contributions rules for Chile payslip.
+    * Payroll configuration for Chile localization.
+    * All contributions rules for Chile payslip.
     * Employee Basic Info
     * Employee Contracts
     * Attendance, Holidays and Sick Licence
@@ -50,7 +49,7 @@ Chilean Payroll & Human Resources.
     'active': True,
     'data': [
         'views/hr_chile_menus.xml',
-    	'views/hr_indicadores_previsionales_view.xml',
+        'views/hr_indicadores_previsionales_view.xml',
         'views/hr_salary_rule_view.xml',
         'views/hr_contract_view.xml',
         'views/hr_employee.xml',
