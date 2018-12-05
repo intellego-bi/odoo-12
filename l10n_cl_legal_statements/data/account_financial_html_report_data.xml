@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="financial_report_l10n_cl_tax" model="account.financial.html.report">
+        <field name="name">Chile Declaración de Impuestos</field>
+        <field name='parent_id' ref='l10n_cl_odoo12.account_reports_cl_statements_menu'/>
+        <field name="tax_report" eval="1"/>
+    </record>
+    <record id="financial_report_line_cl_01_renta" model="account.financial.html.report.line">
+        <field name="name">Impuestos Directos a Pagar</field>
+        <field name="code">CLTAX_01</field>
+        <field name="sequence" eval="1"/>
+        <field name="level" eval="0"/>
+        <field name="formulas">balance = CLTAX_0101.balance</field>
+        <field name="financial_report_id" ref="financial_report_l10n_cl_tax"/>
+        <field name="special_date_changer">strict_range</field>
+    </record>
+    <record id="financial_report_line_cl_01_renta_01" model="account.financial.html.report.line">
+        <field name="name">Impuesto a la Renta Primera Categoría a Pagar</field>
+        <field name="code">CLTAX_0101</field>
+        <field name="sequence" eval="1"/>
+        <field name="level" eval="1"/>
+        <field name="formulas">balance = sum.balance</field>
+        <field name="parent_id" ref="financial_report_line_cl_01_renta"/>
+        <field name="show_domain">never</field>
+        <field name="special_date_changer">strict_range</field>
+    </record>
+    <record id="financial_report_line_cl_02_iva" model="account.financial.html.report.line">
+        <field name="name">Impuesto General a las Ventas (IVA) Total a Pagar</field>
+        <field name="code">CLTAX_02</field>
+        <field name="sequence" eval="2"/>
+        <field name="level" eval="0"/>
+        <field name="formulas">balance = CLTAX_0201.balance + CLTAX_0202.balance</field>
+        <field name="financial_report_id" ref="financial_report_l10n_cl_tax"/>
+        <field name="special_date_changer">strict_range</field>
+    </record>
+    <record id="financial_report_line_cl_02_iva_01" model="account.financial.html.report.line">
+        <field name="name">Impuesto Pagado</field>
+        <field name="code">CLTAX_0201</field>
+        <field name="sequence" eval="1"/>
+        <field name="level" eval="1"/>
+        <field name="formulas">balance = CLTAX_020101.balance + CLTAX_020102.balance + CLTAX_020103.balance</field>
+        <field name="parent_id" ref="financial_report_line_cl_02_iva"/>
+        <field name="special_date_changer">strict_range</field>
+    </record>
+    <record id="financial_report_line_cl_02_iva_01_01" model="account.financial.html.report.line">
+        <field name="name">Impuesto Pagado IVA</field>
+        <field name="code">CLTAX_020101</field>
+        <field name="sequence" eval="1"/>
+        <field name="level" eval="2"/>
+        <field name="domain" eval="[('tax_line_id.tag_ids', 'in', [ref('l10n_cl_odoo12.tag_cl_05')])]"/>
+        <field name="formulas">balance = sum.balance</field>
+        <field name="parent_id" ref="financial_report_line_cl_02_iva_01"/>
+        <field name="show_domain">never</field>
+        <field name="special_date_changer">strict_range</field>
+    </record>
+    <record id="financial_report_line_cl_02_iva_01_02" model="account.financial.html.report.line">
+        <field name="name">Impuesto Pagado de Exonerados al IVA</field>
+        <field name="code">CLTAX_020102</field>
+        <field name="sequence" eval="2"/>
+        <field name="level" eval="2"/>
+        <field name="formulas">balance = sum.balance</field>
+        <field name="parent_id" ref="financial_report_line_cl_02_iva_01"/>
+        <field name="show_domain">never</field>
+        <field name="special_date_changer">strict_range</field>
+    </record>
+    <record id="financial_report_line_cl_02_iva_01_03" model="account.financial.html.report.line">
+        <field name="name">Impuesto Pagado Fuera de Ámbito</field>
+        <field name="code">CLTAX_020103</field>
+        <field name="sequence" eval="3"/>
+        <field name="level" eval="2"/>
+        <field name="formulas">balance = sum.balance</field>
+        <field name="parent_id" ref="financial_report_line_cl_02_iva_01"/>
+        <field name="show_domain">never</field>
+        <field name="special_date_changer">strict_range</field>
+    </record>
+    <record id="financial_report_line_cl_02_iva_02" model="account.financial.html.report.line">
+        <field name="name">Impuesto Cobrado</field>
+        <field name="code">CLTAX_0202</field>
+        <field name="sequence" eval="2"/>
+        <field name="level" eval="1"/>
+        <field name="formulas">balance = CLTAX_020201.balance + CLTAX_020202.balance + CLTAX_020203.balance</field>
+        <field name="parent_id" ref="financial_report_line_cl_02_iva"/>
+        <field name="special_date_changer">strict_range</field>
+    </record>
+    <record id="financial_report_line_cl_02_iva_02_01" model="account.financial.html.report.line">
+        <field name="name">Impuesto Cobrado IVA</field>
+        <field name="code">CLTAX_020201</field>
+        <field name="sequence" eval="1"/>
+        <field name="level" eval="2"/>
+        <field name="domain" eval="[('tax_line_id.tag_ids', 'in', [ref('l10n_cl_odoo12.tag_cl_09')])]"/>
+        <field name="formulas">balance = - sum.balance</field>
+        <field name="parent_id" ref="financial_report_line_cl_02_iva_02"/>
+        <field name="show_domain">never</field>
+        <field name="special_date_changer">strict_range</field>
+    </record>
+    <record id="financial_report_line_cl_02_iva_02_02" model="account.financial.html.report.line">
+        <field name="name">Impuesto Cobrado de Exonerados al IVA</field>
+        <field name="code">CLTAX_020202</field>
+        <field name="sequence" eval="2"/>
+        <field name="level" eval="2"/>
+        <field name="formulas">balance = sum.balance</field>
+        <field name="parent_id" ref="financial_report_line_cl_02_iva_02"/>
+        <field name="show_domain">never</field>
+        <field name="special_date_changer">strict_range</field>
+    </record>
+    <record id="financial_report_line_cl_02_iva_02_03" model="account.financial.html.report.line">
+        <field name="name">Impuesto Cobrado Fuera de Ámbito</field>
+        <field name="code">CLTAX_020203</field>
+        <field name="sequence" eval="3"/>
+        <field name="level" eval="2"/>
+        <field name="formulas">balance = sum.balance</field>
+        <field name="parent_id" ref="financial_report_line_cl_02_iva_02"/>
+        <field name="show_domain">never</field>
+        <field name="special_date_changer">strict_range</field>
+    </record>
+    <record id="financial_report_line_cl_03_base" model="account.financial.html.report.line">
+        <field name="name">Base Imponible</field>
+        <field name="code">CLTAX_03</field>
+        <field name="sequence" eval="3"/>
+        <field name="level" eval="0"/>
+        <field name="formulas">balance = CLTAX_0301.balance + CLTAX_0302.balance</field>
+        <field name="financial_report_id" ref="financial_report_l10n_cl_tax"/>
+        <field name="special_date_changer">strict_range</field>
+    </record>
+    <record id="financial_report_line_cl_03_base_01_venta" model="account.financial.html.report.line">
+        <field name="name">Base Imponible - Ventas</field>
+        <field name="code">CLTAX_0301</field>
+        <field name="sequence" eval="1"/>
+        <field name="level" eval="1"/>
+        <field name="formulas">balance = CLTAX_030101.balance + CLTAX_030102.balance + CLTAX_030103.balance</field>
+        <field name="parent_id" ref="financial_report_line_cl_03_base"/>
+        <field name="special_date_changer">strict_range</field>
+    </record>
+    <record id="financial_report_line_cl_03_base_01_venta_01" model="account.financial.html.report.line">
+        <field name="name">Ventas Gravadas con IVA</field>
+        <field name="code">CLTAX_030101</field>
+        <field name="sequence" eval="1"/>
+        <field name="level" eval="2"/>
+        <field name="domain" eval="[('tax_ids.tag_ids', 'in', [ref('l10n_cl_odoo12.tag_cl_14')])]"/>
+        <field name="formulas">balance = - sum.balance</field>
+        <field name="parent_id" ref="financial_report_line_cl_03_base_01_venta"/>
+        <field name="show_domain">never</field>
+        <field name="special_date_changer">strict_range</field>
+    </record>
+    <record id="financial_report_line_cl_03_base_01_venta_02" model="account.financial.html.report.line">
+        <field name="name">Ventas NO Gravadas (Exoneradas)</field>
+        <field name="code">CLTAX_030102</field>
+        <field name="sequence" eval="2"/>
+        <field name="level" eval="2"/>
+        <field name="formulas">balance = sum.balance</field>
+        <field name="parent_id" ref="financial_report_line_cl_03_base_01_venta"/>
+        <field name="show_domain">never</field>
+        <field name="special_date_changer">strict_range</field>
+    </record>
+    <record id="financial_report_line_cl_03_base_01_venta_03" model="account.financial.html.report.line">
+        <field name="name">Ventas Gravadas Fuera de Ámbito</field>
+        <field name="code">CLTAX_030103</field>
+        <field name="sequence" eval="3"/>
+        <field name="level" eval="2"/>
+        <field name="formulas">balance = sum.balance</field>
+        <field name="parent_id" ref="financial_report_line_cl_03_base_01_venta"/>
+        <field name="show_domain">never</field>
+        <field name="special_date_changer">strict_range</field>
+    </record>
+    <record id="financial_report_line_cl_03_base_02_compra" model="account.financial.html.report.line">
+        <field name="name">Base Imponible - Compras</field>
+        <field name="code">CLTAX_0302</field>
+        <field name="sequence" eval="2"/>
+        <field name="level" eval="1"/>
+        <field name="formulas">balance = CLTAX_030201.balance + CLTAX_030202.balance + CLTAX_030203.balance</field>
+        <field name="parent_id" ref="financial_report_line_cl_03_base"/>
+        <field name="special_date_changer">strict_range</field>
+    </record>
+    <record id="financial_report_line_cl_03_base_02_compra_01" model="account.financial.html.report.line">
+        <field name="name">Compras Gravadas con IVA</field>
+        <field name="code">CLTAX_030201</field>
+        <field name="sequence" eval="1"/>
+        <field name="level" eval="2"/>
+        <field name="domain" eval="[('tax_ids.tag_ids', 'in', [ref('l10n_cl_odoo12.tag_cl_18')])]"/>
+        <field name="formulas">balance = sum.balance</field>
+        <field name="parent_id" ref="financial_report_line_cl_0302"/>
+        <field name="show_domain">never</field>
+        <field name="special_date_changer">strict_range</field>
+    </record>
+    <record id="financial_report_line_cl_03_base_02_compra_02" model="account.financial.html.report.line">
+        <field name="name">Compras NO Gravadas (Exoneradas)</field>
+        <field name="code">CLTAX_030202</field>
+        <field name="sequence" eval="2"/>
+        <field name="level" eval="2"/>
+        <field name="formulas">balance = sum.balance</field>
+        <field name="parent_id" ref="financial_report_line_cl_03_base_02_compra"/>
+        <field name="show_domain">never</field>
+        <field name="special_date_changer">strict_range</field>
+    </record>
+    <record id="financial_report_line_cl_03_base_02_compra_03" model="account.financial.html.report.line">
+        <field name="name">Compras Gravadas Fuera de Ámbito</field>
+        <field name="code">CLTAX_030203</field>
+        <field name="sequence" eval="3"/>
+        <field name="level" eval="2"/>
+        <field name="formulas">balance = sum.balance</field>
+        <field name="parent_id" ref="financial_report_line_cl_03_base_02_compra"/>
+        <field name="show_domain">never</field>
+        <field name="special_date_changer">strict_range</field>
+    </record>
+
+</odoo>
