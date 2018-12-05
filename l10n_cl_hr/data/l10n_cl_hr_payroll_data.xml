@@ -777,17 +777,17 @@ result = round(SECEEMP) + round(SIS) + round(MUT) + round(SC)</field>
             <field name="amount_python_compute">result = HAB - TDE</field>
         </record>
 
-       <record id="hr_rule_44B" model="hr.salary.rule">
-            <field name="name">ALCANCE LIQUIDO A PAGAR</field>
+       <record id="hr_rule_44P" model="hr.salary.rule">
+            <field name="name">ALCANCE LIQUIDO X PAGAR</field>
             <field name="sequence" eval="44"/>
-            <field name="code">LIQUIDO</field>
+            <field name="code">LIQUIDO X PAGAR</field>
             <field name="category_id" ref="SUBT"/> <!--
             <field eval="21050150" name="account_debit.code"/>
             <field eval="21050100" name="account_credit.code"/> 
             <field ref="l10n_cl_coa.cl_coa_mfg_21050150" name="account_debit.id"/>
             <field ref="l10n_cl_coa.cl_coa_mfg_21050100" name="account_credit.code"/> -->
-            <field name="account_debit.code">21050150</field>
-            <field name="account_credit.code">21050100</field>
+            <field name="account_debit.code">"21050150"</field>
+            <field name="account_credit.code">"21050100"</field>
             <field name="register_id" ref="hr_payroll.contrib_register_employees"/>
             <field name="condition_select">none</field>
             <field name="amount_select">code</field>
