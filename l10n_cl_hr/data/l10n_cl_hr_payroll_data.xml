@@ -156,9 +156,9 @@ else:
             <field name="name">AGUINALDO</field>
             <field name="sequence" eval="10"/>
             <field name="code">AGUI</field>
-            <!--<field name="category_id" ref="IMPONIBLE"/>
-            <field eval="63010700" name="account_debit.code"/>-->
-            <field eval="21050150" name="account_credit.code"/>
+            <field name="category_id" ref="IMPONIBLE"/>
+            <!--<field eval="63010700" name="account_debit.code"/>
+            <field eval="21050150" name="account_credit.code"/>-->
             <field name="condition_select">python</field>
             <field name="condition_python">result = (inputs.AGUI and inputs.AGUI.amount > 0)</field>
             <field name="amount_select">code</field>
