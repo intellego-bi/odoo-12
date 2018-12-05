@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data>
+    <data "noupdate"=0>
 
         <!-- Tipos de Contribuyentes -->
 
@@ -763,9 +763,11 @@ result = round(SECEEMP) + round(SIS) + round(MUT) + round(SC)</field>
             <field name="name">ALCANCE LIQUIDO</field>
             <field name="sequence" eval="44"/>
             <field name="code">LIQ</field>
-            <field name="category_id" ref="SUBT"/>
+            <field name="category_id" ref="SUBT"/> <!--
             <field eval="21050150" name="account_debit.code"/>
-            <field eval="21050100" name="account_credit.code"/>
+            <field eval="21050100" name="account_credit.code"/> -->
+            <field name="account_debit.code" ref="1_cl_coa_mfg_21050150"/>
+            <field name="account_credit.code" ref="1_cl_coa_mfg_21050100"/>
             <field name="register_id" ref="hr_payroll.contrib_register_employees"/>
             <field name="condition_select">none</field>
             <field name="amount_select">code</field>
