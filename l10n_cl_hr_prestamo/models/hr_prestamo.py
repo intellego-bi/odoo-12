@@ -109,7 +109,9 @@ class HrPrestamo(models.Model):
 
         #if prestamo_count:
         if pending_total:
-            raise UserError(_('Error!', 'This employee has %s pending installment(s) for a total of %s') % (pend_count, pend_total))
+            raise UserError(_(
+                              'Error! This employee has %s pending installment(s) for a total of %s') % (
+                              pend_count, pend_total))
         else:
             values['name'] = self.env['ir.sequence'].get('hr.prestamo.seq') or ' '
             res = super(HrPrestamo, self).create(values)
