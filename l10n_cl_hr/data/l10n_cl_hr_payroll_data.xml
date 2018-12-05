@@ -766,8 +766,8 @@ result = round(SECEEMP) + round(SIS) + round(MUT) + round(SC)</field>
             <field name="category_id" ref="SUBT"/> 
             <!--<field eval="21050150" name="account_debit.code"/>
             <field eval="21050100" name="account_credit.code"/> -->
-            <field ref="l10n_cl_coa.cl_coa_mfg_21050150" name="account_debit"/>
-            <field ref="l10n_cl_coa.cl_coa_mfg_21050100" name="account_credit"/>
+            <field ref="l10n_cl_coa.1_cl_coa_mfg_21050150" name="account_debit"/>
+            <field ref="l10n_cl_coa.1_cl_coa_mfg_21050100" name="account_credit"/>
             <!--<field name="account_debit.code">21050150</field>
             <field name="account_credit.code">21050100</field>-->
             <field name="register_id" ref="hr_payroll.contrib_register_employees"/>
