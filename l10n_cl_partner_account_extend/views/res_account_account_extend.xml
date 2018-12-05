@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+
+        <!-- Extiende Vista Lista PLAN DE CUENTAS -->
+        <!-- Agrega campos Grupo, Tipo Interno y Conciliar -->
+        <record model="ir.ui.view" id="cl_account_account_tree_extend">
+            <field name="name">account.account</field>
+            <field name="model">account.account</field>
+            <field name="mode">extension</field>
+            <field name="inherit_id" ref="account.view_account_list"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='code']" position="before">
+                    <field name="group_id"/>
+                </xpath>
+                <xpath expr="//field[@name='currency_id']" position="after">
+                    <field name="internal_group"/>
+                    <field name="internal_type"/>
+                    <field name="reconcile"/>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- Extiende Vista Formulario PLAN DE CUENTAS -->
+        <!-- Reordena y agrega campos Tipo Interno y Nota -->
+        <record model="ir.ui.view" id="cl_account_account_form_extend">
+            <field name="name">account.account</field>
+            <field name="model">account.account</field>
+            <field name="mode">extension</field>
+            <field name="inherit_id" ref="account.view_account_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='user_type_id']" position="after">
+                    <field name="internal_group"/>
+                    <xpath expr="//field[@name='group_id']" position="move"/>
+                    <xpath expr="//field[@name='currency_id']" position="move"/>
+                    <xpath expr="//field[@name='company_id']" position="move"/>
+                </xpath>
+                <xpath expr="//field[@name='tag_ids']" position="after">
+                    <xpath expr="//field[@name='tax_ids']" position="move"/>
+                </xpath>
+                <xpath expr="//field[@name='deprecated']" position="after">
+                    <field name="note"/>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- Extiende Vista Lista DETALLE LIBRO DIARIO -->
+        <!-- agrega Saldo -->
+        <record model="ir.ui.view" id="cl_account_move_tree_extend">
+            <field name="name">account.move.line</field>
+            <field name="model">account.move.line</field>
+            <field name="mode">extension</field>
+            <field name="inherit_id" ref="account.view_move_line_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='credit']" position="after">
+                    <field name="balance" sum="Total Balance" string="Saldo" widget="monetary"/>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- Extiende Vista Búsqueda DETALLE LIBRO DIARIO -->
+        <!-- agrega agrupar por Fecha Vencimiento -->
+        <!-- suprime campos Tax Line ID y Tax ID no relevantes para Chile -->
+        <!-- agrega Búsqueda por campos Etiqueta y Referencia -->
+        <record model="ir.ui.view" id="cl_account_move_tree_search_extend">
+            <field name="name">account.move.line</field>
+            <field name="model">account.move.line</field>
+            <field name="mode">extension</field>
+            <field name="inherit_id" ref="account.view_account_move_line_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//search[1]/field[@name='move_id']" position="before">
+                    <field name="name"/>
+                </xpath>
+                <xpath expr="//search[1]/field[@name='move_id']" position="before">
+                    <field name="ref"/>
+                </xpath>
+                <xpath expr="//search[1]/field[@name='move_id']" position="after">
+                    <field name="date_maturity"/>
+                </xpath>
+                <xpath expr="//filter[@name='groupby_date']" position="after">
+                    <filter context="{'group_by': 'date_maturity'}" name="date_maturity" string="Fecha Vencimiento"/>
+                </xpath>
+                <xpath expr="//search[1]/field[@name='tax_line_id']" position="attributes">
+                    <attribute name="attrs">{}</attribute>
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//search[1]/field[@name='tax_ids']" position="attributes">
+                    <attribute name="attrs">{}</attribute>
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,7 +1,10 @@
 <?xml version="1.0"?>
 <odoo>
     <data>
-        <record model="ir.ui.view" id="res_partner_account_extend">
+
+        <!-- Extiende Vista Formulario PARTNER -->
+        <!-- Agrega campos Total a Pagar/Cobrar y campos para Acciones -->
+        <record model="ir.ui.view" id="cl_res_partner_account_form_extend">
             <field name="name">res.partner</field>
             <field name="model">res.partner</field>
             <field name="mode">extension</field>
@@ -20,6 +23,68 @@
                 <field name="debit"/> 
                 <field name="credit"/>
               </xpath>
+            </field>
+        </record>
+
+        <!-- Extiende Vista Kanban PARTNER -->
+        <!-- agrega RUT y elimina nombre Empresa en Prefijo nombre a visualizar-->
+        <record model="ir.ui.view" id="cl_res_partner_kanban_extend">
+            <field name="name">res.partner</field>
+            <field name="model">res.partner</field>
+            <field name="mode">extension</field>
+            <field name="inherit_id" ref="base.res_partner_kanban_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//kanban[1]/templates[1]/t[1]/div[1]/div[1]/strong[1]/field[@name='display_name']" position="attributes">
+                    <attribute name="attrs">{}</attribute>
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//kanban[1]/templates[1]/t[1]/div[1]/div[1]/strong[1]/field[@name='display_name']" position="after">
+                    <field name="name"/>
+                    <div><h5><field name="vat" attrs="{'invisible': [('is_company','=',False)]}"/></h5></div>
+                </xpath>            
+            </field>
+        </record>
+
+        <!-- Extiende Vista Lista PARTNER -->
+        <!-- agrega RUT y Total Vencido-->
+        <record model="ir.ui.view" id="cl_res_partner_tree_extend">
+            <field name="name">res.partner</field>
+            <field name="model">res.partner</field>
+            <field name="mode">extension</field>
+            <field name="inherit_id" ref="base.view_partner_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='display_name']" position="before">
+                    <field name="name"/>
+                </xpath>
+                <xpath expr="//field[@name='display_name']" position="after">
+                    <field name="vat" attrs="{'invisible': [('is_company','=',False)]}"/>
+                </xpath>
+                <xpath expr="//field[@name='email']" position="after">
+                    <field name="total_due" widget="monetary"/>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- Extiende Vista Filtros PARTNER -->
+        <!-- agrega búsqueda por RUT y filtros para Empleados-->
+        <record model="ir.ui.view" id="cl_res_partner_search_extend">
+            <field name="name">res.partner</field>
+            <field name="model">res.partner</field>
+            <field name="mode">extension</field>
+            <field name="inherit_id" ref="base.view_res_partner_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//search[1]/field[@name='name']" position="after">
+                    <field name="vat"/>
+                  </xpath>
+                  <xpath expr="//filter[@name='type_company']" position="after">
+                    <filter domain="[['employee','=',True]]" name="cl_search_partner_extend_employee" string="Empleados"/>
+                  </xpath>
+                  <xpath expr="//field[@name='phone']" position="after">
+                    <field name="ref"/>
+                  </xpath>
+                  <xpath expr="//filter[@name='group_country']" position="after">
+                    <filter context="{'group_by': 'team_id'}" name="team_id" string="Equipo de ventas"/>
+                  </xpath>
             </field>
         </record>
 
@@ -80,113 +145,6 @@
                 </xpath>
             </field>
         </record>-->
-
-
-        <!-- Vista Kanban agrega RUT y elimina nombre Empresa en Prefijo nombre a visualizar-->
-        <record model="ir.ui.view" id="res_partner_kanban_cl_extend">
-            <field name="name">res.partner</field>
-            <field name="model">res.partner</field>
-            <field name="mode">extension</field>
-            <field name="inherit_id" ref="base.res_partner_kanban_view"/>
-            <field name="arch" type="xml">
-                <xpath expr="//kanban[1]/templates[1]/t[1]/div[1]/div[1]/strong[1]/field[@name='display_name']" position="attributes">
-                    <attribute name="attrs">{}</attribute>
-                    <attribute name="invisible">1</attribute>
-                </xpath>
-                <xpath expr="//kanban[1]/templates[1]/t[1]/div[1]/div[1]/strong[1]/field[@name='display_name']" position="after">
-                    <field name="name"/>
-                    <div><h5><field name="vat" attrs="{'invisible': [('is_company','=',False)]}"/></h5></div>
-                </xpath>            
-            </field>
-        </record>
-
-        <!-- Agrega RUT a vista de Lista-->
-        <record model="ir.ui.view" id="res_partner_tree_cl_extend">
-            <field name="name">res.partner</field>
-            <field name="model">res.partner</field>
-            <field name="mode">extension</field>
-            <field name="inherit_id" ref="base.view_partner_tree"/>
-            <field name="arch" type="xml">
-                <xpath expr="//field[@name='display_name']" position="before">
-                    <field name="name"/>
-                </xpath>
-                <xpath expr="//field[@name='display_name']" position="after">
-                    <field name="vat" attrs="{'invisible': [('is_company','=',False)]}"/>
-                </xpath>
-                <xpath expr="//field[@name='email']" position="after">
-                    <field name="total_due" widget="monetary"/>
-                </xpath>
-            </field>
-        </record>
-
-        <!-- Agrega búsqueda por RUT y filtros para Empleados-->
-        <record model="ir.ui.view" id="res_partner_search_cl_extend">
-            <field name="name">res.partner</field>
-            <field name="model">res.partner</field>
-            <field name="mode">extension</field>
-            <field name="inherit_id" ref="base.view_res_partner_filter"/>
-            <field name="arch" type="xml">
-                <xpath expr="//search[1]/field[@name='name']" position="after">
-                    <field name="vat"/>
-                  </xpath>
-                  <xpath expr="//filter[@name='type_company']" position="after">
-                    <filter domain="[['employee','=',True]]" name="cl_search_partner_extend_employee" string="Empleados"/>
-                  </xpath>
-                  <xpath expr="//field[@name='phone']" position="after">
-                    <field name="ref"/>
-                  </xpath>
-                  <xpath expr="//filter[@name='group_country']" position="after">
-                    <filter context="{'group_by': 'team_id'}" name="team_id" string="Equipo de ventas"/>
-                  </xpath>
-            </field>
-        </record>
-
-        <!-- Personaliza vista de Lista para Libro Diario: agrega saldo -->
-        <record model="ir.ui.view" id="res_account_move_tree_cl_extend">
-            <field name="name">account.move.line</field>
-            <field name="model">account.move.line</field>
-            <field name="mode">extension</field>
-            <field name="inherit_id" ref="account.view_move_line_tree"/>
-            <field name="arch" type="xml">
-                <xpath expr="//field[@name='credit']" position="after">
-                    <field name="balance" sum="Total Balance" string="Saldo" widget="monetary"/>
-                </xpath>
-            </field>
-        </record>
-
-        <!-- Personaliza vista de Búsqueda para Libro Diario Fecha Vencimiento -->
-        <!-- suprime campos Tax Line ID y Tax ID no relevantes para Chile -->
-        <!-- agrega Búsqueda por campos Etiqueta y Referencia -->
-        <!-- agrega Agrupar por Fecha de Vencimiento -->
-        <record model="ir.ui.view" id="res_account_tree_search_cl_extend">
-            <field name="name">account.move.line</field>
-            <field name="model">account.move.line</field>
-            <field name="mode">extension</field>
-            <field name="inherit_id" ref="account.view_account_move_line_filter"/>
-            <field name="arch" type="xml">
-                <xpath expr="//search[1]/field[@name='move_id']" position="before">
-                    <field name="name"/>
-                </xpath>
-                <xpath expr="//search[1]/field[@name='move_id']" position="before">
-                    <field name="ref"/>
-                </xpath>
-                <xpath expr="//search[1]/field[@name='move_id']" position="after">
-                    <field name="date_maturity"/>
-                </xpath>
-                <xpath expr="//filter[@name='groupby_date']" position="after">
-                    <filter context="{'group_by': 'date_maturity'}" name="date_maturity" string="Fecha Vencimiento"/>
-                </xpath>
-                <xpath expr="//search[1]/field[@name='tax_line_id']" position="attributes">
-                    <attribute name="attrs">{}</attribute>
-                    <attribute name="invisible">1</attribute>
-                </xpath>
-                <xpath expr="//search[1]/field[@name='tax_ids']" position="attributes">
-                    <attribute name="attrs">{}</attribute>
-                    <attribute name="invisible">1</attribute>
-                </xpath>
-            </field>
-        </record>
-
 
     </data>
 </odoo>

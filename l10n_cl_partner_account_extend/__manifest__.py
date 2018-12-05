@@ -21,7 +21,7 @@
 ###################################################################################
 {
     'name': 'Chile :: Campos Adicionales Partner',
-    'summary': """Extiende vistas de maestro de Terceros para Chile""",
+    'summary': """Extiende vistas de módulos Contabilidad y Contactos""",
     'version': '12.0.1.0.0',
     'description': """Búsqueda por RUT, Monto a Pagar y a Cobrar y otros""",
     'author': 'Intellego-BI.com',
@@ -33,6 +33,7 @@
     'license': 'LGPL-3',
     'data': [
         'views/res_partner_account_extend.xml',
+        'views/res_account_account_extend.xml',
         'views/cl_accounting_menu.xml',
     ],
     'demo': [],
