@@ -655,6 +655,8 @@ else:
             <field name="sequence" eval="38"/>
             <field name="code">ASUE</field>
             <field name="category_id" ref="ODESC"/>
+            <field name="account_debit" ref="l10n_cl_coa.1_cl_coa_mfg_21050150"/>
+            <field name="account_credit" ref="l10n_cl_coa.1_cl_coa_mfg_11050100"/>
             <!--<field eval="21050150" name="account_debit.code"/>
             <field eval="11050100" name="account_credit.code"/>-->
             <field name="condition_select">python</field>
@@ -765,7 +767,8 @@ result = round(SECEEMP) + round(SIS) + round(MUT) + round(SC)</field>
             <field name="code">LIQ</field>
             <field name="category_id" ref="SUBT"/> 
             <!--<field name="account_debit" eval="21050150"/>-->
-            <field name="account_credit" ref="l10n_cl_coa.1_cl_coa_mfg_21050150"/>
+            <field name="account_debit" ref="l10n_cl_coa.1_cl_coa_mfg_21050150"/>
+            <field name="account_credit" ref="l10n_cl_coa.1_cl_coa_mfg_21050100"/>
             <!--<field eval="21050100" name="hr_payroll_account.account_credit"/> 
             <field ref="l10n_cl_coa.1_cl_coa_mfg_21050150" name="account_debit"/>
             <field ref="l10n_cl_coa.1_cl_coa_mfg_21050100" name="account_credit"/>
