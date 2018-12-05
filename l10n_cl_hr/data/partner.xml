@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    <data noupdate="True">
+    <data noupdate="0">
         <record model='res.partner' id='sii'>
                 <field name='name'>SII</field>
                 <!--<field name='document_number'>60.803.000-K</field>-->
@@ -10,7 +10,7 @@
 				<field name='customer'>False</field>				
 				<field name='supplier'>True</field>
 				<field name='country_id'>46</field>
-				<!--<field name='web_url'>http://www.sii.cl/sobre_el_sii/logoSII250x108.jpg</field>-->
+				<field name='image'>http://www.sii.cl/sobre_el_sii/logoSII250x108.jpg</field>
 				<field name='commercial_company_name'>Servicio de Impuestos Internos (SII)</field>
         </record> 
     
@@ -24,7 +24,7 @@
 				<field name='customer'>False</field>
                 <field name='supplier'>True</field>				
 				<field name='country_id'>46</field>				
-				<!--<field name='web_url'>http://www.gochpa.cl/imagebrowser/p005_0_6.png</field>-->
+				<field name='image'>http://www.gochpa.cl/imagebrowser/p005_0_6.png</field>
 				<field name='commercial_company_name'>Previred.com</field>
         </record> 
 
