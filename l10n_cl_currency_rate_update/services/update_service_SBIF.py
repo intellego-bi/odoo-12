@@ -31,6 +31,16 @@ class SBIFGetter(CurrencyGetterInterface):
     el2 = ''
     fecha = datetime.today().strftime('%Y-%m-%d')
 
+    def get_apikey(self):
+        """Return a string of a API Key"""
+                # Read Settings from res.config.settings
+        ICPSudo = self.env['ir.config_parameter'].sudo()
+        config_read = ICPSudo.get_param('account.cl_sbif_api_key')
+        if config_read:
+           apikey = config_read
+
+        return apikey
+
     def rate_retrieve(self, dom, ns, curr, apikey):
         """Parse a dom node to retrieve currencies data
         """
