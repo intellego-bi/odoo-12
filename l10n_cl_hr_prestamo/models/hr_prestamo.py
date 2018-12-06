@@ -152,28 +152,39 @@ class HrPrestamo(models.Model):
 
     @api.multi
     def compute_installment(self):
-        """This automatically create the installment the employee need to pay to
-        company based on payment start date and the no of installments.
-            """
+        """This automatically creates payment installment plan for the Loan
+        based on the payment start date and the number of installments.
+        """
         pending_total = 0
         pending_count = 0
         for prestamo in self:
-            for line in loan.prestamo_lines:
+            for line in prestamo.prestamo_lines:
                 total_lines += line.amount
             if int(total_lines) == int(prestamo.prestamo_amount):
                 raise except_orm('Warning!', 'Installments already computed')
+            else:
+                date_pay = datetime.strptime(str(prestamo.payment_date), '%Y-%m-%d')
+                amount = prestamo.prestamo_amount / prestamo.installment
+                for i in range(1, prestamo.installment + 1):
+                    self.env['hr.prestamo.line'].create({
+                        'date': date_start,
+                        'amount': amount,
+                        'currency_id': prestamo.currency_id.id,
+                        'employee_id': prestamo.employee_id.id,
+                        'prestamo_id': prestamo.id})
+                    date_start = date_pay + relativedelta(months=i)
 
-        for prestamo in self:
-            date_start = datetime.strptime(str(prestamo.payment_date), '%Y-%m-%d')
-            amount = prestamo.prestamo_amount / prestamo.installment
-            for i in range(1, prestamo.installment + 1):
-                self.env['hr.prestamo.line'].create({
-                    'date': date_start,
-                    'amount': amount,
-                    'currency_id': prestamo.currency_id.id,
-                    'employee_id': prestamo.employee_id.id,
-                    'prestamo_id': prestamo.id})
-                date_start = date_start + relativedelta(months=1)
+        #for prestamo in self:
+        #    date_start = datetime.strptime(str(prestamo.payment_date), '%Y-%m-%d')
+        #    amount = prestamo.prestamo_amount / prestamo.installment
+        #    for i in range(1, prestamo.installment + 1):
+        #        self.env['hr.prestamo.line'].create({
+        #            'date': date_start,
+        #            'amount': amount,
+        #            'currency_id': prestamo.currency_id.id,
+        #            'employee_id': prestamo.employee_id.id,
+        #            'prestamo_id': prestamo.id})
+        #        date_start = date_start + relativedelta(months=1)
         return True
 
 
