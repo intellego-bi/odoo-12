@@ -12,6 +12,8 @@
                 <field name="prestamo_amount"/>
                 <field name="date"/>
                 <field name="state"/>
+                <field name="prestamo_pending_amount" widget="monetary"/>
+                <field name="prestamo_pending_count"/>
             </tree>
         </field>
     </record>
@@ -142,14 +144,14 @@
                     class="oe_stat_button"
                     icon="fa-calendar"
                     groups="hr.group_hr_manager,hr.group_hr_user">
-                    <field name="prestamo_count" widget="statinfo" string="Préstamos"/>
+                    <field name="prestamo_count" widget="statinfo" string="Cuotas Préstamos"/>
                 </button>
                 <button name="%(act_hr_employee_prestamo_request)d"
                     type="action"
                     class="oe_stat_button"
-                    icon="fa-calendar"
+                    icon="fa-money"
                     groups="hr.group_hr_manager,hr.group_hr_user">
-                    <field name="emp_pending_amount" widget="statinfo" string="Deuda"/>
+                    <field name="emp_pending_amount" string="Deuda" widget="monetary" options="{'currency_field': 'currency_id'}"/>
                 </button>
             </xpath>
         </field>
