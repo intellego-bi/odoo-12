@@ -50,7 +50,13 @@ class SBIFGetter(CurrencyGetterInterface):
         currencies data
 
         """
-        apikey = 'e96f651e08214ed0060771f21d11cdeb3b8b3305'
+        # Read Settings from res.config.settings
+        ICPSudo = self.env['ir.config_parameter'].sudo()
+        config_read = int(ICPSudo.get_param('account.cl_sbif_api_key'))
+        if config_read:
+           apikey = config_read
+        else:
+           apikey = 'e96f651e08214ed0060771f21d11cdeb3b8b3305'
 
         res = {}
         el1 = '''Dolares'''
