@@ -144,7 +144,7 @@
                     class="oe_stat_button"
                     icon="fa-calendar"
                     groups="hr.group_hr_manager,hr.group_hr_user">
-                    <field name="prestamo_count" widget="statinfo" string="Cuotas Préstamos"/>
+                    <field name="emp_pending_count" widget="statinfo" string="Cuotas Préstamos"/>
                 </button>
                 <button name="%(act_hr_employee_prestamo_request)d"
                     type="action"
