@@ -777,7 +777,7 @@ result = round(SECEEMP) + round(SIS) + round(MUT) + round(SC)</field>
             <field name="name">Anticipo Primera Quincena</field>
             <field name="category_id" ref="l10n_cl_hr.ANTICIPO"/>
             <field name="account_debit" ref="l10n_cl_coa.1_cl_coa_mfg_11050100"/>
-            <field name="account_credit" ref="l10n_cl_coa.1_cl_coa_mfg_21050150"/>
+            <field name="account_credit" ref="l10n_cl_coa.1_cl_coa_mfg_21050100"/>
             <field name="register_id" ref="hr_payroll.contrib_register_employees"/>
             <field name="condition_select">none</field>
             <field name="amount_select">code</field>
