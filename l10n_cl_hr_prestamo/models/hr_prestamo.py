@@ -107,6 +107,9 @@ class HrPrestamo(models.Model):
         
         pend_total = str('{0:,.0f}'.format(pending_total)).replace(",", ".")
         pend_count = str(pending_count)
+        raise UserError(_(
+                              'Error! %s %s') % (
+                              pend_count, pend_total))
         self.prestamo_pending_amount = pending_total
         self.prestamo_pending_count = pending_count
 
