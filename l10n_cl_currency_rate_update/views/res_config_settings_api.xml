@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="cl_view_account_config_inherit" model="ir.ui.view">
+            <field name="name">Accounting settings for Currency</field>
+            <field name="model">res.config.settings</field>
+            <field name="inherit_id" ref="account.res_config_settings_view_form"/>
+            <field name="arch" type="xml">
+                <div id="accounting_reports" position="before">
+                    <h2 groups="account.group_account_user">Chile Currency Rate Update</h2>
+                    <div class="row mt16 o_settings_container" id="cl_currency_update" groups="account.group_account_user">
+                       <div class="col-xs-12 col-md-6 o_setting_box" title="Active automatic currency rate update from SBIF Chile." groups="account.group_account_user">
+                            <div class="o_setting_left_pane">
+                                <field name="cl_update_active" class="oe_inline"/>
+                            </div>
+                            <div class="o_setting_right_pane">
+                                <label string="Activate Update Service" for="cl_update_active"/>
+                                <div class="text-muted">
+                                    Automatic currency rate update from SBIF
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt16 o_settings_container" id="cl_currency_params" groups="account.group_account_user">
+                       <div class="col-xs-12 col-md-6 o_setting_box" title="Settings for Currency Update." groups="account.group_account_user">
+                            <div class="o_setting_right_pane">
+                                <span class="o_form_label">Settings for Update Service</span>
+                                <div class="text-muted">
+                                    SBIF servive API Key and parameters
+                                </div>
+                                <div class="content-group">
+                                    <div class="row mt16">
+                                        <label for="cl_sbif_api_key" class="col-lg-3 o_light_label"/>
+                                        <field name="cl_sbif_api_key"/>
+                                    </div>
+                                    <!--<div class="row">
+                                        <label string="Next Run" for="cl_currency_next_execution_date" class="col-lg-3 o_light_label"/>
+                                        <field name="currency_next_execution_date"/>
+                                        <button name="cl_update_currency_rates_manually" type="object" class="btn-link">
+                                            <i title="Update now" role="img" aria-label="Update now" class="fa fa-fw fa-refresh"></i>
+                                        </button>
+                                    </div>-->
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </field>
+        </record>
+    </data>
+</odoo>
