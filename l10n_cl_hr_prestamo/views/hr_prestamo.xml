@@ -9,10 +9,10 @@
             <tree string="Loan Requests">
                 <field name="name"/>
                 <field name="employee_id"/>
-                <field name="prestamo_amount"/>
+                <field name="prestamo_amount" widget="monetary" options="{'currency_field': 'currency_id'}"/>
                 <field name="date"/>
                 <field name="state"/>
-                <field name="prestamo_pending_amount" widget="monetary"/>
+                <field name="prestamo_pending_amount" widget="monetary" options="{'currency_field': 'currency_id'}"/>
                 <field name="prestamo_pending_count"/>
             </tree>
         </field>
@@ -57,7 +57,7 @@
                         <field name="currency_id" options="{'no_create': True}" groups="base.group_multi_company"/>
                     </group>
                     <group col="4" string="Pending Loans" attrs="{'invisible': [('prestamo_pending_count', '=', '0')]}">
-                        <field name="prestamo_pending_amount" readonly="1" attrs="{'invisible': [('prestamo_pending_count', '=', '0')]}" widget="monetary"/>
+                        <field name="prestamo_pending_amount" readonly="1" attrs="{'invisible': [('prestamo_pending_count', '=', '0')]}" widget="monetary" options="{'currency_field': 'currency_id'}"/>
                         <field name="prestamo_pending_count" readonly="1" attrs="{'invisible': [('prestamo_pending_count', '=', '0')]}"/>
                     </group>
 
@@ -66,11 +66,11 @@
                             <field name="prestamo_lines">
                                 <tree string="Installments" editable="bottom">
                                     <field name="date"/>
-                                    <field name="amount" widget="monetary" attrs="{'readonly':[('payslip_id', '>=','1')]}"/>
+                                    <field name="amount" widget="monetary" options="{'currency_field': 'currency_id'}" attrs="{'readonly':[('payslip_id', '>=','1')]}"/>
                                     <!--<field name="paid" readonly="1" invisible="1"/>-->
                                     <field name="paid" readonly="1" widget="toggle_button"/>
                                     <field name="payslip_id" readonly="1"/>
-                                    <field name="move_id" readonly="1"/>
+                                    <!-- <field name="move_id" readonly="1"/> -->
                                 </tree>
                             </field>
                             <group class="oe_subtotal_footer oe_right" colspan="2" >
