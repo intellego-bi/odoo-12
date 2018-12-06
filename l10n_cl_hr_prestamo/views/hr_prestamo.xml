@@ -144,6 +144,13 @@
                     groups="hr.group_hr_manager,hr.group_hr_user">
                     <field name="prestamo_count" widget="statinfo" string="Préstamos"/>
                 </button>
+                <button name="%(act_hr_employee_prestamo_amount_request)d"
+                    type="action"
+                    class="oe_stat_button"
+                    icon="fa-calendar"
+                    groups="hr.group_hr_manager,hr.group_hr_user">
+                    <field name="emp_pending_amount" widget="statinfo" string="Deuda"/>
+                </button>
             </xpath>
         </field>
     </record>
