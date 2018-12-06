@@ -205,6 +205,6 @@ class HrEmployee(models.Model):
 
 
     prestamo_count = fields.Integer(string="Loan Count", compute='_compute_employee_prestamo')
-    emp_pending_amount = fields.Float(string="Pending Installments Amount", compute='_compute_employee_prestamo')
+    emp_pending_amount = fields.Integer(string="Pending Installments Amount", compute='_compute_employee_prestamo')
     emp_pending_count = fields.Integer(string="Number of Pending Installments", compute='_compute_employee_prestamo')
 
