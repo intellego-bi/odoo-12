@@ -160,7 +160,7 @@ class HrPrestamo(models.Model):
         for prestamo in self:
             for line in prestamo.prestamo_lines:
                 total_lines += line.amount
-            if int(total_lines) == int(prestamo.prestamo_amount):
+            if int(total_lines) >= int(prestamo.prestamo_amount):
                 raise except_orm('Warning!', 'Installments already computed')
             else:
                 date_pay = datetime.strptime(str(prestamo.payment_date), '%Y-%m-%d')
