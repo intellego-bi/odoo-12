@@ -16,6 +16,28 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: l10n_cl_hr_prestamo
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr_prestamo.view_employee_form_prestamo_inherit
+msgid "<span class=\"o_stat_text\">Loaned</span>"
+msgstr "<span class=\"o_stat_text\">Deuda</span>"
+
+#. module: l10n_cl_hr_prestamo
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr_prestamo.view_employee_form_prestamo_inherit
+msgid "Unpaid Installments"
+msgstr "Cuotas Préstamos"
+
+#. module: l10n_cl_hr_prestamo
+#: code:addons/l10n_cl_hr_prestamo/models/hr_prestamo.py:114
+#, python-format
+msgid "Error! This employee has %s pending installment(s) for a total of %s %s"
+msgstr "Error: este empleado tiene %s cuotas pendientes por un total de %s %s adeudado"
+
+#. module: l10n_cl_hr_prestamo
+#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_employee__emp_pending_count
+msgid "Number of Pending Installments"
+msgstr "N° Cuotas x Pagar"
+
+
+#. module: l10n_cl_hr_prestamo
 #: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__move_id
 #: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo_line__move_id
 msgid "Accounting Entry"
