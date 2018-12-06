@@ -94,7 +94,7 @@ class SBIFGetter(CurrencyGetterInterface):
             currency_array.remove(main_currency)
         _logger.debug("SBIF currency rate service : connecting...")
 
-        self.config_read.get_apikey()
+        config_read.get_apikey()
         if config_read:
            apikey = config_read
         else:
