@@ -77,11 +77,11 @@ class SBIFGetter(CurrencyGetterInterface):
            el1 = '''Euros'''
            el2 = '''Euro'''
 
-        rep = requests.get(sbifurl, allow_redirects=True)
-        docu = xm.parse(rep.content)
+        #rep = requests.get(sbifurl, allow_redirects=True)
+        #docu = xm.parse(rep.content)
 
-        fecha = docu['IndicadoresFinancieros'][el1][el2]['Fecha']
-        valor = docu['IndicadoresFinancieros'][el1][el2]['Valor']
+        fecha = docs['IndicadoresFinancieros'][el1][el2]['Fecha']
+        valor = docs['IndicadoresFinancieros'][el1][el2]['Valor']
 
         valor = valor.replace(".", "")
         valor = valor.replace(",", ".")
