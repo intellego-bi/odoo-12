@@ -57,8 +57,8 @@
                         <field name="currency_id" options="{'no_create': True}" groups="base.group_multi_company"/>
                     </group>
                     <group col="4" string="Pending Loans" attrs="{'invisible': [('prestamo_pending_count', '=', '0')]}">
-                        <field name="emp_pending_amount" readonly="1" attrs="{'invisible': [('prestamo_pending_count', '=', '0')]}" widget="monetary" options="{'currency_field': 'currency_id'}"/>
-                        <field name="emp_pending_count" readonly="1" attrs="{'invisible': [('prestamo_pending_count', '=', '0')]}"/>
+                        <field name="prestamo_pending_amount" readonly="1" attrs="{'invisible': [('prestamo_pending_count', '=', '0')]}" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                        <field name="prestamo_pending_count" readonly="1" attrs="{'invisible': [('prestamo_pending_count', '=', '0')]}"/>
                     </group>
 
                     <notebook>
