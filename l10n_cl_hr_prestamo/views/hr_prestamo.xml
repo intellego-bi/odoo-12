@@ -45,7 +45,7 @@
                         <field name="employee_id" options="{'no_create': True}" attrs="{'readonly':[('state','=','approve')]}"/>
                         <field name="date"/>
                         <field name="department_id"/>
-                        <field name="job_position" />
+                        <field name="job_position" options="{'no_create': True}"/>
                         <field name="prestamo_amount" attrs="{'readonly':[('state','=','approve')]}" widget="monetary"/>
                         <field name="installment" attrs="{'readonly':[('state','=','approve')]}"/>
                         <field name="payment_date" attrs="{'readonly':[('state','=','approve')]}"/>
@@ -67,6 +67,7 @@
                                 <tree string="Installments" editable="bottom">
                                     <field name="date"/>
                                     <field name="amount" widget="monetary" options="{'currency_field': 'currency_id'}" attrs="{'readonly':[('payslip_id', '>=','1')]}"/>
+	                                <field name="currency_id" options="{'no_create': True}">
                                     <field name="paid" readonly="1" widget="toggle_button"/>
                                     <field name="payslip_id" readonly="1"/>
                                     <field name="move_id" readonly="1"/>
