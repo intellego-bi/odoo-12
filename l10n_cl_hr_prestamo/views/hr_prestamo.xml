@@ -67,7 +67,7 @@
                                 <tree string="Installments" editable="bottom">
                                     <field name="date"/>
                                     <field name="amount" widget="monetary" options="{'currency_field': 'currency_id'}" attrs="{'readonly':[('payslip_id', '>=','1')]}"/>
-	                                <field name="currency_id" options="{'no_create': True}">
+	                                <field name="currency_id" options="{'no_create': True}"/>
                                     <field name="paid" readonly="1" widget="toggle_button"/>
                                     <field name="payslip_id" readonly="1"/>
                                     <field name="move_id" readonly="1"/>
