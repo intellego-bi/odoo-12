@@ -157,3 +157,10 @@ class HrSalaryRule(models.Model):
     account_analytic_true = fields.Boolean('Analytic Account in Contract')
 
 
+class HrPayslipAnalyticAccount(models.Model):
+    _inherit = 'hr.payslip'
+
+    @api.multi
+    def action_payslip_done(self):
+        return super(HrPayslipAnalyticAccount, self).action_payslip_done()
+
