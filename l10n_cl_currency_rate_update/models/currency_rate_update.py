@@ -120,6 +120,11 @@ class CurrencyRateUpdateService(models.Model):
     interval_number = fields.Integer(string='Frecuencia', default=1)
     next_run = fields.Date(string='Próxima ejecución', default=fields.Date.today())
 
+    sbif_api_key = fields.Char(
+        string='SBIF API Key', default='e96f651e08214ed0060771f21d11cdeb3b8b3305', required=True,
+        help="You must get your private API Key from https://api.sbif.cl "
+        "in order to use this service.")
+
     _sql_constraints = [('curr_service_unique',
                          'unique (service, company_id)',
                          _('You can use a service only one time per '
@@ -133,6 +138,13 @@ class CurrencyRateUpdateService(models.Model):
             _logger.info(
                 'Starting to refresh currencies with service %s (company: %s)',
                 srv.service, srv.company_id.name)
+
+            # Read Loan Accounting Settings from res.config.settings
+            ICPSudo = self.env['ir.config_parameter'].sudo()
+            config_read = int(ICPSudo.get_param('account.cl_sbif_api_key'))
+            if config_read:
+               sbif_api_key = config_read
+
             company = srv.company_id
             # The multi company currency can be set or no so we handle
             # The two case
