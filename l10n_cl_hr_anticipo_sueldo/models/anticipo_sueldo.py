@@ -223,7 +223,8 @@ class AnticipoSueldoPago(models.Model):
                 'partner_id' : request.employee_id.address_home_id.id,
                 'account_id': debit_account_id,
                 'journal_id': journal_id,
-                'date': timenow,
+                #'date': timenow,
+                'date': date,
                 'debit': amount > 0.0 and amount or 0.0,
                 'credit': amount < 0.0 and -amount or 0.0,
                 'currency_id': self.currency_id.id,
@@ -234,7 +235,8 @@ class AnticipoSueldoPago(models.Model):
                 'partner_id' : request.employee_id.address_home_id.id,
                 'account_id': credit_account_id,
                 'journal_id': journal_id,
-                'date': timenow,
+                #'date': timenow,
+                'date': date,
                 'debit': amount < 0.0 and -amount or 0.0,
                 'credit': amount > 0.0 and amount or 0.0,
                 'currency_id': self.currency_id.id,
@@ -245,7 +247,8 @@ class AnticipoSueldoPago(models.Model):
                 'narration': request_name,
                 'ref': reference,
                 'journal_id': journal_id,
-                'date': timenow,
+                #'date': timenow,
+                'date': date,
                 'line_ids': [(0, 0, debit_vals), (0, 0, credit_vals)]
                 }
             move = self.env['account.move'].create(vals)
