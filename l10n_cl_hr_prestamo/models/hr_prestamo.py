@@ -163,7 +163,7 @@ class HrPrestamo(models.Model):
                 raise except_orm('Warning!', 'Installments already computed')
             else:
                 date_pay = datetime.strptime(str(prestamo.payment_date), '%Y-%m-%d')
-                amount = prestamo.prestamo_amount / prestamo.installment
+                amount = (prestamo.prestamo_amount - total_lines) / prestamo.installment
                 for i in range(1, prestamo.installment + 1):
                     self.env['hr.prestamo.line'].create({
                         'date': date_start,
