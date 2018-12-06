@@ -80,7 +80,7 @@ class HrPrestamo(models.Model):
     total_paid_amount = fields.Float(string="Total Paid Amount", compute='_compute_prestamo_amount')
     move_id = fields.Many2one('account.move', 'Accounting Entry', readonly=True, copy=False)
     prestamo_pending_amount = fields.Float(string="Pending Installments Amount", compute='_compute_pending_amount')
-    prestamo_pending_count = fields.Float(string="N° of Pending Installments", compute='_compute_pending_amount')
+    prestamo_pending_count = fields.Integer(string="N° of Pending Installments", compute='_compute_pending_amount')
 
 
     state = fields.Selection([
@@ -163,12 +163,6 @@ class HrPrestamo(models.Model):
                     'employee_id': prestamo.employee_id.id,
                     'prestamo_id': prestamo.id})
                 date_start = date_start + relativedelta(months=1)
-        total_paid = 0.0
-        for prestamo in self:
-            for line in prestamo.prestamo_lines:
-                if line.paid:
-                    total_paid += line.amount
-            self.balance_amount = prestamo.prestamo_amount - total_paid
         return True
 
 
@@ -210,5 +204,5 @@ class HrEmployee(models.Model):
 
     prestamo_count = fields.Integer(string="Loan Count", compute='_compute_employee_prestamo')
     emp_pending_amount = fields.Float(string="Pending Installments Amount", compute='_compute_employee_prestamo')
-    emp_pending_count = fields.Float(string="Number of Pending Installments", compute='_compute_employee_prestamo')
+    emp_pending_count = fields.Integer(string="Number of Pending Installments", compute='_compute_employee_prestamo')
 
