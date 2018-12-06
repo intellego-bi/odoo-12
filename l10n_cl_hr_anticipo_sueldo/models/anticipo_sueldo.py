@@ -217,6 +217,7 @@ class AnticipoSueldoPago(models.Model):
             journal_id = request.journal.id
             debit_account_id = request.debit.id
             credit_account_id = request.credit.id
+            date = request.date
 
             debit_vals = {
                 'name': request_name,
