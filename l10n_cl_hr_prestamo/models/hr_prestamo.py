@@ -110,7 +110,7 @@ class HrPrestamo(models.Model):
         self.prestamo_pending_amount = pending_total
         self.prestamo_pending_count = pending_count
 
-        if pending_total:
+        if pending_total > 0:
             raise UserError(_(
                               'Error! This employee has %s pending installment(s) for a total of %s %s') % (
                               pend_count, self.env.user.company_id.currency_id.name, pend_total))
