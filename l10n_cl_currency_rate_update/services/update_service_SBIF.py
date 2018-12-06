@@ -17,15 +17,7 @@ _logger = logging.getLogger(__name__)
 import requests
 import xmltodict as xm
 
-apikey = 'e96f651e08214ed0060771f21d11cdeb3b8b3305'
-sbifurl = 'https://api.sbif.cl/api-sbifv3/recursos_api/dolar/?apikey=' + apikey + '&formato=xml'
-rep = requests.get(sbifurl, allow_redirects=True)
-req = requests.get(sbifurl, allow_redirects=True)
-if req.status_code == 200:
-    docs = xm.parse(req.content)
-    fecha = docs['IndicadoresFinancieros']['Dolares']['Dolar']['Fecha']
-else:
-    fecha = datetime.today().strftime('%Y-%m-%d')
+#apikey = 'e96f651e08214ed0060771f21d11cdeb3b8b3305'
 
 class SBIFGetter(CurrencyGetterInterface):
     """Implementation of Currency_getter_factory interface
@@ -39,17 +31,9 @@ class SBIFGetter(CurrencyGetterInterface):
     el2 = ''
     fecha = datetime.today().strftime('%Y-%m-%d')
 
-    def rate_retrieve(self, dom, ns, curr):
-        """Parse a dom node to retrieve-
-        currencies data
-
+    def rate_retrieve(self, dom, ns, curr, apikey):
+        """Parse a dom node to retrieve currencies data
         """
-        config_read = self.get_apikey()
-        if config_read:
-           apikey = config_read
-        else:
-           apikey = 'e96f651e08214ed0060771f21d11cdeb3b8b3305'
-
         sbifurl = 'https://api.sbif.cl/api-sbifv3/recursos_api/dolar/?apikey=' + apikey + '&formato=xml'
 
         req = requests.get(sbifurl, allow_redirects=True)
@@ -110,6 +94,21 @@ class SBIFGetter(CurrencyGetterInterface):
             currency_array.remove(main_currency)
         _logger.debug("SBIF currency rate service : connecting...")
 
+        config_read = self.get_apikey()
+        if config_read:
+           apikey = config_read
+        else:
+           apikey = 'e96f651e08214ed0060771f21d11cdeb3b8b3305'
+
+        sbifurl = 'https://api.sbif.cl/api-sbifv3/recursos_api/dolar/?apikey=' + apikey + '&formato=xml'
+        rep = requests.get(sbifurl, allow_redirects=True)
+        req = requests.get(sbifurl, allow_redirects=True)
+        if req.status_code == 200:
+            docs = xm.parse(req.content)
+            fecha = docs['IndicadoresFinancieros']['Dolares']['Dolar']['Fecha']
+        else:
+            fecha = datetime.today().strftime('%Y-%m-%d')
+
         dom = etree.fromstring(rep.content)
         _logger.debug("SBIF sent a valid XML file")
         ecb_ns = {'gesmes': 'http://www.gesmes.org/xml/2002-08-01',
@@ -117,7 +116,7 @@ class SBIFGetter(CurrencyGetterInterface):
 
         rate_date = fecha
         # Don't use DEFAULT_SERVER_DATE_FORMAT here, because it's
-        # the format of the XML of ECB, not the format of Odoo server !
+        # the format of the XML of SBIF, not the format of Odoo server !
         rate_date_datetime = datetime.strptime(rate_date, '%Y-%m-%d')
         self.check_rate_date(rate_date_datetime, max_delta_days)
         # We dynamically update supported currencies
@@ -127,14 +126,14 @@ class SBIFGetter(CurrencyGetterInterface):
         self.validate_cur(main_currency)
 
         if main_currency == 'CLP':
-            main_curr_data = self.rate_retrieve(dom, ecb_ns, main_currency)
+            main_curr_data = self.rate_retrieve(dom, ecb_ns, main_currency, apikey)
         for curr in currency_array:
             self.validate_cur(curr)
             if curr == 'CLP':
                  rate = 1
 
             else:
-                curr_data = self.rate_retrieve(dom, ecb_ns, curr)
+                curr_data = self.rate_retrieve(dom, ecb_ns, curr, apikey)
                 rate = curr_data['rate_currency']
 
             self.updated_currency[curr] = rate
