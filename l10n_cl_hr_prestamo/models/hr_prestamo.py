@@ -165,13 +165,14 @@ class HrPrestamo(models.Model):
                 date_pay = datetime.strptime(str(prestamo.payment_date), '%Y-%m-%d')
                 amount = (prestamo.prestamo_amount - total_lines) / prestamo.installment
                 for i in range(1, prestamo.installment + 1):
+                    date_start = date_pay + relativedelta(months=i)
                     self.env['hr.prestamo.line'].create({
                         'date': date_start,
                         'amount': amount,
                         'currency_id': prestamo.currency_id.id,
                         'employee_id': prestamo.employee_id.id,
                         'prestamo_id': prestamo.id})
-                    date_start = date_pay + relativedelta(months=i)
+                    
 
         #for prestamo in self:
         #    date_start = datetime.strptime(str(prestamo.payment_date), '%Y-%m-%d')
