@@ -80,7 +80,7 @@ class HrPrestamo(models.Model):
     total_paid_amount = fields.Float(string="Total Paid Amount", compute='_compute_prestamo_amount')
     move_id = fields.Many2one('account.move', 'Accounting Entry', readonly=True, copy=False)
     prestamo_pending_amount = fields.Float(string="Pending Installments Amount", compute='_compute_pending_amount')
-    prestamo_pending_count = fields.Float(string="Total Paid Amount", compute='_compute_pending_amount')
+    prestamo_pending_count = fields.Float(string="N° of Pending Installments", compute='_compute_pending_amount')
 
 
     state = fields.Selection([
