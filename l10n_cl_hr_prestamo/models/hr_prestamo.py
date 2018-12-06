@@ -160,7 +160,7 @@ class HrPrestamo(models.Model):
                 self.env['hr.prestamo.line'].create({
                     'date': date_start,
                     'amount': amount,
-                    'currency_id': prestamo.currency_id.id
+                    'currency_id': prestamo.currency_id.id,
                     'employee_id': prestamo.employee_id.id,
                     'prestamo_id': prestamo.id})
                 date_start = date_start + relativedelta(months=1)
