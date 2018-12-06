@@ -132,31 +132,31 @@ class HrPrestamo(models.Model):
 
         # Read Loan Accounting Settings from res.config.settings
         ICPSudo = self.env['ir.config_parameter'].sudo()
-        config_ok = 1
+        #config_ok = 1
 
         config_read = int(ICPSudo.get_param('account.hr_emp_account_id'))
         if config_read:
             self.emp_account_id = config_read
-        else:
-            config_ok = 0
-            raise except_orm('Error:', 'Cofigure Accounting Settings for HR Loans in Odoo General Settings')
+        #else:
+        #    config_ok = 0
+        #    raise except_orm('Error:', 'Cofigure Accounting Settings for HR Loans in Odoo General Settings')
 
         config_read = int(ICPSudo.get_param('account.hr_treasury_account_id'))
         if config_read:
             self.treasury_account_id = config_read
-        else:
-            config_ok = 0
-            raise except_orm('Error:', 'Cofigure Accounting Settings for HR Loans in Odoo General Settings')
+        #else:
+        #    config_ok = 0
+        #    raise except_orm('Error:', 'Cofigure Accounting Settings for HR Loans in Odoo General Settings')
         
         config_read = int(ICPSudo.get_param('account.hr_journal_id'))
         if config_read:
             config_ok = 0
             self.journal_id = config_read
-        else:
-            config_ok = 0
-            raise except_orm('Error:', 'Cofigure Accounting Settings for HR Loans in Odoo General Settings')
-        if config_ok = 1:
-            self.write({'state': 'waiting_approval_1'})
+        #else:
+        #    config_ok = 0
+        #    raise except_orm('Error:', 'Cofigure Accounting Settings for HR Loans in Odoo General Settings')
+        #if config_ok = 1:
+        self.write({'state': 'waiting_approval_1'})
 
     @api.multi
     def action_cancel(self):
