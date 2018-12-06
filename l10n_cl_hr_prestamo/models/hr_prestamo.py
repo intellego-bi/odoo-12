@@ -132,16 +132,28 @@ class HrPrestamo(models.Model):
 
         # Read Loan Accounting Settings from res.config.settings
         ICPSudo = self.env['ir.config_parameter'].sudo()
+        config_ok = 1
         config_read = int(ICPSudo.get_param('account.hr_emp_account_id'))
         if config_read:
             self.emp_account_id = config_read
+        else:
+            config_ok = 0
+            raise except_orm('Error:', 'Cofigure Accounting Settings for HR Loans in Odoo General Settings')
         config_read = int(ICPSudo.get_param('account.hr_treasury_account_id'))
         if config_read:
             self.treasury_account_id = config_read
+        else:
+            config_ok = 0
+            raise except_orm('Error:', 'Cofigure Accounting Settings for HR Loans in Odoo General Settings')
         config_read = int(ICPSudo.get_param('account.hr_journal_id'))
         if config_read:
+            config_ok = 0
             self.journal_id = config_read
-        self.write({'state': 'waiting_approval_1'})
+        else:
+            config_ok = 0
+            raise except_orm('Error:', 'Cofigure Accounting Settings for HR Loans in Odoo General Settings')
+        if config_ok = 1:
+            self.write({'state': 'waiting_approval_1'})
 
     @api.multi
     def action_cancel(self):
@@ -161,13 +173,15 @@ class HrPrestamo(models.Model):
         based on the payment start date and the number of installments.
         """
         total_lines = 0
+        date_last = datetime.strptime(str(prestamo.payment_date), '%Y-%m-%d')
         for prestamo in self:
             for line in prestamo.prestamo_lines:
                 total_lines += line.amount
+                date_last = line.date
             if int(total_lines) >= int(prestamo.prestamo_amount):
                 raise except_orm('Warning!', 'Installments already computed')
             else:
-                date_pay = datetime.strptime(str(prestamo.payment_date), '%Y-%m-%d')
+                date_pay = date_last #datetime.strptime(str(prestamo.payment_date), '%Y-%m-%d')
                 amount = (prestamo.prestamo_amount - total_lines) / prestamo.installment
                 for i in range(1, prestamo.installment + 1):
                     date_start = date_pay + relativedelta(months=i)
