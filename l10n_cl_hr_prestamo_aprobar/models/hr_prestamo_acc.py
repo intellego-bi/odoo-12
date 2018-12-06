@@ -51,6 +51,7 @@ class HrPrestamoAcc(models.Model):
                 prestamo_name = prestamo.employee_id.name
                 reference = prestamo.name
                 journal_id = prestamo.journal_id.id
+                date = prestamo.date
                 # debit_account_id = loan.treasury_account_id.id
                 # credit_account_id = loan.emp_account_id.id
                 credit_account_id = prestamo.treasury_account_id.id
@@ -61,7 +62,7 @@ class HrPrestamoAcc(models.Model):
                     'partner_id' : prestamo.employee_id.address_home_id.id,
                     'account_id': debit_account_id,
                     'journal_id': journal_id,
-                    'date': timenow,
+                    'date': date, #timenow,
                     'debit': amount > 0.0 and amount or 0.0,
                     'credit': amount < 0.0 and -amount or 0.0,
                     'prestamo_id': prestamo.id,
@@ -72,7 +73,7 @@ class HrPrestamoAcc(models.Model):
                     'partner_id' : prestamo.employee_id.address_home_id.id,
                     'account_id': credit_account_id,
                     'journal_id': journal_id,
-                    'date': timenow,
+                    'date': date, #timenow,
                     'debit': amount < 0.0 and -amount or 0.0,
                     'credit': amount > 0.0 and amount or 0.0,
                     'prestamo_id': prestamo.id,
@@ -82,7 +83,7 @@ class HrPrestamoAcc(models.Model):
                     'narration': prestamo_name,
                     'ref': reference,
                     'journal_id': journal_id,
-                    'date': timenow,
+                    'date': date, #timenow,
                     'line_ids': [(0, 0, debit_vals), (0, 0, credit_vals)]
                 }
                 move = self.env['account.move'].create(vals)
@@ -105,6 +106,7 @@ class HrPrestamoAcc(models.Model):
             prestamo_name = prestamo.employee_id.name
             reference = prestamo.name
             journal_id = prestamo.journal_id.id
+            date = prestamo.date
             # debit_account_id = loan.treasury_account_id.id
             # credit_account_id = loan.emp_account_id.id
             credit_account_id = prestamo.treasury_account_id.id
@@ -115,7 +117,7 @@ class HrPrestamoAcc(models.Model):
                 # Insert Intellego-BI: Empleado como Partner en contabilizaciones
                 'partner_id' : prestamo.employee_id.address_home_id.id,
                 'journal_id': journal_id,
-                'date': timenow,
+                'date': date, #timenow,
                 'debit': amount > 0.0 and amount or 0.0,
                 'credit': amount < 0.0 and -amount or 0.0,
                 'prestamo_id': prestamo.id,
@@ -126,7 +128,7 @@ class HrPrestamoAcc(models.Model):
                 # Insert Intellego-BI: Empleado como Partner en contabilizaciones
                 'partner_id' : prestamo.employee_id.address_home_id.id,
                 'journal_id': journal_id,
-                'date': timenow,
+                'date': date, #timenow,
                 'debit': amount < 0.0 and -amount or 0.0,
                 'credit': amount > 0.0 and amount or 0.0,
                 'prestamo_id': prestamo.id,
@@ -136,7 +138,7 @@ class HrPrestamoAcc(models.Model):
                 'narration': prestamo_name,
                 'ref': reference,
                 'journal_id': journal_id,
-                'date': timenow,
+                'date': date, #timenow,
                 'line_ids': [(0, 0, debit_vals), (0, 0, credit_vals)]
             }
             move = self.env['account.move'].create(vals)
