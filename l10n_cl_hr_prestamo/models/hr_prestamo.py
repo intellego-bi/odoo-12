@@ -199,7 +199,7 @@ class HrEmployee(models.Model):
         self.prestamo_array = self.env['hr.prestamo'].search([('employee_id', '=', self.id), ('state', '=', 'approve')])
         pend_total = 0
         pend_count = 0
-        for loan in prestamo_array:
+        for loan in self.prestamo_array:
                 for line in loan.prestamo_lines:
                     if not line.paid:
                         pend_total += line.amount
