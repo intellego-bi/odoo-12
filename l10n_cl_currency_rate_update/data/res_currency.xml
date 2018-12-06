@@ -17,7 +17,7 @@
     </record>
 
   </data>
-  <data noupdate="1">
+  <!--<data noupdate="0">
     <record id="UF" model="res.currency">
         <field name="name">UF</field>
         <field name="symbol">UF </field>
@@ -45,6 +45,6 @@
         <field name="currency_unit_label">Unidades Tributarias Anuales</field>
         <field name="currency_subunit_label">Céntimos de UTA</field>
     </record>
-  </data>
+  </data>-->
 
 </odoo>
