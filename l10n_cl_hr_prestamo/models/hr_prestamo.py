@@ -125,6 +125,11 @@ class HrPrestamo(models.Model):
 
     @api.multi
     def action_submit(self):
+        for prestamo in self:
+            for line in prestamo.prestamo_lines:
+                if line.amount <= 0:
+                    raise except_orm('Error:', 'Enter positive installment amounts')
+
         # Read Loan Accounting Settings from res.config.settings
         ICPSudo = self.env['ir.config_parameter'].sudo()
         config_read = int(ICPSudo.get_param('account.hr_emp_account_id'))
