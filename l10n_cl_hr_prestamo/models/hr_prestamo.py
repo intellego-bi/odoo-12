@@ -31,8 +31,6 @@ class HrPrestamo(models.Model):
     _inherit = ['mail.thread', 'mail.activity.mixin']
     _description = "HR Loan Request"
 
-    #@api.one
-    #@api.onchange('prestamo_lines')
     @api.multi
     def _compute_prestamo_amount(self):
         total_paid = 0.0
@@ -45,17 +43,17 @@ class HrPrestamo(models.Model):
             self.balance_amount = balance_amount
             self.total_paid_amount = total_paid
 
-    @api.multi
-    @api.depends('prestamo_lines', 'prestamo_lines.amount', 'prestamo_lines.paid')
-    def recompute_prestamo_amount(self):
-        total_paid = 0.0
-        calc_balance_amount = 0.0
-        for prestamo in self:
-            for line in prestamo.prestamo_lines:
-                if line.paid:
-                    total_paid += line.amount
-            calc_balance_amount = prestamo.prestamo_amount - total_paid
-            self.write({'balance_amount': calc_balance_amount})
+    #@api.multi
+    #@api.depends('prestamo_lines', 'prestamo_lines.amount', 'prestamo_lines.paid')
+    #def recompute_prestamo_amount(self):
+    #    total_paid = 0.0
+    #    calc_balance_amount = 0.0
+    #    for prestamo in self:
+    #        for line in prestamo.prestamo_lines:
+    #            if line.paid:
+    #                total_paid += line.amount
+    #        calc_balance_amount = prestamo.prestamo_amount - total_paid
+    #        self.write({'balance_amount': calc_balance_amount})
 
 
     name = fields.Char(string="Loan Name", default="/", readonly=True)
@@ -78,7 +76,7 @@ class HrPrestamo(models.Model):
     prestamo_amount = fields.Float(string="Loan Amount", required=True)
     total_amount = fields.Float(string="Total Amount", readonly=True, compute='_compute_prestamo_amount')
     balance_amount = fields.Float(string="Balance Amount", compute='_compute_prestamo_amount')
-    #balance_amount = fields.Float(string="Balance Amount", compute='recompute_loan_amount', store=True) #, readonly=True)
+
     total_paid_amount = fields.Float(string="Total Paid Amount", compute='_compute_prestamo_amount')
     move_id = fields.Many2one('account.move', 'Accounting Entry', readonly=True, copy=False)
 
@@ -111,7 +109,7 @@ class HrPrestamo(models.Model):
         if pending_total:
             raise UserError(_(
                               'Error! This employee has %s pending installment(s) for a total of %s %s') % (
-                              self.env.user.company_id.currency_id.name, pend_count, pend_total))
+                              pend_count, self.env.user.company_id.currency_id.name, pend_total))
             #raise except_orm('Error!', 'This employee has pending installment(s)')
         else:
             values['name'] = self.env['ir.sequence'].get('hr.prestamo.seq') or ' '
