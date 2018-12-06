@@ -96,7 +96,7 @@ class HrPrestamo(models.Model):
         prestamo_count = self.env['hr.prestamo'].search_count([('employee_id', '=', values['employee_id']), ('state', '=', 'approve'),
                                                        ('balance_amount', '!=', 0)])
         prestamo_array = self.env['hr.prestamo'].search([('employee_id', '=', values['employee_id']), ('state', '=', 'approve')])
-        pending_total = 0.0
+        pending_total = 0
         pending_count = 0
         for loan in prestamo_array:
                 for line in loan.prestamo_lines:
@@ -104,7 +104,7 @@ class HrPrestamo(models.Model):
                         pending_total += line.amount
                         pending_count += 1
         
-        pend_total = str(pending_total)
+        pend_total = str(format(pending_total,',d'))
         pend_count = str(pending_count)
 
         #if prestamo_count:
