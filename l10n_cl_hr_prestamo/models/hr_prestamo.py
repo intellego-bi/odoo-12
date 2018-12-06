@@ -178,16 +178,16 @@ class HrPrestamo(models.Model):
         total_lines = 0
         
         for prestamo in self:
-            #date_pay = datetime.strptime(str(prestamo.payment_date), '%Y-%m-%d')
+            date_pay = datetime.strptime(str(prestamo.payment_date), '%Y-%m-%d')
             for line in prestamo.prestamo_lines:
                 total_lines += line.amount
-                #date_last = datetime.strptime(str(line.date), '%Y-%m-%d')
-            #if int(total_lines) > 0:
-            #   date_pay = date_last 
+                date_last = datetime.strptime(str(line.date), '%Y-%m-%d')
+            if int(total_lines) > 0:
+               date_pay = date_last 
             if int(total_lines) >= int(prestamo.prestamo_amount):
                 raise except_orm('Warning!', 'Installments already computed')
             else:
-                date_pay = datetime.strptime(str(prestamo.payment_date), '%Y-%m-%d')
+                #date_pay = datetime.strptime(str(prestamo.payment_date), '%Y-%m-%d')
                 amount = (prestamo.prestamo_amount - total_lines) / prestamo.installment
                 for i in range(1, prestamo.installment + 1):
                     date_start = date_pay + relativedelta(months=i)
