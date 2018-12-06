@@ -176,8 +176,9 @@ class HrPrestamo(models.Model):
         based on the payment start date and the number of installments.
         """
         total_lines = 0
-        date_pay = datetime.strptime(str(prestamo.payment_date), '%Y-%m-%d')
+        
         for prestamo in self:
+            date_pay = datetime.strptime(str(prestamo.payment_date), '%Y-%m-%d')
             for line in prestamo.prestamo_lines:
                 total_lines += line.amount
                 date_last = datetime.strptime(str(line.date), '%Y-%m-%d')
