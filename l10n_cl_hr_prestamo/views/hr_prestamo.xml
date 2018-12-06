@@ -64,7 +64,7 @@
 
                     <notebook>
                         <page string="Installments">
-                            <field name="prestamo_lines">
+                            <field name="prestamo_lines" attrs="{'readonly':[('state','=','approve')]}">
                                 <tree string="Installments" editable="bottom">
                                     <field name="date"/>
                                     <field name="amount" widget="monetary" options="{'currency_field': 'currency_id'}" attrs="{'readonly':[('payslip_id', '>=','1')]}"/>
