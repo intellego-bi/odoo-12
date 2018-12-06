@@ -144,7 +144,7 @@ class HrPayslipAnalytic(models.Model):
                 line_ids.append(adjust_debit)
             move_dict['line_ids'] = line_ids
             move = self.env['account.move'].create(move_dict)
-            slip.write({'move_id': move.id, 'date': date})
+            #slip.write({'move_id': move.id, 'date': date})
             #move.post()
             return super(HrPayslipAnalytic, self).action_payslip_done()
 
