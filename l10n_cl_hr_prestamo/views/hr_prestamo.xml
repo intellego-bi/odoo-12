@@ -70,7 +70,7 @@
                                     <!--<field name="paid" readonly="1" invisible="1"/>-->
                                     <field name="paid" readonly="1" widget="toggle_button"/>
                                     <field name="payslip_id" readonly="1"/>
-                                    <!-- <field name="move_id" readonly="1"/> -->
+                                    <field name="payslip_id.move_id" readonly="1"/>
                                 </tree>
                             </field>
                             <group class="oe_subtotal_footer oe_right" colspan="2" >
