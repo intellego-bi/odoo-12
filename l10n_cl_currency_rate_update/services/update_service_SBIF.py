@@ -43,7 +43,6 @@ class SBIFGetter(CurrencyGetterInterface):
            apikey = 'e96f651e08214ed0060771f21d11cdeb3b8b3305'
 
         sbifurl = 'https://api.sbif.cl/api-sbifv3/recursos_api/dolar/?apikey=' + apikey + '&formato=xml'
-        rep = requests.get(sbifurl, allow_redirects=True)
 
         req = requests.get(sbifurl, allow_redirects=True)
         if req.status_code == 200:
