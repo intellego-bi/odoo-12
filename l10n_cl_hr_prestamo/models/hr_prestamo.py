@@ -177,7 +177,7 @@ class InstallmentLine(models.Model):
     paid = fields.Boolean(string="Paid")
     prestamo_id = fields.Many2one('hr.prestamo', string="Loan Ref.")
     payslip_id = fields.Many2one('hr.payslip', string="Payslip Ref.")
-    move_id = fields.Many2one('account.move', string="Accounting Entry")
+    move_id = fields.Many2one('account.move', related="payslip_id.move_id", string="Accounting Entry")
 
 
 
