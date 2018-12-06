@@ -53,8 +53,8 @@ class HrPrestamo(models.Model):
                     if not line.paid:
                         pend_total += line.amount
                         pend_count += 1
-        self.emp_pending_amount = pend_total
-        self.emp_pending_count = pend_count
+        self.prestamo_pending_amount = pend_total
+        self.prestamo_pending_count = pend_count
 
 
     name = fields.Char(string="Loan Name", default="/", readonly=True)
@@ -79,8 +79,8 @@ class HrPrestamo(models.Model):
     balance_amount = fields.Float(string="Balance Amount", compute='_compute_prestamo_amount')
     total_paid_amount = fields.Float(string="Total Paid Amount", compute='_compute_prestamo_amount')
     move_id = fields.Many2one('account.move', 'Accounting Entry', readonly=True, copy=False)
-    emp_pending_amount = fields.Float(string="Pending Installments Amount", compute='_compute_pending_amount')
-    emp_pending_count = fields.Float(string="Total Paid Amount", compute='_compute_pending_amount')
+    prestamo_pending_amount = fields.Float(string="Pending Installments Amount", compute='_compute_pending_amount')
+    prestamo_pending_count = fields.Float(string="Total Paid Amount", compute='_compute_pending_amount')
 
 
     state = fields.Selection([
@@ -195,7 +195,20 @@ class HrEmployee(models.Model):
         """This compute the loan amount and total loans count of an employee.
             """
         self.prestamo_count = self.env['hr.prestamo'].search_count([('employee_id', '=', self.id)])
+        
+        self.prestamo_array = self.env['hr.prestamo'].search([('employee_id', '=', self.id), ('state', '=', 'approve')])
+        pend_total = 0
+        pend_count = 0
+        for loan in prestamo_array:
+                for line in loan.prestamo_lines:
+                    if not line.paid:
+                        pend_total += line.amount
+                        pend_count += 1
+        self.emp_pending_amount = pend_total
+        self.emp_pending_count = pend_count
+
 
     prestamo_count = fields.Integer(string="Loan Count", compute='_compute_employee_prestamo')
-
+    emp_pending_amount = fields.Float(string="Pending Installments Amount", compute='_compute_employee_prestamo')
+    emp_pending_count = fields.Float(string="Number of Pending Installments", compute='_compute_employee_prestamo')
 
