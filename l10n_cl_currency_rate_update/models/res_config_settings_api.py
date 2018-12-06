@@ -45,7 +45,7 @@ class AccCurrConfig(models.TransientModel):
 
     @api.multi
     def set_values(self):
-        super(AccConfig, self).set_values()
+        super(AccCurrConfig, self).set_values()
         ICPSudo = self.env['ir.config_parameter'].sudo()
         ICPSudo.set_param('account.cl_update_active', self.cl_update_active)
         ICPSudo.set_param('account.cl_sbif_api_key', self.cl_sbif_api_key)
