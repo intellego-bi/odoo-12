@@ -102,7 +102,7 @@ class HrPrestamo(models.Model):
                 for line in loan.prestamo_lines:
                     if not line.paid:
                         pending_total += line.amount
-                        pending_count +=
+                        #pending_count +=
         
         pend_total = str(pending_total)
         pend_count = str(pending_count)
