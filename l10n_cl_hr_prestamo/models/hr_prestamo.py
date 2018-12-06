@@ -160,7 +160,7 @@ class HrPrestamo(models.Model):
         for prestamo in self:
             for line in loan.prestamo_lines:
                 total_lines += line.amount
-            if int(total_lines) == int(prestamo.prestamo_amount)
+            if int(total_lines) == int(prestamo.prestamo_amount):
                 raise except_orm('Warning!', 'Installments already computed')
 
         for prestamo in self:
