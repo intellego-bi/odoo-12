@@ -17,7 +17,7 @@ import xmltodict as xm
 
 # Read Settings from res.config.settings
 ICPSudo = self.env['ir.config_parameter'].sudo()
-config_read = int(ICPSudo.get_param('account.cl_sbif_api_key'))
+config_read = ICPSudo.get_param('account.cl_sbif_api_key')
 if config_read:
    apikey = config_read
 else:
@@ -52,7 +52,7 @@ class SBIFGetter(CurrencyGetterInterface):
         """
         # Read Settings from res.config.settings
         ICPSudo = self.env['ir.config_parameter'].sudo()
-        config_read = int(ICPSudo.get_param('account.cl_sbif_api_key'))
+        config_read = ICPSudo.get_param('account.cl_sbif_api_key')
         if config_read:
            apikey = config_read
         else:
