@@ -45,7 +45,7 @@ class HrPrestamo(models.Model):
 
     @api.multi
     def _compute_pending_amount(self):
-        prestamo_array = self.env['hr.prestamo'].search([('employee_id', '=', values['employee_id']), ('state', '=', 'approve')])
+        prestamo_array = self.env['hr.prestamo'].search([('employee_id', '=', 'self.employee_id.id']), ('state', '=', 'approve')])
         pend_total = 0
         pend_count = 0
         for loan in prestamo_array:
