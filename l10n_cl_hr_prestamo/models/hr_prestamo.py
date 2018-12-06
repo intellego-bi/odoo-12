@@ -56,7 +56,7 @@ class HrPrestamo(models.Model):
         self.prestamo_pending_count = pend_count
 
     name = fields.Char(string="Loan Name", default="/", readonly=True)
-    date = fields.Date(string="Date", default=fields.Date.today(), readonly=True)
+    date = fields.Date(string="Request Date", default=fields.Date.today(), readonly=False)
     employee_id = fields.Many2one('hr.employee', string="Employee", required=True)
     department_id = fields.Many2one('hr.department', related="employee_id.department_id", readonly=True,
                                     string="Department")
