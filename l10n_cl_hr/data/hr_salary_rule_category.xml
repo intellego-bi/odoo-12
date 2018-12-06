@@ -43,7 +43,7 @@
         </record>                       
 
         <record id="ANTICIPO" model="hr.salary.rule.category">                      
-            <field name="name">Anticipos</field>                     
+            <field name="name">Anticipo Primera Quincena</field>                     
             <field name="code">ANTICIPO</field>                     
         </record>                       
  

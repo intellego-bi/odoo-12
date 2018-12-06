@@ -771,6 +771,27 @@ result = round(SECEEMP) + round(SIS) + round(MUT) + round(SC)</field>
             <field name="amount_python_compute">result = HAB - TDE</field>
         </record>
 
+        <!-- Regla para Anticipo Quincena por Contrato -->
+        <record id="hr_payslip_rule_anticipo" model="hr.salary.rule">
+            <field name="code">ANTICIPO</field>
+            <field name="name">Anticipo Primera Quincena</field>
+            <field name="category_id" ref="l10n_cl_hr.ANTICIPO"/>
+            <field name="account_debit" ref="l10n_cl_coa.1_cl_coa_mfg_21050150"/>
+            <field name="account_credit" ref="l10n_cl_coa.1_cl_coa_mfg_11050100"/>
+            <field name="register_id" ref="hr_payroll.contrib_register_employees"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="active">True</field>
+            <field name="amount_python_compute">try:
+ calc = contract.anticipo_sueldo
+except:
+ calc = 0
+if inputs.ASUE and inputs.ASUE.amount > 0:
+ calc = inputs.ASUE.amount
+result = calc</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name="sequence" eval="1"/>
+        </record>
 
         <!-- Reglas Addons Nómina Chile -->
 
@@ -991,7 +1012,7 @@ result = round(SECEEMP) + round(SIS) + round(MUT) + round(SC)</field>
 
     <record id="hr_struct_cl" model="hr.payroll.structure">
             <field name="name">Chile :: Nómina Base - Código de Trabajo</field>
-            <field name="code">CL Nómina Base</field>
+            <field name="code">CL-Base</field>
             <field name="parent_id"></field>
             <field eval="[(6, 0, [
                               ref('hr_rule_1'), 
@@ -1045,7 +1066,7 @@ result = round(SECEEMP) + round(SIS) + round(MUT) + round(SC)</field>
         </record>
        <record id="hr_struct_cl_fin" model="hr.payroll.structure">
             <field name="name">Chile :: Finiquito</field>
-            <field name="code">CL Finiquito</field>
+            <field name="code">CL-Finiquito</field>
             <field name="parent_id" ref="hr_struct_cl"/>
             <field eval="[(6, 0, [
                               ref('hr_rule_fin'),
@@ -1054,5 +1075,15 @@ result = round(SECEEMP) + round(SIS) + round(MUT) + round(SC)</field>
                               ref('hr_rule_fin_ifp')
                               ])]" name="rule_ids"/>
         </record>
+
+        <!-- Estructura para Anticipo Primera Quincena -->
+        <record id="hr_struct_cl_ant" model="hr.payroll.structure">
+            <field name="name">Chile :: Anticipo Primera Quincena</field>
+            <field name="code">CL-Anticipo</field>
+            <field eval="[(6, 0, [                              
+                              ref('hr_payslip_rule_anticipo')
+                              ])]" name="rule_ids"/>
+        </record>
+
     </data>
 </odoo>
