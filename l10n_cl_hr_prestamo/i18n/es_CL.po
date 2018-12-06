@@ -36,6 +36,26 @@ msgstr "Error: este empleado tiene %s cuotas pendientes por un total de %s %s ad
 msgid "Number of Pending Installments"
 msgstr "N° Cuotas x Pagar"
 
+#. module: l10n_cl_hr_prestamo
+#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__prestamo_pending_count
+msgid "N° of Pending Installments"
+msgstr "N° Cuotas x Pagar"
+
+#. module: l10n_cl_hr_prestamo
+#: model:ir.model,name:l10n_cl_hr_prestamo.model_hr_payslip
+msgid "Pay Slip"
+msgstr "Nómina"
+
+#. module: l10n_cl_hr_prestamo
+#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_employee__emp_pending_amount
+#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__prestamo_pending_amount
+msgid "Pending Installments Amount"
+msgstr "Monto Cuotas Pendientes"
+
+#. module: l10n_cl_hr_prestamo
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr_prestamo.hr_prestamo_form_view
+msgid "Pending Loans"
+msgstr "Préstamos Pendientes"
 
 #. module: l10n_cl_hr_prestamo
 #: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__move_id
@@ -422,6 +442,7 @@ msgstr "Usuario responsable"
 #, python-format
 msgid "Salary Slip of %s for %s"
 msgstr "Liquidación de %s a %s"
+
 
 #. module: l10n_cl_hr_prestamo
 #: model:ir.ui.menu,name:l10n_cl_hr_prestamo.menu_base_hr_prestamo_request
