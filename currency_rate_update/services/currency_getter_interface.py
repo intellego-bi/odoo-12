@@ -168,3 +168,15 @@ class CurrencyGetterInterface(object, metaclass=CurrencyGetterType):
                 (rate_date_str, fields.Date.today())
             self.log_info = ("\n WARNING : %s") % msg
             _logger.warning(msg)
+
+
+    def get_apikey(self):
+        """Return a string of a API Key"""
+                # Read Settings from res.config.settings
+        ICPSudo = self.env['ir.config_parameter'].sudo()
+        config_read = ICPSudo.get_param('account.cl_sbif_api_key')
+        if config_read:
+           apikey = config_read
+
+        return apikey
+

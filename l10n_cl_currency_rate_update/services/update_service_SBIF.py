@@ -44,10 +44,7 @@ class SBIFGetter(CurrencyGetterInterface):
         currencies data
 
         """
-
-        # Read Settings from res.config.settings
-        ICPSudo = self.env['ir.config_parameter'].sudo()
-        config_read = ICPSudo.get_param('account.cl_sbif_api_key')
+        config_read = self.get_apikey()
         if config_read:
            apikey = config_read
         else:
@@ -71,7 +68,6 @@ class SBIFGetter(CurrencyGetterInterface):
            sbifurl = 'https://api.sbif.cl/api-sbifv3/recursos_api/dolar/?apikey=' + apikey + '&formato=xml'
            el1 = '''Dolares'''
            el2 = '''Dolar'''
-
 
         if curr == 'UF':
            sbifurl = 'https://api.sbif.cl/api-sbifv3/recursos_api/uf/?apikey=' + apikey + '&formato=xml'
