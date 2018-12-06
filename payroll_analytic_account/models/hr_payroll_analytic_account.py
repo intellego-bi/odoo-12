@@ -55,8 +55,23 @@ class HrPayslipAnalytic(models.Model):
         return super(HrPayslipAnalytic, self).action_payslip_cancel()
 
     @api.multi
+    def compute_sheet(self):
+        for payslip in self:
+            number = payslip.number or self.env['ir.sequence'].next_by_code('salary.slip')
+            # delete old payslip lines
+            payslip.line_ids.unlink()
+            # set the list of contract for which the rules have to be applied
+            # if we don't give the contract, then the rules to apply should be for all current contracts of the employee
+            contract_ids = payslip.contract_id.ids or \
+                self.get_contract(payslip.employee_id, payslip.date_from, payslip.date_to)
+            lines = [(0, 0, line) for line in self._get_payslip_lines(contract_ids, payslip.id)]
+            payslip.write({'line_ids': lines, 'number': number})
+        return True
+
+    @api.multi
     def action_payslip_done(self):
         precision = self.env['decimal.precision'].precision_get('Payroll')
+        self.compute_sheet()
 
         for slip in self:
             line_ids = []
@@ -146,14 +161,9 @@ class HrPayslipAnalytic(models.Model):
             move = self.env['account.move'].create(move_dict)
             slip.write({'move_id': move.id, 'date': date})
             move.post()
+            # We set the state to done and dont call the Super Class to avoid double posting
             return self.write({'state': 'done'})
-
-
-        
-
-
-
-
+    
 
 class HrSalaryRule(models.Model):
     _inherit = 'hr.salary.rule'
