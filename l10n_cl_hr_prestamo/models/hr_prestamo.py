@@ -104,7 +104,7 @@ class HrPrestamo(models.Model):
                         pending_total += line.amount
                         pending_count += 1
         
-        pend_total = str('{0:.}'.format(pending_total))
+        pend_total = str('{:.0f}'.format(pending_total))
         pend_count = str(pending_count)
 
         #if prestamo_count:
