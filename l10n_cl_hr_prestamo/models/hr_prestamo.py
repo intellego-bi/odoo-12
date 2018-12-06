@@ -171,6 +171,7 @@ class InstallmentLine(models.Model):
     _name = "hr.prestamo.line"
     _description = "Installment Line"
 
+    currency_id = fields.Many2one('res.currency', string='Currency', required=True, default=lambda self: self.env.user.company_id.currency_id)
     date = fields.Date(string="Payment Date", required=True)
     employee_id = fields.Many2one('hr.employee', string="Employee")
     amount = fields.Float(string="Amount", required=True)
