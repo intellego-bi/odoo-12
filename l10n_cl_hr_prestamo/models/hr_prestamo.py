@@ -45,7 +45,6 @@ class HrPrestamo(models.Model):
 
     @api.multi
     def _compute_pending_amount(self):
-        #prestamo_array = self.env['hr.prestamo'].search([('employee_id', '=', self.employee_id.id]), ('state', '=', 'approve')])
         pend_total = 0
         pend_count = 0
         for loan in self:
@@ -55,7 +54,6 @@ class HrPrestamo(models.Model):
                         pend_count += 1
         self.prestamo_pending_amount = pend_total
         self.prestamo_pending_count = pend_count
-
 
     name = fields.Char(string="Loan Name", default="/", readonly=True)
     date = fields.Date(string="Date", default=fields.Date.today(), readonly=True)
@@ -105,9 +103,6 @@ class HrPrestamo(models.Model):
                     if not line.paid:
                         pending_total += line.amount
                         pending_count += 1
-
-        #self.prestamo_pending_amount = int(pending_total)
-        #self.prestamo_pending_count = pending_count
         
         pend_total = str('{0:,.0f}'.format(pending_total)).replace(",", ".")
         pend_count = str(pending_count)
@@ -130,7 +125,8 @@ class HrPrestamo(models.Model):
         for prestamo in self:
             for line in prestamo.prestamo_lines:
                 if line.amount <= 0:
-                    raise except_orm('Error:', 'Enter positive installment amounts')
+                    raise UserError(_(
+                              'Error: Enter positive installment amounts'))
 
         # Read Loan Accounting Settings from res.config.settings
         ICPSudo = self.env['ir.config_parameter'].sudo()
@@ -159,7 +155,8 @@ class HrPrestamo(models.Model):
     def action_approve(self):
         for data in self:
             if not data.prestamo_lines:
-                raise except_orm('Error!', 'Please Compute installment')
+                raise UserError(_(
+                              'Error! Please Compute installment'))
             else:
                 self.write({'state': 'approve'})
 
@@ -180,7 +177,6 @@ class HrPrestamo(models.Model):
             if int(total_lines) >= int(prestamo.prestamo_amount):
                 raise except_orm('Warning!', 'Installments already computed')
             else:
-                #date_pay = datetime.strptime(str(prestamo.payment_date), '%Y-%m-%d')
                 amount = (prestamo.prestamo_amount - total_lines) / prestamo.installment
                 for i in range(1, prestamo.installment + 1):
                     date_start = date_pay + relativedelta(months=i)
@@ -190,19 +186,7 @@ class HrPrestamo(models.Model):
                         'currency_id': prestamo.currency_id.id,
                         'employee_id': prestamo.employee_id.id,
                         'prestamo_id': prestamo.id})
-                    
 
-        #for prestamo in self:
-        #    date_start = datetime.strptime(str(prestamo.payment_date), '%Y-%m-%d')
-        #    amount = prestamo.prestamo_amount / prestamo.installment
-        #    for i in range(1, prestamo.installment + 1):
-        #        self.env['hr.prestamo.line'].create({
-        #            'date': date_start,
-        #            'amount': amount,
-        #            'currency_id': prestamo.currency_id.id,
-        #            'employee_id': prestamo.employee_id.id,
-        #            'prestamo_id': prestamo.id})
-        #        date_start = date_start + relativedelta(months=1)
         return True
 
 
