@@ -786,8 +786,7 @@ result = round(SECEEMP) + round(SIS) + round(MUT) + round(SC)</field>
  calc = contract.anticipo_sueldo
 except:
  calc = 0
-if inputs.ASUE and inputs.ASUE.amount > 0:
- calc = inputs.ASUE.amount
+
 result = calc</field>
             <field name="appears_on_payslip" eval="True"/>
             <field name="sequence" eval="1"/>
