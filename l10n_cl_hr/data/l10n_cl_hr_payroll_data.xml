@@ -1080,7 +1080,7 @@ result = calc</field>
         <record id="hr_struct_cl_ant" model="hr.payroll.structure">
             <field name="name">Chile :: Anticipo Primera Quincena</field>
             <field name="code">CL-Anticipo</field>
-            <field name="parent_id">""</field>
+            <field name="parent_id"></field>
             <field eval="[(6, 0, [
                               ref('hr_payslip_rule_anticipo')
                               ])]" name="rule_ids"/>
