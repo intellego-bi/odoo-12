@@ -15,23 +15,6 @@ _logger = logging.getLogger(__name__)
 import requests
 import xmltodict as xm
 
-# Read Settings from res.config.settings
-ICPSudo = self.env['ir.config_parameter'].sudo()
-config_read = ICPSudo.get_param('account.cl_sbif_api_key')
-if config_read:
-   apikey = config_read
-else:
-   apikey = 'e96f651e08214ed0060771f21d11cdeb3b8b3305'
-
-sbifurl = 'https://api.sbif.cl/api-sbifv3/recursos_api/dolar/?apikey=' + apikey + '&formato=xml'
-rep = requests.get(sbifurl, allow_redirects=True)
-
-req = requests.get(sbifurl, allow_redirects=True)
-if req.status_code == 200:
-    docs = xm.parse(req.content)
-    fecha = docs['IndicadoresFinancieros']['Dolares']['Dolar']['Fecha']
-else:
-    fecha = datetime.today().strftime('%Y-%m-%d')
 
 class SBIFGetter(CurrencyGetterInterface):
     """Implementation of Currency_getter_factory interface
@@ -50,6 +33,7 @@ class SBIFGetter(CurrencyGetterInterface):
         currencies data
 
         """
+
         # Read Settings from res.config.settings
         ICPSudo = self.env['ir.config_parameter'].sudo()
         config_read = ICPSudo.get_param('account.cl_sbif_api_key')
@@ -57,6 +41,16 @@ class SBIFGetter(CurrencyGetterInterface):
            apikey = config_read
         else:
            apikey = 'e96f651e08214ed0060771f21d11cdeb3b8b3305'
+
+        sbifurl = 'https://api.sbif.cl/api-sbifv3/recursos_api/dolar/?apikey=' + apikey + '&formato=xml'
+        rep = requests.get(sbifurl, allow_redirects=True)
+
+        req = requests.get(sbifurl, allow_redirects=True)
+        if req.status_code == 200:
+            docs = xm.parse(req.content)
+            fecha = docs['IndicadoresFinancieros']['Dolares']['Dolar']['Fecha']
+        else:
+            fecha = datetime.today().strftime('%Y-%m-%d')
 
         res = {}
         el1 = '''Dolares'''
