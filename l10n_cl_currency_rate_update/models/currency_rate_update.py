@@ -139,12 +139,6 @@ class CurrencyRateUpdateService(models.Model):
                 'Starting to refresh currencies with service %s (company: %s)',
                 srv.service, srv.company_id.name)
 
-            # Read Loan Accounting Settings from res.config.settings
-            ICPSudo = self.env['ir.config_parameter'].sudo()
-            config_read = int(ICPSudo.get_param('account.cl_sbif_api_key'))
-            if config_read:
-               sbif_api_key = config_read
-
             company = srv.company_id
             # The multi company currency can be set or no so we handle
             # The two case
