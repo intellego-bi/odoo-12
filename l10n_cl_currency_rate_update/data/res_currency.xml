@@ -17,7 +17,7 @@
     </record>
 
   </data>
-  <data noupdate="0">
+  <data noupdate="1">
     <record id="UF" model="res.currency">
         <field name="name">UF</field>
         <field name="symbol">UF </field>
