@@ -50,8 +50,8 @@
                     <group>
                         <group string="Requesting Employee">
                             <field name="employee_id" options="{'no_create': True}" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
-                            <field name="department" readonly="True"/>
-                            <field name="job_position" readonly="True" options="{'no_create': True}"/>
+                            <field name="department_id" readonly="True"/>
+                            <!--<field name="job_position" readonly="True" options="{'no_create': True}"/>-->
                             <field name="company_id" options="{'no_create': True}" groups="base.group_multi_company"/>
                             <field name="currency_id" options="{'no_create': True}" groups="base.group_multi_company"/>
                                 
