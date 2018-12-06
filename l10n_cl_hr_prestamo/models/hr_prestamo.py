@@ -48,14 +48,14 @@ class HrPrestamo(models.Model):
     @api.multi
     @api.depends('prestamo_lines', 'prestamo_lines.amount', 'prestamo_lines.paid')
     def recompute_prestamo_amount(self):
-        total_paid = 0.0
-        calc_balance_amount = 0.0
-        for prestamo in self:
-            for line in prestamo.prestamo_lines:
-                if line.paid:
-                    total_paid += line.amount
-            calc_balance_amount = prestamo.prestamo_amount - total_paid
-            self.write({'balance_amount': calc_balance_amount})
+        #total_paid = 0.0
+        #calc_balance_amount = 0.0
+        #for prestamo in self:
+        #    for line in prestamo.prestamo_lines:
+        #        if line.paid:
+        #            total_paid += line.amount
+        #    calc_balance_amount = prestamo.prestamo_amount - total_paid
+        #    self.write({'balance_amount': calc_balance_amount})
 
 
     name = fields.Char(string="Loan Name", default="/", readonly=True)
@@ -102,15 +102,15 @@ class HrPrestamo(models.Model):
                 for line in loan.prestamo_lines:
                     if not line.paid:
                         pending_total += line.amount
-                        #pending_count +=
+                        pending_count +=
         
-        pend_total = str(pending_total)
+        pend_total = str(int(pending_total))
         pend_count = str(pending_count)
 
         #if prestamo_count:
         if pending_total:
             raise UserError(_(
-                              'Error! This employee has "%s" pending installment(s) for a total of "%s"') % (
+                              'Error! This employee has %s pending installment(s) for a total of %s') % (
                               pend_count, pend_total))
             #raise except_orm('Error!', 'This employee has pending installment(s)')
         else:
