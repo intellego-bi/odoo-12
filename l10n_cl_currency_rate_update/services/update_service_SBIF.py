@@ -25,6 +25,14 @@ if req.status_code == 200:
 else:
     fecha = datetime.today().strftime('%Y-%m-%d')
 
+# Read Settings from res.config.settings
+ICPSudo = self.env['ir.config_parameter'].sudo()
+config_read = ICPSudo.get_param('account.cl_sbif_api_key')
+if config_read:
+    apikey = config_read
+else:
+    apikey = 'e96f651e08214ed0060771f21d11cdeb3b8b3305'
+
 class SBIFGetter(CurrencyGetterInterface):
     """Implementation of Currency_getter_factory interface
     for SBIF service
@@ -43,13 +51,7 @@ class SBIFGetter(CurrencyGetterInterface):
 
         """
 
-        # Read Settings from res.config.settings
-        ICPSudo = self.env['ir.config_parameter'].sudo()
-        config_read = ICPSudo.get_param('account.cl_sbif_api_key')
-        if config_read:
-           apikey = config_read
-        else:
-           apikey = 'e96f651e08214ed0060771f21d11cdeb3b8b3305'
+
 
         sbifurl = 'https://api.sbif.cl/api-sbifv3/recursos_api/dolar/?apikey=' + apikey + '&formato=xml'
 
