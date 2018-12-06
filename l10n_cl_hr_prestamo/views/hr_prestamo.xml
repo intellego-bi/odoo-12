@@ -7,8 +7,8 @@
         <field name="model">hr.prestamo</field>
         <field name="arch" type="xml">
             <tree string="Loan Requests">
-                <field name="name"/>
                 <field name="employee_id"/>
+                <field name="name"/>
                 <field name="date"/>
                 <field name="state"/>
                 <field name="prestamo_amount" widget="monetary" options="{'currency_field': 'currency_id'}"/>
