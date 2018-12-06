@@ -106,8 +106,8 @@ class HrPrestamo(models.Model):
                         pending_total += line.amount
                         pending_count += 1
 
-        self.prestamo_pending_amount = pending_total
-        self.prestamo_pending_count = pending_count
+        #self.prestamo_pending_amount = int(pending_total)
+        #self.prestamo_pending_count = pending_count
         
         pend_total = str('{0:,.0f}'.format(pending_total)).replace(",", ".")
         pend_count = str(pending_count)
