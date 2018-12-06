@@ -155,6 +155,14 @@ class HrPrestamo(models.Model):
         """This automatically create the installment the employee need to pay to
         company based on payment start date and the no of installments.
             """
+        pending_total = 0
+        pending_count = 0
+        for prestamo in self:
+            for line in loan.prestamo_lines:
+                total_lines += line.amount
+            if int(total_lines) == int(prestamo.prestamo_amount)
+                raise except_orm('Warning!', 'Installments already computed')
+
         for prestamo in self:
             date_start = datetime.strptime(str(prestamo.payment_date), '%Y-%m-%d')
             amount = prestamo.prestamo_amount / prestamo.installment
