@@ -155,8 +155,8 @@ class HrPrestamo(models.Model):
         #else:
         #    config_ok = 0
         #    raise except_orm('Error:', 'Cofigure Accounting Settings for HR Loans in Odoo General Settings')
-        #if config_ok = 1:
-        self.write({'state': 'waiting_approval_1'})
+        if self.journal_id:
+            self.write({'state': 'waiting_approval_1'})
 
     @api.multi
     def action_cancel(self):
