@@ -146,6 +146,8 @@ class HrPayslipAnalytic(models.Model):
             move = self.env['account.move'].create(move_dict)
             slip.write({'move_id': move.id, 'date': date})
             move.post()
+            return super(HrPayslipAnalytic, self).action_payslip_done()
+
         
 
 
@@ -156,11 +158,4 @@ class HrSalaryRule(models.Model):
     _inherit = 'hr.salary.rule'
     account_analytic_true = fields.Boolean('Analytic Account in Contract')
 
-
-class HrPayslipAnalyticAccount(models.Model):
-    _inherit = 'hr.payslip'
-
-    @api.multi
-    def action_payslip_done(self):
-        return super(HrPayslipAnalyticAccount, self).action_payslip_done()
 
