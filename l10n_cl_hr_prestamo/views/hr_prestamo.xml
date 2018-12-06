@@ -9,9 +9,9 @@
             <tree string="Loan Requests">
                 <field name="name"/>
                 <field name="employee_id"/>
-                <field name="prestamo_amount" widget="monetary" options="{'currency_field': 'currency_id'}"/>
                 <field name="date"/>
                 <field name="state"/>
+                <field name="prestamo_amount" widget="monetary" options="{'currency_field': 'currency_id'}"/>
                 <field name="prestamo_pending_amount" widget="monetary" options="{'currency_field': 'currency_id'}"/>
                 <field name="prestamo_pending_count"/>
             </tree>
