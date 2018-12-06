@@ -776,8 +776,8 @@ result = round(SECEEMP) + round(SIS) + round(MUT) + round(SC)</field>
             <field name="code">ANTICIPO</field>
             <field name="name">Anticipo Primera Quincena</field>
             <field name="category_id" ref="l10n_cl_hr.ANTICIPO"/>
-            <field name="account_debit" ref="l10n_cl_coa.1_cl_coa_mfg_21050150"/>
-            <field name="account_credit" ref="l10n_cl_coa.1_cl_coa_mfg_11050100"/>
+            <field name="account_debit" ref="l10n_cl_coa.1_cl_coa_mfg_11050100"/>
+            <field name="account_credit" ref="l10n_cl_coa.1_cl_coa_mfg_21050150"/>
             <field name="register_id" ref="hr_payroll.contrib_register_employees"/>
             <field name="condition_select">none</field>
             <field name="amount_select">code</field>
@@ -1080,6 +1080,7 @@ result = calc</field>
         <record id="hr_struct_cl_ant" model="hr.payroll.structure">
             <field name="name">Chile :: Anticipo Primera Quincena</field>
             <field name="code">CL-Anticipo</field>
+            <field name="parent_id">""</field>
             <field eval="[(6, 0, [
                               ref('hr_payslip_rule_anticipo')
                               ])]" name="rule_ids"/>
