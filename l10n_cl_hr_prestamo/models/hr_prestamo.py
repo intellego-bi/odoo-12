@@ -155,8 +155,7 @@ class HrPrestamo(models.Model):
         """This automatically creates payment installment plan for the Loan
         based on the payment start date and the number of installments.
         """
-        pending_total = 0
-        pending_count = 0
+        total_lines = 0
         for prestamo in self:
             for line in prestamo.prestamo_lines:
                 total_lines += line.amount
