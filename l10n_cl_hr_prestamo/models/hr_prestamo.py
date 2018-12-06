@@ -45,9 +45,9 @@ class HrPrestamo(models.Model):
             self.balance_amount = balance_amount
             self.total_paid_amount = total_paid
 
-    @api.multi
-    @api.depends('prestamo_lines', 'prestamo_lines.amount', 'prestamo_lines.paid')
-    def recompute_prestamo_amount(self):
+    #@api.multi
+    #@api.depends('prestamo_lines', 'prestamo_lines.amount', 'prestamo_lines.paid')
+    #def recompute_prestamo_amount(self):
         #total_paid = 0.0
         #calc_balance_amount = 0.0
         #for prestamo in self:
