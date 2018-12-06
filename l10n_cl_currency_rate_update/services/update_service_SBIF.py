@@ -15,6 +15,7 @@ _logger = logging.getLogger(__name__)
 import requests
 import xmltodict as xm
 
+rep = {}
 
 class SBIFGetter(CurrencyGetterInterface):
     """Implementation of Currency_getter_factory interface
