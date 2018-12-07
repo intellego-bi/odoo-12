@@ -19,7 +19,7 @@
         <menuitem action="hr_contract.action_hr_contract"                id="hr_contract.hr_menu_contract"         parent="menu_cl_hr_payroll_master_data"        sequence="4"    groups="hr_contract.group_hr_contract_manager" name="Contracts"/>
         <menuitem action="hr.open_view_categ_form"                       id="hr.menu_view_employee_category_form"  parent="menu_cl_hr_payroll_master_data"        sequence="5"    groups="hr.group_hr_user"/>
         <menuitem action="analytic.action_account_analytic_account_form" id="hr_account_analytic_def_account"      parent="menu_cl_hr_payroll_master_data"        sequence="6"    groups="analytic.group_analytic_accounting"/>
-        <menuitem action="analytic.account_analytic_group_menu"          id="hr_account_analytic_group_menu"       parent="menu_cl_hr_payroll_master_data"        sequence="7"    groups="analytic.group_analytic_accounting"/>
+        <!--<menuitem action="analytic.account_analytic_group_menu"          id="hr_account_analytic_group_menu"       parent="menu_cl_hr_payroll_master_data"        sequence="7"    groups="analytic.group_analytic_accounting"/>-->
 
         <!-- Extiende Vista Formulario PUESTO DE TRABAJO -->
         <!-- Elimina campos Reclutamiento -->
