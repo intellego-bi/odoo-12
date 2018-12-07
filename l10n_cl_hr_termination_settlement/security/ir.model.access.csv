@@ -1,4 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_hr_settlement,hr.settlement,model_hr_settlement,hr_payroll.group_hr_payroll_manager,1,1,1,1
-access_hr_settlement_employee,hr.settlement,model_hr_settlement,base.group_user,1,0,0,0
+access_hr_settlements,hr.settlements,model_hr_settlements,hr_payroll.group_hr_payroll_manager,1,1,1,1
+access_hr_settlements_employee,hr.settlements,model_hr_settlements,base.group_user,1,0,0,0
 view_hr_employee,view.hr.employee,hr.model_hr_employee,base.group_user,1,0,0,0
