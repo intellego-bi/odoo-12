@@ -1,5 +1,5 @@
 # odoo-12
-Odoo 12 Localización chilena
+<u>Odoo 12 Localización chilena</u>
 
 Este repositorio compila varios addons de diversas fuentes que pueden ser útiles para cualquier implementación de Odoo ERP en versión 12 (probado en Enterprise, pendiente probar en CE). 
 
@@ -51,7 +51,7 @@ Mantendremos este repositorio público en agradecimiento y como retribución al 
  **Odoo Community Association (OCA)** https://odoo-community.org <br>
  **konos.cl** - http://konos.cl <br>
  **globalresponse.cl** http://globalresponse.cl <br>
- **blancomartin.com** http://blancomartin.com
+ **blancomartin.com** http://blancomartin.com <br>
  **cybrosys.com (Open HRMS)** http://cybrosys.com
 
 
