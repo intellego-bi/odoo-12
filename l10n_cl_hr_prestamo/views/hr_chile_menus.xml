@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data noupdate="1">
-        <menuitem id="menu_cl_hr_payroll_base" name="Nómina" parent="hr_payroll.menu_hr_payroll_root" sequence="1"/>
-        <menuitem id="menu_cl_hr_payroll_addons" name="Adicionales Nómina" parent="hr_payroll.menu_hr_payroll_root" sequence="2"/>
+        <menuitem id="menu_cl_hr_payroll_addons" name="Adicionales Nómina" parent="hr_payroll.menu_hr_payroll_root" sequence="3"/>
     </data>
 </odoo>
