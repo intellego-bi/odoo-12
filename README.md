@@ -1,7 +1,9 @@
 # Odoo-Chile (v12)
 <u>Odoo 12 Localización chilena</u>
 
-Este repositorio compila varios addons de diversas fuentes que pueden ser útiles para cualquier implementación de Odoo ERP en versión 12 (probado en Enterprise, pendiente probar en CE). Algunos addons son simples forks de versiones originales ajustados para Odoo 12 y otros son desarrollos propios (basados en algún add-on público que fue ampliado extensivamente)  
+Este repositorio compila varios addons de diversas fuentes que pueden ser útiles para cualquier implementación de Odoo ERP en versión 12 (probado en Enterprise, pendiente probar en CE). El foco principal del repositorio es consolidar funcionalidades para la Localización Chilena de Odoo, pero también incluye algunas funcionalidades genéricas que pueden aplicar para otros países/casos de uso.
+
+Algunos addons son simples forks de versiones originales (ver agradecimientos más abajo) ajustados para Odoo 12 y otros corresponden a desarrollos propios (basados en algún add-on público que fue ampliado extensivamente). Hacemos un esfuerzo constante por probar y asegurar el funcionamiento general de todo lo que está aquí publicado, pero tenga en cuenta que es un trabajo en desarrollo y con cambios constantes.  
 
 Mantendremos este repositorio público en agradecimiento y como retribución al talento y generosidad de toda la comunidad open-source en Chile y en el mundo. <br><br>
 
@@ -27,7 +29,6 @@ Mantendremos este repositorio público en agradecimiento y como retribución al 
 
     * Partner required per account group setting (customer and vendor type accounts)
     * Analytic Account from Employee Contract
-    * Working (shift) Schedule on Employee Contract (Work in progress)
     * Icon to easily export any Odoo list to MS Excel
     * Empleoyee Loans Request
     * Employee Salary Advance Request
@@ -36,9 +37,10 @@ Mantendremos este repositorio público en agradecimiento y como retribución al 
 **Work In Progress: Chilean Localization**
 
     * Payroll Final Settlement (Finiquito) for Employee Contract Termination
+    * Working (shift) Schedule on Employee Contract
     * API Key parameter for SBIF Currency Rate Update
     * Legal Financial Statements
-    * Menu Customization and UX impreovements
+    * Menu Customization and UX improvements
 
 **Wishlist: Chilean Localization**
 
