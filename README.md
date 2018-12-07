@@ -23,14 +23,6 @@ Mantendremos este repositorio público en agradecimiento y como retribución al 
     * Currency Rate update from SBIF (UF, UTM, USD and EUR for CLP)
     * Payroll for Chilean localization.
 
-**To-Do: Extended Chilean Localization**
-
-    * Electronic Bank Statements for chilean banks
-    * Generate Bulk Outgoing payment flat files for chilean banks
-    * Electronic Invoicing and EDI with SII (Factura Electrónica)
-    * Fixed Assets accounting
-    * Automate monthly Previred indicators update 
-
 **Generic Add-ons for Odoo 12**
 
     * Partner required per account group setting (customer and vendor type accounts)
@@ -50,8 +42,11 @@ Mantendremos este repositorio público en agradecimiento y como retribución al 
 
 **Wishlist: Chilean Localization**
 
-    * Electronic Invoicing (Factura Electrónica)
+    * Electronic Invoicing and EDI with SII (Factura Electrónica)
     * Outgoing Batch Payments Interface (pay multiple vendors in batch)
+    * Electronic Bank Statements for chilean banks
+    * Fixed Assets accounting
+    * Automate monthly Previred indicators update 
 
 <br><br>
 ## Thanks to
@@ -63,6 +58,7 @@ Mantendremos este repositorio público en agradecimiento y como retribución al 
  **cybrosys.com (Open HRMS)** http://cybrosys.com <br>
  **cytex.cc** https://cytex.cc <br>
 
+## Special Thanks to
 
  **Maestros de la Localización Chilena**
  - Daniel Blanco Martín <daniel@blancomartin.com>
