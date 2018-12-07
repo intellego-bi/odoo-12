@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <data>
-        <menuitem id="parent_menu_anticipo_sueldo" name="Salary Advance" parent="l10n_cl_hr.menu_cl_hr_payroll" sequence="1"/>
+        <menuitem id="parent_menu_anticipo_sueldo" name="Salary Advance" parent="l10n_cl_hr.menu_cl_hr_payroll_addons" sequence="1"/>
         <menuitem id="menu_my_anticipo_sueldo" action="action_my_anticipo_sueldo" parent="parent_menu_anticipo_sueldo" name="Request Salary Advance" sequence="1" />
         <menuitem id="menu_anticipo_sueldo" action="action_anticipo_sueldo_to_approve" parent="parent_menu_anticipo_sueldo" name="Salary Advance Requests to Approve" sequence="3" groups="hr.group_hr_manager,hr.group_hr_user,account.group_account_manager"/>
         <menuitem id="menu_my_anticipo_sueldo_approved" action="action_my_anticipo_sueldo_request_approved" parent="parent_menu_anticipo_sueldo" name="My Approved Requests" sequence="2" />
