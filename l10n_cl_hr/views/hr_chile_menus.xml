@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-        <menuitem id="menu_cl_hr_payroll" name="Adicionales Nómina" parent="hr_payroll.menu_hr_payroll_root" sequence="2"/>
+        <menuitem id="menu_cl_hr_payroll_base" name="Nómina" parent="hr_payroll.menu_hr_payroll_root" sequence="1"/>
+        <menuitem id="menu_cl_hr_payroll_addons" name="Adicionales Nómina" parent="hr_payroll.menu_hr_payroll_root" sequence="2"/>
         <menuitem id="menu_cl_hr_payroll_indicators" name="Previsión" parent="hr_payroll.menu_hr_payroll_root" sequence="2"/>
-        <menuitem id="menu_cl_hr_payroll_reports" name="Reports" parent="l10n_cl_hr.menu_cl_hr_payroll_indicators" sequence="11"/>
+        <menuitem id="menu_cl_hr_payroll_reports" name="Reports" parent="l10n_cl_hr.menu_hr_payroll_root" sequence="11"/>
         <menuitem id="menu_cl_hr_payroll_configuration" name="Chilean Configuration" parent="hr_payroll.menu_hr_payroll_configuration" sequence="101"/>
     </data>
 </odoo>
