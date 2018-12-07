@@ -35,7 +35,7 @@
         'base', 'hr_payroll', 'hr', 'account', 'l10n_cl_hr',
     ],
     'data': [
-        'hr_chile_menus.xml',
+        'views/hr_chile_menus.xml',
         'security/ir.model.access.csv',
         'security/security.xml',
         'data/salary_rule_prestamo.xml',
