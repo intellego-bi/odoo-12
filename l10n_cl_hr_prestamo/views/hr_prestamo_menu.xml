@@ -3,7 +3,7 @@
 
     <menuitem name="Employee Loans"
         id="menu_base_hr_prestamo_request"
-        parent = "l10n_cl_hr.menu_cl_hr_payroll"
+        parent = "l10n_cl_hr.menu_cl_hr_payroll_addons"
         sequence="2"/>
 
     <menuitem name="Loan Requests"
