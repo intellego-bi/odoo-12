@@ -51,12 +51,12 @@ Mantendremos este repositorio público en agradecimiento y como retribución al 
 <br><br>
 ## Thanks to
  
- **Odoo Community Association (OCA)** https://odoo-community.org <br>
- **konos.cl** - http://konos.cl <br>
- **globalresponse.cl** http://globalresponse.cl <br>
- **blancomartin.com** http://blancomartin.com <br>
- **cybrosys.com (Open HRMS)** http://cybrosys.com <br>
- **cytex.cc** https://cytex.cc <br>
+ - **Odoo Community Association (OCA)** https://odoo-community.org <br>
+ - **konos.cl** - http://konos.cl <br>
+ - **globalresponse.cl** http://globalresponse.cl <br>
+ - **blancomartin.com** http://blancomartin.com <br>
+ - **cybrosys.com (Open HRMS)** http://cybrosys.com <br>
+ - **cytex.cc** https://cytex.cc <br>
 
 ## Special Thanks to
 
