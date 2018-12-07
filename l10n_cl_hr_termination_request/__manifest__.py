@@ -1,6 +1,12 @@
 # -*- coding: utf-8 -*-
 ###################################################################################
-#    A part of Open HRMS Project <https://www.openhrms.com>
+#
+#    Intellego-BI.com
+#    Copyright (C) 2018-TODAY Intellego Business Intelligence S.A.
+#    (<http://www.intellego-bi.com>)
+#    Author: Rodolfo Bermúdez Neubauer(<https://www.intellego-bi.com>)
+#
+#    Forked from a part of Open HRMS Project <https://www.openhrms.com>
 #
 #    Cybrosys Technologies Pvt. Ltd.
 #    Copyright (C) 2018-TODAY Cybrosys Technologies (<https://www.cybrosys.com>).
@@ -17,19 +23,22 @@
 #    GNU Affero General Public License for more details.
 #
 #    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <https://www.gnu.org/licenses/>.
-#
-###################################################################################
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+# 
+####################################################################################
 {
-    'name': 'Open HRMS Resignation',
+    'name': 'Chile - RRHH :: Employee Termination Request',
     'version': '12.0.1.0.0',
-    'summary': 'Handle the resignation process of the employee',
-    'author': 'Cybrosys Techno solutions',
-    'company': 'Cybrosys Techno Solutions',
-    'website': 'https://www.openhrms.com',
-    'depends': ['hr_employee_updation', 'mail'],
+    'summary': """Employee Termination Request""",
+    'author': 'Intellego-BI.com',
+    'company': 'Intellego-BI.com',
+    'website': 'https://Intellego-BI.com',
+    'maintainer': 'Intellego-BI.com',
     'category': 'Human Resources',
-    'maintainer': 'Cybrosys Techno Solutions',
+    'version': '12.0.1.0.0',
+    'summary': 'Workflow to manage and approve the termination process for employees',
+    'depends': ['l10n_cl_hr_employee_extend', 'mail'],
+    'category': 'Human Resources',
     'demo': [],
     'data': [
         'views/resignation_view.xml',

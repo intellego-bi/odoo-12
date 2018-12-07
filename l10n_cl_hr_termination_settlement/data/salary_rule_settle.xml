@@ -3,7 +3,7 @@
     <!--Adding a salary rule for Settlements-->
     <data noupdate="0">
 
-        <record id="hr_rule_fin" model="hr.salary.rule">
+        <record id="l10n_cl_hr.hr_rule_fin" model="hr.salary.rule">
             <field name="code">FIN</field>
             <field name="name">Finiquito Otros</field>
             <field name="category_id" ref="l10n_cl_hr.NOIMPO"/>
@@ -13,13 +13,13 @@
             <field name="sequence" eval="38"/>
         </record>
 
-        <record id="hr_rule_input_fin" model="hr.rule.input">
+        <record id="l10n_cl_hr.hr_rule_input_fin" model="hr.rule.input">
             <field name="code">FIN</field>
             <field name="name">Finiquito Otros</field>
             <field name="input_id" ref="hr_rule_fin"/>
         </record>
 
-        <record id="hr_rule_fin_ias" model="hr.salary.rule">
+        <record id="l10n_cl_hr.hr_rule_fin_ias" model="hr.salary.rule">
             <field name="code">IAS</field>
             <field name="name">IAS Finiquito Años Servicio</field>
             <field name="category_id" ref="l10n_cl_hr.NOIMPO"/>
@@ -29,13 +29,13 @@
             <field name="sequence" eval="38"/>
         </record>
 
-        <record id="hr_rule_input_fin_ias" model="hr.rule.input">
+        <record id="l10n_cl_hr.hr_rule_input_fin_ias" model="hr.rule.input">
             <field name="code">IAS</field>
             <field name="name">IAS Finiquito Años Servicio</field>
             <field name="input_id" ref="hr_rule_fin_ias"/>
         </record>
 
-        <record id="hr_rule_fin_iap" model="hr.salary.rule">
+        <record id="l10n_cl_hr.hr_rule_fin_iap" model="hr.salary.rule">
             <field name="code">IAP</field>
             <field name="name">IAP Finiquito Aviso Previo</field>
             <field name="category_id" ref="l10n_cl_hr.NOIMPO"/>
@@ -45,13 +45,13 @@
             <field name="sequence" eval="38"/>
         </record>
 
-        <record id="hr_rule_input_fin_iap" model="hr.rule.input">
+        <record id="l10n_cl_hr.hr_rule_input_fin_iap" model="hr.rule.input">
             <field name="code">IAP</field>
             <field name="name">IAP Finiquito Aviso Previo</field>
             <field name="input_id" ref="hr_rule_fin_iap"/>
         </record>
 
-        <record id="hr_rule_fin_ifp" model="hr.salary.rule">
+        <record id="l10n_cl_hr.hr_rule_fin_ifp" model="hr.salary.rule">
             <field name="code">IFP</field>
             <field name="name">IFP Finiquito Feriado Proporcional</field>
             <field name="category_id" ref="l10n_cl_hr.NOIMPO"/>
@@ -61,7 +61,7 @@
             <field name="sequence" eval="38"/>
         </record>
 
-        <record id="hr_rule_input_fin_ifp" model="hr.rule.input">
+        <record id="l10n_cl_hr.hr_rule_input_fin_ifp" model="hr.rule.input">
             <field name="code">IFP</field>
             <field name="name">IFP Finiquito Feriado Proporcional</field>
             <field name="input_id" ref="hr_rule_fin_ifp"/>
