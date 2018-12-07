@@ -13,14 +13,13 @@
         <menuitem action="hr_payroll.action_view_hr_payslip_form" id="hr_payroll.menu_department_tree" parent="menu_cl_hr_payroll_base" sequence="2" groups="hr_payroll.group_hr_payroll_user"/>
 
         <!-- Menu DATOS MAESTROS -->
-        <menuitem action="hr.open_view_employee_list_my"       id="hr.menu_open_view_employee_list_my"   parent="menu_cl_hr_payroll_master_data"        sequence="1"/>
-        <menuitem action="hr.open_module_tree_department"      id="hr.menu_hr_department_tree"           parent="menu_cl_hr_payroll_master_data"        sequence="2"    groups="hr.group_hr_user"/>
-        <menuitem action="hr.action_hr_job"                    id="hr.menu_hr_job_tree"                  parent="menu_cl_hr_payroll_master_data"        sequence="3"/>
-        <menuitem action="hr_contract.action_hr_contract"      id="hr_contract.hr_menu_contract"         parent="menu_cl_hr_payroll_master_data"        sequence="4"    groups="hr_contract.group_hr_contract_manager" name="Contracts"/>
-        <menuitem action="hr.open_view_categ_form"             id="hr.menu_view_employee_category_form"  parent="menu_cl_hr_payroll_master_data"        sequence="5"    groups="hr.group_hr_user"/>
-        <!--<menuitem parent="account.menu_finance_configuration"  id="account.menu_analytic_accounting"     parent="menu_cl_hr_payroll_master_data"        sequence="5"    groups="analytic.group_analytic_accounting,analytic.group_analytic_tags"  name="Analytic Accounting"/>-->
-        <menuitem action="analytic.action_account_analytic_account_form" id="hr_account_analytic_def_account"   parent="menu_cl_hr_payroll_master_data"  groups="analytic.group_analytic_accounting" sequence="6"/>
-
+        <menuitem action="hr.open_view_employee_list_my"                 id="hr.menu_open_view_employee_list_my"   parent="menu_cl_hr_payroll_master_data"        sequence="1"/>
+        <menuitem action="hr.open_module_tree_department"                id="hr.menu_hr_department_tree"           parent="menu_cl_hr_payroll_master_data"        sequence="2"    groups="hr.group_hr_user"/>
+        <menuitem action="hr.action_hr_job"                              id="hr.menu_hr_job_tree"                  parent="menu_cl_hr_payroll_master_data"        sequence="3"/>
+        <menuitem action="hr_contract.action_hr_contract"                id="hr_contract.hr_menu_contract"         parent="menu_cl_hr_payroll_master_data"        sequence="4"    groups="hr_contract.group_hr_contract_manager" name="Contracts"/>
+        <menuitem action="hr.open_view_categ_form"                       id="hr.menu_view_employee_category_form"  parent="menu_cl_hr_payroll_master_data"        sequence="5"    groups="hr.group_hr_user"/>
+        <menuitem action="analytic.action_account_analytic_account_form" id="hr_account_analytic_def_account"      parent="menu_cl_hr_payroll_master_data"        sequence="6"    groups="analytic.group_analytic_accounting"/>
+        <menuitem action="analytic.account_analytic_group_menu"          id="hr_account_analytic_group_menu"       parent="menu_cl_hr_payroll_master_data"        sequence="7"    groups="analytic.group_analytic_accounting"/>
 
         <!-- Extiende Vista Formulario PUESTO DE TRABAJO -->
         <!-- Elimina campos Reclutamiento -->
