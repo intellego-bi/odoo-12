@@ -14,8 +14,8 @@
             </field>
         </record>
 
-        <menuitem id="employee_resignation_approved" parent="employee_resignation" name="Renuncia Aceptada"
-                  action="view_approved_resignation" groups="base.group_user" sequence="4"/>
+        <menuitem id="employee_termination_approved" parent="employee_termination" name="Renuncia Aceptada"
+                  action="view_approved_resignation" groups="base.group_user" sequence="5"/>
     </data>
 </odoo>
 
