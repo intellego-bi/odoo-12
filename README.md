@@ -3,7 +3,7 @@
 
 Este repositorio compila varios addons de diversas fuentes que pueden ser útiles para cualquier implementación de Odoo ERP en versión 12 (probado en Enterprise, pendiente probar en CE). Algunos addons son simples forks de versiones originales ajustados para Odoo 12 y otros son desarrollos propios (basados en algún add-on público que fue ampliado extensivamente)  
 
-Mantendremos este repositorio público en agradecimiento y como retribución al talento y generosidad de toda la comunidad open-source en Chile y en el mundo. <br>
+Mantendremos este repositorio público en agradecimiento y como retribución al talento y generosidad de toda la comunidad open-source en Chile y en el mundo. <br><br>
 
 ## Maintained by
 <p>
