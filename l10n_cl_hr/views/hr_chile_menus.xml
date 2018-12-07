@@ -7,7 +7,7 @@
         <menuitem id="menu_cl_hr_payroll_reports" name="Reports" parent="hr_payroll.menu_hr_payroll_root" sequence="11"/>
         <menuitem id="menu_cl_hr_payroll_configuration" name="Chilean Configuration" parent="hr_payroll.menu_hr_payroll_configuration" sequence="101"/>
 
-        <menuitem action="action_hr_payslip_run_tree" id="menu_hr_payslip_run" parent="menu_cl_hr_payroll_base"/>
+        <menuitem action="hr_payroll.action_hr_payslip_run_tree" id="hr_payroll.menu_hr_payslip_run" parent="menu_cl_hr_payroll_base"/>
 
     </data>
 </odoo>
