@@ -38,6 +38,17 @@ msgid "Analytic Accounts"
 msgstr "Cuentas Analíticas"
 
 #. module: l10n_cl_hr
+#: model:ir.model.fields,help:l10n_cl_hr.field_hr_employee__middle_name
+msgid "Employees middle name"
+msgstr "Segundo Nombre"
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,help:l10n_cl_hr.field_hr_employee__mothers_name
+msgid "Employees mothers name"
+msgstr "Segundo Apellido"
+
+
+#. module: l10n_cl_hr
 #: model:ir.ui.view,arch_db:l10n_cl_hr.report_hrsalarybymonth
 msgid "<strong>Total</strong>"
 msgstr "<strong>Total</strong>"
@@ -454,16 +465,6 @@ msgstr "Empleado"
 #: model:ir.model,name:l10n_cl_hr.model_hr_contract
 msgid "Employee Contract"
 msgstr "Contrato Empleado"
-
-#. module: l10n_cl_hr
-#: model:ir.model.fields,help:l10n_cl_hr.field_hr_employee_middle_name
-msgid "Employees middle name"
-msgstr "Segundo Nombre"
-
-#. module: l10n_cl_hr
-#: model:ir.model.fields,help:l10n_cl_hr.field_hr_employee_mothers_name
-msgid "Employees mothers name"
-msgstr "Segundo Apellido"
 
 #. module: l10n_cl_hr
 #: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_salary_employee_month_end_date
@@ -1085,10 +1086,15 @@ msgid "Salary Rule"
 msgstr "Salary Rule"
 
 #. module: l10n_cl_hr
-#: model:ir.ui.view,arch_db:l10n_cl_hr.hr_contract_chile_view
 #: model:ir.ui.view,arch_db:l10n_cl_hr.report_hrsalarybymonth
 msgid "Salud"
 msgstr "Salud"
+
+#. module: l10n_cl_hr
+#: model:ir.ui.view,arch_db:l10n_cl_hr.hr_contract_chile_view
+msgid "Salud"
+msgstr "Seguro Salud"
+
 
 #. module: l10n_cl_hr
 #: model:ir.ui.view,arch_db:l10n_cl_hr.report_hrsalarybymonth
