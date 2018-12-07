@@ -17,6 +17,27 @@ msgstr ""
 "X-Generator: Poedit 2.0.6\n"
 
 #. module: l10n_cl_hr
+#: model:ir.ui.menu,name:l10n_cl_hr.menu_cl_hr_payroll_master_data
+msgid "Master Data"
+msgstr "Datos Maestros"
+
+#. module: l10n_cl_hr
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.cl_view_hr_job_form
+msgid "Human Resources"
+msgstr "Recursos Humanos"
+
+
+#. module: l10n_cl_hr
+#: model:ir.ui.menu,name:l10n_cl_hr.hr_account_analytic_group_menu
+msgid "Analytic Account Groups"
+msgstr "Grupos de Cuentas Analíticas"
+
+#. module: l10n_cl_hr
+#: model:ir.ui.menu,name:l10n_cl_hr.hr_account_analytic_def_account
+msgid "Analytic Accounts"
+msgstr "Cuentas Analíticas"
+
+#. module: l10n_cl_hr
 #: model:ir.ui.view,arch_db:l10n_cl_hr.report_hrsalarybymonth
 msgid "<strong>Total</strong>"
 msgstr "<strong>Total</strong>"
