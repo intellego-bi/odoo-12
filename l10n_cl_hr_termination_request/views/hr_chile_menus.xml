@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <menuitem id="l10n_cl_hr.menu_cl_hr_payroll_addons" name="Adicionales Nómina" parent="hr_payroll.menu_hr_payroll_root" sequence="3"/>
+    </data>
+</odoo>
