@@ -12,7 +12,7 @@
 
 
         <!-- Menu items EMPLEADOS y CONTRATOS  -->
-        <menuitem action="hr.open_view_employee_list_my"                 id="hr.menu_open_view_employee_list_my"   parent="hr_payroll.menu_hr_payroll_root"       sequence="0"/>
+        <menuitem action="hr.open_view_employee_list_my"                 id="hr_menu_open_view_employee_list_my"   parent="hr_payroll.menu_hr_payroll_root"       sequence="0"/>
         <menuitem action="hr_contract.action_hr_contract"                id="hr_contract.hr_menu_contract"         parent="hr_payroll.menu_hr_payroll_root"       sequence="1"    groups="hr_contract.group_hr_contract_manager" name="Contracts"/>
 
 
