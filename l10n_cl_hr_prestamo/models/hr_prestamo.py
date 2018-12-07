@@ -22,7 +22,7 @@
 from odoo import models, fields, api
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
-from odoo.exceptions import except_orm
+#from odoo.exceptions import except_orm
 from odoo.exceptions import UserError
 from odoo.tools.translate import _
 
@@ -63,8 +63,8 @@ class HrPrestamo(models.Model):
     installment = fields.Integer(string="No Of Installments", default=1)
     payment_date = fields.Date(string="Payment Start Date", required=True, default=fields.Date.today())
     prestamo_lines = fields.One2many('hr.prestamo.line', 'prestamo_id', string="Loan Line", index=True)
-    emp_account_id = fields.Many2one('account.account', string="Loan Account", default=lambda self: self.env['account.account'].search([('code', '=', '11050200')], limit=1))
-    treasury_account_id = fields.Many2one('account.account', string="Treasury Account", default=lambda self: self.env['account.account'].search([('code', '=', '21050100')], limit=1))
+    emp_account_id = fields.Many2one('account.account', string="Employee Loan Account", default=lambda self: self.env['account.account'].search([('code', '=', '11050200')], limit=1))
+    treasury_account_id = fields.Many2one('account.account', string="Payments Account", default=lambda self: self.env['account.account'].search([('code', '=', '21050100')], limit=1))
     journal_id = fields.Many2one('account.journal', string="Journal", default=lambda self: self.env['account.journal'].search([('code', '=', 'REMU')], limit=1))
     company_id = fields.Many2one('res.company', 'Company', readonly=True,
                                  default=lambda self: self.env.user.company_id,
@@ -79,7 +79,6 @@ class HrPrestamo(models.Model):
     move_id = fields.Many2one('account.move', 'Accounting Entry', readonly=True, copy=False)
     prestamo_pending_amount = fields.Float(string="Pending Installments Amount", compute='_compute_pending_amount')
     prestamo_pending_count = fields.Integer(string="N° of Pending Installments", compute='_compute_pending_amount')
-
 
     state = fields.Selection([
         ('draft', 'Draft'),
@@ -175,20 +174,19 @@ class HrPrestamo(models.Model):
             if int(total_lines) > 0:
                date_pay = date_last 
             if int(total_lines) >= int(prestamo.prestamo_amount):
-                raise except_orm('Warning!', 'Installments already computed')
+                raise UserError(_('Warning! Installments already computed'))
             else:
                 amount = (prestamo.prestamo_amount - total_lines) / prestamo.installment
+                date_start = date_pay
                 for i in range(1, prestamo.installment + 1):
-                    date_start = date_pay + relativedelta(months=i)
                     self.env['hr.prestamo.line'].create({
                         'date': date_start,
                         'amount': amount,
                         'currency_id': prestamo.currency_id.id,
                         'employee_id': prestamo.employee_id.id,
                         'prestamo_id': prestamo.id})
-
+                    date_start = date_pay + relativedelta(months=i)
         return True
-
 
 
 class InstallmentLine(models.Model):
@@ -203,7 +201,6 @@ class InstallmentLine(models.Model):
     prestamo_id = fields.Many2one('hr.prestamo', string="Loan Ref.")
     payslip_id = fields.Many2one('hr.payslip', string="Payslip Ref.")
     move_id = fields.Many2one('account.move', related="payslip_id.move_id", string="Accounting Entry")
-
 
 
 class HrEmployee(models.Model):
@@ -225,7 +222,6 @@ class HrEmployee(models.Model):
                         pend_count += 1
         self.emp_pending_amount = pend_total
         self.emp_pending_count = pend_count
-
 
     prestamo_count = fields.Integer(string="Loan Count", compute='_compute_employee_prestamo')
     emp_pending_amount = fields.Integer(string="Pending Installments Amount", compute='_compute_employee_prestamo')
