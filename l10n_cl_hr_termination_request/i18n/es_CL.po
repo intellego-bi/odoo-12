@@ -1,0 +1,385 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* l10n_cl_hr_termination_request
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0+e\n"
+"Report-Msgid-Bugs-To: odoo@intellego-bi.com\n"
+"POT-Creation-Date: 2018-12-01 18:12+0000\n"
+"PO-Revision-Date: 2018-12-01 18:12+0000\n"
+"Last-Translator: Rodolfo Bermúdez Neubauer<odoo@intellego-bi.com>\n"
+"Language-Team: Intellego-BI.com\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: l10n_cl_hr_termination_request
+#: model:ir.model.fields,field_description:l10n_cl_hr_termination_request.field_hr_resignation__message_needaction
+msgid "Action Needed"
+msgstr "Acción Necesaria"
+
+#. module: l10n_cl_hr_termination_request
+#: code:addons/l10n_cl_hr_termination_request/models/hr_resignation.py:68
+#, python-format
+msgid "Actualice la Fehca de Vinculación en el maestro de Empleados y vuelva a generar la solicitud"
+msgstr "Actualice la Fecha de Antiguedad (vinculación) en el maestro de Empleados y vuelva a generar la solicitud"
+
+#. module: l10n_cl_hr_termination_request
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr_termination_request.employee_resignation_form
+msgid "Approve"
+msgstr "Aprobar"
+
+#. module: l10n_cl_hr_termination_request
+#: selection:hr.resignation,state:0
+msgid "Approved"
+msgstr "Aprobado"
+
+#. module: l10n_cl_hr_termination_request
+#: model:ir.model.fields,field_description:l10n_cl_hr_termination_request.field_hr_resignation__approved_revealing_date
+msgid "Approved Date"
+msgstr "Fecha Aprobada"
+
+#. module: l10n_cl_hr_termination_request
+#: model_terms:ir.actions.act_window,help:l10n_cl_hr_termination_request.view_approved_resignation
+#: model:ir.actions.act_window,name:l10n_cl_hr_termination_request.view_approved_resignation
+msgid "Approved Resignation"
+msgstr "Solicitud Aceptada"
+
+#. module: l10n_cl_hr_termination_request
+#: model:ir.model.fields,field_description:l10n_cl_hr_termination_request.field_hr_resignation__message_attachment_count
+msgid "Attachment Count"
+msgstr "Conteo de archivos adjuntos"
+
+#. module: l10n_cl_hr_termination_request
+#: selection:hr.resignation,state:0
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr_termination_request.employee_resignation_form
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: l10n_cl_hr_termination_request
+#: selection:hr.resignation,state:0
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr_termination_request.employee_resignation_form
+msgid "Confirm"
+msgstr "Confirmar"
+
+#. module: l10n_cl_hr_termination_request
+#: model:ir.model.fields,field_description:l10n_cl_hr_termination_request.field_hr_resignation__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: l10n_cl_hr_termination_request
+#: model:ir.model.fields,field_description:l10n_cl_hr_termination_request.field_hr_resignation__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: l10n_cl_hr_termination_request
+#: model:ir.model.fields,help:l10n_cl_hr_termination_request.field_hr_resignation__expected_revealing_date
+msgid "Date on which he is revealing from the company"
+msgstr "Fecha esperada de Término"
+
+#. module: l10n_cl_hr_termination_request
+#: model:ir.model.fields,help:l10n_cl_hr_termination_request.field_hr_resignation__resign_confirm_date
+msgid "Date on which the request is confirmed"
+msgstr "Fecha de confirmación de la solicitud"
+
+#. module: l10n_cl_hr_termination_request
+#: model:ir.model.fields,field_description:l10n_cl_hr_termination_request.field_hr_resignation__department_id
+msgid "Department"
+msgstr "Departamento"
+
+#. module: l10n_cl_hr_termination_request
+#: model:ir.model.fields,help:l10n_cl_hr_termination_request.field_hr_resignation__department_id
+msgid "Department of the employee"
+msgstr ""
+
+#. module: l10n_cl_hr_termination_request
+#: selection:hr.resignation,reason:0
+msgid "Despido Injustificado (Art. 161)"
+msgstr ""
+
+#. module: l10n_cl_hr_termination_request
+#: selection:hr.resignation,reason:0
+msgid "Despido Justificado (Art. 160)"
+msgstr ""
+
+#. module: l10n_cl_hr_termination_request
+#: model:ir.model.fields,field_description:l10n_cl_hr_termination_request.field_hr_resignation__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: l10n_cl_hr_termination_request
+#: selection:hr.resignation,state:0
+msgid "Draft"
+msgstr "Borrador"
+
+#. module: l10n_cl_hr_termination_request
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr_termination_request.employee_resignation_form
+msgid "Empleado"
+msgstr ""
+
+#. module: l10n_cl_hr_termination_request
+#: model:ir.model.fields,field_description:l10n_cl_hr_termination_request.field_hr_resignation__employee_id
+msgid "Employee"
+msgstr "Empleado"
+
+#. module: l10n_cl_hr_termination_request
+#: model:ir.actions.act_window,name:l10n_cl_hr_termination_request.view_employee_resignation
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr_termination_request.employee_resignation_form
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr_termination_request.employee_resignation_tree
+msgid "Employee Resignation"
+msgstr "Renuncia/Despido"
+
+#. module: l10n_cl_hr_termination_request
+#: model_terms:ir.actions.act_window,help:l10n_cl_hr_termination_request.view_employee_resignation
+msgid "Employee Resignation Form"
+msgstr "Formualrio de Término para Finiquito"
+
+#. module: l10n_cl_hr_termination_request
+#: model:ir.ui.menu,name:l10n_cl_hr_termination_request.employee_termination
+msgid "Employee Termination"
+msgstr "Término para Finiquito"
+
+#. module: l10n_cl_hr_termination_request
+#: code:addons/l10n_cl_hr_termination_request/models/hr_resignation.py:146
+#, python-format
+msgid "Enter Approved Revealing Date"
+msgstr "Ingrese la Fecha de Término Confirmada"
+
+#. module: l10n_cl_hr_termination_request
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr_termination_request.employee_resignation_form
+msgid "Fechas de Término"
+msgstr ""
+
+#. module: l10n_cl_hr_termination_request
+#: model:ir.model.fields,field_description:l10n_cl_hr_termination_request.field_hr_resignation__message_follower_ids
+msgid "Followers"
+msgstr "Seguidores"
+
+#. module: l10n_cl_hr_termination_request
+#: model:ir.model.fields,field_description:l10n_cl_hr_termination_request.field_hr_resignation__message_channel_ids
+msgid "Followers (Channels)"
+msgstr "Seguidores (Canales)"
+
+#. module: l10n_cl_hr_termination_request
+#: model:ir.model.fields,field_description:l10n_cl_hr_termination_request.field_hr_resignation__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Seguidores (Empresas)"
+
+#. module: l10n_cl_hr_termination_request
+#: model:ir.model.fields,field_description:l10n_cl_hr_termination_request.field_hr_resignation__id
+msgid "ID"
+msgstr "ID (identificación)"
+
+#. module: l10n_cl_hr_termination_request
+#: model:ir.model.fields,help:l10n_cl_hr_termination_request.field_hr_resignation__message_unread
+msgid "If checked new messages require your attention."
+msgstr "Si está marcado, hay nuevos mensajes que requieren su atención"
+
+#. module: l10n_cl_hr_termination_request
+#: model:ir.model.fields,help:l10n_cl_hr_termination_request.field_hr_resignation__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "Si está marcado, hay nuevos mensajes que requieren su atención."
+
+#. module: l10n_cl_hr_termination_request
+#: model:ir.model.fields,help:l10n_cl_hr_termination_request.field_hr_resignation__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Si se encuentra marcado, algunos mensajes tienen error de envío."
+
+#. module: l10n_cl_hr_termination_request
+#: model:ir.model.fields,field_description:l10n_cl_hr_termination_request.field_hr_resignation__message_is_follower
+msgid "Is Follower"
+msgstr "Es un seguidor"
+
+#. module: l10n_cl_hr_termination_request
+#: model:ir.model.fields,field_description:l10n_cl_hr_termination_request.field_hr_resignation__joined_date
+msgid "Join Date"
+msgstr "Fecha de Antigüedad"
+
+#. module: l10n_cl_hr_termination_request
+#: model:ir.model.fields,help:l10n_cl_hr_termination_request.field_hr_resignation__joined_date
+msgid "Joining date of the employee"
+msgstr "Fecha de Antigüedad (vinculación)"
+
+#. module: l10n_cl_hr_termination_request
+#: model:ir.model.fields,field_description:l10n_cl_hr_termination_request.field_hr_resignation____last_update
+msgid "Last Modified on"
+msgstr "Modificado el"
+
+#. module: l10n_cl_hr_termination_request
+#: model:ir.model.fields,field_description:l10n_cl_hr_termination_request.field_hr_resignation__write_uid
+msgid "Last Updated by"
+msgstr "Actualizado por"
+
+#. module: l10n_cl_hr_termination_request
+#: model:ir.model.fields,field_description:l10n_cl_hr_termination_request.field_hr_resignation__write_date
+msgid "Last Updated on"
+msgstr "Actualizado el"
+
+#. module: l10n_cl_hr_termination_request
+#: model:ir.model.fields,field_description:l10n_cl_hr_termination_request.field_hr_resignation__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "Adjuntos principales"
+
+#. module: l10n_cl_hr_termination_request
+#: model:ir.model.fields,field_description:l10n_cl_hr_termination_request.field_hr_resignation__message_has_error
+msgid "Message Delivery error"
+msgstr "Error de Envío de Mensaje"
+
+#. module: l10n_cl_hr_termination_request
+#: model:ir.model.fields,field_description:l10n_cl_hr_termination_request.field_hr_resignation__message_ids
+msgid "Messages"
+msgstr "Mensajes"
+
+#. module: l10n_cl_hr_termination_request
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr_termination_request.employee_resignation_form
+msgid "Motivo Término Contrato"
+msgstr ""
+
+#. module: l10n_cl_hr_termination_request
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr_termination_request.employee_resignation_form
+msgid "Motivo del término de relación laboral"
+msgstr ""
+
+#. module: l10n_cl_hr_termination_request
+#: model:ir.model.fields,help:l10n_cl_hr_termination_request.field_hr_resignation__employee_id
+msgid "Name of the employee for whom the request is creating"
+msgstr "Nombre del Empleado para el cual se solcita la terminación"
+
+#. module: l10n_cl_hr_termination_request
+#: code:addons/l10n_cl_hr_termination_request/models/hr_resignation.py:47
+#: code:addons/l10n_cl_hr_termination_request/models/hr_resignation.py:74
+#: code:addons/l10n_cl_hr_termination_request/models/hr_resignation.py:75
+#, python-format
+msgid "New"
+msgstr "Nuevo"
+
+#. module: l10n_cl_hr_termination_request
+#: model:ir.model.fields,field_description:l10n_cl_hr_termination_request.field_hr_resignation__notice_period
+msgid "Notice Period"
+msgstr "Período de Preaviso"
+
+#. module: l10n_cl_hr_termination_request
+#: model:ir.model.fields,field_description:l10n_cl_hr_termination_request.field_hr_resignation__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Número de acciones"
+
+#. module: l10n_cl_hr_termination_request
+#: model:ir.model.fields,field_description:l10n_cl_hr_termination_request.field_hr_resignation__message_has_error_counter
+msgid "Number of error"
+msgstr "Número de error"
+
+#. module: l10n_cl_hr_termination_request
+#: model:ir.model.fields,help:l10n_cl_hr_termination_request.field_hr_resignation__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "Número de mensajes que requieren una acción"
+
+#. module: l10n_cl_hr_termination_request
+#: model:ir.model.fields,help:l10n_cl_hr_termination_request.field_hr_resignation__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Número de mensajes con error de envío"
+
+#. module: l10n_cl_hr_termination_request
+#: model:ir.model.fields,help:l10n_cl_hr_termination_request.field_hr_resignation__message_unread_counter
+msgid "Number of unread messages"
+msgstr "Número de mensajes no leidos"
+
+#. module: l10n_cl_hr_termination_request
+#: model:ir.model.fields,field_description:l10n_cl_hr_termination_request.field_hr_resignation__name
+msgid "Order Reference"
+msgstr "Referencia de pedido"
+
+#. module: l10n_cl_hr_termination_request
+#: model:ir.model.fields,field_description:l10n_cl_hr_termination_request.field_hr_resignation__term_reason
+msgid "Reason"
+msgstr "Motivo"
+
+#. module: l10n_cl_hr_termination_request
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr_termination_request.employee_resignation_form
+msgid "Reject"
+msgstr "Rechazar"
+
+#. module: l10n_cl_hr_termination_request
+#: model:ir.ui.menu,name:l10n_cl_hr_termination_request.employee_termination_approved
+msgid "Renuncia Aceptada"
+msgstr ""
+
+#. module: l10n_cl_hr_termination_request
+#: selection:hr.resignation,reason:0
+msgid "Renuncia Trabajador (Art. 159)"
+msgstr ""
+
+#. module: l10n_cl_hr_termination_request
+#: model:ir.model.fields,field_description:l10n_cl_hr_termination_request.field_hr_resignation__resign_confirm_date
+msgid "Resign confirm date"
+msgstr "Fehca de Término Confirmada"
+
+#. module: l10n_cl_hr_termination_request
+#: model:ir.model.fields,field_description:l10n_cl_hr_termination_request.field_hr_resignation__expected_revealing_date
+msgid "Revealing Date"
+msgstr "Fecha Esperada de Término"
+
+#. module: l10n_cl_hr_termination_request
+#: model:ir.model.fields,field_description:l10n_cl_hr_termination_request.field_hr_resignation__reason
+msgid "Settlement Reason"
+msgstr "Motivo de Finiquito"
+
+#. module: l10n_cl_hr_termination_request
+#: model:ir.ui.menu,name:l10n_cl_hr_termination_request.employee_termination_request
+msgid "Solicitar Finiquito"
+msgstr ""
+
+#. module: l10n_cl_hr_termination_request
+#: model:ir.model.fields,help:l10n_cl_hr_termination_request.field_hr_resignation__term_reason
+msgid "Specify reason for leaving the company"
+msgstr "Indique la(s) razon(es) para terminar la relación laboral"
+
+#. module: l10n_cl_hr_termination_request
+#: model:ir.model.fields,field_description:l10n_cl_hr_termination_request.field_hr_resignation__state
+msgid "Status"
+msgstr "Estado"
+
+#. module: l10n_cl_hr_termination_request
+#: model:ir.model.fields,help:l10n_cl_hr_termination_request.field_hr_resignation__approved_revealing_date
+msgid "The date approved for the revealing"
+msgstr "Fecha aprobada para el término"
+
+#. module: l10n_cl_hr_termination_request
+#: code:addons/l10n_cl_hr_termination_request/models/hr_resignation.py:98
+#: code:addons/l10n_cl_hr_termination_request/models/hr_resignation.py:118
+#, python-format
+msgid "There is a resignation request in confirmed or approved state for this employee"
+msgstr "Ya existe una solcitud de término para este empleado en estado Confirmado o Aprobado"
+
+#. module: l10n_cl_hr_termination_request
+#: model:ir.model.fields,field_description:l10n_cl_hr_termination_request.field_hr_resignation__message_unread
+msgid "Unread Messages"
+msgstr "Mensajes por leer"
+
+#. module: l10n_cl_hr_termination_request
+#: model:ir.model.fields,field_description:l10n_cl_hr_termination_request.field_hr_resignation__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "Contador de mensajes sin leer"
+
+#. module: l10n_cl_hr_termination_request
+#: model:ir.model.fields,field_description:l10n_cl_hr_termination_request.field_hr_resignation__website_message_ids
+msgid "Website Messages"
+msgstr "Mensajes del sitio web"
+
+#. module: l10n_cl_hr_termination_request
+#: model:ir.model.fields,help:l10n_cl_hr_termination_request.field_hr_resignation__website_message_ids
+msgid "Website communication history"
+msgstr "Historial de comunicaciones del sitio web"
+
+#. module: l10n_cl_hr_termination_request
+#: code:addons/l10n_cl_hr_termination_request/models/hr_resignation.py:85
+#, python-format
+msgid "You cannot create request for other employees"
+msgstr "Nse permite solitar el término para otros empleados "
+
+#. module: l10n_cl_hr_termination_request
+#: model:ir.model,name:l10n_cl_hr_termination_request.model_hr_resignation
+msgid "hr.resignation"
+msgstr ""
+
