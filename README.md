@@ -55,7 +55,8 @@ Mantendremos este repositorio público en agradecimiento y como retribución al 
  **konos.cl** - http://konos.cl <br>
  **globalresponse.cl** http://globalresponse.cl <br>
  **blancomartin.com** http://blancomartin.com <br>
- **cybrosys.com (Open HRMS)** http://cybrosys.com
+ **cybrosys.com (Open HRMS)** http://cybrosys.com <br>
+ **cytex.cc** https://cytex.cc <br>
 
 
  **Maestros de la Localización Chilena**
