@@ -21,8 +21,8 @@
         <!-- Extiende Vista Formulario PUESTO DE TRABAJO -->
         <!-- Elimina campos Reclutamiento -->
         <record model="ir.ui.view" id="cl_view_hr_job_form">
-            <field name="name">hr.job.form</field>
-            <field name="model">hr.job.form</field>
+            <field name="name">hr.job</field>
+            <field name="model">hr.job</field>
             <field name="mode">extension</field>
             <field name="inherit_id" ref="hr.view_hr_job_form"/>
             <field name="arch" type="xml">
