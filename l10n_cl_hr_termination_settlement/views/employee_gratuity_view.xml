@@ -79,11 +79,11 @@
 
         <!--<menuitem id="employee_gratuity" name="Finiquitos" parent="hr.menu_hr_root"
                    sequence="21" groups="hr.group_hr_manager"/>-->
-        <!--<menuitem name="Liquida Finiquito" id="menu_hr_loans_and_advances" parent="hr_payroll.menu_hr_payslip_run" sequence="2"/>-->
-        <menuitem id="employee_gratuity" name="Finiquitos" parent="l10n_cl_hr.menu_cl_hr_payroll"
-                   sequence="4" groups="hr.group_hr_manager"/>
+        <!--<menuitem name="Liquida Finiquito" id="menu_hr_loans_and_advances" parent="hr_payroll.menu_hr_payslip_run" sequence="2"/>
+        <menuitem id="l10n_cl_hr_termination_settlement.employee_gratuity" name="Finiquitos" parent="l10n_cl_hr.menu_cl_hr_payroll_addons"
+                   sequence="4" groups="hr.group_hr_manager"/>  -->
 
-        <menuitem id="gratuity_creation" name="Liquidación IAS" parent="employee_gratuity"
+        <menuitem id="gratuity_creation" name="Liquidación Finiquito" parent="l10n_cl_hr_termination_request.employee_gratuity"
                   action="action_employee_gratuity"  sequence="1"/>
 
 
