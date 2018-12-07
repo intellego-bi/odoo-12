@@ -3,7 +3,7 @@
 
 Este repositorio compila varios addons de diversas fuentes que pueden ser útiles para cualquier implementación de Odoo ERP en versión 12 (probado en Enterprise, pendiente probar en CE). El foco principal del repositorio es consolidar funcionalidades para la Localización Chilena de Odoo, pero también incluye algunas funcionalidades genéricas que pueden aplicar para otros países/casos de uso.
 
-Algunos addons son simples forks de versiones originales (ver agradecimientos más abajo) ajustados para Odoo 12 y corresponden a desarrollos propios (basados en algún add-on público que fue ampliado extensivamente). Hacemos un esfuerzo constante por probar y asegurar el funcionamiento general de todo lo que está aquí publicado, pero tenga en cuenta que es un trabajo en desarrollo y con cambios constantes.  
+Algunos addons son simples forks de versiones originales (ver agradecimientos más abajo) ajustados para Odoo 12 y otros corresponden a desarrollos propios (basados en algún add-on público que fue ampliado extensivamente). Hacemos un esfuerzo constante por probar y asegurar el funcionamiento general de todo lo que está aquí publicado, pero tenga en cuenta que es un trabajo en desarrollo y con cambios constantes.  
 
 Mantendremos este repositorio público en agradecimiento y como retribución al talento y generosidad de toda la comunidad open-source en Chile y en el mundo. <br><br>
 
