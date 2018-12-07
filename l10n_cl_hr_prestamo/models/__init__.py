@@ -20,5 +20,7 @@
 # 
 ###################################################################################
 from . import hr_prestamo
+from . import hr_prestamo_config
 from . import hr_prestamo_payroll
+from . import hr_prestamo_acc
 
