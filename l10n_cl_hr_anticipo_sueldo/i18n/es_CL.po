@@ -5,83 +5,24 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0+e\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-01 19:10+0000\n"
-"PO-Revision-Date: 2018-12-01 19:10+0000\n"
-"Last-Translator: <>\n"
-"Language-Team: \n"
+"Report-Msgid-Bugs-To: odoo@intellego-bi.com\n"
+"POT-Creation-Date: 2018-12-01 18:12+0000\n"
+"PO-Revision-Date: 2018-12-01 18:12+0000\n"
+"Last-Translator: Rodolfo Bermúdez Neubauer <odoo@intellego-bi.com>\n"
+"Language-Team: Intellego-BI.com\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
 
 #. module: l10n_cl_hr_anticipo_sueldo
-#: code:addons/l10n_cl_hr_anticipo_sueldo/models/anticipo_sueldo.py:141
-#, python-format
-msgid "Define home address for employee"
-msgstr "Defina un Dirección Privada en el contacto del Empleado para poder realizar el pago"
-
-#. module: l10n_cl_hr_anticipo_sueldo
-#: code:addons/l10n_cl_hr_anticipo_sueldo/models/anticipo_sueldo.py:148
-#, python-format
-msgid "Advance can be requested once in a month"
-msgstr "Sólo se permite un anticipo por mes. Este empleado ya registra un anticipo en el mismo período"
-
-#. module: l10n_cl_hr_anticipo_sueldo
-#: code:addons/l10n_cl_hr_anticipo_sueldo/models/anticipo_sueldo.py:150
-#, python-format
-msgid "Define a contract for the employee"
-msgstr "El Empleado debe tener un Contrato válido para poder realizar el Anticipo"
-
-#. module: l10n_cl_hr_anticipo_sueldo
-#: code:addons/l10n_cl_hr_anticipo_sueldo/models/anticipo_sueldo.py:160
-#, python-format
-msgid "You must Enter the Salary Advance amount"
-msgstr "Debe ingresar un valor de Anticipo válido"
-
-#. module: l10n_cl_hr_anticipo_sueldo
-#: code:addons/l10n_cl_hr_anticipo_sueldo/models/anticipo_sueldo.py:165
-#, python-format
-msgid "This month salary already calculated"
-msgstr "Los salarios de este mes ya fueron procesados. Imposible solicitar anticipo."
-
-#. module: l10n_cl_hr_anticipo_sueldo
-#: code:addons/l10n_cl_hr_anticipo_sueldo/models/anticipo_sueldo.py:174
-#, python-format
-msgid "Request can be done after \"%s\" Days From prevoius month salary"
-msgstr "Sólo se permiten anticipos \"%s\" días después del pago de nómina anterior"
-
-#. module: l10n_cl_hr_anticipo_sueldo
-#: code:addons/l10n_cl_hr_anticipo_sueldo/models/anticipo_sueldo.py:201
-#, python-format
-msgid "Advance can be requested once in a month"
-msgstr "Sólo se permite un anticipo por mes. Este empleado ya registra un anticipo en el mismo período"
-
-#. module: l10n_cl_hr_anticipo_sueldo
-#: code:addons/l10n_cl_hr_anticipo_sueldo/models/anticipo_sueldo.py:203
-#, python-format
-msgid "You must enter Debit & Credit account and journal to approve"
-msgstr "Falta Configuración Contabilidad para Anticipos. Actualice la configuración y vuelva a generar la solicitud."
-
-#. module: l10n_cl_hr_anticipo_sueldo
-#: code:addons/l10n_cl_hr_anticipo_sueldo/models/anticipo_sueldo.py:205
-#, python-format
-msgid "You must Enter the Salary Advance amount"
-msgstr "Debe ingresar un valor de Anticipo válido"
-
-#. module: l10n_cl_hr_anticipo_sueldo
-#: code:addons/l10n_cl_hr_anticipo_sueldo/models/anticipo_sueldo.py:244
-#, python-format
-msgid "Salary Advance for "
-msgstr "Anticipo de Sueldo de "
-
-#. module: l10n_cl_hr_anticipo_sueldo
-#: model_terms:ir.ui.view,arch_db:l10n_cl_hr_anticipo_sueldo.view_account_config_inherit
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr_anticipo_sueldo.cl_view_account_config_hr_advance_inherit
 msgid "<span class=\"o_form_label\">Employee Salary Advance</span>"
-msgstr "<span class=\"o_form_label\">Anticipo de Sueldo</span>"
+msgstr "<span class=\"o_form_label\">Solicitud de Anticpo de Sueldo</span>"
 
 #. module: l10n_cl_hr_anticipo_sueldo
 #: model:ir.model.fields,field_description:l10n_cl_hr_anticipo_sueldo.field_anticipo_sueldo__move_id
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr_anticipo_sueldo.view_anticipo_sueldo_form
 msgid "Accounting Entry"
 msgstr "Asiento Contable"
 
@@ -91,19 +32,19 @@ msgid "Accounting Journal used for Salary Advance to Employee"
 msgstr "Libro Diario usado para la contabilización pago anticipado"
 
 #. module: l10n_cl_hr_anticipo_sueldo
-#: model_terms:ir.ui.view,arch_db:l10n_cl_hr_anticipo_sueldo.view_account_config_inherit
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr_anticipo_sueldo.cl_view_account_config_hr_advance_inherit
 msgid "Accounting Settings for Salary Advance."
-msgstr "Configuración para la contabilziación de Anticipos de Sueldo"
+msgstr "Ajustes de Contabilidad RRHH"
 
 #. module: l10n_cl_hr_anticipo_sueldo
-#: model_terms:ir.ui.view,arch_db:l10n_cl_hr_anticipo_sueldo.view_account_config_inherit
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr_anticipo_sueldo.cl_view_account_config_hr_advance_inherit
 msgid "Accounting settings for Salary Advance."
-msgstr "Configuración para la contabilziación de Anticipos de Sueldo"
+msgstr "Configuraciones de contabilidad para Solicitudes de Anticipo de Sueldo"
 
 #. module: l10n_cl_hr_anticipo_sueldo
 #: model:ir.model.fields,field_description:l10n_cl_hr_anticipo_sueldo.field_anticipo_sueldo__message_needaction
 msgid "Action Needed"
-msgstr "Acción requerida"
+msgstr "Acción Necesaria"
 
 #. module: l10n_cl_hr_anticipo_sueldo
 #: model:ir.model.fields,field_description:l10n_cl_hr_anticipo_sueldo.field_anticipo_sueldo__activity_ids
@@ -116,38 +57,10 @@ msgid "Activity State"
 msgstr "Estado de la actividad"
 
 #. module: l10n_cl_hr_anticipo_sueldo
-#: model_terms:ir.actions.act_window,help:l10n_cl_hr_anticipo_sueldo.action_anticipo_sueldo_to_approve
-#: model_terms:ir.actions.act_window,help:l10n_cl_hr_anticipo_sueldo.action_my_anticipo_sueldo
-#: model_terms:ir.actions.act_window,help:l10n_cl_hr_anticipo_sueldo.action_my_anticipo_sueldo_request_approved
-msgid "Here you can create Salary Advance requests"
-msgstr "Acá podrá crear solicitudes para anticipo de sueldo"
-
-#. module: l10n_cl_hr_anticipo_sueldo
 #: model:ir.model.fields,field_description:l10n_cl_hr_anticipo_sueldo.field_anticipo_sueldo__advance
-msgid "Advance"
-msgstr "Anticipo"
-
-#. module: l10n_cl_hr_anticipo_sueldo
 #: model_terms:ir.ui.view,arch_db:l10n_cl_hr_anticipo_sueldo.view_anticipo_sueldo_form
 msgid "Advance"
 msgstr "Anticipo"
-
-#. module: l10n_cl_hr_anticipo_sueldo
-#: model:ir.actions.act_window,name:l10n_cl_hr_anticipo_sueldo.action_anticipo_sueldo_to_approve
-#: model:ir.actions.act_window,name:l10n_cl_hr_anticipo_sueldo.action_my_anticipo_sueldo
-#: model:ir.actions.act_window,name:l10n_cl_hr_anticipo_sueldo.action_my_anticipo_sueldo_request_approved
-msgid "Salary Advance"
-msgstr "Anticipo de Sueldo"
-
-#. module: l10n_cl_hr_anticipo_sueldo
-#: model:ir.ui.menu,name:l10n_cl_hr_anticipo_sueldo.parent_menu_anticipo_sueldo
-msgid "Salary Advance"
-msgstr "Anticipos"
-
-#. module: l10n_cl_hr_anticipo_sueldo
-#: model:ir.model.fields,field_description:l10n_cl_hr_anticipo_sueldo.field_res_config_settings__hr_anticipo_approve
-msgid "Approval from Accounting Department"
-msgstr "Aprobación del Depto. Contabilidad"
 
 #. module: l10n_cl_hr_anticipo_sueldo
 #: model_terms:ir.ui.view,arch_db:l10n_cl_hr_anticipo_sueldo.view_anticipo_sueldo_form
@@ -183,17 +96,12 @@ msgstr "Cancelado"
 #. module: l10n_cl_hr_anticipo_sueldo
 #: model:ir.model.fields,field_description:l10n_cl_hr_anticipo_sueldo.field_anticipo_sueldo__company_id
 msgid "Company"
-msgstr "Empresa"
+msgstr "Compañía"
 
 #. module: l10n_cl_hr_anticipo_sueldo
 #: model:ir.model,name:l10n_cl_hr_anticipo_sueldo.model_res_config_settings
 msgid "Config Settings"
 msgstr "Opciones de Configuración"
-
-#. module: l10n_cl_hr_anticipo_sueldo
-#: model_terms:ir.ui.view,arch_db:l10n_cl_hr_anticipo_sueldo.view_anticipo_sueldo_form
-msgid "Accounting Entry"
-msgstr "Contabilización"
 
 #. module: l10n_cl_hr_anticipo_sueldo
 #: model:ir.model.fields,field_description:l10n_cl_hr_anticipo_sueldo.field_anticipo_sueldo__employee_contract_id
@@ -205,7 +113,7 @@ msgstr "Contrato"
 #: model_terms:ir.actions.act_window,help:l10n_cl_hr_anticipo_sueldo.action_my_anticipo_sueldo
 #: model_terms:ir.actions.act_window,help:l10n_cl_hr_anticipo_sueldo.action_my_anticipo_sueldo_request_approved
 msgid "Create request for Employee Salary Advance"
-msgstr "Crear Solicitud de Anticipo de Sueldo"
+msgstr "Crear Solicitud de Anticipo de Sueldo extraordinaria. Note que el pago anticipado de remuneraciones de la primera quincena se realiza indicando el monto del anticipo quincenal en el Contrato de Trabajo. Estas solicitudes se reservan para casos excepcionales."
 
 #. module: l10n_cl_hr_anticipo_sueldo
 #: model:ir.model.fields,field_description:l10n_cl_hr_anticipo_sueldo.field_anticipo_sueldo__create_uid
@@ -220,7 +128,7 @@ msgstr "Creado el"
 #. module: l10n_cl_hr_anticipo_sueldo
 #: model:ir.model.fields,field_description:l10n_cl_hr_anticipo_sueldo.field_anticipo_sueldo__credit
 msgid "Credit Account"
-msgstr "Cuenta Acreedora"
+msgstr "Cuenta Crédito"
 
 #. module: l10n_cl_hr_anticipo_sueldo
 #: model:ir.model.fields,field_description:l10n_cl_hr_anticipo_sueldo.field_anticipo_sueldo__currency_id
@@ -236,7 +144,7 @@ msgstr "Fecha"
 #. module: l10n_cl_hr_anticipo_sueldo
 #: model:ir.model.fields,field_description:l10n_cl_hr_anticipo_sueldo.field_anticipo_sueldo__debit
 msgid "Debit Account"
-msgstr "Cuenta Deudora"
+msgstr "Cuenta Débito"
 
 #. module: l10n_cl_hr_anticipo_sueldo
 #: model:ir.model.fields,field_description:l10n_cl_hr_anticipo_sueldo.field_anticipo_sueldo__department
@@ -254,29 +162,15 @@ msgid "Draft"
 msgstr "Borrador"
 
 #. module: l10n_cl_hr_anticipo_sueldo
+#: model:ir.model.fields,field_description:l10n_cl_hr_anticipo_sueldo.field_anticipo_sueldo__employee_id
 #: model_terms:ir.ui.view,arch_db:l10n_cl_hr_anticipo_sueldo.view_anticipo_sueldo_filter
 msgid "Employee"
 msgstr "Empleado"
 
 #. module: l10n_cl_hr_anticipo_sueldo
-#: model_terms:ir.ui.view,arch_db:l10n_cl_hr_anticipo_sueldo.view_anticipo_sueldo_form
-msgid "Requesting Employee"
-msgstr "Empleado Solicitante"
-
-#. module: l10n_cl_hr_anticipo_sueldo
-#: model:ir.model.fields,field_description:l10n_cl_hr_anticipo_sueldo.field_anticipo_sueldo__employee_id
-msgid "Employee"
-msgstr "Empleado"
-
-#. module: l10n_cl_hr_anticipo_sueldo
-#: model_terms:ir.ui.view,arch_db:l10n_cl_hr_anticipo_sueldo.view_account_config_inherit
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr_anticipo_sueldo.cl_view_account_config_hr_advance_inherit
 msgid "Enable Approval from Accounting Department"
 msgstr "Habilitar Aprobación del Departamento de Contabilidad"
-
-#. module: l10n_cl_hr_anticipo_sueldo
-#: model_terms:ir.ui.view,arch_db:l10n_cl_hr_anticipo_sueldo.model_salary_structure
-msgid "Salary Structure"
-msgstr "Estructura Salarial"
 
 #. module: l10n_cl_hr_anticipo_sueldo
 #: model:ir.model.fields,field_description:l10n_cl_hr_anticipo_sueldo.field_anticipo_sueldo__exceed_condition
@@ -299,9 +193,36 @@ msgid "Followers (Partners)"
 msgstr "Seguidores (Empresas)"
 
 #. module: l10n_cl_hr_anticipo_sueldo
-#: model_terms:ir.ui.view,arch_db:l10n_cl_hr_anticipo_sueldo.view_account_config_inherit
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr_anticipo_sueldo.cl_view_account_config_hr_advance_inherit
 msgid "HR Salary Advance"
-msgstr "Anticipo Sueldo RRHH"
+msgstr "RRHH Anticipo de Suelfo"
+
+#. module: l10n_cl_hr_anticipo_sueldo
+#: model:ir.model.fields,field_description:l10n_cl_hr_anticipo_sueldo.field_res_config_settings__hr_anticipo_approve
+msgid "HR Salary Advance Approval from Accounting Department"
+msgstr "RRHH Aprobación adicional del área de Contabilidad para Anticipos"
+
+#. module: l10n_cl_hr_anticipo_sueldo
+#: model:ir.model.fields,field_description:l10n_cl_hr_anticipo_sueldo.field_res_config_settings__hr_credit_account_id
+msgid "HR Salary Advance Credit Account"
+msgstr "RRHH Cuenta Crédito (por Pagar) para Anticipos"
+
+#. module: l10n_cl_hr_anticipo_sueldo
+#: model:ir.model.fields,field_description:l10n_cl_hr_anticipo_sueldo.field_res_config_settings__hr_debit_account_id
+msgid "HR Salary Advance Debit Account"
+msgstr ""
+
+#. module: l10n_cl_hr_anticipo_sueldo
+#: model:ir.model.fields,field_description:l10n_cl_hr_anticipo_sueldo.field_res_config_settings__hr_anticipo_journal_id
+msgid "HR Salary Advance Journal"
+msgstr "Diario Contable para Anticipos de Sueldo"
+
+#. module: l10n_cl_hr_anticipo_sueldo
+#: model_terms:ir.actions.act_window,help:l10n_cl_hr_anticipo_sueldo.action_anticipo_sueldo_to_approve
+#: model_terms:ir.actions.act_window,help:l10n_cl_hr_anticipo_sueldo.action_my_anticipo_sueldo
+#: model_terms:ir.actions.act_window,help:l10n_cl_hr_anticipo_sueldo.action_my_anticipo_sueldo_request_approved
+msgid "Here you can create Salary Advance requests"
+msgstr "Acá podrá crear solicitudes para anticipo de sueldo"
 
 #. module: l10n_cl_hr_anticipo_sueldo
 #: model:ir.model.fields,field_description:l10n_cl_hr_anticipo_sueldo.field_anticipo_sueldo__id
@@ -330,34 +251,33 @@ msgstr "Es un seguidor"
 
 #. module: l10n_cl_hr_anticipo_sueldo
 #: model:ir.model.fields,field_description:l10n_cl_hr_anticipo_sueldo.field_anticipo_sueldo__journal
-#: model:ir.model.fields,field_description:l10n_cl_hr_anticipo_sueldo.field_res_config_settings__hr_anticipo_journal_id
 msgid "Journal"
-msgstr "Libro Diario"
+msgstr "Diario"
 
 #. module: l10n_cl_hr_anticipo_sueldo
-#: model_terms:ir.ui.view,arch_db:l10n_cl_hr_anticipo_sueldo.view_account_config_inherit
-msgid "Journal and Accounts used for posting of Salary Advance payments"
-msgstr "Diario Contable y Cuentas a usar para el registro del pago de anticipos"
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr_anticipo_sueldo.cl_view_account_config_hr_advance_inherit
+msgid "Journal and Accounts used for posting of SAlary Advance payments"
+msgstr ""
 
 #. module: l10n_cl_hr_anticipo_sueldo
 #: model:ir.model.fields,field_description:l10n_cl_hr_anticipo_sueldo.field_anticipo_sueldo____last_update
 msgid "Last Modified on"
-msgstr "Modificado el"
+msgstr "Última modificación en"
 
 #. module: l10n_cl_hr_anticipo_sueldo
 #: model:ir.model.fields,field_description:l10n_cl_hr_anticipo_sueldo.field_anticipo_sueldo__write_uid
 msgid "Last Updated by"
-msgstr "Actualizado por"
+msgstr "Última actualización por"
 
 #. module: l10n_cl_hr_anticipo_sueldo
 #: model:ir.model.fields,field_description:l10n_cl_hr_anticipo_sueldo.field_anticipo_sueldo__write_date
 msgid "Last Updated on"
-msgstr "Actualizado el"
+msgstr "Última actualización el"
 
 #. module: l10n_cl_hr_anticipo_sueldo
 #: model:ir.model.fields,field_description:l10n_cl_hr_anticipo_sueldo.field_anticipo_sueldo__message_main_attachment_id
 msgid "Main Attachment"
-msgstr "Adjuntos Principales"
+msgstr "Adjuntos principales"
 
 #. module: l10n_cl_hr_anticipo_sueldo
 #: model:ir.model.fields,field_description:l10n_cl_hr_anticipo_sueldo.field_hr_payroll_structure__max_percent
@@ -375,14 +295,14 @@ msgid "Messages"
 msgstr "Mensajes"
 
 #. module: l10n_cl_hr_anticipo_sueldo
-#: model_terms:ir.ui.view,arch_db:l10n_cl_hr_anticipo_sueldo.view_anticipo_sueldo_filter
-msgid "My Requests"
-msgstr "Mis Solicitudes"
-
-#. module: l10n_cl_hr_anticipo_sueldo
 #: model:ir.ui.menu,name:l10n_cl_hr_anticipo_sueldo.menu_my_anticipo_sueldo_approved
 msgid "My Approved Requests"
 msgstr "Mis Solicitudes Aprobadas"
+
+#. module: l10n_cl_hr_anticipo_sueldo
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr_anticipo_sueldo.view_anticipo_sueldo_filter
+msgid "My Requests"
+msgstr "Mis peticiones"
 
 #. module: l10n_cl_hr_anticipo_sueldo
 #: model:ir.model.fields,field_description:l10n_cl_hr_anticipo_sueldo.field_anticipo_sueldo__name
@@ -442,7 +362,7 @@ msgstr "Vencido"
 #. module: l10n_cl_hr_anticipo_sueldo
 #: model:ir.model,name:l10n_cl_hr_anticipo_sueldo.model_hr_payslip
 msgid "Pay Slip"
-msgstr "Liquidación"
+msgstr "Nómina"
 
 #. module: l10n_cl_hr_anticipo_sueldo
 #: model:ir.model.fields,field_description:l10n_cl_hr_anticipo_sueldo.field_anticipo_sueldo__payment_method
@@ -460,11 +380,6 @@ msgid "Reason"
 msgstr "Motivo"
 
 #. module: l10n_cl_hr_anticipo_sueldo
-#: model_terms:ir.ui.view,arch_db:l10n_cl_hr_anticipo_sueldo.model_salary_structure
-msgid "Rules for Salary Advance Payment"
-msgstr "Reglas para Anticipos"
-
-#. module: l10n_cl_hr_anticipo_sueldo
 #: model_terms:ir.ui.view,arch_db:l10n_cl_hr_anticipo_sueldo.view_anticipo_sueldo_form
 msgid "Reject"
 msgstr "Rechazar"
@@ -475,12 +390,39 @@ msgid "Rejected"
 msgstr "Rechazado"
 
 #. module: l10n_cl_hr_anticipo_sueldo
-#: model:ir.model.fields,field_description:l10n_cl_hr_anticipo_sueldo.field_anticipo_sueldo__activity_user_id
-msgid "Responsible User"
-msgstr "Usuario responsable"
+#: model:ir.ui.menu,name:l10n_cl_hr_anticipo_sueldo.menu_my_anticipo_sueldo
+msgid "Request Salary Advance"
+msgstr "Solicitar Anticipo Sueldo"
+
+#. module: l10n_cl_hr_anticipo_sueldo
+#: code:addons/l10n_cl_hr_anticipo_sueldo/models/anticipo_sueldo.py:174
+#, python-format
+msgid "Request can be done after \"%s\" Days From prevoius month salary"
+msgstr "Sólo se permiten anticipos \"%s\" días después del pago de nómina anterior"
 
 #. module: l10n_cl_hr_anticipo_sueldo
 #: model_terms:ir.ui.view,arch_db:l10n_cl_hr_anticipo_sueldo.view_anticipo_sueldo_form
+msgid "Requesting Employee"
+msgstr "Empleado Solicitante"
+
+#. module: l10n_cl_hr_anticipo_sueldo
+#: model:ir.model.fields,field_description:l10n_cl_hr_anticipo_sueldo.field_anticipo_sueldo__activity_user_id
+msgid "Responsible User"
+msgstr "Usuario Responsable"
+
+#. module: l10n_cl_hr_anticipo_sueldo
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr_anticipo_sueldo.model_salary_structure
+msgid "Rules for Salary Advance Payment"
+msgstr "Reglas para Anticipos"
+
+#. module: l10n_cl_hr_anticipo_sueldo
+#: model:ir.actions.act_window,name:l10n_cl_hr_anticipo_sueldo.action_anticipo_sueldo_to_approve
+#: model:ir.actions.act_window,name:l10n_cl_hr_anticipo_sueldo.action_my_anticipo_sueldo
+#: model:ir.actions.act_window,name:l10n_cl_hr_anticipo_sueldo.action_my_anticipo_sueldo_request_approved
+#: model:ir.ui.menu,name:l10n_cl_hr_anticipo_sueldo.parent_menu_anticipo_sueldo
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr_anticipo_sueldo.view_anticipo_sueldo_filter
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr_anticipo_sueldo.view_anticipo_sueldo_form
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr_anticipo_sueldo.view_anticipo_sueldo_tree
 msgid "Salary Advance"
 msgstr "Anticipo de Sueldo"
 
@@ -495,14 +437,9 @@ msgid "Salary Advance Balance Sheet Account (Assets)"
 msgstr "Cuenta Débito de Balance (Activo) para el registro de Anticipos de Sueldo"
 
 #. module: l10n_cl_hr_anticipo_sueldo
-#: model:ir.model.fields,field_description:l10n_cl_hr_anticipo_sueldo.field_res_config_settings__hr_credit_account_id
-msgid "Salary Advance Credit Account"
-msgstr "Cuenta Crédito Anticipos"
-
-#. module: l10n_cl_hr_anticipo_sueldo
-#: model:ir.model.fields,field_description:l10n_cl_hr_anticipo_sueldo.field_res_config_settings__hr_debit_account_id
-msgid "Salary Advance Debit Account"
-msgstr "Cuenta Débito Anticipos"
+#: model:ir.ui.menu,name:l10n_cl_hr_anticipo_sueldo.menu_anticipo_sueldo
+msgid "Salary Advance Requests to Approve"
+msgstr "Solicitudes de Anticipo a Aprobar"
 
 #. module: l10n_cl_hr_anticipo_sueldo
 #: model:ir.model.fields,help:l10n_cl_hr_anticipo_sueldo.field_res_config_settings__hr_credit_account_id
@@ -516,34 +453,14 @@ msgstr "Días tras Nómina anterior"
 
 #. module: l10n_cl_hr_anticipo_sueldo
 #: model:ir.model,name:l10n_cl_hr_anticipo_sueldo.model_hr_payroll_structure
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr_anticipo_sueldo.model_salary_structure
 msgid "Salary Structure"
-msgstr "Reglas Salariales"
+msgstr "Estructura Salarial"
 
 #. module: l10n_cl_hr_anticipo_sueldo
 #: model_terms:ir.ui.view,arch_db:l10n_cl_hr_anticipo_sueldo.view_anticipo_sueldo_filter
 msgid "Search"
-msgstr "Buscar..."
-
-#. module: l10n_cl_hr_anticipo_sueldo
-#: model:ir.ui.menu,name:l10n_cl_hr_anticipo_sueldo.menu_my_anticipo_sueldo
-msgid "Request Salary Advance"
-msgstr "Solicitar Anticipo Sueldo"
-
-#. module: l10n_cl_hr_anticipo_sueldo
-#: model:hr.salary.rule,name:l10n_cl_hr_anticipo_sueldo.hr_payslip_rule_sol_anticipo
-msgid "Salary Advance"
-msgstr "Solicitud de Anticipo"
-
-#. module: l10n_cl_hr_anticipo_sueldo
-#: model_terms:ir.ui.view,arch_db:l10n_cl_hr_anticipo_sueldo.view_anticipo_sueldo_filter
-#: model_terms:ir.ui.view,arch_db:l10n_cl_hr_anticipo_sueldo.view_anticipo_sueldo_tree
-msgid "Salary Advance"
-msgstr "Solicitud de Anticipo de Sueldo"
-
-#. module: l10n_cl_hr_anticipo_sueldo
-#: model:ir.ui.menu,name:l10n_cl_hr_anticipo_sueldo.menu_anticipo_sueldo
-msgid "Salary Advance Requests to Approve"
-msgstr "Solicitudes de Anticipo a Aprobar"
+msgstr "Búsqueda"
 
 #. module: l10n_cl_hr_anticipo_sueldo
 #: model_terms:ir.ui.view,arch_db:l10n_cl_hr_anticipo_sueldo.view_anticipo_sueldo_filter
@@ -569,7 +486,7 @@ msgstr "Estado basado en actividades\n"
 #. module: l10n_cl_hr_anticipo_sueldo
 #: model_terms:ir.ui.view,arch_db:l10n_cl_hr_anticipo_sueldo.view_anticipo_sueldo_form
 msgid "Submit"
-msgstr "Enviar Solicitud"
+msgstr "Enviar"
 
 #. module: l10n_cl_hr_anticipo_sueldo
 #: selection:anticipo.sueldo,state:0
@@ -628,6 +545,5 @@ msgstr "Historial de comunicaciones del sitio web"
 
 #. module: l10n_cl_hr_anticipo_sueldo
 #: model:ir.model,name:l10n_cl_hr_anticipo_sueldo.model_anticipo_sueldo
-msgid "anticipo.sueldo"
-msgstr ""
-
+msgid "HR Salaray Advance"
+msgstr "RRHH Solicitud de Anticipo de Sueldo"
