@@ -32,9 +32,10 @@
     'website': 'https://www.Intellego-BI.com',
     'maintainer': 'Intellego-BI.com',
     'depends': [
-        'hr_payroll', 'hr', 'account', 'hr_contract', 'l10n_cl_hr', 'l10n_cl_hr_prestamo', 
+        'hr_payroll', 'hr', 'account', 'hr_contract', 'l10n_cl_hr', 
     ],
     'data': [
+        'hr_chile_menus.xml',
         'security/ir.model.access.csv',
         'security/security.xml',
         'data/hr_anticipo_reglas_salariales.xml',
