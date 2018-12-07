@@ -99,7 +99,7 @@
             <field name="view_mode">tree,form</field>
         </record>
 
-        <menuitem id="final_settlements" name="Liquida Finiquito" parent="employee_gratuity"
+        <menuitem id="final_settlements" name="Liquida Finiquito" parent="l10n_cl_hr_termination_request.employee_gratuity"
                   action="action_hr_settlements" sequence="2" />
 
     </data>
