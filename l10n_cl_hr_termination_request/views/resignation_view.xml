@@ -77,9 +77,9 @@
         <!--<menuitem name="Renuncias" id="menu_hr_loans_and_advances" parent="l10n_cl_hr.menu_cl_hr_payroll" sequence="2"/>-->
         <!--<menuitem id="employee_resignation" parent="menu_hr_loans_and_advances" name="Resignation"
                   groups="base.group_user" sequence="3"/>-->
-        <menuitem id="employee_resignation" parent="l10n_cl_hr.menu_cl_hr_payroll" name="Renuncias"
+        <menuitem id="employee_resignation" parent="l10n_cl_hr.menu_cl_hr_payroll_addons" name="Finiquitos"
                   groups="base.group_user" sequence="3"/>
-        <menuitem id="employee_resignation_request" parent="employee_resignation" name="Informar Renuncia"
+        <menuitem id="employee_resignation_request" parent="employee_resignation" name="Solicitar Finiquito"
                   action="view_employee_resignation" groups="base.group_user" sequence="4"/>
     </data>
 </odoo>
