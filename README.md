@@ -48,6 +48,11 @@ Mantendremos este repositorio público en agradecimiento y como retribución al 
     * Legal Financial Statements
     * Menu Customization and UX impreovements
 
+**Wishlist: Chilean Localization**
+
+    * Electronic Invoicing (Factura Electrónica)
+    * Outgoing Batch Payments Interface (pay multiple vendors in batch)
+
 <br><br>
 ## Thanks to
  
