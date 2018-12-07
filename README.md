@@ -29,7 +29,6 @@ Mantendremos este repositorio público en agradecimiento y como retribución al 
 
     * Partner required per account group setting (customer and vendor type accounts)
     * Analytic Account from Employee Contract
-    * Working (shift) Schedule on Employee Contract (Work in progress)
     * Icon to easily export any Odoo list to MS Excel
     * Empleoyee Loans Request
     * Employee Salary Advance Request
@@ -38,9 +37,10 @@ Mantendremos este repositorio público en agradecimiento y como retribución al 
 **Work In Progress: Chilean Localization**
 
     * Payroll Final Settlement (Finiquito) for Employee Contract Termination
+    * Working (shift) Schedule on Employee Contract
     * API Key parameter for SBIF Currency Rate Update
     * Legal Financial Statements
-    * Menu Customization and UX impreovements
+    * Menu Customization and UX improvements
 
 **Wishlist: Chilean Localization**
 
