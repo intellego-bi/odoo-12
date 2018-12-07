@@ -37,7 +37,7 @@
     'category': 'Human Resources',
     'depends': ['base', 'l10n_cl_hr_termination_request','mail','hr_payroll'],
     'data': ['views/hr_chile_menus.xml',
-             'views/employee_gratuity_view.xml',
+             #'views/employee_gratuity_view.xml',
              'views/gratuity_sequence.xml',
              'views/final_settlements.xml',
              'data/salary_rule_settle.xml',
