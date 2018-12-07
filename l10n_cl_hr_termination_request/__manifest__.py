@@ -41,6 +41,7 @@
     'category': 'Human Resources',
     'demo': [],
     'data': [
+        'views/hr_chile_menus.xml',            
         'views/resignation_view.xml',
         'views/approved_resignation.xml',
         'views/resignation_sequence.xml',
