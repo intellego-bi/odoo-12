@@ -39,6 +39,7 @@ Mantendremos este repositorio público en agradecimiento y como retribución al 
     * Icon to easily export any Odoo list to MS Excel
     * Empleoyee Loans Request
     * Employee Salary Advance Request
+    * Automatic Odoo backup to Whatever (FTP, Dropbox, Google Drive, etc.)
 
 **Work In Progress: Chilean Localization**
 
