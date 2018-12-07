@@ -3,12 +3,12 @@
     <data>
 
         <!-- Estructura de menú "NÓMINA RRHH"  -->
-        <menuitem id="menu_cl_hr_payroll_base" name="Nómina RRHH" parent="hr_payroll.menu_hr_payroll_root" sequence="2"/>
+        <menuitem id="menu_cl_hr_payroll_base" name="Nómina RRHH" parent="hr_payroll.menu_hr_payroll_root" sequence="2" groups="hr_payroll.group_hr_payroll_user"/>
         <menuitem id="menu_cl_hr_payroll_addons" name="Adicionales Nómina" parent="hr_payroll.menu_hr_payroll_root" sequence="3"/>
-        <menuitem id="menu_cl_hr_payroll_indicators" name="Previsión" parent="hr_payroll.menu_hr_payroll_root" sequence="4"/>
+        <menuitem id="menu_cl_hr_payroll_indicators" name="Previsión" parent="hr_payroll.menu_hr_payroll_root" sequence="4" groups="hr_payroll.group_hr_payroll_user"/>
         <menuitem id="menu_cl_hr_payroll_master_data" name="Master Data" parent="hr_payroll.menu_hr_payroll_root" sequence="5"/>
-        <menuitem id="menu_cl_hr_payroll_reports" name="Reports" parent="hr_payroll.menu_hr_payroll_root" sequence="11"/>
-        <menuitem id="menu_cl_hr_payroll_configuration" name="Chilean Configuration" parent="hr_payroll.menu_hr_payroll_configuration" sequence="101"/>
+        <menuitem id="menu_cl_hr_payroll_reports" name="Reports" parent="hr_payroll.menu_hr_payroll_root" sequence="11" groups="hr_payroll.group_hr_payroll_user"/>
+        <menuitem id="menu_cl_hr_payroll_configuration" name="Chilean Configuration" parent="hr_payroll.menu_hr_payroll_configuration" sequence="101" groups="hr_payroll.group_hr_payroll_user"/>
 
 
         <!-- Menu items EMPLEADOS y CONTRATOS  -->
@@ -17,12 +17,12 @@
 
 
         <!-- Menu NÓMINA RRHH -->
-        <menuitem action="hr_payroll.action_hr_payslip_run_tree"         id="hr_payroll.menu_hr_payslip_run"       parent="menu_cl_hr_payroll_base"               sequence="1" groups="hr_payroll.group_hr_payroll_user/>
+        <menuitem action="hr_payroll.action_hr_payslip_run_tree"         id="hr_payroll.menu_hr_payslip_run"       parent="menu_cl_hr_payroll_base"               sequence="1" groups="hr_payroll.group_hr_payroll_user"/>
         <menuitem action="hr_payroll.action_view_hr_payslip_form"        id="hr_payroll.menu_department_tree"      parent="menu_cl_hr_payroll_base"               sequence="2" groups="hr_payroll.group_hr_payroll_user"/>
 
 
         <!-- Menu DATOS MAESTROS -->
-        <menuitem action="hr.action_hr_job"                              id="hr.menu_hr_job_tree"                  parent="menu_cl_hr_payroll_master_data"        sequence="2"/   groups="hr_payroll.group_hr_payroll_user>
+        <menuitem action="hr.action_hr_job"                              id="hr.menu_hr_job_tree"                  parent="menu_cl_hr_payroll_master_data"        sequence="2"    groups="hr_payroll.group_hr_payroll_user"/>
         <menuitem action="hr.open_module_tree_department"                id="hr.menu_hr_department_tree"           parent="menu_cl_hr_payroll_master_data"        sequence="3"    groups="hr.group_hr_user"/>
         <menuitem action="hr.open_view_categ_form"                       id="hr.menu_view_employee_category_form"  parent="menu_cl_hr_payroll_master_data"        sequence="4"    groups="hr.group_hr_user"/>
         <menuitem action="analytic.action_account_analytic_account_form" id="hr_account_analytic_def_account"      parent="menu_cl_hr_payroll_master_data"        sequence="5"    groups="analytic.group_analytic_accounting"/>
