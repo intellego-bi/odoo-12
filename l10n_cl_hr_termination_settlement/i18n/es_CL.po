@@ -1,6 +1,6 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* l10n_cl_hr_prestamo
+#	* l10n_cl_hr_termination_settlement
 #
 msgid ""
 msgstr ""
@@ -15,525 +15,483 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
 
-#. module: l10n_cl_hr_prestamo
-#: model_terms:ir.ui.view,arch_db:l10n_cl_hr_prestamo.view_account_config_inherit
-msgid "<span class=\"o_form_label\">Employee Loan Accounting</span>"
-msgstr "<span class=\"o_form_label\">Contabilización de Préstamos a Empleados</span>"
+#. module: l10n_cl_hr_termination_settlement
+#: model:ir.model.fields,field_description:l10n_cl_hr_termination_settlement.field_hr_settlements__last_2_month_salary
+msgid "2nd Last Salary "
+msgstr "Salario Anterior (2ndo mes)"
 
-#. module: l10n_cl_hr_prestamo
-#: model_terms:ir.ui.view,arch_db:l10n_cl_hr_prestamo.view_employee_form_prestamo_inherit
-msgid "<span class=\"o_stat_text\">Loaned</span>"
-msgstr "<span class=\"o_stat_text\">Deuda</span>"
+#. module: l10n_cl_hr_termination_settlement
+#: model:ir.model.fields,field_description:l10n_cl_hr_termination_settlement.field_hr_settlements__last_3_month_salary
+msgid "3rd Last Salary "
+msgstr "Salario Anterior (3er mes)"
 
-#. module: l10n_cl_hr_prestamo
-#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__move_id
-#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo_line__move_id
-#: model_terms:ir.ui.view,arch_db:l10n_cl_hr_prestamo.hr_prestamo_form_view
-msgid "Accounting Entry"
-msgstr "Asiento Contable"
+#. module: l10n_cl_hr_termination_settlement
+#: code:addons/l10n_cl_hr_termination_settlement/models/employee_gratuity.py:50
+#: code:addons/l10n_cl_hr_termination_settlement/models/hr_settlements.py:100
+#: code:addons/l10n_cl_hr_termination_settlement/models/other_settlements.py:54
+#, python-format
+msgid "A Settlement request is already processed for this employee"
+msgstr "Ya se ha procesado una solicitud de término para este empleado"
 
-#. module: l10n_cl_hr_prestamo
-#: model:ir.model.fields,help:l10n_cl_hr_prestamo.field_res_config_settings__hr_journal_id
-msgid "Accounting Journal used for Loan payment to Employee"
-msgstr "Diario para contabilización de Préstamos a Empleados"
-
-#. module: l10n_cl_hr_prestamo
-#: model_terms:ir.ui.view,arch_db:l10n_cl_hr_prestamo.view_account_config_inherit
-msgid "Accounting settings for Employee Loans."
-msgstr "Configuraciones de Contabilidad para Préstamos RRHH"
-
-#. module: l10n_cl_hr_prestamo
-#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__message_needaction
+#. module: l10n_cl_hr_termination_settlement
+#: model:ir.model.fields,field_description:l10n_cl_hr_termination_settlement.field_hr_settlements__message_needaction
 msgid "Action Needed"
-msgstr "Acción requerida"
+msgstr "Acción Necesaria"
 
-#. module: l10n_cl_hr_prestamo
-#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__activity_ids
+#. module: l10n_cl_hr_termination_settlement
+#: model:ir.model.fields,field_description:l10n_cl_hr_termination_settlement.field_hr_settlements__activity_ids
 msgid "Activities"
 msgstr "Actividades"
 
-#. module: l10n_cl_hr_prestamo
-#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__activity_state
+#. module: l10n_cl_hr_termination_settlement
+#: model:ir.model.fields,field_description:l10n_cl_hr_termination_settlement.field_hr_settlements__activity_state
 msgid "Activity State"
 msgstr "Estado de la actividad"
 
-#. module: l10n_cl_hr_prestamo
-#: model_terms:ir.ui.view,arch_db:l10n_cl_hr_prestamo.view_account_config_inherit
-msgid "Allows you to Add approval from accounting department."
-msgstr "Permite incorporar aprobación del Depto de Contabilidad."
+#. module: l10n_cl_hr_termination_settlement
+#: code:addons/l10n_cl_hr_termination_settlement/models/employee_gratuity.py:124
+#: code:addons/l10n_cl_hr_termination_settlement/models/other_settlements.py:111
+#, python-format
+msgid "Allowance value should be numeric !!"
+msgstr "El valor debe ser numérico"
 
-#. module: l10n_cl_hr_prestamo
-#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo_line__amount
-msgid "Amount"
-msgstr "Importe"
-
-#. module: l10n_cl_hr_prestamo
-#: model_terms:ir.ui.view,arch_db:l10n_cl_hr_prestamo.hr_prestamo_form_view
-msgid "Approve"
-msgstr "Aprobar"
-
-#. module: l10n_cl_hr_prestamo
-#: selection:hr.prestamo,state:0
+#. module: l10n_cl_hr_termination_settlement
+#: selection:hr.settlements,state:0
 msgid "Approved"
 msgstr "Aprobado"
 
-#. module: l10n_cl_hr_prestamo
-#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__message_attachment_count
+#. module: l10n_cl_hr_termination_settlement
+#: model:ir.model.fields,field_description:l10n_cl_hr_termination_settlement.field_hr_settlements__message_attachment_count
 msgid "Attachment Count"
 msgstr "Conteo de archivos adjuntos"
 
-#. module: l10n_cl_hr_prestamo
-#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__balance_amount
-msgid "Balance Amount"
-msgstr "Saldo"
+#. module: l10n_cl_hr_termination_settlement
+#: model:ir.model.fields,field_description:l10n_cl_hr_termination_settlement.field_hr_settlements__average_salary
+msgid "Average Salary (past 3 months)"
+msgstr "Salario Promedio (últ. 3 meses)"
 
-#. module: l10n_cl_hr_prestamo
-#: model_terms:ir.ui.view,arch_db:l10n_cl_hr_prestamo.hr_prestamo_form_view
+#. module: l10n_cl_hr_termination_settlement
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr_termination_settlement.hr_settlements_form
 msgid "Cancel"
 msgstr "Cancelar"
 
-#. module: l10n_cl_hr_prestamo
-#: selection:hr.prestamo,state:0
-msgid "Canceled"
+#. module: l10n_cl_hr_termination_settlement
+#: selection:hr.settlements,state:0
+msgid "Cancelled"
 msgstr "Cancelado"
 
-#. module: l10n_cl_hr_prestamo
-#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__company_id
+#. module: l10n_cl_hr_termination_settlement
+#: model:ir.model.fields,field_description:l10n_cl_hr_termination_settlement.field_hr_settlements__company_id
 msgid "Company"
 msgstr "Compañía"
 
-#. module: l10n_cl_hr_prestamo
-#: model_terms:ir.ui.view,arch_db:l10n_cl_hr_prestamo.hr_prestamo_form_view
-msgid "Compute Installment"
-msgstr "Calcular Cuotas"
+#. module: l10n_cl_hr_termination_settlement
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr_termination_settlement.hr_settlements_form
+msgid "Confirm"
+msgstr "Confirmar"
 
-#. module: l10n_cl_hr_prestamo
-#: model:ir.model,name:l10n_cl_hr_prestamo.model_res_config_settings
-msgid "Config Settings"
-msgstr "Opciones de Configuración"
-
-#. module: l10n_cl_hr_prestamo
-#: model_terms:ir.actions.act_window,help:l10n_cl_hr_prestamo.action_hr_prestamo_request
-msgid "Here you can create Employee Loan Requests that can be repaid through automatic deductions in payroll processing "
-msgstr "Acá podrá crear solicitudes de préstamos para empleados. Los préstamos se pueden pagar en cuotas que serán descontadas automáticamente a través de la nómina de remuneraciones"
-
-#. module: l10n_cl_hr_prestamo
-#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__create_uid
-#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo_line__create_uid
+#. module: l10n_cl_hr_termination_settlement
+#: model:ir.model.fields,field_description:l10n_cl_hr_termination_settlement.field_hr_settlements__create_uid
 msgid "Created by"
 msgstr "Creado por"
 
-#. module: l10n_cl_hr_prestamo
-#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__create_date
-#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo_line__create_date
+#. module: l10n_cl_hr_termination_settlement
+#: model:ir.model.fields,field_description:l10n_cl_hr_termination_settlement.field_hr_settlements__create_date
 msgid "Created on"
 msgstr "Creado el"
 
-#. module: l10n_cl_hr_prestamo
-#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__currency_id
-#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo_line__currency_id
+#. module: l10n_cl_hr_termination_settlement
+#: model:ir.model.fields,field_description:l10n_cl_hr_termination_settlement.field_hr_settlements__currency_id
 msgid "Currency"
 msgstr "Moneda"
 
-#. module: l10n_cl_hr_prestamo
-#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__department_id
-#: model_terms:ir.ui.view,arch_db:l10n_cl_hr_prestamo.view_prestamo_request_search_form
+#. module: l10n_cl_hr_termination_settlement
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr_termination_settlement.hr_settlements_form
+msgid "Datos Generales"
+msgstr ""
+
+#. module: l10n_cl_hr_termination_settlement
+#: model:ir.model.fields,field_description:l10n_cl_hr_termination_settlement.field_hr_settlements__notice_days
+msgid "Days of Notice before termination"
+msgstr "Días de Preaviso"
+
+#. module: l10n_cl_hr_termination_settlement
+#: model:ir.model.fields,field_description:l10n_cl_hr_termination_settlement.field_hr_settlements__allowance
+msgid "Dearness Allowance"
+msgstr "Otros Conceptos Finiquito"
+
+#. module: l10n_cl_hr_termination_settlement
+#: model:ir.model.fields,field_description:l10n_cl_hr_termination_settlement.field_hr_settlements__department_id
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr_termination_settlement.hr_settlements_form
 msgid "Department"
 msgstr "Departamento"
 
-#. module: l10n_cl_hr_prestamo
-#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__display_name
-#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo_line__display_name
-msgid "Display Name"
-msgstr "Nombre a mostrar"
+#. module: l10n_cl_hr_termination_settlement
+#: selection:hr.settlements,reason:0
+msgid "Despido Injustificado (Art. 161)"
+msgstr ""
 
-#. module: l10n_cl_hr_prestamo
-#: selection:hr.prestamo,state:0
+#. module: l10n_cl_hr_termination_settlement
+#: selection:hr.settlements,reason:0
+msgid "Despido Justificado (Art. 160)"
+msgstr ""
+
+#. module: l10n_cl_hr_termination_settlement
+#: model:ir.model.fields,field_description:l10n_cl_hr_termination_settlement.field_hr_settlements__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: l10n_cl_hr_termination_settlement
+#: selection:hr.settlements,state:0
 msgid "Draft"
 msgstr "Borrador"
 
-#. module: l10n_cl_hr_prestamo
-#: model:ir.model,name:l10n_cl_hr_prestamo.model_hr_employee
-#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__employee_id
-#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo_line__employee_id
-#: model_terms:ir.ui.view,arch_db:l10n_cl_hr_prestamo.view_prestamo_request_search_form
+#. module: l10n_cl_hr_termination_settlement
+#: model:ir.model.fields,field_description:l10n_cl_hr_termination_settlement.field_hr_settlements__dias_vaca_prop
+msgid "Días Feriado Proporcional"
+msgstr ""
+
+#. module: l10n_cl_hr_termination_settlement
+#: model:ir.model.fields,field_description:l10n_cl_hr_termination_settlement.field_hr_settlements__dias_vaca_pend
+msgid "Días de Vacaciones Pendientes"
+msgstr ""
+
+#. module: l10n_cl_hr_termination_settlement
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr_termination_settlement.hr_settlements_form
+msgid "Empleado"
+msgstr ""
+
+#. module: l10n_cl_hr_termination_settlement
+#: model:ir.model.fields,field_description:l10n_cl_hr_termination_settlement.field_hr_settlements__employee_id
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr_termination_settlement.hr_settlements_form
 msgid "Employee"
 msgstr "Empleado"
 
-#. module: l10n_cl_hr_prestamo
-#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__emp_account_id
-msgid "Employee Loan Account"
-msgstr "Cuenta Préstamos a Empleados"
+#. module: l10n_cl_hr_termination_settlement
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr_termination_settlement.hr_settlements_tree
+msgid "Employee Gratuity"
+msgstr "Finiquitos"
 
-#. module: l10n_cl_hr_prestamo
-#: model:ir.actions.act_window,name:l10n_cl_hr_prestamo.act_hr_employee_prestamo_request
-#: model:ir.ui.menu,name:l10n_cl_hr_prestamo.menu_base_hr_prestamo_request
-msgid "Employee Loans"
-msgstr "Préstamos a Empleados"
+#. module: l10n_cl_hr_termination_settlement
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr_termination_settlement.hr_settlements_form
+msgid "Employee Settlements"
+msgstr "Finiquitos"
 
-#. module: l10n_cl_hr_prestamo
-#: model:ir.model.fields,help:l10n_cl_hr_prestamo.field_res_config_settings__hr_emp_account_id
-msgid "Employee Loans Balance Sheet Account (Assets)"
-msgstr "Cuenta de Balance (Activo) para registrar Préstamos al Personal"
-
-#. module: l10n_cl_hr_prestamo
-#: model:ir.model.fields,help:l10n_cl_hr_prestamo.field_res_config_settings__hr_treasury_account_id
-msgid "Employee Loans payment transit Balance Sheet Account (Liability)"
-msgstr "Cuenta transitoria de Balance (Pasivo) para realizar el pago inicial al otorgar el préstamo"
-
-#. module: l10n_cl_hr_prestamo
-#: model_terms:ir.ui.view,arch_db:l10n_cl_hr_prestamo.view_account_config_inherit
-msgid "Enable Approval from Accounting Department"
-msgstr "Habilitar Aprobación del Departamento de Contabilidad"
-
-#. module: l10n_cl_hr_prestamo
-#: code:addons/l10n_cl_hr_prestamo/models/hr_prestamo.py:157
+#. module: l10n_cl_hr_termination_settlement
+#: code:addons/l10n_cl_hr_termination_settlement/models/employee_gratuity.py:90
+#: code:addons/l10n_cl_hr_termination_settlement/models/other_settlements.py:105
 #, python-format
-msgid "Error! Please Compute installment"
-msgstr "Error: aún no ha calculado las cuotas para el pago"
+msgid "Employee Working Period is less than 1 Year"
+msgstr "El empleaado no ha trabajado por más de un año con la empresa"
 
-#. module: l10n_cl_hr_prestamo
-#: code:addons/l10n_cl_hr_prestamo/models/hr_prestamo.py:110
-#, python-format
-msgid "Error! This employee has %s pending installment(s) for a total of %s %s"
-msgstr "Error: este empleado tiene %s cuotas pendientes por un total de %s %s adeudado"
+#. module: l10n_cl_hr_termination_settlement
+#: model:ir.model.fields,field_description:l10n_cl_hr_termination_settlement.field_hr_payslip_input__hr_settlements_id
+msgid "Final Settlements"
+msgstr "Liquidación de Finiquito"
 
-#. module: l10n_cl_hr_prestamo
-#: code:addons/l10n_cl_hr_prestamo/models/hr_prestamo.py:127
-#, python-format
-msgid "Error: Enter positive installment amounts"
-msgstr "Error: debe ingresar montos positivos para las cuotas"
+#. module: l10n_cl_hr_termination_settlement
+#: model:ir.actions.act_window,name:l10n_cl_hr_termination_settlement.action_hr_settlements
+msgid "Finiquito"
+msgstr ""
 
-#. module: l10n_cl_hr_prestamo
-#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__message_follower_ids
+#. module: l10n_cl_hr_termination_settlement
+#: model:ir.model.fields,field_description:l10n_cl_hr_termination_settlement.field_hr_settlements__message_follower_ids
 msgid "Followers"
 msgstr "Seguidores"
 
-#. module: l10n_cl_hr_prestamo
-#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__message_channel_ids
+#. module: l10n_cl_hr_termination_settlement
+#: model:ir.model.fields,field_description:l10n_cl_hr_termination_settlement.field_hr_settlements__message_channel_ids
 msgid "Followers (Channels)"
 msgstr "Seguidores (Canales)"
 
-#. module: l10n_cl_hr_prestamo
-#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__message_partner_ids
+#. module: l10n_cl_hr_termination_settlement
+#: model:ir.model.fields,field_description:l10n_cl_hr_termination_settlement.field_hr_settlements__message_partner_ids
 msgid "Followers (Partners)"
 msgstr "Seguidores (Empresas)"
 
-#. module: l10n_cl_hr_prestamo
-#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_res_config_settings__hr_emp_account_id
-msgid "HR Employee Loans Account"
-msgstr "RRHH Cuenta de Préstamos"
-
-#. module: l10n_cl_hr_prestamo
-#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_res_config_settings__hr_treasury_account_id
-msgid "HR Employee Payment Account"
-msgstr "RRHH Cuenta por Pagar (Tránsito)"
-
-#. module: l10n_cl_hr_prestamo
-#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_res_config_settings__prestamo_approve
-msgid "HR Loan Approval from Accounting Department"
-msgstr "RRHH Aprobación de Préstamos para el área de Contabilidad"
-
-#. module: l10n_cl_hr_prestamo
-#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_res_config_settings__hr_journal_id
-msgid "HR Loan Journal"
-msgstr "Diario Contable para Préstamos RRHH"
-
-#. module: l10n_cl_hr_prestamo
-#: model:ir.model,name:l10n_cl_hr_prestamo.model_hr_prestamo
-msgid "HR Loan Request"
-msgstr "Solicitud de Préstamo RRHH"
-
-#. module: l10n_cl_hr_prestamo
-#: model_terms:ir.actions.act_window,help:l10n_cl_hr_prestamo.action_hr_prestamo_request
-msgid "Here you can create Employee Loan Requests"
-msgstr "Crear Solicitud de Préstamo de RRHH"
-
-#. module: l10n_cl_hr_prestamo
-#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__id
-#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo_line__id
-msgid "ID"
+#. module: l10n_cl_hr_termination_settlement
+#: model:ir.model.fields,field_description:l10n_cl_hr_termination_settlement.field_hr_settlements__notice_fact
+msgid "Fracción de pago Aviso Previo"
 msgstr ""
 
-#. module: l10n_cl_hr_prestamo
-#: model:ir.model.fields,help:l10n_cl_hr_prestamo.field_hr_prestamo__message_unread
+#. module: l10n_cl_hr_termination_settlement
+#: model:ir.model.fields,field_description:l10n_cl_hr_termination_settlement.field_hr_settlements__gratuity_amount
+msgid "Gratuity Payable"
+msgstr "Finiquito a Pagar"
+
+#. module: l10n_cl_hr_termination_settlement
+#: model:ir.model.fields,help:l10n_cl_hr_termination_settlement.field_hr_settlements__gratuity_amount
+#: model:ir.model.fields,help:l10n_cl_hr_termination_settlement.field_hr_settlements__ias_amount
+msgid "Gratuity is calculated based on 							the equation Last salary * Number of years of service"
+msgstr ""
+
+#. module: l10n_cl_hr_termination_settlement
+#: model:ir.model,name:l10n_cl_hr_termination_settlement.model_hr_settlements
+msgid "HR Settlement"
+msgstr "Finiquito RRHH"
+
+#. module: l10n_cl_hr_termination_settlement
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr_termination_settlement.hr_settlements_form
+msgid "Historia"
+msgstr ""
+
+#. module: l10n_cl_hr_termination_settlement
+#: model:ir.model.fields,field_description:l10n_cl_hr_termination_settlement.field_hr_settlements__id
+msgid "ID"
+msgstr "ID (identificación)"
+
+#. module: l10n_cl_hr_termination_settlement
+#: model:ir.model.fields,help:l10n_cl_hr_termination_settlement.field_hr_settlements__message_unread
 msgid "If checked new messages require your attention."
 msgstr "Si está marcado, hay nuevos mensajes que requieren su atención"
 
-#. module: l10n_cl_hr_prestamo
-#: model:ir.model.fields,help:l10n_cl_hr_prestamo.field_hr_prestamo__message_needaction
+#. module: l10n_cl_hr_termination_settlement
+#: model:ir.model.fields,help:l10n_cl_hr_termination_settlement.field_hr_settlements__message_needaction
 msgid "If checked, new messages require your attention."
-msgstr "Si está marcado hay nuevos mensajes que requieren su atención."
+msgstr "Si está marcado, hay nuevos mensajes que requieren su atención."
 
-#. module: l10n_cl_hr_prestamo
-#: model:ir.model.fields,help:l10n_cl_hr_prestamo.field_hr_prestamo__message_has_error
+#. module: l10n_cl_hr_termination_settlement
+#: model:ir.model.fields,help:l10n_cl_hr_termination_settlement.field_hr_settlements__message_has_error
 msgid "If checked, some messages have a delivery error."
 msgstr "Si se encuentra marcado, algunos mensajes tienen error de envío."
 
-#. module: l10n_cl_hr_prestamo
-#: model:ir.model,name:l10n_cl_hr_prestamo.model_hr_prestamo_line
-msgid "Installment Line"
-msgstr "Detalle de Cuota"
+#. module: l10n_cl_hr_termination_settlement
+#: model:ir.model.fields,field_description:l10n_cl_hr_termination_settlement.field_hr_settlements__iap_amount
+msgid "Indeminización Aviso Previo (IAP)"
+msgstr ""
 
-#. module: l10n_cl_hr_prestamo
-#: model_terms:ir.ui.view,arch_db:l10n_cl_hr_prestamo.hr_prestamo_form_view
-msgid "Installments"
-msgstr "Cuotas"
+#. module: l10n_cl_hr_termination_settlement
+#: model:ir.model.fields,field_description:l10n_cl_hr_termination_settlement.field_hr_settlements__ias_amount
+msgid "Indeminización Años Servicio (IAS)"
+msgstr ""
 
-#. module: l10n_cl_hr_prestamo
-#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__message_is_follower
+#. module: l10n_cl_hr_termination_settlement
+#: model:ir.model.fields,field_description:l10n_cl_hr_termination_settlement.field_hr_settlements__ifp_amount
+msgid "Indeminización Feriado Proporcional"
+msgstr ""
+
+#. module: l10n_cl_hr_termination_settlement
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr_termination_settlement.hr_settlements_form
+msgid "Indemnización Aviso Previo (IAP)"
+msgstr ""
+
+#. module: l10n_cl_hr_termination_settlement
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr_termination_settlement.hr_settlements_form
+msgid "Indemnización Años Servicio (IAS)"
+msgstr ""
+
+#. module: l10n_cl_hr_termination_settlement
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr_termination_settlement.hr_settlements_form
+msgid "Indemnización Feriado Proporcional (IFP)"
+msgstr ""
+
+#. module: l10n_cl_hr_termination_settlement
+#: model:ir.model.fields,field_description:l10n_cl_hr_termination_settlement.field_hr_settlements__message_is_follower
 msgid "Is Follower"
 msgstr "Es un seguidor"
 
-#. module: l10n_cl_hr_prestamo
-#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__job_position
-msgid "Job Position"
-msgstr "Puesto de Trabajo"
+#. module: l10n_cl_hr_termination_settlement
+#: model:ir.model.fields,field_description:l10n_cl_hr_termination_settlement.field_hr_settlements__joined_date
+msgid "Joined Date"
+msgstr "Fecha de Vinculación"
 
-#. module: l10n_cl_hr_prestamo
-#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__journal_id
-msgid "Journal"
-msgstr "Diario"
-
-#. module: l10n_cl_hr_prestamo
-#: model_terms:ir.ui.view,arch_db:l10n_cl_hr_prestamo.view_account_config_inherit
-msgid "Journal and Accounts used for initial posting of Employee Loans"
-msgstr "Libro Diario y Cuentas Contables empleadas para el registro de Préstamos RRHH"
-
-#. module: l10n_cl_hr_prestamo
-#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo____last_update
-#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo_line____last_update
+#. module: l10n_cl_hr_termination_settlement
+#: model:ir.model.fields,field_description:l10n_cl_hr_termination_settlement.field_hr_settlements____last_update
 msgid "Last Modified on"
-msgstr "Última modificación el"
+msgstr "Modificado el"
 
-#. module: l10n_cl_hr_prestamo
-#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__write_uid
-#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo_line__write_uid
+#. module: l10n_cl_hr_termination_settlement
+#: model:ir.model.fields,field_description:l10n_cl_hr_termination_settlement.field_hr_settlements__last_month_salary
+msgid "Last Salary"
+msgstr "Último Salario"
+
+#. module: l10n_cl_hr_termination_settlement
+#: model:ir.model.fields,field_description:l10n_cl_hr_termination_settlement.field_hr_settlements__write_uid
 msgid "Last Updated by"
-msgstr "Última actualización por"
+msgstr "Actualizado por"
 
-#. module: l10n_cl_hr_prestamo
-#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__write_date
-#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo_line__write_date
+#. module: l10n_cl_hr_termination_settlement
+#: model:ir.model.fields,field_description:l10n_cl_hr_termination_settlement.field_hr_settlements__write_date
 msgid "Last Updated on"
-msgstr "Última actualización el"
+msgstr "Actualizado el"
 
-#. module: l10n_cl_hr_prestamo
-#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__prestamo_amount
-msgid "Loan Amount"
-msgstr "Valor Préstamo"
+#. module: l10n_cl_hr_termination_settlement
+#: model:ir.ui.menu,name:l10n_cl_hr_termination_settlement.final_settlements
+msgid "Liquida Finiquito"
+msgstr ""
 
-#. module: l10n_cl_hr_prestamo
-#: model_terms:ir.ui.view,arch_db:l10n_cl_hr_prestamo.view_account_config_inherit
-msgid "Loan Approval"
-msgstr "Aprobación de Préstamo"
+#. module: l10n_cl_hr_termination_settlement
+#: model:ir.model.fields,help:l10n_cl_hr_termination_settlement.field_hr_settlements__ifp_amount
+msgid "Liquidación de Feriádo Proprcional por Vacaciones pendientes"
+msgstr ""
 
-#. module: l10n_cl_hr_prestamo
-#: model:ir.model.fields,help:l10n_cl_hr_prestamo.field_res_config_settings__prestamo_approve
-msgid "Loan Approval from account manager"
-msgstr "Aprobación de Préstamo de responsable Contable"
-
-#. module: l10n_cl_hr_prestamo
-#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_employee__prestamo_count
-msgid "Loan Count"
-msgstr "N° Préstamos"
-
-#. module: l10n_cl_hr_prestamo
-#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_payslip_input__prestamo_line_id
-msgid "Loan Installment"
-msgstr "Cuota Préstamo"
-
-#. module: l10n_cl_hr_prestamo
-#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__prestamo_lines
-msgid "Loan Line"
-msgstr "Línea de Préstamo"
-
-#. module: l10n_cl_hr_prestamo
-#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__name
-msgid "Loan Name"
-msgstr "Nombre Préstamo"
-
-#. module: l10n_cl_hr_prestamo
-#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo_line__prestamo_id
-msgid "Loan Ref."
-msgstr "Ref. Préstamo"
-
-#. module: l10n_cl_hr_prestamo
-#: model_terms:ir.ui.view,arch_db:l10n_cl_hr_prestamo.hr_prestamo_form_view
-msgid "Loan Request"
-msgstr "Solicitud de Préstamo"
-
-#. module: l10n_cl_hr_prestamo
-#: model:ir.actions.act_window,name:l10n_cl_hr_prestamo.action_hr_prestamo_request
-#: model:ir.ui.menu,name:l10n_cl_hr_prestamo.menu_hr_prestamo_request
-#: model_terms:ir.ui.view,arch_db:l10n_cl_hr_prestamo.hr_prestamo_tree_view
-msgid "Loan Requests"
-msgstr "Solicitudes de Préstamo"
-
-#. module: l10n_cl_hr_prestamo
-#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__message_main_attachment_id
+#. module: l10n_cl_hr_termination_settlement
+#: model:ir.model.fields,field_description:l10n_cl_hr_termination_settlement.field_hr_settlements__message_main_attachment_id
 msgid "Main Attachment"
 msgstr "Adjuntos principales"
 
-#. module: l10n_cl_hr_prestamo
-#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__message_has_error
+#. module: l10n_cl_hr_termination_settlement
+#: model:ir.model.fields,field_description:l10n_cl_hr_termination_settlement.field_hr_settlements__message_has_error
 msgid "Message Delivery error"
 msgstr "Error de Envío de Mensaje"
 
-#. module: l10n_cl_hr_prestamo
-#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__message_ids
+#. module: l10n_cl_hr_termination_settlement
+#: model:ir.model.fields,field_description:l10n_cl_hr_termination_settlement.field_hr_settlements__message_ids
 msgid "Messages"
 msgstr "Mensajes"
 
-#. module: l10n_cl_hr_prestamo
-#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__activity_date_deadline
+#. module: l10n_cl_hr_termination_settlement
+#: code:addons/l10n_cl_hr_termination_settlement/models/employee_gratuity.py:20
+#: code:addons/l10n_cl_hr_termination_settlement/models/hr_settlements.py:48
+#: code:addons/l10n_cl_hr_termination_settlement/models/other_settlements.py:22
+#, python-format
+msgid "New"
+msgstr "Nuevo"
+
+#. module: l10n_cl_hr_termination_settlement
+#: model:ir.model.fields,field_description:l10n_cl_hr_termination_settlement.field_hr_settlements__activity_date_deadline
 msgid "Next Activity Deadline"
 msgstr "Siguiente plazo de actividad"
 
-#. module: l10n_cl_hr_prestamo
-#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__activity_summary
+#. module: l10n_cl_hr_termination_settlement
+#: model:ir.model.fields,field_description:l10n_cl_hr_termination_settlement.field_hr_settlements__activity_summary
 msgid "Next Activity Summary"
 msgstr "Resumen de la siguiente actividad"
 
-#. module: l10n_cl_hr_prestamo
-#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__activity_type_id
+#. module: l10n_cl_hr_termination_settlement
+#: model:ir.model.fields,field_description:l10n_cl_hr_termination_settlement.field_hr_settlements__activity_type_id
 msgid "Next Activity Type"
 msgstr "Siguiente tipo de actividad"
 
-#. module: l10n_cl_hr_prestamo
-#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__installment
-msgid "No Of Installments"
-msgstr "N° de Cuotas"
+#. module: l10n_cl_hr_termination_settlement
+#: code:addons/l10n_cl_hr_termination_settlement/models/hr_settlements.py:209
+#: code:addons/l10n_cl_hr_termination_settlement/models/hr_settlements.py:327
+#, python-format
+msgid "No existe Solicitud de Término aprobada para este Empleado"
+msgstr ""
 
-#. module: l10n_cl_hr_prestamo
-#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__message_needaction_counter
+#. module: l10n_cl_hr_termination_settlement
+#: model:ir.model.fields,field_description:l10n_cl_hr_termination_settlement.field_hr_settlements__message_needaction_counter
 msgid "Number of Actions"
 msgstr "Número de acciones"
 
-#. module: l10n_cl_hr_prestamo
-#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_employee__emp_pending_count
-msgid "Number of Pending Installments"
-msgstr "N° Cuotas x Pagar"
-
-#. module: l10n_cl_hr_prestamo
-#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__message_has_error_counter
+#. module: l10n_cl_hr_termination_settlement
+#: model:ir.model.fields,field_description:l10n_cl_hr_termination_settlement.field_hr_settlements__message_has_error_counter
 msgid "Number of error"
 msgstr "Número de error"
 
-#. module: l10n_cl_hr_prestamo
-#: model:ir.model.fields,help:l10n_cl_hr_prestamo.field_hr_prestamo__message_needaction_counter
+#. module: l10n_cl_hr_termination_settlement
+#: model:ir.model.fields,help:l10n_cl_hr_termination_settlement.field_hr_settlements__message_needaction_counter
 msgid "Number of messages which requires an action"
 msgstr "Número de mensajes que requieren una acción"
 
-#. module: l10n_cl_hr_prestamo
-#: model:ir.model.fields,help:l10n_cl_hr_prestamo.field_hr_prestamo__message_has_error_counter
+#. module: l10n_cl_hr_termination_settlement
+#: model:ir.model.fields,help:l10n_cl_hr_termination_settlement.field_hr_settlements__message_has_error_counter
 msgid "Number of messages with delivery error"
 msgstr "Número de mensajes con error de envío"
 
-#. module: l10n_cl_hr_prestamo
-#: model:ir.model.fields,help:l10n_cl_hr_prestamo.field_hr_prestamo__message_unread_counter
+#. module: l10n_cl_hr_termination_settlement
+#: model:ir.model.fields,help:l10n_cl_hr_termination_settlement.field_hr_settlements__message_unread_counter
 msgid "Number of unread messages"
 msgstr "Número de mensajes no leidos"
 
-#. module: l10n_cl_hr_prestamo
-#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__prestamo_pending_count
-msgid "N° of Pending Installments"
-msgstr "N° Cuotas x Pagar"
+#. module: l10n_cl_hr_termination_settlement
+#: code:addons/l10n_cl_hr_termination_settlement/models/employee_gratuity.py:91
+#, python-format
+msgid "Only an Employee with minimum 1 year of working, will get the Gratuity"
+msgstr "Debe haber trabajado más de un año con la empresa para obtener este beneficio"
 
-#. module: l10n_cl_hr_prestamo
-#: selection:hr.prestamo,activity_state:0
+#. module: l10n_cl_hr_termination_settlement
+#: code:addons/l10n_cl_hr_termination_settlement/models/other_settlements.py:106
+#, python-format
+msgid "Only an Employee with minimum 1 years of working, will get the Settlement advantage"
+msgstr "Debe haber trabajado más de un año con la empresa para obtener este beneficio"
+
+#. module: l10n_cl_hr_termination_settlement
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr_termination_settlement.hr_settlements_form
+msgid "Otras Indemnizaciones Finiquito (FIN)"
+msgstr ""
+
+#. module: l10n_cl_hr_termination_settlement
+#: selection:hr.settlements,activity_state:0
 msgid "Overdue"
 msgstr "Vencido"
 
-#. module: l10n_cl_hr_prestamo
-#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo_line__paid
-msgid "Paid"
-msgstr "Pagado"
+#. module: l10n_cl_hr_termination_settlement
+#: model:ir.model.fields,help:l10n_cl_hr_termination_settlement.field_hr_settlements__iap_amount
+msgid "Pago aviso previo despido 							correspondiente a 30 días"
+msgstr ""
 
-#. module: l10n_cl_hr_prestamo
-#: model:ir.model,name:l10n_cl_hr_prestamo.model_hr_payslip
+#. module: l10n_cl_hr_termination_settlement
+#: model:ir.model,name:l10n_cl_hr_termination_settlement.model_hr_payslip
 msgid "Pay Slip"
 msgstr "Nómina"
 
-#. module: l10n_cl_hr_prestamo
-#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo_line__date
-msgid "Payment Date"
-msgstr "Fecha de Desembolso"
-
-#. module: l10n_cl_hr_prestamo
-#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__payment_date
-msgid "Payment Start Date"
-msgstr "Fecha de Primera Cuota"
-
-#. module: l10n_cl_hr_prestamo
-#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__treasury_account_id
-msgid "Payments Account"
-msgstr "Cuenta de Pago (Tránsito)"
-
-#. module: l10n_cl_hr_prestamo
-#: model:ir.model,name:l10n_cl_hr_prestamo.model_hr_payslip_input
+#. module: l10n_cl_hr_termination_settlement
+#: model:ir.model,name:l10n_cl_hr_termination_settlement.model_hr_payslip_input
 msgid "Payslip Input"
-msgstr "Input para Nómina"
+msgstr "Entrada de Nómina"
 
-#. module: l10n_cl_hr_prestamo
-#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo_line__payslip_id
-msgid "Payslip Ref."
-msgstr "Ref. Liquidación"
-
-#. module: l10n_cl_hr_prestamo
-#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_employee__emp_pending_amount
-#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__prestamo_pending_amount
-msgid "Pending Installments Amount"
-msgstr "Monto Cuotas Pendientes"
-
-#. module: l10n_cl_hr_prestamo
-#: model_terms:ir.ui.view,arch_db:l10n_cl_hr_prestamo.hr_prestamo_form_view
-msgid "Pending Loans"
-msgstr "Préstamos Pendientes"
-
-#. module: l10n_cl_hr_prestamo
-#: selection:hr.prestamo,activity_state:0
+#. module: l10n_cl_hr_termination_settlement
+#: selection:hr.settlements,activity_state:0
 msgid "Planned"
 msgstr "Planificado"
 
-#. module: l10n_cl_hr_prestamo
-#: model_terms:ir.ui.view,arch_db:l10n_cl_hr_prestamo.hr_prestamo_form_view
-msgid "Refuse"
-msgstr "Rechazar"
+#. module: l10n_cl_hr_termination_settlement
+#: model:ir.model.fields,field_description:l10n_cl_hr_termination_settlement.field_hr_settlements__name
+msgid "Reference"
+msgstr "Referencia"
 
-#. module: l10n_cl_hr_prestamo
-#: selection:hr.prestamo,state:0
-msgid "Refused"
-msgstr "Rechazado"
+#. module: l10n_cl_hr_termination_settlement
+#: selection:hr.settlements,reason:0
+msgid "Renuncia Trabajador (Art. 159)"
+msgstr ""
 
-#. module: l10n_cl_hr_prestamo
-#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__date
-msgid "Request Date"
-msgstr "Fecha de Solicitud"
-
-#. module: l10n_cl_hr_prestamo
-#: model_terms:ir.ui.view,arch_db:l10n_cl_hr_prestamo.hr_prestamo_form_view
-msgid "Requesting Employee"
-msgstr "Empleado Solicitante"
-
-#. module: l10n_cl_hr_prestamo
-#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__activity_user_id
+#. module: l10n_cl_hr_termination_settlement
+#: model:ir.model.fields,field_description:l10n_cl_hr_termination_settlement.field_hr_settlements__activity_user_id
 msgid "Responsible User"
 msgstr "Usuario responsable"
 
-#. module: l10n_cl_hr_prestamo
-#: code:addons/l10n_cl_hr_prestamo/models/hr_prestamo_payroll.py:29
+#. module: l10n_cl_hr_termination_settlement
+#: code:addons/l10n_cl_hr_termination_settlement/models/hr_payroll_finiquito.py:56
 #, python-format
 msgid "Salary Slip of %s for %s"
 msgstr "Liquidación de %s a %s"
 
-#. module: l10n_cl_hr_prestamo
-#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__state
+#. module: l10n_cl_hr_termination_settlement
+#: code:addons/l10n_cl_hr_termination_settlement/models/hr_settlements.py:210
+#: code:addons/l10n_cl_hr_termination_settlement/models/hr_settlements.py:328
+#, python-format
+msgid "Se debe crear y aprobar una Solcitud de Término para poder calcular Finiquito"
+msgstr ""
+
+#. module: l10n_cl_hr_termination_settlement
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr_termination_settlement.hr_settlements_form
+msgid "Set to Draft"
+msgstr "Cambiar a borrador"
+
+#. module: l10n_cl_hr_termination_settlement
+#: model:ir.model.fields,field_description:l10n_cl_hr_termination_settlement.field_hr_settlements__settle_date
+msgid "Settlement Date"
+msgstr "Fecha de Término"
+
+#. module: l10n_cl_hr_termination_settlement
+#: model:ir.model.fields,field_description:l10n_cl_hr_termination_settlement.field_hr_settlements__reason
+msgid "Settlement Reason"
+msgstr "Motivo de Término"
+
+#. module: l10n_cl_hr_termination_settlement
+#: model:ir.model.fields,field_description:l10n_cl_hr_termination_settlement.field_hr_settlements__resignation_id
+msgid "Solicitud de Término"
+msgstr ""
+
+#. module: l10n_cl_hr_termination_settlement
+#: model:ir.model.fields,field_description:l10n_cl_hr_termination_settlement.field_hr_settlements__state
 msgid "State"
 msgstr "Estado"
 
-#. module: l10n_cl_hr_prestamo
-#: model:ir.model.fields,help:l10n_cl_hr_prestamo.field_hr_prestamo__activity_state
+#. module: l10n_cl_hr_termination_settlement
+#: model:ir.model.fields,help:l10n_cl_hr_termination_settlement.field_hr_settlements__activity_state
 msgid "Status based on activities\n"
 "Overdue: Due date is already passed\n"
 "Today: Activity date is today\n"
@@ -543,69 +501,63 @@ msgstr "Estado basado en actividades\n"
 "Hoy: La fecha tope es hoy\n"
 "Planificada: futuras actividades."
 
-#. module: l10n_cl_hr_prestamo
-#: model_terms:ir.ui.view,arch_db:l10n_cl_hr_prestamo.hr_prestamo_form_view
-msgid "Submit"
-msgstr "Enviar"
-
-#. module: l10n_cl_hr_prestamo
-#: selection:hr.prestamo,state:0
-msgid "Submitted"
-msgstr "Enviado"
-
-#. module: l10n_cl_hr_prestamo
-#: model_terms:ir.ui.view,arch_db:l10n_cl_hr_prestamo.view_prestamo_request_search_form
-msgid "Tasks"
-msgstr "Tareas"
-
-#. module: l10n_cl_hr_prestamo
-#: selection:hr.prestamo,activity_state:0
+#. module: l10n_cl_hr_termination_settlement
+#: selection:hr.settlements,activity_state:0
 msgid "Today"
 msgstr "Hoy"
 
-#. module: l10n_cl_hr_prestamo
-#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__total_amount
-msgid "Total Amount"
-msgstr "Importe Total"
+#. module: l10n_cl_hr_termination_settlement
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr_termination_settlement.hr_settlements_tree
+msgid "Total"
+msgstr ""
 
-#. module: l10n_cl_hr_prestamo
-#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__total_paid_amount
-msgid "Total Paid Amount"
-msgstr "Importe Total Pagado"
+#. module: l10n_cl_hr_termination_settlement
+#: model:ir.model.fields,field_description:l10n_cl_hr_termination_settlement.field_hr_settlements__worked_days
+msgid "Total Work Days"
+msgstr "Total Días Trabajados"
 
-#. module: l10n_cl_hr_prestamo
-#: model_terms:ir.ui.view,arch_db:l10n_cl_hr_prestamo.view_employee_form_prestamo_inherit
-msgid "Unpaid Installments"
-msgstr "Cuotas sin Pagar"
+#. module: l10n_cl_hr_termination_settlement
+#: model:ir.model.fields,field_description:l10n_cl_hr_termination_settlement.field_hr_settlements__worked_months
+msgid "Total Work Months"
+msgstr "Total Meses Trabajados"
 
-#. module: l10n_cl_hr_prestamo
-#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__message_unread
+#. module: l10n_cl_hr_termination_settlement
+#: model:ir.model.fields,field_description:l10n_cl_hr_termination_settlement.field_hr_settlements__worked_years
+msgid "Total Work Years"
+msgstr "Total Años Trabajados"
+
+#. module: l10n_cl_hr_termination_settlement
+#: model:ir.model.fields,field_description:l10n_cl_hr_termination_settlement.field_hr_settlements__message_unread
 msgid "Unread Messages"
-msgstr "Mensajes sin leer"
+msgstr "Mensajes por leer"
 
-#. module: l10n_cl_hr_prestamo
-#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__message_unread_counter
+#. module: l10n_cl_hr_termination_settlement
+#: model:ir.model.fields,field_description:l10n_cl_hr_termination_settlement.field_hr_settlements__message_unread_counter
 msgid "Unread Messages Counter"
 msgstr "Contador de mensajes sin leer"
 
-#. module: l10n_cl_hr_prestamo
-#: selection:hr.prestamo,state:0
-msgid "Waiting Approval"
-msgstr "Esperando Aprobación"
+#. module: l10n_cl_hr_termination_settlement
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr_termination_settlement.hr_settlements_form
+msgid "Validate"
+msgstr "Validar"
 
-#. module: l10n_cl_hr_prestamo
-#: code:addons/l10n_cl_hr_prestamo/models/hr_prestamo.py:177
-#, python-format
-msgid "Warning! Installments already computed"
-msgstr "Atención: ya se han calculado las cuotas. Bórrela(s) si desea recalcular el pago del saldo pendiente"
+#. module: l10n_cl_hr_termination_settlement
+#: selection:hr.settlements,state:0
+msgid "Validated"
+msgstr "Validado"
 
-#. module: l10n_cl_hr_prestamo
-#: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__website_message_ids
+#. module: l10n_cl_hr_termination_settlement
+#: model:ir.model.fields,field_description:l10n_cl_hr_termination_settlement.field_hr_settlements__valor_uf
+msgid "Valor UF"
+msgstr ""
+
+#. module: l10n_cl_hr_termination_settlement
+#: model:ir.model.fields,field_description:l10n_cl_hr_termination_settlement.field_hr_settlements__website_message_ids
 msgid "Website Messages"
 msgstr "Mensajes del sitio web"
 
-#. module: l10n_cl_hr_prestamo
-#: model:ir.model.fields,help:l10n_cl_hr_prestamo.field_hr_prestamo__website_message_ids
+#. module: l10n_cl_hr_termination_settlement
+#: model:ir.model.fields,help:l10n_cl_hr_termination_settlement.field_hr_settlements__website_message_ids
 msgid "Website communication history"
 msgstr "Historial de comunicaciones del sitio web"
 
