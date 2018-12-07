@@ -13,15 +13,17 @@ Mantendremos este repositorio público en agradecimiento y como retribución al 
 **Intellego-BI.com** - https://intellego-bi.com
  - Rodolfo Bermúdez Neubauer <odoo@intellego-bi.com>
 
+<br><br>
+## Features list
 
-**Features list: Basic Chilean Localization**
+**Basic Chilean Localization**
 
     * Chart of Accounts
     * Currency Rate Inverted (for CLP)
     * Currency Rate update from SBIF (UF, UTM, USD and EUR for CLP)
     * Payroll for Chilean localization.
 
-**To-Do Features list: Chilean Localization**
+**To-Do: Extended Chilean Localization**
 
     * Electronic Bank Statements for chilean banks
     * Generate Bulk Outgoing payment flat files for chilean banks
@@ -29,7 +31,7 @@ Mantendremos este repositorio público en agradecimiento y como retribución al 
     * Fixed Assets accounting
     * Automate monthly Previred indicators update 
 
-**Features list: Generic for Odoo 12**
+**Generic Add-ons for Odoo 12**
 
     * Partner required per account group setting (customer and vendor type accounts)
     * Analytic Account from Employee Contract
@@ -38,14 +40,14 @@ Mantendremos este repositorio público en agradecimiento y como retribución al 
     * Empleoyee Loans Request
     * Employee Salary Advance Request
 
-**Features list: Work In Progress**
+**Work In Progress: Chilean Localization**
 
     * Payroll Final Settlement (Finiquito) for Employee Contract Termination
     * API Key parameter for SBIF Currency Rate Update
     * Legal Financial Statements
     * Menu Customization and UX impreovements
 
-
+<br><br>
 ## Thanks to
  
  **Odoo Community Association (OCA)** https://odoo-community.org <br>
