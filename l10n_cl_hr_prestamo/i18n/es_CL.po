@@ -113,11 +113,6 @@ msgid "Config Settings"
 msgstr "Opciones de Configuración"
 
 #. module: l10n_cl_hr_prestamo
-#: model_terms:ir.actions.act_window,help:l10n_cl_hr_prestamo.action_hr_prestamo_request
-msgid "Here you can create Employee Loan Requests that can be repaid through automatic deductions in payroll processing "
-msgstr "Acá podrá crear solicitudes de préstamos para empleados. Los préstamos se pueden pagar en cuotas que serán descontadas automáticamente a través de la nómina de remuneraciones"
-
-#. module: l10n_cl_hr_prestamo
 #: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__create_uid
 #: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo_line__create_uid
 msgid "Created by"
@@ -246,8 +241,14 @@ msgstr "Solicitud de Préstamo RRHH"
 
 #. module: l10n_cl_hr_prestamo
 #: model_terms:ir.actions.act_window,help:l10n_cl_hr_prestamo.action_hr_prestamo_request
-msgid "Here you can create Employee Loan Requests"
+msgid "Create Employee Loan Requests"
 msgstr "Crear Solicitud de Préstamo de RRHH"
+
+#. module: l10n_cl_hr_prestamo
+#: model_terms:ir.actions.act_window,help:l10n_cl_hr_prestamo.action_hr_prestamo_request
+msgid "Here you can create Employee Loan Requests that can be repaid through automatic deductions in payroll processing"
+msgstr "Acá podrá crear solicitudes de préstamos para empleados. Los préstamos se pueden pagar en cuotas que serán descontadas automáticamente a través de la nómina de remuneraciones"
+
 
 #. module: l10n_cl_hr_prestamo
 #: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__id
