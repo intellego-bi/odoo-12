@@ -47,11 +47,12 @@ Mantendremos este repositorio público en agradecimiento y como retribución al 
 
 **Wishlist: Chilean Localization**
 
-    * Electronic Invoicing and EDI with SII (Factura Electrónica)
+    * Witholding Tax (Retención) on Vendor Invoices (Boleta de Honorarios)
     * Outgoing Batch Payments Interface (pay multiple vendors in batch)
+    * Electronic Invoicing and EDI with SII (Factura Electrónica)
     * Electronic Bank Statements for chilean banks
-    * Fixed Assets accounting
     * Automate monthly Previred indicators update 
+    * Fixed Assets Accounting
 
 <br><br>
 ## Thanks to
