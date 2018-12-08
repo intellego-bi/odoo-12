@@ -67,5 +67,18 @@
             <field name="input_id" ref="hr_rule_fin_ifp"/>
         </record>
 
+       <record id="hr_struct_cl_fin" model="hr.payroll.structure">
+            <field name="name">Chile :: Finiquito</field>
+            <field name="code">CL-Finiquito</field>
+            <field name="parent_id" ref="l10n_cl.hr_struct_cl"/>
+            <field eval="[(6, 0, [
+                              ref('hr_rule_fin'),
+                              ref('hr_rule_fin_ias'),
+                              ref('hr_rule_fin_iap'),
+                              ref('hr_rule_fin_ifp')
+                              ])]" name="rule_ids"/>
+        </record>
+
+
     </data>
 </odoo>
