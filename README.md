@@ -20,7 +20,7 @@ Mantendremos este repositorio público en agradecimiento y como retribución al 
 
 **Basic Chilean Localization**
 
-    * Chart of Accounts
+    * Chart of Accounts (Manufacturing Industry)
     * Currency Rate Inverted (for CLP)
     * Currency Rate update from SBIF (UF, UTM, USD and EUR for CLP)
     * Payroll for Chilean localization.
