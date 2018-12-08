@@ -34,10 +34,10 @@ Mantendremos este repositorio público en agradecimiento y como retribución al 
 
 **New: Payroll addons for Chilean Localization**
 
-    * Menu Customization and UX improvements
     * Payroll Final Settlement (Finiquito) for Employee Contract Termination
     * Empleoyee Loans Request
     * Employee Salary Advance Request
+    * Menu Customization and UX improvements
 
 **Work In Progress: Chilean Localization**
 
