@@ -78,3 +78,4 @@ Mantendremos este repositorio público en agradecimiento y como retribución al 
  
  - **Translations** <br>
  - **Clean-up, document and optimize parts of the code** <br>
+ - **Deploy and Test on Odoo 12 Community Edition (CE) ** <br>
