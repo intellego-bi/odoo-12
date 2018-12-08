@@ -13,7 +13,7 @@
             <field name="sequence" eval="38"/>
         </record>
 
-        <record id="l10n_cl_hr.hr_rule_input_fin" model="hr.rule.input">
+        <record id="hr_rule_input_fin" model="hr.rule.input">
             <field name="code">FIN</field>
             <field name="name">Finiquito Otros</field>
             <field name="input_id" ref="hr_rule_fin"/>
