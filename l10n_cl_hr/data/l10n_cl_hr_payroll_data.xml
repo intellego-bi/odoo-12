@@ -1063,17 +1063,6 @@ result = calc</field>
                               ref('hr_rule_helios_bonovac')
                               ])]" name="rule_ids"/>
         </record>
-       <record id="hr_struct_cl_fin" model="hr.payroll.structure">
-            <field name="name">Chile :: Finiquito</field>
-            <field name="code">CL-Finiquito</field>
-            <field name="parent_id" ref="hr_struct_cl"/>
-            <field eval="[(6, 0, [
-                              ref('hr_rule_fin'),
-                              ref('hr_rule_fin_ias'),
-                              ref('hr_rule_fin_iap'),
-                              ref('hr_rule_fin_ifp')
-                              ])]" name="rule_ids"/>
-        </record>
 
         <!-- Estructura para Anticipo Primera Quincena -->
         <record id="hr_struct_cl_ant" model="hr.payroll.structure">
