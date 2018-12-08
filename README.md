@@ -30,17 +30,20 @@ Mantendremos este repositorio público en agradecimiento y como retribución al 
     * Partner required per account group setting (customer and vendor type accounts)
     * Analytic Account from Employee Contract
     * Icon to easily export any Odoo list to MS Excel
+    * Automatic Odoo backup to Whatever (FTP, Dropbox, Google Drive, etc.)
+
+**New: Payroll addons for Chilean Localization**
+
+    * Menu Customization and UX improvements
+    * Payroll Final Settlement (Finiquito) for Employee Contract Termination
     * Empleoyee Loans Request
     * Employee Salary Advance Request
-    * Automatic Odoo backup to Whatever (FTP, Dropbox, Google Drive, etc.)
 
 **Work In Progress: Chilean Localization**
 
-    * Payroll Final Settlement (Finiquito) for Employee Contract Termination
     * Working (shift) Schedule on Employee Contract
     * API Key parameter for SBIF Currency Rate Update
     * Legal Financial Statements
-    * Menu Customization and UX improvements
 
 **Wishlist: Chilean Localization**
 
