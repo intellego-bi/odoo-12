@@ -20,7 +20,7 @@ Mantendremos este repositorio público en agradecimiento y como retribución al 
 
 **Basic Chilean Localization**
 
-    * Chart of Accounts
+    * Chart of Accounts (Manufacturing Industry)
     * Currency Rate Inverted (for CLP)
     * Currency Rate update from SBIF (UF, UTM, USD and EUR for CLP)
     * Payroll for Chilean localization.
@@ -30,25 +30,29 @@ Mantendremos este repositorio público en agradecimiento y como retribución al 
     * Partner required per account group setting (customer and vendor type accounts)
     * Analytic Account from Employee Contract
     * Icon to easily export any Odoo list to MS Excel
-    * Empleoyee Loans Request
-    * Employee Salary Advance Request
     * Automatic Odoo backup to Whatever (FTP, Dropbox, Google Drive, etc.)
+
+**New: Payroll addons for Chilean Localization**
+
+    * Payroll Final Settlement (Finiquito) for Employee Contract Termination
+    * Employee Loans Request (Préstamos a Empleados descontables vía nómina)
+    * Employee Salary Advance Request (Anticipos a Empleados descontables vía nómina)
+    * Menu Customization and UX improvements (Nuevo menú de Nómina RRHH)
 
 **Work In Progress: Chilean Localization**
 
-    * Payroll Final Settlement (Finiquito) for Employee Contract Termination
     * Working (shift) Schedule on Employee Contract
     * API Key parameter for SBIF Currency Rate Update
     * Legal Financial Statements
-    * Menu Customization and UX improvements
 
 **Wishlist: Chilean Localization**
 
-    * Electronic Invoicing and EDI with SII (Factura Electrónica)
+    * Witholding Tax (Retención) on Vendor Invoices (Boleta de Honorarios)
     * Outgoing Batch Payments Interface (pay multiple vendors in batch)
+    * Electronic Invoicing and EDI with SII (Factura Electrónica)
     * Electronic Bank Statements for chilean banks
-    * Fixed Assets accounting
     * Automate monthly Previred indicators update 
+    * Fixed Assets Accounting
 
 <br><br>
 ## Thanks to
@@ -70,3 +74,9 @@ Mantendremos este repositorio público en agradecimiento y como retribución al 
  - Francisco Lorca <fcolorca1979@gmail.com>
  - Marcel Rodriguez <jmrv1981@hotmail.com>
  - Y a toda la comunidad open source por su generosidad y talento
+
+## To-do
+ 
+ - **Translations** <br>
+ - **Clean-up, document and optimize parts of the code** <br>
+ - **Deploy and Test on Odoo 12 Community Edition (CE) ** <br>
