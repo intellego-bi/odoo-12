@@ -73,3 +73,8 @@ Mantendremos este repositorio público en agradecimiento y como retribución al 
  - Francisco Lorca <fcolorca1979@gmail.com>
  - Marcel Rodriguez <jmrv1981@hotmail.com>
  - Y a toda la comunidad open source por su generosidad y talento
+
+## To-do
+ 
+ - **Translations** <br>
+ - **Clean-up, document and optimize parts of the code** <br>
