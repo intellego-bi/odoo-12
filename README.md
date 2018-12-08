@@ -35,9 +35,9 @@ Mantendremos este repositorio público en agradecimiento y como retribución al 
 **New: Payroll addons for Chilean Localization**
 
     * Payroll Final Settlement (Finiquito) for Employee Contract Termination
-    * Empleoyee Loans Request
-    * Employee Salary Advance Request
-    * Menu Customization and UX improvements
+    * Employee Loans Request (Préstamos a Empleados descontables vía nómina)
+    * Employee Salary Advance Request (Anticipos a Empleados descontables vía nómina)
+    * Menu Customization and UX improvements (Nuevo menú de Nómina RRHH)
 
 **Work In Progress: Chilean Localization**
 
