@@ -117,7 +117,7 @@ class HrPayslip(models.Model):
             if date_from <= settle.settle_date <= date_to: # and not settle.paid:
                 for result in res:
                     if result.get('code') == 'TEST':
-                        result['amount'] = 13333
+                        result['amount'] = settle.ias_amount
                         result['hr_settlements_id'] = settle.id
 
         return res
