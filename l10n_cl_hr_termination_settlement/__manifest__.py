@@ -35,7 +35,7 @@
     'website': 'https://Intellego-BI.com',
     'maintainer': 'Intellego-BI.com',
     'category': 'Human Resources',
-    'depends': ['base', 'l10n_cl_hr_termination_request','mail','hr_payroll'],
+    'depends': ['base', 'l10n_cl_hr_termination_request', 'mail', 'hr_payroll'],
     'data': ['views/hr_chile_menus.xml',
              #'views/employee_gratuity_view.xml',
              'views/gratuity_sequence.xml',
