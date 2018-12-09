@@ -37,7 +37,7 @@
     'category': 'Human Resources',
     'version': '12.0.1.0.0',
     'summary': 'Workflow to manage and approve the termination process for employees',
-    'depends': ['l10n_cl_hr_employee_extend', 'mail'],
+    'depends': ['l10n_cl_hr', 'l10n_cl_hr_employee_extend', 'mail'],
     'category': 'Human Resources',
     'demo': [],
     'data': [
