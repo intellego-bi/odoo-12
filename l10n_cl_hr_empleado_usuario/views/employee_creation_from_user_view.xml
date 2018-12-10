@@ -61,9 +61,9 @@
                                 <h3>
                                     <field name="country_id" class="oe_edit_only" options="{'no_create': True}" attrs="{'required': [('user_type', '=', 'empl')]}"/>
                                 </h3>
-                                <label for="gender" widget="radio" class="oe_edit_only"/>
+                                <label for="gender" class="oe_edit_only"/>
                                 <h3>
-                                    <field name="gender" class="oe_edit_only"/>
+                                    <field name="gender"  widget="radio" class="oe_edit_only"/>
                                 </h3>
                             </group>
 
