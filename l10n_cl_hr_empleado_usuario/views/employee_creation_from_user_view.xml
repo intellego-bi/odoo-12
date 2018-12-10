@@ -35,7 +35,7 @@
                     </group>
 
                     <notebook attrs="{'invisible': [('user_type', '=', 'inte')]}">
-                        <page string="Employee Data" attrs="{'invisible': [('user_type', '=', 'inte')]}">
+                        <page string="Personal Data" attrs="{'invisible': [('user_type', '=', 'inte')]}">
                             <group colspan="4" name="hr_user_details">
                                 <label for="firstname"/>
                                 <h2>
@@ -54,9 +54,11 @@
                                     <field name="mothers_name"/>
                                 </h2>
                             </group>
-                        </page>
-						<page string="HR Data" attrs="{'invisible': [('user_type', '=', 'inte')]}">
-                            <group colspan="4" name="hr_personal_details">
+                            <group>
+                                <label for="identification_id"/>
+                                <h3>
+                                    <field name="identification_id" attrs="{'required': [('user_type', '=', 'empl')]}"/>
+                                </h3>
                                 <label for="country_id" class="oe_edit_only"/>
                                 <h3>
                                     <field name="country_id" class="oe_edit_only" options="{'no_create': True}" attrs="{'required': [('user_type', '=', 'empl')]}"/>
@@ -65,17 +67,17 @@
                                 <h3>
                                     <field name="gender"  widget="radio" class="oe_edit_only"/>
                                 </h3>
-                                <label for="identification_id"/>
+                            </group>
+                        </page>
+						<page string="Employee Data" attrs="{'invisible': [('user_type', '=', 'inte')]}">
+                            <group colspan="4" name="hr_personal_details">
+                                <label for="type_id"/>
                                 <h3>
-                                    <field name="identification_id" attrs="{'required': [('user_type', '=', 'empl')]}"/>
+                                    <field name="type_id" options="{'no_create': True}" attrs="{'required': [('user_type', '=', 'empl')]}"/>
                                 </h3>
                                 <label for="department_id"/>
                                 <h3>
                                     <field name="department_id" options="{'no_create': True}" attrs="{'required': [('user_type', '=', 'empl')]}"/>
-                                </h3>
-                                <label for="type_id"/>
-                                <h3>
-                                    <field name="type_id" options="{'no_create': True}" attrs="{'required': [('user_type', '=', 'empl')]}"/>
                                 </h3>
 
                             </group>
@@ -86,6 +88,7 @@
                             <div class="oe_clear"/>
                         </page>
                     </notebook>
+                    <div class="oe_clear"/>
                 </xpath>
 
 
