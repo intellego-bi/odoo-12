@@ -7,7 +7,7 @@
             <field name="inherit_id" ref="base.view_users_form"/>
             <field name="arch" type="xml">
                 <xpath expr="//label[@for='name']" position="attributes">
-                    <attribute name="invisible">0</attribute>
+                    <attribute name="readonly">1</attribute>
                 </xpath>
                 <xpath expr="//field[@name='name']" position="after">
 				    <group colspan="4">
