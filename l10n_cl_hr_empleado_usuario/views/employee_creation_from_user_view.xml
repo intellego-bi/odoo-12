@@ -6,6 +6,35 @@
             <field name="model">res.users</field>
             <field name="inherit_id" ref="base.view_users_form"/>
             <field name="arch" type="xml">
+                <xpath expr="//label[@for='name']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='name']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                    <attribute name="no_label">1</attribute>
+                    <attribute name="required">0</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='name']/.." position="after">
+                    <label for="firstname" class="oe_edit_only"/>
+                    <h1>
+                        <field name="firstname" required="1"/>
+                    </h1>
+                    <label for="middle_name" class="oe_edit_only"/>
+                    <h1>
+                        <field name="middle_name"/>
+                    </h1>
+                    <label for="last_name" class="oe_edit_only"/>
+                    <h1>
+                        <field name="last_name" required="1"/>
+                    </h1>
+                    <label for="mothers_name" class="oe_edit_only"/>
+                    <h1>
+                        <field name="mothers_name"/>
+                    </h1>
+                </xpath>
+
                 <!--<xpath expr="//div[@class='oe_title']/group" position="inside">-->
                 <field name="signature" position="before">
                     <field name="employee_id" readonly="1" required="0" groups="base.group_no_one"

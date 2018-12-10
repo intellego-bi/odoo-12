@@ -25,9 +25,38 @@ from odoo import models, fields, api, _
 class ResUsersInherit(models.Model):
     _inherit = 'res.users'
 
+    formated_vat = fields.Char(translate=True, string='Printable VAT', store=True, help='Show formatted vat')
+    firstname = fields.Char("Firstname")
+    last_name = fields.Char("Last Name")
+    middle_name = fields.Char("Middle Name", help='Employees middle name')
+    mothers_name = fields.Char("Mothers Name", help='Employees mothers name')
+
     employee_id = fields.Many2one('hr.employee',
                                   string='Related Employee', ondelete='restrict', auto_join=True,
                                   help='Employee-related data of the user')
+
+    @api.model
+    def _get_computed_name(self, last_name, firstname, last_name2=None, middle_name=None):
+        names = list()
+        if firstname:
+        	names.append(firstname)
+        if middle_name:
+        	names.append(middle_name)
+        if last_name:
+        	names.append(last_name)
+        if mothers_name:
+        	names.append(mothers_name)
+
+        return " ".join(names)
+
+    @api.multi
+    @api.onchange('firstname', 'mothers_name', 'middle_name', 'last_name')
+    def get_name(self):
+        for user in self:
+            if user.firstname and user.last_name:
+                user.name = self._get_computed_name(
+                    user.last_name, user.firstname, user.mothers_name, user.middle_name)
+
 
     @api.model
     def create(self, vals):
