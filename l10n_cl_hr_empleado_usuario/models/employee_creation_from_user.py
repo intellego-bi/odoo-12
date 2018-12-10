@@ -49,7 +49,7 @@ class ResUsersInherit(models.Model):
                                   help='Employee-related data of the user')
 
     @api.model
-    def _get_computed_name(self, last_name, firstname, last_name2=None, middle_name=None):
+    def _get_computed_name(self, last_name, firstname, mothers_name=None, middle_name=None):
         names = list()
         if firstname:
             names.append(firstname)
@@ -69,6 +69,16 @@ class ResUsersInherit(models.Model):
             if user.firstname and user.last_name:
                 user.name = self._get_computed_name(
                     user.last_name, user.firstname, user.mothers_name, user.middle_name)
+
+    @api.onchange('identification_id')
+    def onchange_document(self):
+        identification_id = (
+            re.sub('[^1234567890Kk]', '',
+            str(self.identification_id))).zfill(9).upper()
+
+        self.identification_id = '%s.%s.%s-%s' % (
+            identification_id[0:2], identification_id[2:5], identification_id[5:8],
+            identification_id[-1])
 
 
     @api.model
