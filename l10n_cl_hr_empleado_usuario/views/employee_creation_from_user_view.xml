@@ -21,7 +21,7 @@
                     <h2>
                         <field name="user_type" widget="radio" required="0"/>
                     </h2>
-
+                    <group attrs="{'invisible': [('user_type', '=', 'inte')]}">
                     <label for="firstname" class="oe_edit_only"/>
                     <h2>
                         <field name="firstname" required="0" attrs="{'invisible': [('user_type', '=', 'inte')]}"/>
@@ -38,6 +38,7 @@
                     <h2>
                         <field name="mothers_name" attrs="{'invisible': [('user_type', '=', 'inte')]}"/>
                     </h2>
+                    </group>
                 </xpath>
                 <!--<xpath expr="//label[@for='partner_id']" position="attributes">
                     <attribute name="string">Odoo Contact</attribute>
