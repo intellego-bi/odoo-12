@@ -16,7 +16,7 @@
                     <attribute name="required">0</attribute>
                 </xpath>-->
 
-                <xpath expr="//field[@name='name']/.." position="after">
+                <xpath expr="//field[@name='firstname']/.." position="before">
                     <group>
                         <label for="user_type" class="oe_edit_only"/>
                         <h2>
