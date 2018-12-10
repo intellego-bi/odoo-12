@@ -26,10 +26,11 @@ class ResUsersInherit(models.Model):
     _inherit = 'res.users'
 
     formated_vat = fields.Char(translate=True, string='Printable VAT', store=True, help='Show formatted vat')
+    identification_id = fields.Char(string='Identification No', groups="hr.group_hr_user")
 
     user_type = fields.Selection([('empl', 'Employee'), ('inte', 'Internal')], string='User Type', default='empl')
     type_id = fields.Many2one('hr.type.employee', 'Tipo de Empleado')
-
+    department_id = fields.Many2one('hr.department', 'Department')
     country_id = fields.Many2one(
         'res.country', 'Nationality (Country)', groups="hr.group_hr_user")
     gender = fields.Selection([
