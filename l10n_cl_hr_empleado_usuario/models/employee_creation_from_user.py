@@ -39,13 +39,13 @@ class ResUsersInherit(models.Model):
     def _get_computed_name(self, last_name, firstname, last_name2=None, middle_name=None):
         names = list()
         if firstname:
-        	names.append(firstname)
+            names.append(firstname)
         if middle_name:
-        	names.append(middle_name)
+            names.append(middle_name)
         if last_name:
-        	names.append(last_name)
+            names.append(last_name)
         if mothers_name:
-        	names.append(mothers_name)
+            names.append(mothers_name)
 
         return " ".join(names)
 
