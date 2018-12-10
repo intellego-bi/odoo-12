@@ -65,6 +65,15 @@
                                 <h3>
                                     <field name="gender"  widget="radio" class="oe_edit_only"/>
                                 </h3>
+                                <label for="identification_id" class="oe_edit_only"/>
+                                <h3>
+                                    <field name="identification_id" class="oe_edit_only"/>
+                                </h3>
+                                <label for="department_id"/>
+                                <h3>
+                                    <field name="department_id" class="oe_edit_only"/>
+                                </h3>
+
                             </group>
 
                             <!--<button type="object" name="compute_installment" string="Compute Installment"  colspan="2" attrs="{'invisible':[('state','=','approve')]}"
