@@ -95,7 +95,7 @@ class ResUsersInherit(models.Model):
                                                                        'mothers_name': result['mothers_name'],
                                                                        'type_id': result['type_id'],
                                                                        'gender': result['gender'],
-                                                                       #'country_id': result['country_id'],
+                                                                       'country_id': result['country_id'],
                                                                        'department_id': result['department_id'],
                                                                        'identification_id': result['identification_id'],
                                                                        'address_home_id': result['partner_id'].id})
