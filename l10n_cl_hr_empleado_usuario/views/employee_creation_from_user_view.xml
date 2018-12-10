@@ -24,19 +24,19 @@
 
                     <label for="firstname" class="oe_edit_only"/>
                     <h2>
-                        <field name="firstname" required="0"/>
+                        <field name="firstname" required="0" attrs="{'invisible': [('user_type', '=', 'inte')]}"/>
                     </h2>
                     <label for="middle_name" class="oe_edit_only"/>
                     <h2>
-                        <field name="middle_name"/>
+                        <field name="middle_name" attrs="{'invisible': [('user_type', '=', 'inte')]}"/>
                     </h2>
                     <label for="last_name" class="oe_edit_only"/>
                     <h2>
-                        <field name="last_name" required="0"/>
+                        <field name="last_name" required="0" attrs="{'invisible': [('user_type', '=', 'inte')]}"/>
                     </h2>
                     <label for="mothers_name" class="oe_edit_only"/>
                     <h2>
-                        <field name="mothers_name"/>
+                        <field name="mothers_name" attrs="{'invisible': [('user_type', '=', 'inte')]}"/>
                     </h2>
                 </xpath>
                 <!--<xpath expr="//label[@for='partner_id']" position="attributes">
