@@ -26,10 +26,10 @@ class ResUsersInherit(models.Model):
     _inherit = 'res.users'
 
     #formated_vat = fields.Char(translate=True, string='Printable VAT', store=True, help='Show formatted vat')
-    #firstname = fields.Char("Firstname")
-    #last_name = fields.Char("Last Name")
-    #middle_name = fields.Char("Middle Name", help='Employees middle name')
-    #mothers_name = fields.Char("Mothers Name", help='Employees mothers name')
+    firstname = fields.Char("Firstname")
+    last_name = fields.Char("Last Name")
+    middle_name = fields.Char("Middle Name", help='Employees middle name')
+    mothers_name = fields.Char("Mothers Name", help='Employees mothers name')
 
     employee_id = fields.Many2one('hr.employee',
                                   string='Related Employee', ondelete='restrict', auto_join=True,
