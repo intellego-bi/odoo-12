@@ -53,7 +53,17 @@
                                 <h2>
                                     <field name="mothers_name"/>
                                 </h2>
-                           </group>
+                            </group>
+                            <group colspan="4" name="hr_personal_details" attrs="{'invisible': [('user_type', '=', 'inte')]}">
+                                <label for="country_id"/>
+                                <h3>
+                                    <field name="country_id" attrs="{'required': [('user_type', '=', 'empl')]}"/>
+                                </h3>
+                                <label for="gender" class="oe_edit_only"/>
+                                <h3>
+                                    <field name="gender"/>
+                                </h3>
+                            </group>
 
                             <!--<button type="object" name="compute_installment" string="Compute Installment"  colspan="2" attrs="{'invisible':[('state','=','approve')]}"
                             groups="hr.group_hr_manager,hr.group_hr_user" class="oe_stat_button"
