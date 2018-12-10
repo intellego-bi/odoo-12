@@ -17,6 +17,11 @@
                 </xpath>-->
 
                 <xpath expr="//field[@name='name']/.." position="after">
+                    <label for="user_type" class="oe_edit_only"/>
+                    <h2>
+                        <field name="user_type" widget="radio" required="0"/>
+                    </h2>
+
                     <label for="firstname" class="oe_edit_only"/>
                     <h2>
                         <field name="firstname" required="0"/>
