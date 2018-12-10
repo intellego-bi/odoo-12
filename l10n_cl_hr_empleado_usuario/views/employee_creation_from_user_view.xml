@@ -10,8 +10,10 @@
                     <attribute name="invisible">0</attribute>
                 </xpath>
                 <xpath expr="//field[@name='name']" position="after">
+				    <group colspan="4">
                     <xpath expr="//label[@for='login']" position="move"/>
                     <xpath expr="//field[@name='login']" position="move"/>
+					</group>
                 </xpath>
 
                 <!--<xpath expr="//field[@name='login']" position="after">
