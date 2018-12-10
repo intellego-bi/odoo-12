@@ -7,11 +7,11 @@
             <field name="inherit_id" ref="base.view_users_form"/>
             <field name="arch" type="xml">
                 <xpath expr="//label[@for='name']" position="attributes">
-                    <attribute name="invisible">0</attribute>
+                    <attribute name="invisible">1</attribute>
                 </xpath>
-                <xpath expr="//field[@name='login']" position="after">
+                <!--<xpath expr="//field[@name='login']" position="after">
                     <xpath expr="//field[@name='signature']" position="move"/>
-                </xpath>
+                </xpath>-->
 
                 <!--<xpath expr="//field[@name='name']" position="attributes">
                     <attribute name="invisible">1</attribute>
@@ -22,8 +22,8 @@
                 <xpath expr="//field[@name='name']/.." position="after">
                     <group colspan="4" name="hr_user_type">
                         <h3>
-                            <label for="user_type"/>
-                            <field name="user_type" widget="radio" required="0"/>
+                            <label for="user_type" class="oe_edit_only"/>
+                            <field name="user_type" widget="radio" required="0" class="oe_edit_only"/>
                         </h3>
                     </group>
 
