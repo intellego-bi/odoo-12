@@ -26,8 +26,7 @@ class ResUsersInherit(models.Model):
     _inherit = 'res.users'
 
     #formated_vat = fields.Char(translate=True, string='Printable VAT', store=True, help='Show formatted vat')
-    user_type = fields.Selection([('empl', 'Employee'), ('inte', 'Internal')],
-                             string='User Type', default='empl')
+    user_type = fields.Selection([('empl', 'Employee'), ('inte', 'Internal')], string='User Type', default='empl')
     firstname = fields.Char("Firstname")
     last_name = fields.Char("Last Name")
     middle_name = fields.Char("Middle Name", help='Employees middle name')
