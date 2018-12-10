@@ -25,7 +25,7 @@ from odoo import models, fields, api, _
 class ResUsersInherit(models.Model):
     _inherit = 'res.users'
 
-    formated_vat = fields.Char(translate=True, string='Printable VAT', store=True, help='Show formatted vat')
+    #formated_vat = fields.Char(translate=True, string='Printable VAT', store=True, help='Show formatted vat')
     firstname = fields.Char("Firstname")
     last_name = fields.Char("Last Name")
     middle_name = fields.Char("Middle Name", help='Employees middle name')
