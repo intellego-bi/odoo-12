@@ -36,7 +36,7 @@
 
                     <notebook attrs="{'invisible': [('user_type', '=', 'inte')]}">
                         <page string="Employee Data" attrs="{'invisible': [('user_type', '=', 'inte')]}">
-                            <group colspan="4" name="hr_user_details" attrs="{'invisible': [('user_type', '=', 'inte')]}">
+                            <group colspan="4" name="hr_user_details">
                                 <label for="firstname"/>
                                 <h2>
                                     <field name="firstname" attrs="{'required': [('user_type', '=', 'empl')]}"/>
@@ -54,14 +54,16 @@
                                     <field name="mothers_name"/>
                                 </h2>
                             </group>
-                            <group colspan="4" name="hr_personal_details" attrs="{'invisible': [('user_type', '=', 'inte')]}">
-                                <label for="country_id"/>
+                        </page>
+						<page string="Personal Data" attrs="{'invisible': [('user_type', '=', 'inte')]}">
+                            <group colspan="4" name="hr_personal_details">
+                                <label for="country_id" class="oe_edit_only"/>
                                 <h3>
-                                    <field name="country_id" attrs="{'required': [('user_type', '=', 'empl')]}"/>
+                                    <field name="country_id" class="oe_edit_only" options="{'no_create': True}" attrs="{'required': [('user_type', '=', 'empl')]}"/>
                                 </h3>
-                                <label for="gender" class="oe_edit_only"/>
+                                <label for="gender" widget="radio" class="oe_edit_only"/>
                                 <h3>
-                                    <field name="gender"/>
+                                    <field name="gender" class="oe_edit_only"/>
                                 </h3>
                             </group>
 
