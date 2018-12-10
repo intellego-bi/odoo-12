@@ -17,14 +17,15 @@
                 </xpath>-->
 
                 <xpath expr="//field[@name='name']/.." position="after">
+                    <group name="hr_user_type">
+                        <h3>
+                            <label for="user_type"/>
+                            <field name="user_type" widget="radio" required="0"/>
+                        </h3>
+                    </group>
+
                     <notebook>
                         <page string="Employee Data">
-                            <group name="hr_user_type">
-                                <h3>
-                                    <label for="user_type"/>
-                                    <field name="user_type" widget="radio" required="0"/>
-                                </h3>
-                            </group>
                             <group name="hr_user_details" attrs="{'invisible': [('user_type', '=', 'inte')]}">
                                 <label for="firstname" class="oe_edit_only"/>
                                 <h2>
