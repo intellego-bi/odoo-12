@@ -65,13 +65,13 @@
                                 <h3>
                                     <field name="gender"  widget="radio" class="oe_edit_only"/>
                                 </h3>
-                                <label for="identification_id" class="oe_edit_only"/>
+                                <label for="identification_id"/>
                                 <h3>
-                                    <field name="identification_id" class="oe_edit_only"/>
+                                    <field name="identification_id" attrs="{'required': [('user_type', '=', 'empl')]}"/>
                                 </h3>
                                 <label for="department_id"/>
                                 <h3>
-                                    <field name="department_id" class="oe_edit_only"/>
+                                    <field name="department_id" options="{'no_create': True}" attrs="{'required': [('user_type', '=', 'empl')]}"/>
                                 </h3>
 
                             </group>
