@@ -25,7 +25,7 @@ from odoo import models, fields, api, _
 class ResUsersInherit(models.Model):
     _inherit = 'res.users'
 
-    #formated_vat = fields.Char(translate=True, string='Printable VAT', store=True, help='Show formatted vat')
+    formated_vat = fields.Char(translate=True, string='Printable VAT', store=True, help='Show formatted vat')
 
     user_type = fields.Selection([('empl', 'Employee'), ('inte', 'Internal')], string='User Type', default='empl')
     type_id = fields.Many2one('hr.type.employee', 'Tipo de Empleado')
