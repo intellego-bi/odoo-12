@@ -85,7 +85,8 @@ class ResUsersInherit(models.Model):
     @api.model
     def create(self, vals):
         """This code is to create an employee while creating an user."""
-
+        vals['name'] = self._get_computed_name(
+                    vals['last_name'], vals['firstname'], vals['mothers_name'], vals['middle_name'])
         result = super(ResUsersInherit, self).create(vals)
         result['employee_id'] = self.env['hr.employee'].sudo().create({'name': result['name'],
                                                                        'user_id': result['id'],
