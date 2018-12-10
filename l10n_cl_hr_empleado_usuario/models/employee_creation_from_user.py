@@ -20,6 +20,7 @@
 # 
 ###################################################################################
 from odoo import models, fields, api, _
+import re
 
 
 class ResUsersInherit(models.Model):
