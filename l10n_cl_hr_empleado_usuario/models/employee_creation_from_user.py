@@ -32,7 +32,7 @@ class ResUsersInherit(models.Model):
     user_type = fields.Selection([('empl', 'Employee'), ('inte', 'Internal')], string='User Type', default='empl')
     type_id = fields.Many2one('hr.type.employee', 'Tipo de Empleado')
     department_id = fields.Many2one('hr.department', related="employee_id.department_id", string='Department')
-    country_id = fields.Many2one('res.country', , related="employee_id.country_id", string='Nationality (Country)')
+    country_id = fields.Many2one('res.country', related="employee_id.country_id", string='Nationality (Country)')
     gender = fields.Selection([
         ('male', 'Male'),
         ('female', 'Female'),
