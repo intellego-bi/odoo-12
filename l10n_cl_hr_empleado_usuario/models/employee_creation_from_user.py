@@ -27,18 +27,18 @@ class ResUsersInherit(models.Model):
     _inherit = 'res.users'
 
     formated_vat = fields.Char(translate=True, string='Printable VAT', store=True, help='Show formatted vat')
-    identification_id = fields.Char(string='Identification No', groups="hr.group_hr_user")
+    identification_id = fields.Char(string='Identification No')
 
     user_type = fields.Selection([('empl', 'Employee'), ('inte', 'Internal')], string='User Type', default='empl')
     type_id = fields.Many2one('hr.type.employee', 'Tipo de Empleado')
     department_id = fields.Many2one('hr.department', 'Department')
     country_id = fields.Many2one(
-        'res.country', 'Nationality (Country)', groups="hr.group_hr_user")
+        'res.country', 'Nationality (Country)')
     gender = fields.Selection([
         ('male', 'Male'),
         ('female', 'Female'),
         ('other', 'Other')
-    ], groups="hr.group_hr_user", default="male")
+    ], default="male")
 
     firstname = fields.Char("Firstname")
     last_name = fields.Char("Last Name")
@@ -96,7 +96,7 @@ class ResUsersInherit(models.Model):
                                                                        'mothers_name': result['mothers_name'],
                                                                        'type_id': result['type_id'],
                                                                        'gender': result['gender'],
-                                                                       'country_id.id': result['country_id.id'],
+                                                                       'country_id': result['country_id'],
                                                                        'department_id': result['department_id'],
                                                                        'identification_id': result['identification_id'],
                                                                        'address_home_id': result['partner_id'].id})
