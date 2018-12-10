@@ -6,14 +6,14 @@
             <field name="model">res.users</field>
             <field name="inherit_id" ref="base.view_users_form"/>
             <field name="arch" type="xml">
-                <xpath expr="//label[@for='name']" position="attributes">
+                <xpath expr="//field[@name='name']" position="attributes">
                     <attribute name="readonly">1</attribute>
                 </xpath>
                 <xpath expr="//field[@name='name']" position="after">
-				    <group colspan="4">
-                    <xpath expr="//label[@for='login']" position="move"/>
-                    <xpath expr="//field[@name='login']" position="move"/>
-					</group>
+                    <group colspan="4">
+                        <xpath expr="//label[@for='login']" position="move"/>
+                        <xpath expr="//field[@name='login']" position="move"/>
+                    </group>
                 </xpath>
 
                 <!--<xpath expr="//field[@name='login']" position="after">
