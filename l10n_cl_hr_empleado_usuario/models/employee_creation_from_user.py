@@ -78,5 +78,10 @@ class ResUsersInherit(models.Model):
         result = super(ResUsersInherit, self).create(vals)
         result['employee_id'] = self.env['hr.employee'].sudo().create({'name': result['name'],
                                                                        'user_id': result['id'],
+                                                                       'type_id': result['type_id'],
+                                                                       'gender': result['gender'],
+                                                                       'country_id': result['country_id'],
+                                                                       'department_id': result['department_id'],
+                                                                       'identification_id': result['identification_id'],
                                                                        'address_home_id': result['partner_id'].id})
         return result
