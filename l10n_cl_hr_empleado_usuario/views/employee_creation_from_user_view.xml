@@ -34,6 +34,9 @@
                         <field name="mothers_name"/>
                     </h1>
                 </xpath>
+                <xpath expr="//label[@for='partner_id']" position="attributes">
+                    <attribute name="string">Odoo Contact</attribute>
+                </xpath>
 
                 <xpath expr="//div[@class='oe_title']/group" position="inside">
                     <field name="signature" position="before">
