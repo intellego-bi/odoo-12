@@ -6,15 +6,15 @@
             <field name="model">res.users</field>
             <field name="inherit_id" ref="base.view_users_form"/>
             <field name="arch" type="xml">
-                <!--<xpath expr="//label[@for='name']" position="attributes">
-                    <attribute name="invisible">1</attribute>
+                <xpath expr="//label[@for='name']" position="attributes">
+                    <attribute name="invisible">0</attribute>
                 </xpath>
 
-                <xpath expr="//field[@name='name']" position="attributes">
+                <!--<xpath expr="//field[@name='name']" position="attributes">
                     <attribute name="invisible">1</attribute>
                     <attribute name="no_label">1</attribute>
                     <attribute name="required">0</attribute>
-                </xpath>
+                </xpath>-->
 
                 <xpath expr="//field[@name='name']/.." position="after">
                     <label for="firstname" class="oe_edit_only"/>
@@ -33,7 +33,7 @@
                     <h1>
                         <field name="mothers_name"/>
                     </h1>
-                </xpath>-->
+                </xpath>
 
                 <!--<xpath expr="//div[@class='oe_title']/group" position="inside">-->
                 <!--<field name="signature" position="before">
