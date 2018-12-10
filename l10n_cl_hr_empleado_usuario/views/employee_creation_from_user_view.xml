@@ -17,30 +17,39 @@
                 </xpath>-->
 
                 <xpath expr="//field[@name='name']/.." position="after">
-                    <group name="hr_user_type">
-                        <label for="user_type" class="oe_edit_only"/>
-                        <h2>
-                            <field name="user_type" widget="radio" required="0"/>
-                        </h2>
-                    </group>
-                    <group name="hr_user_details" attrs="{'invisible': [('user_type', '=', 'inte')]}">
-                        <label for="firstname" class="oe_edit_only"/>
-                        <h2>
-                            <field name="firstname" attrs="{'required': [('user_type', '=', 'empl')]}"/>
-                        </h2>
-                        <label for="middle_name" class="oe_edit_only"/>
-                        <h2>
-                            <field name="middle_name"/>
-                        </h2>
-                       <label for="last_name" class="oe_edit_only"/>
-                        <h2>
-                            <field name="last_name" attrs="{'required': [('user_type', '=', 'empl')]}"/>
-                        </h2>
-                        <label for="mothers_name" class="oe_edit_only"/>
-                        <h2>
-                            <field name="mothers_name"/>
-                        </h2>
-                    </group>
+                    <notebook>
+                        <page string="Employee Data">
+                            <group name="hr_user_type">
+                                <h3>
+                                    <label for="user_type"/>
+                                    <field name="user_type" widget="radio" required="0"/>
+                                </h3>
+                            </group>
+                            <group name="hr_user_details" attrs="{'invisible': [('user_type', '=', 'inte')]}">
+                                <label for="firstname" class="oe_edit_only"/>
+                                <h2>
+                                    <field name="firstname" attrs="{'required': [('user_type', '=', 'empl')]}"/>
+                                </h2>
+                                <label for="middle_name" class="oe_edit_only"/>
+                                <h2>
+                                    <field name="middle_name"/>
+                                </h2>
+                               <label for="last_name" class="oe_edit_only"/>
+                                <h2>
+                                    <field name="last_name" attrs="{'required': [('user_type', '=', 'empl')]}"/>
+                                </h2>
+                                <label for="mothers_name" class="oe_edit_only"/>
+                                <h2>
+                                    <field name="mothers_name"/>
+                                </h2>
+                           </group>
+
+                            <!--<button type="object" name="compute_installment" string="Compute Installment"  colspan="2" attrs="{'invisible':[('state','=','approve')]}"
+                            groups="hr.group_hr_manager,hr.group_hr_user" class="oe_stat_button"
+                            icon="fa-clock-o"/>-->
+                            <div class="oe_clear"/>
+                        </page>
+                    </notebook>
                 </xpath>
 
 
