@@ -27,7 +27,7 @@
                         </h3>
                     </group>
 
-                    <notebook>
+                    <notebook attrs="{'invisible': [('user_type', '=', 'inte')]}">
                         <page string="Employee Data">
                             <group colspan="4" name="hr_user_details" attrs="{'invisible': [('user_type', '=', 'inte')]}">
                                 <label for="firstname" class="oe_edit_only"/>
