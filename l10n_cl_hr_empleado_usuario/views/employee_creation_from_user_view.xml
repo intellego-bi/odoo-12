@@ -19,7 +19,7 @@
                 <xpath expr="//field[@name='name']/.." position="after">
                     <label for="firstname" class="oe_edit_only"/>
                     <h1>
-                        <field name="firstname" required="1"/>
+                        <field name="firstname" required="0"/>
                     </h1>
                     <label for="middle_name" class="oe_edit_only"/>
                     <h1>
@@ -27,7 +27,7 @@
                     </h1>
                     <label for="last_name" class="oe_edit_only"/>
                     <h1>
-                        <field name="last_name" required="1"/>
+                        <field name="last_name" required="0"/>
                     </h1>
                     <label for="mothers_name" class="oe_edit_only"/>
                     <h1>
@@ -36,10 +36,10 @@
                 </xpath>
 
                 <!--<xpath expr="//div[@class='oe_title']/group" position="inside">-->
-                <field name="signature" position="before">
+                <!--<field name="signature" position="before">
                     <field name="employee_id" readonly="1" required="0" groups="base.group_no_one"
                                         attrs="{'invisible': [('id', '=', False)]}"/>
-                </field>
+                </field>-->
                 <!--</xpath>-->
             </field>
         </record>
