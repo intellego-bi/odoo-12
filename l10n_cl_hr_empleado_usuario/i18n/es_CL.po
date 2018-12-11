@@ -92,7 +92,7 @@ msgstr "Segundo Apellido"
 
 #. module: l10n_cl_hr_empleado_usuario
 #: model:ir.model.fields,field_description:l10n_cl_hr_empleado_usuario.field_res_users__country_id
-msgid "Nationality (Country)"
+msgid "Country"
 msgstr "Nacionalidad (País)"
 
 #. module: l10n_cl_hr_empleado_usuario
@@ -106,19 +106,9 @@ msgid "Personal Data"
 msgstr "Datos Personales"
 
 #. module: l10n_cl_hr_empleado_usuario
-#: model:ir.model.fields,field_description:l10n_cl_hr_empleado_usuario.field_res_users__formated_vat
-msgid "Printable VAT"
-msgstr ""
-
-#. module: l10n_cl_hr_empleado_usuario
 #: model:ir.model.fields,field_description:l10n_cl_hr_empleado_usuario.field_res_users__employee_id
 msgid "Related Employee"
 msgstr "Empleado Asociado"
-
-#. module: l10n_cl_hr_empleado_usuario
-#: model:ir.model.fields,help:l10n_cl_hr_empleado_usuario.field_res_users__formated_vat
-msgid "Show formatted vat"
-msgstr ""
 
 #. module: l10n_cl_hr_empleado_usuario
 #: model:ir.model.fields,field_description:l10n_cl_hr_empleado_usuario.field_res_users__type_id
@@ -134,5 +124,3 @@ msgstr "Tipo de Usuario"
 #: model:ir.model,name:l10n_cl_hr_empleado_usuario.model_res_users
 msgid "Users"
 msgstr "Usuarios"
-
-
