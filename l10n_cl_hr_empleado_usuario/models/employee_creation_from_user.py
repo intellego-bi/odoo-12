@@ -31,8 +31,8 @@ class ResUsersInherit(models.Model):
 
     user_type = fields.Selection([('empl', 'Employee'), ('inte', 'Internal')], string='User Type', default='empl')
     type_id = fields.Many2one('hr.type.employee', 'Tipo de Empleado')
-    department_id = fields.Many2one('hr.department', related="employee_id.department_id", string='Department')
-    country_id = fields.Many2one('res.country', related="employee_id.country_id", string='Nationality (Country)')
+    department_id = fields.Many2one('hr.department', string='Department')
+    country_id = fields.Many2one('res.country', string='Nationality (Country)')
     gender = fields.Selection([
         ('male', 'Male'),
         ('female', 'Female'),
@@ -89,14 +89,14 @@ class ResUsersInherit(models.Model):
         result = super(ResUsersInherit, self).create(vals)
         result['employee_id'] = self.env['hr.employee'].sudo().create({'name': result['name'],
                                                                        'user_id': result['id'],
-                                                                       'firstname': result['firstname'],
-                                                                       'middle_name': result['middle_name'],
-                                                                       'last_name': result['last_name'],
-                                                                       'mothers_name': result['mothers_name'],
+                                                                       #'firstname': result['firstname'],
+                                                                       #'middle_name': result['middle_name'],
+                                                                       #'last_name': result['last_name'],
+                                                                       #'mothers_name': result['mothers_name'],
                                                                        'type_id': result['type_id'],
                                                                        'gender': result['gender'],
-                                                                       'country_id': result['country_id'],
-                                                                       'department_id': result['department_id'],
+                                                                       #'country_id': result['country_id'],
+                                                                       #'department_id': result['department_id'],
                                                                        'identification_id': result['identification_id'],
                                                                        'address_home_id': result['partner_id'].id})
         return result
