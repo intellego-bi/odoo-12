@@ -123,9 +123,10 @@ class ResUsersInherit(models.Model):
         return result
 
     @api.multi
-    @api.onchange('firstname', 'mothers_name', 'middle_name', 'last_name', 'type_id', 'gender', 'country_id', 'department_id', 'identification_id')
+    #@api.onchange('firstname', 'mothers_name', 'middle_name', 'last_name', 'type_id', 'gender', 'country_id', 'department_id', 'identification_id')
     def update(self, vals):
         """This code is to update an employee while updating a user."""
         result = super(ResUsersInherit, self).write(vals)
+        self.write({'mothers_name': vals['mothers_name']})
         return result
 
