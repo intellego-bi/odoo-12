@@ -73,7 +73,7 @@
                             <group colspan="4" name="hr_personal_details">
                                 <label for="employee_id"/>
                                 <h3>
-                                    <field name="employee_id" attrs="{'readonly': True}"/>
+                                    <field name="employee_id" attrs="{'readonly': True, 'invisible': [('id', '=', True)]}"/>
                                 </h3>
 
                                 <label for="type_id" attrs="{'invisible': [('id', '=', True)]}"/>
