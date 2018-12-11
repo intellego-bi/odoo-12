@@ -28,7 +28,7 @@ class ResUsersInherit(models.Model):
 
     identification_id = fields.Char(string='Identification No')
 
-    user_type = fields.Selection([('empl', 'Employee'), ('inte', 'Internal')], string='User Type', default='empl')
+    user_type = fields.Selection([('inte', 'Internal'), ('empl', 'Employee')], string='User Type', default='inte')
     type_id = fields.Many2one('hr.type.employee', 'Tipo de Empleado')
     department_id = fields.Many2one('hr.department', string='Department')
     country_id = fields.Many2one('res.country', string='Nationality (Country)')
