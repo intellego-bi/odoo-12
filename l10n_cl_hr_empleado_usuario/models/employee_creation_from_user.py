@@ -124,23 +124,21 @@ class ResUsersInherit(models.Model):
 
     @api.multi
     @api.onchange('firstname', 'mothers_name', 'middle_name', 'last_name', 'type_id', 'gender', 'country_id', 'department_id', 'identification_id')
-    def update(self):
+    def update(self, vals):
         """This code is to update an employee while updating a user."""
-        for user in self:
-            if user.firstname and user.last_name:
-                user.name = self._get_computed_name(
-                    user.last_name, user.firstname, user.mothers_name, user.middle_name)
+        result = super(ResUsersInherit, self).write(vals)
 
-            result['employee_id'] = self.env['hr.employee'].sudo().write({'name': user.name,
-                                                                       'firstname': user.firstname,
-                                                                       'middle_name': user.middle_name,
-                                                                       'last_name': user.last_name,
-                                                                       'mothers_name': user.mothers_name,
-                                                                       'type_id': user.type_id,
-                                                                       'gender': user.gender,
-                                                                       'country_id': user.country_id,
-                                                                       'department_id': user.department_id.id,
-                                                                       'identification_id': user.identification_id})#,
-                                                                       #'address_home_id': user.partner_id.id})
+        result['employee_id'] = self.env['hr.employee'].sudo().write({'name': result['name'],
+                                                                      'user_id': result['id'],
+                                                                      'firstname': vals['firstname'],
+                                                                      'middle_name': vals['middle_name'],
+                                                                      'last_name': vals['last_name'],
+                                                                      'mothers_name': vals['mothers_name'],
+                                                                      'type_id': vals['type_id'],
+                                                                      'gender': vals['gender'],
+                                                                      'country_id': vals['country_id'],
+                                                                      'department_id': vals['department_id'],
+                                                                      'identification_id': vals['identification_id'],
+                                                                      'address_home_id': result['partner_id'].id})
         return result
 
