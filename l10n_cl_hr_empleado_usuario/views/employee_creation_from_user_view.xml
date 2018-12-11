@@ -71,6 +71,11 @@
                         </page>
 						<page string="Employee Data" attrs="{'invisible': [('user_type', '=', 'inte')]}">
                             <group colspan="4" name="hr_personal_details">
+                                <label for="employee_id"/>
+                                <h3>
+                                    <field name="employee_id" attrs="{'readonly': True}"/>
+                                </h3>
+
                                 <label for="type_id"/>
                                 <h3>
                                     <field name="type_id" options="{'no_create': True}" attrs="{'required': [('user_type', '=', 'empl')]}"/>
