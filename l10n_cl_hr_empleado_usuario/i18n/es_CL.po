@@ -53,7 +53,7 @@ msgstr "Mujer"
 #. module: l10n_cl_hr_empleado_usuario
 #: model:ir.model.fields,field_description:l10n_cl_hr_empleado_usuario.field_res_users__firstname
 msgid "Firstname"
-msgstr "Nombre"
+msgstr "NOMBRE"
 
 #. module: l10n_cl_hr_empleado_usuario
 #: model:ir.model.fields,field_description:l10n_cl_hr_empleado_usuario.field_res_users__gender
