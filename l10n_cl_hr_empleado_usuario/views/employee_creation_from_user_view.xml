@@ -34,7 +34,7 @@
                         </h3>
                     </group>
                     <group>
-                        <xpath expr="//label[@for='partner_id']" position="move"/>
+                        <!--<xpath expr="//label[@for='partner_id']" position="move"/>-->
                         <xpath expr="//field[@name='partner_id']" position="move"/>                         
                     </group>
 
