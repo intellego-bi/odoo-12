@@ -122,7 +122,7 @@ class ResUsersInherit(models.Model):
                                                                        'address_home_id': result['partner_id'].id})
         return result
 
-    #@api.multi
+    @api.model
     @api.onchange('firstname', 'mothers_name', 'middle_name', 'last_name', 'type_id', 'gender', 'country_id', 'department_id', 'identification_id')
     def update(self, vals):
         """This code is to update an employee while updating a user."""
