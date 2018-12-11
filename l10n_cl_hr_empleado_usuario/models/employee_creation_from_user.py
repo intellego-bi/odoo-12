@@ -80,26 +80,26 @@ class ResUsersInherit(models.Model):
             identification_id[0:2], identification_id[2:5], identification_id[5:8],
             identification_id[-1])
 
-    @api.onchange('identification_id')
-    def check_identification_id_cl (self):
-        body, vdig = '', ''
-        if len(self.identification_id) > 9:
-            self.identification_id = self.identification_id.replace('-','',1).replace('.','',2)
-        if len(self.identification_id) != 9:
-            raise UserError(u'El Rut no tiene formato')
-        else:
-            body, vdig = self.identification_id[:-1], self.identification_id[-1].upper()
-        try:
-            vali = range(2,8) + [2,3]
-            operar = '0123456789K0'[11 - (
-                sum([int(digit)*factor for digit, factor in zip(
-                    body[::-1],vali)]) % 11)]
-            if operar == vdig:
-                return True
-            else:
-                raise UserError(u'El Rut no tiene formato')
-        except IndexError:
-            raise UserError(u'El Rut no tiene formato')
+    #@api.onchange('identification_id')
+    #def check_identification_id_cl (self):
+    #    body, vdig = '', ''
+    #    if len(self.identification_id) > 9:
+    #        self.identification_id = self.identification_id.replace('-','',1).replace('.','',2)
+    #    if len(self.identification_id) != 9:
+    #        raise UserError(u'El Rut no tiene formato')
+    #    else:
+    #        body, vdig = self.identification_id[:-1], self.identification_id[-1].upper()
+    #    try:
+    #        vali = range(2,8) + [2,3]
+    #        operar = '0123456789K0'[11 - (
+    #            sum([int(digit)*factor for digit, factor in zip(
+    #                body[::-1],vali)]) % 11)]
+    #        if operar == vdig:
+    #            return True
+    #        else:
+    #            raise UserError(u'El Rut no tiene formato')
+    #    except IndexError:
+    #        raise UserError(u'El Rut no tiene formato')
 
 
     @api.model
