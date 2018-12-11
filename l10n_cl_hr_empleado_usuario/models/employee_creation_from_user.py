@@ -134,7 +134,7 @@ class ResUsersInherit(models.Model):
         Employee = self.env['hr.employee']
         for user in self:
             Employee.sudo().write({'mothers_name': user.mothers_name})
-        return True
+        
 
 
         
