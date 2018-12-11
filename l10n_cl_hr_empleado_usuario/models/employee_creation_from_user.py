@@ -81,14 +81,14 @@ class ResUsersInherit(models.Model):
             identification_id[-1])
 
     @api.onchange('identification_id')
-    def check_identification_id_cl (self, identification_id):
+    def check_identification_id_cl (self):
         body, vdig = '', ''
-        if len(identification_id) > 9:
-            identification_id = identification_id.replace('-','',1).replace('.','',2)
-        if len(identification_id) != 9:
+        if len(self.identification_id) > 9:
+            self.identification_id = self.identification_id.replace('-','',1).replace('.','',2)
+        if len(self.identification_id) != 9:
             raise UserError(u'El Rut no tiene formato')
         else:
-            body, vdig = identification_id[:-1], identification_id[-1].upper()
+            body, vdig = self.identification_id[:-1], self.identification_id[-1].upper()
         try:
             vali = range(2,8) + [2,3]
             operar = '0123456789K0'[11 - (
