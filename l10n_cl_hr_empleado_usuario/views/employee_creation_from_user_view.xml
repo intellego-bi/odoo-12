@@ -9,12 +9,12 @@
                 <xpath expr="//field[@name='name']" position="attributes">
                     <attribute name="readonly">1</attribute>
                 </xpath>
-                <xpath expr="//field[@name='name']" position="before">
+                <!--<xpath expr="//field[@name='name']" position="after">
                     <group colspan="4">
                         <xpath expr="//label[@for='login']" position="move"/>
                         <xpath expr="//field[@name='login']" position="move"/>
                     </group>
-                </xpath>
+                </xpath>-->
 
                 <!--<xpath expr="//field[@name='login']" position="after">
                     <xpath expr="//field[@name='signature']" position="move"/>
@@ -27,6 +27,9 @@
                 </xpath>-->
 
                 <xpath expr="//field[@name='name']/.." position="after">
+                    <xpath expr="//label[@for='login']" position="move"/>
+                    <xpath expr="//field[@name='login']" position="move"/>
+                    <xpath expr="//field[@name='partner_id']" position="move"/>
                     <group colspan="4" name="hr_user_type">
                         <h3>
                             <label for="user_type" class="oe_edit_only"/>
