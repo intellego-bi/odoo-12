@@ -128,7 +128,7 @@ class ResUsersInherit(models.Model):
         vals['name'] = self._get_computed_name(
                     vals['last_name'], vals['firstname'], vals['mothers_name'], vals['middle_name'])
         result = super(ResUsersInherit, self).write(vals)
-        result['employee_id'] = self.env['hr.employee'].sudo().write({'name': result['name'],
+        self.env['hr.employee'].sudo().write({'name': result['name'],
                                                                        'user_id': result['id'],
                                                                        'firstname': vals['firstname'],
                                                                        'middle_name': vals['middle_name'],
@@ -140,7 +140,7 @@ class ResUsersInherit(models.Model):
                                                                        'department_id': vals['department_id'],
                                                                        'identification_id': vals['identification_id'],
                                                                        'address_home_id': result['partner_id'].id})
-        return result
+        
 
 
     #@api.model
