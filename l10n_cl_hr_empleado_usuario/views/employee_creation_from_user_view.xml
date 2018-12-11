@@ -106,9 +106,9 @@
                     <div class="oe_clear"/>
                 </xpath>
 
-                <xpath expr="//label[@for='partner_id']" position="attributes">
+                <!--<xpath expr="//label[@for='partner_id']" position="attributes">
                     <attribute name="invisible">1</attribute>
-                </xpath>
+                </xpath>-->
                 <xpath expr="//field[@name='partner_id']" position="attributes">
                     <attribute name="invisible">1</attribute>
                 </xpath>
