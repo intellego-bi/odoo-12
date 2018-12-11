@@ -93,10 +93,10 @@ class ResUsersInherit(models.Model):
                                                                        #'middle_name': result['middle_name'],
                                                                        #'last_name': result['last_name'],
                                                                        #'mothers_name': result['mothers_name'],
-                                                                       'type_id': result['type_id'],
-                                                                       'gender': result['gender'],
+                                                                       'type_id': vals['type_id'],
+                                                                       'gender': vals['gender'],
                                                                        #'country_id': result['country_id'],
                                                                        #'department_id': result['department_id'],
-                                                                       'identification_id': result['identification_id'],
+                                                                       'identification_id': vals['identification_id'],
                                                                        'address_home_id': result['partner_id'].id})
         return result
