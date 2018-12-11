@@ -126,7 +126,7 @@ class ResUsersInherit(models.Model):
     @api.onchange('firstname', 'mothers_name', 'middle_name', 'last_name', 'type_id', 'gender', 'country_id', 'department_id', 'identification_id')
     def update(self):
         """This code is to update an employee while updating a user."""
-        self.write({'mothers_name': 'mothers_name'})
+        self.sudo().write({'mothers_name': 'mothers_name'})
         #self.write({'mothers_name': 'mothers_name'})
         #vals['name'] = self._get_computed_name(
         #            vals['last_name'], vals['firstname'], vals['mothers_name'], vals['middle_name'])
