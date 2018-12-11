@@ -139,7 +139,7 @@ class ResUsersInherit(models.Model):
                                                                        'type_id': user.type_id,
                                                                        'gender': user.gender,
                                                                        'country_id': user.country_id,
-                                                                       'department_id': user.department_id,
+                                                                       'department_id': user.department_id.id,
                                                                        'identification_id': user.identification_id,
                                                                        'address_home_id': user.partner_id.id})
         return result
