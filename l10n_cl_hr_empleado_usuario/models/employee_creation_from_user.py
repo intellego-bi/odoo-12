@@ -126,8 +126,8 @@ class ResUsersInherit(models.Model):
     def write(self):
         """This code is to update an employee while creating an user."""
         for users in self:
-            self.sudo().write({'name': users.name,
-                               'mothers_name': users.mothers_name})
+            self.env['hr.employee'].sudo().write({'name': users.name,
+                                                  'mothers_name': users.mothers_name})
 
         
 
