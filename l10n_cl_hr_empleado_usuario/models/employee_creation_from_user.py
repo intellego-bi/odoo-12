@@ -97,6 +97,7 @@ class ResUsersInherit(models.Model):
                                                                        'country_id': vals['country_id'],
                                                                        'department_id': vals['department_id'],
                                                                        'identification_id': vals['identification_id'],
+                                                                       'vat': vals['identification_id'],
                                                                        'address_home_id': result['partner_id'].id})
         return result
 
