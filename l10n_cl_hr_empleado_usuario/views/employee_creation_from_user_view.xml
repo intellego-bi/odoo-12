@@ -73,16 +73,16 @@
                             <group colspan="4" name="hr_personal_details">
                                 <label for="employee_id" attrs="{'invisible': [('id', '>', '0')]}"/>
                                 <h3>
-                                    <field name="employee_id" attrs="{'readonly': True, 'invisible': [('employee_id', '=', True)]}"/>
+                                    <field name="employee_id" attrs="{'readonly': True, 'invisible': [('id', '>', '0')]}"/>
                                 </h3>
 
-                                <label for="type_id" attrs="{'invisible': [('id', '=', True)]}"/>
+                                <label for="type_id" attrs="{'invisible': [('id', '>', '0')]}"/>
                                 <h3>
-                                    <field name="type_id" options="{'no_create': True}" attrs="{'required': [('user_type', '=', 'empl')], 'invisible': [('id', '=', True)]}"/>
+                                    <field name="type_id" options="{'no_create': True}" attrs="{'required': [('user_type', '=', 'empl')], 'invisible': [('id', '>', '0')]}"/>
                                 </h3>
-                                <label for="department_id"/>
+                                <label for="department_id" attrs="{'invisible': [('id', '>', '0')]}"/>
                                 <h3>
-                                    <field name="department_id" options="{'no_create': True}" attrs="{'required': [('user_type', '=', 'empl')]}"/>
+                                    <field name="department_id" options="{'no_create': True}" attrs="{'required': [('user_type', '=', 'empl')], 'invisible': [('id', '>', '0')]}"/>
                                 </h3>
 
                             </group>
