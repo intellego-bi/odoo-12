@@ -78,7 +78,7 @@
 
                                 <label for="type_id" />
                                 <h3>
-                                    <field name="type_id" options="{'no_create': True}" attrs="{'required': [('user_type', '=', 'empl')], 'invisible': [('employee_id.id', '>', 0)]}"/>
+                                    <field name="type_id" options="{'no_create': True}" attrs="{'required': [('user_type', '=', 'empl')], 'invisible': [('employee_id', '=', True)]}"/>
                                 </h3>
                                 <label for="department_id"/>
                                 <h3>
