@@ -27,18 +27,12 @@
                 </xpath>-->
 
                 <xpath expr="//field[@name='name']/.." position="after">
-                    <group>
-                        <h3>
-                            <xpath expr="//label[@for='login']" position="move"/>
-                            <xpath expr="//field[@name='login']" position="move"/>
-                        </h3>
-                    </group>
-                    <group>
+                       <xpath expr="//label[@for='login']" position="move"/>
+                       <xpath expr="//field[@name='login']" position="move"/>
+                    <div>
                         <!--<xpath expr="//label[@for='partner_id']" position="move"/>-->
                         <xpath expr="//field[@name='partner_id']" position="move"/>                         
-                    </group>
-
-
+                    </div>
                     <group colspan="4" name="hr_user_type">
                         <h3>
                             <label for="user_type" class="oe_edit_only"/>
