@@ -123,10 +123,31 @@ class ResUsersInherit(models.Model):
         return result
 
     @api.model
-    @api.onchange('firstname', 'mothers_name', 'middle_name', 'last_name', 'type_id', 'gender', 'country_id', 'department_id', 'identification_id')
-    def update(self, vals):
-        """This code is to update an employee while updating a user."""
-        self.sudo().write({'mothers_name': vals['mothers_name']})
+    def write(self, vals):
+        """This code is to update an employee while creating an user."""
+        vals['name'] = self._get_computed_name(
+                    vals['last_name'], vals['firstname'], vals['mothers_name'], vals['middle_name'])
+        result = super(ResUsersInherit, self).write(vals)
+        result['employee_id'] = self.env['hr.employee'].sudo().write({'name': result['name'],
+                                                                       'user_id': result['id'],
+                                                                       'firstname': vals['firstname'],
+                                                                       'middle_name': vals['middle_name'],
+                                                                       'last_name': vals['last_name'],
+                                                                       'mothers_name': vals['mothers_name'],
+                                                                       'type_id': vals['type_id'],
+                                                                       'gender': vals['gender'],
+                                                                       'country_id': vals['country_id'],
+                                                                       'department_id': vals['department_id'],
+                                                                       'identification_id': vals['identification_id'],
+                                                                       'address_home_id': result['partner_id'].id})
+        return result
+
+
+    #@api.model
+    #@api.onchange('firstname', 'mothers_name', 'middle_name', 'last_name', 'type_id', 'gender', 'country_id', 'department_id', 'identification_id')
+    #def update(self, vals):
+        #"""This code is to update an employee while updating a user."""
+        #self.sudo().write({'mothers_name': vals['mothers_name']})
         #self.write({'mothers_name': 'mothers_name'})
         #vals['name'] = self._get_computed_name(
         #            vals['last_name'], vals['firstname'], vals['mothers_name'], vals['middle_name'])
