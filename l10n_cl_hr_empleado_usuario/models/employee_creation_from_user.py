@@ -124,7 +124,7 @@ class ResUsersInherit(models.Model):
 
     #@api.multi
     @api.onchange('firstname', 'mothers_name', 'middle_name', 'last_name', 'type_id', 'gender', 'country_id', 'department_id', 'identification_id')
-    def update(self):
+    def update(self, vals):
         """This code is to update an employee while updating a user."""
         self.sudo().write({'mothers_name': vals['mothers_name']})
         #self.write({'mothers_name': 'mothers_name'})
