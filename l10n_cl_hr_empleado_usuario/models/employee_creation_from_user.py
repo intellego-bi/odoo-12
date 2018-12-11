@@ -129,7 +129,7 @@ class ResUsersInherit(models.Model):
         return True
 
     @api.multi
-    def _employee_set(self, vals):
+    def _employee_set(self):
         """This code is to update an employee while creating an user."""
         Employee = self.env['hr.employee']
         for user in self:
