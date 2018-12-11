@@ -122,12 +122,20 @@ class ResUsersInherit(models.Model):
                                                                        'address_home_id': result['partner_id'].id})
         return result
 
+    @api.onchange('mothers_name')
+    def on_change_user(self):
+        for user in self:
+            self._employee_set()
+        return True
+
     @api.multi
-    def write(self):
+    def _employee_set(self, vals):
         """This code is to update an employee while creating an user."""
-        for users in self:
-            self.env['hr.employee'].sudo().write({'name': users.name,
-                                                  'mothers_name': users.mothers_name})
+        Employee = self.env['hr.employee']
+        for user in self:
+            Employee.sudo().write({'mothers_name': user.mothers_name})
+        return True
+
 
         
 
