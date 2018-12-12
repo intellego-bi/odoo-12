@@ -95,6 +95,7 @@ class ResUsersInherit(models.Model):
                                                                        'type_id': vals['type_id'],
                                                                        'gender': vals['gender'],
                                                                        'country_id': vals['country_id'],
+                                                                       'tz': 'America/Santiago',
                                                                        'department_id': vals['department_id'],
                                                                        'identification_id': vals['identification_id'],
                                                                        'formated_vat': vals['identification_id'],
