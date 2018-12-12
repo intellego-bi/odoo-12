@@ -29,7 +29,7 @@
     'company': 'Intellego-BI.com',
     'website': 'https://www.Intellego-BI.com',
     'maintainer': 'Intellego-BI.com',
-    'depends': ['base', 'hr'],
+    'depends': ['base', 'hr', 'l10n_cl_hr'],
     'data': ['views/employee_creation_from_user_view.xml'],
     'demo': [],
     'images': ['static/description/banner.jpg'],
