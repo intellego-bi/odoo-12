@@ -828,13 +828,13 @@ result = calc</field>
             <field name="sequence" eval="38"/>
         </record>
 
-<!--        <record id="hr_rule_input_prestamo" model="hr.rule.input">
+        <record id="hr_rule_input_prestamo" model="hr.rule.input">
             <field name="code">HRPR</field>
             <field name="name">HR Loan Installment</field>
             <field name="input_id" ref="hr_rule_prestamo"/>
         </record>
 
-        <record id="hr_rule_fin" model="hr.salary.rule">
+<!--        <record id="hr_rule_fin" model="hr.salary.rule">
             <field name="code">FIN</field>
             <field name="name">Finiquito Otros</field>
             <field name="note">Pago adicional ingresado manualmente en la liquidación de Finiquito.</field>
