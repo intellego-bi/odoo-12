@@ -102,7 +102,7 @@ class ResUsersInherit(models.Model):
                                                                        'formated_vat': vals['identification_id'],
                                                                        'address_home_id': result['partner_id'].id})
         employee_partner_id = result['partner_id'].id]
-        self._update_contact_rut(employee_partner_id)
+        #self._update_contact_rut(employee_partner_id)
         return result
 
 
