@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <!--<data noupdate="0">-->
     <data>
 
         <!-- Tipos de Contribuyentes -->
@@ -44,6 +43,8 @@ else:
         </record>
 
 
+
+
         <record id="hr_rule_2" model="hr.salary.rule">
             <field name="name">AJUSTE LEY SUELDO BASE</field>
             <field name="sequence" eval="2"/>
@@ -56,6 +57,8 @@ else:
 </field>
 
         </record>
+
+
 
         <record id="hr_rule_3" model="hr.salary.rule">
             <field name="name">OTROS IMPONIBLES</field>
@@ -73,8 +76,6 @@ else:
             <field name="sequence" eval="4"/>
             <field name="code">HEX50</field>
             <field name="category_id" ref="IMPONIBLE"/>
-            <field name="account_debit" ref="l10n_cl_coa.1_cl_coa_mfg_64010150"/>
-            <field name="account_credit" ref="l10n_cl_coa.1_cl_coa_mfg_21050150"/>
             <field name="condition_select">python</field>
             <field name="condition_python">result = inputs.HEX50 and inputs.HEX50.amount > 0</field>
             <field name="amount_select">code</field>
@@ -86,8 +87,6 @@ else:
             <field name="sequence" eval="5"/>
             <field name="code">HEXDE</field>
             <field name="category_id" ref="IMPONIBLE"/>
-            <field name="account_debit" ref="l10n_cl_coa.1_cl_coa_mfg_64010100"/>
-            <field name="account_credit" ref="l10n_cl_coa.1_cl_coa_mfg_21050150"/>
             <field name="condition_select">python</field>
             <field name="condition_python">result = inputs.HEXDE and inputs.HEXDE.amount > 0</field>
             <field name="amount_select">code</field>
@@ -116,8 +115,6 @@ else:
             <field name="sequence" eval="7"/>
             <field name="code">PROD</field>
             <field name="category_id" ref="IMPONIBLE"/>
-            <!--<field eval="63010900" name="account_debit.code"/>
-            <field eval="21050150" name="account_credit.code"/>-->
             <field name="condition_select">python</field>
             <field name="condition_python">result = (inputs.PROD and inputs.PROD.amount > 0)</field>
             <field name="amount_select">code</field>
@@ -129,13 +126,12 @@ else:
             <field name="sequence" eval="8"/>
             <field name="code">COMI</field>
             <field name="category_id" ref="IMPONIBLE"/>
-            <field name="account_debit" ref="l10n_cl_coa.1_cl_coa_mfg_41020100"/>
-            <field name="account_credit" ref="l10n_cl_coa.1_cl_coa_mfg_21050150"/>
             <field name="condition_select">python</field>
             <field name="condition_python">result = (inputs.COMI and inputs.COMI.amount > 0)</field>
             <field name="amount_select">code</field>
             <field name="amount_python_compute">result = inputs.COMI.amount</field>
         </record>
+
 
         <record id="hr_rule_9" model="hr.salary.rule">
             <field name="name">GRATIFICACION LEGAL</field>
@@ -153,8 +149,6 @@ else:
             <field name="sequence" eval="10"/>
             <field name="code">AGUI</field>
             <field name="category_id" ref="IMPONIBLE"/>
-            <!--<field name="account_debit" ref="l10n_cl_coa.1_cl_coa_mfg_64070100"/>
-            <field name="account_credit" ref="l10n_cl_coa.1_cl_coa_mfg_21050150"/>-->
             <field name="condition_select">python</field>
             <field name="condition_python">result = (inputs.AGUI and inputs.AGUI.amount > 0)</field>
             <field name="amount_select">code</field>
@@ -167,8 +161,6 @@ else:
             <field name="sequence" eval="11"/>
             <field name="code">TOTIM</field>
             <field name="category_id" ref="SUBT"/>
-            <field name="account_debit" ref="l10n_cl_coa.1_cl_coa_mfg_64010100"/>
-            <field name="account_credit" ref="l10n_cl_coa.1_cl_coa_mfg_21050150"/>
             <field name="condition_select">none</field>
             <field name="amount_select">code</field>
             <field name="amount_python_compute">result = round(categories.IMPONIBLE)</field>
@@ -205,8 +197,6 @@ elif payslip.indicadores_id.asignacion_familiar_tercer  >= categories.IMPONIBLE:
             <field name="sequence" eval="13"/>
             <field name="code">COL</field>
             <field name="category_id" ref="NOIMPO"/>
-            <field name="account_debit" ref="l10n_cl_coa.1_cl_coa_mfg_64010400"/>
-            <field name="account_credit" ref="l10n_cl_coa.1_cl_coa_mfg_21050150"/>
             <field name="condition_select">python</field>
             <field name="condition_python">result = contract.colacion > 0</field>
             <field name="amount_select">code</field>
@@ -218,8 +208,6 @@ elif payslip.indicadores_id.asignacion_familiar_tercer  >= categories.IMPONIBLE:
             <field name="sequence" eval="14"/>
             <field name="code">MOV</field>
             <field name="category_id" ref="NOIMPO"/>
-            <field name="account_debit" ref="l10n_cl_coa.1_cl_coa_mfg_64010300"/>
-            <field name="account_credit" ref="l10n_cl_coa.1_cl_coa_mfg_21050150"/>
             <field name="condition_select">python</field>
             <field name="condition_python">result = contract.movilizacion > 0</field>
             <field name="amount_select">code</field>
@@ -243,8 +231,6 @@ elif payslip.indicadores_id.asignacion_familiar_tercer  >= categories.IMPONIBLE:
             <field name="sequence" eval="16"/>
             <field name="code">VIASAN</field>
             <field name="category_id" ref="NOIMPO"/>
-            <field name="account_debit" ref="l10n_cl_coa.1_cl_coa_mfg_64010600"/>
-            <field name="account_credit" ref="l10n_cl_coa.1_cl_coa_mfg_21050150"/>
             <field name="condition_select">python</field>
             <field name="condition_python">result = contract.viatico_santiago > 0</field>
             <field name="amount_select">code</field>
@@ -319,12 +305,10 @@ else:
 
 
         <record id="hr_rule_20" model="hr.salary.rule">
-            <field name="name">AHORRO PREVISIONAL VOLUNTARIO</field>
+            <field name="name">APORTE AL AHORRO VOLUNTARIO</field>
             <field name="sequence" eval="20"/>
             <field name="code">APV</field>
             <field name="category_id" ref="PREV"/>
-            <!--<field eval="21050150" name="account_debit.code"/>
-            <field eval="21040100" name="account_credit.code"/>-->
             <field name="condition_select">python</field>
             <field name="condition_python">result = contract.aporte_voluntario > 0</field>
             <field name="amount_select">code</field>
@@ -346,8 +330,6 @@ else:
             <field name="sequence" eval="21"/>
             <field name="code">SECEEMP</field>
             <field name="category_id" ref="COMP"/>
-            <field name="account_debit" ref="l10n_cl_coa.1_cl_coa_mfg_64010200"/>
-            <field name="account_credit" ref="l10n_cl_coa.1_cl_coa_mfg_21050150"/>
             <field name="appears_on_payslip" eval="False"/>
             <field name="condition_select">none</field>
             <field name="amount_select">code</field>
@@ -389,8 +371,6 @@ else:
             <field name="sequence" eval="22"/>
             <field name="code">SIS</field>
             <field name="category_id" ref="COMP"/>
-            <field name="account_debit" ref="l10n_cl_coa.1_cl_coa_mfg_64010200"/>
-            <field name="account_credit" ref="l10n_cl_coa.1_cl_coa_mfg_21050150"/>
             <field name="appears_on_payslip" eval="False"/>
             <field name="condition_select">none</field>
             <field name="amount_select">code</field>
@@ -438,9 +418,6 @@ else:
             <field name="sequence" eval="23"/>
             <field name="code">MUT</field>
             <field name="category_id" ref="COMP"/>
-            <field name="account_debit" ref="l10n_cl_coa.1_cl_coa_mfg_64010200"/>
-            <field name="account_credit" ref="l10n_cl_coa.1_cl_coa_mfg_21040500"/>
-            <field name="register_id" ref="contrib_register_previred"/>
             <field name="appears_on_payslip" eval="False"/>
             <field name="condition_select">none</field>
             <field name="amount_select">code</field>
@@ -484,13 +461,11 @@ else:
             <field name="sequence" eval="25"/>
             <field name="code">AFP</field>
             <field name="category_id" ref="SUBT"/>
-            <field name="account_debit" ref="l10n_cl_coa.1_cl_coa_mfg_21050150"/>
-            <field name="account_credit" ref="l10n_cl_coa.1_cl_coa_mfg_21040100"/>
-            <field name="register_id" ref="contrib_register_previred"/>
             <field name="condition_select">none</field>
             <field name="appears_on_payslip" eval="False"/>
             <field name="amount_select">code</field>
             <field name="amount_python_compute">result =categories.PREV + SIS + SECEEMP</field>
+            <field name="register_id" ref="contrib_register_previred"/>
         </record>
 
 
@@ -532,14 +507,12 @@ else:
             <field name="sequence" eval="28"/>
             <field name="code">COLMENA</field>
             <field name="category_id" ref="SUBT"/>
-            <field name="account_debit" ref="l10n_cl_coa.1_cl_coa_mfg_21050150"/>
-            <field name="account_credit" ref="l10n_cl_coa.1_cl_coa_mfg_21040400"/>
-            <field name="register_id" ref="contrib_register_previred"/>
             <field name="condition_select">python</field>
             <field name="condition_python">result = contract.isapre_id.name != 'FONASA'</field>
             <field name="appears_on_payslip" eval="False"/>
             <field name="amount_select">code</field>
             <field name="amount_python_compute">result = categories.SALUD</field>
+            <field name="register_id" ref="contrib_register_previred"/>
         </record>
 
 
@@ -549,9 +522,6 @@ else:
             <field name="sequence" eval="33"/>
             <field name="code">CAJACOMP</field>
             <field name="category_id" ref="SUBT"/>
-            <field name="account_debit" ref="l10n_cl_coa.1_cl_coa_mfg_21050150"/>
-            <field name="account_credit" ref="l10n_cl_coa.1_cl_coa_mfg_21040200"/>
-            <field name="register_id" ref="contrib_register_previred"/>
             <field name="condition_select">python</field>
             <field name="condition_python">result = contract.isapre_id.name == 'FONASA'</field>
             <field name="amount_select">code</field>
@@ -569,9 +539,6 @@ else:
             <field name="sequence" eval="34"/>
             <field name="code">FONASA</field>
             <field name="category_id" ref="SUBT"/>
-            <field name="account_debit" ref="l10n_cl_coa.1_cl_coa_mfg_21050150"/>
-            <field name="account_credit" ref="l10n_cl_coa.1_cl_coa_mfg_21040300"/>
-            <field name="register_id" ref="contrib_register_previred"/>
             <field name="condition_select">python</field>
             <field name="condition_python">result = contract.isapre_id.name == 'FONASA'</field>
             <field name="amount_select">code</field>
@@ -609,9 +576,6 @@ else:
             <field name="sequence" eval="36"/>
             <field name="code">IMPUNI</field>
             <field name="category_id" ref="DED"/>
-            <field name="account_debit" ref="l10n_cl_coa.1_cl_coa_mfg_21050150"/>
-            <field name="account_credit" ref="l10n_cl_coa.1_cl_coa_mfg_21070300"/>
-            <field name="register_id" ref="contrib_register_sii"/>
             <field name="condition_select">python</field>
             <field name="condition_python">result = TRIBU > payslip.indicadores_id.utm*13.5</field>
             <field name="amount_select">code</field>
@@ -647,13 +611,10 @@ else:
         </record>
 
        <record id="hr_rule_38" model="hr.salary.rule">
-            <field name="name">ANTICIPO DE SUELDO (descuento)</field>
+            <field name="name">ANTICIPO DE SUELDO</field>
             <field name="sequence" eval="38"/>
             <field name="code">ASUE</field>
             <field name="category_id" ref="ODESC"/>
-            <field name="account_debit" ref="l10n_cl_coa.1_cl_coa_mfg_21050150"/>
-            <field name="account_credit" ref="l10n_cl_coa.1_cl_coa_mfg_11050100"/>
-            <field name="register_id" ref="hr_payroll.contrib_register_employees"/>
             <field name="condition_select">python</field>
             <field name="condition_python">result = (contract.anticipo_sueldo > 0) or (inputs.ASUE.amount > 0)</field>
             <field name="amount_select">code</field>
@@ -668,9 +629,6 @@ else:
             <field name="sequence" eval="38"/>
             <field name="code">PRES</field>
             <field name="category_id" ref="ODESC"/>
-            <field name="account_debit" ref="l10n_cl_coa.1_cl_coa_mfg_21050150"/>
-            <field name="account_credit" ref="l10n_cl_coa.1_cl_coa_mfg_11050200"/>
-            <field name="register_id" ref="hr_payroll.contrib_register_employees"/>
             <field name="condition_select">python</field>
             <field name="condition_python">result = inputs.PREST and inputs.PREST.amount > 0</field>
             <field name="amount_select">code</field>
@@ -682,9 +640,6 @@ else:
             <field name="sequence" eval="38"/>
             <field name="code">PCCAF</field>
             <field name="category_id" ref="ODESC"/>
-            <field name="account_debit" ref="l10n_cl_coa.1_cl_coa_mfg_21050150"/>
-            <field name="account_credit" ref="l10n_cl_coa.1_cl_coa_mfg_21040200"/>
-            <field name="register_id" ref="contrib_register_previred"/>
             <field name="condition_select">python</field>
             <field name="condition_python">result =  inputs.PCCAF and inputs.PCCAF.amount > 0</field>
             <field name="amount_select">code</field>
@@ -762,46 +717,20 @@ result = round(SECEEMP) + round(SIS) + round(MUT) + round(SC)</field>
             <field name="name">ALCANCE LIQUIDO</field>
             <field name="sequence" eval="44"/>
             <field name="code">LIQ</field>
-            <field name="category_id" ref="SUBT"/> 
-            <field name="account_debit" ref="l10n_cl_coa.1_cl_coa_mfg_21050150"/>
-            <field name="account_credit" ref="l10n_cl_coa.1_cl_coa_mfg_21050100"/>
-            <field name="register_id" ref="hr_payroll.contrib_register_employees"/>
+            <field name="category_id" ref="SUBT"/>
             <field name="condition_select">none</field>
             <field name="amount_select">code</field>
             <field name="active">True</field>
             <field name="amount_python_compute">result = HAB - TDE</field>
         </record>
 
-        <!-- Regla para Anticipo Quincena por Contrato -->
-        <record id="hr_payslip_rule_anticipo" model="hr.salary.rule">
-            <field name="code">ANTICIPO</field>
-            <field name="name">Anticipo Primera Quincena</field>
-            <field name="category_id" ref="l10n_cl_hr.ANTICIPO"/>
-            <field name="account_debit" ref="l10n_cl_coa.1_cl_coa_mfg_11050100"/>
-            <field name="account_credit" ref="l10n_cl_coa.1_cl_coa_mfg_21050100"/>
-            <field name="register_id" ref="hr_payroll.contrib_register_employees"/>
-            <field name="condition_select">none</field>
-            <field name="amount_select">code</field>
-            <field name="active">True</field>
-            <field name="amount_python_compute">try:
- calc = contract.anticipo_sueldo
-except:
- calc = 0
-
-result = calc</field>
-            <field name="appears_on_payslip" eval="True"/>
-            <field name="sequence" eval="1"/>
-        </record>
 
         <!-- Reglas Addons Nómina Chile -->
 
         <record id="hr_payslip_rule_sol_anticipo" model="hr.salary.rule">
             <field name="code">SANTS</field>
-            <field name="name">Solicitud de Anticipo (descuento)</field>
+            <field name="name">Solicitud de Anticipo</field>
             <field name="category_id" ref="l10n_cl_hr.ODESC"/>
-            <field name="account_credit" ref="l10n_cl_coa.1_cl_coa_mfg_21050150"/>
-            <field name="account_debit" ref="l10n_cl_coa.1_cl_coa_mfg_11050100"/>
-            <field name="register_id" ref="hr_payroll.contrib_register_employees"/>
             <field name="amount_select">code</field>
             <field name="amount_python_compute">result = inputs.SANTS and - (inputs.SANTS.amount)</field>
             <field name="appears_on_payslip" eval="True"/>
@@ -820,9 +749,7 @@ result = calc</field>
             <field name="name">HR Loan Installment</field>
             <field name="note">Regla automática que toma las cuotas desde el módulo de Préstamos a Empleados.</field>
             <field name="category_id" ref="ODESC"/>
-            <field name="account_debit" ref="l10n_cl_coa.1_cl_coa_mfg_21050150"/>
-            <field name="account_credit" ref="l10n_cl_coa.1_cl_coa_mfg_11050200"/>
-            <field name="register_id" ref="hr_payroll.contrib_register_employees"/>
+            <!--<field name="account_credit" id="l10n_cl_odoo12.11050200"/>-->
             <field name="amount_select">code</field>
             <field name="amount_python_compute">result = inputs.HRPR and + (inputs.HRPR.amount)</field>
             <field name="appears_on_payslip" eval="True"/>
@@ -835,7 +762,7 @@ result = calc</field>
             <field name="input_id" ref="hr_rule_prestamo"/>
         </record>
 
-<!--        <record id="hr_rule_fin" model="hr.salary.rule">
+        <record id="hr_rule_fin" model="hr.salary.rule">
             <field name="code">FIN</field>
             <field name="name">Finiquito Otros</field>
             <field name="note">Pago adicional ingresado manualmente en la liquidación de Finiquito.</field>
@@ -902,7 +829,7 @@ result = calc</field>
             <field name="name">IFP Finiquito Feriado Proporcional</field>
             <field name="input_id" ref="hr_rule_fin_ifp"/>
         </record>
--->
+
 
         <!-- Reglas Helios -->
 
@@ -912,8 +839,6 @@ result = calc</field>
             <field name="name">BONO NAVIDAD</field>
             <field name="note">Se debe ingresar el valor del Bono de Navidad en el Contrato del Empleado y se calcula y paga sólo en el mes 12 (diciembre).</field>
             <field name="category_id" ref="IMPONIBLE"/>
-            <!--<field eval="63010700" name="account_debit.code"/>
-            <field eval="21050150" name="account_credit.code"/>-->
             <field name="condition_select">python</field>
             <field name="condition_python">result = (contract.bono_navidad > 0 and payslip.indicadores_id.month == '12')</field>
             <field name="amount_select">code</field>
@@ -927,8 +852,6 @@ result = calc</field>
             <field name="name">AGUINALDO FISTAS PATRIAS</field>
             <field name="note">Se debe ingresar el valor del Aguinaldo de Fiestas Patrias en el Contrato del Empleado y se calcula y paga sólo en el mes 9 (septiembre).</field>
             <field name="category_id" ref="IMPONIBLE"/>
-            <!--<field eval="63010700" name="account_debit.code"/>
-            <field eval="21050150" name="account_credit.code"/>-->
             <field name="condition_select">python</field>
             <field name="condition_python">result = (contract.aguinaldo_fp > 0 and payslip.indicadores_id.month == '9')</field>
             <field name="amount_select">code</field>
@@ -1012,7 +935,7 @@ result = calc</field>
 
     <record id="hr_struct_cl" model="hr.payroll.structure">
             <field name="name">Chile :: Nómina Base - Código de Trabajo</field>
-            <field name="code">CL-Base</field>
+            <field name="code">CL Nómina Base</field>
             <field name="parent_id"></field>
             <field eval="[(6, 0, [
                               ref('hr_rule_1'), 
@@ -1064,16 +987,16 @@ result = calc</field>
                               ref('hr_rule_helios_bonovac')
                               ])]" name="rule_ids"/>
         </record>
-
-        <!-- Estructura para Anticipo Primera Quincena -->
-        <record id="hr_struct_cl_ant" model="hr.payroll.structure">
-            <field name="name">Chile :: Anticipo Primera Quincena</field>
-            <field name="code">CL-Anticipo</field>
-            <field name="parent_id"></field>
+       <record id="hr_struct_cl_fin" model="hr.payroll.structure">
+            <field name="name">Chile :: Finiquito</field>
+            <field name="code">CL Finiquito</field>
+            <field name="parent_id" ref="hr_struct_cl"/>
             <field eval="[(6, 0, [
-                              ref('hr_payslip_rule_anticipo')
+                              ref('hr_rule_fin'),
+                              ref('hr_rule_fin_ias'),
+                              ref('hr_rule_fin_iap'),
+                              ref('hr_rule_fin_ifp')
                               ])]" name="rule_ids"/>
         </record>
-
     </data>
 </odoo>
