@@ -16,6 +16,35 @@ msgstr ""
 "Language: es_CL\n"
 "X-Generator: Poedit 2.0.6\n"
 
+
+#. module: l10n_cl_hr
+#: model:ir.model,name:l10n_cl_hr.model_hr_leave
+msgid "Leave"
+msgstr "Ausencia"
+
+#. module: l10n_cl_hr
+#: model:ir.model,name:l10n_cl_hr.model_hr_leave_type
+msgid "Leave Type"
+msgstr "Tipo de Ausencia"
+
+#. module: l10n_cl_hr
+#: code:addons/l10n_cl_hr/model/hr_payslip.py:116
+#, python-format
+msgid "Effective Working Days"
+msgstr "Días Laborales"
+
+#. module: l10n_cl_hr
+#: code:addons/l10n_cl_hr/model/hr_payslip.py:133
+#, python-format
+msgid "Normal Working Days paid at 100%"
+msgstr "Días pagados al 100%"
+
+
+#. module: l10n_cl_hr
+#: model:hr.salary.rule,name:l10n_cl_hr.hr_rule_prestamo
+msgid "HR Loan Installment"
+msgstr "Cuota Préstamo RRHH"
+
 #. module: l10n_cl_hr
 #: model:ir.ui.menu,name:l10n_cl_hr.menu_cl_hr_payroll_master_data
 msgid "Master Data"
@@ -704,14 +733,17 @@ msgid "Junio"
 msgstr "Junio"
 
 #. module: l10n_cl_hr
-#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_afp___last_update
-#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_ccaf___last_update
-#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_indicadores___last_update
-#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_isapre___last_update
-#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_mutual___last_update
-#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_salary_employee_month___last_update
-#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_type_employee___last_update
-#: model:ir.model.fields,field_description:l10n_cl_hr.field_wizard_export_csv_previred___last_update
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_afp____last_update
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_apv____last_update
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_ccaf____last_update
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_indicadores____last_update
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_isapre____last_update
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_mutual____last_update
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_salary_employee_month____last_update
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_seguro_complementario____last_update
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_type_employee____last_update
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_report_l10n_cl_hr_report_hrsalarybymonth____last_update
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_wizard_export_csv_previred____last_update
 msgid "Last Modified on"
 msgstr "Modificado el"
 
@@ -722,26 +754,30 @@ msgid "Last Name"
 msgstr "Apellido"
 
 #. module: l10n_cl_hr
-#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_afp_write_uid
-#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_ccaf_write_uid
-#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_indicadores_write_uid
-#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_isapre_write_uid
-#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_mutual_write_uid
-#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_salary_employee_month_write_uid
-#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_type_employee_write_uid
-#: model:ir.model.fields,field_description:l10n_cl_hr.field_wizard_export_csv_previred_write_uid
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_afp__write_uid
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_apv__write_uid
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_ccaf__write_uid
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_indicadores__write_uid
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_isapre__write_uid
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_mutual__write_uid
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_salary_employee_month__write_uid
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_seguro_complementario__write_uid
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_type_employee__write_uid
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_wizard_export_csv_previred__write_uid
 msgid "Last Updated by"
 msgstr "Actualizado por"
 
 #. module: l10n_cl_hr
-#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_afp_write_date
-#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_ccaf_write_date
-#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_indicadores_write_date
-#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_isapre_write_date
-#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_mutual_write_date
-#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_salary_employee_month_write_date
-#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_type_employee_write_date
-#: model:ir.model.fields,field_description:l10n_cl_hr.field_wizard_export_csv_previred_write_date
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_afp__write_date
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_apv__write_date
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_ccaf__write_date
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_indicadores__write_date
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_isapre__write_date
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_mutual__write_date
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_salary_employee_month__write_date
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_seguro_complementario__write_date
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_type_employee__write_date
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_wizard_export_csv_previred__write_date
 msgid "Last Updated on"
 msgstr "Actualizado el"
 
@@ -1013,7 +1049,7 @@ msgstr "Imprimir"
 #. module: l10n_cl_hr
 #: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_employee_formated_vat
 msgid "Printable VAT"
-msgstr "IVA Imprimir"
+msgstr "RUT Formateado"
 
 #. module: l10n_cl_hr
 #: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_indicadores_tasa_afp_provida
