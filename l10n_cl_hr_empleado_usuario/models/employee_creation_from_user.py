@@ -101,17 +101,10 @@ class ResUsersInherit(models.Model):
                                                                        'identification_id': vals['identification_id'],
                                                                        'formated_vat': vals['identification_id'],
                                                                        'address_home_id': result['partner_id'].id})
-        employee_partner_id = result['partner_id'].id]
-        #self._update_contact_rut(employee_partner_id)
+        
+        
         return result
 
-
-    def _update_contact_rut(self, employee_partner_id):
-        partner = self.env['res.partner']
-        for user in self:
-            partner = self.env['res.partner'].search([('id', '=', employee_partner_id)])
-            employee_vat = user.identification_id
-        partner.write({'vat': user.identification_id})
 
     #@api.onchange('identification_id')
     #def check_identification_id_cl (self):
