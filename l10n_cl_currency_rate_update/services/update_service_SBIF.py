@@ -56,8 +56,8 @@ class SBIFGetter(CurrencyGetterInterface):
         ano = str(fecha_ayer.year)
         mes = str(fecha_ayer.month)
         dia = str(fecha_ayer.day)
-        raise UserError(
-                _('Año: %s Mes: %s Dia: %s') % (ano, mes, dia))
+        #raise UserError(
+        #        _('Año: %s Mes: %s Dia: %s') % (ano, mes, dia))
 
         sbifurl = 'https://api.sbif.cl/api-sbifv3/recursos_api/dolar/' + ano + '/' + mes + '/dias/' + dia + '?apikey=' + apikey + '&formato=xml'
         #sbifurl = 'https://api.sbif.cl/api-sbifv3/recursos_api/dolar/?apikey=' + apikey + '&formato=xml'
@@ -105,6 +105,11 @@ class SBIFGetter(CurrencyGetterInterface):
 
         rep = requests.get(sbifurl, allow_redirects=True)
         docu = xm.parse(rep.content)
+
+        if rep.status_code != 200:
+            mensaje = docu['ErrorAPI-SBIF']['Mensaje']
+            raise UserError(
+                _('Error: %s') % mensaje)
 
         fecha = docu['IndicadoresFinancieros'][el1][el2]['Fecha']
         valor = docu['IndicadoresFinancieros'][el1][el2]['Valor']
