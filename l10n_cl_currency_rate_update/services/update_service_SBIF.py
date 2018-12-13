@@ -167,16 +167,10 @@ class SBIFGetter(CurrencyGetterInterface):
                  rate = 1
 
             else:
-                if curr == 'UTM' and dia == '01':
-                   curr_data = self.rate_retrieve(curr, sbif_api_key)
-                   rate = curr_data['rate_currency']
-                   self.updated_currency[curr] = rate
-                   _logger.debug("Rate retrieved : 1 %s = %s %s" % (main_currency, rate, curr))
+                curr_data = self.rate_retrieve(curr, sbif_api_key)
+                rate = curr_data['rate_currency']
 
-                if curr != 'UTM' :
-                   curr_data = self.rate_retrieve(curr, sbif_api_key)
-                   rate = curr_data['rate_currency']
-                   self.updated_currency[curr] = rate
-                   _logger.debug("Rate retrieved : 1 %s = %s %s" % (main_currency, rate, curr))
+            self.updated_currency[curr] = rate
 
+            _logger.debug("Rate retrieved : 1 %s = %s %s" % (main_currency, rate, curr))
         return self.updated_currency, self.log_info
