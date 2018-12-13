@@ -43,6 +43,7 @@ class SBIFGetter(CurrencyGetterInterface):
     def rate_retrieve(self, dom, ns, curr, sbif_api_key):
         """Parse a dom node to retrieve currencies data
         """
+        mensaje = " "
         if len(sbif_api_key) > 1:
             apikey = sbif_api_key
         else:
@@ -53,13 +54,15 @@ class SBIFGetter(CurrencyGetterInterface):
         sbifurl = 'https://api.sbif.cl/api-sbifv3/recursos_api/dolar/?apikey=' + apikey + '&formato=xml'
 
         req = requests.get(sbifurl, allow_redirects=True)
-        raise UserError(
-                _('Req Status Code = (%s)') % req.status_code)
+
         if req.status_code == 200:
             docs = xm.parse(req.content)
             fecha = docs['IndicadoresFinancieros']['Dolares']['Dolar']['Fecha']
         else:
             docs = xm.parse(req.content)
+            mensaje = docs['Mensaje']
+            raise UserError(
+                _('Error: %s') % mensaje)
             fecha = datetime.today().strftime('%Y-%m-%d')
             fecha_ayer = date.today() - timedelta(5)
             fecha = fecha_ayer.strftime('%Y-%m-%d')
