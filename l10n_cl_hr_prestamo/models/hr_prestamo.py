@@ -43,7 +43,8 @@ class HrPrestamo(models.Model):
             self.balance_amount = balance_amount
             self.total_paid_amount = total_paid
 
-    @api.multi
+    #@api.multi
+    @api.one
     def _compute_pending_amount(self):
         pend_total = 0
         pend_count = 0
