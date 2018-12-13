@@ -173,7 +173,8 @@ class SBIFGetter(CurrencyGetterInterface):
                  rate = 1
 
             else:
-                curr_data = self.rate_retrieve(dom, ecb_ns, curr, sbif_api_key)
+                #curr_data = self.rate_retrieve(dom, ecb_ns, curr, sbif_api_key)
+                curr_data = self.rate_retrieve(curr, sbif_api_key)
                 rate = curr_data['rate_currency']
 
             self.updated_currency[curr] = rate
