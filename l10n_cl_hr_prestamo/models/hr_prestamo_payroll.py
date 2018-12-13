@@ -71,7 +71,7 @@ class HrPayslip(models.Model):
                             if prestamo.currency_id.name == 'CLP':
                                 result['amount'] = prestamo_line.amount
                             else:
-                                result['amount'] = prestamo.currency_id._convert(prestamo.prestamo_amount, self.env.user.company_id.currency_id, prestamo.company_id, prestamo_line.date)
+                                result['amount'] = prestamo.currency_id._convert(prestamo_line.amount, self.env.user.company_id.currency_id, prestamo.company_id, prestamo_line.date)
 
         return res
 
