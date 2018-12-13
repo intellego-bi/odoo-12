@@ -35,7 +35,10 @@ class SBIFGetter(CurrencyGetterInterface):
     def rate_retrieve(self, dom, ns, curr, sbif_api_key):
         """Parse a dom node to retrieve currencies data
         """
-        apikey = sbif_api_key
+        if sbif_api_key:
+            apikey = sbif_api_key
+        else:
+            apikey = 'e96f651e08214ed0060771f21d11cdeb3b8b3305'
 
         sbifurl = 'https://api.sbif.cl/api-sbifv3/recursos_api/dolar/?apikey=' + apikey + '&formato=xml'
 
@@ -98,7 +101,10 @@ class SBIFGetter(CurrencyGetterInterface):
             currency_array.remove(main_currency)
         _logger.debug("SBIF currency rate service : connecting...")
 
-        apikey = sbif_api_key
+        if sbif_api_key:
+            apikey = sbif_api_key
+        else:
+            apikey = 'e96f651e08214ed0060771f21d11cdeb3b8b3305'
 
         sbifurl = 'https://api.sbif.cl/api-sbifv3/recursos_api/dolar/?apikey=' + apikey + '&formato=xml'
         rep = requests.get(sbifurl, allow_redirects=True)
