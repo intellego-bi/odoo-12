@@ -123,6 +123,9 @@ class SBIFGetter(CurrencyGetterInterface):
         valor = valor.replace(",", ".")
 
         res['rate_currency'] = float(valor)
+        raise UserError(
+                _('Valor: %s Res: %s') % (valor, res))
+
         return res
 
     def get_updated_currency(self, currency_array, main_currency,
