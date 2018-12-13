@@ -187,8 +187,8 @@ class CurrencyRateUpdateService(models.Model):
                         srv.max_delta_days,
                         sbif_api_key
                         )
-                    raise UserError(
-                                    _('Curr: %s Main: %s Delta: %s API %s') % (curr_to_fetch, main_currency.name, srv.max_delta_days, sbif_api_key))
+                    #raise UserError(
+                    #                _('Curr: %s Main: %s Delta: %s API %s') % (curr_to_fetch, main_currency.name, srv.max_delta_days, sbif_api_key))
 
                     rate_name = \
                         fields.Datetime.to_string(datetime.utcnow().replace(

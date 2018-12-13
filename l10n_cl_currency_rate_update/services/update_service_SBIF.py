@@ -49,7 +49,6 @@ class SBIFGetter(CurrencyGetterInterface):
         if len(sbif_api_key) > 1:
             apikey = sbif_api_key
         else:
-            #apikey = '067edb08cf9ceb0b212d83a0bc8baf39816f026a'
             raise UserError(
                 _('Falta configurar API Key en Ajustes Generales de Contabilidad en Odoo'))
 
@@ -58,8 +57,6 @@ class SBIFGetter(CurrencyGetterInterface):
         ano = str(fecha_ayer.year)
         mes = str(fecha_ayer.month)
         dia = str(fecha_ayer.day)
-        #raise UserError(
-        #        _('Año: %s Mes: %s Dia: %s') % (ano, mes, dia))
 
         sbifurl = 'https://api.sbif.cl/api-sbifv3/recursos_api/dolar/' + ano + '/' + mes + '/dias/' + dia + '?apikey=' + apikey + '&formato=xml'
         #sbifurl = 'https://api.sbif.cl/api-sbifv3/recursos_api/dolar/?apikey=' + apikey + '&formato=xml'
@@ -95,7 +92,7 @@ class SBIFGetter(CurrencyGetterInterface):
 
         if curr == 'UTM':
            #sbifurl = 'https://api.sbif.cl/api-sbifv3/recursos_api/utm/?apikey=' + apikey + '&formato=xml'
-           sbifurl = 'https://api.sbif.cl/api-sbifv3/recursos_api/utm/' + ano + '/' + mes + '/dias/' + dia + '?apikey=' + apikey + '&formato=xml'
+           sbifurl = 'https://api.sbif.cl/api-sbifv3/recursos_api/utm/' + ano + '/' + mes + '?apikey=' + apikey + '&formato=xml'
            el1 = '''UTMs'''
            el2 = '''UTM'''
 
@@ -115,9 +112,6 @@ class SBIFGetter(CurrencyGetterInterface):
 
         fecha = docu['IndicadoresFinancieros'][el1][el2]['Fecha']
         valor = docu['IndicadoresFinancieros'][el1][el2]['Valor']
-        #raise UserError(
-        #        _('Valor: %s Fecha: %s') % (valor, fecha))
-
 
         valor = valor.replace(".", "")
         valor = valor.replace(",", ".")
@@ -147,8 +141,6 @@ class SBIFGetter(CurrencyGetterInterface):
 
         fecha_ayer = date.today() - timedelta(1)
         fecha = fecha_ayer.strftime('%Y-%m-%d')
-        #raise UserError(
-        #            _('Get Hoy = (%s) y Ayer = (%s)') % (fecha, fecha_ayer))
 
         rate_date = fecha
         # Don't use DEFAULT_SERVER_DATE_FORMAT here, because it's
