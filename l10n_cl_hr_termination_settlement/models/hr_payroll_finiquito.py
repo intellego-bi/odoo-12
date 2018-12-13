@@ -52,7 +52,7 @@ class HrPayslip(models.Model):
         contract_ids = []
 
         ttyme = datetime.fromtimestamp(time.mktime(time.strptime(str(date_from), "%Y-%m-%d")))
-        locale = self.env.context.get('lang') or 'en_US'
+        locale = self.env.context.get('lang') or 'es_CL'
         self.name = _('Salary Slip of %s for %s') % (
         employee.name, tools.ustr(babel.dates.format_date(date=ttyme, format='MMMM-y', locale=locale)))
         self.company_id = employee.company_id
