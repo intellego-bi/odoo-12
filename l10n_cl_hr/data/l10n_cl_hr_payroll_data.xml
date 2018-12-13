@@ -855,8 +855,8 @@ result = round(SECEEMP) + round(SIS) + round(MUT) + round(SC)</field>
             <field name="code">SANTS</field>
             <field name="name">SOLICITUD DE ANTICIPO (descuento)</field>
             <field name="category_id" ref="l10n_cl_hr.ODESC"/>
-            <field name="account_credit" ref="l10n_cl_coa.1_cl_coa_mfg_21050150"/>
-            <field name="account_debit" ref="l10n_cl_coa.1_cl_coa_mfg_11050100"/>
+            <field name="account_debit" ref="l10n_cl_coa.1_cl_coa_mfg_21050150"/>
+            <field name="account_credit" ref="l10n_cl_coa.1_cl_coa_mfg_11050100"/>
             <field name="register_id" ref="hr_payroll.contrib_register_employees"/>
             <field name="amount_select">code</field>
             <field name="amount_python_compute">result = inputs.SANTS and - (inputs.SANTS.amount)</field>
