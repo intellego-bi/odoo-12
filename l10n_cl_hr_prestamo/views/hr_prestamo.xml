@@ -10,6 +10,7 @@
                 <field name="employee_id"/>
                 <field name="name"/>
                 <field name="date"/>
+                <field name="payment_date"/>
                 <field name="state"/>
                 <field name="currency_id"/>
                 <field name="prestamo_amount" widget="monetary" options="{'currency_field': 'currency_id'}"/>
