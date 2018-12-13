@@ -168,8 +168,6 @@ class SBIFGetter(CurrencyGetterInterface):
         if main_currency == 'CLP':
             #main_curr_data = self.rate_retrieve(dom, ecb_ns, main_currency, sbif_api_key)
             main_curr_data = self.rate_retrieve(main_currency, sbif_api_key)
-            raise UserError(
-                _('Valor: %s Res: %s') % (main_curr_data, main_currency))
 
         for curr in currency_array:
             self.validate_cur(curr)
