@@ -775,7 +775,7 @@ result = round(SECEEMP) + round(SIS) + round(MUT) + round(SC)</field>
         <!-- Regla para Anticipo Quincena por Contrato -->
         <record id="hr_payslip_rule_anticipo" model="hr.salary.rule">
             <field name="code">ANTICIPO</field>
-            <field name="name">Anticipo Primera Quincena</field>
+            <field name="name">ANTICIPO PRIMERA QUINCENA (pago)</field>
             <field name="category_id" ref="l10n_cl_hr.ANTICIPO"/>
             <field name="account_debit" ref="l10n_cl_coa.1_cl_coa_mfg_11050100"/>
             <field name="account_credit" ref="l10n_cl_coa.1_cl_coa_mfg_21050100"/>
@@ -797,7 +797,7 @@ result = calc</field>
 
         <record id="hr_payslip_rule_sol_anticipo" model="hr.salary.rule">
             <field name="code">SANTS</field>
-            <field name="name">Solicitud de Anticipo (descuento)</field>
+            <field name="name">SOLICITUD DE ANTICIPO (descuento)</field>
             <field name="category_id" ref="l10n_cl_hr.ODESC"/>
             <field name="account_credit" ref="l10n_cl_coa.1_cl_coa_mfg_21050150"/>
             <field name="account_debit" ref="l10n_cl_coa.1_cl_coa_mfg_11050100"/>
@@ -810,7 +810,7 @@ result = calc</field>
 
         <record id="hr_rule_input_sol_anticipo" model="hr.rule.input">
             <field name="code">SANTS</field>
-            <field name="name">Solicitud de Anticipo</field>
+            <field name="name">SOLICITUD DE ANTICIPO (descuento)</field>
             <field name="input_id" ref="hr_payslip_rule_sol_anticipo"/>
         </record>
 
