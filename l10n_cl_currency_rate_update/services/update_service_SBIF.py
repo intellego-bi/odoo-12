@@ -153,8 +153,8 @@ class SBIFGetter(CurrencyGetterInterface):
         rate_date = fecha
         # Don't use DEFAULT_SERVER_DATE_FORMAT here, because it's
         # the format of the XML of SBIF, not the format of Odoo server !
-        #rate_date_datetime = datetime.strptime(rate_date, '%Y-%m-%d')
-        #self.check_rate_date(rate_date_datetime, max_delta_days)
+        rate_date_datetime = datetime.strptime(rate_date, '%Y-%m-%d')
+        self.check_rate_date(rate_date_datetime, max_delta_days)
         # We dynamically update supported currencies
         self.supported_currency_array.append('CLP')
         _logger.debug("Supported currencies = %s " %
