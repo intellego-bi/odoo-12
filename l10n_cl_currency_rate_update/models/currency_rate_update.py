@@ -121,7 +121,7 @@ class CurrencyRateUpdateService(models.Model):
     next_run = fields.Date(string='Próxima ejecución', default=fields.Date.today())
 
     sbif_api_key = fields.Char(
-        string='SBIF API Key', required=True,
+        string='SBIF API Key', required=False,
         help="You must get your private API Key from https://api.sbif.cl "
         "in order to use this service.")
 
