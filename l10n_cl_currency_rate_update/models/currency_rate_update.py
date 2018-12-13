@@ -146,19 +146,19 @@ class CurrencyRateUpdateService(models.Model):
     def refresh_currency(self):
         """Refresh the currencies rates !!for all companies now"""
         rate_obj = self.env['res.currency.rate']
-
-        # Read Settings from res.config.settings
-        ICPSudo = self.env['ir.config_parameter'].sudo()
-        config_read = ICPSudo.get_param('account.cl_sbif_api_key')
-        if config_read:
-           sbif_api_key = config_read
-        else:
-           sbif_api_key = 'e96f651e08214ed0060771f21d11cdeb3b8b3305'
         
         for srv in self:
             _logger.info(
                 'Starting to refresh currencies with service %s (company: %s)',
                 srv.service, srv.company_id.name)
+
+            # Read Settings from res.config.settings
+            ICPSudo = self.env['ir.config_parameter'].sudo()
+            config_read = ICPSudo.get_param('account.cl_sbif_api_key')
+            if config_read:
+                sbif_api_key = config_read
+            else:
+               sbif_api_key = 'e96f651e08214ed0060771f21d11cdeb3b8b3305'
 
             company = srv.company_id
             # The multi company currency can be set or no so we handle
@@ -184,7 +184,8 @@ class CurrencyRateUpdateService(models.Model):
                     res, log_info = getter.get_updated_currency(
                         curr_to_fetch,
                         main_currency.name,
-                        srv.max_delta_days
+                        srv.max_delta_days,
+                        sbif_api_key
                         )
                     rate_name = \
                         fields.Datetime.to_string(datetime.utcnow().replace(
