@@ -139,7 +139,7 @@ class CurrencyRateUpdateService(models.Model):
         if config_read:
            sbif_api_key = config_read
         else:
-           sbif_api_key = 'e96f651e08214ed0060771f21d11cdeb3b8b3305'
+           sbif_api_key = '067edb08cf9ceb0b212d83a0bc8baf39816f026a'
         return sbif_api_key
 
     @api.multi
@@ -158,7 +158,7 @@ class CurrencyRateUpdateService(models.Model):
             if config_read:
                 sbif_api_key = config_read
             else:
-               sbif_api_key = 'e96f651e08214ed0060771f21d11cdeb3b8b3305'
+               sbif_api_key = '067edb08cf9ceb0b212d83a0bc8baf39816f026a'
 
             company = srv.company_id
             # The multi company currency can be set or no so we handle
