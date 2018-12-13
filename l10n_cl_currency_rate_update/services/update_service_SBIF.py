@@ -18,6 +18,7 @@ import requests
 import xmltodict as xm
 
 #apikey = 'e96f651e08214ed0060771f21d11cdeb3b8b3305'
+docs = {}
 
 class SBIFGetter(CurrencyGetterInterface):
     """Implementation of Currency_getter_factory interface
@@ -30,7 +31,6 @@ class SBIFGetter(CurrencyGetterInterface):
     el1 = ''
     el2 = ''
     fecha = datetime.today().strftime('%Y-%m-%d')
-    docs = {}
 
     def rate_retrieve(self, dom, ns, curr, sbif_api_key):
         """Parse a dom node to retrieve currencies data
