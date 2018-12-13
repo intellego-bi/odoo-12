@@ -129,9 +129,18 @@ class SBIFGetter(CurrencyGetterInterface):
         # the currency rates are the ones of trading day N-1
         # http://www.ecb.europa.eu/stats/exchange/eurofxref/html/index.en.html
 
+        fecha_ayer = date.today() - timedelta(1)
+        fecha = fecha_ayer.strftime('%Y-%m-%d')
+        dia = str(fecha_ayer.day)
+        dias = fecha_ayer.day
+
         # We do not want to update the main currency
         if main_currency in currency_array:
             currency_array.remove(main_currency)
+
+        if 'UTM' in currency_array and dias > 1:
+            currency_array.remove('UTM')
+
         _logger.debug("SBIF currency rate service : connecting...")
 
         #dom = etree.fromstring(rep.content)
@@ -139,9 +148,6 @@ class SBIFGetter(CurrencyGetterInterface):
         #ecb_ns = {'gesmes': 'http://www.gesmes.org/xml/2002-08-01',
         #          'def': 'http://www.ecb.int/vocabulary/2002-08-01/eurofxref'}
 
-        fecha_ayer = date.today() - timedelta(1)
-        fecha = fecha_ayer.strftime('%Y-%m-%d')
-        dia = str(fecha_ayer.day)
 
         rate_date = fecha
         # Don't use DEFAULT_SERVER_DATE_FORMAT here, because it's
