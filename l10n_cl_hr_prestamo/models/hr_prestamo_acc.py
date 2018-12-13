@@ -50,7 +50,7 @@ class HrPrestamoAcc(models.Model):
                 if prestamo.currency_id.name == 'CLP':
                     amount = prestamo.prestamo_amount
                 else:
-                    #amount = prestamo.currency_id._convert(prestamo.prestamo_amount, self.env.user.company_id.currency_id, prestamo.company_id, prestamo.date)
+                    amount = prestamo.currency_id._convert(prestamo.prestamo_amount, self.env.user.company_id.currency_id, prestamo.company_id, prestamo.date)
                     currency_id = prestamo.currency_id
                     amount_currency = prestamo.prestamo_amount
                 prestamo_name = prestamo.employee_id.name
