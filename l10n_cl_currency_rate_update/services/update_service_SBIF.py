@@ -141,6 +141,7 @@ class SBIFGetter(CurrencyGetterInterface):
 
         fecha_ayer = date.today() - timedelta(1)
         fecha = fecha_ayer.strftime('%Y-%m-%d')
+        dia = str(fecha_ayer.day)
 
         rate_date = fecha
         # Don't use DEFAULT_SERVER_DATE_FORMAT here, because it's
@@ -158,7 +159,6 @@ class SBIFGetter(CurrencyGetterInterface):
                 _('Falta configurar API Key en Ajustes Generales de Contabilidad en Odoo'))
 
         if main_currency == 'CLP':
-            #main_curr_data = self.rate_retrieve(dom, ecb_ns, main_currency, sbif_api_key)
             main_curr_data = self.rate_retrieve(main_currency, sbif_api_key)
 
         for curr in currency_array:
@@ -167,13 +167,16 @@ class SBIFGetter(CurrencyGetterInterface):
                  rate = 1
 
             else:
-                #curr_data = self.rate_retrieve(dom, ecb_ns, curr, sbif_api_key)
-                curr_data = self.rate_retrieve(curr, sbif_api_key)
-                rate = curr_data['rate_currency']
-                #raise UserError(
-                #     _('Valor: %s Curr: %s Rate: %s') % (curr_data, curr, rate))
+                if curr == 'UTM' and dia == '01':
+                   curr_data = self.rate_retrieve(curr, sbif_api_key)
+                   rate = curr_data['rate_currency']
+                   self.updated_currency[curr] = rate
+                   _logger.debug("Rate retrieved : 1 %s = %s %s" % (main_currency, rate, curr))
 
-            self.updated_currency[curr] = rate
+                if curr != 'UTM' :
+                   curr_data = self.rate_retrieve(curr, sbif_api_key)
+                   rate = curr_data['rate_currency']
+                   self.updated_currency[curr] = rate
+                   _logger.debug("Rate retrieved : 1 %s = %s %s" % (main_currency, rate, curr))
 
-            _logger.debug("Rate retrieved : 1 %s = %s %s" % (main_currency, rate, curr))
         return self.updated_currency, self.log_info
