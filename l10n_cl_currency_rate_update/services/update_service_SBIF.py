@@ -111,7 +111,7 @@ class SBIFGetter(CurrencyGetterInterface):
             raise UserError(
                 _('Error: %s') % mensaje)
 
-        #fecha = docu['IndicadoresFinancieros'][el1][el2]['Fecha']
+        fecha = docu['IndicadoresFinancieros'][el1][el2]['Fecha']
         valor = docu['IndicadoresFinancieros'][el1][el2]['Valor']
         raise UserError(
                 _('Valor: %s' Fecha: %s) % (valor, fecha))
