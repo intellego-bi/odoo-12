@@ -125,8 +125,8 @@ class SBIFGetter(CurrencyGetterInterface):
 
         fecha_ayer = date.today() - timedelta(5)
         fecha = fecha_ayer.strftime('%Y-%m-%d')
-        raise UserError(
-                    _('Get Hoy = (%s) y Ayer = (%s)') % (fecha, fecha_ayer))
+        #raise UserError(
+        #            _('Get Hoy = (%s) y Ayer = (%s)') % (fecha, fecha_ayer))
 
         rate_date = fecha
         # Don't use DEFAULT_SERVER_DATE_FORMAT here, because it's
