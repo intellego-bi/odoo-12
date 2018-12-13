@@ -21,10 +21,9 @@ import xmltodict as xm
 apikey = '067edb08cf9ceb0b212d83a0bc8baf39816f026a'
 sbifurl = 'https://api.sbif.cl/api-sbifv3/recursos_api/dolar/?apikey=' + apikey + '&formato=xml'
 rep = requests.get(sbifurl, allow_redirects=True)
-#raise UserError(
-#                _('Rep Status Code = (%s)') % rep.status_code)
-fecha = datetime.today().strftime('%Y-%m-%d')
-fecha_ayer = (date.today() - timedelta(5)).strftime('%Y-%m-%d')
+fecha_ayer = date.today() - timedelta(5)
+fecha = fecha_ayer.strftime('%Y-%m-%d')
+
 
 class SBIFGetter(CurrencyGetterInterface):
     """Implementation of Currency_getter_factory interface
@@ -36,10 +35,11 @@ class SBIFGetter(CurrencyGetterInterface):
 
     el1 = ''
     el2 = ''
-    fecha = datetime.today().strftime('%Y-%m-%d')
-    fecha_ayer = (date.today() - timedelta(5)).strftime('%Y-%m-%d')
-    raise UserError(
-                    _('Hoy = (%s) y Ayer = (%s)') % (fecha, fecha_ayer))
+    #fecha = datetime.today().strftime('%Y-%m-%d')
+    fecha_ayer = date.today() - timedelta(5)
+    fecha = fecha_ayer.strftime('%Y-%m-%d')
+    #raise UserError(
+    #                _('Hoy = (%s) y Ayer = (%s)') % (fecha, fecha_ayer))
     def rate_retrieve(self, dom, ns, curr, sbif_api_key):
         """Parse a dom node to retrieve currencies data
         """
@@ -61,6 +61,8 @@ class SBIFGetter(CurrencyGetterInterface):
         else:
             docs = xm.parse(req.content)
             fecha = datetime.today().strftime('%Y-%m-%d')
+            fecha_ayer = date.today() - timedelta(5)
+            fecha = fecha_ayer.strftime('%Y-%m-%d')
 
         res = {}
         el1 = '''Dolares'''
@@ -118,7 +120,11 @@ class SBIFGetter(CurrencyGetterInterface):
         ecb_ns = {'gesmes': 'http://www.gesmes.org/xml/2002-08-01',
                   'def': 'http://www.ecb.int/vocabulary/2002-08-01/eurofxref'}
 
-        fecha = datetime.today().strftime('%Y-%m-%d')
+        fecha_ayer = date.today() - timedelta(5)
+        fecha = fecha_ayer.strftime('%Y-%m-%d')
+        raise UserError(
+                    _('Get Hoy = (%s) y Ayer = (%s)') % (fecha, fecha_ayer))
+
         rate_date = fecha
         # Don't use DEFAULT_SERVER_DATE_FORMAT here, because it's
         # the format of the XML of SBIF, not the format of Odoo server !
