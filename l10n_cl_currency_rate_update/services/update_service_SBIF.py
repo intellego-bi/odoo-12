@@ -38,6 +38,8 @@ class SBIFGetter(CurrencyGetterInterface):
         config_read = ICPSudo.get_param('account.cl_sbif_api_key')
         if config_read:
            apikey = config_read
+        else:
+           apikey = 'e96f651e08214ed0060771f21d11cdeb3b8b3305'
 
         return apikey
 
