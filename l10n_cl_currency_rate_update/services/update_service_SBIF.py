@@ -105,16 +105,17 @@ class SBIFGetter(CurrencyGetterInterface):
 
         rep = requests.get(sbifurl, allow_redirects=True)
         docu = xm.parse(rep.content)
-        raise UserError(
-                _('Content: %s') % docu)
 
         if rep.status_code != 200:
             mensaje = docu['ErrorAPI-SBIF']['Mensaje']
             raise UserError(
                 _('Error: %s') % mensaje)
 
-        fecha = docu['IndicadoresFinancieros'][el1][el2]['Fecha']
+        #fecha = docu['IndicadoresFinancieros'][el1][el2]['Fecha']
         valor = docu['IndicadoresFinancieros'][el1][el2]['Valor']
+        raise UserError(
+                _('Valor: %s' Fecha: %s) % (valor, fecha))
+
 
         valor = valor.replace(".", "")
         valor = valor.replace(",", ".")
