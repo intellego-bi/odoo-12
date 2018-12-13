@@ -81,6 +81,12 @@ else:
             <field name="amount_python_compute">result = round(0.00777777*contract.wage*inputs.HEX50.amount)</field>
         </record>
 
+        <record id="hr_rule_input_horas_ext_50" model="hr.rule.input">
+            <field name="code">HEX50</field>
+            <field name="name">HORAS EXTRA ART 32</field>
+            <field name="input_id" ref="hr_rule_4"/>
+        </record>
+
         <record id="hr_rule_5" model="hr.salary.rule">
             <field name="name">HORAS DESCUENTO</field>
             <field name="sequence" eval="5"/>
@@ -92,6 +98,12 @@ else:
             <field name="condition_python">result = inputs.HEXDE and inputs.HEXDE.amount > 0</field>
             <field name="amount_select">code</field>
             <field name="amount_python_compute">result = round(0.005185*contract.wage*inputs.HEXDE.amount)*(-1)</field>
+        </record>
+
+        <record id="hr_rule_input_horas_ext_de" model="hr.rule.input">
+            <field name="code">HEXDE</field>
+            <field name="name">HORAS DESCUENTO</field>
+            <field name="input_id" ref="hr_rule_5"/>
         </record>
 
         <record id="hr_rule_6" model="hr.salary.rule">
@@ -124,6 +136,12 @@ else:
             <field name="amount_python_compute">result = inputs.PROD.amount</field>
         </record>
 
+        <record id="hr_rule_input_bono_produccion" model="hr.rule.input">
+            <field name="code">PROD</field>
+            <field name="name">BONO DE PRODUCCION</field>
+            <field name="input_id" ref="hr_rule_7"/>
+        </record>
+
          <record id="hr_rule_8" model="hr.salary.rule">
             <field name="name">COMISIONES</field>
             <field name="sequence" eval="8"/>
@@ -137,6 +155,13 @@ else:
             <field name="amount_python_compute">result = inputs.COMI.amount</field>
         </record>
 
+         <record id="hr_rule_input_comisiones" model="hr.rule.input">
+            <field name="code">COMI</field>
+            <field name="name">COMISIONES</field>
+            <field name="input_id" ref="hr_rule_8"/>
+        </record>
+
+
         <record id="hr_rule_9" model="hr.salary.rule">
             <field name="name">GRATIFICACION LEGAL</field>
             <field name="sequence" eval="9"/>
@@ -146,6 +171,12 @@ else:
             <field name="condition_python">result = (contract.gratificacion_legal is True) &amp; (inputs.GRAT.amount > 0)</field>
             <field name="amount_select">code</field>
             <field name="amount_python_compute">result = inputs.GRAT.amount</field>
+        </record>
+
+         <record id="hr_rule_input_gratificacion_legal" model="hr.rule.input">
+            <field name="code">GRAT</field>
+            <field name="name">GRATIFICACION LEGAL</field>
+            <field name="input_id" ref="hr_rule_9"/>
         </record>
 
         <record id="hr_rule_10" model="hr.salary.rule">
@@ -161,6 +192,11 @@ else:
             <field name="amount_python_compute">result = inputs.AGUI.amount</field>
         </record>
 
+        <record id="hr_rule_input_aguinaldo" model="hr.rule.input">
+            <field name="code">AGUI</field>
+            <field name="name">AGUINALDO</field>
+            <field name="input_id" ref="hr_rule_10"/>
+        </record>
 
         <record id="hr_rule_11" model="hr.salary.rule">
             <field name="name">TOTAL IMPONIBLE</field>
@@ -646,6 +682,27 @@ else:
             <field name="amount_python_compute">result = round(categories.PREV) +  round(categories.SALUD) +  round(categories.DED)</field>
         </record>
 
+        <!-- Regla para Anticipo Quincena por Contrato -->
+        <record id="hr_payslip_rule_anticipo" model="hr.salary.rule">
+            <field name="code">ANTICIPO</field>
+            <field name="name">ANTICIPO PRIMERA QUINCENA (pago)</field>
+            <field name="category_id" ref="l10n_cl_hr.ANTICIPO"/>
+            <field name="account_debit" ref="l10n_cl_coa.1_cl_coa_mfg_11050100"/>
+            <field name="account_credit" ref="l10n_cl_coa.1_cl_coa_mfg_21050100"/>
+            <field name="register_id" ref="hr_payroll.contrib_register_employees"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="active">True</field>
+            <field name="amount_python_compute">try:
+ calc = contract.anticipo_sueldo
+except:
+ calc = 0
+
+result = calc</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name="sequence" eval="1"/>
+        </record>
+
        <record id="hr_rule_38" model="hr.salary.rule">
             <field name="name">ANTICIPO DE SUELDO (descuento)</field>
             <field name="sequence" eval="38"/>
@@ -663,7 +720,13 @@ else:
      result = contract.anticipo_sueldo</field>
         </record>
 
-       <record id="hr_rule_38_1" model="hr.salary.rule">
+        <record id="hr_rule_input_anticipo_sueldo" model="hr.rule.input">
+            <field name="code">ASUE</field>
+            <field name="name">ANT ANTICIPO DE SUELDO (descuento)</field>
+            <field name="input_id" ref="hr_rule_38"/>
+        </record>
+
+       <!--<record id="hr_rule_38_1" model="hr.salary.rule">
             <field name="name">PRESTAMOS EMPRESA</field>
             <field name="sequence" eval="38"/>
             <field name="code">PRES</field>
@@ -677,6 +740,12 @@ else:
             <field name="amount_python_compute">result = inputs.PREST.amount</field>
         </record>
 
+        <record id="hr_rule_input_prestamos" model="hr.rule.input">
+            <field name="code">PREST</field>
+            <field name="name">PRESTAMO EMPRESA</field>
+            <field name="input_id" ref="hr_rule_11"/>
+        </record> -->
+
        <record id="hr_rule_38_2" model="hr.salary.rule">
             <field name="name">PRESTAMOS CCAF</field>
             <field name="sequence" eval="38"/>
@@ -689,6 +758,12 @@ else:
             <field name="condition_python">result =  inputs.PCCAF and inputs.PCCAF.amount > 0</field>
             <field name="amount_select">code</field>
             <field name="amount_python_compute">result = inputs.PCCAF.amount</field>
+        </record>
+
+        <record id="hr_rule_input_prestamos_ccaf" model="hr.rule.input">
+            <field name="code">PCCAF</field>
+            <field name="name">PRESTAMO CCAF</field>
+            <field name="input_id" ref="hr_rule_38_2"/>
         </record>
 
        <record id="hr_rule_39" model="hr.salary.rule">
@@ -772,26 +847,7 @@ result = round(SECEEMP) + round(SIS) + round(MUT) + round(SC)</field>
             <field name="amount_python_compute">result = HAB - TDE</field>
         </record>
 
-        <!-- Regla para Anticipo Quincena por Contrato -->
-        <record id="hr_payslip_rule_anticipo" model="hr.salary.rule">
-            <field name="code">ANTICIPO</field>
-            <field name="name">ANTICIPO PRIMERA QUINCENA (pago)</field>
-            <field name="category_id" ref="l10n_cl_hr.ANTICIPO"/>
-            <field name="account_debit" ref="l10n_cl_coa.1_cl_coa_mfg_11050100"/>
-            <field name="account_credit" ref="l10n_cl_coa.1_cl_coa_mfg_21050100"/>
-            <field name="register_id" ref="hr_payroll.contrib_register_employees"/>
-            <field name="condition_select">none</field>
-            <field name="amount_select">code</field>
-            <field name="active">True</field>
-            <field name="amount_python_compute">try:
- calc = contract.anticipo_sueldo
-except:
- calc = 0
 
-result = calc</field>
-            <field name="appears_on_payslip" eval="True"/>
-            <field name="sequence" eval="1"/>
-        </record>
 
         <!-- Reglas Addons Nómina Chile -->
 
@@ -835,77 +891,8 @@ result = calc</field>
             <field name="input_id" ref="hr_rule_prestamo"/>
         </record>
 
-<!--        <record id="hr_rule_fin" model="hr.salary.rule">
-            <field name="code">FIN</field>
-            <field name="name">Finiquito Otros</field>
-            <field name="note">Pago adicional ingresado manualmente en la liquidación de Finiquito.</field>
-            <field name="category_id" ref="NOIMPO"/>
-            <field name="amount_select">code</field>
-            <field name="amount_python_compute">result = inputs.FIN and + (inputs.FIN.amount)</field>
-            <field name="appears_on_payslip" eval="True"/>
-            <field name="sequence" eval="38"/>
-        </record>
-
-        <record id="hr_rule_input_fin" model="hr.rule.input">
-            <field name="code">FIN</field>
-            <field name="name">Finiquito Otros</field>
-            <field name="input_id" ref="hr_rule_fin"/>
-        </record>
-
-        <record id="hr_rule_fin_ias" model="hr.salary.rule">
-            <field name="code">IAS</field>
-            <field name="name">IAS Finiquito Años Servicio</field>
-            <field name="note">Regla automática para Finiquito que calcula la Indemnización por Años de Servicio.</field>
-            <field name="category_id" ref="NOIMPO"/>
-            <field name="amount_select">code</field>
-            <field name="amount_python_compute">result = inputs.IAS and + (inputs.IAS.amount)</field>
-            <field name="appears_on_payslip" eval="True"/>
-            <field name="sequence" eval="38"/>
-        </record>
-
-        <record id="hr_rule_input_fin_ias" model="hr.rule.input">
-            <field name="code">IAS</field>
-            <field name="name">IAS Finiquito Años Servicio</field>
-            <field name="input_id" ref="hr_rule_fin_ias"/>
-        </record>
-
-        <record id="hr_rule_fin_iap" model="hr.salary.rule">
-            <field name="code">IAP</field>
-            <field name="name">IAP Finiquito Aviso Previo</field>
-            <field name="note">Regla automática para Finiquito que calcula la Indemnización por Aviso Previo (30 días).</field>
-            <field name="category_id" ref="NOIMPO"/>
-            <field name="amount_select">code</field>
-            <field name="amount_python_compute">result = inputs.IAP and + (inputs.IAP.amount)</field>
-            <field name="appears_on_payslip" eval="True"/>
-            <field name="sequence" eval="38"/>
-        </record>
-
-        <record id="hr_rule_input_fin_iap" model="hr.rule.input">
-            <field name="code">IAP</field>
-            <field name="name">IAP Finiquito Aviso Previo</field>
-            <field name="input_id" ref="hr_rule_fin_iap"/>
-        </record>
-
-        <record id="hr_rule_fin_ifp" model="hr.salary.rule">
-            <field name="code">IFP</field>
-            <field name="name">IFP Finiquito Feriado Proporcional</field>
-            <field name="note">Regla para Finiquito que calcula la Indemnización por Feriado Proporcional según los días ingresados en el Finiquito.</field>
-            <field name="category_id" ref="NOIMPO"/>
-            <field name="amount_select">code</field>
-            <field name="amount_python_compute">result = inputs.IFP and + (inputs.IFP.amount)</field>
-            <field name="appears_on_payslip" eval="True"/>
-            <field name="sequence" eval="38"/>
-        </record>
-
-        <record id="hr_rule_input_fin_ifp" model="hr.rule.input">
-            <field name="code">IFP</field>
-            <field name="name">IFP Finiquito Feriado Proporcional</field>
-            <field name="input_id" ref="hr_rule_fin_ifp"/>
-        </record>
--->
 
         <!-- Reglas Helios -->
-
 
         <record id="hr_rule_helios_navidad" model="hr.salary.rule">
             <field name="code">NAVIDAD</field>
@@ -950,63 +937,6 @@ result = calc</field>
             <field name="sequence" eval="10"/>
         </record>
 
-
-
-        <!-- Rule Inputs -->
-
-        <record id="hr_rule_input_horas_ext_50" model="hr.rule.input">
-            <field name="code">HEX50</field>
-            <field name="name">HORAS EXTRA ART 32</field>
-            <field name="input_id" ref="hr_rule_4"/>
-        </record>
-
-        <record id="hr_rule_input_horas_ext_de" model="hr.rule.input">
-            <field name="code">HEXDE</field>
-            <field name="name">HORAS DESCUENTO</field>
-            <field name="input_id" ref="hr_rule_5"/>
-        </record>
-
-        <record id="hr_rule_input_bono_produccion" model="hr.rule.input">
-            <field name="code">PROD</field>
-            <field name="name">BONO DE PRODUCCION</field>
-            <field name="input_id" ref="hr_rule_7"/>
-        </record>
-
-         <record id="hr_rule_input_comisiones" model="hr.rule.input">
-            <field name="code">COMI</field>
-            <field name="name">COMISIONES</field>
-            <field name="input_id" ref="hr_rule_8"/>
-        </record>
-
-         <record id="hr_rule_input_gratificacion_legal" model="hr.rule.input">
-            <field name="code">GRAT</field>
-            <field name="name">GRATIFICACION LEGAL</field>
-            <field name="input_id" ref="hr_rule_9"/>
-        </record>
-
-           <record id="hr_rule_input_aguinaldo" model="hr.rule.input">
-            <field name="code">AGUI</field>
-            <field name="name">AGUINALDO</field>
-            <field name="input_id" ref="hr_rule_10"/>
-        </record>
-
-        <record id="hr_rule_input_prestamos" model="hr.rule.input">
-            <field name="code">PREST</field>
-            <field name="name">PRESTAMO EMPRESA</field>
-            <field name="input_id" ref="hr_rule_11"/>
-        </record>
-
-        <record id="hr_rule_input_prestamos_ccaf" model="hr.rule.input">
-            <field name="code">PCCAF</field>
-            <field name="name">PRESTAMO CCAF</field>
-            <field name="input_id" ref="hr_rule_12"/>
-        </record>
-
-        <record id="hr_rule_input_anticipo_sueldo" model="hr.rule.input">
-            <field name="code">ASUE</field>
-            <field name="name">ANTICIPO DE SUELDO</field>
-            <field name="input_id" ref="hr_rule_38"/>
-        </record>
 
      <!-- Insertar Reglas en Estructura Salarial -->
 
