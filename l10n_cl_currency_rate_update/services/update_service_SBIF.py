@@ -10,6 +10,7 @@ from .currency_getter_interface import CurrencyGetterInterface
 
 from datetime import datetime
 from lxml import etree
+from datetime import date, timedelta
 
 import logging
 _logger = logging.getLogger(__name__)
@@ -23,6 +24,7 @@ rep = requests.get(sbifurl, allow_redirects=True)
 #raise UserError(
 #                _('Rep Status Code = (%s)') % rep.status_code)
 fecha = datetime.today().strftime('%Y-%m-%d')
+fecha_ayer = (date.today() - timedelta(5)).strftime('%Y-%m-%d')
 
 class SBIFGetter(CurrencyGetterInterface):
     """Implementation of Currency_getter_factory interface
@@ -35,7 +37,9 @@ class SBIFGetter(CurrencyGetterInterface):
     el1 = ''
     el2 = ''
     fecha = datetime.today().strftime('%Y-%m-%d')
-
+    fecha_ayer = (date.today() - timedelta(5)).strftime('%Y-%m-%d')
+    raise UserError(
+                    _('Hoy = (%s) y Ayer = (%s)') % (fecha, fecha_ayer))
     def rate_retrieve(self, dom, ns, curr, sbif_api_key):
         """Parse a dom node to retrieve currencies data
         """
