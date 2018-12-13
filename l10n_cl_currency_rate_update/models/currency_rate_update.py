@@ -191,9 +191,12 @@ class CurrencyRateUpdateService(models.Model):
                     #raise UserError(
                     #                _('Curr: %s Main: %s Delta: %s API %s') % (curr_to_fetch, main_currency.name, srv.max_delta_days, sbif_api_key))
 
-                    rate_name = \
-                        fields.Datetime.to_string(datetime.utcnow().replace(
-                            hour=0, minute=0, second=0, microsecond=0))
+                    #rate_name = \
+                    #    fields.Datetime.to_string(datetime.utcnow().replace(
+                    #        hour=0, minute=0, second=0, microsecond=0))
+                    rate_name = \    
+                        datetime.to_string((datetime.today() - timedelta(1)).replace(hour=0, minute=0, second=0, microsecond=0))
+
                     for curr in srv.currency_to_update:
                         if curr == main_currency:
                             continue

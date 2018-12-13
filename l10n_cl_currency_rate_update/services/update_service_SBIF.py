@@ -124,29 +124,21 @@ class SBIFGetter(CurrencyGetterInterface):
                              max_delta_days, sbif_api_key):
         """implementation of abstract method of Curreny_getter_interface"""
         url = 'http://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml'
-        # Important : as explained on the ECB web site, the currencies are
-        # at the beginning of the afternoon ; so, until 3 p.m. Paris time
+        # Important : as explained on the SBIF web site, the currencies are
+        # at the beginning of the morning ; so, until 10 a.m. SCL time
         # the currency rates are the ones of trading day N-1
-        # http://www.ecb.europa.eu/stats/exchange/eurofxref/html/index.en.html
 
         fecha_ayer = date.today() - timedelta(1)
         fecha = fecha_ayer.strftime('%Y-%m-%d')
         dia = str(fecha_ayer.day)
-        dias = fecha_ayer.day
 
         # We do not want to update the main currency
         if main_currency in currency_array:
             currency_array.remove(main_currency)
 
-        #if 'UTM' in currency_array and dias > 1:
-        #    currency_array.remove('UTM')
-
         _logger.debug("SBIF currency rate service : connecting...")
 
-        #dom = etree.fromstring(rep.content)
         _logger.debug("SBIF sent a valid XML file")
-        #ecb_ns = {'gesmes': 'http://www.gesmes.org/xml/2002-08-01',
-        #          'def': 'http://www.ecb.int/vocabulary/2002-08-01/eurofxref'}
 
 
         rate_date = fecha
