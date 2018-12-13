@@ -47,19 +47,20 @@ class SBIFGetter(CurrencyGetterInterface):
         if len(sbif_api_key) > 1:
             apikey = sbif_api_key
         else:
-            apikey = '067edb08cf9ceb0b212d83a0bc8baf39816f026a'
+            #apikey = '067edb08cf9ceb0b212d83a0bc8baf39816f026a'
             raise UserError(
-                _('API Key = (%s)') % apikey)
+                _('Falta configurar API Key en Ajustes Generales de Contabilidad en Odoo')
 
         fecha_ayer = date.today() - timedelta(1)
         fecha = fecha_ayer.strftime('%Y-%m-%d')
         ano = fecha_ayer.year
         mes = fecha_ayer.month
         dia = fecha_ayer.day
-        raise UserError(
-                _('Año: %s Mes: %s Dia: %s') % (ano, mes, dia))
+        #raise UserError(
+        #        _('Año: %s Mes: %s Dia: %s') % (ano, mes, dia))
 
-        sbifurl = 'https://api.sbif.cl/api-sbifv3/recursos_api/dolar/?apikey=' + apikey + '&formato=xml'
+        sbifurl = 'https://api.sbif.cl/api-sbifv3/recursos_api/dolar/' + ano + '/' + mes + '/dias/' + dia + '?apikey=' + apikey + '&formato=xml'
+        #sbifurl = 'https://api.sbif.cl/api-sbifv3/recursos_api/dolar/?apikey=' + apikey + '&formato=xml'
 
         req = requests.get(sbifurl, allow_redirects=True)
 
@@ -75,25 +76,30 @@ class SBIFGetter(CurrencyGetterInterface):
         res = {}
         el1 = '''Dolares'''
         el2 = '''Dolar'''
-        sbifurl = 'https://api.sbif.cl/api-sbifv3/recursos_api/dolar/?apikey=' + apikey + '&formato=xml'
+        #sbifurl = 'https://api.sbif.cl/api-sbifv3/recursos_api/dolar/?apikey=' + apikey + '&formato=xml'
+        sbifurl = 'https://api.sbif.cl/api-sbifv3/recursos_api/dolar/' + ano + '/' + mes + '/dias/' + dia + '?apikey=' + apikey + '&formato=xml'
         valor = '1,0'
         if curr == 'USD':
-           sbifurl = 'https://api.sbif.cl/api-sbifv3/recursos_api/dolar/?apikey=' + apikey + '&formato=xml'
+           #sbifurl = 'https://api.sbif.cl/api-sbifv3/recursos_api/dolar/?apikey=' + apikey + '&formato=xml'
+           sbifurl = 'https://api.sbif.cl/api-sbifv3/recursos_api/dolar/' + ano + '/' + mes + '/dias/' + dia + '?apikey=' + apikey + '&formato=xml'
            el1 = '''Dolares'''
            el2 = '''Dolar'''
 
         if curr == 'UF':
-           sbifurl = 'https://api.sbif.cl/api-sbifv3/recursos_api/uf/?apikey=' + apikey + '&formato=xml'
+           #sbifurl = 'https://api.sbif.cl/api-sbifv3/recursos_api/uf/?apikey=' + apikey + '&formato=xml'
+           sbifurl = 'https://api.sbif.cl/api-sbifv3/recursos_api/uf/' + ano + '/' + mes + '/dias/' + dia + '?apikey=' + apikey + '&formato=xml'
            el1 = '''UFs'''
            el2 = '''UF'''
 
         if curr == 'UTM':
-           sbifurl = 'https://api.sbif.cl/api-sbifv3/recursos_api/utm/?apikey=' + apikey + '&formato=xml'
+           #sbifurl = 'https://api.sbif.cl/api-sbifv3/recursos_api/utm/?apikey=' + apikey + '&formato=xml'
+           sbifurl = 'https://api.sbif.cl/api-sbifv3/recursos_api/utm/' + ano + '/' + mes + '/dias/' + dia + '?apikey=' + apikey + '&formato=xml'
            el1 = '''UTMs'''
            el2 = '''UTM'''
 
         if curr == 'EUR':
-           sbifurl = 'https://api.sbif.cl/api-sbifv3/recursos_api/euro/?apikey=' + apikey + '&formato=xml'
+           #sbifurl = 'https://api.sbif.cl/api-sbifv3/recursos_api/euro/?apikey=' + apikey + '&formato=xml'
+           sbifurl = 'https://api.sbif.cl/api-sbifv3/recursos_api/euro/' + ano + '/' + mes + '/dias/' + dia + '?apikey=' + apikey + '&formato=xml'
            el1 = '''Euros'''
            el2 = '''Euro'''
 
@@ -144,12 +150,9 @@ class SBIFGetter(CurrencyGetterInterface):
                       self.supported_currency_array)
         self.validate_cur(main_currency)
 
-        if len(sbif_api_key) > 1:
-            apikey = sbif_api_key
-        else:
-            sbif_api_key = '067edb08cf9ceb0b212d83a0bc8baf39816f026a'
-            raise UserError(
-                _('API Key is (%s)') % apikey)
+        if len(sbif_api_key) = 0:
+             raise UserError(
+                _('Falta configurar API Key en Ajustes Generales de Contabilidad en Odoo')
 
         if main_currency == 'CLP':
             main_curr_data = self.rate_retrieve(dom, ecb_ns, main_currency, sbif_api_key)
