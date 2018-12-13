@@ -43,7 +43,7 @@ msgstr "Días pagados al 100%"
 #. module: l10n_cl_hr
 #: model:hr.salary.rule,name:l10n_cl_hr.hr_rule_prestamo
 msgid "HR Loan Installment"
-msgstr "Cuota Préstamo RRHH"
+msgstr "CUOTA PRÉSTAMO RRHH"
 
 #. module: l10n_cl_hr
 #: model:ir.ui.menu,name:l10n_cl_hr.menu_cl_hr_payroll_master_data
