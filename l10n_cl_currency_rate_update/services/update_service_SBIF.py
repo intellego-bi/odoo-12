@@ -49,7 +49,7 @@ class SBIFGetter(CurrencyGetterInterface):
         else:
             #apikey = '067edb08cf9ceb0b212d83a0bc8baf39816f026a'
             raise UserError(
-                _('Falta configurar API Key en Ajustes Generales de Contabilidad en Odoo')
+                _('Falta configurar API Key en Ajustes Generales de Contabilidad en Odoo'))
 
         fecha_ayer = date.today() - timedelta(1)
         fecha = fecha_ayer.strftime('%Y-%m-%d')
@@ -150,9 +150,12 @@ class SBIFGetter(CurrencyGetterInterface):
                       self.supported_currency_array)
         self.validate_cur(main_currency)
 
-        if len(sbif_api_key) = 0:
-             raise UserError(
-                _('Falta configurar API Key en Ajustes Generales de Contabilidad en Odoo')
+        if len(sbif_api_key) > 1:
+            apikey = sbif_api_key
+        else:
+            sbif_api_key = '067edb08cf9ceb0b212d83a0bc8baf39816f026a'
+            raise UserError(
+                _('API Key is (%s)') % apikey)
 
         if main_currency == 'CLP':
             main_curr_data = self.rate_retrieve(dom, ecb_ns, main_currency, sbif_api_key)
