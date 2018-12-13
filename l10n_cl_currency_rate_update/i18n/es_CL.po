@@ -1,215 +1,216 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# * currency_rate_update
+#	* l10n_cl_currency_rate_update
 #
-# Translators:
-# OCA Transbot <transbot@odoo-community.org>, 2017
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 10.0\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-11 00:39+0000\n"
-"PO-Revision-Date: 2017-05-11 00:39+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
-"Language-Team: Spanish (Argentina) (https://www.transifex.com/oca/"
-"teams/23907/es_AR/)\n"
-"Language: es_AR\n"
+"Project-Id-Version: Odoo Server 12.0+e\n"
+"Report-Msgid-Bugs-To: odoo@intellego-bi.com\n"
+"POT-Creation-Date: 2018-12-01 18:12+0000\n"
+"PO-Revision-Date: 2018-12-01 18:12+0000\n"
+"Last-Translator: Rodolfo Bermúdez Neubauer<odoo@intellego-bi.com>\n"
+"Language-Team: Intellego-BI.com\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: \n"
 
-#. module: currency_rate_update
-#: model:ir.model.fields,field_description:currency_rate_update.field_res_company_auto_currency_up
-#: model:ir.model.fields,field_description:currency_rate_update.field_res_config_settings_auto_currency_up
+#. module: l10n_cl_currency_rate_update
+#: model:ir.model.fields,field_description:l10n_cl_currency_rate_update.field_res_company_auto_currency_up
+#: model:ir.model.fields,field_description:l10n_cl_currency_rate_update.field_res_config_settings_auto_currency_up
 msgid "Automatic Currency Rates Download"
-msgstr ""
+msgstr "Actualización Automática de Tipos de Cambio Chile"
 
-#. module: currency_rate_update
-#: model:ir.model.fields,help:currency_rate_update.field_res_company_auto_currency_up
+#. module: l10n_cl_currency_rate_update
+#: model:ir.model.fields,help:l10n_cl_currency_rate_update.field_res_company_auto_currency_up
 msgid "Automatic download of currency rates for this company"
-msgstr ""
+msgstr "Actualización Automática de Tipos de Cambio Chile para esta empresa"
 
-#. module: currency_rate_update
-#: model:ir.model,name:currency_rate_update.model_res_company
+#. module: l10n_cl_currency_rate_update
+#: model:ir.model,name:l10n_cl_currency_rate_update.model_res_company
 msgid "Companies"
-msgstr ""
+msgstr "Empresas"
 
-#. module: currency_rate_update
-#: model:ir.model.fields,field_description:currency_rate_update.field_currency_rate_update_service_company_id
+#. module: l10n_cl_currency_rate_update
+#: model:ir.model.fields,field_description:l10n_cl_currency_rate_update.field_currency_rate_update_service_company_id
 msgid "Company"
-msgstr ""
+msgstr "Empresa"
 
-#. module: currency_rate_update
-#: model:ir.model.fields,field_description:currency_rate_update.field_currency_rate_update_service_create_uid
+#. module: l10n_cl_currency_rate_update
+#: model:ir.model.fields,field_description:l10n_cl_currency_rate_update.field_currency_rate_update_service_create_uid
 msgid "Created by"
 msgstr "Creado por"
 
-#. module: currency_rate_update
-#: model:ir.model.fields,field_description:currency_rate_update.field_currency_rate_update_service_create_date
+#. module: l10n_cl_currency_rate_update
+#: model:ir.model.fields,field_description:l10n_cl_currency_rate_update.field_currency_rate_update_service_create_date
 msgid "Created on"
-msgstr "Creado en"
+msgstr "Creado el"
 
-#. module: currency_rate_update
-#: model:ir.model.fields,field_description:currency_rate_update.field_currency_rate_update_service_currency_list
-#: model:ir.model.fields,field_description:currency_rate_update.field_currency_rate_update_service_currency_list_readonly
+#. module: l10n_cl_currency_rate_update
+#: model:ir.model.fields,field_description:l10n_cl_currency_rate_update.field_currency_rate_update_service_currency_list
+#: model:ir.model.fields,field_description:l10n_cl_currency_rate_update.field_currency_rate_update_service_currency_list_readonly
 msgid "Currencies available"
-msgstr ""
+msgstr "Monedas Disponibles"
 
-#. module: currency_rate_update
-#: model:ir.model.fields,field_description:currency_rate_update.field_currency_rate_update_service_currency_to_update
-#: model:ir.ui.view,arch_db:currency_rate_update.currency_rate_update_form
+#. module: l10n_cl_currency_rate_update
+#: model:ir.model.fields,field_description:l10n_cl_currency_rate_update.field_currency_rate_update_service_currency_to_update
+#: model:ir.ui.view,arch_db:l10n_cl_currency_rate_update.currency_rate_update_form
 msgid "Currencies to update with this service"
-msgstr ""
+msgstr "Monedas a actualizar con este servicio"
 
-#. module: currency_rate_update
-#: model:ir.actions.server,name:currency_rate_update.ir_cron_currency_update_every_day_ir_actions_server
-#: model:ir.cron,cron_name:currency_rate_update.ir_cron_currency_update_every_day
-#: model:ir.cron,name:currency_rate_update.ir_cron_currency_update_every_day
-#: model:ir.model,name:currency_rate_update.model_currency_rate_update_service
+#. module: l10n_cl_currency_rate_update
+#: model:ir.actions.server,name:l10n_cl_currency_rate_update.ir_cron_currency_update_every_day_ir_actions_server
+#: model:ir.cron,cron_name:l10n_cl_currency_rate_update.ir_cron_currency_update_every_day
+#: model:ir.cron,name:l10n_cl_currency_rate_update.ir_cron_currency_update_every_day
+#: model:ir.model,name:l10n_cl_currency_rate_update.model_currency_rate_update_service
 msgid "Currency Rate Update"
-msgstr ""
+msgstr "Actualiza T/C desde SBIF"
 
-#. module: currency_rate_update
-#: model:ir.model.fields,field_description:currency_rate_update.field_currency_rate_update_service_interval_type
+#. module: l10n_cl_currency_rate_update
+#: model:ir.model.fields,field_description:l10n_cl_currency_rate_update.field_currency_rate_update_service_interval_type
 msgid "Currency update frequency"
-msgstr ""
+msgstr "Frecuencia de Actualización T/C"
 
-#. module: currency_rate_update
-#: model:ir.ui.view,arch_db:currency_rate_update.currency_rate_update_form
-#: model:ir.ui.view,arch_db:currency_rate_update.currency_rate_update_tree
+#. module: l10n_cl_currency_rate_update
+#: model:ir.ui.view,arch_db:l10n_cl_currency_rate_update.currency_rate_update_form
+#: model:ir.ui.view,arch_db:l10n_cl_currency_rate_update.currency_rate_update_tree
 msgid "Currency update services"
-msgstr ""
+msgstr "Servicios de Actualización de T/C"
 
-#. module: currency_rate_update
+#. module: l10n_cl_currency_rate_update
 #: selection:currency.rate.update.service,interval_type:0
 msgid "Day(s)"
-msgstr ""
+msgstr "Día(s)"
 
-#. module: currency_rate_update
-#: model:ir.model.fields,field_description:currency_rate_update.field_currency_rate_update_service_display_name
+#. module: l10n_cl_currency_rate_update
+#: model:ir.model.fields,field_description:l10n_cl_currency_rate_update.field_currency_rate_update_service_display_name
 msgid "Display Name"
 msgstr "Mostrar Nombre"
 
-#. module: currency_rate_update
-#: model:ir.model.fields,field_description:currency_rate_update.field_currency_rate_update_service_interval_number
+#. module: l10n_cl_currency_rate_update
+#: model:ir.model.fields,field_description:l10n_cl_currency_rate_update.field_currency_rate_update_service_interval_number
 msgid "Frequency"
-msgstr ""
+msgstr "Frecuencia"
 
-#. module: currency_rate_update
-#: model:ir.model.fields,field_description:currency_rate_update.field_currency_rate_update_service_id
+#. module: l10n_cl_currency_rate_update
+#: model:ir.model.fields,field_description:l10n_cl_currency_rate_update.field_currency_rate_update_service_id
 msgid "ID"
 msgstr "ID"
 
-#. module: currency_rate_update
-#: model:ir.model.fields,help:currency_rate_update.field_currency_rate_update_service_max_delta_days
+#. module: l10n_cl_currency_rate_update
+#: model:ir.model.fields,help:l10n_cl_currency_rate_update.field_currency_rate_update_service_max_delta_days
 msgid ""
 "If the time delta between the rate date given by the webservice and the "
 "current date exceeds this value, then the currency rate is not updated in "
 "Odoo."
 msgstr ""
+"Si la diferencia (delta) de días entre la fecha de T/C de la SBIF y la fecha de actualización excede "
+"este valor, los Tipos de Cambio no serán actualizados en Odoo. Procure ingresar un valor mayor a 4 días para"
+"contemplar los feriados largos."
 
-#. module: currency_rate_update
-#: code:addons/currency_rate_update/models/currency_rate_update.py:146
+#. module: l10n_cl_currency_rate_update
+#: code:addons/l10n_cl_currency_rate_update/models/l10n_cl_currency_rate_update.py:146
 #, python-format
 msgid ""
 "In company '%s', the rate of the main currency (%s) must be 1.00 (current "
 "rate: %s)."
 msgstr ""
+"En la empresa '%s', el Tipo de Cambio de la moneda principal (%s) debe ser 1.00 (Tipo de "
+"Cambio actual es: %s)."
 
-#. module: currency_rate_update
-#: code:addons/currency_rate_update/models/currency_rate_update.py:48
+#. module: l10n_cl_currency_rate_update
+#: code:addons/l10n_cl_currency_rate_update/models/l10n_cl_currency_rate_update.py:48
 #, python-format
 msgid "Interval number must be >= 0"
-msgstr ""
+msgstr "Intervalo debe ser un número positivo"
 
-#. module: currency_rate_update
-#: model:ir.model.fields,field_description:currency_rate_update.field_currency_rate_update_service___last_update
+#. module: l10n_cl_currency_rate_update
+#: model:ir.model.fields,field_description:l10n_cl_currency_rate_update.field_currency_rate_update_service___last_update
 msgid "Last Modified on"
-msgstr "Última modificación en"
+msgstr "Modificado el"
 
-#. module: currency_rate_update
-#: model:ir.model.fields,field_description:currency_rate_update.field_currency_rate_update_service_write_uid
+#. module: l10n_cl_currency_rate_update
+#: model:ir.model.fields,field_description:l10n_cl_currency_rate_update.field_currency_rate_update_service_write_uid
 msgid "Last Updated by"
-msgstr "Última actualización realizada por"
+msgstr "Actualizado por"
 
-#. module: currency_rate_update
-#: model:ir.model.fields,field_description:currency_rate_update.field_currency_rate_update_service_write_date
+#. module: l10n_cl_currency_rate_update
+#: model:ir.model.fields,field_description:l10n_cl_currency_rate_update.field_currency_rate_update_service_write_date
 msgid "Last Updated on"
-msgstr "Última actualización el"
+msgstr "Actualizado el"
 
-#. module: currency_rate_update
-#: model:ir.model.fields,field_description:currency_rate_update.field_currency_rate_update_service_max_delta_days
+#. module: l10n_cl_currency_rate_update
+#: model:ir.model.fields,field_description:l10n_cl_currency_rate_update.field_currency_rate_update_service_max_delta_days
 msgid "Max delta days"
-msgstr ""
+msgstr "Máximo Días Delta"
 
-#. module: currency_rate_update
-#: code:addons/currency_rate_update/models/currency_rate_update.py:40
+#. module: l10n_cl_currency_rate_update
+#: code:addons/l10n_cl_currency_rate_update/models/l10n_cl_currency_rate_update.py:40
 #, python-format
 msgid "Max delta days must be >= 0"
-msgstr ""
+msgstr "El valor de máximo días delta debe ser positivo"
 
-#. module: currency_rate_update
+#. module: l10n_cl_currency_rate_update
 #: selection:currency.rate.update.service,interval_type:0
 msgid "Month(s)"
-msgstr ""
+msgstr "Mes(es)"
 
-#. module: currency_rate_update
-#: model:ir.model.fields,field_description:currency_rate_update.field_currency_rate_update_service_next_run
+#. module: l10n_cl_currency_rate_update
+#: model:ir.model.fields,field_description:l10n_cl_currency_rate_update.field_currency_rate_update_service_next_run
 msgid "Next run on"
-msgstr ""
+msgstr "Próxima actualización"
 
-#. module: currency_rate_update
-#: model:ir.actions.act_window,name:currency_rate_update.currency_rate_update_action
-#: model:ir.ui.menu,name:currency_rate_update.currency_rate_update_menu
+#. module: l10n_cl_currency_rate_update
+#: model:ir.actions.act_window,name:l10n_cl_currency_rate_update.currency_rate_update_action
+#: model:ir.ui.menu,name:l10n_cl_currency_rate_update.currency_rate_update_menu
 msgid "Rate Auto-download"
-msgstr ""
+msgstr "Actualizar Tipos de Cambio SBIF"
 
-#. module: currency_rate_update
-#: code:addons/currency_rate_update/services/currency_getter_interface.py:147
+#. module: l10n_cl_currency_rate_update
+#: code:addons/l10n_cl_currency_rate_update/services/currency_getter_interface.py:147
 #, python-format
 msgid "Unable to import urllib."
-msgstr ""
+msgstr "Imposible importar urllib"
 
-#. module: currency_rate_update
-#: model:ir.ui.view,arch_db:currency_rate_update.view_res_config_settings
-msgid "Update exchange rates automatic from currency_rate_update module"
-msgstr ""
+#. module: l10n_cl_currency_rate_update
+#: model:ir.ui.view,arch_db:l10n_cl_currency_rate_update.view_res_config_settings
+msgid "Update exchange rates automatic from l10n_cl_currency_rate_update module"
+msgstr "Actualizar Tipos de Cambio automáticamente desde SBIF Chile"
 
-#. module: currency_rate_update
-#: model:ir.model.fields,help:currency_rate_update.field_res_config_settings_auto_currency_up
-msgid "Update exchange rates automaticallyfrom currency_rate_update module."
-msgstr ""
+#. module: l10n_cl_currency_rate_update
+#: model:ir.model.fields,help:l10n_cl_currency_rate_update.field_res_config_settings_auto_currency_up
+msgid "Update exchange rates automaticallyfrom l10n_cl_currency_rate_update module."
+msgstr "Actualizar Tipos de Cambio automáticamente desde SBIF Chile"
 
-#. module: currency_rate_update
-#: model:ir.ui.view,arch_db:currency_rate_update.currency_rate_update_form
+#. module: l10n_cl_currency_rate_update
+#: model:ir.ui.view,arch_db:l10n_cl_currency_rate_update.currency_rate_update_form
 msgid "Update now"
-msgstr ""
+msgstr "Actualizar Ahora"
 
-#. module: currency_rate_update
-#: code:addons/currency_rate_update/services/currency_getter_interface.py:150
+#. module: l10n_cl_currency_rate_update
+#: code:addons/l10n_cl_currency_rate_update/services/currency_getter_interface.py:150
 #, python-format
 msgid "Web Service does not exist (%s)!"
-msgstr ""
+msgstr "¡Servicio web (%s) no existe!"
 
-#. module: currency_rate_update
-#: model:ir.model.fields,field_description:currency_rate_update.field_currency_rate_update_service_service
+#. module: l10n_cl_currency_rate_update
+#: model:ir.model.fields,field_description:l10n_cl_currency_rate_update.field_currency_rate_update_service_service
 msgid "Webservice to use"
-msgstr ""
+msgstr "Servicio Web a usar"
 
-#. module: currency_rate_update
+#. module: l10n_cl_currency_rate_update
 #: selection:currency.rate.update.service,interval_type:0
 msgid "Week(s)"
-msgstr ""
+msgstr "Semana(s)"
 
-#. module: currency_rate_update
-#: code:addons/currency_rate_update/models/currency_rate_update.py:125
+#. module: l10n_cl_currency_rate_update
+#: code:addons/l10n_cl_currency_rate_update/models/l10n_cl_currency_rate_update.py:125
 #: sql_constraint:currency.rate.update.service:0
 #, python-format
 msgid "You can use a service only one time per company !"
-msgstr ""
+msgstr "¡El servicio sólo puede usarse una vez por cada empresa!"
 
-#. module: currency_rate_update
-#: model:ir.model,name:currency_rate_update.model_res_config_settings
+#. module: l10n_cl_currency_rate_update
+#: model:ir.model,name:l10n_cl_currency_rate_update.model_res_config_settings
 msgid "res.config.settings"
-msgstr ""
+msgstr "Configuración Odoo"
