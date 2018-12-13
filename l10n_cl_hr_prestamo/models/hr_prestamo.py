@@ -47,13 +47,27 @@ class HrPrestamo(models.Model):
     def _compute_pending_amount(self):
         pend_total = 0
         pend_count = 0
-        for loan in self:
+        #for loan in self:
+        #        for line in loan.prestamo_lines:
+        #            if not line.paid:
+        #                pend_total += line.amount
+        #                pend_count += 1
+        #self.prestamo_pending_amount = pend_total
+        #self.prestamo_pending_count = pend_count
+
+        self.prestamo_array = self.env['hr.prestamo'].search([('employee_id', '=', self.id), ('state', '=', 'approve')])
+        pend_total = 0
+        pend_count = 0
+        for loan in self.prestamo_array:
                 for line in loan.prestamo_lines:
                     if not line.paid:
                         pend_total += line.amount
                         pend_count += 1
         self.prestamo_pending_amount = pend_total
         self.prestamo_pending_count = pend_count
+
+
+
 
     name = fields.Char(string="Loan Name", default="/", readonly=True)
     date = fields.Date(string="Request Date", default=fields.Date.today(), readonly=False)
