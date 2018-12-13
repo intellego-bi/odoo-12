@@ -130,10 +130,31 @@ class CurrencyRateUpdateService(models.Model):
                          _('You can use a service only one time per '
                            'company !'))]
 
+
+    def get_api_key(self):
+        """Return a string of a API Key"""
+        # Read Settings from res.config.settings
+        ICPSudo = self.env['ir.config_parameter'].sudo()
+        config_read = ICPSudo.get_param('account.cl_sbif_api_key')
+        if config_read:
+           sbif_api_key = config_read
+        else:
+           sbif_api_key = 'e96f651e08214ed0060771f21d11cdeb3b8b3305'
+        return sbif_api_key
+
     @api.multi
     def refresh_currency(self):
         """Refresh the currencies rates !!for all companies now"""
         rate_obj = self.env['res.currency.rate']
+
+        # Read Settings from res.config.settings
+        ICPSudo = self.env['ir.config_parameter'].sudo()
+        config_read = ICPSudo.get_param('account.cl_sbif_api_key')
+        if config_read:
+           sbif_api_key = config_read
+        else:
+           sbif_api_key = 'e96f651e08214ed0060771f21d11cdeb3b8b3305'
+        
         for srv in self:
             _logger.info(
                 'Starting to refresh currencies with service %s (company: %s)',
