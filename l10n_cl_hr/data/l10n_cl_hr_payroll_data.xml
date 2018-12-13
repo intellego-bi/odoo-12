@@ -1004,5 +1004,84 @@ result = round(SECEEMP) + round(SIS) + round(MUT) + round(SC)</field>
                               ])]" name="rule_ids"/>
         </record>
 
+
+        <!-- Reglas para Finiquito -->
+        <record id="hr_rule_fin" model="hr.salary.rule">
+            <field name="code">FIN</field>
+            <field name="name">FIN FINIQUITO OTROS</field>
+            <field name="category_id" ref="l10n_cl_hr.NOIMPO"/>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = inputs.FIN and + (inputs.FIN.amount)</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name="sequence" eval="39"/>
+        </record>
+
+        <record id="hr_rule_input_fin" model="hr.rule.input">
+            <field name="code">FIN</field>
+            <field name="name">FIN FINIQUITO OTROS</field>
+            <field name="input_id" ref="hr_rule_fin"/>
+        </record>
+
+        <record id="hr_rule_fin_ias" model="hr.salary.rule">
+            <field name="code">IAS</field>
+            <field name="name">FIN FINIQUITO AÑOS SERVICIO</field>
+            <field name="category_id" ref="l10n_cl_hr.NOIMPO"/>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = inputs.IAS and + (inputs.IAS.amount)</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name="sequence" eval="39"/>
+        </record>
+
+        <record id="hr_rule_input_fin_ias" model="hr.rule.input">
+            <field name="code">IAS</field>
+            <field name="name">FIN FINIQUITO AÑOS SERVICIO</field>
+            <field name="input_id" ref="hr_rule_fin_ias"/>
+        </record>
+
+        <record id="hr_rule_fin_iap" model="hr.salary.rule">
+            <field name="code">IAP</field>
+            <field name="name">FIN FINIQUITO AVISO PREVIO</field>
+            <field name="category_id" ref="l10n_cl_hr.NOIMPO"/>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = inputs.IAP and + (inputs.IAP.amount)</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name="sequence" eval="39"/>
+        </record>
+
+        <record id="hr_rule_input_fin_iap" model="hr.rule.input">
+            <field name="code">IAP</field>
+            <field name="name">FIN FINIQUITO AVISO PREVIO</field>
+            <field name="input_id" ref="hr_rule_fin_iap"/>
+        </record>
+
+        <record id="hr_rule_fin_ifp" model="hr.salary.rule">
+            <field name="code">IFP</field>
+            <field name="name">FIN FINIQUITO FERIADO PROPORCIONAL</field>
+            <field name="category_id" ref="l10n_cl_hr.NOIMPO"/>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = inputs.IFP and + (inputs.IFP.amount)</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name="sequence" eval="39"/>
+        </record>
+
+        <record id="hr_rule_input_fin_ifp" model="hr.rule.input">
+            <field name="code">IFP</field>
+            <field name="name">FIN FINIQUITO FERIADO PROPORCIONAL</field>
+            <field name="input_id" ref="hr_rule_fin_ifp"/>
+        </record>
+
+        <!-- Estructura para FINIQUITO -->
+
+       <record id="hr_struct_cl_fin" model="hr.payroll.structure">
+            <field name="name">Chile :: Finiquito</field>
+            <field name="code">CL-Finiquito</field>
+            <field name="parent_id" ref="hr_struct_cl"/>
+            <field eval="[(6, 0, [
+                              ref('hr_rule_fin'),                              
+                              ref('hr_rule_fin_ias'),
+                              ref('hr_rule_fin_iap'),
+                              ref('hr_rule_fin_ifp')
+                              ])]" name="rule_ids"/>
+        </record>
     </data>
 </odoo>
