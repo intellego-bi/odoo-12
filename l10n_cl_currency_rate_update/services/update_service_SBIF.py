@@ -53,9 +53,9 @@ class SBIFGetter(CurrencyGetterInterface):
 
         fecha_ayer = date.today() - timedelta(1)
         fecha = fecha_ayer.strftime('%Y-%m-%d')
-        ano = fecha_ayer.year
-        mes = fecha_ayer.month
-        dia = fecha_ayer.day
+        ano = str(fecha_ayer.year)
+        mes = str(fecha_ayer.month)
+        dia = str(fecha_ayer.day)
         #raise UserError(
         #        _('Año: %s Mes: %s Dia: %s') % (ano, mes, dia))
 
@@ -150,12 +150,9 @@ class SBIFGetter(CurrencyGetterInterface):
                       self.supported_currency_array)
         self.validate_cur(main_currency)
 
-        if len(sbif_api_key) > 1:
-            apikey = sbif_api_key
-        else:
-            sbif_api_key = '067edb08cf9ceb0b212d83a0bc8baf39816f026a'
+        if len(sbif_api_key) < 1:
             raise UserError(
-                _('API Key is (%s)') % apikey)
+                _('Falta configurar API Key en Ajustes Generales de Contabilidad en Odoo'))
 
         if main_currency == 'CLP':
             main_curr_data = self.rate_retrieve(dom, ecb_ns, main_currency, sbif_api_key)
