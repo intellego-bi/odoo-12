@@ -163,10 +163,14 @@ class CurrencyGetterInterface(object, metaclass=CurrencyGetterType):
             )
 
         # We always have a warning when rate_date != today
-        if rate_date.date() != datetime.today().date():
+        fecha_ayer = date.today() - timedelta(1)
+        fecha_str = fecha_ayer.strftime('%Y-%m-%d')
+        #if rate_date.date() != datetime.today().date():
+        if rate_date.date() != fecha_ayer.date():
             rate_date_str = fields.Date.to_string(rate_date)
-            msg = "The rate timestamp %s is not today's date %s" % \
-                (rate_date_str, fields.Date.today())
+            msg = "The rate timestamp %s is not yesterday's date %s" % \
+                #(rate_date_str, fields.Date.today())
+                (rate_date_str, fecha_str)
             self.log_info = ("\n WARNING : %s") % msg
             _logger.warning(msg)
 
