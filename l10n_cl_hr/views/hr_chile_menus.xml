@@ -52,6 +52,25 @@
             </field>
         </record>
 
+        <!-- Extiende Vista Lista REGLAS SALARIALES -->
+        <!-- Agrega CUENTAS CONTABLES -->
+        <record model="ir.ui.view" id="cl_view_hr_salary_rule_list">
+            <field name="name">hr.salary.rule</field>
+            <field name="model">hr.salary.rule</field>
+            <field name="mode">extension</field>
+            <field name="inherit_id" ref="hr.salary.rule.list"/>
+            <field name="arch" type="xml">
+                <xpath expr="//tree[1]/field[@name='name']" position="before">
+                    <field name="active"/>
+                </xpath>
+                <xpath expr="//field[@name='register_id']" position="after">
+                    <field name="appears_on_payslip"/>
+                    <field name="account_debit"/>
+                    <field name="account_credit"/>
+                </xpath>
+            </field>
+        </record>
+
 
     </data>
 </odoo>
