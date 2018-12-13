@@ -39,8 +39,7 @@ class SBIFGetter(CurrencyGetterInterface):
             apikey = sbif_api_key
         else:
             apikey = '067edb08cf9ceb0b212d83a0bc8baf39816f026a'
-        
-        raise UserError(
+            raise UserError(
                 _('API Key = (%s)') % apikey)
 
         sbifurl = 'https://api.sbif.cl/api-sbifv3/recursos_api/dolar/?apikey=' + apikey + '&formato=xml'
@@ -104,24 +103,6 @@ class SBIFGetter(CurrencyGetterInterface):
             currency_array.remove(main_currency)
         _logger.debug("SBIF currency rate service : connecting...")
 
-        if len(sbif_api_key) > 1:
-            apikey = sbif_api_key
-        else:
-            apikey = '067edb08cf9ceb0b212d83a0bc8baf39816f026a'
-
-        raise UserError(
-                _('API Key is (%s)') % apikey)
-
-        sbifurl = 'https://api.sbif.cl/api-sbifv3/recursos_api/dolar/?apikey=' + apikey + '&formato=xml'
-        rep = requests.get(sbifurl, allow_redirects=True)
-        req = requests.get(sbifurl, allow_redirects=True)
-        if req.status_code == 200:
-            docs = xm.parse(req.content)
-            fecha = docs['IndicadoresFinancieros']['Dolares']['Dolar']['Fecha']
-        else:
-            docs = xm.parse(req.content)
-            fecha = datetime.today().strftime('%Y-%m-%d')
-
         dom = etree.fromstring(rep.content)
         _logger.debug("SBIF sent a valid XML file")
         ecb_ns = {'gesmes': 'http://www.gesmes.org/xml/2002-08-01',
@@ -138,15 +119,22 @@ class SBIFGetter(CurrencyGetterInterface):
                       self.supported_currency_array)
         self.validate_cur(main_currency)
 
+        if len(sbif_api_key) > 1:
+            apikey = sbif_api_key
+        else:
+            sbif_api_key = '067edb08cf9ceb0b212d83a0bc8baf39816f026a'
+            raise UserError(
+                _('API Key is (%s)') % apikey)
+
         if main_currency == 'CLP':
-            main_curr_data = self.rate_retrieve(dom, ecb_ns, main_currency, apikey)
+            main_curr_data = self.rate_retrieve(dom, ecb_ns, main_currency, sbif_api_key)
         for curr in currency_array:
             self.validate_cur(curr)
             if curr == 'CLP':
                  rate = 1
 
             else:
-                curr_data = self.rate_retrieve(dom, ecb_ns, curr, apikey)
+                curr_data = self.rate_retrieve(dom, ecb_ns, curr, sbif_api_key)
                 rate = curr_data['rate_currency']
 
             self.updated_currency[curr] = rate
