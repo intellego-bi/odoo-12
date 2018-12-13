@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    <!--Loan Tree view-->
+    <!-- Loan Tree view -->
     <record id="hr_prestamo_tree_view" model="ir.ui.view">
         <field name="name">hr.prestamo.tree</field>
         <field name="model">hr.prestamo</field>
