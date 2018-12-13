@@ -114,7 +114,7 @@ class SBIFGetter(CurrencyGetterInterface):
         fecha = docu['IndicadoresFinancieros'][el1][el2]['Fecha']
         valor = docu['IndicadoresFinancieros'][el1][el2]['Valor']
         raise UserError(
-                _('Valor: %s' 'Fecha': %s) % (valor, fecha))
+                _('Valor: %s Fecha: %s') % (valor, fecha))
 
 
         valor = valor.replace(".", "")
