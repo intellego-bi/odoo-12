@@ -47,7 +47,12 @@ class HrPrestamoAcc(models.Model):
                 raise except_orm('Warning', 'You must compute Loan Request before Approved')
             timenow = time.strftime('%Y-%m-%d')
             for prestamo in self:
-                amount = prestamo.prestamo_amount
+                if prestamo.currency_id.name == 'CLP':
+                    amount = prestamo.prestamo_amount
+                else:
+                    #amount = prestamo.currency_id._convert(prestamo.prestamo_amount, self.env.user.company_id.currency_id, prestamo.company_id, prestamo.date)
+                    currency_id = prestamo.currency_id
+                    amount_currency = prestamo.prestamo_amount
                 prestamo_name = prestamo.employee_id.name
                 reference = prestamo.name
                 journal_id = prestamo.journal_id.id
