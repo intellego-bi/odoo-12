@@ -121,7 +121,7 @@ class CurrencyRateUpdateService(models.Model):
     next_run = fields.Date(string='Próxima ejecución', default=fields.Date.today())
 
     sbif_api_key = fields.Char(
-        string='SBIF API Key', default='e96f651e08214ed0060771f21d11cdeb3b8b3305', required=True,
+        string='SBIF API Key', required=True,
         help="You must get your private API Key from https://api.sbif.cl "
         "in order to use this service.")
 
@@ -139,7 +139,9 @@ class CurrencyRateUpdateService(models.Model):
         if config_read:
            sbif_api_key = config_read
         else:
-           sbif_api_key = '067edb08cf9ceb0b212d83a0bc8baf39816f026a'
+           #sbif_api_key = '067edb08cf9ceb0b212d83a0bc8baf39816f026a'
+           raise UserError(
+                _('Falta configurar API Key en Ajustes Generales de Contabilidad en Odoo'))
         return sbif_api_key
 
     @api.multi
@@ -158,7 +160,9 @@ class CurrencyRateUpdateService(models.Model):
             if config_read:
                 sbif_api_key = config_read
             else:
-               sbif_api_key = '067edb08cf9ceb0b212d83a0bc8baf39816f026a'
+               #sbif_api_key = '067edb08cf9ceb0b212d83a0bc8baf39816f026a'          
+               raise UserError(
+                   _('Falta configurar API Key en Ajustes Generales de Contabilidad en Odoo'))
 
             company = srv.company_id
             # The multi company currency can be set or no so we handle
