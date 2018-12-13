@@ -979,7 +979,6 @@ result = round(SECEEMP) + round(SIS) + round(MUT) + round(SC)</field>
                               ref('hr_rule_36'),
                               ref('hr_rule_37'),
                               ref('hr_rule_38'),
-                              <!--ref('hr_rule_38_1'),-->
                               ref('hr_rule_38_2'),
                               ref('hr_rule_39'),
                               ref('hr_rule_40'),
