@@ -84,7 +84,7 @@ class HrPrestamoAcc(models.Model):
                     'debit': amount < 0.0 and -amount or 0.0,
                     'credit': amount > 0.0 and amount or 0.0,
                     'currency_id': prestamo.currency_id.id,
-                    'amount_currency': prestamo.prestamo_amount,
+                    'amount_currency': -prestamo.prestamo_amount,
                     'prestamo_id': prestamo.id,
                 }
                 vals = {
@@ -150,7 +150,7 @@ class HrPrestamoAcc(models.Model):
                 'debit': amount < 0.0 and -amount or 0.0,
                 'credit': amount > 0.0 and amount or 0.0,
                 'currency_id': prestamo.currency_id.id,
-                'amount_currency': prestamo.prestamo_amount,
+                'amount_currency': -prestamo.prestamo_amount,
                 'prestamo_id': prestamo.id,
             }
             vals = {
