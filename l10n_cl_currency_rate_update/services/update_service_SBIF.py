@@ -31,28 +31,11 @@ class SBIFGetter(CurrencyGetterInterface):
     el2 = ''
     fecha = datetime.today().strftime('%Y-%m-%d')
 
-    def get_apikey(self):
-        """Return a string of a API Key"""
-                # Read Settings from res.config.settings
-        ICPSudo = self.env['ir.config_parameter'].sudo()
-        config_read = ICPSudo.get_param('account.cl_sbif_api_key')
-        if config_read:
-           apikey = config_read
-        else:
-           apikey = 'e96f651e08214ed0060771f21d11cdeb3b8b3305'
-
-        return apikey
 
     def rate_retrieve(self, dom, ns, curr, apikey):
         """Parse a dom node to retrieve currencies data
         """
-        #apikey = self.get_apikey()
-        ICPSudo = self.env['ir.config_parameter'].sudo()
-        config_read = ICPSudo.get_param('account.cl_sbif_api_key')
-        if config_read:
-           apikey = config_read
-        else:
-           apikey = 'e96f651e08214ed0060771f21d11cdeb3b8b3305'
+        apikey = self.get_api_key()
 
         sbifurl = 'https://api.sbif.cl/api-sbifv3/recursos_api/dolar/?apikey=' + apikey + '&formato=xml'
 
@@ -114,13 +97,7 @@ class SBIFGetter(CurrencyGetterInterface):
             currency_array.remove(main_currency)
         _logger.debug("SBIF currency rate service : connecting...")
 
-        #apikey = self.get_apikey()
-        ICPSudo = self.env['ir.config_parameter'].sudo()
-        config_read = ICPSudo.get_param('account.cl_sbif_api_key')
-        if config_read:
-           apikey = config_read
-        else:
-           apikey = 'e96f651e08214ed0060771f21d11cdeb3b8b3305'
+        apikey = self.get_api_key()
 
         sbifurl = 'https://api.sbif.cl/api-sbifv3/recursos_api/dolar/?apikey=' + apikey + '&formato=xml'
         rep = requests.get(sbifurl, allow_redirects=True)
