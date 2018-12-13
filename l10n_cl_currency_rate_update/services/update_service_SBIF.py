@@ -21,7 +21,7 @@ import xmltodict as xm
 apikey = '067edb08cf9ceb0b212d83a0bc8baf39816f026a'
 sbifurl = 'https://api.sbif.cl/api-sbifv3/recursos_api/dolar/?apikey=' + apikey + '&formato=xml'
 rep = requests.get(sbifurl, allow_redirects=True)
-fecha_ayer = date.today() - timedelta(5)
+fecha_ayer = date.today() - timedelta(1)
 fecha = fecha_ayer.strftime('%Y-%m-%d')
 
 
@@ -64,7 +64,7 @@ class SBIFGetter(CurrencyGetterInterface):
             raise UserError(
                 _('Error: %s') % mensaje)
             fecha = datetime.today().strftime('%Y-%m-%d')
-            fecha_ayer = date.today() - timedelta(5)
+            fecha_ayer = date.today() - timedelta(1)
             fecha = fecha_ayer.strftime('%Y-%m-%d')
 
         res = {}
@@ -123,7 +123,7 @@ class SBIFGetter(CurrencyGetterInterface):
         ecb_ns = {'gesmes': 'http://www.gesmes.org/xml/2002-08-01',
                   'def': 'http://www.ecb.int/vocabulary/2002-08-01/eurofxref'}
 
-        fecha_ayer = date.today() - timedelta(5)
+        fecha_ayer = date.today() - timedelta(1)
         fecha = fecha_ayer.strftime('%Y-%m-%d')
         #raise UserError(
         #            _('Get Hoy = (%s) y Ayer = (%s)') % (fecha, fecha_ayer))
