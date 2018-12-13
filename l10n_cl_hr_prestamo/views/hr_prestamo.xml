@@ -11,7 +11,7 @@
                 <field name="name"/>
                 <field name="date"/>
                 <field name="state"/>
-                <field name="currency_id" invisible="True"/>
+                <field name="currency_id"/>
                 <field name="prestamo_amount" widget="monetary" options="{'currency_field': 'currency_id'}"/>
                 <field name="prestamo_pending_amount" widget="monetary" options="{'currency_field': 'currency_id'}"/>
                 <field name="prestamo_pending_count"/>
@@ -53,10 +53,11 @@
                             <field name="department_id" readonly="True"/>
                             <!--<field name="job_position" readonly="True" options="{'no_create': True}"/>-->
                             <field name="company_id" options="{'no_create': True}" groups="base.group_multi_company"/>
-                            <field name="currency_id" options="{'no_create': True}" groups="base.group_multi_company"/>
+                            <!--<field name="currency_id" options="{'no_create': True}" groups="base.group_multi_company"/>-->
                                 
                         </group>
                         <group string="Loan Request">
+                            <field name="currency_id" options="{'no_create': True}" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
                             <field name="prestamo_amount" widget="monetary" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
                             <field name="installment" attrs="{'readonly':[('state','=','approve')]}"/>
                             <field name="payment_date" attrs="{'readonly':[('state','=','approve')]}"/>
