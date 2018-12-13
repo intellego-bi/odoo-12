@@ -109,7 +109,7 @@ class HrPayslip(models.Model):
         #                current_leave_struct['number_of_days'] += leave_time / work_hours
         #                temp += leave_time / work_hours
 
-            # compute worked days
+            # compute worked days (NOTA: Acá se podrían leer los turnos asociados por fecha al empleado y calcular los días para c/u)
             work_data = contract.employee_id.get_work_days_data(day_from, day_to, calendar=contract.resource_calendar_id)
             #Dias laborados reales para calcular la semana corrida
             effective = {
