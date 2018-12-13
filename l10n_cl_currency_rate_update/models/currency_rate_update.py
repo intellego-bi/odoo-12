@@ -4,7 +4,7 @@
 
 import logging
 
-from datetime import datetime, time, timedelta
+from datetime import datetime, time, date, timedelta
 from dateutil.relativedelta import relativedelta
 
 from odoo import models, fields, api, _
