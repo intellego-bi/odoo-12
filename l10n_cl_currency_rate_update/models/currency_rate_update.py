@@ -179,25 +179,14 @@ class CurrencyRateUpdateService(models.Model):
                 try:
                     # We initalize the class that will handle the request
                     # and return a dict of rate
-                    fecha_ayer = date.today() - timedelta(1)
-                    dia = fecha_ayer.day
                     getter = CurrencyGetterType.get(srv.service)
                     curr_to_fetch = [x.name for x in srv.currency_to_update]
-                    if curr_to_fetch != 'UTM':
-                        res, log_info = getter.get_updated_currency(
-                            curr_to_fetch,
-                            main_currency.name,
-                            srv.max_delta_days,
-                            sbif_api_key
-                            )
-                    else:
-                        if dia == 1:
-                            res, log_info = getter.get_updated_currency(
-                                curr_to_fetch,
-                                main_currency.name,
-                                srv.max_delta_days,
-                                sbif_api_key
-                                )
+                    res, log_info = getter.get_updated_currency(
+                        curr_to_fetch,
+                        main_currency.name,
+                        srv.max_delta_days,
+                        sbif_api_key
+                        )
 
                     #raise UserError(
                     #                _('Curr: %s Main: %s Delta: %s API %s') % (curr_to_fetch, main_currency.name, srv.max_delta_days, sbif_api_key))
