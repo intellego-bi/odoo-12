@@ -67,8 +67,12 @@ class HrPayslip(models.Model):
                 if date_from <= prestamo_line.date <= date_to and not prestamo_line.paid:
                     for result in res:
                         if result.get('code') == 'HRPR':
-                            result['amount'] = prestamo_line.amount
                             result['prestamo_line_id'] = prestamo_line.id
+                            if prestamo.currency_id.name == 'CLP':
+                                result['amount'] = prestamo_line.amount
+                            else:
+                                result['amount'] = prestamo.currency_id._convert(prestamo.prestamo_amount, self.env.user.company_id.currency_id, prestamo.company_id, prestamo_line.date)
+
         return res
 
     @api.multi
