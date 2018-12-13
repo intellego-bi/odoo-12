@@ -19,12 +19,8 @@ import xmltodict as xm
 
 apikey = '067edb08cf9ceb0b212d83a0bc8baf39816f026a'
 sbifurl = 'https://api.sbif.cl/api-sbifv3/recursos_api/dolar/?apikey=' + apikey + '&formato=xml'
-rep = requests.get(sbifurl, allow_redirects=True)
-if rep.status_code == 200:
-    docs = xm.parse(rep.content)
-    fecha = docs['IndicadoresFinancieros']['Dolares']['Dolar']['Fecha']
-else:
-    fecha = datetime.today().strftime('%Y-%m-%d')
+rep = {}
+fecha = datetime.today().strftime('%Y-%m-%d')
 
 class SBIFGetter(CurrencyGetterInterface):
     """Implementation of Currency_getter_factory interface
@@ -114,6 +110,7 @@ class SBIFGetter(CurrencyGetterInterface):
         ecb_ns = {'gesmes': 'http://www.gesmes.org/xml/2002-08-01',
                   'def': 'http://www.ecb.int/vocabulary/2002-08-01/eurofxref'}
 
+        fecha = datetime.today().strftime('%Y-%m-%d')
         rate_date = fecha
         # Don't use DEFAULT_SERVER_DATE_FORMAT here, because it's
         # the format of the XML of SBIF, not the format of Odoo server !
