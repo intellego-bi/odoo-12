@@ -40,8 +40,10 @@ class SBIFGetter(CurrencyGetterInterface):
     fecha = fecha_ayer.strftime('%Y-%m-%d')
     #raise UserError(
     #                _('Hoy = (%s) y Ayer = (%s)') % (fecha, fecha_ayer))
-    def rate_retrieve(self, dom, ns, curr, sbif_api_key):
-        """Parse a dom node to retrieve currencies data
+
+    #def rate_retrieve(self, dom, ns, curr, sbif_api_key):
+    def rate_retrieve(self, curr, sbif_api_key):
+        """Parse XML to retrieve currencies data
         """
         mensaje = " "
         if len(sbif_api_key) > 1:
@@ -137,10 +139,10 @@ class SBIFGetter(CurrencyGetterInterface):
             currency_array.remove(main_currency)
         _logger.debug("SBIF currency rate service : connecting...")
 
-        dom = etree.fromstring(rep.content)
+        #dom = etree.fromstring(rep.content)
         _logger.debug("SBIF sent a valid XML file")
-        ecb_ns = {'gesmes': 'http://www.gesmes.org/xml/2002-08-01',
-                  'def': 'http://www.ecb.int/vocabulary/2002-08-01/eurofxref'}
+        #ecb_ns = {'gesmes': 'http://www.gesmes.org/xml/2002-08-01',
+        #          'def': 'http://www.ecb.int/vocabulary/2002-08-01/eurofxref'}
 
         fecha_ayer = date.today() - timedelta(1)
         fecha = fecha_ayer.strftime('%Y-%m-%d')
@@ -163,7 +165,8 @@ class SBIFGetter(CurrencyGetterInterface):
                 _('Falta configurar API Key en Ajustes Generales de Contabilidad en Odoo'))
 
         if main_currency == 'CLP':
-            main_curr_data = self.rate_retrieve(dom, ecb_ns, main_currency, sbif_api_key)
+            #main_curr_data = self.rate_retrieve(dom, ecb_ns, main_currency, sbif_api_key)
+            main_curr_data = self.rate_retrieve(main_currency, sbif_api_key)
         for curr in currency_array:
             self.validate_cur(curr)
             if curr == 'CLP':
