@@ -104,9 +104,9 @@ class SBIFGetter(CurrencyGetterInterface):
            el2 = '''Euro'''
 
         rep = requests.get(sbifurl, allow_redirects=True)
-        raise UserError(
-                _('Content: %s') % rep.content)
         docu = xm.parse(rep.content)
+        raise UserError(
+                _('Content: %s') % docu)
 
         if rep.status_code != 200:
             mensaje = docu['ErrorAPI-SBIF']['Mensaje']
