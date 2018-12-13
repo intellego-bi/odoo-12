@@ -60,7 +60,7 @@ class SBIFGetter(CurrencyGetterInterface):
             fecha = docs['IndicadoresFinancieros']['Dolares']['Dolar']['Fecha']
         else:
             docs = xm.parse(req.content)
-            mensaje = docs['Mensaje']
+            mensaje = docs['ErrorAPI-SBIF']['Mensaje']
             raise UserError(
                 _('Error: %s') % mensaje)
             fecha = datetime.today().strftime('%Y-%m-%d')
