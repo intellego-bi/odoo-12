@@ -32,10 +32,10 @@ class SBIFGetter(CurrencyGetterInterface):
     fecha = datetime.today().strftime('%Y-%m-%d')
 
 
-    def rate_retrieve(self, dom, ns, curr, apikey):
+    def rate_retrieve(self, dom, ns, curr, sbif_api_key):
         """Parse a dom node to retrieve currencies data
         """
-        apikey = self.get_api_key()
+        apikey = sbif_api_key
 
         sbifurl = 'https://api.sbif.cl/api-sbifv3/recursos_api/dolar/?apikey=' + apikey + '&formato=xml'
 
@@ -84,7 +84,7 @@ class SBIFGetter(CurrencyGetterInterface):
         return res
 
     def get_updated_currency(self, currency_array, main_currency,
-                             max_delta_days):
+                             max_delta_days, sbif_api_key):
         """implementation of abstract method of Curreny_getter_interface"""
         url = 'http://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml'
         # Important : as explained on the ECB web site, the currencies are
@@ -97,7 +97,7 @@ class SBIFGetter(CurrencyGetterInterface):
             currency_array.remove(main_currency)
         _logger.debug("SBIF currency rate service : connecting...")
 
-        apikey = self.get_api_key()
+        apikey = sbif_api_key
 
         sbifurl = 'https://api.sbif.cl/api-sbifv3/recursos_api/dolar/?apikey=' + apikey + '&formato=xml'
         rep = requests.get(sbifurl, allow_redirects=True)
