@@ -44,6 +44,7 @@ class SBIFGetter(CurrencyGetterInterface):
             docs = xm.parse(req.content)
             fecha = docs['IndicadoresFinancieros']['Dolares']['Dolar']['Fecha']
         else:
+            docs = xm.parse(req.content)
             fecha = datetime.today().strftime('%Y-%m-%d')
 
         res = {}
@@ -106,6 +107,7 @@ class SBIFGetter(CurrencyGetterInterface):
             docs = xm.parse(req.content)
             fecha = docs['IndicadoresFinancieros']['Dolares']['Dolar']['Fecha']
         else:
+            docs = xm.parse(req.content)
             fecha = datetime.today().strftime('%Y-%m-%d')
 
         dom = etree.fromstring(rep.content)
