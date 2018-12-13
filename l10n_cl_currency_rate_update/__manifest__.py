@@ -24,7 +24,7 @@
 # 
 ###################################################################################
 {
-    "name": "Chile :: Currency Rate Update",
+    "name": "Chile - Currency Rate Update",
     'summary': 'Updates Chilean currency rates (USD, EUR, UF and UTM) from SBIF',
     "version": "12.0.1.0.0",
     "author": "Intellego-BI.com, Camptocamp, Odoo Community Association (OCA)",
