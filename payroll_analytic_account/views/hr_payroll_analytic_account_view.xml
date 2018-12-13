@@ -38,7 +38,7 @@
     <!-- Salary Rule View  -->
 
         <!-- Extiende Vista Lista REGLAS SALARIALES -->
-        <!-- Agrega Indicador de Cuenta Analítica desde Contrato -->
+        <!-- Agrega Indicador de Cuenta AnalÃ­tica desde Contrato -->
         <record model="ir.ui.view" id="cl_view_hr_salary_rule_analytic_list">
             <field name="name">hr.salary.rule</field>
             <field name="model">hr.salary.rule</field>
