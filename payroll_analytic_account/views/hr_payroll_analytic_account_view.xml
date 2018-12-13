@@ -35,6 +35,22 @@
             </field>
         </record>
 
+    <!-- Salary Rule View  -->
+
+        <!-- Extiende Vista Lista REGLAS SALARIALES -->
+        <!-- Agrega Indicador de Cuenta Analítica desde Contrato -->
+        <record model="ir.ui.view" id="cl_view_hr_salary_rule_analytic_list">
+            <field name="name">hr.salary.rule</field>
+            <field name="model">hr.salary.rule</field>
+            <field name="mode">extension</field>
+            <field name="inherit_id" ref="hr_payroll.hr_salary_rule_list"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='register_id']" position="after">
+                    <field name="account_analytic_true" widget="toggle_button"/>
+                </xpath>
+            </field>
+        </record>
+
 
 
     </data>
