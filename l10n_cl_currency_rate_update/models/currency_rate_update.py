@@ -195,7 +195,7 @@ class CurrencyRateUpdateService(models.Model):
                     #    fields.Datetime.to_string(datetime.utcnow().replace(
                     #        hour=0, minute=0, second=0, microsecond=0))
                     rate_name = \    
-                        datetime.to_string((datetime.today() - timedelta(1)).replace(hour=0, minute=0, second=0, microsecond=0))
+                        datetime.to_string((date.today() - timedelta(1)).replace(hour=0, minute=0, second=0, microsecond=0))
 
                     for curr in srv.currency_to_update:
                         if curr == main_currency:
