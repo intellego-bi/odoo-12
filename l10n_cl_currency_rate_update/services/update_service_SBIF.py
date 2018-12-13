@@ -20,6 +20,8 @@ import xmltodict as xm
 apikey = '067edb08cf9ceb0b212d83a0bc8baf39816f026a'
 sbifurl = 'https://api.sbif.cl/api-sbifv3/recursos_api/dolar/?apikey=' + apikey + '&formato=xml'
 rep = requests.get(sbifurl, allow_redirects=True)
+raise UserError(
+                _('Rep Status Code = (%s)') % rep.status_code)
 fecha = datetime.today().strftime('%Y-%m-%d')
 
 class SBIFGetter(CurrencyGetterInterface):
@@ -47,6 +49,8 @@ class SBIFGetter(CurrencyGetterInterface):
         sbifurl = 'https://api.sbif.cl/api-sbifv3/recursos_api/dolar/?apikey=' + apikey + '&formato=xml'
 
         req = requests.get(sbifurl, allow_redirects=True)
+        raise UserError(
+                _('Req Status Code = (%s)') % req.status_code)
         if req.status_code == 200:
             docs = xm.parse(req.content)
             fecha = docs['IndicadoresFinancieros']['Dolares']['Dolar']['Fecha']
