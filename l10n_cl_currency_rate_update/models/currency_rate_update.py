@@ -200,6 +200,9 @@ class CurrencyRateUpdateService(models.Model):
                     for curr in srv.currency_to_update:
                         if curr == main_currency:
                             continue
+                        if curr == 'UTM':
+                            raise UserError(
+                                 _('Rate Name: %s') % rate_name)
                         rates = rate_obj.search([
                             ('currency_id', '=', curr.id),
                             ('company_id', '=', company.id),
