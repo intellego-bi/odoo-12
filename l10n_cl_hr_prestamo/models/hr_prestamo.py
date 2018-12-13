@@ -74,7 +74,8 @@ class HrPrestamo(models.Model):
                                  states={'draft': [('readonly', False)]})
     currency_id = fields.Many2one('res.currency', string='Currency', required=True,
                                   #default=lambda self: self.env.user.company_id.currency_id)
-                                  domain=lambda self: ['&',('name','=','UF'),('name','=','CLP')])
+                                  #domain=lambda self: ['&',('name','=','UF'),('name','=','CLP')])
+                                  domain=lambda self: [('name', '=', 'UF')])
     job_position = fields.Many2one('hr.job', related="employee_id.job_id", readonly=True, string="Job Position")
     prestamo_amount = fields.Float(string="Loan Amount", required=True)
     total_amount = fields.Float(string="Total Amount", readonly=True, compute='_compute_prestamo_amount')
