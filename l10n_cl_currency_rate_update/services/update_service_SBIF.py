@@ -53,9 +53,9 @@ class SBIFGetter(CurrencyGetterInterface):
 
         fecha_ayer = date.today() - timedelta(1)
         fecha = fecha_ayer.strftime('%Y-%m-%d')
-        ano = fecha_ayer.strftime('%Y-%m-%d').year
-        mes = fecha_ayer.strftime('%Y-%m-%d').month
-        dia = fecha_ayer.strftime('%Y-%m-%d').day
+        ano = fecha_ayer.year
+        mes = fecha_ayer.month
+        dia = fecha_ayer.day
         raise UserError(
                 _('Año: %s Mes: %s Dia: %s') % (ano, mes, dia))
 
