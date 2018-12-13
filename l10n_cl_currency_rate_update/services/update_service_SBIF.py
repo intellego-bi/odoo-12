@@ -39,6 +39,9 @@ class SBIFGetter(CurrencyGetterInterface):
             apikey = sbif_api_key
         else:
             apikey = '067edb08cf9ceb0b212d83a0bc8baf39816f026a'
+        
+        raise UserError(
+                _('API Key = (%s)') % apikey)
 
         sbifurl = 'https://api.sbif.cl/api-sbifv3/recursos_api/dolar/?apikey=' + apikey + '&formato=xml'
 
@@ -105,6 +108,9 @@ class SBIFGetter(CurrencyGetterInterface):
             apikey = sbif_api_key
         else:
             apikey = '067edb08cf9ceb0b212d83a0bc8baf39816f026a'
+
+        raise UserError(
+                _('API Key is (%s)') % apikey)
 
         sbifurl = 'https://api.sbif.cl/api-sbifv3/recursos_api/dolar/?apikey=' + apikey + '&formato=xml'
         rep = requests.get(sbifurl, allow_redirects=True)
