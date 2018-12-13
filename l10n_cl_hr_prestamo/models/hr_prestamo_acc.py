@@ -70,7 +70,7 @@ class HrPrestamoAcc(models.Model):
                     'date': date, #timenow,
                     'debit': amount > 0.0 and amount or 0.0,
                     'credit': amount < 0.0 and -amount or 0.0,
-                    'currency_id': prestamo.currency_id,
+                    'currency_id': prestamo.currency_id.id,
                     'amount_currency': prestamo.prestamo_amount,
                     'prestamo_id': prestamo.id,
                 }
@@ -83,7 +83,7 @@ class HrPrestamoAcc(models.Model):
                     'date': date, #timenow,
                     'debit': amount < 0.0 and -amount or 0.0,
                     'credit': amount > 0.0 and amount or 0.0,
-                    'currency_id': prestamo.currency_id,
+                    'currency_id': prestamo.currency_id.id,
                     'amount_currency': prestamo.prestamo_amount,
                     'prestamo_id': prestamo.id,
                 }
@@ -111,7 +111,14 @@ class HrPrestamoAcc(models.Model):
             raise except_orm('Warning', 'You must compute Loan Request before Approved')
         timenow = time.strftime('%Y-%m-%d')
         for prestamo in self:
-            amount = prestamo.prestamo_amount
+            if prestamo.currency_id.name == 'CLP':
+                amount = prestamo.prestamo_amount
+            else:
+                amount = prestamo.currency_id._convert(prestamo.prestamo_amount, self.env.user.company_id.currency_id, prestamo.company_id, prestamo.date)
+                currency_id = prestamo.currency_id
+                amount_currency = prestamo.prestamo_amount
+
+            #amount = prestamo.prestamo_amount
             prestamo_name = prestamo.employee_id.name
             reference = prestamo.name
             journal_id = prestamo.journal_id.id
@@ -129,6 +136,8 @@ class HrPrestamoAcc(models.Model):
                 'date': date, #timenow,
                 'debit': amount > 0.0 and amount or 0.0,
                 'credit': amount < 0.0 and -amount or 0.0,
+                'currency_id': prestamo.currency_id.id,
+                'amount_currency': prestamo.prestamo_amount,
                 'prestamo_id': prestamo.id,
             }
             credit_vals = {
@@ -140,6 +149,8 @@ class HrPrestamoAcc(models.Model):
                 'date': date, #timenow,
                 'debit': amount < 0.0 and -amount or 0.0,
                 'credit': amount > 0.0 and amount or 0.0,
+                'currency_id': prestamo.currency_id.id,
+                'amount_currency': prestamo.prestamo_amount,
                 'prestamo_id': prestamo.id,
             }
             vals = {
