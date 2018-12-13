@@ -138,8 +138,8 @@ class SBIFGetter(CurrencyGetterInterface):
         if main_currency in currency_array:
             currency_array.remove(main_currency)
 
-        if 'UTM' in currency_array and dias > 1:
-            currency_array.remove('UTM')
+        #if 'UTM' in currency_array and dias > 1:
+        #    currency_array.remove('UTM')
 
         _logger.debug("SBIF currency rate service : connecting...")
 
