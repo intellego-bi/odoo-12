@@ -46,7 +46,14 @@ class SBIFGetter(CurrencyGetterInterface):
     def rate_retrieve(self, dom, ns, curr, apikey):
         """Parse a dom node to retrieve currencies data
         """
-        apikey = self.get_apikey()
+        #apikey = self.get_apikey()
+        ICPSudo = self.env['ir.config_parameter'].sudo()
+        config_read = ICPSudo.get_param('account.cl_sbif_api_key')
+        if config_read:
+           apikey = config_read
+        else:
+           apikey = 'e96f651e08214ed0060771f21d11cdeb3b8b3305'
+
         sbifurl = 'https://api.sbif.cl/api-sbifv3/recursos_api/dolar/?apikey=' + apikey + '&formato=xml'
 
         req = requests.get(sbifurl, allow_redirects=True)
@@ -107,11 +114,13 @@ class SBIFGetter(CurrencyGetterInterface):
             currency_array.remove(main_currency)
         _logger.debug("SBIF currency rate service : connecting...")
 
-        apikey = self.get_apikey()
-        #if config_read:
-        #   apikey = config_read
-        #else:
-        #   apikey = 'e96f651e08214ed0060771f21d11cdeb3b8b3305'
+        #apikey = self.get_apikey()
+        ICPSudo = self.env['ir.config_parameter'].sudo()
+        config_read = ICPSudo.get_param('account.cl_sbif_api_key')
+        if config_read:
+           apikey = config_read
+        else:
+           apikey = 'e96f651e08214ed0060771f21d11cdeb3b8b3305'
 
         sbifurl = 'https://api.sbif.cl/api-sbifv3/recursos_api/dolar/?apikey=' + apikey + '&formato=xml'
         rep = requests.get(sbifurl, allow_redirects=True)
