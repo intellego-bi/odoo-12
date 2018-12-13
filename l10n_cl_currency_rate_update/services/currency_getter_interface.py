@@ -121,7 +121,7 @@ class CurrencyGetterInterface(object, metaclass=CurrencyGetterType):
     updated_currency = {}
 
     def get_updated_currency(self, currency_array, main_currency,
-                             max_delta_days):
+                             max_delta_days, sbif_api_key):
         """Interface method that will retrieve the currency
            This function has to be reinplemented in child
         """
