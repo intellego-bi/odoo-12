@@ -70,6 +70,8 @@ class HrPrestamoAcc(models.Model):
                     'date': date, #timenow,
                     'debit': amount > 0.0 and amount or 0.0,
                     'credit': amount < 0.0 and -amount or 0.0,
+                    'currency_id': prestamo.currency_id,
+                    'amount_currency': prestamo.prestamo_amount,
                     'prestamo_id': prestamo.id,
                 }
                 credit_vals = {
@@ -81,6 +83,8 @@ class HrPrestamoAcc(models.Model):
                     'date': date, #timenow,
                     'debit': amount < 0.0 and -amount or 0.0,
                     'credit': amount > 0.0 and amount or 0.0,
+                    'currency_id': prestamo.currency_id,
+                    'amount_currency': prestamo.prestamo_amount,
                     'prestamo_id': prestamo.id,
                 }
                 vals = {
