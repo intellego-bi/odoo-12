@@ -510,7 +510,7 @@ msgstr "Rechazado"
 #. module: l10n_cl_hr_prestamo
 #: model:ir.model.fields,field_description:l10n_cl_hr_prestamo.field_hr_prestamo__date
 msgid "Request Date"
-msgstr "Fecha de Solicitud"
+msgstr "Fecha de Desembolso"
 
 #. module: l10n_cl_hr_prestamo
 #: model_terms:ir.ui.view,arch_db:l10n_cl_hr_prestamo.hr_prestamo_form_view
