@@ -4,7 +4,7 @@
         <!-- advance salary rule -->
         <record id="l10n_cl_hr.hr_payslip_rule_sol_anticipo" model="hr.salary.rule">
             <field name="code">SANTS</field>
-            <field name="name">Salary Advance</field>
+            <field name="name">ANT SOLICITUD DE ANTICIPO (descuento)</field>
             <field name="category_id" ref="l10n_cl_hr.ODESC"/>
             <field name="amount_select">code</field>
             <field name="amount_python_compute">result = inputs.SANTS and - (inputs.SANTS.amount)</field>
@@ -14,7 +14,7 @@
 
         <record id="l10n_cl_hr.hr_rule_input_sol_anticipo" model="hr.rule.input">
             <field name="code">SANTS</field>
-            <field name="name">Salary Advance</field>
+            <field name="name">ANT SOLICITUD DE ANTICIPO (descuento)</field>
             <field name="input_id" ref="l10n_cl_hr.hr_payslip_rule_sol_anticipo"/>
         </record>
 
