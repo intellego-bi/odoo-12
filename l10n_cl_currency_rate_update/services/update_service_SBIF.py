@@ -30,7 +30,7 @@ class SBIFGetter(CurrencyGetterInterface):
     el1 = ''
     el2 = ''
     fecha = datetime.today().strftime('%Y-%m-%d')
-
+    docs = {}
 
     def rate_retrieve(self, dom, ns, curr, sbif_api_key):
         """Parse a dom node to retrieve currencies data
