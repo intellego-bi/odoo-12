@@ -119,7 +119,7 @@ class CurrencyGetterInterface(object, metaclass=CurrencyGetterType):
 
     # Updated currency this arry will contain the final result
     updated_currency = {}
-    docs = {}
+    #docs = {}
 
     def get_updated_currency(self, currency_array, main_currency,
                              max_delta_days, sbif_api_key):
