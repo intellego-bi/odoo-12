@@ -90,8 +90,8 @@ class HrPayslip(models.Model):
         emp_id = contract_obj.browse(contract_ids[0].id).employee_id
         settle_obj = self.env['hr.settlements'].search([('employee_id', '=', emp_id.id), ('state', '=', 'approve')])
         for settle in settle_obj:
-             raise UserError(_(
-                              'Date: %s Emp: %s') % (settle.settle_date, emp_id.id))
+             #raise UserError(_(
+             #                 'Date: %s Emp: %s') % (settle.settle_date, emp_id.id))
             if date_from <= settle.settle_date <= date_to: # and not settle.paid:
                 for result in res:
                     if result.get('code') == 'FIN':
