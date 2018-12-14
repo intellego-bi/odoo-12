@@ -1006,10 +1006,32 @@ result = round(SECEEMP) + round(SIS) + round(MUT) + round(SC)</field>
 
 
         <!-- Reglas para Finiquito -->
+        <record id="hr_rule_prestamo" model="hr.salary.rule">
+            <field name="code">HRPR</field>
+            <field name="name">HR Loan Installment</field>
+            <field name="note">Regla automática que toma las cuotas desde el módulo de Préstamos a Empleados.</field>
+            <field name="category_id" ref="ODESC"/>
+            <field name="account_debit" ref="l10n_cl_coa.1_cl_coa_mfg_21050150"/>
+            <field name="account_credit" ref="l10n_cl_coa.1_cl_coa_mfg_11050200"/>
+            <field name="register_id" ref="hr_payroll.contrib_register_employees"/>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = inputs.HRPR and + (inputs.HRPR.amount)</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name="sequence" eval="38"/>
+        </record>
+
+        <record id="hr_rule_input_prestamo" model="hr.rule.input">
+            <field name="code">HRPR</field>
+            <field name="name">HR Loan Installment</field>
+            <field name="input_id" ref="hr_rule_prestamo"/>
+        </record>
+
         <record id="hr_rule_fin" model="hr.salary.rule">
             <field name="code">FIN</field>
             <field name="name">FIN FINIQUITO OTROS</field>
-            <field name="category_id" ref="l10n_cl_hr.NOIMPO"/>
+            <field name="category_id" ref="NOIMPO"/>
+            <field name="account_debit" ref="l10n_cl_coa.1_cl_coa_mfg_64010900"/>
+            <field name="account_credit" ref="l10n_cl_coa.1_cl_coa_mfg_21050150"/>
             <field name="amount_select">code</field>
             <field name="amount_python_compute">result = inputs.FIN and + (inputs.FIN.amount)</field>
             <field name="appears_on_payslip" eval="True"/>
@@ -1025,7 +1047,9 @@ result = round(SECEEMP) + round(SIS) + round(MUT) + round(SC)</field>
         <record id="hr_rule_fin_ias" model="hr.salary.rule">
             <field name="code">IAS</field>
             <field name="name">FIN FINIQUITO AÑOS SERVICIO</field>
-            <field name="category_id" ref="l10n_cl_hr.NOIMPO"/>
+            <field name="category_id" ref="NOIMPO"/>
+            <field name="account_debit" ref="l10n_cl_coa.1_cl_coa_mfg_64010900"/>
+            <field name="account_credit" ref="l10n_cl_coa.1_cl_coa_mfg_21050150"/>
             <field name="amount_select">code</field>
             <field name="amount_python_compute">result = inputs.IAS and + (inputs.IAS.amount)</field>
             <field name="appears_on_payslip" eval="True"/>
@@ -1041,7 +1065,9 @@ result = round(SECEEMP) + round(SIS) + round(MUT) + round(SC)</field>
         <record id="hr_rule_fin_iap" model="hr.salary.rule">
             <field name="code">IAP</field>
             <field name="name">FIN FINIQUITO AVISO PREVIO</field>
-            <field name="category_id" ref="l10n_cl_hr.NOIMPO"/>
+            <field name="category_id" ref="NOIMPO"/>
+            <field name="account_debit" ref="l10n_cl_coa.1_cl_coa_mfg_64010900"/>
+            <field name="account_credit" ref="l10n_cl_coa.1_cl_coa_mfg_21050150"/>
             <field name="amount_select">code</field>
             <field name="amount_python_compute">result = inputs.IAP and + (inputs.IAP.amount)</field>
             <field name="appears_on_payslip" eval="True"/>
@@ -1057,7 +1083,9 @@ result = round(SECEEMP) + round(SIS) + round(MUT) + round(SC)</field>
         <record id="hr_rule_fin_ifp" model="hr.salary.rule">
             <field name="code">IFP</field>
             <field name="name">FIN FINIQUITO FERIADO PROPORCIONAL</field>
-            <field name="category_id" ref="l10n_cl_hr.NOIMPO"/>
+            <field name="category_id" ref="NOIMPO"/>
+            <field name="account_debit" ref="l10n_cl_coa.1_cl_coa_mfg_64010900"/>
+            <field name="account_credit" ref="l10n_cl_coa.1_cl_coa_mfg_21050150"/>
             <field name="amount_select">code</field>
             <field name="amount_python_compute">result = inputs.IFP and + (inputs.IFP.amount)</field>
             <field name="appears_on_payslip" eval="True"/>
