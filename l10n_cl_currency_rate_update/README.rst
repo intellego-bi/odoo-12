@@ -10,7 +10,7 @@ Base module to download exchange rates automatically from the SBIF API for Chile
 
 This module is a fork from the original OCA module *(currency_rate_update)* that downloads exchange rates automatically from *European Central Bank (ECB)* service (ported by Grzegorz Grzelak - OpenGLOBE.pl)
 
-The functionality from the original OCA Module has been replaced and repurposed in order to retrieve exchange rates relating to Chilean Peso (CLP) from API (Web Service) provided by SBIF Chile (https://api.sbif.cl) 
+The functionality from the original OCA Module has been replaced and repurposed in order to retrieve exchange rates relating to Chilean Peso (CLP) from API (Web Service) provided by SBIF Chile (https://api.sbif.cl)  The service that retrieves rates from the ECB has been removed from this fork. 
 
 Configuration
 =============
