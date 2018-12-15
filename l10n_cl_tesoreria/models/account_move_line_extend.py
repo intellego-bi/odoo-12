@@ -20,6 +20,7 @@
 # 
 ###################################################################################
 from odoo import api, fields, models, _
+from datetime import date
 from odoo.exceptions import UserError
 from odoo.tools import float_compare, float_is_zero
 import odoo.addons.decimal_precision as dp
@@ -31,7 +32,11 @@ class AccountMoveLine(models.Model):
     _description = "Journal Item"
 
     payment_block = fields.Selection([('payable', 'Payable'), ('blocked', 'Blocked')], string='Payment Block',
-      required=False, readonly=False, copy=False, default='payable')
+      required=True, readonly=False, copy=False, default='payable')
     block_date = fields.Date(string='Block Update Date', help='Date of last change in Payment Blocking Reason.')
 
+    @api.onchange('payment_block')
+    def onchange_payment_block(self):
+        for line in self:
+            line.block_date = date.today()
 
