@@ -58,6 +58,8 @@ class AccountMoveLine(models.Model):
             for record in self:
                 if not record.planned_payment_date:
                     record.planned_payment_date = record.date_maturity
+        return result
+
     #@api.multi
     #def compute_planned_payment_date(self):
     #    """ Computes the planned payment date when not manualy set.
