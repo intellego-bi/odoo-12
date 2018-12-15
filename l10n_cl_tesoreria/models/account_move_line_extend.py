@@ -34,7 +34,7 @@ class AccountMoveLine(models.Model):
     def _default_planned_payment_date(self):
         #planned_payment_date = fields.Date.context_today
         for lines in self:
-            planned_payment_date = lines.date_maturity
+            global planned_payment_date = lines.date_maturity
                     
         return planned_payment_date
 
