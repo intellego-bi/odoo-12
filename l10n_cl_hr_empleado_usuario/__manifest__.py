@@ -5,6 +5,12 @@
 #    Copyright (C) 2017-TODAY Intellego Business Intelligence S.A.(<http://www.intellego-bi.com>).
 #    Author: Rodolfo Bermúdez Neubauer(<https://www.intellego-bi.com>)
 #
+#    Originaly part of OpenHrms Project <https://www.openhrms.com>
+#
+#    Cybrosys Technologies Pvt. Ltd.
+#    Copyright (C) 2018-TODAY Cybrosys Technologies (<https://www.cybrosys.com>).
+#    Author: Saritha Sahadevan (<https://www.cybrosys.com>)
+#
 #    This program is free software: you can modify
 #    it under the terms of the GNU Affero General Public License (AGPL) as
 #    published by the Free Software Foundation, either version 3 of the
@@ -22,8 +28,8 @@
 {
     'name': 'RRHH Chile - Empleados desde Usuarios Odoo',
     'version': '12.0.1.0.0',
-    'summary': 'Automaticamente crea Empleado al crear un Usuario Odoo',
-    'description': 'Evita la necesidad de ingresar los datos personales del Empleado nuevamente',
+    'summary': 'Automaticamente crea Empleado y Contacto al crear un Usuario Odoo',
+    'description': 'Evita la necesidad de ingresar los datos personales del Usuario/Empleado/Contacto nuevamente. Los datos obligatorios del Empleado se ingresan originalmente al crear el Usuario Odoo. Luego se mantienen desde el maestro de empleados',
     'category': 'Human Resources',
     'author': 'Intellego-BI.com',
     'company': 'Intellego-BI.com',
