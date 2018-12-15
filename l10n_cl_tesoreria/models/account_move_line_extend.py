@@ -52,6 +52,7 @@ class AccountMoveLine(models.Model):
 
     #@api.one
     @api.depends('date_maturity')
+    @api.onchange('date_maturity')
     def update_planned_payment_date(self):
         # INTELLEGO: when we set the maturity date, adjust planned payment date
         for record in self:
