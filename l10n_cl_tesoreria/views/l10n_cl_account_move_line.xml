@@ -1,0 +1,33 @@
+﻿<?xml version="1.0"?>
+<odoo>
+    <data>
+      
+    <!-- Adding fields to the Account Move Line Form View -->
+
+        <record id="helios_product_template_form_view_inherit" model="ir.ui.view">
+            <field name="name">account.move.line.form.inherit</field>
+            <field name="model">account.move.line</field>
+            <field name="inherit_id" ref="account.view_move_line_form"/>
+            <field name="arch" type="xml">
+            <xpath expr="//form[1]/sheet[1]/notebook[1]" position="inside">
+                <page name="l10n_cl_tr_account_move_line_extend" string="Pagos" attrs="{'invisible': [('partner_id','=',False)]}">
+                    <group name="l10n_cl_tr_account_move_line_extend_g01">
+                        <group name="l10n_cl_tr_account_move_line_extend_g01_left" string="Vías de Pago">
+                            <label for="payment_block"/>
+                            <div name="payment_block">
+                                <field name="payment_block"/>
+                            </div>
+                            <label for="block_dateo"/>
+                            <div name="block_date">
+                                <field name="block_date"/>
+                            </div>
+                        </group>
+                        <group name="l10n_cl_tr_account_move_line_extend_g01_right" string="Vías de Pago">
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
