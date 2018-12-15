@@ -32,12 +32,12 @@ class AccountMoveLine(models.Model):
     _description = "Journal Item"
 
     def _default_planned_payment_date(self):
+        calc_planned_payment_date = fields.Date.context_today
         for lines in self:
-            if lines.date_maturity:
-                calc_planned_payment_date = lines.date_maturity
-            else:
-                calc_planned_payment_date = fields.Date.context_today    
+            calc_planned_payment_date = lines.date_maturity
+                    
         return calc_planned_payment_date
+
 
     payment_block = fields.Selection([('payable', 'Payable'), ('blocked', 'Blocked')], string='Payment Block',
       required=True, readonly=False, copy=False, default='payable')
