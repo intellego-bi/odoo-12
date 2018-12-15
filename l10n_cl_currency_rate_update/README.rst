@@ -15,11 +15,11 @@ The functionality from the original OCA Module has been replaced and repurposed 
 Configuration
 =============
 
-Installing this module will create two additional currencies for Chile: UF (Unidad de Fomento) and UTM (Unidad Tributaria Mensual). It will also set the position of the symbols and decimal places. 
+Installing this module will create two additional currencies for Chile: *UF (Unidad de Fomento)* and *UTM (Unidad Tributaria Mensual)*. It will also set the position of the symbols and decimal places. 
 
-This module must be used jointly with the OCA module "Currency Rate Inverted" which is used in order to set CLP as an "Inverted Rate Currency". You must manually set "CLP" as an "Inverted Rate Currency" after installing this module. 
+This module must be used jointly with the OCA module *"Currency Rate Inverted"* which is used in order to set CLP as an *"Inverted Rate Currency"*. You must manually set *"CLP"* as an *"Inverted Rate Currency"* after installing this module. 
 
-WARNING: This module must not be deployed on live production systems as it modifies the logic for saving amounts in parallel and local currencies in the Odoo database. Doing so may generate permanent and irreversible damage to data in your database. It is intended for fresh development or greenfield production installations only.  
+**WARNING:** This module must not be deployed on live production systems as it modifies the logic for saving amounts in parallel and local currencies in the Odoo database. Doing so may generate permanent and irreversible damage to data in your database. It is intended for fresh development or greenfield production installations only.  
 
 To configure the module, follow the configuration instructions published for OCA module *"Currency Rate Update"* and the steps outlined here. 
 
