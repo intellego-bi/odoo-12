@@ -22,6 +22,10 @@
                             <div name="block_date">
                                 <field name="block_date"/>
                             </div>
+                            <label for="planned_payment_date"/>
+                            <div name="planned_payment_date">
+                                <field name="planned_payment_date"/>
+                            </div>
                         </group>
                         <group name="l10n_cl_tr_account_move_line_extend_g01_right" string="Vías de Pago">
                         </group>
