@@ -51,6 +51,7 @@ class AccountMoveLine(models.Model):
             line.block_date = date.today()
 
     @api.multi
+    @api.onchange('date_maturity')
     def update_planned_payment_date(self, vals):
         # INTELLEGO: when we set the maturity date, adjust planned payment date
         result = super(AccountMoveLine, self).update_planned_payment_date(vals)
