@@ -31,7 +31,7 @@ class AccountMoveLine(models.Model):
     _inherit = 'account.move.line'
     _description = "Journal Item"
 
-    @api.one
+    @api.onchange('date_maturity')
     def _default_planned_payment_date(self):
         #planned_payment_date = fields.Date.context_today
         for lines in self:
