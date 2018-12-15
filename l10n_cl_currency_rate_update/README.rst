@@ -15,38 +15,53 @@ The reference rates are taken from the API provided by SBIF Chile (https://api.s
 Configuration
 =============
 
-Installing this module will create two additional currencies for Chile: UF (Unidad de Fomento) and UTM (Unidad Tributaria Mensual).
+Installing this module will create two additional currencies for Chile: UF (Unidad de Fomento) and UTM (Unidad Tributaria Mensual). It will also set the position of the symbols for these currencies. 
 
-This module must be used jointly with the OCA module "Currency Rate Inverted" which is used in order to set CLP as an "Inverted Rate Currency". 
+This module must be used jointly with the OCA module "Currency Rate Inverted" which is used in order to set CLP as an "Inverted Rate Currency". You must manually set "CLP" as an "Inverted Rate Currency" after installing this module. 
+
+WARNING: This module must not be deployed on live production systems as it modifies the logic for saving amounts in parallel and local currencies. Doing so may generate permanent and irreversible damage to data in your database. It is intended for fresh development or greenfield production installations only.  
 
 To configure the module, follow the configuration instructions for "Currency Rate Update". 
 
-to configure periodic update, activate Developer Mode in Odoo and then, in the menu *Settings > Technical > Scheduled Actions*, make sure that the action *Currency Rate Update* is active. If you want to run it immediately, use the button *Run Manually*.
 
-This module is compatible with OCA module 'currency_rate_inverted' also found in OCA/currency repository, that allows to maintain exchange rates in inverted format, helping to resolve rounding issues.
+Installation
+============
 
-Usage
-=====
+Download and install "currency_rate_inverted" and "l10n_cl_currency_rate_update" and deploy to your "addons" folder on your Odoo server. Installing "l10n_cl_currency_rate_update" will also install "currency_rate_inverted" if available. After installing both modules follow these steps:
 
-The module supports multi-company currency in two ways:
+* Go to *Accounting > Settings > Currencies*
+* Edit *CLP* currency and activate "Inverted Currency Rate" for this currency *only*
+* Go to the SBIF website and follow the process to <a href="https://api.sbif.cl/uso-de-api-key.html" target="_blank">request your own API Key</a>
+* Wait until yuou receive your APII Key by mail from SBIF (it takes a couple of minutes at most)
+* In Odoo go to *Accounting > General Settings* and scroll down until you fin the setting for *Chilean Currency Update*
+* Enter your API Key in the provided field and *SAVE* your settings
+* Go to *Accounting > Settings* and select menu item *"Actualizar Tipos de Cambio SBIF"*
+* Press *"Create"* to enter your settings for SBIF web service
+* Select "SBIF Web Service" and enter parameters as described for original "currency_rate_update" module
+* Select currencies to update: *USD, EUR, UF and/or UTM* as per your requirements and *SAVE*
+* Press *"Actualizar Ahora"* and after a couple of seconds you should she the new exchange rates updated from SBIF
 
-* when currencies are shared, you can set currency update only on one
-  company
-* when currencies are separated, you can set currency on every company
-  separately
+A cron job is automatically created and scheduled to run 24 hours after this first execution. You may alter these settings for periodic update by activating *Developer Mode* in Odoo and then in *Settings > Technical > Scheduled Actions* you can configure the cron job parameters as per your needs. It is recommended to run the update everyday during the morning. This will retrieve the currency rates for the previous day from SBIF. If you want to run it immediately, use the button *Run Manually* or go to the menu item created in *Accounting > Settings*.
 
-A function field lets you know your currency configuration.
-
-If in multi-company mode, the base currency will be the first company's
-currency found in database.
 
 Know issues / Roadmap
 =====================
 
 Roadmap:
 
-* API Key as a COnfig Parameter
-* Correct update from previous day
+* Cronjob will run on weekends and holidays when there is no valid response from SBIF web service. This is logged as an Error/Warning, without further consequences for the update process. 
+
+* Set a Max Delta Days of 6 or more days in order to cover longer holidays in Chile (Fiestas Patrias, mainly). 
+
+
+Further Development
+===================
+
+* No further development is planned. 
+
+* The original structure of the *"currency_rate_update"* module on which this is based has been preserved to the best of our efforts so than (someone/someday) this chilean module may be backported into the original one. 
+
+
 
 Credits
 =======
