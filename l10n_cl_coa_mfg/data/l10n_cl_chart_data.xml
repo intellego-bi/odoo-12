@@ -1180,7 +1180,7 @@
 
     <record id="cl_coa_mfg_52101100" model="account.account.template">
         <field name="name">Horas Extra Producción</field>
-        <field name="code">52101000</field>
+        <field name="code">52101100</field>
         <field name="reconcile" eval="False"/>
         <field ref="account.data_account_type_direct_costs" name="user_type_id"/>
         <field name="chart_template_id" ref="cl_chart_template_coa_mfg"/>
