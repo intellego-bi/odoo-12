@@ -4,9 +4,10 @@
       
     <!-- Adding fields to the Account Move Line Form View -->
 
-        <record id="helios_product_template_form_view_inherit" model="ir.ui.view">
-            <field name="name">account.move.line.form.inherit</field>
+        <record id="cl_account_view_move_line_form_inherit" model="ir.ui.view">
+            <field name="name">account.move.line</field>
             <field name="model">account.move.line</field>
+            <field name="mode">extension</field>
             <field name="inherit_id" ref="account.view_move_line_form"/>
             <field name="arch" type="xml">
             <xpath expr="//form[1]/sheet[1]/notebook[1]" position="inside">
