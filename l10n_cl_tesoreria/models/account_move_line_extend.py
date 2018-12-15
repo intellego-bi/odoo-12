@@ -31,10 +31,17 @@ class AccountMoveLine(models.Model):
     _inherit = 'account.move.line'
     _description = "Journal Item"
 
+    @api.model
+    def _default_planned_payment_date(self):
+        """ Computes the planned payment date when not manualy set.
+        """
+        if not self.planned_payment_date and self.account_id.internal_type == 'payable':
+           return self.date_maturity
+
     payment_block = fields.Selection([('payable', 'Payable'), ('blocked', 'Blocked')], string='Payment Block',
       required=True, readonly=False, copy=False, default='payable')
     block_date = fields.Date(string='Block Update Date', readonly=True, copy=False, help='Date of last change in Payment Blocking Reason.')
-    planned_payment_date = fields.Date(string='Planned Payment Date', compute='_compute_planned_payment_date', store=True, readonly=True, help='Planned Day for Outgoing payment.')
+    planned_payment_date = fields.Date(string='Planned Payment Date', default='_default_planned_payment_date' readonly=False, help='Planned Day for Outgoing payment.')
 
     @api.onchange('payment_block')
     def onchange_payment_block(self):
