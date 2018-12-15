@@ -18,7 +18,7 @@
                             <div name="payment_block">
                                 <field name="payment_block"/>
                             </div>
-                            <label for="block_dateo"/>
+                            <label for="block_date"/>
                             <div name="block_date">
                                 <field name="block_date"/>
                             </div>
