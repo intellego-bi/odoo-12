@@ -5,6 +5,12 @@
 #    Copyright (C) 2017-TODAY Intellego Business Intelligence S.A.(<http://www.intellego-bi.com>).
 #    Author: Rodolfo Bermúdez Neubauer(<https://www.intellego-bi.com>)
 #
+#    Originaly part of OpenHrms Project <https://www.openhrms.com>
+#
+#    Cybrosys Technologies Pvt. Ltd.
+#    Copyright (C) 2018-TODAY Cybrosys Technologies (<https://www.cybrosys.com>).
+#    Author: Saritha Sahadevan (<https://www.cybrosys.com>)
+#
 #    This program is free software: you can modify
 #    it under the terms of the GNU Affero General Public License (AGPL) as
 #    published by the Free Software Foundation, either version 3 of the
