@@ -98,13 +98,19 @@ Maintainer
    :alt: Odoo Community Association
    :target: https://odoo-community.org
 
-The original *"Currency Rate Update"* module is maintained by the OCA. This is a fork of that model customized for Chilean currencies using the SBIF API.
+The original *"Currency Rate Update"* module is maintained by the OCA. To contribute to the original module, please visit https://odoo-community.org.
 
-OCA, or the Odoo Community Association, is a nonprofit organization whose
-mission is to support the collaborative development of Odoo features and
-promote its widespread use.
+This is a fork of that model customized for Chilean currencies using the SBIF API maintaind by Intellego-BI.com.
 
-To contribute to this module, please visit https://odoo-community.org.
+.. image:: https://i2.wp.com/intellego-bi.com/ws/wp-content/uploads/2016/05/Intellego-BI-112x35.jpg
+   :alt: Intellego-BI.com (Chile)
+   :target: https://intellego-bi.com
+
+**Intellego-BI.com** - https://intellego-bi.com
+
+OCA, or the Odoo Community Association, is a nonprofit organization whose mission is to support the collaborative development of Odoo features and promote its widespread use.
+
+Intellego-BI.com is a private consultancy based in Santiago, Chile. 
 
 Sharing is caring!
 
