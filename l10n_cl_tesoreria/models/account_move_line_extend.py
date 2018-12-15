@@ -31,11 +31,14 @@ class AccountMoveLine(models.Model):
     _inherit = 'account.move.line'
     _description = "Journal Item"
 
+    def _default_planned_payment_date(self):
+        planned_payment_date = fields.Date.context_today    
+        return planned_payment_date
 
     payment_block = fields.Selection([('payable', 'Payable'), ('blocked', 'Blocked')], string='Payment Block',
       required=True, readonly=False, copy=False, default='payable')
     block_date = fields.Date(string='Block Update Date', readonly=True, copy=False, help='Date of last change in Payment Blocking Reason.')
-    planned_payment_date = fields.Date(string='Planned Payment Date', default=fields.Date.context_today, readonly=False, help='Planned Day for Outgoing payment.')
+    planned_payment_date = fields.Date(string='Planned Payment Date', default=_default_planned_payment_date, readonly=False, help='Planned Day for Outgoing payment.')
 
     @api.onchange('payment_block')
     def onchange_payment_block(self):
