@@ -42,7 +42,7 @@ class AccountMoveLine(models.Model):
             line.block_date = date.today()
 
     #@api.depends('date_maturity')
-    @api.multi
+    @api.model
     def calc_planned_payment_date(self):
         """ Computes the planned payment date when not manualy set.
         """
