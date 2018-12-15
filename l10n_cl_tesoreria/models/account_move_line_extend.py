@@ -31,33 +31,22 @@ class AccountMoveLine(models.Model):
     _inherit = 'account.move.line'
     _description = "Journal Item"
 
-    @api.model
-    def _default_planned_payment_date(self):
-        """ Computes the planned payment date when not manualy set.
-        """
-        for lines in self:
-            return lines.date_maturity
-
-#        if not self.planned_payment_date: # and self.account_id.internal_type == 'payable':
-#           return datetime.strptime(self.date_maturity, '%Y-%m-%d')
-#        else:
-#           return datetime.strptime(fields.Date.context_today, '%Y-%m-%d')
 
     payment_block = fields.Selection([('payable', 'Payable'), ('blocked', 'Blocked')], string='Payment Block',
       required=True, readonly=False, copy=False, default='payable')
     block_date = fields.Date(string='Block Update Date', readonly=True, copy=False, help='Date of last change in Payment Blocking Reason.')
-    planned_payment_date = fields.Date(string='Planned Payment Date', default='_default_planned_payment_date', readonly=False, help='Planned Day for Outgoing payment.')
+    planned_payment_date = fields.Date(string='Planned Payment Date', default=fields.Date.context_today, readonly=False, help='Planned Day for Outgoing payment.')
 
     @api.onchange('payment_block')
     def onchange_payment_block(self):
         for line in self:
             line.block_date = date.today()
 
-    #@api.multi
-    #def _compute_planned_payment_date(self):
-    #    """ Computes the planned payment date when not manualy set.
-    #    """
-    #    for line in self:
-    #        if not line.planned_payment_date and line.account_id.internal_type == 'payable':
-    #            line.planned_payment_date = line.date_maturity
+    @api.multi
+    def _compute_planned_payment_date(self):
+        """ Computes the planned payment date when not manualy set.
+        """
+        for line in self:
+            if not line.planned_payment_date and line.account_id.internal_type == 'payable':
+                line.planned_payment_date = line.date_maturity
     
