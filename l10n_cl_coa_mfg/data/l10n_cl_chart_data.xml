@@ -1325,7 +1325,7 @@
 
     <record id="cl_coa_mfg_61111100" model="account.account.template">
         <field name="name">Horas Extra Admón. y Venta</field>
-        <field name="code">61111000</field>
+        <field name="code">61111100</field>
         <field name="reconcile" eval="False"/>
         <field ref="account.data_account_type_direct_costs" name="user_type_id"/>
         <field name="chart_template_id" ref="cl_chart_template_coa_mfg"/>
@@ -1341,7 +1341,7 @@
 
     <record id="cl_coa_mfg_61113000" model="account.account.template">
         <field name="name">Movilización Admón. y Venta</field>
-        <field name="code">61111000</field>
+        <field name="code">61113000</field>
         <field name="reconcile" eval="False"/>
         <field ref="account.data_account_type_direct_costs" name="user_type_id"/>
         <field name="chart_template_id" ref="cl_chart_template_coa_mfg"/>
