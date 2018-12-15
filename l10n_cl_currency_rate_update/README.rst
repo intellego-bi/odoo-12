@@ -31,7 +31,7 @@ Download and install "currency_rate_inverted" and "l10n_cl_currency_rate_update"
 
 * Go to *Accounting > Settings > Currencies*
 * Edit *CLP* currency and activate "Inverted Currency Rate" for this currency *only*
-* Go to the SBIF website and follow the process to <a href="https://api.sbif.cl/uso-de-api-key.html">request your own API Key</a>
+* Go to the SBIF website and follow the process to request your own API Key (https://api.sbif.cl/uso-de-api-key.html)
 * Wait until yuou receive your APII Key by mail from SBIF (it takes a couple of minutes at most)
 * In Odoo go to *Accounting > General Settings* and scroll down until you fin the setting for *Chilean Currency Update*
 * Enter your API Key in the provided field and *SAVE* your settings
