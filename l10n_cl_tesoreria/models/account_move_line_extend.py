@@ -20,7 +20,7 @@
 # 
 ###################################################################################
 from odoo import api, fields, models, _
-from datetime import date
+from datetime import date, datetime
 from odoo.exceptions import UserError
 from odoo.tools import float_compare, float_is_zero
 import odoo.addons.decimal_precision as dp
@@ -36,7 +36,7 @@ class AccountMoveLine(models.Model):
         """ Computes the planned payment date when not manualy set.
         """
         if not self.planned_payment_date and self.account_id.internal_type == 'payable':
-           return self.date_maturity
+           return datetime.from_string(self.date_maturity)
 
     payment_block = fields.Selection([('payable', 'Payable'), ('blocked', 'Blocked')], string='Payment Block',
       required=True, readonly=False, copy=False, default='payable')
