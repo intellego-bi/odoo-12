@@ -8,7 +8,7 @@ Currency Rate Update (SBIF Chile)
 
 Base module to download exchange rates automatically from the SBIF API for Chilean currencies (UF, UTM, USD and EUR).
 
-This module is a fork from the original OCA module that downloads exchange rates automatically from European central bank service (ported by Grzegorz Grzelak - OpenGLOBE.pl)
+This module is a fork from the original OCA module *(currency_rate_update)* that downloads exchange rates automatically from *European Central Bank (ECB)* service (ported by Grzegorz Grzelak - OpenGLOBE.pl)
 
 The functionality from the original OCA Module has been replaced and repurposed in order to retrieve exchange rates relating to Chilean Peso (CLP) from API (Web Service) provided by SBIF Chile (https://api.sbif.cl) 
 
@@ -21,7 +21,7 @@ This module must be used jointly with the OCA module "Currency Rate Inverted" wh
 
 WARNING: This module must not be deployed on live production systems as it modifies the logic for saving amounts in parallel and local currencies in the Odoo database. Doing so may generate permanent and irreversible damage to data in your database. It is intended for fresh development or greenfield production installations only.  
 
-To configure the module, follow the configuration instructions for "Currency Rate Update" and the steps outlined here. 
+To configure the module, follow the configuration instructions published for OCA module *"Currency Rate Update"* and the steps outlined here. 
 
 
 Installation
@@ -40,7 +40,7 @@ Download and install *"currency_rate_inverted"* and *"l10n_cl_currency_rate_upda
 * Select currencies to update: *USD, EUR, UF and/or UTM* as per your requirements and *SAVE*
 * Press *"Actualizar Ahora"* and after a couple of seconds you should see the new exchange rates updated from SBIF
 
-A cron job is automatically created and scheduled to run 24 hours after this first execution. You may alter these settings for periodic update by activating *Developer Mode* in Odoo and then in *Settings > Technical > Scheduled Actions* you can configure the cron job parameters as per your needs. It is recommended to run the update everyday during the morning. This will retrieve the currency rates for the previous day from SBIF. If you want to run it immediately, use the button *Run Manually* or go to the menu item created in *Accounting > Settings* and press *"Actualizar Ahora"*.
+A *cron job* is automatically created and scheduled to run 24 hours after this first execution. You may alter these settings for periodic update by activating *Developer Mode* in Odoo and then in *Settings > Technical > Scheduled Actions* you can configure the cron job parameters as per your needs. It is recommended to run the update everyday during the morning. This will retrieve the currency rates for the previous day from SBIF. If you want to run it immediately, use the button *Run Manually* or go to the menu item created in *Accounting > Settings* and press *"Actualizar Ahora"*.
 
 
 Know issues / Roadmap
@@ -50,7 +50,7 @@ Roadmap:
 
 * Cronjob will run on weekends and holidays when there is no valid response from SBIF web service. This is logged as an Error/Warning, without further consequences for the update process. 
 
-* Set a Max Delta Days of 6 or more days in order to cover longer holidays in Chile (Fiestas Patrias, mainly). 
+* Set a *Max Delta Days* of 6 or more days in order to cover longer holidays in Chile (Fiestas Patrias, mainly). 
 
 
 Further Development
@@ -58,7 +58,7 @@ Further Development
 
 * No further development is planned. 
 
-* The original structure of the *"currency_rate_update"* module on which this is based has been preserved to the best of our efforts so (hopefuly) this Chilean module may be backported into the original OCA module and added as another Currency Rate Update Service provider there. 
+* The original structure of the *"currency_rate_update"* module on which this is based has been preserved to the best of our abilities so (hopefuly) this Chilean module may be backported into the original OCA module and added as another *Currency Rate Update Service* provider there. 
 
 
 
