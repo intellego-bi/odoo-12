@@ -47,6 +47,6 @@ class AccountMoveLine(models.Model):
         """ Computes the planned payment date when not manualy set.
         """
         for line in self:
-            if not line.planned_payment_date: # and line.account_id.internal_type == 'payable':
+            #if not line.planned_payment_date: # and line.account_id.internal_type == 'payable':
                 line.planned_payment_date = line.date_maturity
             
