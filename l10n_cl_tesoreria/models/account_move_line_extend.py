@@ -33,7 +33,7 @@ class AccountMoveLine(models.Model):
 
     def _default_planned_payment_date(self):
         for lines in self:
-            if not lines.planned_payment_date and line.account_id.internal_type == 'payable':
+            if line.account_id.internal_type == 'payable':
                 calc_planned_payment_date = lines.date_maturity
             #else:
             #    planned_payment_date = fields.Date.context_today    
