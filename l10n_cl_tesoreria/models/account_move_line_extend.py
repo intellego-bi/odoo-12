@@ -36,7 +36,7 @@ class AccountMoveLine(models.Model):
         """ Computes the planned payment date when not manualy set.
         """
         if not self.planned_payment_date and self.account_id.internal_type == 'payable':
-           return datetime.strptime(self.date_maturity, '%Y-%m-%d')
+           return datetime.strptime(self.date_maturity, '%Y-%m-%d').date()
 
     payment_block = fields.Selection([('payable', 'Payable'), ('blocked', 'Blocked')], string='Payment Block',
       required=True, readonly=False, copy=False, default='payable')
