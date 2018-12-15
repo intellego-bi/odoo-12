@@ -41,7 +41,7 @@ class AccountMoveLine(models.Model):
     payment_block = fields.Selection([('payable', 'Payable'), ('blocked', 'Blocked')], string='Payment Block',
       required=True, readonly=False, copy=False, default='payable')
     block_date = fields.Date(string='Block Update Date', readonly=True, copy=False, help='Date of last change in Payment Blocking Reason.')
-    planned_payment_date = fields.Date(string='Planned Payment Date', default='_default_planned_payment_date' readonly=False, help='Planned Day for Outgoing payment.')
+    planned_payment_date = fields.Date(string='Planned Payment Date', default='_default_planned_payment_date', readonly=False, help='Planned Day for Outgoing payment.')
 
     @api.onchange('payment_block')
     def onchange_payment_block(self):
