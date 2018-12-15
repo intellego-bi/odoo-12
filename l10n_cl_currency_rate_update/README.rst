@@ -43,8 +43,8 @@ Download and install *"currency_rate_inverted"* and *"l10n_cl_currency_rate_upda
 A *cron job* is automatically created and scheduled to run 24 hours after this first execution. You may alter these settings for periodic update by activating *Developer Mode* in Odoo and then in *Settings > Technical > Scheduled Actions* you can configure the cron job parameters as per your needs. It is recommended to run the update everyday during the morning. This will retrieve the currency rates for the previous day from SBIF. If you want to run it immediately, use the button *Run Manually* or go to the menu item created in *Accounting > Settings* and press *"Actualizar Ahora"*.
 
 
-Know Issues
-===========
+Known Issues
+============
 
 Issues:
 
