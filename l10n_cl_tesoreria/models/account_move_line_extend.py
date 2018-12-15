@@ -41,11 +41,11 @@ class AccountMoveLine(models.Model):
         for line in self:
             line.block_date = date.today()
 
-    @api.depends('date_maturity')
+    @api.multi('date_maturity')
     def calc_planned_payment_date(self):
         """ Computes the planned payment date when not manualy set.
         """
         for line in self:
-            if not line.planned_payment_date and line.account_id.internal_type == 'payable':
+            if not line.planned_payment_date: # and line.account_id.internal_type == 'payable':
                 line.planned_payment_date = line.date_maturity
             
