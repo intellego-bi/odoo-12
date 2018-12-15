@@ -35,7 +35,8 @@ class AccountMoveLine(models.Model):
         for lines in self:
             if line.account_id.internal_type == 'payable':
                 calc_planned_payment_date = lines.date_maturity
-            #else:
+            else:
+                calc_planned_payment_date = None
             #    planned_payment_date = fields.Date.context_today    
         return calc_planned_payment_date
 
