@@ -36,7 +36,7 @@ class AccountMoveLine(models.Model):
             if lines.date_maturity:
                 calc_planned_payment_date = lines.date_maturity
             else:
-                calc_ planned_payment_date = fields.Date.context_today    
+                calc_planned_payment_date = fields.Date.context_today    
         return calc_planned_payment_date
 
     payment_block = fields.Selection([('payable', 'Payable'), ('blocked', 'Blocked')], string='Payment Block',
