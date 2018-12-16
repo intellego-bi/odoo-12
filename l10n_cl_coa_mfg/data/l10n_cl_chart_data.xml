@@ -30,7 +30,7 @@
     <!-- Chart of Accounts -->
  
     <record id="cl_chart_template_coa_mfg" model="account.chart.template">
-      <field name="name">Chile :: Plan de Cuentas Manufactura</field>
+      <field name="name">Chile - Plan de Cuentas Manufactura</field>
       <field name="cash_account_code_prefix">11001</field>
       <field name="bank_account_code_prefix">11101</field>
       <field name="transfer_account_code_prefix">11103</field>
