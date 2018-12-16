@@ -26,7 +26,7 @@
 # 
 ###################################################################################
 {
-    'name': 'RRHH Chile - Empleados desde Usuarios Odoo',
+    'name': 'Chile - RRHH Empleados desde Usuarios Odoo',
     'version': '12.0.1.0.0',
     'summary': 'Automaticamente crea Empleado y Contacto al crear un Usuario Odoo',
     'description': 'Evita la necesidad de ingresar los datos personales del Usuario/Empleado/Contacto nuevamente. Los datos obligatorios del Empleado se ingresan originalmente al crear el Usuario Odoo. Luego se mantienen desde el maestro de empleados',
