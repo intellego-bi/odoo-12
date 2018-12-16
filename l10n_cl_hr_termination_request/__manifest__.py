@@ -27,7 +27,7 @@
 # 
 ####################################################################################
 {
-    'name': 'Chile - RRHH :: Employee Termination Request',
+    'name': 'Chile - RRHH Employee Termination Request',
     'version': '12.0.1.0.0',
     'summary': """Employee Termination Request""",
     'author': 'Intellego-BI.com',
