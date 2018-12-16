@@ -20,7 +20,7 @@
 # 
 ###################################################################################
 {
-    'name': 'Chile :: Campos Adicionales Partner',
+    'name': 'Chile - Campos Adicionales Partner',
     'summary': """Extiende vistas de módulos Contabilidad y Contactos""",
     'version': '12.0.1.0.0',
     'description': """Búsqueda por RUT, Monto a Pagar y a Cobrar y otros""",
