@@ -20,7 +20,7 @@
 # 
 ###################################################################################
 {
-    'name': 'RRHH Chile - Solicitud de Anticipo de Sueldo',
+    'name': 'Chile - RRHH Solicitud de Anticipo de Sueldo',
     'version': '12.0.1.1.0',
     'summary': 'Permite a los empleados solicitar anticipo de remuneraciones',
     'description': """
