@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Main Account Groups -->
+
+        <record id="cl_bs" model="account.group">
+            <field name="name">Balance General</field>
+        </record>
+
+        <record id="cl_pl" model="account.group">
+            <field name="name">Estado de Resultados</field>
+        </record>
+
+        <record id="cl_co" model="account.group">
+            <field name="name">Cuentas de Orden</field>
+        </record>
+
+        <!-- General Accounting Account Groups -->
+
+        <record id="cl_bs_1" model="account.group">
+            <field name="name">Activos</field>
+            <field name="code_prefix">1</field>
+        </record>
+
+        <record id="cl_bs_2" model="account.group">
+            <field name="name">Pasivos</field>
+            <field name="code_prefix">2</field>
+        </record>
+
+        <record id="cl_bs_3 model="account.group">
+            <field name="name">Patrimonio</field>
+            <field name="code_prefix">3</field>
+        </record>
+
+        <record id="cl_pl_4" model="account.group">
+            <field name="name">Ingresos</field>
+            <field name="code_prefix">4</field>
+        </record>
+
+        <record id="cl_pl_5" model="account.group">
+            <field name="name">Costos</field>
+            <field name="code_prefix">5</field>
+        </record>
+
+        <record id="cl_pl_6" model="account.group">
+            <field name="name">Gastos</field>
+            <field name="code_prefix">6</field>
+        </record>
+
+        <!-- Account Groups -->
+
+
+
+    </data>
+</odoo>
