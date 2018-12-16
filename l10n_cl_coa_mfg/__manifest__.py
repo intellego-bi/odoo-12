@@ -5,6 +5,8 @@
 #    Copyright (C) 2017-TODAY Intellego Business Intelligence S.A.(<http://www.intellego-bi.com>).
 #    Author: Rodolfo Bermúdez Neubauer(<https://www.intellego-bi.com>)
 #
+#    Original Copyright (c) 2011 Cubic ERP - Teradata SAC. (http://cubicerp.com).
+#
 #    This program is free software: you can modify
 #    it under the terms of the GNU Affero General Public License (AGPL) as
 #    published by the Free Software Foundation, either version 3 of the
@@ -20,16 +22,13 @@
 # 
 ###################################################################################
 {
-    'name': 'Chile :: Chart of Accounts (MFG)',
-    'version': '12.0',
-    'description': """
-Chilean Chart of Accounts (COA) for Manufacturing Industries
-============================================================
-Plan de Cuentas para Chile (Manufactura) 
-
-    """,
+    'name': 'Chile - Chart of Accounts (MFG)',
+    'version': '12.0.1.0.0',
+    'summary': """Chilean Chart of Accounts form Manufacturing industries """,
     'author': 'Intellego-BI.com',
-    'website': 'https://intellego-BI.com',
+    'company': 'Intellego-BI.com',
+    'website': 'https://Intellego-BI.com',
+    'maintainer': 'Intellego-BI.com',
     'category': 'Localization',
     'depends': ['account'],
     'data': [
