@@ -27,7 +27,7 @@
 # 
 ####################################################################################
 {
-    'name': 'Chile - RRHH :: Employee Termination Settlement',
+    'name': 'Chile - RRHH Employee Termination Settlement',
     'version': '12.0.1.0.0',
     'summary': """Employee Termination and Final Settlement  """,
     'author': 'Intellego-BI.com',
