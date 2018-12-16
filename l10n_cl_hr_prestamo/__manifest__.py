@@ -20,7 +20,7 @@
 # 
 ###################################################################################
 {
-    'name': 'RRHH Chile - Solicitud de Préstamo Empleado',
+    'name': 'Chile - RRHH Solicitud de Préstamo Empleado',
     'version': '12.0.1.0.0',
     'summary': 'Préstamos al Personal descontados vía Nómina',
     'description': """
