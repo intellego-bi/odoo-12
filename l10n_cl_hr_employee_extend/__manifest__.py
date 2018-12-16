@@ -26,7 +26,7 @@
 # 
 ###################################################################################
 {
-    'name': 'RRHH Chile - Extiende Maestro de Empleados',
+    'name': 'Chile - RRHH Extiende Maestro de Empleados',
     'version': '12.0.1.0.0',
     'summary': """Agrega campos adicionales al maestro de Empleados""",
     'description': 'Este módulo agrega campos adicionales al maestro de Empleados en Odoo.',
