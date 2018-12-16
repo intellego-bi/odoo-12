@@ -21,31 +21,37 @@
         <record id="cl_bs_1" model="account.group">
             <field name="name">Activos</field>
             <field name="code_prefix">1</field>
+		    <field name="parent_id" ref="cl_bs"/>
         </record>
 
         <record id="cl_bs_2" model="account.group">
             <field name="name">Pasivos</field>
             <field name="code_prefix">2</field>
+		    <field name="parent_id" ref="cl_bs"/>
         </record>
 
         <record id="cl_bs_3" model="account.group">
             <field name="name">Patrimonio</field>
             <field name="code_prefix">3</field>
+		    <field name="parent_id" ref="cl_bs"/>
         </record>
 
         <record id="cl_pl_4" model="account.group">
             <field name="name">Ingresos</field>
             <field name="code_prefix">4</field>
+		    <field name="parent_id" ref="cl_pl"/>
         </record>
 
         <record id="cl_pl_5" model="account.group">
             <field name="name">Costos</field>
             <field name="code_prefix">5</field>
+		    <field name="parent_id" ref="cl_pl"/>
         </record>
 
         <record id="cl_pl_6" model="account.group">
             <field name="name">Gastos</field>
             <field name="code_prefix">6</field>
+		    <field name="parent_id" ref="cl_pl"/>
         </record>
 
         <!-- Account Groups -->
