@@ -28,7 +28,7 @@
             <field name="code_prefix">2</field>
         </record>
 
-        <record id="cl_bs_3 model="account.group">
+        <record id="cl_bs_3" model="account.group">
             <field name="name">Patrimonio</field>
             <field name="code_prefix">3</field>
         </record>
