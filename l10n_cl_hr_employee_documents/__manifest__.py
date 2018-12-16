@@ -26,7 +26,7 @@
 # 
 ###################################################################################
 {
-    'name': 'RRHH Chile - Documentos para Empleados',
+    'name': 'Chile - RRHH Documentos para Empleados',
     'version': '12.0.1.0.0',
     'summary': """Permite gestionar documentación asociada a empleados controlando su Fecha de Vencimiento mediante notificaciones en Odoo.""",
     'description': """Documentación anexa para Empleados con gestión de venicmiento vía notificaciones.""",
