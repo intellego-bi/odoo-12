@@ -25,10 +25,10 @@ class AccCurrConfig(models.TransientModel):
     _inherit = 'res.config.settings'
 
     cl_update_active = fields.Boolean(default=True, string="Chile Update Currency Rates from SBIF",
-                                  help="Enabla automatic rate download from SBIF Chile")
+                                  help="Enable automatic rate download from SBIF Chile")
 
     cl_sbif_api_key  = fields.Char(string='SBIF API Key', 
-                                   default='e96f651e08214ed0060771f21d11cdeb3b8b3305', 
+                                   #default='e96f651e08214ed0060771f21d11cdeb3b8b3305', 
                                    required=True,
                                    help="You must get your private API Key from https://api.sbif.cl "
                                         "in order to use this service.")
