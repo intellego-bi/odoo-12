@@ -13,12 +13,12 @@
 
         <!-- Menu items EMPLEADOS y CONTRATOS  -->
         <menuitem action="hr.open_view_employee_list_my"                 id="cl_hr_menu_open_view_employee_list_my"   parent="hr_payroll.menu_hr_payroll_root"       sequence="0"/>
-        <menuitem action="hr_contract.action_hr_contract"                id="cl_hr_contract.hr_menu_contract"         parent="hr_payroll.menu_hr_payroll_root"       sequence="1"    groups="hr_contract.group_hr_contract_manager" name="Contracts"/>
+        <menuitem action="hr_contract.action_hr_contract"                id="cl_hr_contract_hr_menu_contract"         parent="hr_payroll.menu_hr_payroll_root"       sequence="1"    groups="hr_contract.group_hr_contract_manager" name="Contracts"/>
 
 
         <!-- Menu NÓMINA RRHH -->
-        <menuitem action="hr_payroll.action_hr_payslip_run_tree"         id="hr_payroll.menu_hr_payslip_run"       parent="menu_cl_hr_payroll_base"               sequence="1" groups="hr_payroll.group_hr_payroll_user"/>
-        <menuitem action="hr_payroll.action_view_hr_payslip_form"        id="hr_payroll.menu_department_tree"      parent="menu_cl_hr_payroll_base"               sequence="2" groups="hr_payroll.group_hr_payroll_user"/>
+        <menuitem action="hr_payroll.action_hr_payslip_run_tree"         id="cl_hr_payroll_menu_hr_payslip_run"       parent="menu_cl_hr_payroll_base"               sequence="1" groups="hr_payroll.group_hr_payroll_user"/>
+        <menuitem action="hr_payroll.action_view_hr_payslip_form"        id="cl_hr_payroll_menu_department_tree"      parent="menu_cl_hr_payroll_base"               sequence="2" groups="hr_payroll.group_hr_payroll_user"/>
 
 
         <!-- Menu DATOS MAESTROS -->
