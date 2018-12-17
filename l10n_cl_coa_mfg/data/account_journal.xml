@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>						
+<odoo>						
+    <data>      
+        <!-- Account Journal  -->
+        <record id="cl_pur_serv" model="account.journal">
+            <field name="name">Compra de Servicios</field>
+            <field name="code">COSE</field>
+            <field name="type">purchase</field>
+	        <field name="sequence_id" ref="cl_sequence_pur_serv"/>
+            <field name="show_on_dashboard" eval="True"/>
+        </record>
+
+       <record id="cl_gen_inve" model="account.journal">
+            <field name="name">Diario de Inventarios</field>
+            <field name="code">INVE</field>
+            <field name="type">general</field>
+            <field name="show_on_dashboard" eval="False"/>
+        </record>
+
+        <record id="cl_gen_antp" model="account.journal">
+            <field name="name">Anticipos Proveedores</field>
+            <field name="code">COAN</field>
+            <field name="type">general</field>
+            <field name="show_on_dashboard" eval="True"/>
+        </record>
+		
+        <record id="cl_gen_ditc" model="account.journal">
+            <field name="name">Diferencia Tipo de Cambio</field>
+            <field name="code">DITC</field>
+            <field name="type">general</field>
+            <field name="show_on_dashboard" eval="False"/>
+        </record>
+
+    </data>						
+</odoo>						
