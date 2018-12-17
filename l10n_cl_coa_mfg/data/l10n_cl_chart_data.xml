@@ -44,19 +44,20 @@
 
     <!-- ACTIVOS -->
 
-    <record id="cl_coa_mfg_11001000" model="account.account.template">
+    <!--<record id="cl_coa_mfg_11001000" model="account.account.template">
         <field name="name">Caja / Efectivo</field>
         <field name="code">11001000</field>
         <field name="reconcile" eval="False"/>
         <field ref="account.data_account_type_current_assets" name="user_type_id"/>
         <field name="chart_template_id" ref="cl_chart_template_coa_mfg"/>
-    </record>
+    </record>-->
 
     <record id="cl_coa_mfg_11002000" model="account.account.template">
         <field name="name">Fondos Fijos</field>
         <field name="code">11002000</field>
         <field name="reconcile" eval="False"/>
         <field ref="account.data_account_type_current_assets" name="user_type_id"/>
+        <field name="group_id" ref="cl_bs_1100"/>
         <field name="chart_template_id" ref="cl_chart_template_coa_mfg"/>
     </record>
 
@@ -65,6 +66,7 @@
         <field name="code">11111000</field>
         <field name="reconcile" eval="False"/>
         <field ref="account.data_account_type_current_assets" name="user_type_id"/>
+        <field name="group_id" ref="cl_bs_1111"/>
         <field name="chart_template_id" ref="cl_chart_template_coa_mfg"/>
     </record>
 
