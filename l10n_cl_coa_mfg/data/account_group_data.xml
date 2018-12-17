@@ -208,6 +208,239 @@
         </record>
 
 
+        <!-- Detail Account Groups : Balance Sheet : 4 digits -->
+
+        <!-- Activo Circulante : Prefijo = 11 -->
+		
+        <record id="cl_bs_1100" model="account.group">
+            <field name="name">Caja / Efectivo</field>
+            <field name="code_prefix">1100</field>
+		    <field name="parent_id" ref="cl_bs_11"/>
+        </record>
+
+        <record id="cl_bs_1110" model="account.group">
+            <field name="name">Bancos</field>
+            <field name="code_prefix">1110</field>
+		    <field name="parent_id" ref="cl_bs_11"/>
+        </record>
+
+        <record id="cl_bs_1111" model="account.group">
+            <field name="name">Inversion Financiera y Valores Negociables</field>
+            <field name="code_prefix">1111</field>
+		    <field name="parent_id" ref="cl_bs_11"/>
+        </record>
+
+        <record id="cl_bs_1120" model="account.group">
+            <field name="name">Deudores por Ventas</field>
+            <field name="code_prefix">1120</field>
+		    <field name="parent_id" ref="cl_bs_11"/>
+        </record>
+
+        <record id="cl_bs_1121" model="account.group">
+            <field name="name">Documentos por Cobrar</field>
+            <field name="code_prefix">1121</field>
+		    <field name="parent_id" ref="cl_bs_11"/>
+        </record>
+
+        <record id="cl_bs_1122" model="account.group">
+            <field name="name">Documentos y Cuentas por Cobrar a EERR</field>
+            <field name="code_prefix">1122</field>
+		    <field name="parent_id" ref="cl_bs_11"/>
+        </record>
+
+        <record id="cl_bs_1129" model="account.group">
+            <field name="name">Estimación de Incobrables (Provisión)</field>
+            <field name="code_prefix">1129</field>
+		    <field name="parent_id" ref="cl_bs_11"/>
+        </record>
+
+        <record id="cl_bs_1130" model="account.group">
+            <field name="name">Pagos Anticipados</field>
+            <field name="code_prefix">1130</field>
+		    <field name="parent_id" ref="cl_bs_11"/>
+        </record>
+
+        <record id="cl_bs_1140" model="account.group">
+            <field name="name">Cuentas por Cobrar al Personal</field>
+            <field name="code_prefix">1140</field>
+		    <field name="parent_id" ref="cl_bs_11"/>
+        </record>
+
+        <record id="cl_bs_1150" model="account.group">
+            <field name="name">Impuestos por Recuperar</field>
+            <field name="code_prefix">1150</field>
+		    <field name="parent_id" ref="cl_bs_11"/>
+        </record>
+
+        <record id="cl_bs_1160" model="account.group">
+            <field name="name">Inventarios y Existencias</field>
+            <field name="code_prefix">1160</field>
+		    <field name="parent_id" ref="cl_bs_11"/>
+        </record>
+
+        <record id="cl_bs_1170" model="account.group">
+            <field name="name">Gastos Anticipados</field>
+            <field name="code_prefix">1170</field>
+		    <field name="parent_id" ref="cl_bs_11"/>
+        </record>
+
+        <record id="cl_bs_1180" model="account.group">
+            <field name="name">Pagos Provisionales Mensuales (PPM)</field>
+            <field name="code_prefix">1180</field>
+		    <field name="parent_id" ref="cl_bs_11"/>
+        </record>
+
+        <record id="cl_bs_1190" model="account.group">
+            <field name="name">Otros Activos Circulantes</field>
+            <field name="code_prefix">1190</field>
+		    <field name="parent_id" ref="cl_bs_11"/>
+        </record>
+
+        <!-- Activo Fijo : Prefijo = 121 -->
+		
+        <record id="cl_bs_1211" model="account.group">
+            <field name="name">Terrenos</field>
+            <field name="code_prefix">1211</field>
+		    <field name="parent_id" ref="cl_bs_121"/>
+        </record>
+		
+        <record id="cl_bs_1212" model="account.group">
+            <field name="name">Construcciones y Obras de Infraestructura</field>
+            <field name="code_prefix">1212</field>
+		    <field name="parent_id" ref="cl_bs_121"/>
+        </record>
+		
+        <record id="cl_bs_1213" model="account.group">
+            <field name="name">Maquinarias y Equipos</field>
+            <field name="code_prefix">1213</field>
+		    <field name="parent_id" ref="cl_bs_121"/>
+        </record>
+		
+        <record id="cl_bs_1214" model="account.group">
+            <field name="name">Muebles y Útiles</field>
+            <field name="code_prefix">1214</field>
+		    <field name="parent_id" ref="cl_bs_121"/>
+        </record>
+		
+        <record id="cl_bs_1215" model="account.group">
+            <field name="name">Activos en Leasing</field>
+            <field name="code_prefix">1215</field>
+		    <field name="parent_id" ref="cl_bs_121"/>
+        </record>
+		
+        <record id="cl_bs_1216" model="account.group">
+            <field name="name">Otros Activos Fijos</field>
+            <field name="code_prefix">1216</field>
+		    <field name="parent_id" ref="cl_bs_121"/>
+        </record>
+
+        <!-- Depreciación Acumulada Activo Fijo : Prefijo = 122 -->
+
+        <record id="cl_bs_1222" model="account.group">
+            <field name="name">Depreciación Acum. Const. y Obras</field>
+            <field name="code_prefix">1222</field>
+		    <field name="parent_id" ref="cl_bs_122"/>
+        </record>
+		
+        <record id="cl_bs_1223" model="account.group">
+            <field name="name">Depreciación Acum. Maquinarias y Equipos</field>
+            <field name="code_prefix">1223</field>
+		    <field name="parent_id" ref="cl_bs_122"/>
+        </record>
+		
+        <record id="cl_bs_1224" model="account.group">
+            <field name="name">Depreciación Acum. Muebles y Útiles</field>
+            <field name="code_prefix">1224</field>
+		    <field name="parent_id" ref="cl_bs_122"/>
+        </record>
+		
+        <record id="cl_bs_1225" model="account.group">
+            <field name="name">Depreciación Acum. Activos en Leasing</field>
+            <field name="code_prefix">1225</field>
+		    <field name="parent_id" ref="cl_bs_122"/>
+        </record>
+		
+        <record id="cl_bs_1226" model="account.group">
+            <field name="name">Depreciación Acum. Otros Activos Fijos</field>
+            <field name="code_prefix">1226</field>
+		    <field name="parent_id" ref="cl_bs_122"/>
+        </record>
+
+        <!-- Otros Activos : Prefijo = 13 -->
+
+        <record id="cl_bs_1310" model="account.group">
+            <field name="name">Cuentas Particulares</field>
+            <field name="code_prefix">1310</field>
+		    <field name="parent_id" ref="cl_bs_13"/>
+        </record>
+
+        <record id="cl_bs_1320" model="account.group">
+            <field name="name">Inversión en Empresas Relacionadas</field>
+            <field name="code_prefix">1320</field>
+		    <field name="parent_id" ref="cl_bs_13"/>
+        </record>
+
+        <record id="cl_bs_1330" model="account.group">
+            <field name="name">Inversión en otras Sociedades</field>
+            <field name="code_prefix">1330</field>
+		    <field name="parent_id" ref="cl_bs_13"/>
+        </record>
+
+        <record id="cl_bs_1340" model="account.group">
+            <field name="name">Deudores Largo Plazo</field>
+            <field name="code_prefix">1340</field>
+		    <field name="parent_id" ref="cl_bs_13"/>
+        </record>
+
+        <record id="cl_bs_1350" model="account.group">
+            <field name="name">Documentos y Cuentas por Cobrar EERR L/P</field>
+            <field name="code_prefix">1350</field>
+		    <field name="parent_id" ref="cl_bs_13"/>
+        </record>
+
+        <record id="cl_bs_1360" model="account.group">
+            <field name="name">Impuestos Diferidos (a favor) L/P</field>
+            <field name="code_prefix">1360</field>
+		    <field name="parent_id" ref="cl_bs_13"/>
+        </record>
+
+        <record id="cl_bs_1370" model="account.group">
+            <field name="name">Activos Intangibles</field>
+            <field name="code_prefix">1370</field>
+		    <field name="parent_id" ref="cl_bs_13"/>
+        </record>
+
+        <record id="cl_bs_1375" model="account.group">
+            <field name="name">Amortización Acum. Activos Intangibles</field>
+            <field name="code_prefix">1375</field>
+		    <field name="parent_id" ref="cl_bs_13"/>
+        </record>
+
+        <record id="cl_bs_1390" model="account.group">
+            <field name="name">Otros Activos No-Corrientes</field>
+            <field name="code_prefix">1390</field>
+		    <field name="parent_id" ref="cl_bs_13"/>
+        </record>
+
+
+        <!-- Pasivo Corriente : Prefijo = 21 -->
+		
+        <record id="cl_bs_2110" model="account.group">
+            <field name="name">Obligaciones con Bancos e Instituciones Financieras</field>
+            <field name="code_prefix">2110</field>
+		    <field name="parent_id" ref="cl_bs_21"/>
+        </record>
+
+
+
+
+
+
+
+
+
+
+
 
 
 
