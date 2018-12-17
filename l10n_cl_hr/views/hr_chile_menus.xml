@@ -17,8 +17,17 @@
 			<field name="res_model">res.partner.bank</field>
 			<field name="view_type">tree</field>
 			<field name="view_mode">tree,kanban,form</field>
-			<field name="view_id" ref="base.view_partner_bank_tree"/>
-			<field name="target">new</field>
+			<!--<field name="view_id" ref="base.view_partner_bank_tree"/>-->
+			<field name="search_view_id" ref="res.partner.bank.search"/>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Cuentas Bancarias Empleados
+                </p>
+				<p>
+                    Acá podrá actualizar los datos de las Cuentas Bancarias de los Empleados para efectos del pago de Remuneraciones.
+                </p>
+             </field>
+			<field name="target">current</field>
 		</record>
 
 		
