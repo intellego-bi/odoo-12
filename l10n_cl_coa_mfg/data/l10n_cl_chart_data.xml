@@ -138,7 +138,7 @@
     <record id="cl_coa_mfg_11211300" model="account.account.template">
         <field name="group_id" ref="cl_bs_1121"/>
         <field name="name">Documentos por Cobrar en Cobranza</field>
-        <field name="code">112111300</field>
+        <field name="code">11211300</field>
         <field name="reconcile" eval="True"/>
         <field ref="account.data_account_type_receivable" name="user_type_id"/>
         <field name="chart_template_id" ref="cl_chart_template_coa_mfg"/>
@@ -209,6 +209,7 @@
 
 
     <record id="cl_coa_mfg_11401000" model="account.account.template">
+        <field name="group_id" ref="cl_bs_1140"/>
         <field name="name">Anticipo de Remuneraciones</field>
         <field name="code">11401000</field>
         <field name="reconcile" eval="True"/>
@@ -217,6 +218,7 @@
     </record>
 
     <record id="cl_coa_mfg_11402000" model="account.account.template">
+        <field name="group_id" ref="cl_bs_1140"/>
         <field name="name">Préstamos al Personal</field>
         <field name="code">11402000</field>
         <field name="reconcile" eval="True"/>
@@ -225,6 +227,7 @@
     </record>
 
     <record id="cl_coa_mfg_11403000" model="account.account.template">
+        <field name="group_id" ref="cl_bs_1140"/>
         <field name="name">Anticipo de Viáticos</field>
         <field name="code">11403000</field>
         <field name="reconcile" eval="True"/>
@@ -233,6 +236,7 @@
     </record>
 
     <record id="cl_coa_mfg_11404000" model="account.account.template">
+        <field name="group_id" ref="cl_bs_1140"/>
         <field name="name">Fondos a Rendir</field>
         <field name="code">11404000</field>
         <field name="reconcile" eval="True"/>
@@ -241,6 +245,7 @@
     </record>
 
     <record id="cl_coa_mfg_11405000" model="account.account.template">
+        <field name="group_id" ref="cl_bs_1140"/>
         <field name="name">Asignación Familiar</field>
         <field name="code">11405000</field>
         <field name="reconcile" eval="True"/>
@@ -249,6 +254,7 @@
     </record>
 
     <record id="cl_coa_mfg_11406000" model="account.account.template">
+        <field name="group_id" ref="cl_bs_1140"/>
         <field name="name">Anticipos de Indemnizaciones</field>
         <field name="code">11406000</field>
         <field name="reconcile" eval="True"/>
@@ -257,6 +263,7 @@
     </record>
 
     <record id="cl_coa_mfg_11501000" model="account.account.template">
+        <field name="group_id" ref="cl_bs_1150"/>
         <field name="name">IVA Crédito Fiscal</field>
         <field name="code">11501000</field>
         <field name="reconcile" eval="True"/>
@@ -265,6 +272,7 @@
     </record>
 
     <record id="cl_coa_mfg_11502000" model="account.account.template">
+        <field name="group_id" ref="cl_bs_1150"/>
         <field name="name">IVA Crédito Fiscal (DIN)</field>
         <field name="code">11502000</field>
         <field name="reconcile" eval="True"/>
@@ -273,6 +281,7 @@
     </record>
 
     <record id="cl_coa_mfg_11503000" model="account.account.template">
+        <field name="group_id" ref="cl_bs_1150"/>
         <field name="name">Remanente Crédito Fiscal PPM</field>
         <field name="code">11503000</field>
         <field name="reconcile" eval="True"/>
@@ -281,6 +290,7 @@
     </record>
 
     <record id="cl_coa_mfg_11504000" model="account.account.template">
+        <field name="group_id" ref="cl_bs_1150"/>
         <field name="name">Crédito Fiscal x Activo Fijo</field>
         <field name="code">11504000</field>
         <field name="reconcile" eval="True"/>
@@ -289,6 +299,7 @@
     </record>
 	
     <record id="cl_coa_mfg_11505000" model="account.account.template">
+        <field name="group_id" ref="cl_bs_1150"/>
         <field name="name">Crédito Fiscal Sence</field>
         <field name="code">11505000</field>
         <field name="reconcile" eval="True"/>
@@ -298,6 +309,7 @@
 
     <!-- Default Account STOCK VALUATION -->
     <record id="cl_coa_stock_valuation" model="account.account.template">
+        <field name="group_id" ref="cl_bs_1160"/>
         <field name="name">Materias Primas</field>
         <field name="code">11601000</field>
         <field name="reconcile" eval="False"/>
@@ -307,6 +319,7 @@
 
     <!-- Default Account STOCK OUT -->
     <record id="cl_coa_stock_out" model="account.account.template">
+        <field name="group_id" ref="cl_bs_1160"/>
         <field name="name">Productos en Proceso</field>
         <field name="code">11602000</field>
         <field name="reconcile" eval="True"/>
@@ -315,14 +328,16 @@
     </record>
 
     <record id="cl_coa_mfg_11603000" model="account.account.template">
+        <field name="group_id" ref="cl_bs_1160"/>
         <field name="name">Productos Semi-elaborados</field>
-        <field name="code">11063000</field>
+        <field name="code">11603000</field>
         <field name="reconcile" eval="False"/>
         <field ref="account.data_account_type_current_assets" name="user_type_id"/>
         <field name="chart_template_id" ref="cl_chart_template_coa_mfg"/>
     </record>
 
     <record id="cl_coa_mfg_11604000" model="account.account.template">
+        <field name="group_id" ref="cl_bs_1160"/>
         <field name="name">Productos Terminados</field>
         <field name="code">11604000</field>
         <field name="reconcile" eval="False"/>
@@ -331,6 +346,7 @@
     </record>
 
     <record id="cl_coa_mfg_11605000" model="account.account.template">
+        <field name="group_id" ref="cl_bs_1160"/>
         <field name="name">Repuestos e Insumos Varios</field>
         <field name="code">11605000</field>
         <field name="reconcile" eval="False"/>
@@ -339,6 +355,7 @@
     </record>
 
     <record id="cl_coa_mfg_11606000" model="account.account.template">
+        <field name="group_id" ref="cl_bs_1160"/>
         <field name="name">Existencias en Tránsito</field>
         <field name="code">11606000</field>
         <field name="reconcile" eval="True"/>
@@ -347,6 +364,7 @@
     </record>
 
     <record id="cl_coa_mfg_11607000" model="account.account.template">
+        <field name="group_id" ref="cl_bs_1160"/>
         <field name="name">Importaciones en Tránsito</field>
         <field name="code">11607000</field>
         <field name="reconcile" eval="True"/>
@@ -355,6 +373,7 @@
     </record>
 
     <record id="cl_coa_mfg_11609000" model="account.account.template">
+        <field name="group_id" ref="cl_bs_1160"/>
         <field name="name">Mermas de Existencias (Provisión)</field>
         <field name="code">11609000</field>
         <field name="reconcile" eval="True"/>
@@ -363,6 +382,7 @@
     </record>
 
     <record id="cl_coa_mfg_11701000" model="account.account.template">
+        <field name="group_id" ref="cl_bs_1170"/>
         <field name="name">Intereses Diferidos</field>
         <field name="code">11701000</field>
         <field name="reconcile" eval="True"/>
@@ -371,6 +391,7 @@
     </record>
 
     <record id="cl_coa_mfg_11702000" model="account.account.template">
+        <field name="group_id" ref="cl_bs_1170"/>
         <field name="name">Gastos Diferidos</field>
         <field name="code">11702000</field>
         <field name="reconcile" eval="True"/>
@@ -379,6 +400,7 @@
     </record>
 
     <record id="cl_coa_mfg_11801000" model="account.account.template">
+        <field name="group_id" ref="cl_bs_1180"/>
         <field name="name">Pago Provisional Mensual (PPM)</field>
         <field name="code">11801000</field>
         <field name="reconcile" eval="True"/>
@@ -387,6 +409,7 @@
     </record>
 
     <record id="cl_coa_mfg_11901000" model="account.account.template">
+        <field name="group_id" ref="cl_bs_1190"/>
         <field name="name">Deudores Varios</field>
         <field name="code">11901000</field>
         <field name="reconcile" eval="True"/>
@@ -395,6 +418,7 @@
     </record>
 
     <record id="cl_coa_mfg_11902000" model="account.account.template">
+        <field name="group_id" ref="cl_bs_1190"/>
         <field name="name">Garantías Arriendos</field>
         <field name="code">11902000</field>
         <field name="reconcile" eval="True"/>
@@ -403,6 +427,7 @@
     </record>
 
     <record id="cl_coa_mfg_11903000" model="account.account.template">
+        <field name="group_id" ref="cl_bs_1190"/>
         <field name="name">Reclamos a Proveedores</field>
         <field name="code">11903000</field>
         <field name="reconcile" eval="True"/>
@@ -411,6 +436,7 @@
     </record>
 
     <record id="cl_coa_mfg_12111000" model="account.account.template">
+        <field name="group_id" ref="cl_bs_1211"/>
         <field name="name">Terrenos</field>
         <field name="code">12111000</field>
         <field name="reconcile" eval="False"/>
@@ -419,6 +445,7 @@
     </record>
 
     <record id="cl_coa_mfg_12121000" model="account.account.template">
+        <field name="group_id" ref="cl_bs_1212"/>
         <field name="name">Obras de Infraestructura</field>
         <field name="code">12121000</field>
         <field name="reconcile" eval="False"/>
@@ -427,6 +454,7 @@
     </record>
 
     <record id="cl_coa_mfg_12122000" model="account.account.template">
+        <field name="group_id" ref="cl_bs_1212"/>
         <field name="name">Obras en Curso</field>
         <field name="code">12122000</field>
         <field name="reconcile" eval="False"/>
@@ -435,6 +463,7 @@
     </record>
 
     <record id="cl_coa_mfg_12131000" model="account.account.template">
+        <field name="group_id" ref="cl_bs_1213"/>
         <field name="name">Maquinaria y Equipo</field>
         <field name="code">12131000</field>
         <field name="reconcile" eval="False"/>
@@ -443,6 +472,7 @@
     </record>
 
     <record id="cl_coa_mfg_12132000" model="account.account.template">
+        <field name="group_id" ref="cl_bs_1213"/>
         <field name="name">Vehículos y Equipo Transporte</field>
         <field name="code">12132000</field>
         <field name="reconcile" eval="False"/>
@@ -451,6 +481,7 @@
     </record>
 
     <record id="cl_coa_mfg_12133000" model="account.account.template">
+        <field name="group_id" ref="cl_bs_1213"/>
         <field name="name">Herramientas y Accesorios</field>
         <field name="code">12133000</field>
         <field name="reconcile" eval="False"/>
@@ -459,6 +490,7 @@
     </record>
 
     <record id="cl_coa_mfg_12134000" model="account.account.template">
+        <field name="group_id" ref="cl_bs_1213"/>
         <field name="name">Equipos Computacionales</field>
         <field name="code">12134000</field>
         <field name="reconcile" eval="False"/>
@@ -467,6 +499,7 @@
     </record>
 
     <record id="cl_coa_mfg_12135000" model="account.account.template">
+        <field name="group_id" ref="cl_bs_1213"/>
         <field name="name">Activos Informáticos</field>
         <field name="code">12135000</field>
         <field name="reconcile" eval="False"/>
@@ -475,6 +508,7 @@
     </record>
 
     <record id="cl_coa_mfg_12141000" model="account.account.template">
+        <field name="group_id" ref="cl_bs_1214"/>
         <field name="name">Muebles de Oficina</field>
         <field name="code">12141000</field>
         <field name="reconcile" eval="False"/>
@@ -483,6 +517,7 @@
     </record>
 
     <record id="cl_coa_mfg_12142000" model="account.account.template">
+        <field name="group_id" ref="cl_bs_1214"/>
         <field name="name">Equipos de Oficina</field>
         <field name="code">12142000</field>
         <field name="reconcile" eval="False"/>
@@ -491,6 +526,7 @@
     </record>
 
     <record id="cl_coa_mfg_12151000" model="account.account.template">
+        <field name="group_id" ref="cl_bs_1215"/>
         <field name="name">Maquinaria Tomada en Leasing</field>
         <field name="code">12151000</field>
         <field name="reconcile" eval="False"/>
@@ -499,6 +535,7 @@
     </record>
 
     <record id="cl_coa_mfg_12161000" model="account.account.template">
+        <field name="group_id" ref="cl_bs_1216"/>
         <field name="name">Artes y Clisses Impresión</field>
         <field name="code">12161000</field>
         <field name="reconcile" eval="False"/>
@@ -506,8 +543,8 @@
         <field name="chart_template_id" ref="cl_chart_template_coa_mfg"/>
     </record>
 
-
     <record id="cl_coa_mfg_12221000" model="account.account.template">
+        <field name="group_id" ref="cl_bs_1222"/>
         <field name="name">Dep. Acum. Obras de Infraestructura</field>
         <field name="code">12221000</field>
         <field name="reconcile" eval="False"/>
@@ -517,6 +554,7 @@
 
 
     <record id="cl_coa_mfg_12231000" model="account.account.template">
+        <field name="group_id" ref="cl_bs_1223"/>
         <field name="name">Dep. Acum. Maquinaria y Equipo</field>
         <field name="code">12231000</field>
         <field name="reconcile" eval="False"/>
@@ -525,6 +563,7 @@
     </record>
 
     <record id="cl_coa_mfg_12232000" model="account.account.template">
+        <field name="group_id" ref="cl_bs_1223"/>
         <field name="name">Dep. Acum. Vehículos y Equipo Transporte</field>
         <field name="code">12232000</field>
         <field name="reconcile" eval="False"/>
@@ -533,6 +572,7 @@
     </record>
 
     <record id="cl_coa_mfg_12233000" model="account.account.template">
+        <field name="group_id" ref="cl_bs_1223"/>
         <field name="name">Dep. Acum. Herramientas y Accesorios</field>
         <field name="code">12233000</field>
         <field name="reconcile" eval="False"/>
@@ -541,6 +581,7 @@
     </record>
 
     <record id="cl_coa_mfg_12234000" model="account.account.template">
+        <field name="group_id" ref="cl_bs_1223"/>
         <field name="name">Dep. Acum. Equipos Computacionales</field>
         <field name="code">12234000</field>
         <field name="reconcile" eval="False"/>
@@ -549,6 +590,7 @@
     </record>
 
     <record id="cl_coa_mfg_12235000" model="account.account.template">
+        <field name="group_id" ref="cl_bs_1223"/>
         <field name="name">Dep. Acum. Activos Informáticos</field>
         <field name="code">12235000</field>
         <field name="reconcile" eval="False"/>
@@ -557,6 +599,7 @@
     </record>
 
     <record id="cl_coa_mfg_12241000" model="account.account.template">
+        <field name="group_id" ref="cl_bs_1224"/>
         <field name="name">Dep. Acum. Muebles de Oficina</field>
         <field name="code">12241000</field>
         <field name="reconcile" eval="False"/>
@@ -565,6 +608,7 @@
     </record>
 
     <record id="cl_coa_mfg_12242000" model="account.account.template">
+        <field name="group_id" ref="cl_bs_1224"/>
         <field name="name">Dep. Acum. Equipos de Oficina</field>
         <field name="code">12242000</field>
         <field name="reconcile" eval="False"/>
@@ -573,6 +617,7 @@
     </record>
 
     <record id="cl_coa_mfg_12251000" model="account.account.template">
+        <field name="group_id" ref="cl_bs_1225"/>
         <field name="name">Dep. Acum. Maquinaria Tomada en Leasing</field>
         <field name="code">12251000</field>
         <field name="reconcile" eval="False"/>
@@ -581,6 +626,7 @@
     </record>
 
     <record id="cl_coa_mfg_12261000" model="account.account.template">
+        <field name="group_id" ref="cl_bs_1226"/>
         <field name="name">Dep. Acum. Artes y Clisses Impresión</field>
         <field name="code">12261000</field>
         <field name="reconcile" eval="False"/>
@@ -589,6 +635,7 @@
     </record>
 
     <record id="cl_coa_mfg_13011000" model="account.account.template">
+        <field name="group_id" ref="cl_bs_1301/>
         <field name="name">Cuentas por Cobrar a Socios</field>
         <field name="code">13101000</field>
         <field name="reconcile" eval="True"/>
@@ -597,6 +644,7 @@
     </record>
 
     <record id="cl_coa_mfg_13201000" model="account.account.template">
+        <field name="group_id" ref="cl_bs_1320"/>
         <field name="name">Inversiones en Empresas Relacionadas</field>
         <field name="code">13201000</field>
         <field name="reconcile" eval="False"/>
@@ -605,6 +653,7 @@
     </record>
 
     <record id="cl_coa_mfg_13401000" model="account.account.template">
+        <field name="group_id" ref="cl_bs_1340"/>
         <field name="name">Cuentas por Cobrar LP</field>
         <field name="code">13401000</field>
         <field name="reconcile" eval="True"/>
@@ -613,6 +662,7 @@
     </record>
 
     <record id="cl_coa_mfg_13402000" model="account.account.template">
+        <field name="group_id" ref="cl_bs_1340"/>
         <field name="name">Documentos por Cobrar LP</field>
         <field name="code">13402000</field>
         <field name="reconcile" eval="True"/>
@@ -621,6 +671,7 @@
     </record>
 
     <record id="cl_coa_mfg_13501000" model="account.account.template">
+        <field name="group_id" ref="cl_bs_1350"/>
         <field name="name">Cuentas por Cobrar EERR LP</field>
         <field name="code">13501000</field>
         <field name="reconcile" eval="True"/>
@@ -629,6 +680,7 @@
     </record>
 
     <record id="cl_coa_mfg_13701000" model="account.account.template">
+        <field name="group_id" ref="cl_bs_1370"/>
         <field name="name">Marcas y Patentes</field>
         <field name="code">13701000</field>
         <field name="reconcile" eval="False"/>
@@ -637,6 +689,7 @@
     </record>
 
     <record id="cl_coa_mfg_13702000" model="account.account.template">
+        <field name="group_id" ref="cl_bs_1370"/>
         <field name="name">Software y Activos Informáticos</field>
         <field name="code">13702000</field>
         <field name="reconcile" eval="False"/>
@@ -645,6 +698,7 @@
     </record>
 
     <record id="cl_coa_mfg_13752000" model="account.account.template">
+        <field name="group_id" ref="cl_bs_1375"/>
         <field name="name">Amort. Acum. SW y Act. Informáticos</field>
         <field name="code">13752000</field>
         <field name="reconcile" eval="False"/>
@@ -653,6 +707,7 @@
     </record>
 
     <record id="cl_coa_mfg_13901000" model="account.account.template">
+        <field name="group_id" ref="cl_bs_1390"/>
         <field name="name">Otros Activos</field>
         <field name="code">13901000</field>
         <field name="reconcile" eval="False"/>
@@ -663,6 +718,7 @@
     <!-- PASIVOS -->
 
     <record id="cl_coa_mfg_21101000" model="account.account.template">
+        <field name="group_id" ref="cl_bs_2110"/>
         <field name="name">Línea de Crédito Bancario</field>
         <field name="code">21101000</field>
         <field name="reconcile" eval="True"/>
@@ -671,6 +727,7 @@
     </record>
 
     <record id="cl_coa_mfg_21102000" model="account.account.template">
+        <field name="group_id" ref="cl_bs_2110"/>
         <field name="name">Tarjeta de Crédito Corporativa</field>
         <field name="code">21102000</field>
         <field name="reconcile" eval="True"/>
@@ -679,6 +736,7 @@
     </record>
 
     <record id="cl_coa_mfg_21103000" model="account.account.template">
+        <field name="group_id" ref="cl_bs_2110"/>
         <field name="name">Obligaciones con Inst. Financieras</field>
         <field name="code">21103000</field>
         <field name="reconcile" eval="True"/>
@@ -687,6 +745,7 @@
     </record>
 
     <record id="cl_coa_mfg_21104000" model="account.account.template">
+        <field name="group_id" ref="cl_bs_2110"/>
         <field name="name">Crédito Comercial C/P</field>
         <field name="code">21104000</field>
         <field name="reconcile" eval="True"/>
@@ -695,6 +754,7 @@
     </record>
 
     <record id="cl_coa_mfg_21105000" model="account.account.template">
+        <field name="group_id" ref="cl_bs_2110"/>
         <field name="name">Crédito Comercial L/P p/Corto Plazo</field>
         <field name="code">21105000</field>
         <field name="reconcile" eval="True"/>
@@ -703,6 +763,7 @@
     </record>
 
     <record id="cl_coa_mfg_21106000" model="account.account.template">
+        <field name="group_id" ref="cl_bs_2110"/>
         <field name="name">Crédito Hipotecario p/Corto Plazo</field>
         <field name="code">21106000</field>
         <field name="reconcile" eval="True"/>
@@ -712,6 +773,7 @@
 
     <!-- Default Account PAYABLE -->
     <record id="cl_coa_payable" model="account.account.template">
+        <field name="group_id" ref="cl_bs_2120"/>
         <field name="name">Proveedores Nacionales</field>
         <field name="code">21201000</field>
         <field name="reconcile" eval="True"/>
@@ -721,6 +783,7 @@
 
     <!-- Default Account STOCK IN -->
     <record id="cl_coa_stock_in" model="account.account.template">
+        <field name="group_id" ref="cl_bs_2120"/>
         <field name="name">Facturas por Recibir (EM/RF)</field>
         <field name="code">21201100</field>
         <field name="reconcile" eval="True"/>
@@ -729,6 +792,7 @@
     </record>
 
     <record id="cl_coa_mfg_21202000" model="account.account.template">
+        <field name="group_id" ref="cl_bs_2120"/>
         <field name="name">Proveedores Extranjeros</field>
         <field name="code">21202000</field>
         <field name="reconcile" eval="True"/>
@@ -737,6 +801,7 @@
     </record>
 
     <record id="cl_coa_mfg_21203000" model="account.account.template">
+        <field name="group_id" ref="cl_bs_2120"/>
         <field name="name">Documentos por Pagar</field>
         <field name="code">21203000</field>
         <field name="reconcile" eval="True"/>
@@ -745,6 +810,7 @@
     </record>
 
     <record id="cl_coa_mfg_21204000" model="account.account.template">
+        <field name="group_id" ref="cl_bs_2120"/>
         <field name="name">Cheques Girados y No-Cobrados</field>
         <field name="code">21204000</field>
         <field name="reconcile" eval="True"/>
@@ -753,6 +819,7 @@
     </record>
 
     <record id="cl_coa_mfg_21205000" model="account.account.template">
+        <field name="group_id" ref="cl_bs_2120"/>
         <field name="name">Depósitos por Aclarar</field>
         <field name="code">21205000</field>
         <field name="reconcile" eval="True"/>
@@ -761,6 +828,7 @@
     </record>
 
     <record id="cl_coa_mfg_21206000" model="account.account.template">
+        <field name="group_id" ref="cl_bs_2120"/>
         <field name="name">Acreedores Varios</field>
         <field name="code">21206000</field>
         <field name="reconcile" eval="True"/>
@@ -769,6 +837,7 @@
     </record>
 
     <record id="cl_coa_mfg_21401000" model="account.account.template">
+        <field name="group_id" ref="cl_bs_2140"/>
         <field name="name">Anticipos de Clientes</field>
         <field name="code">21401000</field>
         <field name="reconcile" eval="True"/>
@@ -777,6 +846,7 @@
     </record>
 
     <record id="cl_coa_mfg_21501000" model="account.account.template">
+        <field name="group_id" ref="cl_bs_2150"/>
         <field name="name">IVA Débito Fiscal</field>
         <field name="code">21501000</field>
         <field name="reconcile" eval="False"/>
@@ -785,6 +855,7 @@
     </record>
 
     <record id="cl_coa_mfg_21502000" model="account.account.template">
+        <field name="group_id" ref="cl_bs_2150"/>
         <field name="name">Impuesto Único Trabajadores</field>
         <field name="code">21502000</field>
         <field name="reconcile" eval="False"/>
@@ -793,6 +864,7 @@
     </record>
 
     <record id="cl_coa_mfg_21503000" model="account.account.template">
+        <field name="group_id" ref="cl_bs_2150"/>
         <field name="name">Impuesto Retenido Segunda Categoría</field>
         <field name="code">21503000</field>
         <field name="reconcile" eval="False"/>
@@ -801,6 +873,7 @@
     </record>
 
     <record id="cl_coa_mfg_21504000" model="account.account.template">
+        <field name="group_id" ref="cl_bs_2150"/>
         <field name="name">Otros Impuestos Retenidos por Pagar</field>
         <field name="code">21504000</field>
         <field name="reconcile" eval="False"/>
@@ -809,6 +882,7 @@
     </record>
 
     <record id="cl_coa_mfg_21505000" model="account.account.template">
+        <field name="group_id" ref="cl_bs_2150"/>
         <field name="name">Provisión de Impuesto a la Renta</field>
         <field name="code">21505000</field>
         <field name="reconcile" eval="True"/>
@@ -817,6 +891,7 @@
     </record>
 
     <record id="cl_coa_mfg_21506000" model="account.account.template">
+        <field name="group_id" ref="cl_bs_2150"/>
         <field name="name">PPM por Pagar</field>
         <field name="code">21506000</field>
         <field name="reconcile" eval="True"/>
@@ -825,6 +900,7 @@
     </record>
 
     <record id="cl_coa_mfg_21509000" model="account.account.template">
+        <field name="group_id" ref="cl_bs_2150"/>
         <field name="name">Impuesto Mensual por Pagar</field>
         <field name="code">21509000</field>
         <field name="reconcile" eval="True"/>
@@ -833,6 +909,7 @@
     </record>
 
     <record id="cl_coa_mfg_21601000" model="account.account.template">
+        <field name="group_id" ref="cl_bs_2160"/>
         <field name="name">Remuneraciones por Pagar</field>
         <field name="code">21601000</field>
         <field name="reconcile" eval="True"/>
@@ -841,6 +918,7 @@
     </record>
 
     <record id="cl_coa_mfg_21601100" model="account.account.template">
+        <field name="group_id" ref="cl_bs_2160"/>
         <field name="name">Centralización de Remuneraciones</field>
         <field name="code">21601100</field>
         <field name="reconcile" eval="True"/>
@@ -849,6 +927,7 @@
     </record>
 
     <record id="cl_coa_mfg_21602000" model="account.account.template">
+        <field name="group_id" ref="cl_bs_2160"/>
         <field name="name">Honorarios por Pagar</field>
         <field name="code">21602000</field>
         <field name="reconcile" eval="True"/>
@@ -857,6 +936,7 @@
     </record>
 
     <record id="cl_coa_mfg_21701000" model="account.account.template">
+        <field name="group_id" ref="cl_bs_2170"/>
         <field name="name">Leyes Sociales por Pagar (AFP/AFC)</field>
         <field name="code">21701000</field>
         <field name="reconcile" eval="True"/>
@@ -865,6 +945,7 @@
     </record>
 
     <record id="cl_coa_mfg_21702000" model="account.account.template">
+        <field name="group_id" ref="cl_bs_2170"/>
         <field name="name">CCAF por Pagar</field>
         <field name="code">21702000</field>
         <field name="reconcile" eval="True"/>
@@ -873,6 +954,7 @@
     </record>
 
     <record id="cl_coa_mfg_21702100" model="account.account.template">
+        <field name="group_id" ref="cl_bs_2170"/>
         <field name="name">CCAF Créditos Personales</field>
         <field name="code">21702100</field>
         <field name="reconcile" eval="True"/>
@@ -881,6 +963,7 @@
     </record>
 
     <record id="cl_coa_mfg_21703000" model="account.account.template">
+        <field name="group_id" ref="cl_bs_2170"/>
         <field name="name">INP por Pagar</field>
         <field name="code">21703000</field>
         <field name="reconcile" eval="True"/>
@@ -889,6 +972,7 @@
     </record>
 
     <record id="cl_coa_mfg_21704000" model="account.account.template">
+        <field name="group_id" ref="cl_bs_2170"/>
         <field name="name">ISAPREs por Pagar</field>
         <field name="code">21704000</field>
         <field name="reconcile" eval="True"/>
@@ -897,6 +981,7 @@
     </record>
 
     <record id="cl_coa_mfg_21705000" model="account.account.template">
+        <field name="group_id" ref="cl_bs_2170"/>
         <field name="name">Mutual Seguridad por Pagar</field>
         <field name="code">21705000</field>
         <field name="reconcile" eval="True"/>
@@ -905,6 +990,7 @@
     </record>
 
     <record id="cl_coa_mfg_21706000" model="account.account.template">
+        <field name="group_id" ref="cl_bs_2170"/>
         <field name="name">Fondo Solidario</field>
         <field name="code">21706000</field>
         <field name="reconcile" eval="True"/>
@@ -913,6 +999,7 @@
     </record>
 
     <record id="cl_coa_mfg_21801000" model="account.account.template">
+        <field name="group_id" ref="cl_bs_2180"/>
         <field name="name">Obligaciones Leasing C/P</field>
         <field name="code">21801000</field>
         <field name="reconcile" eval="True"/>
@@ -921,6 +1008,7 @@
     </record>
 
     <record id="cl_coa_mfg_21901000" model="account.account.template">
+        <field name="group_id" ref="cl_bs_2190"/>
         <field name="name">Otras Provisiones</field>
         <field name="code">21901000</field>
         <field name="reconcile" eval="False"/>
@@ -929,6 +1017,7 @@
     </record>
 
     <record id="cl_coa_mfg_21902000" model="account.account.template">
+        <field name="group_id" ref="cl_bs_2190"/>
         <field name="name">Dividendos por Pagar</field>
         <field name="code">21902000</field>
         <field name="reconcile" eval="True"/>
@@ -938,6 +1027,7 @@
 
 
     <record id="cl_coa_mfg_22103000" model="account.account.template">
+        <field name="group_id" ref="cl_bs_2210"/>
         <field name="name">Oblig. con Inst. Financ. L/P</field>
         <field name="code">22103000</field>
         <field name="reconcile" eval="True"/>
@@ -946,14 +1036,16 @@
     </record>
 
     <record id="cl_coa_mfg_22105000" model="account.account.template">
+        <field name="group_id" ref="cl_bs_2210"/>
         <field name="name">Crédito Comercial L/P</field>
-        <field name="code">22015000</field>
+        <field name="code">22105000</field>
         <field name="reconcile" eval="True"/>
         <field ref="account.data_account_type_non_current_liabilities" name="user_type_id"/>
         <field name="chart_template_id" ref="cl_chart_template_coa_mfg"/>
     </record>
 
     <record id="cl_coa_mfg_22106000" model="account.account.template">
+        <field name="group_id" ref="cl_bs_2210"/>
         <field name="name">Crédito Hipotecario L/P</field>
         <field name="code">22106000</field>
         <field name="reconcile" eval="True"/>
@@ -962,6 +1054,7 @@
     </record>
 
     <record id="cl_coa_mfg_22301000" model="account.account.template">
+        <field name="group_id" ref="cl_bs_2230"/>
         <field name="name">Cuentas por Pagar EERR L/P</field>
         <field name="code">22301000</field>
         <field name="reconcile" eval="True"/>
@@ -970,6 +1063,7 @@
     </record>
 
     <record id="cl_coa_mfg_22601000" model="account.account.template">
+        <field name="group_id" ref="cl_bs_2260"/>
         <field name="name">Impuesto Diferido L/P</field>
         <field name="code">22601000</field>
         <field name="reconcile" eval="False"/>
@@ -978,6 +1072,7 @@
     </record>
 
     <record id="cl_coa_mfg_22801000" model="account.account.template">
+        <field name="group_id" ref="cl_bs_2280"/>
         <field name="name">Obligaciones Leasing L/P</field>
         <field name="code">22801000</field>
         <field name="reconcile" eval="True"/>
@@ -989,6 +1084,7 @@
     <!-- PATRIMONIO -->
 
     <record id="cl_coa_mfg_31101000" model="account.account.template">
+        <field name="group_id" ref="cl_bs_3110"/>
         <field name="name">Capital Social Suscrito</field>
         <field name="code">31101000</field>
         <field name="reconcile" eval="False"/>
@@ -997,6 +1093,7 @@
     </record>
 
     <record id="cl_coa_mfg_31102000" model="account.account.template">
+        <field name="group_id" ref="cl_bs_3110"/>
         <field name="name">Capital Social Pagago</field>
         <field name="code">31102000</field>
         <field name="reconcile" eval="False"/>
@@ -1005,6 +1102,7 @@
     </record>
 
     <record id="cl_coa_mfg_31103000" model="account.account.template">
+        <field name="group_id" ref="cl_bs_3110"/>
         <field name="name">Aportes por Enterar</field>
         <field name="code">31103000</field>
         <field name="reconcile" eval="False"/>
@@ -1013,6 +1111,7 @@
     </record>
 
     <record id="cl_coa_mfg_31201000" model="account.account.template">
+        <field name="group_id" ref="cl_bs_3120"/>
         <field name="name">Reservas Legales</field>
         <field name="code">31201000</field>
         <field name="reconcile" eval="False"/>
@@ -1021,6 +1120,7 @@
     </record>
 
     <record id="cl_coa_mfg_31202000" model="account.account.template">
+        <field name="group_id" ref="cl_bs_3120"/>
         <field name="name">Revalorización Capital Propio</field>
         <field name="code">31202000</field>
         <field name="reconcile" eval="False"/>
@@ -1029,6 +1129,7 @@
     </record>
 
     <record id="cl_coa_mfg_31203000" model="account.account.template">
+        <field name="group_id" ref="cl_bs_3120"/>
         <field name="name">Reserva Retasación Técnica Activo Fijo</field>
         <field name="code">31203000</field>
         <field name="reconcile" eval="False"/>
@@ -1037,6 +1138,7 @@
     </record>
 
     <record id="cl_coa_mfg_31301000" model="account.account.template">
+        <field name="group_id" ref="cl_bs_3130"/>
         <field name="name">Resultado Acumulado</field>
         <field name="code">31301000</field>
         <field name="reconcile" eval="False"/>
@@ -1045,6 +1147,7 @@
     </record>
 
     <record id="cl_coa_mfg_31302000" model="account.account.template">
+        <field name="group_id" ref="cl_bs_3130"/>
         <field name="name">Resultado del Ejercicio</field>
         <field name="code">31302000</field>
         <field name="reconcile" eval="False"/>
@@ -1657,7 +1760,7 @@
 
     <record id="cl_coa_mfg_62411000" model="account.account.template">
         <field name="name">Impuesto a la Renta (1ra Categoría)</field>
-        <field name="code">62401000</field>
+        <field name="code">62411000</field>
         <field name="reconcile" eval="False"/>
         <field ref="account.data_account_type_expenses" name="user_type_id"/>
         <field name="chart_template_id" ref="cl_chart_template_coa_mfg"/>
