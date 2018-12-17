@@ -33,6 +33,8 @@
     'depends': ['account'],
     'data': [
         'data/account_data.xml',
+		'data/account_sequence.xml',
+		'data/account_journal.xml',
         'data/account_group_data.xml',
         'data/l10n_cl_chart_data.xml',
         'data/account_tax_data.xml',
