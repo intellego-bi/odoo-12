@@ -1147,7 +1147,7 @@
     </record>
 
     <record id="cl_coa_mfg_32102000" model="account.account.template">
-        <field name="group_id" ref="cl_bs_3130"/>
+        <field name="group_id" ref="cl_bs_3210"/>
         <field name="name">Resultado del Ejercicio</field>
         <field name="code">32102000</field>
         <field name="reconcile" eval="False"/>
