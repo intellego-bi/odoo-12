@@ -886,7 +886,7 @@
         <field name="name">Provisión de Impuesto a la Renta</field>
         <field name="code">21505000</field>
         <field name="reconcile" eval="True"/>
-        <field ref="account.data_account_type_non_current_liabilities" name="user_type_id"/>
+        <field ref="account.data_account_type_current_liabilities" name="user_type_id"/>
         <field name="chart_template_id" ref="cl_chart_template_coa_mfg"/>
     </record>
 
@@ -1447,7 +1447,7 @@
         <field name="name">Energía y Electricidad</field>
         <field name="code">52221000</field>
         <field name="reconcile" eval="False"/>
-        <field ref="account.data_account_type_expenses" name="user_type_id"/>
+        <field ref="account.data_account_type_direct_costs" name="user_type_id"/>
         <field name="chart_template_id" ref="cl_chart_template_coa_mfg"/>
     </record>
 
@@ -1456,7 +1456,7 @@
         <field name="name">Combustible Equipos Producción</field>
         <field name="code">52222000</field>
         <field name="reconcile" eval="False"/>
-        <field ref="account.data_account_type_expenses" name="user_type_id"/>
+        <field ref="account.data_account_type_direct_costs" name="user_type_id"/>
         <field name="chart_template_id" ref="cl_chart_template_coa_mfg"/>
     </record>
 
@@ -1474,7 +1474,7 @@
         <field name="name">Remuneraciones Admón. y Venta</field>
         <field name="code">61111000</field>
         <field name="reconcile" eval="False"/>
-        <field ref="account.data_account_type_direct_costs" name="user_type_id"/>
+        <field ref="account.data_account_type_expenses" name="user_type_id"/>
         <field name="chart_template_id" ref="cl_chart_template_coa_mfg"/>
     </record>
 
@@ -1483,7 +1483,7 @@
         <field name="name">Horas Extra Admón. y Venta</field>
         <field name="code">61111100</field>
         <field name="reconcile" eval="False"/>
-        <field ref="account.data_account_type_direct_costs" name="user_type_id"/>
+        <field ref="account.data_account_type_expenses" name="user_type_id"/>
         <field name="chart_template_id" ref="cl_chart_template_coa_mfg"/>
     </record>
 
@@ -1492,7 +1492,7 @@
         <field name="name">Aporte Patronal Admón. y Venta</field>
         <field name="code">61112000</field>
         <field name="reconcile" eval="False"/>
-        <field ref="account.data_account_type_direct_costs" name="user_type_id"/>
+        <field ref="account.data_account_type_expenses" name="user_type_id"/>
         <field name="chart_template_id" ref="cl_chart_template_coa_mfg"/>
     </record>
 
@@ -1501,7 +1501,7 @@
         <field name="name">Movilización Admón. y Venta</field>
         <field name="code">61113000</field>
         <field name="reconcile" eval="False"/>
-        <field ref="account.data_account_type_direct_costs" name="user_type_id"/>
+        <field ref="account.data_account_type_expenses" name="user_type_id"/>
         <field name="chart_template_id" ref="cl_chart_template_coa_mfg"/>
     </record>
 
@@ -1510,7 +1510,7 @@
         <field name="name">Viáticos Admón. y Venta</field>
         <field name="code">61113100</field>
         <field name="reconcile" eval="False"/>
-        <field ref="account.data_account_type_direct_costs" name="user_type_id"/>
+        <field ref="account.data_account_type_expenses" name="user_type_id"/>
         <field name="chart_template_id" ref="cl_chart_template_coa_mfg"/>
     </record>
 
@@ -1519,7 +1519,7 @@
         <field name="name">Alimentación Admón. y Venta</field>
         <field name="code">61114000</field>
         <field name="reconcile" eval="False"/>
-        <field ref="account.data_account_type_direct_costs" name="user_type_id"/>
+        <field ref="account.data_account_type_expenses" name="user_type_id"/>
         <field name="chart_template_id" ref="cl_chart_template_coa_mfg"/>
     </record>
 
@@ -1528,7 +1528,7 @@
         <field name="name">Aguinaldos Personal Admón. y Venta</field>
         <field name="code">61115000</field>
         <field name="reconcile" eval="False"/>
-        <field ref="account.data_account_type_direct_costs" name="user_type_id"/>
+        <field ref="account.data_account_type_expenses" name="user_type_id"/>
         <field name="chart_template_id" ref="cl_chart_template_coa_mfg"/>
     </record>
 
@@ -1537,7 +1537,7 @@
         <field name="name">Bonos Admón. y Venta</field>
         <field name="code">61116000</field>
         <field name="reconcile" eval="False"/>
-        <field ref="account.data_account_type_direct_costs" name="user_type_id"/>
+        <field ref="account.data_account_type_expenses" name="user_type_id"/>
         <field name="chart_template_id" ref="cl_chart_template_coa_mfg"/>
     </record>
 
@@ -1546,7 +1546,7 @@
         <field name="name">Indemnizaciones Admón. y Venta</field>
         <field name="code">61117000</field>
         <field name="reconcile" eval="False"/>
-        <field ref="account.data_account_type_direct_costs" name="user_type_id"/>
+        <field ref="account.data_account_type_expenses" name="user_type_id"/>
         <field name="chart_template_id" ref="cl_chart_template_coa_mfg"/>
     </record>
 
@@ -1555,7 +1555,7 @@
         <field name="name">Capacitación Admón. y Venta</field>
         <field name="code">61118000</field>
         <field name="reconcile" eval="False"/>
-        <field ref="account.data_account_type_direct_costs" name="user_type_id"/>
+        <field ref="account.data_account_type_expenses" name="user_type_id"/>
         <field name="chart_template_id" ref="cl_chart_template_coa_mfg"/>
     </record>
 
@@ -1564,7 +1564,7 @@
         <field name="name">Bienestar Personal Admón. y Venta</field>
         <field name="code">61119000</field>
         <field name="reconcile" eval="False"/>
-        <field ref="account.data_account_type_direct_costs" name="user_type_id"/>
+        <field ref="account.data_account_type_expenses" name="user_type_id"/>
         <field name="chart_template_id" ref="cl_chart_template_coa_mfg"/>
     </record>
 
@@ -1573,7 +1573,7 @@
         <field name="name">Materiales e Insumos Oficina Admón.</field>
         <field name="code">61121000</field>
         <field name="reconcile" eval="False"/>
-        <field ref="account.data_account_type_direct_costs" name="user_type_id"/>
+        <field ref="account.data_account_type_expenses" name="user_type_id"/>
         <field name="chart_template_id" ref="cl_chart_template_coa_mfg"/>
     </record>
 
