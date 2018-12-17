@@ -7,7 +7,7 @@
         <menuitem id="menu_cl_hr_payroll_addons" name="Adicionales Nómina" parent="hr_payroll.menu_hr_payroll_root" sequence="3"/>
         <menuitem id="menu_cl_hr_payroll_indicators" name="Previsión" parent="hr_payroll.menu_hr_payroll_root" sequence="4" groups="hr_payroll.group_hr_payroll_user"/>
         <menuitem id="menu_cl_hr_payroll_master_data" name="Master Data" parent="hr_payroll.menu_hr_payroll_root" sequence="5"/>
-        <menuitem id="menu_cl_hr_payroll_reports" name="Reports" parent="hr_payroll.menu_hr_payroll_root" sequence="11" groups="hr_payroll.group_hr_payroll_user"/>
+        <menuitem id="menu_cl_hr_payroll_reports" name="Reports" parent="hr_payroll.menu_hr_payroll_root" sequence="6" groups="hr_payroll.group_hr_payroll_user"/>
         <menuitem id="menu_cl_hr_payroll_configuration" name="Chilean Configuration" parent="hr_payroll.menu_hr_payroll_configuration" sequence="101" groups="hr_payroll.group_hr_payroll_user"/>
 
         <!-- Acción Vista CUENTAS BANCARIAS EMPLEADOS  -->
