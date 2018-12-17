@@ -572,41 +572,41 @@
 
         <!-- Ingreso Operacional : Prefijo = 41 -->
 		
-        <record id="cl_pl_4110" model="account.group">
+        <record id="cl_pl_4111" model="account.group">
             <field name="name">Ingresos por Ventas del Giro</field>
-            <field name="code_prefix">4110</field>
+            <field name="code_prefix">4111</field>
 		    <field name="parent_id" ref="cl_pl_41"/>
         </record>
 		
-        <record id="cl_pl_4120" model="account.group">
+        <record id="cl_pl_4121" model="account.group">
             <field name="name">Comisiones por Ventas (menos)</field>
-            <field name="code_prefix">4120</field>
+            <field name="code_prefix">4121</field>
 		    <field name="parent_id" ref="cl_pl_41"/>
         </record>
 
         <!-- Ingreso No-Operacional : Prefijo = 42 -->
 		
-        <record id="cl_pl_4210" model="account.group">
+        <record id="cl_pl_4211" model="account.group">
             <field name="name">Ingresos Financieros</field>
-            <field name="code_prefix">4210</field>
+            <field name="code_prefix">4211</field>
 		    <field name="parent_id" ref="cl_pl_42"/>
         </record>
 		
-        <record id="cl_pl_4220" model="account.group">
+        <record id="cl_pl_4221" model="account.group">
             <field name="name">Ingresos por Corrección Monetaria</field>
-            <field name="code_prefix">4220</field>
+            <field name="code_prefix">4221</field>
 		    <field name="parent_id" ref="cl_pl_42"/>
         </record>
 		
-        <record id="cl_pl_4230" model="account.group">
+        <record id="cl_pl_4231" model="account.group">
             <field name="name">Ingresos por Diferencia de Cambio</field>
-            <field name="code_prefix">4230</field>
+            <field name="code_prefix">4231</field>
 		    <field name="parent_id" ref="cl_pl_42"/>
         </record>
 		
-        <record id="cl_pl_4290" model="account.group">
+        <record id="cl_pl_4291" model="account.group">
             <field name="name">Otros Ingresos No-Operacionales</field>
-            <field name="code_prefix">4290</field>
+            <field name="code_prefix">4291</field>
 		    <field name="parent_id" ref="cl_pl_42"/>
         </record>
 
@@ -764,9 +764,43 @@
 
         <record id="cl_pl_6211" model="account.group">
             <field name="name">Gastos Financieros</field>
-            <field name="code_prefix">6111</field>
+            <field name="code_prefix">6211</field>
 		    <field name="parent_id" ref="cl_pl_621"/>
         </record>
+
+        <!-- Gastos Corrección Monetaria : Prefijo = 622 -->
+
+        <record id="cl_pl_6221" model="account.group">
+            <field name="name">Gastos Financieros</field>
+            <field name="code_prefix">6221</field>
+		    <field name="parent_id" ref="cl_pl_622"/>
+        </record>
+
+        <!-- Gastos Diferencia de Cambio : Prefijo = 623 -->
+
+        <record id="cl_pl_6231" model="account.group">
+            <field name="name">Gastos Diferencia de Cambio</field>
+            <field name="code_prefix">6231</field>
+		    <field name="parent_id" ref="cl_pl_623"/>
+        </record>
+
+        <!-- Gastos Tributarios : Prefijo = 624 -->
+
+        <record id="cl_pl_6241" model="account.group">
+            <field name="name">Gastos Tributarios</field>
+            <field name="code_prefix">6241</field>
+		    <field name="parent_id" ref="cl_pl_624"/>
+        </record>
+
+        <!-- Otros Gastos No-Operacionales : Prefijo = 629 -->
+
+        <record id="cl_pl_6291" model="account.group">
+            <field name="name">Otros Gastos No-Operacionales</field>
+            <field name="code_prefix">6291</field>
+		    <field name="parent_id" ref="cl_pl_629"/>
+        </record>
+
+
 
 
 
