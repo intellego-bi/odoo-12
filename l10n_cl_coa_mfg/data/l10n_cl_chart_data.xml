@@ -1260,6 +1260,7 @@
     </record>
 
     <record id="cl_coa_mfg_42913000" model="account.account.template">
+        <field name="group_id" ref="cl_pl_4291"/>
         <field name="name">Ingresos por Arriendos</field>
         <field name="code">42913000</field>
         <field name="reconcile" eval="False"/>
