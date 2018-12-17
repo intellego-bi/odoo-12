@@ -850,7 +850,9 @@ result = round(SECEEMP) + round(SIS) + round(MUT) + round(SC)</field>
 
 
 
-        <!-- Reglas Addons Nómina Chile -->
+        <!-- Reglas Adicionales Nómina -->
+		
+        <!-- Solicitud de Anticipo RRHH -->
 
         <record id="hr_payslip_rule_sol_anticipo" model="hr.salary.rule">
             <field name="code">SANTS</field>
@@ -871,8 +873,9 @@ result = round(SECEEMP) + round(SIS) + round(MUT) + round(SC)</field>
             <field name="input_id" ref="hr_payslip_rule_sol_anticipo"/>
         </record>
 
+        <!-- Solicitud de Préstamo RRHH -->
 
-        <!--<record id="hr_rule_prestamo" model="hr.salary.rule">
+        <record id="hr_rule_prestamo" model="hr.salary.rule">
             <field name="code">HRPR</field>
             <field name="name">HR Loan Installment</field>
             <field name="note">Regla automática que toma las cuotas desde el módulo de Préstamos a Empleados.</field>
@@ -890,8 +893,7 @@ result = round(SECEEMP) + round(SIS) + round(MUT) + round(SC)</field>
             <field name="code">HRPR</field>
             <field name="name">HR Loan Installment</field>
             <field name="input_id" ref="hr_rule_prestamo"/>
-        </record>-->
-
+        </record>
 
         <!-- Reglas Helios -->
 
@@ -1009,25 +1011,7 @@ result = round(SECEEMP) + round(SIS) + round(MUT) + round(SC)</field>
 
 
         <!-- Reglas para Finiquito -->
-        <record id="hr_rule_prestamo" model="hr.salary.rule">
-            <field name="code">HRPR</field>
-            <field name="name">HR Loan Installment</field>
-            <field name="note">Regla automática que toma las cuotas desde el módulo de Préstamos a Empleados.</field>
-            <field name="category_id" ref="ODESC"/>
-            <field name="account_debit" ref="l10n_cl_coa_mfg.1_cl_coa_mfg_21601100"/>
-            <field name="account_credit" ref="l10n_cl_coa_mfg.1_cl_coa_mfg_11402000"/>
-            <field name="register_id" ref="hr_payroll.contrib_register_employees"/>
-            <field name="amount_select">code</field>
-            <field name="amount_python_compute">result = inputs.HRPR and + (inputs.HRPR.amount)</field>
-            <field name="appears_on_payslip" eval="True"/>
-            <field name="sequence" eval="38"/>
-        </record>
 
-        <record id="hr_rule_input_prestamo" model="hr.rule.input">
-            <field name="code">HRPR</field>
-            <field name="name">HR Loan Installment</field>
-            <field name="input_id" ref="hr_rule_prestamo"/>
-        </record>
 
         <record id="hr_rule_fin" model="hr.salary.rule">
             <field name="code">FIN</field>
