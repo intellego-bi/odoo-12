@@ -635,7 +635,7 @@
     </record>
 
     <record id="cl_coa_mfg_13011000" model="account.account.template">
-        <field name="group_id" ref="cl_bs_1301/>
+        <field name="group_id" ref="cl_bs_1301"/>
         <field name="name">Cuentas por Cobrar a Socios</field>
         <field name="code">13101000</field>
         <field name="reconcile" eval="True"/>
