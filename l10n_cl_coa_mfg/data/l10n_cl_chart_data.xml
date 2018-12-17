@@ -1470,57 +1470,57 @@
         <field name="chart_template_id" ref="cl_chart_template_coa_mfg"/>
     </record>
 
-    <record id="cl_coa_mfg_61301000" model="account.account.template">
-        <field name="name">Mantención y Reparación Instalaciones</field>
-        <field name="code">61301000</field>
-        <field name="reconcile" eval="False"/>
-        <field ref="account.data_account_type_expenses" name="user_type_id"/>
-        <field name="chart_template_id" ref="cl_chart_template_coa_mfg"/>
-    </record>
-
-    <record id="cl_coa_mfg_61302000" model="account.account.template">
-        <field name="name">Materiales de Aseo Instalaciones</field>
-        <field name="code">61302000</field>
-        <field name="reconcile" eval="False"/>
-        <field ref="account.data_account_type_expenses" name="user_type_id"/>
-        <field name="chart_template_id" ref="cl_chart_template_coa_mfg"/>
-    </record>
-
     <record id="cl_coa_mfg_61311000" model="account.account.template">
-        <field name="name">Arriendo Instalaciones</field>
+        <field name="name">Mantención y Reparación Instalaciones</field>
         <field name="code">61311000</field>
         <field name="reconcile" eval="False"/>
         <field ref="account.data_account_type_expenses" name="user_type_id"/>
         <field name="chart_template_id" ref="cl_chart_template_coa_mfg"/>
     </record>
 
+    <record id="cl_coa_mfg_61312000" model="account.account.template">
+        <field name="name">Materiales de Aseo Instalaciones</field>
+        <field name="code">61312000</field>
+        <field name="reconcile" eval="False"/>
+        <field ref="account.data_account_type_expenses" name="user_type_id"/>
+        <field name="chart_template_id" ref="cl_chart_template_coa_mfg"/>
+    </record>
+
     <record id="cl_coa_mfg_61321000" model="account.account.template">
-        <field name="name">Servicios Básicos Instalaciones</field>
+        <field name="name">Arriendo Instalaciones</field>
         <field name="code">61321000</field>
         <field name="reconcile" eval="False"/>
         <field ref="account.data_account_type_expenses" name="user_type_id"/>
         <field name="chart_template_id" ref="cl_chart_template_coa_mfg"/>
     </record>
 
-    <record id="cl_coa_mfg_61322000" model="account.account.template">
+    <record id="cl_coa_mfg_61331000" model="account.account.template">
+        <field name="name">Servicios Básicos Instalaciones</field>
+        <field name="code">61331000</field>
+        <field name="reconcile" eval="False"/>
+        <field ref="account.data_account_type_expenses" name="user_type_id"/>
+        <field name="chart_template_id" ref="cl_chart_template_coa_mfg"/>
+    </record>
+
+    <record id="cl_coa_mfg_61332000" model="account.account.template">
         <field name="name">Gastos Comunes Instalaciones</field>
-        <field name="code">61322000</field>
+        <field name="code">61332000</field>
         <field name="reconcile" eval="False"/>
         <field ref="account.data_account_type_expenses" name="user_type_id"/>
         <field name="chart_template_id" ref="cl_chart_template_coa_mfg"/>
     </record>
 
-    <record id="cl_coa_mfg_61323000" model="account.account.template">
+    <record id="cl_coa_mfg_61333000" model="account.account.template">
         <field name="name">Seguridad y Vigilancia Instalaciones</field>
-        <field name="code">61323000</field>
+        <field name="code">61333000</field>
         <field name="reconcile" eval="False"/>
         <field ref="account.data_account_type_expenses" name="user_type_id"/>
         <field name="chart_template_id" ref="cl_chart_template_coa_mfg"/>
     </record>
 
-    <record id="cl_coa_mfg_61324000" model="account.account.template">
+    <record id="cl_coa_mfg_61334000" model="account.account.template">
         <field name="name">Seguros Instalaciones</field>
-        <field name="code">61324000</field>
+        <field name="code">61334000</field>
         <field name="reconcile" eval="False"/>
         <field ref="account.data_account_type_expenses" name="user_type_id"/>
         <field name="chart_template_id" ref="cl_chart_template_coa_mfg"/>
