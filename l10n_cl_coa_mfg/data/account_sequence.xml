@@ -1,33 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>						
 <odoo>						
     <data>      
-        <!-- Account Journal  -->
-        <record id="cl_pur_serv" model="account.journal">
-            <field name="name">Compra de Servicios</field>
-            <field name="code">COSE</field>
-            <field name="type">purchase</field>
-            <field name="show_on_dashboard" eval="True"/>
+        <!-- Journal Sequences  -->
+
+        <record id="cl_sequence_gen_inve" model="ir.sequence">
+            <field name="name">INVE Diario Inventarios (Secuencia)</field>
+            <!--<field name="code">account.payment.customer.invoice</field>-->
+            <field name="prefix">INVE/%(range_year)s/</field>
+            <field eval="no_gap" name="implementation"/>
+            <field eval="1" name="number_next"/>
+            <field eval="1" name="number_increment"/>
+            <field eval="True" name="use_date_range"/>
+            <field eval="True" name="company_id"/>
+            <field name="padding">6</field>
         </record>
 
-       <record id="cl_gen_inve" model="account.journal">
-            <field name="name">Diario de Inventarios</field>
-            <field name="code">INVE</field>
-            <field name="type">general</field>
-            <field name="show_on_dashboard" eval="False"/>
+        <record id="cl_sequence_gen_ingi" model="ir.sequence">
+            <field name="name">INGI Gastos Internación (Secuencia)</field>
+            <field name="code">stock.landed.cost</field>
+            <field name="prefix">INGI/%(range_year)s/</field>
+            <field eval="standard" name="implementation"/>
+            <field eval="1" name="number_next"/>
+            <field eval="1" name="number_increment"/>
+            <field eval="True" name="use_date_range"/>
+            <field eval="True" name="company_id"/>
+            <field name="padding">6</field>
         </record>
 
-        <record id="cl_gen_antp" model="account.journal">
-            <field name="name">Anticipos Proveedores</field>
-            <field name="code">COAN</field>
-            <field name="type">general</field>
-            <field name="show_on_dashboard" eval="True"/>
+        <record id="cl_sequence_gen_antp" model="ir.sequence">
+            <field name="name">COAN Anticipos Proveedores (Secuencia)</field>
+            <!--<field name="code">account.payment.customer.invoice</field>-->
+            <field name="prefix">COAN/%(range_year)s/</field>
+            <field eval="1" name="number_next"/>
+            <field eval="1" name="number_increment"/>
+            <field eval="True" name="use_date_range"/>
+            <field eval="True" name="company_id"/>
+            <field name="padding">6</field>
         </record>
-		
-        <record id="cl_gen_ditc" model="account.journal">
-            <field name="name">Diferencia Tipo de Cambio</field>
-            <field name="code">DITC</field>
-            <field name="type">general</field>
-            <field name="show_on_dashboard" eval="False"/>
+
+        <record id="cl_sequence_pur_serv" model="ir.sequence">
+            <field name="name">COSE Compra Servicios (Secuencia)</field>
+            <!--<field name="code">account.payment.customer.invoice</field>-->
+            <field name="prefix">COSE/%(range_year)s/</field>
+            <field eval="1" name="number_next"/>
+            <field eval="1" name="number_increment"/>
+            <field eval="True" name="use_date_range"/>
+            <field eval="True" name="company_id"/>
+            <field name="padding">6</field>
+        </record>
+
+        <record id="cl_sequence_gen_lmdc" model="ir.sequence">
+            <field name="name">LMDC Diferencia Cambio (Secuencia)</field>
+            <!--<field name="code">account.payment.customer.invoice</field>-->
+            <field name="prefix">LMDC/%(range_year)s/</field>
+            <field eval="no_gap" name="implementation"/>
+            <field eval="1" name="number_next"/>
+            <field eval="1" name="number_increment"/>
+            <field eval="True" name="use_date_range"/>
+            <field eval="True" name="company_id"/>
+            <field name="padding">6</field>
+        </record>
+
+        <record id="cl_sequence_gen_lmcg" model="ir.sequence">
+            <field name="name">LMCG Contabilización General (Secuencia)</field>
+            <!--<field name="code">account.payment.customer.invoice</field>-->
+            <field name="prefix">LMCG/%(range_year)s/</field>
+            <field eval="no_gap" name="implementation"/>
+            <field eval="1" name="number_next"/>
+            <field eval="1" name="number_increment"/>
+            <field eval="True" name="use_date_range"/>
+            <field eval="True" name="company_id"/>
+            <field name="padding">6</field>
+        </record>
+
+        <record id="cl_sequence_gen_lmco" model="ir.sequence">
+            <field name="name">LMCO Conciliación (Secuencia)</field>
+            <field name="code">account.reconcile</field>
+            <field name="prefix">LMCO/%(range_year)s/</field>
+            <field eval="standard" name="implementation"/>
+            <field eval="1" name="number_next"/>
+            <field eval="1" name="number_increment"/>
+            <field eval="True" name="use_date_range"/>
+            <field eval="False" name="company_id"/>
+            <field name="padding">6</field>
         </record>
 
     </data>						
