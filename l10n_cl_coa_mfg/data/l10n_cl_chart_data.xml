@@ -1142,7 +1142,7 @@
         <field name="name">Resultado Acumulado</field>
         <field name="code">32101000</field>
         <field name="reconcile" eval="False"/>
-        <field ref="account.data_account	_type_equity" name="user_type_id"/>
+        <field ref="account.data_account_type_equity" name="user_type_id"/>
         <field name="chart_template_id" ref="cl_chart_template_coa_mfg"/>
     </record>
 
