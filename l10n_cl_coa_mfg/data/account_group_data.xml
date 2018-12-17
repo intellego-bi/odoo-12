@@ -424,12 +424,127 @@
 
 
         <!-- Pasivo Corriente : Prefijo = 21 -->
-		
+
         <record id="cl_bs_2110" model="account.group">
             <field name="name">Obligaciones con Bancos e Instituciones Financieras</field>
             <field name="code_prefix">2110</field>
 		    <field name="parent_id" ref="cl_bs_21"/>
         </record>
+
+        <record id="cl_bs_2120" model="account.group">
+            <field name="name">Cuentas y Documentos por Pagar</field>
+            <field name="code_prefix">2120</field>
+		    <field name="parent_id" ref="cl_bs_21"/>
+        </record>
+
+        <record id="cl_bs_2130" model="account.group">
+            <field name="name">Cuentas y Documentos por Pagar EERR C/P</field>
+            <field name="code_prefix">2130</field>
+		    <field name="parent_id" ref="cl_bs_21"/>
+        </record>
+
+        <record id="cl_bs_2140" model="account.group">
+            <field name="name">Anticipos de Clientes</field>
+            <field name="code_prefix">2140</field>
+		    <field name="parent_id" ref="cl_bs_21"/>
+        </record>
+
+        <record id="cl_bs_2150" model="account.group">
+            <field name="name">Impuestos por Pagar</field>
+            <field name="code_prefix">2150</field>
+		    <field name="parent_id" ref="cl_bs_21"/>
+        </record>
+
+        <record id="cl_bs_2160" model="account.group">
+            <field name="name">Remuneraciones por Pagar</field>
+            <field name="code_prefix">2160</field>
+		    <field name="parent_id" ref="cl_bs_21"/>
+        </record>
+
+        <record id="cl_bs_2170" model="account.group">
+            <field name="name">Entidades Previsionales por Pagar</field>
+            <field name="code_prefix">2170</field>
+		    <field name="parent_id" ref="cl_bs_21"/>
+        </record>
+
+        <record id="cl_bs_2180" model="account.group">
+            <field name="name">Acreedores por Leasing porción C/P</field>
+            <field name="code_prefix">2180</field>
+		    <field name="parent_id" ref="cl_bs_21"/>
+        </record>
+
+        <record id="cl_bs_2190" model="account.group">
+            <field name="name">Otros Pasivos Circulantes</field>
+            <field name="code_prefix">2190</field>
+		    <field name="parent_id" ref="cl_bs_21"/>
+        </record>
+
+        <!-- Pasivo Largo Plazo : Prefijo = 22 -->
+
+        <record id="cl_bs_2210" model="account.group">
+            <field name="name">Obligaciones con Bancos e Instituciones Financieras L/P</field>
+            <field name="code_prefix">2210</field>
+		    <field name="parent_id" ref="cl_bs_22"/>
+        </record>
+
+        <record id="cl_bs_2220" model="account.group">
+            <field name="name">Cuentas y Documentos por Pagar L/P</field>
+            <field name="code_prefix">2220</field>
+		    <field name="parent_id" ref="cl_bs_22"/>
+        </record>
+
+        <record id="cl_bs_2230" model="account.group">
+            <field name="name">Cuentas y Documentos por Pagar EERR L/P</field>
+            <field name="code_prefix">2230</field>
+		    <field name="parent_id" ref="cl_bs_22"/>
+        </record>
+
+        <record id="cl_bs_2260" model="account.group">
+            <field name="name">Impuestos Diferidos (en contra) L/P</field>
+            <field name="code_prefix">2260</field>
+		    <field name="parent_id" ref="cl_bs_22"/>
+        </record>
+
+        <record id="cl_bs_2280" model="account.group">
+            <field name="name">Acreedores por Leasing porción L/P</field>
+            <field name="code_prefix">2280</field>
+		    <field name="parent_id" ref="cl_bs_22"/>
+        </record>
+
+        <record id="cl_bs_2290" model="account.group">
+            <field name="name">Otros Pasivos L/P</field>
+            <field name="code_prefix">2290</field>
+		    <field name="parent_id" ref="cl_bs_22"/>
+        </record>
+
+        <!-- Capital : Prefijo = 31 -->
+
+        <record id="cl_bs_3110" model="account.group">
+            <field name="name">Capital Social</field>
+            <field name="code_prefix">3110</field>
+		    <field name="parent_id" ref="cl_bs_31"/>
+        </record>
+
+        <record id="cl_bs_3120" model="account.group">
+            <field name="name">Reservas y Revalorización de Capital</field>
+            <field name="code_prefix">3120</field>
+		    <field name="parent_id" ref="cl_bs_31"/>
+        </record>
+
+        <!-- Utilidades por Distribuir : Prefijo = 32 -->
+
+        <record id="cl_bs_3210" model="account.group">
+            <field name="name">Utilidades por Distribuir</field>
+            <field name="code_prefix">3210</field>
+		    <field name="parent_id" ref="cl_bs_32"/>
+        </record>
+
+
+
+
+
+
+
 
 
 
