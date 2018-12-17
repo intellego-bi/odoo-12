@@ -16,7 +16,7 @@
             <field name="name">Cuentas de Orden</field>
         </record>
 
-        <!-- General Accounting Account Groups -->
+        <!-- General Accounting Account Groups : 1 digit -->
 
         <record id="cl_bs_1" model="account.group">
             <field name="name">Activos</field>
@@ -54,7 +54,161 @@
 		    <field name="parent_id" ref="cl_pl"/>
         </record>
 
-        <!-- Account Groups -->
+        <!-- Account Groups : Balance Sheet : 2 digits -->
+
+        <record id="cl_bs_11" model="account.group">
+            <field name="name">Activo Corriente</field>
+            <field name="code_prefix">11</field>
+		    <field name="parent_id" ref="cl_bs_1"/>
+        </record>
+
+        <record id="cl_bs_12" model="account.group">
+            <field name="name">Activo No-Corriente</field>
+            <field name="code_prefix">12</field>
+		    <field name="parent_id" ref="cl_bs_1"/>
+        </record>
+
+        <record id="cl_bs_13" model="account.group">
+            <field name="name">Otros Activos</field>
+            <field name="code_prefix">13</field>
+		    <field name="parent_id" ref="cl_bs_1"/>
+        </record>
+
+        <record id="cl_bs_21" model="account.group">
+            <field name="name">Pasivo Corriente</field>
+            <field name="code_prefix">21</field>
+		    <field name="parent_id" ref="cl_bs_2"/>
+        </record>
+
+        <record id="cl_bs_22" model="account.group">
+            <field name="name">Pasivo Largo Plazo</field>
+            <field name="code_prefix">21</field>
+		    <field name="parent_id" ref="cl_bs_2"/>
+        </record>
+
+        <record id="cl_bs_31" model="account.group">
+            <field name="name">Capital</field>
+            <field name="code_prefix">31</field>
+		    <field name="parent_id" ref="cl_bs_3"/>
+        </record>
+
+        <record id="cl_bs_32" model="account.group">
+            <field name="name">Utilidades</field>
+            <field name="code_prefix">32</field>
+		    <field name="parent_id" ref="cl_bs_3"/>
+        </record>
+
+        <!-- Account Groups : Profit and Loss : 2 digits -->
+
+        <record id="cl_pl_41" model="account.group">
+            <field name="name">Ingreso Operacional</field>
+            <field name="code_prefix">41</field>
+		    <field name="parent_id" ref="cl_pl_4"/>
+        </record>
+
+        <record id="cl_pl_42" model="account.group">
+            <field name="name">Ingreso No-Operacional</field>
+            <field name="code_prefix">42</field>
+		    <field name="parent_id" ref="cl_pl_4"/>
+        </record>
+
+        <record id="cl_pl_51" model="account.group">
+            <field name="name">Costo de Ventas</field>
+            <field name="code_prefix">51</field>
+		    <field name="parent_id" ref="cl_pl_5"/>
+        </record>
+
+        <record id="cl_pl_52" model="account.group">
+            <field name="name">Costo de Producción</field>
+            <field name="code_prefix">52</field>
+		    <field name="parent_id" ref="cl_pl_5"/>
+        </record>
+
+        <record id="cl_pl_61" model="account.group">
+            <field name="name">Gastos Operacionales</field>
+            <field name="code_prefix">61</field>
+		    <field name="parent_id" ref="cl_pl_6"/>
+        </record>
+
+        <record id="cl_pl_62" model="account.group">
+            <field name="name">Gastos No-Operacionales</field>
+            <field name="code_prefix">62</field>
+		    <field name="parent_id" ref="cl_pl_6"/>
+        </record>
+
+        <!-- Detail Account Groups : Balance Sheet : 3 digits -->
+
+        <record id="cl_bs_121" model="account.group">
+            <field name="name">Activos Fijos</field>
+            <field name="code_prefix">121</field>
+		    <field name="parent_id" ref="cl_bs_12"/>
+        </record>
+
+        <record id="cl_bs_122" model="account.group">
+            <field name="name">Depreciación Acumulada Activos Fijos</field>
+            <field name="code_prefix">121</field>
+		    <field name="parent_id" ref="cl_bs_12"/>
+        </record>
+
+		
+        <!-- Detail Account Groups : Profit and Loss : 3 digits -->
+
+        <record id="cl_pl_611" model="account.group">
+            <field name="name">Gastos de Administración</field>
+            <field name="code_prefix">611</field>
+		    <field name="parent_id" ref="cl_pl_61"/>
+        </record>
+
+        <record id="cl_pl_612" model="account.group">
+            <field name="name">Gastos de Comercialización</field>
+            <field name="code_prefix">612</field>
+		    <field name="parent_id" ref="cl_pl_61"/>
+        </record>
+
+        <record id="cl_pl_613" model="account.group">
+            <field name="name">Gastos de Instalaciones</field>
+            <field name="code_prefix">613</field>
+		    <field name="parent_id" ref="cl_pl_61"/>
+        </record>
+
+        <record id="cl_pl_614" model="account.group">
+            <field name="name">Gastos Corporativos</field>
+            <field name="code_prefix">614</field>
+		    <field name="parent_id" ref="cl_pl_61"/>
+        </record>
+
+        <record id="cl_pl_621" model="account.group">
+            <field name="name">Gastos Financieros</field>
+            <field name="code_prefix">621</field>
+		    <field name="parent_id" ref="cl_pl_62"/>
+        </record>
+
+        <record id="cl_pl_622" model="account.group">
+            <field name="name">Gastos por Corrección Monetaria</field>
+            <field name="code_prefix">622</field>
+		    <field name="parent_id" ref="cl_pl_62"/>
+        </record>
+
+        <record id="cl_pl_623" model="account.group">
+            <field name="name">Gastos por Diferencia de Cambio</field>
+            <field name="code_prefix">623</field>
+		    <field name="parent_id" ref="cl_pl_62"/>
+        </record>
+
+        <record id="cl_pl_624" model="account.group">
+            <field name="name">Gastos Tributarios</field>
+            <field name="code_prefix">624</field>
+		    <field name="parent_id" ref="cl_pl_62"/>
+        </record>
+
+        <record id="cl_pl_629" model="account.group">
+            <field name="name">Otros Gastos No-operacionales</field>
+            <field name="code_prefix">629</field>
+		    <field name="parent_id" ref="cl_pl_62"/>
+        </record>
+
+
+
 
 
 
