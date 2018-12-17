@@ -88,6 +88,7 @@
 
     <!--  Default Account RECEIVABLE  -->
     <record id="cl_coa_receivable" model="account.account.template">
+        <field name="group_id" ref="cl_bs_1120"/>
         <field name="name">Deudores Nacionales</field>
         <field name="code">11201000</field>
         <field name="reconcile" eval="True"/>
