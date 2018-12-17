@@ -610,6 +610,15 @@
 		    <field name="parent_id" ref="cl_pl_42"/>
         </record>
 
+        <!-- Costos de Ventas : Prefijo = 51 -->
+
+        <record id="cl_pl_5111" model="account.group">
+            <field name="name">Costo de Ventas</field>
+            <field name="code_prefix">5111</field>
+		    <field name="parent_id" ref="cl_pl_51"/>
+        </record>
+
+
         <!-- Costos Directos de Producción : Prefijo = 521 -->
 
         <record id="cl_pl_5211" model="account.group">
