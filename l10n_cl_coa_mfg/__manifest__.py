@@ -24,7 +24,7 @@
 {
     'name': 'Chile - Chart of Accounts (MFG)',
     'version': '12.0.1.0.0',
-    'summary': """Chilean Chart of Accounts for Manufacturing industries """,
+    'summary': """Chilean Chart of Accounts for Manufacturing Industries """,
     'author': 'Intellego-BI.com',
     'company': 'Intellego-BI.com',
     'website': 'https://Intellego-BI.com',
