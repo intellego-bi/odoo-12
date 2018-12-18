@@ -5,7 +5,6 @@
 
         <record id="cl_sequence_gen_inve" model="ir.sequence">
             <field name="name">INVE Diario Inventarios (Secuencia)</field>
-            <!--<field name="code">account.payment.customer.invoice</field>-->
             <field name="prefix">INVE/%(range_year)s/</field>
             <!--<field eval="no_gap" name="implementation"/>-->
             <field eval="1" name="number_next"/>
@@ -53,7 +52,6 @@
             <field name="name">LMDC Diferencia Cambio (Secuencia)</field>
             <!--<field name="code">account.payment.customer.invoice</field>-->
             <field name="prefix">LMDC/%(range_year)s/</field>
-            <!--<field eval="no_gap" name="implementation"/>-->
             <field eval="1" name="number_next"/>
             <field eval="1" name="number_increment"/>
             <field eval="True" name="use_date_range"/>
@@ -65,7 +63,6 @@
             <field name="name">LMCG Contabilización General (Secuencia)</field>
             <!--<field name="code">account.payment.customer.invoice</field>-->
             <field name="prefix">LMCG/%(range_year)s/</field>
-            <!--<field eval="no_gap" name="implementation"/>-->
             <field eval="1" name="number_next"/>
             <field eval="1" name="number_increment"/>
             <field eval="True" name="use_date_range"/>
@@ -77,7 +74,6 @@
             <field name="name">LMCO Conciliación (Secuencia)</field>
             <field name="code">account.reconcile</field>
             <field name="prefix">LMCO/%(range_year)s/</field>
-            <!--<field eval="standard" name="implementation"/>-->
             <field eval="1" name="number_next"/>
             <field eval="1" name="number_increment"/>
             <field eval="True" name="use_date_range"/>
