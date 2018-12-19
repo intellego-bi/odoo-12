@@ -26,18 +26,21 @@
                         <!-- } -->
                     <!-- } -->
                 <!-- }</attribute> -->
-                <attribute name="options">{ 
+                <!--<attribute name="options">{ 
                     'fillfields': { 
                         'address': {
                             'street': ['route', 'street_number']
                         }
                     } 
-                }</attribute>
+                }</attribute>-->
                 <attribute name="options">{
                     'fillfields': {
                         'geolocation': {
                             'partner_latitude': 'latitude',
                             'partner_longitude': 'longitude'
+                        }
+                        'address': {
+                            'street': ['route', 'street_number']
                         }
                     }
                 }</attribute>
@@ -64,7 +67,8 @@
         <field name="arch" type="xml">
             <field name="street" position="attributes">
                 <attribute name="widget">gplaces_address_autocomplete</attribute>
-                <attribute name="options">{'lat': 'partner_latitude', 'lng': 'partner_longitude'}</attribute>
+                <attribute name="options">{'lat': 'partner_latitude', 'lng': 'partner_longitude', 'fillfields': {'street': ['route', 'street_number']}}</attribute>
+                <!--<attribute name="options">{'lat': 'partner_latitude', 'lng': 'partner_longitude'}</attribute> -->
             </field>
         </field>
     </record>
