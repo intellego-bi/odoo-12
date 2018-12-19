@@ -26,21 +26,18 @@
                         <!-- } -->
                     <!-- } -->
                 <!-- }</attribute> -->
-                <!--<attribute name="options">{ 
+                <attribute name="options">{ 
                     'fillfields': { 
                         'address': {
                             'street': ['route', 'street_number']
                         }
                     } 
-                }</attribute>-->
+                }</attribute>
                 <attribute name="options">{
                     'fillfields': {
                         'geolocation': {
                             'partner_latitude': 'latitude',
                             'partner_longitude': 'longitude'
-                        }
-                        'address': {
-                            'street': ['route', 'street_number']
                         }
                     }
                 }</attribute>
