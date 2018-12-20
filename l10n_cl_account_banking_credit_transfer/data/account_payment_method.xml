@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+
+
+<record id="chile_credit_transfer" model="account.payment.method">
+    <field name="name">Chile Credit Transfer to suppliers</field>
+    <field name="code">chile_credit_transfer</field>
+    <field name="payment_type">outbound</field>
+    <field name="bank_account_required" eval="True"/>
+    <field name="pain_version">pain.001.chile.001</field>
+</record>
+
+<record id="bci_credit_transfer" model="account.payment.method">
+    <field name="name">BCI Credit Transfer to suppliers</field>
+    <field name="code">bci_credit_transfer</field>
+    <field name="payment_type">outbound</field>
+    <field name="bank_account_required" eval="True"/>
+    <field name="pain_version">pain.016.chile.001</field>
+</record>
+
+</odoo>
