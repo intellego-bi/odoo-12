@@ -9,7 +9,7 @@ class AccountPaymentMethod(models.Model):
 
     pain_version = fields.Selection([
         ('pain.001.chile.001', 'Banco de Chile (v001)'),
-        ('pain.016.bci.001', 'BCI (v001)'),
+        ('pain.016.bci.001', 'BCI (v001)')
         ], string='Bank Format and Version')
 
     convert_to_ascii = fields.Boolean(
