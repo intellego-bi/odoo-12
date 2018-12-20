@@ -17,7 +17,7 @@ def update_bank_journals(cr, registry):
             })
         bct = env.ref(
             'l10n_cl_account_banking_credit_transfer.bci_credit_transfer')
-        if cct:
+        if bct:
             journals.write({
                 'outbound_payment_method_ids': [(4, bct.id)],
             })
