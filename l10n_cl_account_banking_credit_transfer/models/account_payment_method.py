@@ -7,10 +7,25 @@ from odoo import models, fields, api
 class AccountPaymentMethod(models.Model):
     _inherit = 'account.payment.method'
 
-    pain_version = fields.Selection(selection_add=[
+    pain_version = fields.Selection([
         ('pain.001.chile.001', 'Banco de Chile (v001)'),
         ('pain.016.bci.001', 'BCI (v001)'),
-        ])
+        ], string='Bank Format and Version')
+
+    convert_to_ascii = fields.Boolean(
+        string='Convert to ASCII', default=True,
+        help="If active, Odoo will convert each accented character to "
+        "the corresponding unaccented character, so that only ASCII "
+        "characters are used in the generated PAIN file.")
+
+    _sql_constraints = [(
+        # Extending this constraint from account_payment_mode
+        'code_payment_type_unique',
+        'unique(code, payment_type, pain_version)',
+        'A payment method of the same type already exists with this code'
+        ' and PAIN version'
+    )]
+
 
     @api.multi
     def get_xsd_file_path(self):
@@ -20,4 +35,7 @@ class AccountPaymentMethod(models.Model):
             path = 'l10n_cl_account_banking_credit_transfer/data/%s.xsd'\
                 % self.pain_version
             return path
-        return super(AccountPaymentMethod, self).get_xsd_file_path()
+        else:
+            raise UserError(_(
+                              "No XSD file path found for payment method '%s'") % self.name)
+
