@@ -500,3 +500,5 @@ class AccountPaymentOrder(models.Model):
             blines.reconcile_payment_lines()
             if post_move:
                 move.post()
+        # Insert Intellego-BI
+        self.write({'state': 'done'})
