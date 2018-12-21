@@ -167,8 +167,8 @@
 <menuitem id="account_payment_order_outbound_menu" action="account_payment_order_outbound_action"
     parent="payment_root" sequence="10"/>
 
-<menuitem id="account_payment_order_inbound_menu" action="account_payment_order_inbound_action"
-    parent="payment_root" sequence="20"/>
+<!--<menuitem id="account_payment_order_inbound_menu" action="account_payment_order_inbound_action"
+    parent="payment_root" sequence="20"/>-->
 
 
 </odoo>
