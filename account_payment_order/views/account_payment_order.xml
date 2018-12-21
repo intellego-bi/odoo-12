@@ -154,7 +154,7 @@
 </record>
 
 <menuitem id="payment_root" name="Payments" parent="account.menu_finance"
-    sequence="7"/>
+    sequence="4"/>
 
 <menuitem id="account_payment_order_outbound_menu" action="account_payment_order_outbound_action"
     parent="payment_root" sequence="10"/>
