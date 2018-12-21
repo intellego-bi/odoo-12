@@ -320,7 +320,7 @@ class AccountPaymentOrder(models.Model):
         #    raise UserError(_(
         #        "No handler for this payment method. Maybe you haven't "
         #        "installed the related Odoo module."))
-            return (True, True)
+            return ('A String', 'MyBankFilename')
 
     @api.multi
     def open2generated(self):
