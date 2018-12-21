@@ -88,7 +88,7 @@
                     <field name="appears_on_payslip" widget="toggle_button"/>
                 </xpath>
                 <xpath expr="//field[@name='register_id']" position="after">
-                    <field name="appears_on_payslip"/>
+                    <!--<field name="appears_on_payslip" widget="toggle_button"/>-->
                     <field name="account_debit"/>
                     <field name="account_credit"/>
                 </xpath>

@@ -360,7 +360,7 @@ else:
             <field name="code">APV</field>
             <field name="category_id" ref="PREV"/>
             <field name="account_debit" ref="l10n_cl_coa_mfg.1_cl_coa_mfg_21601100"/>
-            <field name="account_credit" ref="l10n_cl_coa_mfg.1_cl_coa_mfg_21401000"/>
+            <field name="account_credit" ref="l10n_cl_coa_mfg.1_cl_coa_mfg_21701000"/>
             <field name="register_id" ref="contrib_register_previred"/>
             <field name="condition_select">python</field>
             <field name="condition_python">result = contract.aporte_voluntario > 0</field>
