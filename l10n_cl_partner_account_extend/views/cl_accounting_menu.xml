@@ -4,7 +4,7 @@
         <menuitem id="menu_cl_acc_master_data"  name="Datos Maestros" parent="account.account_account_menu" sequence="2"/>
         <menuitem id="menu_cl_acc_fixed_assets" name="Fixed Assets"   parent="account.menu_finance"         sequence="2"/>
 
-        <menuitem id="cl_acc_fixed_assets" action="action_account_asset_asset_form"  parent="menu_cl_acc_fixed_assets" sequence="10"/>
-        <menuitem id="cl_acc_fixed_assets_post" action="action_asset_depreciation_confirmation_wizard"  parent="menu_cl_acc_fixed_assets" sequence="20"/>
+        <!--<menuitem id="cl_acc_fixed_assets" action="action_account_asset_asset_form"  parent="menu_cl_acc_fixed_assets" sequence="10"/>
+        <menuitem id="cl_acc_fixed_assets_post" action="action_asset_depreciation_confirmation_wizard"  parent="menu_cl_acc_fixed_assets" sequence="20"/>-->
     </data>
 </odoo>
