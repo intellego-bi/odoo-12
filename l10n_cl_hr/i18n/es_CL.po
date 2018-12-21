@@ -62,6 +62,17 @@ msgid "Employee Payslips"
 msgstr "Liquidación de Empleado"
 
 #. module: l10n_cl_hr
+#: model:ir.model,name:l10n_cl_hr.model_hr_contract_type
+msgid "Contract Type"
+msgstr "Tipo de Contrato"
+
+#. module: l10n_cl_hr
+#: model:ir.ui.menu,name:l10n_cl_hr.cl_hr_contract_hr_menu_contract
+
+msgid "Contracts"
+msgstr "Contratos"
+
+#. module: l10n_cl_hr
 #: model:ir.model,name:l10n_cl_hr.model_hr_leave
 msgid "Leave"
 msgstr "Ausencia"
