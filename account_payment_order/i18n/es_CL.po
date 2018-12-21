@@ -763,7 +763,7 @@ msgstr "Número de acciones"
 #. module: account_payment_order
 #: model:ir.model.fields,field_description:account_payment_order.field_account_payment_order__bank_line_count
 msgid "Number of Bank Lines"
-msgstr ""
+msgstr "Número de Líneas para Banco"
 
 #. module: account_payment_order
 #: model:ir.model.fields,field_description:account_payment_order.field_account_payment_order__message_has_error_counter
