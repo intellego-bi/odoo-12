@@ -502,3 +502,4 @@ class AccountPaymentOrder(models.Model):
                 move.post()
         # Insert Intellego-BI
         self.write({'state': 'done'})
+
