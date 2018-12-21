@@ -82,7 +82,10 @@
             <field name="inherit_id" ref="hr_payroll.hr_salary_rule_list"/>
             <field name="arch" type="xml">
                 <xpath expr="//tree[1]/field[@name='name']" position="before">
-                    <field name="active"/>
+                    <field name="active" widget="toggle_button"/>
+                </xpath>
+                <xpath expr="//tree[1]/field[@name='name']" position="after">
+                    <field name="appears_on_payslip" widget="toggle_button"/>
                 </xpath>
                 <xpath expr="//field[@name='register_id']" position="after">
                     <field name="appears_on_payslip"/>
