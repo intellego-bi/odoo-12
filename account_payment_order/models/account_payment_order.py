@@ -317,9 +317,10 @@ class AccountPaymentOrder(models.Model):
         if self.payment_method_id.code == 'manual':
             return (False, False)
         else:
-            raise UserError(_(
-                "No handler for this payment method. Maybe you haven't "
-                "installed the related Odoo module."))
+        #    raise UserError(_(
+        #        "No handler for this payment method. Maybe you haven't "
+        #        "installed the related Odoo module."))
+            return (True, True)
 
     @api.multi
     def open2generated(self):
