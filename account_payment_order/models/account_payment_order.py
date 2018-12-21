@@ -332,7 +332,8 @@ class AccountPaymentOrder(models.Model):
                 'res_model': 'account.payment.order',
                 'res_id': self.id,
                 'name': filename,
-                'datas': base64.b64encode(payment_file_str),
+                #'datas': base64.b64encode(payment_file_str),
+                'datas': base64.b64encode(bytes(payment_file_str, 'utf-8')),
                 'datas_fname': filename,
                 })
             simplified_form_view = self.env.ref(
