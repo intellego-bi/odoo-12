@@ -56,7 +56,8 @@ class HrEmployeeShift(models.Model):
                                                            ('sequence', '=', self.sequence),
                                                            ('company_id', '=', self.company_id.id)
                                                            ])
-            if len(record) > 1:
+            #if len(record) > 1:
+            if len(record) > 2:
                 raise ValidationError("One record with same sequence is already active."
                                       "You can't activate more than one record  at a time")
 
