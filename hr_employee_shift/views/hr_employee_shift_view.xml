@@ -50,20 +50,33 @@
                                         <li><ul class="oe_kanban_colorpicker" data-field="color"/></li>
                                     </ul>
                                 </div>
-                                <div class="oe_kanban_content">
+                                <!--<div class="oe_kanban_content">
                                     <div class="row">
                                         <div class="o_primary style_shift">
                                             <div class="text-center"><strong><field name="name"/></strong></div>
                                         </div>
 
                                     </div>
-                                </div>
+                                </div>-->
                                 <div class="oe_kanban_details">
-                                    <strong>
+                                    <div class="o_kanban_record_top">
+                                        <div class="o_kanban_record_headings">
+                                            <strong class="o_kanban_record_title">
+                                                <field name="name"/>
+                                            </strong>
+                                            <span t-if="record.hr_department.value" class="o_kanban_record_subtitle">
+                                                <span class="text-muted"><field name="hr_department"/></span>
+                                            </span>
+                                            <span t-if="record.sequence.value" class="o_kanban_record_subtitle">
+                                                <span class="text-muted"><field name="sequence"/></span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <!--<strong>
                                         <div class="text-center">
                                             <span t-if="record.hr_department.value">[<field name="hr_department"/>]</span>
                                         </div>
-                                    </strong>
+                                    </strong>-->
                                 </div>
                             </div>
                             </t>
