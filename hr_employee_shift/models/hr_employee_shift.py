@@ -27,7 +27,7 @@ from odoo import models, fields, api, _
 class HrEmployeeInherited(models.Model):
     _inherit = 'hr.employee'
 
-    resource_calendar_ids = fields.Many2one('resource.calendar', 'Working Shift')
+    resource_calendar_ids = fields.Many2one('resource.calendar', 'Working Hours')
 
 
 class HrEmployeeShift(models.Model):
@@ -43,7 +43,7 @@ class HrEmployeeShift(models.Model):
         ]
 
     color = fields.Integer(string='Color Index')
-    hr_department = fields.Many2one('hr.department', string="Department", required=False)
+    hr_department = fields.Many2one('hr.department', string="Department", required=True)
     sequence = fields.Integer(string="Sequence", required=True, default=1)
     attendance_ids = fields.One2many(
         'resource.calendar.attendance', 'calendar_id', 'Workingssss Time',
@@ -53,8 +53,8 @@ class HrEmployeeShift(models.Model):
     def validate_seq(self):
         if self.hr_department.id:
             record = self.env['resource.calendar'].search([('hr_department', '=', self.hr_department.id),
-                                                           ('sequence', '=', self.sequence)
-                                                           #,('company_id', '=', self.company_id.id)
+                                                           ('sequence', '=', self.sequence),
+                                                           ('company_id', '=', self.company_id.id)
                                                            ])
             if len(record) > 1:
                 raise ValidationError("One record with same sequence is already active."

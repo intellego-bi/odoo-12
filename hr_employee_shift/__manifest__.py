@@ -22,7 +22,7 @@
 ###################################################################################
 {
     'name': "Open HRMS Employee Shift",
-    'version': '11.0.1.0.0',
+    'version': '12.0.1.0.0',
     'summary': """Easily create, manage, and track employee shift schedules.""",
     'description': """Easily create, manage, and track employee shift schedules.""",
     'category': 'Human Resource',
@@ -37,7 +37,7 @@
         'views/hr_employee_shift_view.xml',
         'views/hr_employee_contract_view.xml',
         'views/hr_generate_shift_view.xml',
-        #'views/templates.xml',
+        'views/templates.xml',
     ],
     'demo': [
         'demo/shift_schedule_data.xml',

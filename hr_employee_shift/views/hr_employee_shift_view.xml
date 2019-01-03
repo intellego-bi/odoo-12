@@ -18,22 +18,12 @@
             <field name="model">resource.calendar</field>
             <field name="inherit_id" ref="resource.resource_calendar_form"/>
             <field name="arch" type="xml">
-                <xpath expr="//field[@name='name']" position="after">
-                    <h2>
-                        <div>
-                            <label string="Departamento" for="hr_department" class="text-muted"/>
-                        </div>
-                        <div>
-						    <field name="hr_department"/>
-						</div>
-                        <div>
-                            <label string="Secuencia" for="sequence" class="text-muted"/>
-                        </div>
-						<div>
-						    <field name="sequence"/>
-						</div>
-                        <field name="color" invisible="1"/>
-					</h2>
+                <xpath expr="//field[@name='name']" position="after" style="height:30px;width:200px">
+                    <group>
+                    <field name="hr_department" style="height:30px;width:200px" />
+                    <field name="sequence" style="height:30px;width:200px"/>
+                    </group>
+                    <field name="color" invisible="1"/>
                 </xpath>
                 <xpath expr="//field[@name='attendance_ids']" position="replace">
                     <field name="attendance_ids"/>
@@ -60,35 +50,21 @@
                                         <li><ul class="oe_kanban_colorpicker" data-field="color"/></li>
                                     </ul>
                                 </div>
-                                <!--<div class="oe_kanban_content">
+                                <div class="oe_kanban_content">
                                     <div class="row">
                                         <div class="o_primary style_shift">
-                                            <div class="text-left"><strong><field name="name"/></strong></div>
+                                            <div class="text-center"><strong><field name="name"/></strong></div>
                                         </div>
 
                                     </div>
-                                </div>-->
-                                <div class="oe_kanban_details">
-                                    <div class="o_kanban_record_top">
-                                        <div class="o_kanban_record_headings">
-                                            <strong class="o_kanban_record_title">
-                                                <field name="name"/>
-                                            </strong>
-                                            <span t-if="record.hr_department.value" class="o_kanban_record_subtitle">
-                                                <span class="text-muted"><field name="hr_department"/></span>
-                                            </span>
-                                            <span t-if="record.sequence.value" class="o_kanban_record_subtitle">
-                                                <span class="text-muted"><field name="sequence"/></span>
-                                            </span>
-                                        </div>
-                                    </div>                                    
                                 </div>
-                                <!--<div class="oe_kanban_details">
-                                    
-                                        <div class="text-muted">
+                                <div class="oe_kanban_details">
+                                    <strong>
+                                        <div class="text-center">
                                             <span t-if="record.hr_department.value">[<field name="hr_department"/>]</span>
-                                        </div>                                    
-                                </div>-->
+                                        </div>
+                                    </strong>
+                                </div>
                             </div>
                             </t>
                     </templates>
@@ -111,7 +87,7 @@
         </record>
 
         <menuitem name="Shifts" id="menu_shift"
-                  groups="hr.group_hr_manager" sequence="46"
+                  groups="hr.group_hr_manager"
                   web_icon="hr_employee_shift,static/description/shift_icon.png"/>
         <menuitem name="Configuration" id="shift_configuration" parent="hr_employee_shift.menu_shift"/>
         <menuitem name="Shifts" id="menu_conf_shift" parent="shift_configuration"
