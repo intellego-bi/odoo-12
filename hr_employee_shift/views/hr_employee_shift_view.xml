@@ -87,7 +87,7 @@
         </record>
 
         <menuitem name="Shifts" id="menu_shift"
-                  groups="hr.group_hr_manager"
+                  groups="hr.group_hr_manager" sequence="46"
                   web_icon="hr_employee_shift,static/description/shift_icon.png"/>
         <menuitem name="Configuration" id="shift_configuration" parent="hr_employee_shift.menu_shift"/>
         <menuitem name="Shifts" id="menu_conf_shift" parent="shift_configuration"
