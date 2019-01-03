@@ -115,6 +115,25 @@
             </field>
         </record>
 
+        <!-- Extiende Vista Búsqueda -->
+        <!-- agrega agrupar por Departamento -->
+        <record model="ir.ui.view" id="cl_view_resource_calendar_search_extend">
+            <field name="name">resource.calendar</field>
+            <field name="model">resource.calendar</field>
+            <field name="mode">extension</field>
+            <field name="inherit_id" ref="resource.view_resource_calendar_search"/>
+            <field name="arch" type="xml">
+                <xpath expr="//search[1]/field[@name='name']" position="after">
+                    <field name="hr_department"/>
+                </xpath>
+                <xpath expr="//field[@name='company_id']" position="after">
+                    <group name="cl_group_by">
+                        <filter context="{'group_by': 'hr_department'}" name="hr_department" string="Department"/>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+
         <menuitem name="Shifts" id="menu_shift"
                   groups="hr.group_hr_manager" sequence="46"
                   web_icon="hr_employee_shift,static/description/shift_icon.png"/>
