@@ -81,10 +81,10 @@
                                                 <field name="name"/>
                                             </strong>
                                             <span t-if="record.hr_department.value" class="o_kanban_record_subtitle">
-                                                <span class="text-muted"><field name="hr_department"/></span>
+                                                <span class="text-muted">Depto: <field name="hr_department"/></span>
                                             </span>
                                             <span t-if="record.sequence.value" class="o_kanban_record_subtitle">
-                                                <span class="text-muted"><field name="sequence"/></span>
+                                                <span class="text-muted">Secuencia: <field name="sequence"/></span>
                                             </span>
                                         </div>
                                     </div>
