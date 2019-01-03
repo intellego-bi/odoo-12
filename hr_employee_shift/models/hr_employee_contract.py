@@ -35,6 +35,7 @@ class HrEmployeeContract(models.Model):
 
 class HrSchedule(models.Model):
     _name = 'hr.shift.schedule'
+    _description = 'HR Shift Schedule'
 
     start_date = fields.Date(string="Date From", required=True)
     end_date = fields.Date(string="Date To", required=True)
