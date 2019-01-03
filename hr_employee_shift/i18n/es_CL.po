@@ -1,0 +1,279 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* hr_employee_shift
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0+e\n"
+"Report-Msgid-Bugs-To: odoo@intellego-bi.com\n"
+"POT-Creation-Date: 2019-01-03 18:12+0000\n"
+"PO-Revision-Date: 2019-01-03 18:12+0000\n"
+"Last-Translator: Rodolfo Bermúdez Neubauer<odoo@intellego-bi.com>\n"
+"Language-Team: Intellego-BI.com\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hr_employee_shift
+#: model_terms:ir.ui.view,arch_db:hr_employee_shift.generate_schedule_form
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: hr_employee_shift
+#: model:ir.model.fields,field_description:hr_employee_shift.field_resource_calendar__color
+msgid "Color Index"
+msgstr "Índice de Colores"
+
+#. module: hr_employee_shift
+#: model:ir.model.fields,field_description:hr_employee_shift.field_hr_shift_generate__company_id
+#: model:ir.model.fields,field_description:hr_employee_shift.field_hr_shift_schedule__company_id
+msgid "Company"
+msgstr "Compañía"
+
+#. module: hr_employee_shift
+#: model:ir.ui.menu,name:hr_employee_shift.shift_configuration
+#: model:ir.ui.menu,x_studio_menu_name:hr_employee_shift.shift_configuration
+msgid "Configuration"
+msgstr "Configuración"
+
+#. module: hr_employee_shift
+#: model:ir.model.fields,field_description:hr_employee_shift.field_hr_shift_generate__create_uid
+#: model:ir.model.fields,field_description:hr_employee_shift.field_hr_shift_schedule__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: hr_employee_shift
+#: model:ir.model.fields,field_description:hr_employee_shift.field_hr_shift_generate__create_date
+#: model:ir.model.fields,field_description:hr_employee_shift.field_hr_shift_schedule__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: hr_employee_shift
+#: model:ir.model.fields,field_description:hr_employee_shift.field_hr_shift_schedule__start_date
+msgid "Date From"
+msgstr "Fecha desde"
+
+#. module: hr_employee_shift
+#: model:ir.model.fields,field_description:hr_employee_shift.field_hr_shift_schedule__end_date
+msgid "Date To"
+msgstr "Fecha hasta"
+
+#. module: hr_employee_shift
+#: model_terms:ir.ui.view,arch_db:hr_employee_shift.shift_template_kanban_view
+msgid "Delete"
+msgstr "Suprimir"
+
+#. module: hr_employee_shift
+#: model_terms:ir.ui.view,arch_db:hr_employee_shift.resource_calendar_form
+msgid "Departamento"
+msgstr ""
+
+#. module: hr_employee_shift
+#: model:ir.model.fields,field_description:hr_employee_shift.field_hr_contract__department_id
+#: model:ir.model.fields,field_description:hr_employee_shift.field_hr_shift_generate__hr_department
+#: model:ir.model.fields,field_description:hr_employee_shift.field_resource_calendar__hr_department
+#: model_terms:ir.ui.view,arch_db:hr_employee_shift.cl_view_resource_calendar_search_extend
+msgid "Department"
+msgstr "Departamento"
+
+#. module: hr_employee_shift
+#: model_terms:ir.ui.view,arch_db:hr_employee_shift.shift_template_kanban_view
+msgid "Depto:"
+msgstr ""
+
+#. module: hr_employee_shift
+#: model:ir.model.fields,field_description:hr_employee_shift.field_hr_shift_generate__display_name
+#: model:ir.model.fields,field_description:hr_employee_shift.field_hr_shift_schedule__display_name
+msgid "Display Name"
+msgstr "Nombre a mostrar"
+
+#. module: hr_employee_shift
+#: model_terms:ir.ui.view,arch_db:hr_employee_shift.shift_template_kanban_view
+msgid "Edit"
+msgstr "Editar"
+
+#. module: hr_employee_shift
+#: model:ir.model,name:hr_employee_shift.model_hr_employee
+msgid "Employee"
+msgstr "Empleado"
+
+#. module: hr_employee_shift
+#: model:ir.model,name:hr_employee_shift.model_hr_contract
+msgid "Employee Contract"
+msgstr "Contrato de Trabajo Empleado"
+
+#. module: hr_employee_shift
+#: model:ir.actions.act_window,name:hr_employee_shift.generate_schedule_action_window
+msgid "Employee Shift"
+msgstr "Turnos del Empleado"
+
+#. module: hr_employee_shift
+#: model:ir.model.fields,field_description:hr_employee_shift.field_hr_shift_generate__end_date
+msgid "End Date"
+msgstr "Fecha Final"
+
+#. module: hr_employee_shift
+#: code:addons/hr_employee_shift/models/hr_employee_shift.py:42
+#, python-format
+msgid "Friday Morning"
+msgstr "Viernes 1T"
+
+#. module: hr_employee_shift
+#: model_terms:ir.ui.view,arch_db:hr_employee_shift.generate_schedule_form
+msgid "Generate"
+msgstr "Generar"
+
+#. module: hr_employee_shift
+#: model:ir.ui.menu,name:hr_employee_shift.menu_shift_schedule_generate_id
+#: model:ir.ui.menu,x_studio_menu_name:hr_employee_shift.menu_shift_schedule_generate_id
+msgid "Generate Schedule"
+msgstr "Generar Rotación de Turnos"
+
+#. module: hr_employee_shift
+#: model:ir.model,name:hr_employee_shift.model_hr_shift_generate
+msgid "HR Shift Generate"
+msgstr "RRHH Generar Turnos"
+
+#. module: hr_employee_shift
+#: model:ir.model,name:hr_employee_shift.model_hr_shift_schedule
+msgid "HR Shift Schedule"
+msgstr "Horarios de Turnos RRHH"
+
+#. module: hr_employee_shift
+#: model:ir.model.fields,field_description:hr_employee_shift.field_hr_shift_generate__id
+#: model:ir.model.fields,field_description:hr_employee_shift.field_hr_shift_schedule__id
+msgid "ID"
+msgstr ""
+
+#. module: hr_employee_shift
+#: model:ir.model.fields,field_description:hr_employee_shift.field_hr_shift_generate____last_update
+#: model:ir.model.fields,field_description:hr_employee_shift.field_hr_shift_schedule____last_update
+msgid "Last Modified on"
+msgstr "Modificado el"
+
+#. module: hr_employee_shift
+#: model:ir.model.fields,field_description:hr_employee_shift.field_hr_shift_generate__write_uid
+#: model:ir.model.fields,field_description:hr_employee_shift.field_hr_shift_schedule__write_uid
+msgid "Last Updated by"
+msgstr "Actualizado por"
+
+#. module: hr_employee_shift
+#: model:ir.model.fields,field_description:hr_employee_shift.field_hr_shift_generate__write_date
+#: model:ir.model.fields,field_description:hr_employee_shift.field_hr_shift_schedule__write_date
+msgid "Last Updated on"
+msgstr "Actualizado el"
+
+#. module: hr_employee_shift
+#: code:addons/hr_employee_shift/models/hr_employee_shift.py:38
+#, python-format
+msgid "Monday Morning"
+msgstr "Lunes 1T"
+
+#. module: hr_employee_shift
+#: code:addons/hr_employee_shift/models/hr_shift_payroll.py:61
+#, python-format
+msgid "Normal Working Days paid at 100%"
+msgstr "Días Laborales pagados al 100%"
+
+#. module: hr_employee_shift
+#: model:ir.model,name:hr_employee_shift.model_hr_payslip
+msgid "Pay Slip"
+msgstr "Liquidación"
+
+#. module: hr_employee_shift
+#: model:ir.model.fields,field_description:hr_employee_shift.field_hr_shift_schedule__rel_hr_schedule
+msgid "Rel Hr Schedule"
+msgstr ""
+
+#. module: hr_employee_shift
+#: model:ir.model,name:hr_employee_shift.model_resource_calendar
+msgid "Resource Working Time"
+msgstr "Horario de Trabajo por Recurso"
+
+#. module: hr_employee_shift
+#: model_terms:ir.ui.view,arch_db:hr_employee_shift.resource_calendar_form
+msgid "Secuencia"
+msgstr ""
+
+#. module: hr_employee_shift
+#: model_terms:ir.ui.view,arch_db:hr_employee_shift.shift_template_kanban_view
+msgid "Secuencia:"
+msgstr ""
+
+#. module: hr_employee_shift
+#: model:ir.model.fields,field_description:hr_employee_shift.field_resource_calendar__sequence
+msgid "Sequence"
+msgstr "Secuencia"
+
+#. module: hr_employee_shift
+#: model:ir.model.fields,field_description:hr_employee_shift.field_hr_shift_schedule__hr_shift
+#: model:ir.ui.menu,name:hr_employee_shift.menu_shift_schedule_generate_id_menu
+#: model:ir.ui.menu,x_studio_menu_name:hr_employee_shift.menu_shift_schedule_generate_id_menu
+msgid "Shift"
+msgstr "Turno"
+
+#. module: hr_employee_shift
+#: model:ir.model.fields,field_description:hr_employee_shift.field_hr_contract__shift_schedule
+#: model_terms:ir.ui.view,arch_db:hr_employee_shift.employee_contract_form_inherited
+msgid "Shift Schedule"
+msgstr "Horario de Turnos"
+
+#. module: hr_employee_shift
+#: model:ir.ui.menu,name:hr_employee_shift.menu_conf_shift
+#: model:ir.ui.menu,name:hr_employee_shift.menu_shift
+#: model:ir.ui.menu,x_studio_menu_name:hr_employee_shift.menu_conf_shift
+#: model:ir.ui.menu,x_studio_menu_name:hr_employee_shift.menu_shift
+msgid "Shifts"
+msgstr "Turnos"
+
+#. module: hr_employee_shift
+#: model:ir.model.fields,field_description:hr_employee_shift.field_hr_shift_generate__start_date
+msgid "Start Date"
+msgstr "Fecha de Inicio"
+
+#. module: hr_employee_shift
+#: code:addons/hr_employee_shift/models/hr_employee_contract.py:76
+#, python-format
+msgid "Start date should be less than end date."
+msgstr "La Fecha de Inicio debe preceder la Fecha de Fin"
+
+#. module: hr_employee_shift
+#: code:addons/hr_employee_shift/models/hr_employee_contract.py:74
+#, python-format
+msgid "The dates may not overlap with one another."
+msgstr "No se permiten fechas solapadas"
+
+#. module: hr_employee_shift
+#: code:addons/hr_employee_shift/models/hr_employee_shift.py:41
+#, python-format
+msgid "Thursday Morning"
+msgstr "Jueves 1T"
+
+#. module: hr_employee_shift
+#: code:addons/hr_employee_shift/models/hr_employee_shift.py:39
+#, python-format
+msgid "Tuesday Morning"
+msgstr "Martes 1T"
+
+#. module: hr_employee_shift
+#: code:addons/hr_employee_shift/models/hr_employee_shift.py:40
+#, python-format
+msgid "Wednesday Morning"
+msgstr "Miércoles 1T"
+
+#. module: hr_employee_shift
+#: model:ir.model.fields,field_description:hr_employee_shift.field_hr_employee__resource_calendar_ids
+msgid "Working Hours"
+msgstr "Horas Laborales"
+
+#. module: hr_employee_shift
+#: model:ir.model.fields,field_description:hr_employee_shift.field_hr_contract__working_hours
+msgid "Working Schedule"
+msgstr "Horario de Trabajo"
+
+#. module: hr_employee_shift
+#: model:ir.model.fields,field_description:hr_employee_shift.field_resource_calendar__attendance_ids
+msgid "Workingssss Time"
+msgstr ""
+
