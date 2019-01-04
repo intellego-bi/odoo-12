@@ -79,18 +79,21 @@ class HrPayroll(models.Model):
                 # Insert Intellego: Limita Intervalos a Fechas de Nómina
                 ps_date_from = datetime.datetime.strptime(str(date_from), tools.DEFAULT_SERVER_DATE_FORMAT)
                 ps_date_to = datetime.datetime.strptime(str(date_to), tools.DEFAULT_SERVER_DATE_FORMAT)
+                shift_start_date = start_date
+                shift_end_date = end_date
                 if ps_date_from > start_date:
-                   start_date = ps_date_from
+                   shift_start_date = ps_date_from
                 if ps_date_to < end_date:
-                   end_date = ps_date_to
+                   shift_end_date = ps_date_to
+                
 
-                nb_of_days = (days.end_date - days.start_date).days + 1
+                nb_of_days = (days.shift_end_date - days.shift_start_date).days + 1
                 # Insert Intellego: Horas Diarias según Turno
                 hours_per_day = days.hours_per_day
                 # Fin Insert
                 for day in range(0, nb_of_days):
                     working_intervals_on_day = days.hr_shift._get_day_work_intervals(
-                        start_date + timedelta(days=day))
+                        shift_start_date + timedelta(days=day))
                     for interval in working_intervals_on_day:                        
                         interval_data.append(
                             (interval, was_on_leave_interval(contract.employee_id.id, interval[0], interval[1])))
