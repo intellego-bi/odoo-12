@@ -81,8 +81,8 @@ class HrPayroll(models.Model):
                 ps_date_to = datetime.datetime.strptime(str(date_to), tools.DEFAULT_SERVER_DATE_FORMAT)
                 shift_start_date = start_date
                 shift_end_date = end_date
-                if ( ps_date_from <= shift_end_date ) and ( ps_date_to >= shift_start_date ):
-                   continue
+                #if ( ps_date_from <= shift_end_date ) and ( ps_date_to >= shift_start_date ):
+                #   continue
                 if ps_date_from > start_date:
                    shift_start_date = ps_date_from
                 if ps_date_to < end_date:
@@ -95,7 +95,7 @@ class HrPayroll(models.Model):
                 # Fin Insert
                 for day in range(0, nb_of_days):
                     working_intervals_on_day = days.hr_shift._get_day_work_intervals(
-                        shift_start_date + timedelta(days=day))
+                        start_date + timedelta(days=day))
                     for interval in working_intervals_on_day:                        
                         interval_data.append(
                             (interval, was_on_leave_interval(contract.employee_id.id, interval[0], interval[1])))
