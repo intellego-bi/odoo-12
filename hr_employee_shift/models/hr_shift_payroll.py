@@ -77,7 +77,7 @@ class HrPayroll(models.Model):
                 start_date = datetime.datetime.strptime(str(days.start_date), tools.DEFAULT_SERVER_DATE_FORMAT)
                 end_date = datetime.datetime.strptime(str(days.end_date), tools.DEFAULT_SERVER_DATE_FORMAT)
                 nb_of_days = (days.end_date - days.start_date).days + 1
-                # Insert Intellego: Horas Diarias según Turno
+                # Insert Intellego: Horas Diarias segÃºn Turno
                 hours_per_day = days.hours_per_day
                 # Fin Insert
                 for day in range(0, nb_of_days):
@@ -129,7 +129,7 @@ class HrPayroll(models.Model):
 class Calendar(models.Model):
     _inherit = 'resource.calendar'
 
-    # Insert Intellego: Horas Diarias según Turno
+    # Insert Intellego: Horas Diarias segÃºn Turno
     # _interval_obj = namedtuple('Interval', ('start_datetime', 'end_datetime', 'data'))
     _interval_obj = namedtuple('Interval', ('start_datetime', 'end_datetime', 'hours_per_day', 'data'))
     # Fin Insert
@@ -149,7 +149,7 @@ class Calendar(models.Model):
         kw = kw if kw is not None else dict()
         kw.setdefault('attendances', self.env['resource.calendar.attendance'])
         kw.setdefault('leaves', self.env['resource.calendar.leaves'])
-        # Insert Intellego: Horas Diarias según Turno
+        # Insert Intellego: Horas Diarias segÃºn Turno
         hours_per_day = 8
         #return self._interval_obj(start_datetime, end_datetime, kw)
         return self._interval_obj(start_datetime, end_datetime, hours_per_day, kw)
