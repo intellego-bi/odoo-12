@@ -42,6 +42,8 @@ class HrSchedule(models.Model):
     rel_hr_schedule = fields.Many2one('hr.contract')
     hr_shift = fields.Many2one('resource.calendar', string="Shift", required=True)
     company_id = fields.Many2one('res.company', string='Company')
+    hours_per_day = fields.Float(related="hr_shift.hours_per_day", readonly=True,
+                                  string="Hours per Day for Shift")
 
     @api.onchange('start_date', 'end_date')
     def get_department(self):
