@@ -19,6 +19,7 @@
                                 <field name="start_date"/>
                                 <field name="end_date"/>
                                 <field name="hr_shift"/>
+                                <field name="hours_per_day"/>
                             </tree>
                         </field>
                     </group>
