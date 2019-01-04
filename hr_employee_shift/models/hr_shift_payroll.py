@@ -109,9 +109,14 @@ class HrPayroll(models.Model):
             # Clean-up the results
             leaves = [value for key, value in leaves.items()]
             for data in [attendances] + leaves:
-                data['number_of_days'] = uom_hour._compute_quantity(data['number_of_hours'], uom_day) \
-                    if uom_day and uom_hour \
-                    else data['number_of_hours'] / 8.0
+                # Insert Intellego
+                #data['number_of_days'] = uom_hour._compute_quantity(data['number_of_hours'], uom_day) \
+                #    if uom_day and uom_hour \
+                #    else data['number_of_hours'] / 8.0
+                if hours_per_day > 0:
+                   data['number_of_days'] = data['number_of_hours'] / hours_per_day
+                else:
+                   data['number_of_days'] = data['number_of_hours'] / 8.0
                 res.append(data)
         return res
 
