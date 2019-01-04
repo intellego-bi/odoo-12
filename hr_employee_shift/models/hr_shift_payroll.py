@@ -51,6 +51,9 @@ class HrPayroll(models.Model):
             ], limit=1)
 
         res = []
+        #Insert Intellego
+        hours_per_day = 0
+
         # fill only if the contract as a working schedule linked
         uom_day = self.env.ref('product.product_uom_day', raise_if_not_found=False)
         for contract in contract_ids:
@@ -101,6 +104,8 @@ class HrPayroll(models.Model):
                             'code': holiday.holiday_status_id.name,
                             'number_of_days': 0.0,
                             'number_of_hours': hours,
+                            # Insert Intellego: hours_per_day
+                            'hours_per_day': 0.0,
                             'contract_id': contract.id,
                         }
                 else:
