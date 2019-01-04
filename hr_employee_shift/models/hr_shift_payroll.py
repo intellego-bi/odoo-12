@@ -63,6 +63,8 @@ class HrPayroll(models.Model):
                 'code': 'WORK100',
                 'number_of_days': 0.0,
                 'number_of_hours': 0.0,
+                # Insert Intellego: hours_per_day
+                'hours_per_day': 0.0,
                 'contract_id': contract.id,
             }
             leaves = {}
@@ -72,10 +74,13 @@ class HrPayroll(models.Model):
                 start_date = datetime.datetime.strptime(str(days.start_date), tools.DEFAULT_SERVER_DATE_FORMAT)
                 end_date = datetime.datetime.strptime(str(days.end_date), tools.DEFAULT_SERVER_DATE_FORMAT)
                 nb_of_days = (days.end_date - days.start_date).days + 1
+                # Insert Intellego: Horas Diarias según Turno
+                hours_per_day = days.hours_per_day
+                # Fin Insert
                 for day in range(0, nb_of_days):
                     working_intervals_on_day = days.hr_shift._get_day_work_intervals(
                         start_date + timedelta(days=day))
-                    for interval in working_intervals_on_day:
+                    for interval in working_intervals_on_day:                        
                         interval_data.append(
                             (interval, was_on_leave_interval(contract.employee_id.id, interval[0], interval[1])))
 
@@ -113,7 +118,11 @@ class HrPayroll(models.Model):
 
 class Calendar(models.Model):
     _inherit = 'resource.calendar'
-    _interval_obj = namedtuple('Interval', ('start_datetime', 'end_datetime', 'data'))
+
+    # Insert Intellego: Horas Diarias según Turno
+    # _interval_obj = namedtuple('Interval', ('start_datetime', 'end_datetime', 'data'))
+    _interval_obj = namedtuple('Interval', ('start_datetime', 'end_datetime', 'hours_per_day', 'data'))
+    # Fin Insert
 
     def string_to_datetime(self, value):
         """ Convert the given string value to a datetime in UTC. """
@@ -130,7 +139,10 @@ class Calendar(models.Model):
         kw = kw if kw is not None else dict()
         kw.setdefault('attendances', self.env['resource.calendar.attendance'])
         kw.setdefault('leaves', self.env['resource.calendar.leaves'])
-        return self._interval_obj(start_datetime, end_datetime, kw)
+        # Insert Intellego: Horas Diarias según Turno
+        hours_per_day = 8
+        #return self._interval_obj(start_datetime, end_datetime, kw)
+        return self._interval_obj(start_datetime, end_datetime, hours_per_day, kw)
 
     @api.multi
     def _get_day_work_intervals(self, day_date, start_time=None, end_time=None, compute_leaves=False,
