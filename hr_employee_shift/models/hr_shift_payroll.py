@@ -145,12 +145,12 @@ class Calendar(models.Model):
         fractional, integral = math.modf(hours)
         return time(int(integral), int(float_round(60 * fractional, precision_digits=0)), 0)
 
-    def _interval_new(self, start_datetime, end_datetime, kw=None):
+    def _interval_new(self, start_datetime, end_datetime, hours_per_day, kw=None):
         kw = kw if kw is not None else dict()
         kw.setdefault('attendances', self.env['resource.calendar.attendance'])
         kw.setdefault('leaves', self.env['resource.calendar.leaves'])
         # Insert Intellego: Horas Diarias según Turno
-        hours_per_day = 8
+        #hours_per_day = 8
         #return self._interval_obj(start_datetime, end_datetime, kw)
         return self._interval_obj(start_datetime, end_datetime, hours_per_day, kw)
 
@@ -212,8 +212,9 @@ class Calendar(models.Model):
 
             dt_f = datetime.datetime.combine(day_date, max(from_time, start_time))
             dt_t = datetime.datetime.combine(day_date, min(to_time, end_time))
-
-            yield self._interval_new(dt_f, dt_t, {'attendances': calendar_working_day})
+            # Insert Intellego: Horas Diarias según Turno
+            hours_per_day = 8
+            yield self._interval_new(dt_f, dt_t, hours_per_day, {'attendances': calendar_working_day})
 
 
 
