@@ -76,8 +76,9 @@ class HrPayroll(models.Model):
             for days in contract.shift_schedule:
                 start_date = datetime.datetime.strptime(str(days.start_date), tools.DEFAULT_SERVER_DATE_FORMAT)
                 end_date = datetime.datetime.strptime(str(days.end_date), tools.DEFAULT_SERVER_DATE_FORMAT)
-                if date_from > start_date:
-                   start_date = date_from
+                ps_date_from = datetime.datetime.strptime(str(date_from), tools.DEFAULT_SERVER_DATE_FORMAT)
+                if ps_date_from > start_date:
+                   start_date = ps_date_from
                 nb_of_days = (days.end_date - days.start_date).days + 1
                 # Insert Intellego: Horas Diarias según Turno
                 hours_per_day = days.hours_per_day
